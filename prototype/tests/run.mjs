@@ -71,6 +71,16 @@ if (mode === 'e2e' || mode === 'all') {
   else results.push({ name: 'e2e', exitCode: 1, pass: 0, fail: 0, note: `no e2e file mentions --filter ${filter}` });
 }
 
+// In GitHub Actions, failing tests also become annotations on the run summary page.
+if (process.env.GITHUB_ACTIONS === 'true') {
+  const esc = (x) => String(x).replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+  for (const r of results) {
+    for (const f of r.failures || []) console.log(`::error title=${esc(`${r.name} test failed`)}::${esc(f)}`);
+    if (r.timedOut) console.log(`::error title=${esc(`${r.name} timed out`)}::${esc(`killed after CK_TEST_TIMEOUT_SECONDS; a resource kept the process alive`)}`);
+    if (r.exitCode && !(r.failures || []).length && !r.timedOut) console.log(`::error title=${esc(`${r.name} failed`)}::${esc(`exit code ${r.exitCode}; see the log above`)}`);
+  }
+}
+
 const summary = { ranAt: new Date().toISOString(), node: process.version, mode, results };
 if (reportPath) writeFileSync(reportPath, JSON.stringify(summary, null, 2) + '\n');
 console.log('\nSUMMARY ' + JSON.stringify(results.map(({ name, exitCode, pass, fail, seconds }) => ({ name, exitCode, pass, fail, seconds }))));
