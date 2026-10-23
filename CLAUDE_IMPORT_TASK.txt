@@ -1,0 +1,16 @@
+请在当前私有仓库 1412845026z-jpg/care-kotoba 中完成 Care Kotoba 原归档导入和共享进度初始化。用户已授权这次导入；不要公开仓库、部署生产、购买服务或调用产品的付费模型 API。
+
+根目录已上传：
+- Care_Kotoba_Claude_Handoff_2026-10-23.zip，SHA-256 b9aa73109a4b46eda7b7bf76f76b225d3ab940a57d2655f124ad3320eb238f12；164个归档文件，其中130个原源码文件，旧Sites提交 e643aed9b347cf5e1f157b4878626c6664063534。
+- Care_Kotoba_Shared_Progress_2026-10-23.zip，SHA-256 f9548e16a7aa3bf690cfe716b3847b5851de4d5aba143fdf83dc7d18299666a3。
+
+执行步骤：
+1. 先检查当前工作区和最新远端，不覆盖已有修改。在本会话工作分支上操作。核对两个ZIP的哈希、完整性和安全解压路径。
+2. 将原归档解压至临时目录，先读取00_START_HERE.md、CLAUDE.md、docs/01_PROJECT_CONTEXT.md、docs/02_STATUS_AND_GAPS.md和docs/03_RUN_AND_MIGRATE.md；在临时目录运行 tools/verify_archive.py。核验通过后把归档根目录内容导入仓库根，保留prototype/、docs/、design/、research/、verification/、tools/及其他原始资料。两个原始ZIP保留，可归入archives/，更新说明。
+3. 保持prototype/的130个原源码文件逐字不变；本次只做导入与交接配置，不重构业务代码。按 verification/SOURCE_FILES_SHA256.json 再核对全部130项。
+4. 读取同步包README_SYNC.txt，把to_merge/AGENTS.md、PROJECT_STATE.md和handoffs/TEMPLATE.md合并到仓库对应位置；在根CLAUDE.md通过@AGENTS.md导入共享规则，保留原项目要求。更新根README，清楚说明原型状态、prototype/运行入口和文档入口。根.gitignore覆盖密钥文件、依赖、构建与本地运行产物，保留无密钥的env.example。
+5. 原ARCHIVE_MANIFEST.json是原始交接包清单。若合并共享规则改变了根CLAUDE.md等文档，保留旧清单作为溯源，另写导入清单或调整校验入口；不要把修改后的历史清单校验假报通过，也不要删除原始ZIP中的证据。
+6. PROJECT_STATE.md填写真实仓库URL、默认分支、当前核对的GitHub基准提交、作者和日本时间，分别记录准备完成、待审和已合并。e643...仅是历史源码快照，不是新GitHub仓库HEAD。SYNC-001可在推送后标review_ready；SYNC-002必须等Codex实际读取相同提交后才能完成。不要把真实AI、真机、企业隔离、订阅或负载写成已验收。
+7. 添加本任务的handoffs/记录，说明检查结果和未完成项，提交并推送工作分支，创建一个面向main的PR（无额外审批规则阻碍时）；不要强推共享分支。
+
+返回仓库链接、工作分支、已推送提交、PR链接、导入文件数量、130项源码校验结果和仍未执行的检查。以实际推送为准，不能只给计划。
