@@ -18,7 +18,7 @@ after(async () => { await sim?.close(); await env?.close(); });
 async function transcript(page) {
   return page.$$eval('.chat-message', (els) => els
     .filter((e) => e.dataset.status !== 'pending' && e.dataset.status !== 'empty')
-    .map((e) => ({ role: e.classList.contains('user') ? 'user' : 'assistant', text: e.querySelector('p')?.textContent?.trim() || '', status: e.dataset.status || '' })));
+    .map((e) => { const p = e.querySelector('p')?.cloneNode(true); p?.querySelectorAll('rt,rp').forEach((x) => x.remove()); return { role: e.classList.contains('user') ? 'user' : 'assistant', text: p?.textContent?.trim() || '', status: e.dataset.status || '' }; }));
 }
 
 async function startLive(page, title = 'お顔を拭く前のひとこと', query = '') {
@@ -140,6 +140,24 @@ test('voice: losing the connection is reported and the session can be resumed wi
   await sim.waitForOpen();
   const t = await transcript(page);
   assert.ok(t.some((m) => m.text === '温かいタオルを用意しました。'), 'transcript lost after resume');
+});
+
+test('voice: a line typed while the AI is still answering gets its reply after that answer (no rejected response.create)', async () => {
+  const page = await env.page();
+  await startLive(page);
+  await openingTurn();
+  const a2 = assistantTurn({ itemId: 'item_a2', previousItemId: 'item_a1', text: 'それでは、まずタオルの温度を確かめましょうね。', chunks: 2 });
+  await sim.send([...a2.start, a2.deltas[0]]);
+  await page.waitForFunction(() => [...document.querySelectorAll('.chat-message.assistant p')].some((p) => p.textContent.includes('それでは')));
+  const before = (await sim.received()).filter((e) => e.type === 'response.create').length;
+  await page.getByLabel('日本語で返答を入力').fill('すみません、もう一度お願いします。');
+  await page.keyboard.press('Enter');
+  await sim.waitForClientEvent('conversation.item.create');
+  await sim.pause(300);
+  assert.equal((await sim.received()).filter((e) => e.type === 'response.create').length, before, 'response.create was sent while a response was active');
+  await sim.send([a2.deltas[1], ...a2.done]);
+  const creates = await sim.waitForClientEvent('response.create', { count: before + 1 });
+  assert.equal(creates.length, before + 1);
 });
 
 test('voice: connects under React StrictMode (development double effects)', async () => {

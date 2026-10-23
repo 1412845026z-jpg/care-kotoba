@@ -9,7 +9,7 @@ before(async () => { env = await setup(); await env.requireAiAccess(); });
 after(async () => { await env?.close(); });
 
 async function transcript(page) {
-  return page.$$eval('.chat-message', (els) => els.filter((e) => e.dataset.status !== 'pending').map((e) => ({ role: e.classList.contains('user') ? 'user' : 'assistant', text: e.querySelector('p')?.textContent?.trim() || '' })));
+  return page.$$eval('.chat-message', (els) => els.filter((e) => e.dataset.status !== 'pending').map((e) => { const p = e.querySelector('p')?.cloneNode(true); p?.querySelectorAll('rt,rp').forEach((x) => x.remove()); return { role: e.classList.contains('user') ? 'user' : 'assistant', text: p?.textContent?.trim() || '' }; }));
 }
 
 test('home renders at 390px without horizontal overflow or page errors', async () => {
@@ -112,6 +112,22 @@ test('health endpoint answers and reports configuration without secrets', async 
   assert.equal(res.data.configured, true);
   const text = JSON.stringify(res.data);
   assert.ok(!text.includes('test-dummy-key-not-real') && !/sk-[A-Za-z0-9_-]{10,}|Bearer /.test(text), 'health leaks key material');
+});
+
+test('furigana is shown on fixed texts and can be switched off in settings', async () => {
+  const page = await env.page();
+  await openScene(page, env.baseUrl, '口腔ケア前の説明');
+  const rt = await page.$$eval('.scene-modal-title h2 rt', (els) => els.map((e) => e.textContent));
+  assert.ok(rt.includes('こうくう'), `expected the care-field reading こうくう, got ${JSON.stringify(rt)}`);
+  assert.ok((await page.locator('.context-card ruby').count()) > 0, 'context has no furigana');
+  await page.getByRole('button', { name: '閉じる' }).first().click();
+  await page.getByRole('button', { name: '学習設定' }).click();
+  await page.getByLabel('ふりがな').selectOption('off');
+  await page.getByRole('button', { name: /この設定で続ける/ }).click();
+  await openScene(page, env.baseUrl, '口腔ケア前の説明');
+  assert.equal(await page.locator('.scene-modal ruby').count(), 0, 'furigana still shown after switching it off');
+  assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('ck-prefs')).furigana), false);
+  assert.deepEqual(page.errors, []);
 });
 
 test('responsive layout: desktop width also renders without errors', async () => {

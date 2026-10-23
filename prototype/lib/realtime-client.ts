@@ -40,6 +40,11 @@ export class VoiceSession {
   private serverEndPromise: Promise<ServerEnd> | null = null;
   private timers: ReturnType<typeof setTimeout>[] = [];
   private textSeq = 0;
+  // A response.create sent while a response is still running is rejected by the server
+  // (conversation_already_has_active_response) and the typed line would get no reply. Queue it instead.
+  // Idea taken from openai-agents-js (MIT) ResponseCreateSequencer; implemented here independently.
+  private activeResponses = 0;
+  private pendingResponseCreate = false;
   readonly metrics = new VoiceMetrics();
   readonly startedAtIso = new Date().toISOString();
   models = { realtime: 'unknown', transcribe: 'unknown' };
@@ -130,6 +135,11 @@ export class VoiceSession {
     try { e = JSON.parse(String(data)); } catch { return; }
     this.metrics.observe(e);
     this.transcript = applyEvent(this.transcript, e);
+    if (e.type === 'response.created') this.activeResponses++;
+    if (e.type === 'response.done') {
+      this.activeResponses = Math.max(0, this.activeResponses - 1);
+      if (this.activeResponses === 0 && this.pendingResponseCreate) { this.pendingResponseCreate = false; this.send({ type: 'response.create' }); }
+    }
     let activity = this.snap.activity;
     switch (e.type) {
       case 'input_audio_buffer.speech_started': activity = 'listening'; break;
@@ -160,7 +170,8 @@ export class VoiceSession {
     const id = `ck_txt_${Date.now().toString(36)}_${++this.textSeq}`.slice(0, 32);
     this.transcript = addTextTurn(this.transcript, id, t);
     this.send({ type: 'conversation.item.create', item: { id, type: 'message', role: 'user', content: [{ type: 'input_text', text: t }] } });
-    this.send({ type: 'response.create' });
+    if (this.activeResponses > 0) this.pendingResponseCreate = true;
+    else this.send({ type: 'response.create' });
     this.emit({ activity: 'thinking' });
     return true;
   }

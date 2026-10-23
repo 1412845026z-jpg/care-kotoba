@@ -27,7 +27,8 @@ test('history keeps valid records (even for unknown scenes) and clamps numbers',
 });
 
 test('prefs only accept known values', () => {
-  assert.deepEqual(sanitizePrefs({ locale: 'en', level: 'challenge', goal: '10', plan: 'company' }), { locale: 'en', level: 'challenge', goal: 10, plan: 'company' });
+  assert.deepEqual(sanitizePrefs({ locale: 'en', level: 'challenge', goal: '10', plan: 'company', furigana: false }), { locale: 'en', level: 'challenge', goal: 10, plan: 'company', furigana: false });
+  assert.equal(sanitizePrefs({}).furigana, true, 'furigana defaults to on for N4 learners');
   assert.deepEqual(sanitizePrefs({ locale: 'xx', goal: 7 }), DEFAULT_PREFS);
 });
 

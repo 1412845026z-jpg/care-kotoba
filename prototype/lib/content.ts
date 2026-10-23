@@ -103,6 +103,9 @@ export const variants=[{id:'gentle',label:'穏やかな会話',sub:'まずは、
  {id:'clarify',label:'聞き返されたら？',sub:'伝わる表現に言い換え',instruction:'長い説明や曖昧な表現には「どういうこと？」「もう一度、お願いします」と聞き返す。短く明確な言い換えには自然に応じる。'},
  {id:'unexpected',label:'予想外のひとこと',sub:'少し難しい会話に挑戦',instruction:'場面から外れすぎない予想外の質問や希望を一つ入れる。具体的に確認したら、意向を答える。'},
 ];
+// Scripted replies for the demo mode (no AI). Kept here so content review and furigana generation see them.
+export const demoReplies={staff:['もう少し具体的に、時刻も教えてください。','確認できていない部分は、分けて伝えてください。','分かりました。報告ありがとうございます。'],decline:['今はちょっと、気が進まないの。','そうね、少ししてからなら。','私の気持ちも聞いてくれて、ありがとう。'],clarify:['もう少し、短く説明してもらえる？','そうなのね。それで、私はどうしたらいい？','分かったわ。説明してくれて、ありがとう。'],gentle:['もう少し、ゆっくり説明してもらえる？','そうなのね。少ししてからでもいいかしら。','ありがとう。私の気持ちも聞いてくれて。']};
+export const demoRepliesFor=(staff:boolean,variant:string)=>staff?demoReplies.staff:variant==='decline'?demoReplies.decline:variant==='clarify'?demoReplies.clarify:demoReplies.gentle;
 export const demoLearners=[
  {id:1,name:'Linh Nguyen',initial:'LN',country:'ベトナム語',group:'新入職員',lessons:18,minutes:92,focus:'申し送り',progress:75,last:'今日',tone:'mint'},
  {id:2,name:'Siti Rahma',initial:'SR',country:'インドネシア語',group:'新入職員',lessons:12,minutes:64,focus:'聞き返し',progress:50,last:'今日',tone:'peach'},

@@ -53,3 +53,8 @@
 @keyframes ck-app-pending{to{opacity:.55}}
 html:not([data-app-ready]) .mobile-nav,html:not([data-app-ready]) .sidebar nav,html:not([data-app-ready]) main button{animation:ck-app-pending .2s ease .6s forwards}
 html:not([data-app-ready]) body{cursor:progress}
+
+/* Furigana (REUSE-001): readings from tools/furigana, shown only on reviewed fixed texts */
+ruby{ruby-position:over}
+ruby rt{font-size:.5em;letter-spacing:0;font-weight:400;opacity:.85}
+.stage-caption ruby rt{font-size:.42em}

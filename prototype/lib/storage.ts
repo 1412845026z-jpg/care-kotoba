@@ -3,12 +3,12 @@
 // that point at a scene id this version does not know are KEPT (a later
 // content update may rename scenes) and simply skipped where a scene is needed.
 
-export type Preferences = { locale: 'zh' | 'en' | 'ja'; level: 'gentle' | 'challenge'; goal: number; plan: 'personal' | 'company' };
+export type Preferences = { locale: 'zh' | 'en' | 'ja'; level: 'gentle' | 'challenge'; goal: number; plan: 'personal' | 'company'; furigana: boolean };
 export type Note = { id: string; text: string; sceneId: string; original?: string; reason?: string };
 export type RecordItem = { id: string; sceneId: string; date: string; minutes: number; score: number | null; demo: boolean };
 export type Assignment = { id: string; sceneId: string; group: string; date: string };
 
-export const DEFAULT_PREFS: Preferences = { locale: 'zh', level: 'gentle', goal: 5, plan: 'personal' };
+export const DEFAULT_PREFS: Preferences = { locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true };
 
 const isObj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
 const s = (v: unknown, max: number) => (typeof v === 'string' && v.length > 0 ? v.slice(0, max) : null);
@@ -49,6 +49,7 @@ export function sanitizePrefs(raw: unknown): Preferences {
     level: p.level === 'gentle' || p.level === 'challenge' ? p.level : DEFAULT_PREFS.level,
     goal: [5, 10, 15].includes(Number(p.goal)) ? Number(p.goal) : DEFAULT_PREFS.goal,
     plan: p.plan === 'personal' || p.plan === 'company' ? p.plan : DEFAULT_PREFS.plan,
+    furigana: typeof p.furigana === 'boolean' ? p.furigana : DEFAULT_PREFS.furigana,
   };
 }
 
