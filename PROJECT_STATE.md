@@ -9,9 +9,9 @@
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （private，经 GitHub REST API 核对） |
 | 集成分支 | `main`（远端默认分支） |
 | 本次状态核对的远端代码提交 | `main` = `37d331c170bfe148d39a8068a3a8763a891fe376`（导入前；仅含两个ZIP、README与导入任务说明） |
-| 核对时间与作者 | 2026-10-23T21:05:00+09:00，Claude（Claude Code 云端会话） |
+| 核对时间与作者 | 2026-10-23T12:26:13.951Z，Codex（读取 GitHub 远端固定提交） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
-| 同步接入状态 | 配置中：Claude 已推送导入分支；需 Codex 读取同一提交（SYNC-002）后才算接通 |
+| 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
 | 产品阶段 | 网页/PWA 原型（归档时可构建）；无商店App、无生产账户/数据库/支付 |
 
@@ -53,7 +53,7 @@
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | review_ready | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
-| SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | queued | — | 需记录实际读取的提交号 |
+| SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | review_ready | `codex/SYNC-002`（基于 PR #1 的固定 head，待导入合并） | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复：AI接口访问保护、模型型号集中配置、语音转写顺序/打断/断线、服务端挂断与用量记录、反馈原话校验、本地存储容错、离线测试 | Claude | in_progress | `claude/G0-01-voice-loop`（未推送） | — |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | queued | — | — |
 | ENV-001 | 在真实 dev server 上验证 G0-01；核实服务端环境变量注入方式（`.env.local` / `.dev.vars` / `cloudflare:workers`） | Codex | queued（等 G0-01 推送） | — | — |
@@ -77,5 +77,7 @@
 - 真实 AI 与真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪。
 
 ## 最近交接
+
+- handoffs/2026-10-23-SYNC-002-codex.md：独立读取 PR #1 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`，175 个远端 blob 复核，130 项原源码完全一致。此记录不代表 CI 或真实语音已通过。
 
 - handoffs/2026-10-23-SYNC-001-claude.md：原归档导入与共享规则合并（未合并到 `main`）。
