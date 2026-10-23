@@ -4,7 +4,7 @@
 export type FeedbackMessage = { role: 'user' | 'assistant'; text: string; source?: 'voice' | 'text'; edited?: boolean; status?: string };
 export type Correction = { original: string; better: string; reason: string };
 export type FeedbackGoal = { label: string; achieved: boolean; evidence: string; evidenceVerified?: boolean };
-export type FeedbackResult = { score: number; heading: string; summary: string; strengths: string[]; improvements: (Correction & { verified?: boolean })[]; goals: FeedbackGoal[]; nextPhrase: string; quality?: Record<string, unknown> };
+export type FeedbackResult = { score: number; heading: string; summary: string; strengths: string[]; improvements: (Correction & { verified?: boolean; fromVoice?: boolean })[]; goals: FeedbackGoal[]; nextPhrase: string; quality?: Record<string, unknown> };
 
 const PUNCT = /[\s　、。，．,.!！?？・…‥「」『』（）()\[\]【】〈〉《》“”"'’‘：:；;~〜－\-]/g;
 
@@ -104,7 +104,10 @@ export function verifyFeedback(raw: Partial<FeedbackResult>, messages: FeedbackM
     // A correction whose only reason was a pronunciation judgement is not a text-based correction.
     return { original: str(c?.original, 400), better: str(c?.better, 400), reason: r.text, pronunciationOnly: !!reason.trim() && !r.text };
   });
-  const kept = improvements.filter((c) => c.better && !c.pronunciationOnly && isQuotedFrom(c.original, learner)).slice(0, 3).map(({ pronunciationOnly: _p, ...c }) => ({ ...c, verified: true }));
+  // Lines the learner typed or corrected are reliable; an unedited voice line is an automatic
+  // transcript and may contain recognition errors, so a correction of it is marked for the UI.
+  const reliable = messages.filter((m) => m.role === 'user' && m.text?.trim() && (m.source !== 'voice' || m.edited)).map((m) => m.text);
+  const kept = improvements.filter((c) => c.better && !c.pronunciationOnly && isQuotedFrom(c.original, learner)).slice(0, 3).map(({ pronunciationOnly: _p, ...c }) => ({ ...c, verified: true, ...(isQuotedFrom(c.original, reliable) ? {} : { fromVoice: true }) }));
   const dropped = improvements.filter((c) => !c.pronunciationOnly && !kept.some((k) => k.original === c.original && k.better === c.better)).map((c) => c.original);
   const goals = (Array.isArray(raw.goals) ? raw.goals : []).slice(0, 6).map((g) => {
     const rawEvidence = str(g?.evidence, 400);

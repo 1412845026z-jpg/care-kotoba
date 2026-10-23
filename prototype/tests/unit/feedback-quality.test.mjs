@@ -127,3 +127,17 @@ test('deterministic gates agree with the EVAL-002 drafts (evals/source-confidenc
   }
   assert.equal(checkedQuotes, 6, 'quote gate applies to 6 of the 12 drafts; the other gates need a human or model judge');
 });
+
+test('corrections of unedited voice lines are marked fromVoice; typed or learner-corrected lines are not', () => {
+  const m = [
+    { role: 'user', text: 'お顔を拭いてもよろしいですか。', source: 'voice' },
+    { role: 'user', text: '熱くないですか。', source: 'voice', edited: true },
+    { role: 'user', text: '少しずつ拭きますね。', source: 'text' },
+  ];
+  const r = verifyFeedback({ improvements: [
+    { original: 'お顔を拭いてもよろしいですか。', better: 'a', reason: 'r' },
+    { original: '熱くないですか。', better: 'b', reason: 'r' },
+    { original: '少しずつ拭きますね。', better: 'c', reason: 'r' },
+  ] }, m);
+  assert.deepEqual(r.improvements.map((c) => [c.better, !!c.fromVoice]), [['a', true], ['b', false], ['c', false]]);
+});

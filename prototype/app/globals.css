@@ -58,3 +58,4 @@ html:not([data-app-ready]) body{cursor:progress}
 ruby{ruby-position:over}
 ruby rt{font-size:.5em;letter-spacing:0;font-weight:400;opacity:.85}
 .stage-caption ruby rt{font-size:.42em}
+.voice-transcript-note{margin-left:4px;font-weight:500}.correction-card .evidence-note{font-size:12px;color:#8f7aa3}
