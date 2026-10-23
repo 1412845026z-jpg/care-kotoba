@@ -1,0 +1,49 @@
+{
+  "reviewed_at": "2026-10-23T12:26:13.951Z",
+  "repository": "1412845026z-jpg/care-kotoba",
+  "pr": 1,
+  "reviewed_head": "7fff8d12e51c8c8f9bdd7193997f94fde6b6d193",
+  "reviewed_tree": "84a6665a7cda85a0ac55fc4a24c7aca84d760182",
+  "private": true,
+  "remote_blob_count": 175,
+  "source_count": 130,
+  "source_sha256_matches": 130,
+  "source_remote_blob_matches": 130,
+  "raw_import_commit": "77a0604f262cdbd801524094650448bffb870173",
+  "raw_import_archive_files_matched": 164,
+  "transport": "GitHub connector GET + object-id-verified archive blob reuse; exact signed HEAD restored locally",
+  "git_fetch_executed": false,
+  "checks": [
+    {
+      "command": "python3 -I tools/verify_archive.py",
+      "target": "archive snapshot (all 164 blobs matched remote raw-import tree)",
+      "exit_code": 0,
+      "seconds": 0.054536
+    },
+    {
+      "command": "python3 -I tools/verify_import.py",
+      "target": "7fff8d12e51c8c8f9bdd7193997f94fde6b6d193",
+      "exit_code": 0,
+      "seconds": 0.065047,
+      "git_blob_checked": true
+    },
+    {
+      "command": "python3 -I tools/verify_archive.py",
+      "target": "7fff8d12e51c8c8f9bdd7193997f94fde6b6d193",
+      "exit_code": 1,
+      "seconds": 0.049724,
+      "expected_errors": [
+        "Checksum mismatch: CLAUDE.md"
+      ]
+    }
+  ],
+  "not_verified": [
+    "dependency install",
+    "TypeScript",
+    "build",
+    "browser interaction",
+    "live API",
+    "device voice",
+    "commercial readiness"
+  ]
+}
