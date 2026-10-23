@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "care-kotoba-private-staging",
+  "account_id": "REPLACE_WITH_APPROVED_ACCOUNT_ID",
+  "main": "../../dist/server/index.js",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "no_bundle": true,
+  "rules": [{ "type": "ESModule", "globs": ["**/*.js", "**/*.mjs"] }],
+  "assets": { "directory": "../../dist/client" },
+  "workers_dev": false,
+  "preview_urls": false,
+  "upload_source_maps": false,
+  "observability": { "enabled": false },
+  "vars": { "CK_ACCESS_POLICY": "code" }
+}
