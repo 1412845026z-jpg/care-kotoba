@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本次状态核对的远端代码提交 | `main` = `eada73b5ddb8757d95d38123f269d32546e58465`（ENV-002证据PR #11已合并；G0/REUSE未合并） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（固定提交与实际CI日志） |
+| 本次状态核对的远端代码提交 | `main` = `37c0fc20bcffcadd8d1cb83d747a35d5b2154048`（CONTENT-002 PR #13已合并；G0/REUSE未合并） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（固定提交、实际日志与官方资料） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -54,18 +54,20 @@
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
-| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `8bc1848`，未合并 | CI-003标准runner：install/tsc/build/static通过、unit34/34、模拟离线20/20、真实dev19通过1明确跳过；未验证真实AI/真机 |
+| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `3a3f1a9`，未合并 | 已读fix2交接并运行新head真实install/tsc/build/static，unit34/34；新head标准runner复核进行中；旧8bc1848的20/20与19通过1跳过不外推 |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
 | ENV-001 | 真实dev与环境变量/Cookie/响应头/sendBeacon | Codex | blocked | 旧证据PR #7已合并；新复核见ENV-002 | 新G0非语音dev已通过，模拟WebRTC仍受本机环境限制；完整语音未验收 |
-| ENV-002 | 复核G0 fix1与REUSE、交接确认的业务问题 | Codex | merged | PR #11；合并 `eada73b` | handoffs/2026-10-23-ENV-002-codex.md；复核证据已入main，不代表语音验收 |
-| REUSE-001 | 固定文字注音与Realtime输入排队 | Claude | blocked | PR #9 @ `a43e7ed`，依赖PR #5 | docs/12_REVIEW_G0_AND_REUSE_2026-10-23.md：待确认response.created前排队与字典原型属性修复 |
+| ENV-002 | 复核G0 fix1与REUSE、交接确认的业务问题 | Codex | merged | PR #11；合并 `eada73b` | handoffs/2026-10-23-ENV-002-codex.md；复核证据已入main，不代表真实AI或真机验收 |
+| REUSE-001 | 固定文字注音与Realtime输入排队 | Claude | review_ready | PR #9 @ `5b6146f`，依赖PR #5 | 已读fix1交接；新head真实install/tsc/build/static通过，unit50/50；独立旧诊断0拒绝、请求有补发、保留名称无异常；浏览器复核进行中 |
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
 | OSS-001 | 公开前检查与Codex for OSS申请准备 | Codex | blocked | 准备材料PR #10已合并；申请暂停 | 当前REST private=false，已公开；本轮Codex未改设置，变更执行者未核实；许可证未定、表单未提交 |
 | CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
-| CI-003 | 标准runner固定head模拟语音复核 | Codex | blocked | PR #12，`codex/CI-003-runner` | handoffs/2026-10-24-CI-003-results-codex.md；G0全组通过；REUSE真实dev20通过1Cookie编码测试失败1跳过；新head待修复复测 |
+| ENV-003 | Claude fix2/fix1固定head真实构建与回归复核 | Codex | in_progress | PR #12工具分支与本轮handoff | handoffs/2026-10-24-ENV-003-start-codex.md；新head数据已逐blob/tree核对，不修改冻结文件 |
+| CI-003 | 标准runner固定head模拟语音复核 | Codex | in_progress | PR #12，`codex/CI-003-runner` | 旧head结果与Cookie编码测试问题已记录；更新为3a3f1a9/5b6146f复核。独立守卫脚本/工作流，无真实API |
+| CONTENT-002 | 34条术语草稿、12场景关联与资料来源复核 | Codex | merged | PR #13；合并 `37c0fc2` | handoffs/2026-10-24-CONTENT-002-codex.md；CI39980854437通过，尚未专业审稿或接入应用 |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
 
@@ -89,7 +91,8 @@
 
 ## 最近交接
 
-- handoffs/2026-10-24-CI-003-results-codex.md：固定head标准runner结果；本机ICE阻塞已补充独立模拟语音证据，REUSE的Cookie断言需修复。
+- handoffs/2026-10-24-CONTENT-002-codex.md：34条术语、12场景关联；教材PDF第三方权利状态保留未确认，未复制定义或图像。
+- PR #12 / CI-003：已运行标准runner；Cookie末尾字符变更可能保留相同签名字节，需Claude修测试，不能描述为已证实未授权访问。
 
 - handoffs/2026-10-23-ENV-002-codex.md：新G0/REUSE真实复测结果、两项业务缺陷与测试清理建议；公开/申请暂停。
 
@@ -105,4 +108,5 @@
 
 - handoffs/2026-10-23-SYNC-001-claude.md：原归档导入与共享规则合并；已由 PR #1 以 merge commit 合并 `4118ed1`，原样导入 `77a0604` 保留。
 - handoffs/2026-10-23-CI-001-results-codex.md：main CI 真实结果、耗时与完整日志入口。
+
 

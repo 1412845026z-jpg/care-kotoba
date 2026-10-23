@@ -28,9 +28,9 @@ jobs:
       matrix:
         include:
           - label: G0-01
-            sha: 8bc18481865c2259e084a59a1f5e419e18ed1035
+            sha: 3a3f1a917dd9dd12988ecbcf9dcaef87db2428c8
           - label: REUSE-001
-            sha: a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207
+            sha: 5b6146fbc49e754e6d4235d9e356ddd15a822ad4
     env:
       CI: "true"
       WRANGLER_SEND_METRICS: "false"
