@@ -1,0 +1,402 @@
+{
+  "task": "ENV-003",
+  "date_jst": "2026-10-24",
+  "node": "v24.19.0",
+  "mock_only": true,
+  "materialization": [
+    {
+      "label": "g0",
+      "source_sha": "3a3f1a917dd9dd12988ecbcf9dcaef87db2428c8",
+      "tree": "b80aea3f294c12ffe6761d948c3cd98f8857ab39",
+      "blobs_verified": 275,
+      "git_fetch_executed": false,
+      "local_git_head": "unborn; source pinned by remote tree and verified index"
+    },
+    {
+      "label": "reuse",
+      "source_sha": "5b6146fbc49e754e6d4235d9e356ddd15a822ad4",
+      "tree": "7ed698f8752713dc394e786d8c59995e7b25edbe",
+      "blobs_verified": 297,
+      "git_fetch_executed": false,
+      "local_git_head": "unborn; source pinned by remote tree and verified index"
+    }
+  ],
+  "checks": {
+    "g0": [
+      {
+        "step": "install",
+        "command": [
+          "pnpm",
+          "install",
+          "--frozen-lockfile"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/g0/prototype",
+        "exit": 0,
+        "seconds": 7.867
+      },
+      {
+        "step": "tsc",
+        "command": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/g0/prototype",
+        "exit": 0,
+        "seconds": 7.878
+      },
+      {
+        "step": "build",
+        "command": [
+          "pnpm",
+          "build"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/g0/prototype",
+        "exit": 0,
+        "seconds": 7.371
+      },
+      {
+        "step": "secret_scan",
+        "command": [
+          "python3",
+          "scripts/ci/scan_secrets.py"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/g0",
+        "exit": 0,
+        "seconds": 0.165
+      },
+      {
+        "step": "eval_data",
+        "command": [
+          "python3",
+          "evals/validate.py"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/g0",
+        "exit": 0,
+        "seconds": 0.032
+      },
+      {
+        "step": "static",
+        "command": [
+          "node",
+          "tests/run.mjs",
+          "static",
+          "--report",
+          "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/results/g0/static.json"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/g0/prototype",
+        "exit": 0,
+        "seconds": 1.987
+      },
+      {
+        "step": "unit",
+        "command": [
+          "node",
+          "tests/run.mjs",
+          "unit",
+          "--report",
+          "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/results/g0/unit.json"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/g0/prototype",
+        "exit": 0,
+        "seconds": 0.768
+      }
+    ],
+    "reuse": [
+      {
+        "step": "install",
+        "command": [
+          "pnpm",
+          "install",
+          "--frozen-lockfile"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse/prototype",
+        "exit": 0,
+        "seconds": 7.882
+      },
+      {
+        "step": "tsc",
+        "command": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse/prototype",
+        "exit": 0,
+        "seconds": 7.748
+      },
+      {
+        "step": "build",
+        "command": [
+          "pnpm",
+          "build"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse/prototype",
+        "exit": 0,
+        "seconds": 7.367
+      },
+      {
+        "step": "secret_scan",
+        "command": [
+          "python3",
+          "scripts/ci/scan_secrets.py"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse",
+        "exit": 0,
+        "seconds": 0.114
+      },
+      {
+        "step": "eval_data",
+        "command": [
+          "python3",
+          "evals/validate.py"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse",
+        "exit": 0,
+        "seconds": 0.064
+      },
+      {
+        "step": "static",
+        "command": [
+          "node",
+          "tests/run.mjs",
+          "static",
+          "--report",
+          "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/results/reuse/static.json"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse/prototype",
+        "exit": 0,
+        "seconds": 2.025
+      },
+      {
+        "step": "unit",
+        "command": [
+          "node",
+          "tests/run.mjs",
+          "unit",
+          "--report",
+          "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/results/reuse/unit.json"
+        ],
+        "cwd": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse/prototype",
+        "exit": 0,
+        "seconds": 0.97
+      }
+    ]
+  },
+  "edge_diagnostic": {
+    "queue": {
+      "mock_only": true,
+      "learner_messages": 2,
+      "create_events": 2,
+      "accepted_responses": 2,
+      "rejected_creates": 0,
+      "learner_messages_visible_to_first_response": 1,
+      "followup_requested_after_done": true
+    },
+    "ruby": [
+      {
+        "text": "unknown fixed text",
+        "returned_null": true,
+        "error": null
+      },
+      {
+        "text": "constructor",
+        "returned_null": true,
+        "error": null
+      },
+      {
+        "text": "toString",
+        "returned_null": true,
+        "error": null
+      },
+      {
+        "text": "__proto__",
+        "returned_null": true,
+        "error": null
+      }
+    ]
+  },
+  "local_browser": {
+    "g0_cleanup": {
+      "result": {
+        "mode": "real-dev",
+        "mock_only": true,
+        "filter": "setup closes already started servers|a process whose setup fails",
+        "port": 5181,
+        "mock_port": 4021,
+        "source": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/g0",
+        "startup_seconds": 5.145,
+        "command": [
+          "node",
+          "tests/run.mjs",
+          "e2e",
+          "--report",
+          "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/results/g0/setup-cleanup/tests.json",
+          "--filter",
+          "setup closes already started servers|a process whose setup fails"
+        ],
+        "exit_code": 0,
+        "network_guard": {
+          "blockedExternal": 0,
+          "mockBaseConfigured": true,
+          "policy": "code"
+        },
+        "worker_restored": true,
+        "fake_env_removed": true,
+        "seconds": 6.598
+      },
+      "tests": {
+        "ranAt": "2026-10-23T15:50:33.834Z",
+        "node": "v24.19.0",
+        "mode": "e2e",
+        "results": [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "seconds": 1.3,
+            "pass": 2,
+            "fail": 0,
+            "failures": []
+          }
+        ]
+      }
+    },
+    "reuse_note": {
+      "result": {
+        "mode": "real-dev",
+        "mock_only": true,
+        "filter": "notes whose text",
+        "port": 5182,
+        "mock_port": 4022,
+        "source": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse",
+        "startup_seconds": 5.614,
+        "command": [
+          "node",
+          "tests/run.mjs",
+          "e2e",
+          "--report",
+          "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/results/reuse/notebook-final/tests.json",
+          "--filter",
+          "notes whose text"
+        ],
+        "exit_code": 0,
+        "network_guard": {
+          "blockedExternal": 0,
+          "mockBaseConfigured": true,
+          "policy": "code"
+        },
+        "worker_restored": true,
+        "fake_env_removed": true,
+        "seconds": 11.888
+      },
+      "tests": {
+        "ranAt": "2026-10-23T15:53:53.651Z",
+        "node": "v24.19.0",
+        "mode": "e2e",
+        "results": [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "seconds": 6.1,
+            "pass": 1,
+            "fail": 0,
+            "failures": []
+          }
+        ]
+      }
+    },
+    "wrong_filter": {
+      "result": {
+        "mode": "real-dev",
+        "mock_only": true,
+        "filter": "notebook keeps Object",
+        "port": 5182,
+        "mock_port": 4022,
+        "source": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse",
+        "startup_seconds": 4.956,
+        "command": [
+          "node",
+          "tests/run.mjs",
+          "e2e",
+          "--report",
+          "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/results/reuse/notebook-smoke/tests.json",
+          "--filter",
+          "notebook keeps Object"
+        ],
+        "exit_code": 1,
+        "network_guard": {
+          "blockedExternal": 0,
+          "mockBaseConfigured": true,
+          "policy": "code"
+        },
+        "worker_restored": true,
+        "fake_env_removed": true,
+        "seconds": 5.102
+      },
+      "tests": {
+        "ranAt": "2026-10-23T15:49:41.811Z",
+        "node": "v24.19.0",
+        "mode": "e2e",
+        "results": [
+          {
+            "name": "e2e",
+            "exitCode": 1,
+            "pass": 0,
+            "fail": 0,
+            "note": "no e2e file mentions --filter notebook keeps Object"
+          }
+        ]
+      }
+    },
+    "refused_existing_env": {
+      "result": {
+        "mode": "real-dev",
+        "mock_only": true,
+        "filter": "notes whose text",
+        "port": 5182,
+        "mock_port": 4022,
+        "source": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse",
+        "exit_code": 2,
+        "error": "Refusing an existing local environment file",
+        "seconds": 0
+      }
+    },
+    "stale_lock": {
+      "result": {
+        "mode": "real-dev",
+        "mock_only": true,
+        "filter": "notes whose text",
+        "port": 5182,
+        "mock_port": 4022,
+        "source": "/workspace/scratch/b3fd2a7262f5/care-kotoba-review-20261024/reuse",
+        "exit_code": 2,
+        "error": "Dev server exited before readiness",
+        "worker_restored": true,
+        "fake_env_removed": true,
+        "seconds": 1.024
+      }
+    }
+  },
+  "cleanup": [
+    {
+      "label": "g0",
+      "dev_port_unused": true,
+      "known_fake_env_was_present_on_later_workspace_read": false,
+      "fake_env_absent": true,
+      "own_stale_lock_was_present": true,
+      "own_stale_lock_absent": true,
+      "worker_matches_remote_blob": true,
+      "tracked_diff_exit": 0
+    },
+    {
+      "label": "reuse",
+      "dev_port_unused": true,
+      "known_fake_env_was_present_on_later_workspace_read": true,
+      "fake_env_absent": true,
+      "own_stale_lock_was_present": true,
+      "own_stale_lock_absent": true,
+      "worker_matches_remote_blob": true,
+      "tracked_diff_exit": 0
+    }
+  ]
+}

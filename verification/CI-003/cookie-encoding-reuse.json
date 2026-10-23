@@ -1,0 +1,11 @@
+{
+  "fixtureCounter": 14,
+  "originalLastCharacter": "A",
+  "aliasLastCharacter": "B",
+  "signatureBytesEqual": true,
+  "originalAccepted": true,
+  "aliasAccepted": true,
+  "sameVerifiedPayload": true,
+  "changedSignatureBytesRejected": true,
+  "interpretation": "The existing test can alter unused base64 pad bits without changing HMAC bytes. This needs a valid signed token; this diagnostic does not show unauthenticated access or a forged payload."
+}

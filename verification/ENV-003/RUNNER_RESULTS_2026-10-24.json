@@ -1,0 +1,219 @@
+{
+  "task": "ENV-003",
+  "date_jst": "2026-10-24",
+  "workflow_head": "ccbaa3a8b199a74ab5e86fea890750cd5342665c",
+  "run_id": 39982127800,
+  "overall": "success",
+  "mock_only": true,
+  "real_api_tested": false,
+  "device_tested": false,
+  "known_unresolved": [
+    "COOKIE-ENCODING-001: same signature bytes can have a noncanonical text alias; existing last-character mutation test is nondeterministic and has not been changed by these source heads."
+  ],
+  "results": {
+    "g0": {
+      "source_sha": "3a3f1a917dd9dd12988ecbcf9dcaef87db2428c8",
+      "job_id": 120511831687,
+      "conclusion": "success",
+      "steps": [
+        {
+          "command": "pnpm install --frozen-lockfile",
+          "exit": 0,
+          "seconds": 9.035
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit",
+          "exit": 0,
+          "seconds": 4.946
+        },
+        {
+          "command": "pnpm build",
+          "exit": 0,
+          "seconds": 4.944
+        }
+      ],
+      "summaries": [
+        [
+          {
+            "name": "static",
+            "exitCode": 0,
+            "seconds": 1.3
+          }
+        ],
+        [
+          {
+            "name": "unit",
+            "exitCode": 0,
+            "pass": 34,
+            "fail": 0,
+            "seconds": 0.3
+          }
+        ],
+        [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "pass": 22,
+            "fail": 0,
+            "seconds": 24.5
+          }
+        ],
+        [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "pass": 21,
+            "fail": 0,
+            "seconds": 30.3
+          }
+        ]
+      ],
+      "runs": [
+        {
+          "mode": "offline",
+          "mock_only": true,
+          "filter": null,
+          "port": 5173,
+          "mock_port": 4010,
+          "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+          "command": [
+            "node",
+            "tests/run.mjs",
+            "e2e",
+            "--report",
+            "/home/runner/work/care-kotoba/care-kotoba/review-results/offline/tests.json"
+          ],
+          "exit_code": 0,
+          "seconds": 24.6
+        },
+        {
+          "mode": "real-dev",
+          "mock_only": true,
+          "filter": null,
+          "port": 5173,
+          "mock_port": 4010,
+          "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+          "startup_seconds": 3.41,
+          "command": [
+            "node",
+            "tests/run.mjs",
+            "e2e",
+            "--report",
+            "/home/runner/work/care-kotoba/care-kotoba/review-results/real-dev/tests.json"
+          ],
+          "exit_code": 0,
+          "network_guard": {
+            "blockedExternal": 0,
+            "mockBaseConfigured": true,
+            "policy": "code"
+          },
+          "worker_restored": true,
+          "fake_env_removed": true,
+          "seconds": 33.836
+        }
+      ]
+    },
+    "reuse": {
+      "source_sha": "5b6146fbc49e754e6d4235d9e356ddd15a822ad4",
+      "job_id": 120511831433,
+      "conclusion": "success",
+      "steps": [
+        {
+          "command": "pnpm install --frozen-lockfile",
+          "exit": 0,
+          "seconds": 11.545
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit",
+          "exit": 0,
+          "seconds": 7.944
+        },
+        {
+          "command": "pnpm build",
+          "exit": 0,
+          "seconds": 8.105
+        }
+      ],
+      "summaries": [
+        [
+          {
+            "name": "static",
+            "exitCode": 0,
+            "seconds": 1.9
+          }
+        ],
+        [
+          {
+            "name": "unit",
+            "exitCode": 0,
+            "pass": 50,
+            "fail": 0,
+            "seconds": 0.5
+          }
+        ],
+        [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "pass": 25,
+            "fail": 0,
+            "seconds": 36
+          }
+        ],
+        [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "pass": 24,
+            "fail": 0,
+            "seconds": 52.2
+          }
+        ]
+      ],
+      "runs": [
+        {
+          "mode": "offline",
+          "mock_only": true,
+          "filter": null,
+          "port": 5173,
+          "mock_port": 4010,
+          "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+          "command": [
+            "node",
+            "tests/run.mjs",
+            "e2e",
+            "--report",
+            "/home/runner/work/care-kotoba/care-kotoba/review-results/offline/tests.json"
+          ],
+          "exit_code": 0,
+          "seconds": 36.081
+        },
+        {
+          "mode": "real-dev",
+          "mock_only": true,
+          "filter": null,
+          "port": 5173,
+          "mock_port": 4010,
+          "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+          "startup_seconds": 5.785,
+          "command": [
+            "node",
+            "tests/run.mjs",
+            "e2e",
+            "--report",
+            "/home/runner/work/care-kotoba/care-kotoba/review-results/real-dev/tests.json"
+          ],
+          "exit_code": 0,
+          "network_guard": {
+            "blockedExternal": 0,
+            "mockBaseConfigured": true,
+            "policy": "code"
+          },
+          "worker_restored": true,
+          "fake_env_removed": true,
+          "seconds": 58.074
+        }
+      ]
+    }
+  }
+}
