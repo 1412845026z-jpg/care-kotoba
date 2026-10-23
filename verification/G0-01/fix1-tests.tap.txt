@@ -1,0 +1,374 @@
+{
+  "syntax": "146/146 files parse",
+  "types": "20 server/pure modules type-checked, 0 errors",
+  "components": "6 components checked against a loose React shim, 0 errors",
+  "json": "7/7 JSON files valid",
+  "secrets": "no credential-like strings",
+  "models": [
+    "lib/models.ts:27 gpt-4o-mini-tts",
+    "lib/models.ts:28 tts-1",
+    "lib/models.ts:29 gpt-4.1-mini",
+    "lib/models.ts:30 gpt-realtime-mini",
+    "lib/models.ts:31 gpt-4o-mini-transcribe"
+  ]
+}
+TAP version 13
+# Subtest: policy defaults: code when a code is set, otherwise local; short codes are ignored
+ok 1 - policy defaults: code when a code is set, otherwise local; short codes are ignored
+  ---
+  duration_ms: 1.902708
+  type: 'test'
+  ...
+# Subtest: local policy only admits localhost hosts
+ok 2 - local policy only admits localhost hosts
+  ---
+  duration_ms: 30.712527
+  type: 'test'
+  ...
+# Subtest: code policy: cookie from a correct code works, tampering and rotation invalidate it
+ok 3 - code policy: cookie from a correct code works, tampering and rotation invalidate it
+  ---
+  duration_ms: 14.773321
+  type: 'test'
+  ...
+# Subtest: expired cookie is refused
+ok 4 - expired cookie is refused
+  ---
+  duration_ms: 3.012869
+  type: 'test'
+  ...
+# Subtest: code guessing is rate limited per client
+ok 5 - code guessing is rate limited per client
+  ---
+  duration_ms: 5.224922
+  type: 'test'
+  ...
+# Subtest: correct codes are not throttled, so testers are never locked out by successful logins
+ok 6 - correct codes are not throttled, so testers are never locked out by successful logins
+  ---
+  duration_ms: 13.313896
+  type: 'test'
+  ...
+# Subtest: signed tokens are bound to secret and purpose
+ok 7 - signed tokens are bound to secret and purpose
+  ---
+  duration_ms: 6.270678
+  type: 'test'
+  ...
+# Subtest: rate limiter window
+ok 8 - rate limiter window
+  ---
+  duration_ms: 0.542121
+  type: 'test'
+  ...
+# Subtest: normalisation ignores punctuation, spaces and full/half width
+ok 9 - normalisation ignores punctuation, spaces and full/half width
+  ---
+  duration_ms: 1.35806
+  type: 'test'
+  ...
+# Subtest: quotes must come from the learner
+ok 10 - quotes must come from the learner
+  ---
+  duration_ms: 2.186584
+  type: 'test'
+  ...
+# Subtest: verifyFeedback drops unquoted improvements and flags unverifiable goal evidence
+ok 11 - verifyFeedback drops unquoted improvements and flags unverifiable goal evidence
+  ---
+  duration_ms: 2.175104
+  type: 'test'
+  ...
+# Subtest: verifyFeedback tolerates a malformed model result
+ok 12 - verifyFeedback tolerates a malformed model result
+  ---
+  duration_ms: 0.259279
+  type: 'test'
+  ...
+# Subtest: chat correction is kept only when it quotes the last learner line
+ok 13 - chat correction is kept only when it quotes the last learner line
+  ---
+  duration_ms: 0.266366
+  type: 'test'
+  ...
+# Subtest: quoted segments are read from 「」 and quotes
+ok 14 - quoted segments are read from 「」 and quotes
+  ---
+  duration_ms: 0.173906
+  type: 'test'
+  ...
+# Subtest: model overrides are validated; defaults reproduce the archived prototype
+ok 15 - model overrides are validated; defaults reproduce the archived prototype
+  ---
+  duration_ms: 2.174058
+  type: 'test'
+  ...
+# Subtest: lifecycle warnings cover every default model with days left
+ok 16 - lifecycle warnings cover every default model with days left
+  ---
+  duration_ms: 0.462517
+  type: 'test'
+  ...
+# Subtest: usage accounting separates cached tokens and estimates cost
+ok 17 - usage accounting separates cached tokens and estimates cost
+  ---
+  duration_ms: 0.595475
+  type: 'test'
+  ...
+# Subtest: voice metrics: reply latency, barge-ins, usage and failures
+ok 18 - voice metrics: reply latency, barge-ins, usage and failures
+  ---
+  duration_ms: 1.466854
+  type: 'test'
+  ...
+# Subtest: late input transcription keeps conversation order and creates no duplicates
+ok 19 - late input transcription keeps conversation order and creates no duplicates
+  ---
+  duration_ms: 2.478216
+  type: 'test'
+  ...
+# Subtest: a reply whose added event arrives after its first delta is moved behind the learner turn
+ok 20 - a reply whose added event arrives after its first delta is moved behind the learner turn
+  ---
+  duration_ms: 2.077653
+  type: 'test'
+  ...
+# Subtest: pending learner turn is visible as pending and counted until transcribed
+ok 21 - pending learner turn is visible as pending and counted until transcribed
+  ---
+  duration_ms: 0.430329
+  type: 'test'
+  ...
+# Subtest: interruption: truncated item and cancelled response mark the reply interrupted, later done does not undo it
+ok 22 - interruption: truncated item and cancelled response mark the reply interrupted, later done does not undo it
+  ---
+  duration_ms: 0.339769
+  type: 'test'
+  ...
+# Subtest: failed and empty transcriptions are kept distinguishable
+ok 23 - failed and empty transcriptions are kept distinguishable
+  ---
+  duration_ms: 0.387755
+  type: 'test'
+  ...
+# Subtest: resumed session: seeds stay first and the new session starts after them
+ok 24 - resumed session: seeds stay first and the new session starts after them
+  ---
+  duration_ms: 0.489742
+  type: 'test'
+  ...
+# Subtest: typed text during a voice session merges with the server echo of the same item id
+ok 25 - typed text during a voice session merges with the server echo of the same item id
+  ---
+  duration_ms: 0.38939
+  type: 'test'
+  ...
+# Subtest: a learner correction is not overwritten by a later transcription event
+ok 26 - a learner correction is not overwritten by a later transcription event
+  ---
+  duration_ms: 0.264187
+  type: 'test'
+  ...
+# Subtest: unknown and non-message events leave the state untouched
+ok 27 - unknown and non-message events leave the state untouched
+  ---
+  duration_ms: 0.550806
+  type: 'test'
+  ...
+# Subtest: storage sanitisers turn garbage into safe defaults
+ok 28 - storage sanitisers turn garbage into safe defaults
+  ---
+  duration_ms: 2.319632
+  type: 'test'
+  ...
+# Subtest: history keeps valid records (even for unknown scenes) and clamps numbers
+ok 29 - history keeps valid records (even for unknown scenes) and clamps numbers
+  ---
+  duration_ms: 0.464378
+  type: 'test'
+  ...
+# Subtest: prefs only accept known values
+ok 30 - prefs only accept known values
+  ---
+  duration_ms: 0.25727
+  type: 'test'
+  ...
+# Subtest: 48 scenes with unique ids, each with a defined conversation partner
+ok 31 - 48 scenes with unique ids, each with a defined conversation partner
+  ---
+  duration_ms: 1.517018
+  type: 'test'
+  ...
+# Subtest: staff-to-staff scenes are played by staff and get team-communication goals
+ok 32 - staff-to-staff scenes are played by staff and get team-communication goals
+  ---
+  duration_ms: 0.343628
+  type: 'test'
+  ...
+# Subtest: AI instructions use the scene partner, not the category default
+ok 33 - AI instructions use the scene partner, not the category default
+  ---
+  duration_ms: 0.359232
+  type: 'test'
+  ...
+# Subtest: resume history is embedded as untrusted transcript and unknown locales fall back
+ok 34 - resume history is embedded as untrusted transcript and unknown locales fall back
+  ---
+  duration_ms: 0.49265
+  type: 'test'
+  ...
+1..34
+# tests 34
+# suites 0
+# pass 34
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 441.107365
+TAP version 13
+# Subtest: AI routes refuse requests without access (no Origin header, like curl)
+ok 1 - AI routes refuse requests without access (no Origin header, like curl)
+  ---
+  duration_ms: 311.2671
+  type: 'test'
+  ...
+# Subtest: a wrong access code is rejected and the right one grants an HttpOnly cookie
+ok 2 - a wrong access code is rejected and the right one grants an HttpOnly cookie
+  ---
+  duration_ms: 26.846481
+  type: 'test'
+  ...
+# Subtest: without an access code, AI routes only answer on localhost
+ok 3 - without an access code, AI routes only answer on localhost
+  ---
+  duration_ms: 13.130712
+  type: 'test'
+  ...
+# Subtest: the learner is asked for the access code before an AI practice, and the demo needs none
+ok 4 - the learner is asked for the access code before an AI practice, and the demo needs none
+  ---
+  duration_ms: 2612.057425
+  type: 'test'
+  ...
+# Subtest: home renders at 390px without horizontal overflow or page errors
+ok 5 - home renders at 390px without horizontal overflow or page errors
+  ---
+  duration_ms: 935.413716
+  type: 'test'
+  ...
+# Subtest: scripted demo can be completed and is labelled as not AI-evaluated
+ok 6 - scripted demo can be completed and is labelled as not AI-evaluated
+  ---
+  duration_ms: 3334.167312
+  type: 'test'
+  ...
+# Subtest: text practice uses the mock AI and shows feedback
+ok 7 - text practice uses the mock AI and shows feedback
+  ---
+  duration_ms: 1412.547494
+  type: 'test'
+  ...
+# {"evt":"feedback_unquoted_dropped","scene":"bath-5","count":1}
+# Subtest: feedback never shows a quote the learner did not say
+ok 8 - feedback never shows a quote the learner did not say
+  ---
+  duration_ms: 1496.595248
+  type: 'test'
+  ...
+# Subtest: corrupted or outdated localStorage does not break the app
+ok 9 - corrupted or outdated localStorage does not break the app
+  ---
+  duration_ms: 1669.658669
+  type: 'test'
+  ...
+# Subtest: staff-to-staff scenes are not role-played as the resident
+ok 10 - staff-to-staff scenes are not role-played as the resident
+  ---
+  duration_ms: 920.840151
+  type: 'test'
+  ...
+# Subtest: health endpoint answers and reports configuration without secrets
+ok 11 - health endpoint answers and reports configuration without secrets
+  ---
+  duration_ms: 8.30053
+  type: 'test'
+  ...
+# Subtest: responsive layout: desktop width also renders without errors
+ok 12 - responsive layout: desktop width also renders without errors
+  ---
+  duration_ms: 768.905083
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"IKiUT-xTtwMS","callId":"rtc_sim1_szj7yf90","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: a late input transcription is shown before the reply it triggered, with no duplicates
+ok 13 - voice: a late input transcription is shown before the reply it triggered, with no duplicates
+  ---
+  duration_ms: 5128.646757
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"6Z_TJpJV4J0X","callId":"rtc_sim2_ng0vmgms","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"6Z_TJpJV4J0X","callId":"rtc_sim2_ng0vmgms","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":3.3,"responses":1,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":null,"latencyP95":null,"estimatedCostUsd":0.004801,"errors":0,"tokens":{"textIn":300,"textCached":600,"audioIn":120,"audioCached":0,"textOut":30,"audioOut":160}}}
+# Subtest: voice: finishing a session asks the server to hang up the Realtime call
+ok 14 - voice: finishing a session asks the server to hang up the Realtime call
+  ---
+  duration_ms: 4647.370354
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"4Wo1GDjjqNrW","callId":"rtc_sim3_ailzgaty","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"4Wo1GDjjqNrW","callId":"rtc_sim3_ailzgaty","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":3.2,"responses":2,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":4,"latencyP95":4,"estimatedCostUsd":0.009489,"errors":0,"tokens":{"textIn":600,"textCached":1200,"audioIn":240,"audioCached":0,"textOut":60,"audioOut":320}}}
+# Subtest: voice: the voice transcript reaches feedback in conversation order
+ok 15 - voice: the voice transcript reaches feedback in conversation order
+  ---
+  duration_ms: 4587.126748
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"mEzID2Y2JiTw","callId":"rtc_sim4_fxrpm9d4","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: an interrupted reply is marked as interrupted
+ok 16 - voice: an interrupted reply is marked as interrupted
+  ---
+  duration_ms: 4845.115669
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"09vmy_U6lpbZ","callId":"rtc_sim5_uecw15n2","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: a failed transcription is shown as not recognised instead of disappearing
+ok 17 - voice: a failed transcription is shown as not recognised instead of disappearing
+  ---
+  duration_ms: 4614.451023
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"2AZC_a_7S6ob","callId":"rtc_sim6_fz8dsxj2","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"2AZC_a_7S6ob","callId":"rtc_sim6_fz8dsxj2","scene":"daily-2","reason":"remote_closed","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":3.2,"responses":1,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":null,"latencyP95":null,"estimatedCostUsd":0.004801,"errors":0,"tokens":{"textIn":300,"textCached":600,"audioIn":120,"audioCached":0,"textOut":30,"audioOut":160}}}
+# {"evt":"voice_session_start","sid":"uJXPEn4zSSH7","callId":"rtc_sim7_bok5jfvi","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":true,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: losing the connection is reported and the session can be resumed with its transcript
+ok 18 - voice: losing the connection is reported and the session can be resumed with its transcript
+  ---
+  duration_ms: 8138.749681
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"yH6H9EYUQykY","callId":"rtc_sim8_yq0nr44b","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: connects under React StrictMode (development double effects)
+ok 19 - voice: connects under React StrictMode (development double effects)
+  ---
+  duration_ms: 5215.565049
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"qW5qC-NvC9KP","callId":"rtc_sim9_b5sx3zei","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"qW5qC-NvC9KP","callId":"rtc_sim9_b5sx3zei","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":1,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":3.8,"responses":2,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":435,"latencyP95":435,"estimatedCostUsd":0.009489,"errors":0,"tokens":{"textIn":600,"textCached":1200,"audioIn":240,"audioCached":0,"textOut":60,"audioOut":320}}}
+# Subtest: voice: diagnostics can be exported after a session
+ok 20 - voice: diagnostics can be exported after a session
+  ---
+  duration_ms: 6761.979631
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 59256.485591
+
+SUMMARY [{"name":"static","exitCode":0,"seconds":4.6},{"name":"unit","exitCode":0,"pass":34,"fail":0,"seconds":0.5},{"name":"e2e","exitCode":0,"pass":20,"fail":0,"seconds":59.3}]

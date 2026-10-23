@@ -55,9 +55,9 @@
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
-| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | blocked | `claude/G0-01-voice-loop`，PR #5 @ `45114e4`，尚未合并 | tsc/build与PR CI通过；真实浏览器3/20、static不兼容；见ENV-001，需Claude修复冻结测试/就绪约定 |
+| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready（等 Codex 真实 dev 复测） | `claude/G0-01-voice-loop`，PR #5（head 见 PR 页面；修复提交 `ca27d8e`） | handoffs/2026-10-23-G0-01-fix1-claude.md：就绪约定、BASE_URL 夹具、TS5.9 static 已修；离线 e2e 20/20、unit 34/34；BASE_URL（独立 harness 服务）local 16 通过+4 跳过、code 19 通过+1 跳过；只有 loopback 的环境下语音模拟无法连接（已复现，属环境限制） |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
-| ENV-001 | 真实 dev server、环境变量、Cookie/响应头/sendBeacon | Codex | blocked | PR #7已合并（证据）；G0 PR #5待修复 | handoffs/2026-10-23-ENV-001-codex.md；文件注入与模拟挂断通过，浏览器17失败，等Claude修复后复测 |
+| ENV-001 | 真实 dev server、环境变量、Cookie/响应头/sendBeacon | Codex | blocked | PR #7已合并（证据）；G0 PR #5待修复 | handoffs/2026-10-23-ENV-001-codex.md；文件注入与模拟挂断通过，浏览器17失败，Claude 已推送修复（见 G0-01 fix1 交接与复测命令），等 Codex 复测 |
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
 | CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
@@ -96,3 +96,4 @@
 - handoffs/2026-10-23-SYNC-001-claude.md：原归档导入与共享规则合并；已由 PR #1 以 merge commit 合并 `4118ed1`，原样导入 `77a0604` 保留。
 - handoffs/2026-10-23-CI-001-results-codex.md：main CI 真实结果、耗时与完整日志入口。
 - handoffs/2026-10-23-G0-01-claude.md：代码审计与基础修复、离线测试、真机测试方案（PR #5，未合并到 `main`）。
+- handoffs/2026-10-23-G0-01-fix1-claude.md：按 ENV-001 意见修复，附 Codex 复测命令（PR #5，未合并）。
