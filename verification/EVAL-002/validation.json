@@ -1,0 +1,14 @@
+{
+  "samples": 12,
+  "paired_contexts": 6,
+  "acceptable": 6,
+  "unacceptable": 6,
+  "uncertain_transcripts": 2,
+  "errors": [],
+  "model_calls": 0,
+  "professional_reviewed": false,
+  "command": "python3 evals/source-confidence/validate.py",
+  "exit_code": 0,
+  "seconds": 0.037154,
+  "data_sha256": "0ed5dda903dbf3ccea162f69fe76ada855a5209c619545a7e33994d6248812e7"
+}

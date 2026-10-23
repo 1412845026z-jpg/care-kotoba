@@ -162,3 +162,14 @@ pnpm exec wrangler rollback VERSION_ID --config config/staging/wrangler.local.js
 ```
 
 部署完成、Access 保护、平台 secret、真实 AI、真机语音是不同验收项。本文件目前只完成方案和本地记录。
+
+
+## 2026-10-24：固定修复提交的运行补充（ENV-003）
+
+标准GitHub ubuntu runner、Node22.23.3、官方Chromium，对未合并的G0 `3a3f1a9`与REUSE `5b6146f`运行了真实Vinext dev和模拟上游：G0 21通过0失败1跳过，REUSE24通过0失败1跳过。离线harness分别22/22与25/25；它们是两种不同的运行层，不能混为真实AI或真机验收。完整结果见 `handoffs/2026-10-24-ENV-003-results-codex.md`、`verification/ENV-003/` 和 [run39982127800](https://github.com/1412845026z-jpg/care-kotoba/actions/runs/39982127800)。
+
+两版本均用仅含假值的 `.dev.vars`，Worker配置探针确认mock地址与code策略生效，非loopback fetch守卫计数0。该补充没有重新运行ENV-001的全部环境变量优先级矩阵，也没有配置平台secret或部署。旧优先级矩阵应按它自己的被测提交与结果读取。
+
+本地重复启动时实际遇到 `.vinext/dev/lock.json` 遗留：错误中的PID来自另一个执行命名空间，不能把它直接当成当前会话的目标PID。先确认是自己这次测试创建的工作目录、对应端口没有服务、上次任务已结束，再删除那个遗留锁；不要结束未知进程。ENV-003本轮按此确认后重新启动，笔记保留名称的真实dev回归1/1、setup失败清理2/2通过。
+
+本轮还保留了Cookie编码测试的不稳定性诊断：旧断言的最后字符变化可能不改变签名字节；一次全绿不证明问题已消失。修正测试和规范编码行为仍由Claude在其代码/测试分支处理，见CI-003交接。新的私有staging依然只是方案，未执行部署。

@@ -7,6 +7,7 @@
 | `baseline-tests.tap.txt` / `.json` / `.static.json` | 同一组测试在**未修改的归档源码**上运行：静态检查通过；浏览器测试 5 项通过、15 项失败 | 归档源码 + 测试环境（提交 `56611fb`） |
 | `after-tests.tap.txt` / `.json` / `.static.json` | 修复后：静态检查 0 错误（145 个文件可解析；20 个服务端 / 纯逻辑模块通过严格类型检查；6 个组件对照宽松 React 桩检查）；单元测试 33/33；浏览器测试 20/20 | 推送的 G0-01 分支 HEAD（见交接记录） |
 | `fix2-tests.json` / `.static.json` | 2026-10-24 setup 清理修复后（ENV-002 第 4 项）：静态检查 0 错误；单元测试 34/34；浏览器测试 22/22（新增 `e2e/setup.e2e.mjs` 2 项）。同一新测试在旧 `helpers.mjs` 上失败：mock 未关闭、子进程 60 秒内没有退出，整个 e2e 组被新加的组超时（`CK_TEST_TIMEOUT_SECONDS`）终止 | 提交 `2bfe1a0`（`tests/README.md` 说明段落在运行后才写，不影响代码） |
+| `cookie-tests.json` / `.static.json` | 2026-10-24 COOKIE-ENCODING-001 修复后：static 0 错误；unit 37/37（新增 3 项确定回归）；e2e 22/22。新测试在旧 `signing.ts` 上：改变签名字节的检查通过，非规范别名的检查失败 | 提交 `89d8ad2` |
 | `verify_import_allow_changes.json` | `python3 -I tools/verify_import.py --allow-changes`：归档 ZIP 与导入记录仍然一致；列出导入后有意修改的 12 个原源码文件和 3 份文档 | 同上 |
 
 ## 这些结果证明什么、不证明什么

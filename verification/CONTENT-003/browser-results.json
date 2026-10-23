@@ -1,0 +1,31 @@
+{
+  "checks": [
+    "12 scene navigation entries",
+    "12 / 34 / 60 source counts",
+    "search and scene selection",
+    "notes survive scene changes",
+    "linked terms and readings",
+    "paired feedback and readable draft labels",
+    "JSON export links notes to source digest without approval",
+    "annotation HTML is inert",
+    "local notes reload",
+    "keyboard tab navigation",
+    "390px navigation and no horizontal overflow",
+    "corrupt local notes do not break the page"
+  ],
+  "passed": 12,
+  "page_errors": [],
+  "http_requests": [],
+  "counts": [
+    12,
+    34,
+    60
+  ],
+  "viewport_mobile": {
+    "viewport": 390,
+    "scroll": 390
+  },
+  "exported_source_digest": "dce1997ee69d631bc8586d3563e5faaf3352cbcf7505c95af871f6c2759df6e0",
+  "real_ai_calls": 0,
+  "professional_reviewed": false
+}

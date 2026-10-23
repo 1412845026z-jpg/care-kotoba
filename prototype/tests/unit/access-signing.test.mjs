@@ -1,7 +1,7 @@
 import { test, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { accessConfig, checkAccess, grantAccess } from '@/lib/access';
-import { signToken, verifyToken, safeEqual } from '@/lib/signing';
+import { signToken, verifyToken, safeEqual, b64url, fromB64url, fromCanonicalB64url } from '@/lib/signing';
 import { resetRateLimits, rateLimit } from '@/lib/rate-limit';
 
 const getter = (vars) => (k) => vars[k];
@@ -74,6 +74,58 @@ test('signed tokens are bound to secret and purpose', async () => {
   assert.equal(await verifyToken('s1', 'voice', 123), null);
   assert.equal(await safeEqual('a', 'a'), true);
   assert.equal(await safeEqual('a', 'b'), false);
+});
+
+// --- COOKIE-ENCODING-001 (Codex CI-003): base64url aliases and real tampering -----------------
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+/** Same bytes, different string: flip the lowest bit of the last character (always an unused bit when length % 4 is 2 or 3). */
+const aliasOf = (part) => part.slice(0, -1) + ALPHABET[ALPHABET.indexOf(part.at(-1)) ^ 1];
+/** Really different bytes: decode, flip one bit of the first byte, encode canonically again. */
+const flipFirstByte = (part) => { const b = fromB64url(part); b[0] ^= 0x01; return b64url(b); };
+const withPart = (token, i, f) => { const p = token.split('.'); p[i] = f(p[i]); return p.join('.'); };
+const SECRET = 'diagnostic-only-not-a-real-secret';
+
+test('deterministic fixture: the old "last character A->B" edit kept the HMAC bytes, and is now rejected', async () => {
+  // Same fixture as verification/CI-003/reproduce_cookie_encoding.mjs (fake secret, first counter whose token ends in "A").
+  let token, counter;
+  for (counter = 0; counter < 512; counter++) {
+    token = await signToken(SECRET, 'access', { sub: 'fictional', exp: 1900000000, counter });
+    if (token.endsWith('A')) break;
+  }
+  assert.ok(token.endsWith('A'), 'fixture not found');
+  assert.equal(counter, 14, 'HMAC is deterministic, so the fixture is stable');
+  const alias = token.slice(0, -1) + 'B';
+  assert.deepEqual(fromB64url(alias.split('.')[3]), fromB64url(token.split('.')[3]), 'A and B decode to the same 32 signature bytes');
+  assert.deepEqual(await verifyToken(SECRET, 'access', token), { sub: 'fictional', exp: 1900000000, counter: 14 });
+  assert.equal(await verifyToken(SECRET, 'access', alias), null, 'non-canonical alias must be rejected');
+});
+
+test('every token: a changed signature byte is rejected, and so are non-canonical aliases of signature and payload', async () => {
+  for (let i = 0; i < 24; i++) {
+    const token = await signToken(SECRET, i % 2 ? 'voice' : 'access', { i, pad: 'x'.repeat(i) });
+    const purpose = i % 2 ? 'voice' : 'access';
+    assert.ok(await verifyToken(SECRET, purpose, token));
+    const [, , body, sig] = token.split('.');
+    assert.equal(sig.length, 43);
+    assert.notDeepEqual(fromB64url(flipFirstByte(sig)), fromB64url(sig));
+    assert.equal(await verifyToken(SECRET, purpose, withPart(token, 3, flipFirstByte)), null, 'changed signature byte accepted');
+    assert.equal(await verifyToken(SECRET, purpose, withPart(token, 3, aliasOf)), null, 'signature alias accepted');
+    if (body.length % 4 !== 0) {
+      assert.deepEqual(fromB64url(aliasOf(body)), fromB64url(body));
+      assert.equal(await verifyToken(SECRET, purpose, withPart(token, 2, aliasOf)), null, 'payload alias accepted');
+    }
+    assert.equal(await verifyToken(SECRET, purpose, withPart(token, 3, (p) => p + '=')), null, 'padding accepted');
+    assert.equal(await verifyToken(SECRET, purpose, withPart(token, 3, (p) => p.replace(/-/g, '+').replace(/_/g, '/'))) === null || !/[-_]/.test(sig), true, 'standard base64 alphabet accepted');
+  }
+});
+
+test('canonical decoder: only what b64url() produces', () => {
+  const bytes = new Uint8Array([0, 1, 2, 250, 251, 252, 253, 254, 255]);
+  const s = b64url(bytes);
+  assert.deepEqual(fromCanonicalB64url(s), bytes);
+  for (const bad of [s + '=', s.replace(/-/g, '+'), ' ' + s, 'A', 'AB', 'AAB']) assert.equal(fromCanonicalB64url(bad), null, JSON.stringify(bad));
+  assert.deepEqual(fromCanonicalB64url('AA'), new Uint8Array([0]));
+  assert.deepEqual(fromCanonicalB64url(''), new Uint8Array([]));
 });
 
 test('rate limiter window', () => {

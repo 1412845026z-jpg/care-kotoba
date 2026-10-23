@@ -1,0 +1,78 @@
+{
+  "source_main": "e65dab61beead21791e023f06dd8688b0465e7ac",
+  "source_files_matched": [
+    {
+      "path": "content/scenarios/CK-C01.json",
+      "sha": "3ade5675d7627629742854854b819208e19f4c57"
+    },
+    {
+      "path": "content/scenarios/CK-C02.json",
+      "sha": "4782d76d26207d2b06af3846d76259c5eaf24c2d"
+    },
+    {
+      "path": "content/scenarios/CK-C03.json",
+      "sha": "0a42d76aef9c956317f0a50d69e848ae0c195ac5"
+    },
+    {
+      "path": "content/scenarios/CK-C04.json",
+      "sha": "686ffc5cc4ed7c55bfd16faf09d079858b180f39"
+    },
+    {
+      "path": "content/scenarios/CK-P01.json",
+      "sha": "fa9d4667dee3b9e15ef4e9f2de826cddb59f0b55"
+    },
+    {
+      "path": "content/scenarios/CK-P02.json",
+      "sha": "fd31d537253523e0f7cf4c67c25f4b4dcea50a9e"
+    },
+    {
+      "path": "content/scenarios/CK-P03.json",
+      "sha": "196814255392169553f52319b9c597fde8c0e221"
+    },
+    {
+      "path": "content/scenarios/CK-P04.json",
+      "sha": "6ec42f71a398520d26bd16b39076e90fdff08a2b"
+    },
+    {
+      "path": "content/scenarios/CK-R01.json",
+      "sha": "7cb1067d1b5cfcce0e8192f71247d16811176736"
+    },
+    {
+      "path": "content/scenarios/CK-R02.json",
+      "sha": "3a9b5dfe5bc94d4a86eb423be45dbc4d2933ca3b"
+    },
+    {
+      "path": "content/scenarios/CK-R03.json",
+      "sha": "c9489b327107226c287fbada3f0fae58642eca9e"
+    },
+    {
+      "path": "content/scenarios/CK-R04.json",
+      "sha": "e3ec7941e8c07f85370dc0e6cdbf487ce9aa9607"
+    },
+    {
+      "path": "content/terminology/terms.json",
+      "sha": "8f3478977ac07a195b0177fdd3efca1a01bc5b0a"
+    },
+    {
+      "path": "content/terminology/scenario-map.json",
+      "sha": "87dddc18f2637fc6e9c74174d79aa7c016229c97"
+    },
+    {
+      "path": "evals/samples.jsonl",
+      "sha": "830f894995c2aa011350e599265f61803c4be38d"
+    },
+    {
+      "path": "evals/source-confidence/samples.jsonl",
+      "sha": "b87579b3d5dd8baf64dff2fffdd0ae94f5a7907e"
+    }
+  ],
+  "source_digest": "dce1997ee69d631bc8586d3563e5faaf3352cbcf7505c95af871f6c2759df6e0",
+  "build_check_exit": 0,
+  "real_ai_calls": 0,
+  "professional_reviewed": false,
+  "font_used_for_local_visual_QA_only": {
+    "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/Japanese/NotoSansCJKjp-Regular.otf",
+    "sha256": "68a3fc98800b2a27b371f2fb79991daf3633bd89309d4ffaa6946fd587f375b5",
+    "bundled_in_page_or_repo": false
+  }
+}

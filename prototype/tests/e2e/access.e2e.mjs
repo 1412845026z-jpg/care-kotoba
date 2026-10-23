@@ -18,6 +18,18 @@ before(async () => {
 });
 after(async () => { await env?.close(); });
 
+const B64URL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+const flipFirstByte = (part) => { const b = Buffer.from(part, 'base64url'); b[0] ^= 0x01; return b.toString('base64url'); };
+const aliasOf = (part) => part.slice(0, -1) + B64URL[B64URL.indexOf(part.at(-1)) ^ 1];
+/** "ck_access=v1.access.<payload>.<sig>" with <sig> replaced by f(<sig>). */
+function editSignature(pair, f) {
+  const eq = pair.indexOf('=');
+  const parts = pair.slice(eq + 1).split('.');
+  assert.equal(parts.length, 4, 'unexpected cookie format');
+  parts[3] = f(parts[3]);
+  return pair.slice(0, eq + 1) + parts.join('.');
+}
+
 const chatBody = { scenarioId: 'bath-5', variant: 'gentle', locale: 'zh', level: 'gentle', messages: [{ role: 'user', text: 'こんにちは。' }] };
 
 function rawPost(baseUrl, path, { host, body, cookie } = {}) {
@@ -59,8 +71,14 @@ test('a wrong access code is rejected and the right one grants an HttpOnly cooki
   const chat = await api(env.baseUrl, '/api/chat', { body: chatBody, headers: { cookie: cookie.split(';')[0] } });
   assert.equal(chat.status, 200, JSON.stringify(chat.data));
   assert.ok(chat.data.reply);
-  const forged = await api(env.baseUrl, '/api/chat', { body: chatBody, headers: { cookie: cookie.split(';')[0].replace(/.$/, (c) => (c === 'A' ? 'B' : 'A')) } });
-  assert.equal(forged.status, 401, 'a tampered cookie was accepted');
+  // Tamper so the signature BYTES change. Editing the last character is not enough: its lowest bits
+  // are unused base64 padding (COOKIE-ENCODING-001), so "...A" -> "...B" can be the same signature.
+  const pair = cookie.split(';')[0];
+  const forged = await api(env.baseUrl, '/api/chat', { body: chatBody, headers: { cookie: editSignature(pair, flipFirstByte) } });
+  assert.equal(forged.status, 401, 'a cookie with a changed signature byte was accepted');
+  // Same bytes, non-canonical spelling: rejected by the token contract (lib/signing.ts), deterministically.
+  const alias = await api(env.baseUrl, '/api/chat', { body: chatBody, headers: { cookie: editSignature(pair, aliasOf) } });
+  assert.equal(alias.status, 401, 'a non-canonical alias of a valid cookie was accepted');
 });
 
 test('without an access code, AI routes only answer on localhost', async (t) => {
