@@ -1,0 +1,362 @@
+TAP version 13
+# \# mock OpenAI at http://127.0.0.1:4010/v1 (dev server needs OPENAI_BASE_URL=http://127.0.0.1:4010/v1)
+# Subtest: AI routes refuse requests without access (no Origin header, like curl)
+not ok 1 - AI routes refuse requests without access (no Origin header, like curl)
+  ---
+  duration_ms: 118.489557
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/access.e2e.mjs:28:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    /api/chat answered 200 without access
+    
+    200 !== 401
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 401
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<checkout>/prototype/tests/e2e/access.e2e.mjs:33:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: a wrong access code is rejected and the right one grants an HttpOnly cookie
+not ok 2 - a wrong access code is rejected and the right one grants an HttpOnly cookie
+  ---
+  duration_ms: 25.321231
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/access.e2e.mjs:39:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    200 !== 401
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 401
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<checkout>/prototype/tests/e2e/access.e2e.mjs:41:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: without an access code, AI routes only answer on localhost
+not ok 3 - without an access code, AI routes only answer on localhost
+  ---
+  duration_ms: 33.898763
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/access.e2e.mjs:55:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'access_not_configured'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'access_not_configured'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<checkout>/prototype/tests/e2e/access.e2e.mjs:63:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: the learner is asked for the access code before an AI practice, and the demo needs none
+not ok 4 - the learner is asked for the access code before an AI practice, and the demo needs none
+  ---
+  duration_ms: 32022.125967
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/access.e2e.mjs:69:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/access.e2e.mjs:71:3)
+  ...
+# \# mock OpenAI at http://127.0.0.1:4010/v1 (dev server needs OPENAI_BASE_URL=http://127.0.0.1:4010/v1)
+# Subtest: home renders at 390px without horizontal overflow or page errors
+ok 5 - home renders at 390px without horizontal overflow or page errors
+  ---
+  duration_ms: 334.343212
+  type: 'test'
+  ...
+# Subtest: scripted demo can be completed and is labelled as not AI-evaluated
+not ok 6 - scripted demo can be completed and is labelled as not AI-evaluated
+  ---
+  duration_ms: 30396.967006
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/app.e2e.mjs:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/app.e2e.mjs:26:3)
+  ...
+# Subtest: text practice uses the mock AI and shows feedback
+not ok 7 - text practice uses the mock AI and shows feedback
+  ---
+  duration_ms: 30269.646111
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/app.e2e.mjs:41:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/app.e2e.mjs:44:3)
+  ...
+# Subtest: feedback never shows a quote the learner did not say
+not ok 8 - feedback never shows a quote the learner did not say
+  ---
+  duration_ms: 30318.068664
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/app.e2e.mjs:55:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/app.e2e.mjs:59:5)
+  ...
+# Subtest: corrupted or outdated localStorage does not break the app
+not ok 9 - corrupted or outdated localStorage does not break the app
+  ---
+  duration_ms: 30365.092271
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/app.e2e.mjs:74:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.waitFor: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for locator('h1').filter({ hasText: 'できたことを、少しずつ。' }) to be visible
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    TestContext.<anonymous> (<checkout>/prototype/tests/e2e/app.e2e.mjs:85:57)
+  ...
+# Subtest: staff-to-staff scenes are not role-played as the resident
+not ok 10 - staff-to-staff scenes are not role-played as the resident
+  ---
+  duration_ms: 30416.918087
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/app.e2e.mjs:96:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/app.e2e.mjs:98:3)
+  ...
+# Subtest: health endpoint answers and reports configuration without secrets
+ok 11 - health endpoint answers and reports configuration without secrets
+  ---
+  duration_ms: 40.139414
+  type: 'test'
+  ...
+# Subtest: responsive layout: desktop width also renders without errors
+ok 12 - responsive layout: desktop width also renders without errors
+  ---
+  duration_ms: 294.190286
+  type: 'test'
+  ...
+# \# mock OpenAI at http://127.0.0.1:4010/v1 (dev server needs OPENAI_BASE_URL=http://127.0.0.1:4010/v1)
+# Subtest: voice: a late input transcription is shown before the reply it triggered, with no duplicates
+not ok 13 - voice: a late input transcription is shown before the reply it triggered, with no duplicates
+  ---
+  duration_ms: 30434.020955
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/voice.e2e.mjs:44:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async startLive (<checkout>/prototype/tests/e2e/voice.e2e.mjs:24:3)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/voice.e2e.mjs:46:3)
+  ...
+# Subtest: voice: finishing a session asks the server to hang up the Realtime call
+not ok 14 - voice: finishing a session asks the server to hang up the Realtime call
+  ---
+  duration_ms: 30378.129752
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/voice.e2e.mjs:65:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async startLive (<checkout>/prototype/tests/e2e/voice.e2e.mjs:24:3)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/voice.e2e.mjs:67:18)
+  ...
+# Subtest: voice: the voice transcript reaches feedback in conversation order
+not ok 15 - voice: the voice transcript reaches feedback in conversation order
+  ---
+  duration_ms: 30276.992905
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/voice.e2e.mjs:79:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async startLive (<checkout>/prototype/tests/e2e/voice.e2e.mjs:24:3)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/voice.e2e.mjs:81:3)
+  ...
+# Subtest: voice: an interrupted reply is marked as interrupted
+not ok 16 - voice: an interrupted reply is marked as interrupted
+  ---
+  duration_ms: 30232.136993
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/voice.e2e.mjs:98:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async startLive (<checkout>/prototype/tests/e2e/voice.e2e.mjs:24:3)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/voice.e2e.mjs:100:3)
+  ...
+# Subtest: voice: a failed transcription is shown as not recognised instead of disappearing
+not ok 17 - voice: a failed transcription is shown as not recognised instead of disappearing
+  ---
+  duration_ms: 30325.009289
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/voice.e2e.mjs:113:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async startLive (<checkout>/prototype/tests/e2e/voice.e2e.mjs:24:3)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/voice.e2e.mjs:115:3)
+  ...
+# Subtest: voice: losing the connection is reported and the session can be resumed with its transcript
+not ok 18 - voice: losing the connection is reported and the session can be resumed with its transcript
+  ---
+  duration_ms: 30254.791629
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/voice.e2e.mjs:122:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async startLive (<checkout>/prototype/tests/e2e/voice.e2e.mjs:24:3)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/voice.e2e.mjs:124:17)
+  ...
+# Subtest: voice: connects under React StrictMode (development double effects)
+not ok 19 - voice: connects under React StrictMode (development double effects)
+  ---
+  duration_ms: 30222.7978
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/voice.e2e.mjs:144:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async startLive (<checkout>/prototype/tests/e2e/voice.e2e.mjs:24:3)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/voice.e2e.mjs:146:3)
+  ...
+# Subtest: voice: diagnostics can be exported after a session
+not ok 20 - voice: diagnostics can be exported after a session
+  ---
+  duration_ms: 30314.575928
+  type: 'test'
+  location: '<checkout>/prototype/tests/e2e/voice.e2e.mjs:151:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.fill: Timeout 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('シーンを検索')
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    openScene (<checkout>/prototype/tests/e2e/helpers.mjs:58:35)
+    async startLive (<checkout>/prototype/tests/e2e/voice.e2e.mjs:24:3)
+    async TestContext.<anonymous> (<checkout>/prototype/tests/e2e/voice.e2e.mjs:153:3)
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 3
+# fail 17
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 428723.780378
+
+SUMMARY [{"name":"e2e","exitCode":1,"pass":3,"fail":17,"seconds":428.8}]
