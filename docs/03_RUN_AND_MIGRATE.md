@@ -39,3 +39,25 @@ pnpm dev
 建议将完整目录放在用户控制的私有仓库，建立未改动基线，再建开发分支。保留`prototype/.openai/hosting.json`作为原始快照；新部署应独立配置目标，不把旧站点ID自动复用于新平台。
 
 新手机客户端可以复用内容、类型、规则与部分服务端逻辑；React网页UI不能直接当作原生App界面。客户端选型应先验证录音、打断、后台切换、耳机、弱网及内购，再确定迁移范围。
+
+## 2026-10-23 补充：服务端配置与测试（G0-01，Claude）
+
+新增的服务端环境变量（都只在服务端读取，不要用 `NEXT_PUBLIC_` 或 `VITE_` 前缀）：
+
+| 变量 | 默认 | 说明 |
+| --- | --- | --- |
+| `OPENAI_API_KEY` | — | 机密 |
+| `CK_ACCESS_POLICY` | 有 `CK_ACCESS_CODE` 时为 `code`，否则为 `local` | `code` / `local`（只允许 localhost）/ `open`（仅限前面已有平台访问控制的部署） |
+| `CK_ACCESS_CODE` | — | 机密；至少 6 个字符，可用逗号分隔多个；更换后旧 Cookie 全部失效 |
+| `CK_ACCESS_TTL_DAYS` | 14 | 访问 Cookie 的有效天数 |
+| `CK_SESSION_SECRET` | 由 `OPENAI_API_KEY` 派生 | 机密；访问 Cookie 和语音会话令牌的签名密钥 |
+| `CK_MODEL_TEXT` / `CK_MODEL_REALTIME` / `CK_MODEL_TRANSCRIBE` / `CK_MODEL_TTS` | gpt-4.1-mini / gpt-realtime-mini / gpt-4o-mini-transcribe / gpt-4o-mini-tts | 型号覆盖；停用日期见 `/api/health` |
+| `CK_VOICE` | marin | 语音音色 |
+| `CK_VOICE_MAX_SECONDS` | 180 | 单次语音会话上限（30–900） |
+| `CK_VAD` | server | `server` / `server-slow` / `semantic-low` |
+| `CK_RATE_LIMIT_MULTIPLIER` | 1 | 只用于测试，放宽单实例限流 |
+| `OPENAI_BASE_URL` | https://api.openai.com/v1 | 只用于测试（指向模拟服务）或经批准的代理 |
+
+注意：原 Sites 站点靠平台登录保护。如果原样部署新代码而不设置变量，AI 功能只在 localhost 可用（这是安全默认）。确有平台访问控制时才设 `CK_ACCESS_POLICY=open`。
+
+离线测试不需要密钥，也不产生费用：在 `prototype/` 下执行 `node tests/run.mjs all`，说明见 `prototype/tests/README.md`。需要 esbuild 和 playwright，二者尚未写进 package.json，由 Codex 在 CI-001 中加入 devDependencies（目前用过的版本：esbuild 0.28.2、playwright 1.63.0）。

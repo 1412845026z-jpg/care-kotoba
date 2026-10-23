@@ -1,6 +1,6 @@
 {
   "root": "<repo>/prototype",
-  "toolModules": "/opt/npm-tools/node_modules",
+  "toolModules": "<tool-node-modules>",
   "tools": {
     "esbuild": "0.28.2",
     "typescript": "6.0.3"

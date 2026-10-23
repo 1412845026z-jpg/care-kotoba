@@ -29,7 +29,8 @@
 | --- | --- | --- | --- |
 | 两个ZIP完整性 | SHA-256、`zipfile.testzip()`、路径安全（无绝对路径/`..`/符号链接） | 导入前文件 | 通过 |
 | 原样导入 | `python3 -I tools/verify_archive.py`（163个清单文件 + 130个原源码） | `77a0604`（claude/SYNC-001-import） | 通过，0错误 |
-| 导入后校验 | `python3 -I tools/verify_import.py`（含130个源码的 git blob 比对） | SYNC-001 分支 HEAD，见交接记录 | 见 handoffs/2026-10-23-SYNC-001-claude.md |
+| 导入后校验 | `python3 -I tools/verify_import.py`（含130个源码的 git blob 比对） | SYNC-001 分支 HEAD，见交接记录 | 见 handoffs/2026-10-23-SYNC-001-claude.md；开发分支上改用 `--allow-changes`，列出有意修改的文件 |
+| 离线测试（G0-01） | `node tests/run.mjs all`：静态检查 + 33项单元测试 + 20项浏览器 / 语音模拟测试 | `55f0ebb` | 基线 5/20 通过 → 修复后 20/20；单元测试 33/33；模拟环境，不是真实 AI 或真机 |
 | TypeScript / 生产构建 | 归档记录：原环境通过 | 原 Sites 提交 | 本仓库尚未运行（Claude 环境无法访问 npm 仓库；待 CI-001） |
 | 真实 AI / 语音 | 无成功端到端验收记录 | — | 未验证 |
 | 企业账号与数据隔离 | 原型为虚构示例 | — | 未实现 |
@@ -54,10 +55,12 @@
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | review_ready | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | queued | — | 需记录实际读取的提交号 |
-| G0-01 | 代码审计与基础修复：AI接口访问保护、模型型号集中配置、语音转写顺序/打断/断线、服务端挂断与用量记录、反馈原话校验、本地存储容错、离线测试 | Claude | in_progress | `claude/G0-01-voice-loop`（未推送） | — |
-| CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | queued | — | — |
+| G0-01 | 代码审计与基础修复：AI接口访问保护、模型型号集中配置、语音转写顺序/打断/断线、服务端挂断与用量记录、反馈原话校验、本地存储容错、离线测试 | Claude | review_ready | `claude/G0-01-voice-loop`，PR #2（diff 含 PR #1 的提交，先合并 #1） | handoffs/2026-10-23-G0-01-claude.md；docs/08；verification/G0-01/ |
+| CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；把 `esbuild`、`playwright` 加入 devDependencies，并运行 `node tests/run.mjs all`（无需密钥）；不注入 secret | Codex | queued | — | 依赖需求见 G0-01 交接记录 |
 | ENV-001 | 在真实 dev server 上验证 G0-01；核实服务端环境变量注入方式（`.env.local` / `.dev.vars` / `cloudflare:workers`） | Codex | queued（等 G0-01 推送） | — | — |
 | DEPLOY-001 | 私有 staging 部署方案（只准备，等用户授权后执行） | Codex | queued | — | — |
+| DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked：等用户决定预算、密钥配置与 staging | — | docs/09_REAL_DEVICE_VOICE_TEST.md |
+| MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked：需要用户授权 API 费用 | — | docs/08 #7；`lib/models.ts` |
 | CONTENT-001 | 12个核心场景规格草稿与固定评测样本（`content/`、`evals/`），标注待专业审稿 | Codex | queued | — | — |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
@@ -74,8 +77,11 @@
 
 - **旧模型停用日期**（OpenAI 官方弃用页，2026-10-23 核对：https://developers.openai.com/api/docs/deprecations）：`gpt-4o-mini-tts` 各快照与 `tts-1` 于 2027-01-06 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4.1-mini-2025-04-14` 于 2027-01-14 停用（建议替代 `gpt-6-luna`）；`gpt-realtime-mini` 于 2027-01-20 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4o-mini-transcribe` 于 2027-02-26 停用（建议替代 `gpt-live-transcribe` 或 `gpt-transcribe`）。原型代码仍写死这些型号。迁移前需用固定样本做真实调用比较，这会产生 API 费用，需用户授权。
 - Claude 的云端环境无法访问 npm 仓库，不能运行 `pnpm install`、完整 `tsc` 或 vinext 构建；真实构建结果依赖 CI-001 与 Codex 的环境。
-- 真实 AI 与真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪。
+- 真实 AI 与真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪（DEVICE-001）。
+- G0-01 改了安全默认：没有配置访问码时，AI 接口只在 localhost 可用。部署时必须设置 `CK_ACCESS_CODE`，或者在确有平台访问控制时设置 `CK_ACCESS_POLICY=open`（docs/03 补充段落）。
+- 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
 
 - handoffs/2026-10-23-SYNC-001-claude.md：原归档导入与共享规则合并（未合并到 `main`）。
+- handoffs/2026-10-23-G0-01-claude.md：代码审计与基础修复、离线测试、真机测试方案（未合并到 `main`）。

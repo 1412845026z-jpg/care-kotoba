@@ -16,14 +16,16 @@ by design. This script checks the import honestly instead:
 
 Usage:
   python3 -I tools/verify_import.py                      # strict: original sources must be unchanged
-  python3 -I tools/verify_import.py --allow-source-changes
-      # for later development commits: lists changed original sources instead of failing
+  python3 -I tools/verify_import.py --allow-changes
+      # for later development commits: lists archive files changed since the import
+      # (original sources and handoff docs) instead of failing; the ZIP and the
+      # recorded CLAUDE.md change are still verified strictly
 """
 from pathlib import Path
 import hashlib, json, re, subprocess, sys, zipfile
 
 root = Path(__file__).resolve().parents[1]
-allow_source_changes = '--allow-source-changes' in sys.argv
+allow_source_changes = '--allow-changes' in sys.argv or '--allow-source-changes' in sys.argv
 errors, notes = [], []
 
 
@@ -52,6 +54,7 @@ source_paths = set()
 source = json.loads((root / 'verification/SOURCE_FILES_SHA256.json').read_text(encoding='utf-8'))
 source_paths = {item['path'] for item in source}
 changed_sources = []
+changed_docs = []
 
 for item in manifest['files']:
     path = item['path']
@@ -76,8 +79,8 @@ for item in manifest['files']:
             else:
                 modified_ok.append(path)
         continue
-    if path in source_paths and allow_source_changes:
-        changed_sources.append(path)
+    if allow_source_changes:
+        (changed_sources if path in source_paths else changed_docs).append(path)
         continue
     errors.append('Changed without import record: ' + path)
 
@@ -110,7 +113,7 @@ for item in source:
 
 result = {
     'status': 'failed' if errors else 'passed',
-    'mode': 'allow-source-changes' if allow_source_changes else 'strict',
+    'mode': 'allow-changes' if allow_source_changes else 'strict',
     'archive_zip': archive['path'],
     'manifest_files': len(manifest['files']),
     'identical_to_archive': identical,
@@ -118,6 +121,7 @@ result = {
     'original_source_files': len(source),
     'original_source_unchanged': source_ok,
     'original_source_changed_since_import': sorted(changed_sources),
+    'archive_files_changed_since_import': sorted(changed_docs),
     'git_blob_checked': bool(blobs),
     'notes': notes,
     'errors': errors,
