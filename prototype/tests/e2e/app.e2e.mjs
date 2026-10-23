@@ -283,6 +283,27 @@ test('AI replies in text practice get validated furigana (CK_AI_FURIGANA=1); a w
   }
 });
 
+test('when voice cannot start, the free voice check can be opened from the error panel', async () => {
+  env.mock.state.scenario.error = { status: 500, code: 'server_error' };
+  try {
+    const page = await env.page();
+    await openScene(page, env.baseUrl, '入浴を断られたとき');
+    await page.getByRole('button', { name: /音声でAIと話す/ }).click();
+    await page.locator('.conversation-error').waitFor();
+    await page.locator('.conversation-error').getByRole('button', { name: /音声テスト/ }).click();
+    const modal = page.locator('.voice-check-modal');
+    await modal.waitFor();
+    assert.ok(await modal.isVisible(), 'the voice check is shown above the practice screen');
+    await modal.getByRole('button', { name: 'テストを始める' }).click();
+    await modal.getByRole('button', { name: 'マイクを確認する' }).waitFor();
+    await modal.getByRole('button', { name: '閉じる' }).click();
+    await modal.waitFor({ state: 'detached' });
+    assert.deepEqual(page.errors.filter((e) => !/500|Failed to load/.test(e)), []);
+  } finally {
+    env.mock.state.scenario.error = null;
+  }
+});
+
 test('responsive layout: desktop width also renders without errors', async () => {
   const page = await env.page({ viewport: { width: 1280, height: 860 }, locale: 'ja-JP' });
   await gotoApp(page, env.baseUrl);
