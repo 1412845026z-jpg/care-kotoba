@@ -2,6 +2,7 @@
 // Run: node tests/run.mjs e2e      (see tests/README.md)
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { setup, seedStorage, openScene, gotoApp, api, PHONE } from './helpers.mjs';
 
 let env;
@@ -327,6 +328,20 @@ test('settings: the learner can delete this device\'s learning data (two steps)'
   assert.equal(stored.assign, null);
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   assert.equal(await page.locator('.note-card').count(), 0);
+  assert.deepEqual(page.errors, []);
+});
+
+test('notes can be saved as a text file', async () => {
+  const page = await env.page();
+  await seedStorage(page, { 'ck-notes': JSON.stringify([{ id: 'n1', text: '今は入りたくないのですね。', sceneId: 'bath-5', original: '入りませんか。', reason: '気持ちを受け止める' }]) });
+  await gotoApp(page, env.baseUrl);
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: '書き出す' }).click()]);
+  assert.equal(download.suggestedFilename(), 'care-kotoba-notes.txt');
+  const text = readFileSync(await download.path(), 'utf8');
+  assert.match(text, /1\. 今は入りたくないのですね。/);
+  assert.match(text, /（前の言い方）入りませんか。/);
+  assert.match(text, /（場面）入浴を断られたとき/);
   assert.deepEqual(page.errors, []);
 });
 

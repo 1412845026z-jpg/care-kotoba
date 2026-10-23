@@ -85,6 +85,7 @@
 | AI-FURIGANA-001 | 文字练习中 AI 回复的注音（`CK_AI_FURIGANA=1`，默认关闭）：模型写注音，服务端验证与原文完全一致才显示 | Claude | review_ready | `claude/AI-FURIGANA-001`（依赖 PR #26） | 单元测试和 e2e 用模拟模型验证（错误的注音不显示）；真实模型的读音准确度和增加的输出费用未验证 |
 | VOICE-CHECK-LINK-001 | 语音无法开始时，可以从错误提示直接打开免费的音声测试 | Claude | review_ready | `claude/VOICE-CHECK-LINK-001`（依赖 PR #27） | e2e（模拟会话失败）通过 |
 | LOCAL-DATA-001 | 设置里「この端末の学習データを削除」（两步确认）：删除笔记、记录、设置和访问码 cookie，适合机构里共用的设备 | Claude | review_ready | `claude/LOCAL-DATA-001`（依赖 PR #28） | e2e 两项通过（本机数据清空；访问码失效） |
+| NOTES-EXPORT-001 | 「ことばノート」可书出为文本文件；删除本机数据前的确认里提示先书出 | Claude | review_ready | `claude/NOTES-EXPORT-001`（依赖 PR #29） | e2e 通过（下载内容含表达、原来的说法、场景） |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
