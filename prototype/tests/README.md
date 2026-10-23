@@ -9,6 +9,12 @@ node tests/run.mjs unit                                                    # one
 node tests/run.mjs e2e --filter voice                                      # test-name filter
 ```
 
+`--filter` is a regular expression for test names; only files that mention it are started (node:test 22.x
+otherwise runs a file's `after` hook before its slow async `before` has finished and the process hangs). Each group
+is stopped after `CK_TEST_TIMEOUT_SECONDS` (default 1800) and reported as failed, so a leaked resource cannot hang CI.
+`setup()` closes the mock / harness / Chromium it already started when a later step fails (for example a missing
+Chromium executable) and rethrows the original error; `e2e/setup.e2e.mjs` checks this.
+
 Needs `esbuild` and `playwright` (with its Chromium) resolvable from `prototype/node_modules`. Both are pinned
 devDependencies since CI-002 (esbuild 0.28.2, playwright 1.63.0); install the browser with
 `pnpm exec playwright install chromium`. In sandboxes without registry access, point `CK_TOOL_NODE_MODULES` at a directory

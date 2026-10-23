@@ -23,8 +23,38 @@ export const EXTERNAL = !!process.env.BASE_URL;
 /** Readiness contract: app/page.tsx sets <html data-app-ready="true"> once React has hydrated/mounted. */
 export const READY_SELECTOR = 'html[data-app-ready="true"]';
 
-export async function setup({ env = {}, launchArgs = [] } = {}) {
+const defaultLaunch = (options) => chromium.launch(options);
+
+/** Close everything that was started, in reverse order. Every step runs even if an earlier one fails. */
+async function closeAll(resources) {
+  const errors = [];
+  for (const r of [...resources].reverse()) {
+    try { await r.close(); } catch (e) { errors.push(`${r.name}: ${e?.message || e}`); }
+  }
+  resources.length = 0;
+  return errors;
+}
+
+/**
+ * Starts mock OpenAI, the harness (unless BASE_URL) and Chromium. If any step fails, the ones that
+ * already started are closed before the ORIGINAL error is rethrown, so a failed `before` (e.g. a
+ * missing Chromium executable) cannot leave servers that keep the test process alive.
+ * `launch` is injectable for the cleanup regression test; it gets ({ baseUrl, mockOrigin }) too.
+ */
+export async function setup({ env = {}, launchArgs = [], launch = defaultLaunch } = {}) {
+  const resources = [];
+  try {
+    return await startAll({ env, launchArgs, launch, resources });
+  } catch (error) {
+    const cleanupErrors = await closeAll(resources);
+    if (cleanupErrors.length) console.error(`# setup cleanup also failed: ${cleanupErrors.join('; ')}`);
+    throw error;
+  }
+}
+
+async function startAll({ env, launchArgs, launch, resources }) {
   const mock = createMockOpenAI();
+  resources.push({ name: 'mock OpenAI', close: () => mock.close() });
   const origin = await mock.listen(Number(process.env.CK_MOCK_PORT || 0));
   if (EXTERNAL) console.log(`# mock OpenAI at ${origin}/v1 (dev server needs OPENAI_BASE_URL=${origin}/v1)`);
   let harness = null;
@@ -35,6 +65,7 @@ export async function setup({ env = {}, launchArgs = [] } = {}) {
       rewriteOpenAI: origin,
       rebuild: !process.env.CK_E2E_NO_REBUILD,
     });
+    resources.push({ name: 'harness', close: () => harness.close() });
     baseUrl = harness.url;
   }
   const serverAccess = (await api(baseUrl, '/api/access', { method: 'GET' })).data;
@@ -47,7 +78,8 @@ export async function setup({ env = {}, launchArgs = [] } = {}) {
     cookie = (r.headers.get('set-cookie') || '').split(';')[0];
     return cookie;
   }
-  const browser = await chromium.launch({ args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream', '--autoplay-policy=no-user-gesture-required', ...launchArgs] });
+  const browser = await launch({ args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream', '--autoplay-policy=no-user-gesture-required', ...launchArgs] }, { baseUrl, mockOrigin: origin });
+  resources.push({ name: 'Chromium', close: () => browser.close() });
   const pages = [];
   return {
     mock, baseUrl, browser, serverAccess, accessCode,
@@ -76,9 +108,8 @@ export async function setup({ env = {}, launchArgs = [] } = {}) {
       return page;
     },
     async close() {
-      await browser.close();
-      await harness?.close();
-      await mock.close();
+      const errors = await closeAll(resources);
+      if (errors.length) throw new Error(`cleanup failed: ${errors.join('; ')}`);
     },
   };
 }

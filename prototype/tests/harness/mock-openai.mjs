@@ -101,7 +101,8 @@ export function createMockOpenAI() {
   return {
     state,
     async listen(port = 0) {
-      await new Promise((r) => server.listen(port, '127.0.0.1', r));
+      // Reject on EADDRINUSE etc. instead of leaving an unhandled 'error' event (fixed CK_MOCK_PORT in BASE_URL mode).
+      await new Promise((resolve, reject) => { server.once('error', reject); server.listen(port, '127.0.0.1', () => { server.off('error', reject); resolve(); }); });
       this.origin = `http://127.0.0.1:${server.address().port}`;
       return this.origin;
     },
