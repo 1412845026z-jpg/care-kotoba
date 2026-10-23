@@ -54,7 +54,7 @@
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
-| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `8bc1848`，未合并 | ENV-002：真实安装/tsc/build/static通过，unit34/34；code模式非语音11通过1跳过；8项语音因无可用ICE候选失败，标准runner待核实 |
+| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `8bc1848`，未合并 | CI-003标准runner：install/tsc/build/static通过、unit34/34、模拟离线20/20、真实dev19通过1明确跳过；未验证真实AI/真机 |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
 | ENV-001 | 真实dev与环境变量/Cookie/响应头/sendBeacon | Codex | blocked | 旧证据PR #7已合并；新复核见ENV-002 | 新G0非语音dev已通过，模拟WebRTC仍受本机环境限制；完整语音未验收 |
 | ENV-002 | 复核G0 fix1与REUSE、交接确认的业务问题 | Codex | merged | PR #11；合并 `eada73b` | handoffs/2026-10-23-ENV-002-codex.md；复核证据已入main，不代表语音验收 |
@@ -65,7 +65,7 @@
 | CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
-| CI-003 | 标准runner固定head模拟语音复核（不替代合并后的CI-002） | Codex | in_progress | `codex/CI-003-runner` | handoffs/2026-10-24-CI-003-codex.md；G0 8bc1848 / REUSE a43e7ed，未调用真实API |
+| CI-003 | 标准runner固定head模拟语音复核 | Codex | blocked | PR #12，`codex/CI-003-runner` | handoffs/2026-10-24-CI-003-results-codex.md；G0全组通过；REUSE真实dev20通过1Cookie编码测试失败1跳过；新head待修复复测 |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
 
@@ -88,6 +88,8 @@
 - 真实 AI 与真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪。
 
 ## 最近交接
+
+- handoffs/2026-10-24-CI-003-results-codex.md：固定head标准runner结果；本机ICE阻塞已补充独立模拟语音证据，REUSE的Cookie断言需修复。
 
 - handoffs/2026-10-23-ENV-002-codex.md：新G0/REUSE真实复测结果、两项业务缺陷与测试清理建议；公开/申请暂停。
 

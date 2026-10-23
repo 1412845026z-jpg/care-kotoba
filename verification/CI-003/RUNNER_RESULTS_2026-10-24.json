@@ -1,0 +1,226 @@
+{
+  "task": "CI-003",
+  "date_jst": "2026-10-24",
+  "workflow_head": "6193e650e5982a7b01b607437124edef6408cacf",
+  "run_id": 39978029073,
+  "overall": "failure",
+  "mock_only": true,
+  "real_api_tested": false,
+  "device_tested": false,
+  "results": {
+    "g0": {
+      "source_sha": "8bc18481865c2259e084a59a1f5e419e18ed1035",
+      "job_id": 120497671066,
+      "conclusion": "success",
+      "steps": [
+        {
+          "command": "pnpm install --frozen-lockfile",
+          "exit": 0,
+          "seconds": 11.242
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit",
+          "exit": 0,
+          "seconds": 7.43
+        },
+        {
+          "command": "pnpm build",
+          "exit": 0,
+          "seconds": 6.852
+        }
+      ],
+      "summaries": [
+        [
+          {
+            "name": "static",
+            "exitCode": 0,
+            "seconds": 1.7
+          }
+        ],
+        [
+          {
+            "name": "unit",
+            "exitCode": 0,
+            "pass": 34,
+            "fail": 0,
+            "seconds": 0.4
+          }
+        ],
+        [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "pass": 20,
+            "fail": 0,
+            "seconds": 29.9
+          }
+        ],
+        [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "pass": 19,
+            "fail": 0,
+            "seconds": 37.9
+          }
+        ]
+      ],
+      "runs": [
+        {
+          "mode": "offline",
+          "mock_only": true,
+          "filter": null,
+          "port": 5173,
+          "mock_port": 4010,
+          "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+          "command": [
+            "node",
+            "tests/run.mjs",
+            "e2e",
+            "--report",
+            "/home/runner/work/care-kotoba/care-kotoba/review-results/offline/tests.json"
+          ],
+          "exit_code": 0,
+          "seconds": 29.981
+        },
+        {
+          "mode": "real-dev",
+          "mock_only": true,
+          "filter": null,
+          "port": 5173,
+          "mock_port": 4010,
+          "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+          "startup_seconds": 4.891,
+          "command": [
+            "node",
+            "tests/run.mjs",
+            "e2e",
+            "--report",
+            "/home/runner/work/care-kotoba/care-kotoba/review-results/real-dev/tests.json"
+          ],
+          "exit_code": 0,
+          "network_guard": {
+            "blockedExternal": 0,
+            "mockBaseConfigured": true,
+            "policy": "code"
+          },
+          "worker_restored": true,
+          "fake_env_removed": true,
+          "seconds": 42.998
+        }
+      ],
+      "browser_install": [
+        "Downloading Chrome for Testing 153.0.8010.12 (playwright chromium v1243) from https://cdn.playwright.dev/builds/cft/153.0.8010.12/linux64/chrome-linux64.zip",
+        "Chrome for Testing 153.0.8010.12 (playwright chromium v1243) downloaded to /home/runner/.cache/ms-playwright/chromium-1243",
+        "Downloading Chrome Headless Shell 153.0.8010.12 (playwright chromium-headless-shell v1243) from https://cdn.playwright.dev/builds/cft/153.0.8010.12/linux64/chrome-headless-shell-linux64.zip"
+      ]
+    },
+    "reuse": {
+      "source_sha": "a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207",
+      "job_id": 120497671369,
+      "conclusion": "failure",
+      "steps": [
+        {
+          "command": "pnpm install --frozen-lockfile",
+          "exit": 0,
+          "seconds": 9.651
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit",
+          "exit": 0,
+          "seconds": 4.69
+        },
+        {
+          "command": "pnpm build",
+          "exit": 0,
+          "seconds": 4.73
+        }
+      ],
+      "summaries": [
+        [
+          {
+            "name": "static",
+            "exitCode": 0,
+            "seconds": 1.2
+          }
+        ],
+        [
+          {
+            "name": "unit",
+            "exitCode": 0,
+            "pass": 38,
+            "fail": 0,
+            "seconds": 0.3
+          }
+        ],
+        [
+          {
+            "name": "e2e",
+            "exitCode": 0,
+            "pass": 22,
+            "fail": 0,
+            "seconds": 25.2
+          }
+        ],
+        [
+          {
+            "name": "e2e",
+            "exitCode": 1,
+            "pass": 20,
+            "fail": 1,
+            "seconds": 32.5
+          }
+        ]
+      ],
+      "runs": [
+        {
+          "mode": "offline",
+          "mock_only": true,
+          "filter": null,
+          "port": 5173,
+          "mock_port": 4010,
+          "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+          "command": [
+            "node",
+            "tests/run.mjs",
+            "e2e",
+            "--report",
+            "/home/runner/work/care-kotoba/care-kotoba/review-results/offline/tests.json"
+          ],
+          "exit_code": 0,
+          "seconds": 25.253
+        },
+        {
+          "mode": "real-dev",
+          "mock_only": true,
+          "filter": null,
+          "port": 5173,
+          "mock_port": 4010,
+          "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+          "startup_seconds": 3.867,
+          "command": [
+            "node",
+            "tests/run.mjs",
+            "e2e",
+            "--report",
+            "/home/runner/work/care-kotoba/care-kotoba/review-results/real-dev/tests.json"
+          ],
+          "exit_code": 1,
+          "network_guard": {
+            "blockedExternal": 0,
+            "mockBaseConfigured": true,
+            "policy": "code"
+          },
+          "worker_restored": true,
+          "fake_env_removed": true,
+          "seconds": 36.472
+        }
+      ],
+      "browser_install": [
+        "Downloading Chrome for Testing 153.0.8010.12 (playwright chromium v1243) from https://cdn.playwright.dev/builds/cft/153.0.8010.12/linux64/chrome-linux64.zip",
+        "Chrome for Testing 153.0.8010.12 (playwright chromium v1243) downloaded to /home/runner/.cache/ms-playwright/chromium-1243",
+        "Downloading Chrome Headless Shell 153.0.8010.12 (playwright chromium-headless-shell v1243) from https://cdn.playwright.dev/builds/cft/153.0.8010.12/linux64/chrome-headless-shell-linux64.zip"
+      ]
+    }
+  }
+}
