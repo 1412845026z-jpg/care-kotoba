@@ -1,0 +1,122 @@
+name: Pinned Claude mock verification
+
+on:
+  push:
+    branches: [codex/CI-003-runner]
+    paths:
+      - .github/workflows/verify-claude.yml
+      - scripts/ci/verify_claude.py
+      - scripts/ci/local_fetch_only.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pinned-claude-review-${{ github.ref }}
+  cancel-in-progress: true
+
+# One-off evidence for unmerged fixed heads. This does not add their tests to
+# normal main CI; that integration still waits for G0-01 to merge (CI-002).
+jobs:
+  mock-review:
+    name: ${{ matrix.label }} / mock only / Node 22
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: G0-01
+            sha: 8bc18481865c2259e084a59a1f5e419e18ed1035
+          - label: REUSE-001
+            sha: a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207
+    env:
+      CI: "true"
+      WRANGLER_SEND_METRICS: "false"
+      CLOUDFLARE_CF_FETCH_ENABLED: "false"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout review tooling
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Checkout exact reviewed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ matrix.sha }}
+          path: verified-source
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Pin package manager and source; reject credential environment
+        working-directory: verified-source/prototype
+        env:
+          REVIEW_SHA: ${{ matrix.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$REVIEW_SHA"
+          node --input-type=module <<'JS'
+          import { readFileSync } from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          const [major, minor] = process.versions.node.split('.').map(Number);
+          if (major !== 22 || minor < 13) throw new Error('Node 22 >=22.13 required');
+          const { packageManager } = JSON.parse(readFileSync('package.json', 'utf8'));
+          if (!/^pnpm@\d+\.\d+\.\d+$/.test(packageManager)) throw new Error('Pinned pnpm required');
+          if (Object.keys(process.env).some(k => /^(OPENAI_|CK_)/.test(k))) throw new Error('Unexpected AI/access environment');
+          execFileSync('corepack', ['enable'], { stdio: 'inherit' });
+          execFileSync('corepack', ['prepare', packageManager, '--activate'], { stdio: 'inherit' });
+          console.log(`reviewed source: ${process.env.REVIEW_SHA}; Node ${process.version}; ${packageManager}`);
+          JS
+      - name: Frozen install
+        working-directory: verified-source/prototype
+        run: node scripts/ci-step.mjs pnpm install --frozen-lockfile
+      - name: Real TypeScript
+        working-directory: verified-source/prototype
+        run: node scripts/ci-step.mjs node node_modules/typescript/bin/tsc --noEmit
+      - name: Real production build (no deployment)
+        working-directory: verified-source/prototype
+        run: node scripts/ci-step.mjs pnpm build
+      - name: Static and unit tests
+        working-directory: verified-source/prototype
+        run: |
+          mkdir -p ../../review-results
+          node tests/run.mjs static --report ../../review-results/static.json
+          node tests/run.mjs unit --report ../../review-results/unit.json
+      - name: Install official Chromium
+        working-directory: verified-source/prototype
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Offline browser suite (simulated AI and WebRTC peer)
+        id: offline
+        continue-on-error: true
+        run: python3 scripts/ci/verify_claude.py --source verified-source --mode offline --report-dir review-results/offline
+      - name: Real Vinext dev browser suite (simulated AI and WebRTC peer)
+        id: realdev
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        run: python3 scripts/ci/verify_claude.py --source verified-source --mode real-dev --report-dir review-results/real-dev
+      - name: Confirm tracked source restored and no fake environment remains
+        if: ${{ !cancelled() }}
+        working-directory: verified-source
+        run: |
+          git diff --exit-code
+          test ! -e prototype/.dev.vars
+          test ! -e prototype/.env.local
+      - name: Keep diagnostic reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 tag resolved 2026-10-24 JST
+        with:
+          name: mock-review-${{ matrix.label }}-${{ matrix.sha }}
+          path: review-results/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Report browser failures without hiding either suite
+        if: ${{ !cancelled() }}
+        env:
+          OFFLINE_RESULT: ${{ steps.offline.outcome }}
+          REALDEV_RESULT: ${{ steps.realdev.outcome }}
+        run: |
+          test "$OFFLINE_RESULT" = success
+          test "$REALDEV_RESULT" = success

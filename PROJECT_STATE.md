@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本次状态核对的远端代码提交 | `main` = `1c028f02ec722deedfa139efda007b68195f624e`；G0/REUSE未合并，固定被测head见ENV-002 |
-| 核对时间与作者 | 2026-10-23T14:50:50.951Z，Codex（远端固定head+真实本地复测） |
+| 本次状态核对的远端代码提交 | `main` = `eada73b5ddb8757d95d38123f269d32546e58465`（ENV-002证据PR #11已合并；G0/REUSE未合并） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（固定提交与实际CI日志） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -57,7 +57,7 @@
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `8bc1848`，未合并 | ENV-002：真实安装/tsc/build/static通过，unit34/34；code模式非语音11通过1跳过；8项语音因无可用ICE候选失败，标准runner待核实 |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
 | ENV-001 | 真实dev与环境变量/Cookie/响应头/sendBeacon | Codex | blocked | 旧证据PR #7已合并；新复核见ENV-002 | 新G0非语音dev已通过，模拟WebRTC仍受本机环境限制；完整语音未验收 |
-| ENV-002 | G0 fix1 / REUSE真实构建、dev与边界复核 | Codex | review_ready | `codex/ENV-002-review` | handoffs/2026-10-23-ENV-002-codex.md；非语音通过，语音ICE受限；PR9有两项确证业务缺陷 |
+| ENV-002 | 复核G0 fix1与REUSE、交接确认的业务问题 | Codex | merged | PR #11；合并 `eada73b` | handoffs/2026-10-23-ENV-002-codex.md；复核证据已入main，不代表语音验收 |
 | REUSE-001 | 固定文字注音与Realtime输入排队 | Claude | blocked | PR #9 @ `a43e7ed`，依赖PR #5 | docs/12_REVIEW_G0_AND_REUSE_2026-10-23.md：待确认response.created前排队与字典原型属性修复 |
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
@@ -65,6 +65,7 @@
 | CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
+| CI-003 | 标准runner固定head模拟语音复核（不替代合并后的CI-002） | Codex | in_progress | `codex/CI-003-runner` | handoffs/2026-10-24-CI-003-codex.md；G0 8bc1848 / REUSE a43e7ed，未调用真实API |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
 
@@ -102,3 +103,4 @@
 
 - handoffs/2026-10-23-SYNC-001-claude.md：原归档导入与共享规则合并；已由 PR #1 以 merge commit 合并 `4118ed1`，原样导入 `77a0604` 保留。
 - handoffs/2026-10-23-CI-001-results-codex.md：main CI 真实结果、耗时与完整日志入口。
+
