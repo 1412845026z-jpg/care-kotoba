@@ -1,0 +1,47 @@
+{
+  "task": "CI-001",
+  "tested_head": "87b611863046f8bb0b602aeb1bfb9e1b60396432",
+  "node": "v22.23.3",
+  "pnpm": "11.25.0",
+  "profile": "portable",
+  "main_run": {
+    "id": 39954687547,
+    "url": "https://github.com/1412845026z-jpg/care-kotoba/actions/runs/39954687547",
+    "status": "completed",
+    "conclusion": "success",
+    "job_id": 120417460692
+  },
+  "commands": [
+    {
+      "command": "pnpm install --frozen-lockfile",
+      "exit": 0,
+      "seconds": 19.308
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exit": 0,
+      "seconds": 7.33
+    },
+    {
+      "command": "pnpm build",
+      "exit": 0,
+      "seconds": 6.504
+    }
+  ],
+  "credential_scan": {
+    "tracked_files": 182,
+    "zip_members": true,
+    "result": "passed",
+    "guard_tests": 3
+  },
+  "paid_api_called": false,
+  "deployed": false,
+  "not_verified": [
+    "browser interactions",
+    "live AI output",
+    "device voice",
+    "tenant isolation",
+    "subscriptions",
+    "load"
+  ]
+}
