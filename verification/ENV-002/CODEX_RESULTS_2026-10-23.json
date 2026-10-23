@@ -525,11 +525,18 @@
     "Local voice failures observed only unspecified ICE host addresses (0.0.0.0/::), no usable peer connection; do not label as 8/9 proven application bugs",
     "Node os.networkInterfaces inspection errored (uv_interface_addresses permission/system error); exact interface topology not confirmed",
     "No G0 or REUSE merge in this review; standard runner mock WebRTC remains to be verified",
-    "Publication and OSS application paused by latest user request; repository kept private"
+    "OSS application paused by latest user request. Closeout GitHub REST read reports private=false (Public); Codex did not change visibility in this review."
   ],
   "auxiliary_failures": [
     "Initial offline nonvoice command lacked cached browser path; interrupted exit130, then corrected run13/13",
     "First notebook browser probe targeted already-stopped dev server, ERR_CONNECTION_REFUSED; rerun under controlled real dev server reproduced error boundary",
     "All temporary Worker probes restored byte-for-byte and fake env files removed; git diff vs verified indexes exit0"
-  ]
+  ],
+  "visibility_observation": {
+    "private": false,
+    "visibility": "public",
+    "source": "GitHub repository REST GET during closeout",
+    "changed_by_this_review": false,
+    "actor": "not established"
+  }
 }
