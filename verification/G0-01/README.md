@@ -11,7 +11,8 @@
 ## 这些结果证明什么、不证明什么
 
 - **证明**：在离线环境中，真实的页面代码和 API 路由代码能按预期处理：访问保护、反馈引用校验、本地存储容错、场景角色；语音客户端在真实（本机）WebRTC 连接上，能正确处理按 GA 格式模拟的 Realtime 事件，包括转写晚到、打断、识别失败、服务端挂断、断线重连、StrictMode 和诊断日志导出。
-- **不证明**：项目本身的 `tsc --noEmit` / `pnpm build` 能通过（交给 CI-001）；vinext SSR 和 Workers 运行时的行为（ENV-001）；真实 OpenAI 的事件时序、识别准确率、VAD、音质和费用；iPhone / Android 上的表现（docs/09）。
+- 项目本身的 `pnpm install --frozen-lockfile` / `tsc --noEmit` / `pnpm build` 由 CI 在 PR #5 上运行并通过（run 39956032151，提交 `07c5fa3`），这些不在本目录。
+- **不证明**：vinext SSR 和 Workers 运行时的行为（ENV-001）；真实 OpenAI 的事件时序、识别准确率、VAD、音质和费用；iPhone / Android 上的表现（docs/09）。
 
 ## 复现
 
