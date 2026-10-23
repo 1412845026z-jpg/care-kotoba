@@ -59,3 +59,4 @@ ruby{ruby-position:over}
 ruby rt{font-size:.5em;letter-spacing:0;font-weight:400;opacity:.85}
 .stage-caption ruby rt{font-size:.42em}
 .voice-transcript-note{margin-left:4px;font-weight:500}.correction-card .evidence-note{font-size:12px;color:#8f7aa3}
+.screen-error{width:min(560px,calc(100% - 32px));margin:48px auto;padding:28px 20px;background:#fff;border:1px solid #eadff0;border-radius:18px;text-align:center}.screen-error h2{font-size:19px;margin:0 0 8px}.screen-error p{color:#7b7190;font-size:14px;margin:0 0 18px}.screen-error-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.screen-error.overlay{position:fixed;inset:0;z-index:80;width:auto;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px 16px}.screen-error.overlay p{max-width:420px}

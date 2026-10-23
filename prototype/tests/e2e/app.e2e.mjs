@@ -171,6 +171,41 @@ test('notes whose text is an Object.prototype name render as plain text (furigan
   }
 });
 
+test('a crash in one screen shows a recoverable message instead of blanking the app', async () => {
+  const page = await env.page();
+  await page.addInitScript(() => { window.__CK_CRASH_TEST__ = 'notes'; });
+  await gotoApp(page, env.baseUrl);
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  const box = page.locator('.screen-error[data-screen="notes"]');
+  await box.waitFor();
+  assert.match(await box.innerText(), /この画面を表示できませんでした/);
+  assert.equal(await page.locator('.mobile-nav').count(), 1, 'navigation is still there');
+  await page.locator('.mobile-nav button', { hasText: 'シーン' }).click();
+  await page.locator('h1', { hasText: 'その場面を、練習しよう。' }).waitFor();
+  assert.equal(await page.locator('.screen-error').count(), 0, 'another tab renders normally');
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  await box.waitFor();
+  await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
+  await box.getByRole('button', { name: 'ホームに戻る' }).click();
+  await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
+  assert.deepEqual(page.errors.filter((e) => !/crash test: notes|screen-error/.test(e)), []);
+});
+
+test('a crash inside practice can be closed without losing the app', async () => {
+  const page = await env.page();
+  await page.addInitScript(() => { window.__CK_CRASH_TEST__ = 'practice'; });
+  await openScene(page, env.baseUrl, '入浴を断られたとき');
+  await page.getByRole('button', { name: /まずはデモで操作を体験/ }).click();
+  const box = page.locator('.screen-error.overlay[data-screen="practice"]');
+  await box.waitFor();
+  await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
+  await box.getByRole('button', { name: '練習を閉じる' }).click();
+  await page.locator('.screen-error').waitFor({ state: 'detached' });
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  await page.locator('h1', { hasText: 'ことばノート' }).waitFor();
+  assert.deepEqual(page.errors.filter((e) => !/crash test: practice|screen-error/.test(e)), []);
+});
+
 test('responsive layout: desktop width also renders without errors', async () => {
   const page = await env.page({ viewport: { width: 1280, height: 860 }, locale: 'ja-JP' });
   await gotoApp(page, env.baseUrl);
