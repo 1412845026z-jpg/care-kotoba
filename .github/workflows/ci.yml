@@ -40,6 +40,11 @@ jobs:
         run: |
           python3 scripts/ci/scan_secrets.py
           python3 -m unittest discover -s scripts/ci -p 'test_*.py' -v
+      - name: Validate fictional scenario and evaluation data (no API)
+        working-directory: .
+        run: |
+          python3 evals/validate.py
+          python3 -m unittest discover -s evals -p 'test_*.py' -v
       - name: Corepack from packageManager; verify portable mode
         run: |
           node --input-type=module <<'JS'

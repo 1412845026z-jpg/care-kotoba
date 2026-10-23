@@ -1,0 +1,264 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "status",
+    "review_notice",
+    "fictional",
+    "primary_skill",
+    "title_ja",
+    "setting_ja",
+    "npc_role_ja",
+    "opening_ja",
+    "learning_objectives_ja",
+    "learner_known_ja",
+    "hidden_information",
+    "conversation_branches",
+    "examples",
+    "counterexamples",
+    "feedback_rules_zh",
+    "transfer_task",
+    "review"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^CK-[CRP]0[1-4]$"
+    },
+    "version": {
+      "const": "0.1.0"
+    },
+    "status": {
+      "const": "draft_pending_expert_review"
+    },
+    "review_notice": {
+      "const": "草稿，待介护经验者与日语教育者审稿"
+    },
+    "fictional": {
+      "const": true
+    },
+    "primary_skill": {
+      "enum": [
+        "clarification",
+        "refusal_respect",
+        "report_certainty"
+      ]
+    },
+    "title_ja": {
+      "type": "string",
+      "minLength": 1
+    },
+    "setting_ja": {
+      "type": "string",
+      "minLength": 1
+    },
+    "npc_role_ja": {
+      "type": "string",
+      "minLength": 1
+    },
+    "opening_ja": {
+      "type": "string",
+      "minLength": 1
+    },
+    "learning_objectives_ja": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "learner_known_ja": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "hidden_information": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "fact_ja",
+          "reveal_policy_zh",
+          "scoring_guard_zh"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fact_ja": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reveal_policy_zh": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scoring_guard_zh": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "conversation_branches": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "trigger_zh",
+          "npc_reply_ja",
+          "reveals",
+          "coach_rule_zh"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trigger_zh": {
+            "type": "string",
+            "minLength": 1
+          },
+          "npc_reply_ja": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reveals": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "coach_rule_zh": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "examples": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "learner_ja",
+          "why_acceptable_zh"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "learner_ja": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_acceptable_zh": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "counterexamples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "learner_ja",
+          "why_problematic_ja",
+          "display_policy_zh"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "learner_ja": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_problematic_ja": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display_policy_zh": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "feedback_rules_zh": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "transfer_task": {
+      "type": "object",
+      "required": [
+        "prompt_ja",
+        "expected_intents_ja",
+        "do_not_require_exact_reference_ja"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "prompt_ja": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_intents_ja": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "do_not_require_exact_reference_ja": {
+          "const": true
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "required_roles_zh",
+        "clinical_procedure_scope_zh",
+        "approved"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "required_roles_zh": {
+          "const": [
+            "介护经验者",
+            "日语教育者"
+          ]
+        },
+        "clinical_procedure_scope_zh": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:care-kotoba:scenario:0.1.0",
+  "title": "Care Kotoba fictional scenario draft"
+}
