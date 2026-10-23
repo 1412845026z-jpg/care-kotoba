@@ -58,7 +58,7 @@
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
 | ENV-001 | 在真实 dev server 上验证 G0-01；核实服务端环境变量注入方式（`.env.local` / `.dev.vars` / `cloudflare:workers`） | Codex | queued（等 G0-01 推送） | — | — |
 | DEPLOY-001 | 私有 staging 部署方案（只准备，等用户授权后执行） | Codex | queued | — | — |
-| CONTENT-001 | 12个核心场景规格草稿与固定评测样本（`content/`、`evals/`），标注待专业审稿 | Codex | queued | — | — |
+| CONTENT-001 | 12个核心场景规格草稿与固定评测样本（`content/`、`evals/`），标注待专业审稿 | Codex | review_ready | `codex/CONTENT-001` | handoffs/2026-10-23-CONTENT-001-codex.md；12 场景 / 48 固定样本；结构与原话引用校验通过，待两类专家审稿 |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
 
