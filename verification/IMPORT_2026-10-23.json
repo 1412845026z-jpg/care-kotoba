@@ -1,0 +1,39 @@
+{
+  "purpose": "Record of the 2026-10-23 import of the handoff archive into the shared GitHub repository. Read by tools/verify_import.py. ARCHIVE_MANIFEST.json is the untouched original manifest and is kept for provenance.",
+  "repository": "https://github.com/1412845026z-jpg/care-kotoba",
+  "imported_by": "Claude (Claude Code session)",
+  "imported_at_jst": "2026-10-23T21:05:00+09:00",
+  "base_commit_on_main": "37d331c170bfe148d39a8068a3a8763a891fe376",
+  "verbatim_import_commit": "77a0604f262cdbd801524094650448bffb870173",
+  "verbatim_import_commit_note": "On branch claude/SYNC-001-import. tools/verify_archive.py passes on this commit's tree (163 manifest files, 130 original sources, 0 errors). The SHA may change if the PR is squash- or rebase-merged.",
+  "old_sites_source_commit": "e643aed9b347cf5e1f157b4878626c6664063534",
+  "archive": {
+    "path": "archives/Care_Kotoba_Claude_Handoff_2026-10-23.zip",
+    "root": "Care_Kotoba_Claude_Handoff_2026-10-23",
+    "sha256": "b9aa73109a4b46eda7b7bf76f76b225d3ab940a57d2655f124ad3320eb238f12",
+    "entries": 164
+  },
+  "shared_progress_package": {
+    "path": "archives/Care_Kotoba_Shared_Progress_2026-10-23.zip",
+    "sha256": "f9548e16a7aa3bf690cfe716b3847b5851de4d5aba143fdf83dc7d18299666a3",
+    "merged": {
+      "to_merge/AGENTS.md": "AGENTS.md (verbatim, plus an appended section of repository-specific rules)",
+      "to_merge/PROJECT_STATE.md": "PROJECT_STATE.md (template filled in with real repository state)",
+      "to_merge/handoffs/TEMPLATE.md": "handoffs/TEMPLATE.md (verbatim)",
+      "to_merge/CLAUDE_IMPORT.txt": "appended to CLAUDE.md (@AGENTS.md import)"
+    }
+  },
+  "modified_after_import": {
+    "CLAUDE.md": {
+      "original_sha256": "72a588f03e76c631f57efaf6e6c3cc6c3f9627aecaa265238c37b628459ab29e",
+      "reason": "Appended the shared-rules section with @AGENTS.md as required by the shared progress package. Original text above it is unchanged; the original file remains inside the archived ZIP."
+    }
+  },
+  "moved_unchanged": {
+    "Care_Kotoba_Claude_Handoff_2026-10-23.zip": "archives/Care_Kotoba_Claude_Handoff_2026-10-23.zip",
+    "Care_Kotoba_Shared_Progress_2026-10-23.zip": "archives/Care_Kotoba_Shared_Progress_2026-10-23.zip",
+    "CLAUDE_IMPORT_TASK.txt": "archives/CLAUDE_IMPORT_TASK.txt"
+  },
+  "added_by_import": [".gitignore", "AGENTS.md", "PROJECT_STATE.md", "handoffs/TEMPLATE.md", "handoffs/2026-10-23-SYNC-001-claude.md", "tools/verify_import.py", "verification/IMPORT_2026-10-23.json"],
+  "rewritten": ["README.md"]
+}
