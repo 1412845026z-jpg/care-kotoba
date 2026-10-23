@@ -61,7 +61,7 @@
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
 | CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
-| REUSE-001 | 开源 / 免费资料复用：固定文字注音（kuromoji 离线生成 + 人工修正）、Realtime 输入排队（参考 openai-agents-js）、来源与许可清单 | Claude | review_ready（依赖 PR #5） | `claude/REUSE-001`，PR 见交接记录 | handoffs/2026-10-23-REUSE-001-claude.md；research/REUSE_REVIEW_2026-10-23.md；unit 38/38、e2e 22/22（离线） |
+| REUSE-001 | 开源 / 免费资料复用：固定文字注音（kuromoji 离线生成 + 人工修正）、Realtime 输入排队（参考 openai-agents-js）、来源与许可清单 | Claude | review_ready（依赖 PR #5） | `claude/REUSE-001`，[PR #9](https://github.com/1412845026z-jpg/care-kotoba/pull/9)（先合并 PR #5） | handoffs/2026-10-23-REUSE-001-claude.md；research/REUSE_REVIEW_2026-10-23.md；unit 38/38、e2e 22/22（离线） |
 | CONTENT-002 | 从厚劳省「介護の日本語」教材 / 介護福祉専門用語集（PDL1.0）提取与 12 个核心场景相关的术语和多语言释义，写明出处和改动说明 | Codex | queued | — | research/reuse_candidates_2026-10-23.csv；Claude 的环境下载不了 mhlw.go.jp |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
