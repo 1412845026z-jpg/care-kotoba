@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "mode": "allow-changes",
+  "archive_zip": "archives/Care_Kotoba_Claude_Handoff_2026-10-23.zip",
+  "manifest_files": 163,
+  "identical_to_archive": 147,
+  "modified_after_import_verified": [
+    "CLAUDE.md"
+  ],
+  "original_source_files": 130,
+  "original_source_unchanged": 118,
+  "original_source_changed_since_import": [
+    "prototype/app/api/chat/route.ts",
+    "prototype/app/api/feedback/route.ts",
+    "prototype/app/api/health/route.ts",
+    "prototype/app/api/session/route.ts",
+    "prototype/app/api/speech/route.ts",
+    "prototype/app/globals.css",
+    "prototype/app/page.tsx",
+    "prototype/components/admin.tsx",
+    "prototype/components/practice.tsx",
+    "prototype/components/ui.tsx",
+    "prototype/lib/ai-server.ts",
+    "prototype/lib/content.ts"
+  ],
+  "archive_files_changed_since_import": [
+    "docs/02_STATUS_AND_GAPS.md",
+    "docs/03_RUN_AND_MIGRATE.md",
+    "docs/06_SOURCE_MAP_AND_API.md"
+  ],
+  "git_blob_checked": true,
+  "notes": [],
+  "errors": []
+}

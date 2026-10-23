@@ -1,0 +1,135 @@
+TAP version 13
+# \# mock OpenAI at http://127.0.0.1:4010/v1 (dev server needs OPENAI_BASE_URL=http://127.0.0.1:4010/v1)
+# Subtest: AI routes refuse requests without access (no Origin header, like curl)
+ok 1 - AI routes refuse requests without access (no Origin header, like curl)
+  ---
+  duration_ms: 150.52682
+  type: 'test'
+  ...
+# Subtest: a wrong access code is rejected and the right one grants an HttpOnly cookie
+ok 2 - a wrong access code is rejected and the right one grants an HttpOnly cookie
+  ---
+  duration_ms: 53.371949
+  type: 'test'
+  ...
+# Subtest: without an access code, AI routes only answer on localhost
+ok 3 - without an access code, AI routes only answer on localhost # SKIP harness only: needs to reconfigure the server and spoof Host
+  ---
+  duration_ms: 0.336203
+  type: 'test'
+  ...
+# Subtest: the learner is asked for the access code before an AI practice, and the demo needs none
+ok 4 - the learner is asked for the access code before an AI practice, and the demo needs none
+  ---
+  duration_ms: 2701.836826
+  type: 'test'
+  ...
+# \# mock OpenAI at http://127.0.0.1:4010/v1 (dev server needs OPENAI_BASE_URL=http://127.0.0.1:4010/v1)
+# Subtest: home renders at 390px without horizontal overflow or page errors
+ok 5 - home renders at 390px without horizontal overflow or page errors
+  ---
+  duration_ms: 917.428427
+  type: 'test'
+  ...
+# Subtest: scripted demo can be completed and is labelled as not AI-evaluated
+ok 6 - scripted demo can be completed and is labelled as not AI-evaluated
+  ---
+  duration_ms: 3402.347123
+  type: 'test'
+  ...
+# Subtest: text practice uses the mock AI and shows feedback
+ok 7 - text practice uses the mock AI and shows feedback
+  ---
+  duration_ms: 1519.270472
+  type: 'test'
+  ...
+# Subtest: feedback never shows a quote the learner did not say
+ok 8 - feedback never shows a quote the learner did not say
+  ---
+  duration_ms: 1306.898368
+  type: 'test'
+  ...
+# Subtest: corrupted or outdated localStorage does not break the app
+ok 9 - corrupted or outdated localStorage does not break the app
+  ---
+  duration_ms: 1573.48096
+  type: 'test'
+  ...
+# Subtest: staff-to-staff scenes are not role-played as the resident
+ok 10 - staff-to-staff scenes are not role-played as the resident
+  ---
+  duration_ms: 864.510431
+  type: 'test'
+  ...
+# Subtest: health endpoint answers and reports configuration without secrets
+ok 11 - health endpoint answers and reports configuration without secrets
+  ---
+  duration_ms: 14.757379
+  type: 'test'
+  ...
+# Subtest: responsive layout: desktop width also renders without errors
+ok 12 - responsive layout: desktop width also renders without errors
+  ---
+  duration_ms: 746.458432
+  type: 'test'
+  ...
+# \# mock OpenAI at http://127.0.0.1:4010/v1 (dev server needs OPENAI_BASE_URL=http://127.0.0.1:4010/v1)
+# Subtest: voice: a late input transcription is shown before the reply it triggered, with no duplicates
+ok 13 - voice: a late input transcription is shown before the reply it triggered, with no duplicates
+  ---
+  duration_ms: 4947.109885
+  type: 'test'
+  ...
+# Subtest: voice: finishing a session asks the server to hang up the Realtime call
+ok 14 - voice: finishing a session asks the server to hang up the Realtime call
+  ---
+  duration_ms: 4599.720716
+  type: 'test'
+  ...
+# Subtest: voice: the voice transcript reaches feedback in conversation order
+ok 15 - voice: the voice transcript reaches feedback in conversation order
+  ---
+  duration_ms: 4499.765627
+  type: 'test'
+  ...
+# Subtest: voice: an interrupted reply is marked as interrupted
+ok 16 - voice: an interrupted reply is marked as interrupted
+  ---
+  duration_ms: 4799.833239
+  type: 'test'
+  ...
+# Subtest: voice: a failed transcription is shown as not recognised instead of disappearing
+ok 17 - voice: a failed transcription is shown as not recognised instead of disappearing
+  ---
+  duration_ms: 4549.578531
+  type: 'test'
+  ...
+# Subtest: voice: losing the connection is reported and the session can be resumed with its transcript
+ok 18 - voice: losing the connection is reported and the session can be resumed with its transcript
+  ---
+  duration_ms: 8174.156165
+  type: 'test'
+  ...
+# Subtest: voice: connects under React StrictMode (development double effects)
+ok 19 - voice: connects under React StrictMode (development double effects)
+  ---
+  duration_ms: 5032.732563
+  type: 'test'
+  ...
+# Subtest: voice: diagnostics can be exported after a session
+ok 20 - voice: diagnostics can be exported after a session
+  ---
+  duration_ms: 6871.526203
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 1
+# todo 0
+# duration_ms 58573.777209
+
+SUMMARY [{"name":"e2e","exitCode":0,"pass":19,"fail":0,"seconds":58.6}]

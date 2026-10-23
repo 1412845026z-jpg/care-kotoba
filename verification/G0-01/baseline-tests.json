@@ -1,0 +1,44 @@
+{
+  "ranAt": "2026-10-23T12:15:16.739Z",
+  "node": "v22.22.0",
+  "mode": "all",
+  "results": [
+    {
+      "name": "static",
+      "exitCode": 0,
+      "seconds": 2.2,
+      "failures": []
+    },
+    {
+      "name": "unit",
+      "exitCode": 0,
+      "pass": 0,
+      "fail": 0,
+      "note": "no unit tests"
+    },
+    {
+      "name": "e2e",
+      "exitCode": 1,
+      "seconds": 158.9,
+      "pass": 5,
+      "fail": 15,
+      "failures": [
+        "AI routes refuse requests without access (no Origin header, like curl)",
+        "a wrong access code is rejected and the right one grants an HttpOnly cookie",
+        "without an access code, AI routes only answer on localhost",
+        "the learner is asked for the access code before an AI practice, and the demo needs none",
+        "feedback never shows a quote the learner did not say",
+        "corrupted or outdated localStorage does not break the app",
+        "staff-to-staff scenes are not role-played as the resident",
+        "voice: a late input transcription is shown before the reply it triggered, with no duplicates",
+        "voice: finishing a session asks the server to hang up the Realtime call",
+        "voice: the voice transcript reaches feedback in conversation order",
+        "voice: an interrupted reply is marked as interrupted",
+        "voice: a failed transcription is shown as not recognised instead of disappearing",
+        "voice: losing the connection is reported and the session can be resumed with its transcript",
+        "voice: connects under React StrictMode (development double effects)",
+        "voice: diagnostics can be exported after a session"
+      ]
+    }
+  ]
+}

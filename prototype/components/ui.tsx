@@ -2,11 +2,10 @@
 import {useEffect,useRef} from 'react';
 import {Sun,Utensils,Droplets,Heart,Move,MessageCircle,Activity,Flower2,Clock,ArrowUpRight,Check,ArrowRight} from 'lucide-react';
 import {categories,Scene} from '@/lib/content';
-export type Preferences={locale:'zh'|'en'|'ja';level:'gentle'|'challenge';goal:number;plan:'personal'|'company'};
-export type Note={id:string;text:string;sceneId:string;original?:string;reason?:string};
-export type RecordItem={id:string;sceneId:string;date:string;minutes:number;score:number|null;demo:boolean};
+export type {Preferences,Note,RecordItem} from '@/lib/storage';
 const icons:Record<string,typeof Sun>={sun:Sun,utensils:Utensils,droplets:Droplets,heart:Heart,move:Move,message:MessageCircle,activity:Activity,flower:Flower2};
-export function readStore<T,>(key:string,fallback:T):T{try{const v=localStorage.getItem(key);return v?JSON.parse(v):fallback;}catch{return fallback;}}
+/** Raw JSON from localStorage (unknown shape). Callers must sanitise it — see lib/storage.ts. */
+export function readStore(key:string):unknown{try{const v=localStorage.getItem(key);return v?JSON.parse(v):null;}catch{return null;}}
 export function writeStore(key:string,v:unknown){try{localStorage.setItem(key,JSON.stringify(v));}catch{}}
 export function dateKey(d=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(d);}
 export function support(locale:string,zh:string,en:string,ja=''){return locale==='zh'?zh:locale==='en'?en:ja;}

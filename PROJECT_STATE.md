@@ -29,8 +29,10 @@
 | --- | --- | --- | --- |
 | 两个ZIP完整性 | SHA-256、`zipfile.testzip()`、路径安全（无绝对路径/`..`/符号链接） | 导入前文件 | 通过 |
 | 原样导入 | `python3 -I tools/verify_archive.py`（163个清单文件 + 130个原源码） | `77a0604`（claude/SYNC-001-import） | 通过，0错误 |
-| 导入后校验 | `python3 -I tools/verify_import.py`（含130个源码的 git blob 比对） | SYNC-001 分支 HEAD，见交接记录 | 见 handoffs/2026-10-23-SYNC-001-claude.md |
+| 导入后校验 | `python3 -I tools/verify_import.py`（含130个源码的 git blob 比对） | SYNC-001 分支 HEAD，见交接记录 | 见 handoffs/2026-10-23-SYNC-001-claude.md；开发分支上改用 `--allow-changes`，列出有意修改的文件 |
 | TypeScript / 生产构建 | [main Actions run 39954687547](https://github.com/1412845026z-jpg/care-kotoba/actions/runs/39954687547)；Node22.23.3 / pnpm11.25.0 / portable | `87b611863046f8bb0b602aeb1bfb9e1b60396432` | install、tsc、build、离线凭证扫描全部通过；不代表浏览器/真实语音通过 |
+| 离线测试（G0-01） | `node tests/run.mjs all`：静态检查 + 单元测试 + 浏览器 / 语音模拟测试（Claude 沙箱） | `55f0ebb` → `2bfe1a0` | 基线 5/20 → 首轮 20/20、unit 33/33 → fix2：unit 34/34、e2e 22/22；模拟环境，不是真实 AI 或真机；CI 尚未运行这些测试（CI-002） |
+| 真实构建与 dev（G0-01） | Codex ENV-002：本机 frozen install、tsc、build、static、unit；真实 vinext dev + 本机 mock | `8bc1848` | 全部 exit0，unit 34/34；dev 完整组 11 通过、8 项语音失败（无可用 ICE 候选）、1 跳过；语音未验收 |
 | 真实 AI / 语音 | 无成功端到端验收记录 | — | 未验证 |
 | 企业账号与数据隔离 | 原型为虚构示例 | — | 未实现 |
 | 支付/订阅/真机/负载/备份恢复 | — | — | 未实现、未验证 |
@@ -54,7 +56,7 @@
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
-| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `3a3f1a9`，未合并 | ENV-003新head：真实install/tsc/build/static通过、unit34/34、离线模拟22/22、真实dev21通过1跳过；Cookie测试约定待修，真实AI/真机未验证 |
+| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5（head 见 PR 页面；Cookie 修复提交 `89d8ad2`），未合并 | ENV-003（Codex，@`3a3f1a9`）：真实install/tsc/build/static通过、unit34/34、离线模拟22/22、真实dev21通过1跳过。COOKIE-ENCODING-001 已修：篡改测试改变真实签名字节，token 只接受规范 base64url；离线 static 0 错误、unit 37/37、e2e 22/22。真实AI/真机未验证 |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
 | ENV-001 | 真实dev与环境变量/Cookie/响应头/sendBeacon | Codex | merged | 证据PR #7及PR #12，合并 `67fc7ab` | 环境矩阵见docs/10，标准runner补齐模拟语音；真实AI/真机未验证，Cookie测试另列待办 |
 | ENV-002 | 复核G0 fix1与REUSE、交接确认的业务问题 | Codex | merged | PR #11；合并 `eada73b` | handoffs/2026-10-23-ENV-002-codex.md；复核证据已入main，不代表真实AI或真机验收 |
@@ -89,9 +91,13 @@
 
 - **旧模型停用日期**（OpenAI 官方弃用页，2026-10-23 核对：https://developers.openai.com/api/docs/deprecations）：`gpt-4o-mini-tts` 各快照与 `tts-1` 于 2027-01-06 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4.1-mini-2025-04-14` 于 2027-01-14 停用（建议替代 `gpt-6-luna`）；`gpt-realtime-mini` 于 2027-01-20 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4o-mini-transcribe` 于 2027-02-26 停用（建议替代 `gpt-live-transcribe` 或 `gpt-transcribe`）。原型代码仍写死这些型号。迁移前需用固定样本做真实调用比较，这会产生 API 费用，需用户授权。
 - Claude 的云端环境无法访问 npm 仓库，不能运行 `pnpm install`、完整 `tsc` 或 vinext 构建；真实构建结果依赖 CI-001 与 Codex 的环境。
-- 真实 AI 与真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪。
+- 真实 AI 与真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪（DEVICE-001）。
+- G0-01 改了安全默认：没有配置访问码时，AI 接口只在 localhost 可用。部署时必须设置 `CK_ACCESS_CODE`，或者在确有平台访问控制时设置 `CK_ACCESS_POLICY=open`（docs/03 补充段落）。
+- 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-G0-01-fix2-claude.md：按 ENV-002 修复 e2e setup 失败不清理；测试组硬超时；--filter 只启动相关文件。
 
 - handoffs/2026-10-24-STOP-0150-codex.md：本轮统一交接、已合并工作、固定被测SHA、Cookie测试待办与Claude接续顺序；用户指定01:50 JST停止执行。
 
@@ -115,11 +121,7 @@
 - handoffs/2026-10-23-CONTENT-001-codex.md：12场景/48样本由PR #6进入main，专业审稿未完成。
 
 - handoffs/2026-10-23-SYNC-002-codex.md：独立读取 PR #1 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`，175 个远端 blob 复核，130 项原源码完全一致。此记录不代表 CI 或真实语音已通过。
-
 - handoffs/2026-10-23-SYNC-001-claude.md：原归档导入与共享规则合并；已由 PR #1 以 merge commit 合并 `4118ed1`，原样导入 `77a0604` 保留。
 - handoffs/2026-10-23-CI-001-results-codex.md：main CI 真实结果、耗时与完整日志入口。
-
-
-
-
-
+- handoffs/2026-10-23-G0-01-claude.md：代码审计与基础修复、离线测试、真机测试方案（PR #5，未合并到 `main`）。
+- handoffs/2026-10-23-G0-01-fix1-claude.md：按 ENV-001 意见修复，附 Codex 复测命令（PR #5，未合并）。
