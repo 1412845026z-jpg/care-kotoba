@@ -1,29 +1,43 @@
 # Care Kotoba｜介护日语训练
 
-面向外国介护职员的日本养老介护现场日语训练项目。此仓库为用户控制的私有开发仓库。
+面向外国介护职员的日本养老介护现场日语训练项目。本仓库为用户控制的私有开发仓库，由 Claude Code 与 Codex 通过提交、分支/PR 和 `handoffs/` 记录共享进度。
 
 ## 当前状态
 
-- 私有仓库已建立，默认分支为 `main`。
-- 原项目交接归档与共享进度包已入库；远端文件的 Git 对象校验值与原始文件一致。
-- Claude Code 已登录；尚需在 GitHub 完成 Claude 应用对本仓库的首次授权。
-- 源码解包、共享指令合并和进度文件初始化等待 Claude Code 执行。当前不能报告为应用已部署或同步流程已验收。
+- 代码是 2026-10-23 归档时的**网页/PWA 原型**（Vinext / React / Cloudflare Workers），位于 [`prototype/`](prototype/)。没有商店 App、生产账户、数据库、支付或企业数据隔离。
+- 原型的真实 AI 与真机语音链路没有成功的端到端验收记录；模型型号仍是旧的硬编码，且有明确的停用日期（见 [PROJECT_STATE.md](PROJECT_STATE.md)）。
+- 当前进度、负责人、分支和阻塞只在 [PROJECT_STATE.md](PROJECT_STATE.md) 维护。
 
-## 接手资料
+## 从哪里开始
 
-| 文件 | 用途 |
+| 想做什么 | 入口 |
 | --- | --- |
-| [CLAUDE_IMPORT_TASK.txt](CLAUDE_IMPORT_TASK.txt) | 本次需要实际执行的导入、校验、共享进度配置和提交要求 |
-| [原交接归档](Care_Kotoba_Claude_Handoff_2026-10-23.zip) | 164个文件，含130个原源码文件、产品方案、交互设计和历史验证记录 |
-| [共享进度包](Care_Kotoba_Shared_Progress_2026-10-23.zip) | AGENTS.md、PROJECT_STATE.md和交接记录模板 |
+| 了解规则（两边共用） | [AGENTS.md](AGENTS.md)；Claude 另读 [CLAUDE.md](CLAUDE.md)（已通过 `@AGENTS.md` 导入共用规则） |
+| 看当前进度和分工 | [PROJECT_STATE.md](PROJECT_STATE.md)、[handoffs/](handoffs/) |
+| 原交接入口 | [00_START_HERE.md](00_START_HERE.md) |
+| 项目背景与要求 | [docs/01_PROJECT_CONTEXT.md](docs/01_PROJECT_CONTEXT.md) |
+| 实现状态与缺口（归档时） | [docs/02_STATUS_AND_GAPS.md](docs/02_STATUS_AND_GAPS.md) |
+| 运行原型 | [docs/03_RUN_AND_MIGRATE.md](docs/03_RUN_AND_MIGRATE.md) |
+| 工作包与验收顺序 | [docs/04_BUILD_BACKLOG.md](docs/04_BUILD_BACKLOG.md) |
+| 产品/UI/商业方案 | [design/](design/)（PDF 与可点击的交互稿）、[docs/PRODUCT_PLAN_TEXT.txt](docs/PRODUCT_PLAN_TEXT.txt) |
+| 开源复用初筛 | [docs/07_OPEN_SOURCE_AND_NOTICES.md](docs/07_OPEN_SOURCE_AND_NOTICES.md)、[research/](research/) |
 
-Claude Code 接入本仓库后，读取并执行 `CLAUDE_IMPORT_TASK.txt`，在自己的工作分支推送结果并提交 PR。随后由 Codex 读取同一提交、核对导入内容并继续接续。
+## 运行原型（未在本仓库新环境验证）
 
-## 溯源与工程边界
+在 `prototype/` 目录，按 `package.json` 与锁文件（Node `>=22.13.0`，`pnpm@11.25.0`）：
 
-- 原 Sites 源码快照为 `e643aed9b347cf5e1f157b4878626c6664063534`，不是本 GitHub 仓库当前提交。
-- 原交接ZIP SHA-256：`b9aa73109a4b46eda7b7bf76f76b225d3ab940a57d2655f124ad3320eb238f12`。
-- 共享进度ZIP SHA-256：`f9548e16a7aa3bf690cfe716b3847b5851de4d5aba143fdf83dc7d18299666a3`。
-- 历史原型为网页/PWA；商店App、真实AI与真机闭环、企业隔离、订阅及负载仍须按实际实现与测试验收。
-- 归档不含密钥或登录会话。首次导入无需购买服务、调用产品AI接口或发布生产环境。
-- 共享记录以提交和推送为依据；双方聊天及未提交修改不会自动同步。
+```sh
+pnpm install --frozen-lockfile
+node node_modules/typescript/bin/tsc --noEmit
+pnpm build
+pnpm dev
+```
+
+这些命令出自归档文档，本仓库导入后尚未运行；以 CI 与实际终端输出为准。演示模式不需要 API 密钥。真实调用的密钥只能放在本地安全配置或部署平台的 secret 中，不能提交到仓库、贴到聊天或截图。
+
+## 溯源
+
+- `archives/` 保存原始上传的两个ZIP与导入任务说明，均未修改。
+- 原交接归档 SHA-256：`b9aa73109a4b46eda7b7bf76f76b225d3ab940a57d2655f124ad3320eb238f12`；共享进度包 SHA-256：`f9548e16a7aa3bf690cfe716b3847b5851de4d5aba143fdf83dc7d18299666a3`。
+- 原 Sites 源码提交 `e643aed9b347cf5e1f157b4878626c6664063534` 只是历史快照，不是本仓库的提交。
+- 校验：`python3 -I tools/verify_import.py`（导入后的正确入口）；`tools/verify_archive.py` 是归档原件，只在原样导入的提交上全部通过。
