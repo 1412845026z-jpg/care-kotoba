@@ -31,7 +31,8 @@
 | 原样导入 | `python3 -I tools/verify_archive.py`（163个清单文件 + 130个原源码） | `77a0604`（claude/SYNC-001-import） | 通过，0错误 |
 | 导入后校验 | `python3 -I tools/verify_import.py`（含130个源码的 git blob 比对） | SYNC-001 分支 HEAD，见交接记录 | 见 handoffs/2026-10-23-SYNC-001-claude.md；开发分支上改用 `--allow-changes`，列出有意修改的文件 |
 | TypeScript / 生产构建 | [main Actions run 39954687547](https://github.com/1412845026z-jpg/care-kotoba/actions/runs/39954687547)；Node22.23.3 / pnpm11.25.0 / portable | `87b611863046f8bb0b602aeb1bfb9e1b60396432` | install、tsc、build、离线凭证扫描全部通过；不代表浏览器/真实语音通过 |
-| 离线测试（G0-01） | `node tests/run.mjs all`：静态检查 + 33项单元测试 + 20项浏览器 / 语音模拟测试（Claude 沙箱） | `55f0ebb` | 基线 5/20 通过 → 修复后 20/20；单元测试 33/33；模拟环境，不是真实 AI 或真机；CI 尚未运行这些测试（CI-002） |
+| 离线测试（G0-01） | `node tests/run.mjs all`：静态检查 + 单元测试 + 浏览器 / 语音模拟测试（Claude 沙箱） | `55f0ebb` → `2bfe1a0` | 基线 5/20 → 首轮 20/20、unit 33/33 → fix2：unit 34/34、e2e 22/22；模拟环境，不是真实 AI 或真机；CI 尚未运行这些测试（CI-002） |
+| 真实构建与 dev（G0-01） | Codex ENV-002：本机 frozen install、tsc、build、static、unit；真实 vinext dev + 本机 mock | `8bc1848` | 全部 exit0，unit 34/34；dev 完整组 11 通过、8 项语音失败（无可用 ICE 候选）、1 跳过；语音未验收 |
 | 真实 AI / 语音 | 无成功端到端验收记录 | — | 未验证 |
 | 企业账号与数据隔离 | 原型为虚构示例 | — | 未实现 |
 | 支付/订阅/真机/负载/备份恢复 | — | — | 未实现、未验证 |
@@ -55,7 +56,7 @@
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
-| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `8bc18481865c2259e084a59a1f5e419e18ed1035`，未合并 | 已读取fix1交接；Claude报告模拟修复通过，Codex真实dev复测待做；原3/20是旧源码结果 |
+| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5（head 见 PR 页面；fix2 代码提交 `2bfe1a0`），未合并 | ENV-002（Codex，@`8bc1848`）：真实 install/tsc/build/static 通过，unit 34/34，真实 dev 非语音全部通过；8 项语音因本机无可用 ICE 候选失败（环境限制，标准 runner 待核实）。fix2 修复 setup 失败不清理（handoffs/2026-10-24-G0-01-fix2-claude.md）：离线 static 0 错误、unit 34/34、e2e 22/22 |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
 | ENV-001 | 真实 dev server、环境变量、Cookie/响应头/sendBeacon | Codex | blocked | PR #7已合并（证据）；G0 fix1待复测 | handoffs/2026-10-23-ENV-001-codex.md；文件注入与模拟挂断通过，旧源码浏览器17失败；Claude已推送fix1，等Codex真实dev复测 |
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
@@ -87,6 +88,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-G0-01-fix2-claude.md：按 ENV-002 修复 e2e setup 失败不清理；测试组硬超时；--filter 只启动相关文件。
 
 - handoffs/2026-10-23-OSS-001-codex.md：用户要求尝试公开并申请；已准备历史检查与真实申请草稿，尚未执行公开或提交表单。
 

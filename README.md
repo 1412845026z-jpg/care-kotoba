@@ -1,6 +1,6 @@
 # Care Kotoba｜介护日语训练
 
-面向外国介护职员的日本养老介护现场日语训练项目。本仓库为用户控制的私有开发仓库，由 Claude Code 与 Codex 通过提交、分支/PR 和 `handoffs/` 记录共享进度。
+面向外国介护职员的日本养老介护现场日语训练项目。本仓库由用户控制，2026-10-23 起为公开可见（GitHub REST `private=false`）；尚未选择项目许可证，公开可见不等于授权复用。由 Claude Code 与 Codex 通过提交、分支/PR 和 `handoffs/` 记录共享进度。
 
 ## 当前状态
 
@@ -33,7 +33,7 @@ pnpm build
 pnpm dev
 ```
 
-这些命令出自归档文档，本仓库导入后尚未运行；以 CI 与实际终端输出为准。演示模式不需要 API 密钥。真实调用的密钥只能放在本地安全配置或部署平台的 secret 中，不能提交到仓库、贴到聊天或截图。
+这些命令出自归档文档；`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build` 已由 CI 和 Codex 的真实环境运行通过（见 PROJECT_STATE.md 验证记录），以 CI 与实际终端输出为准。演示模式不需要 API 密钥。真实调用的密钥只能放在本地安全配置或部署平台的 secret 中，不能提交到仓库、贴到聊天或截图。
 
 ## 溯源
 

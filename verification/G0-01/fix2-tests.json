@@ -1,0 +1,29 @@
+{
+  "ranAt": "2026-10-23T15:16:24.015Z",
+  "node": "v22.22.0",
+  "mode": "all",
+  "results": [
+    {
+      "name": "static",
+      "exitCode": 0,
+      "seconds": 4.5,
+      "failures": []
+    },
+    {
+      "name": "unit",
+      "exitCode": 0,
+      "seconds": 0.4,
+      "pass": 34,
+      "fail": 0,
+      "failures": []
+    },
+    {
+      "name": "e2e",
+      "exitCode": 0,
+      "seconds": 68.9,
+      "pass": 22,
+      "fail": 0,
+      "failures": []
+    }
+  ]
+}
