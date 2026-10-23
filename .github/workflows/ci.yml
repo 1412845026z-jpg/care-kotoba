@@ -44,6 +44,9 @@ jobs:
         working-directory: .
         run: |
           python3 evals/validate.py
+          python3 content/terminology/validate.py
+          python3 evals/source-confidence/validate.py
+          python3 content/review/build.py --check
           python3 -m unittest discover -s evals -p 'test_*.py' -v
       - name: Corepack from packageManager; verify portable mode
         run: |
@@ -69,3 +72,6 @@ jobs:
         run: node scripts/ci-step.mjs pnpm build
       - name: Confirm dependency manifests were not rewritten
         run: git diff --exit-code -- package.json pnpm-lock.yaml pnpm-workspace.yaml
+
+
+

@@ -1,0 +1,151 @@
+[
+  {
+    "scenario_id": "CK-C01",
+    "core_term_ids": [
+      "CK-T001",
+      "CK-T003",
+      "CK-T031",
+      "CK-T033"
+    ],
+    "transfer_term_ids": [
+      "CK-T004"
+    ]
+  },
+  {
+    "scenario_id": "CK-C02",
+    "core_term_ids": [
+      "CK-T001",
+      "CK-T002",
+      "CK-T003",
+      "CK-T031"
+    ],
+    "transfer_term_ids": [
+      "CK-T030"
+    ]
+  },
+  {
+    "scenario_id": "CK-C03",
+    "core_term_ids": [
+      "CK-T005",
+      "CK-T031"
+    ],
+    "transfer_term_ids": [
+      "CK-T021",
+      "CK-T022",
+      "CK-T023",
+      "CK-T024",
+      "CK-T025"
+    ]
+  },
+  {
+    "scenario_id": "CK-C04",
+    "core_term_ids": [
+      "CK-T006",
+      "CK-T026",
+      "CK-T027",
+      "CK-T031",
+      "CK-T034"
+    ],
+    "transfer_term_ids": [
+      "CK-T028"
+    ]
+  },
+  {
+    "scenario_id": "CK-P01",
+    "core_term_ids": [
+      "CK-T007",
+      "CK-T016",
+      "CK-T026",
+      "CK-T034"
+    ],
+    "transfer_term_ids": []
+  },
+  {
+    "scenario_id": "CK-P02",
+    "core_term_ids": [
+      "CK-T006",
+      "CK-T007",
+      "CK-T017",
+      "CK-T018",
+      "CK-T027",
+      "CK-T034"
+    ],
+    "transfer_term_ids": []
+  },
+  {
+    "scenario_id": "CK-P03",
+    "core_term_ids": [
+      "CK-T007",
+      "CK-T019",
+      "CK-T020",
+      "CK-T027",
+      "CK-T034"
+    ],
+    "transfer_term_ids": [
+      "CK-T021",
+      "CK-T028",
+      "CK-T030"
+    ]
+  },
+  {
+    "scenario_id": "CK-P04",
+    "core_term_ids": [
+      "CK-T006",
+      "CK-T013",
+      "CK-T014",
+      "CK-T026",
+      "CK-T027",
+      "CK-T033",
+      "CK-T034"
+    ],
+    "transfer_term_ids": []
+  },
+  {
+    "scenario_id": "CK-R01",
+    "core_term_ids": [
+      "CK-T008",
+      "CK-T009",
+      "CK-T011",
+      "CK-T012",
+      "CK-T032"
+    ],
+    "transfer_term_ids": []
+  },
+  {
+    "scenario_id": "CK-R02",
+    "core_term_ids": [
+      "CK-T008",
+      "CK-T010",
+      "CK-T011",
+      "CK-T018",
+      "CK-T032"
+    ],
+    "transfer_term_ids": [
+      "CK-T024"
+    ]
+  },
+  {
+    "scenario_id": "CK-R03",
+    "core_term_ids": [
+      "CK-T005",
+      "CK-T010",
+      "CK-T012",
+      "CK-T013",
+      "CK-T014",
+      "CK-T032"
+    ],
+    "transfer_term_ids": []
+  },
+  {
+    "scenario_id": "CK-R04",
+    "core_term_ids": [
+      "CK-T009",
+      "CK-T011",
+      "CK-T012",
+      "CK-T015",
+      "CK-T029",
+      "CK-T032"
+    ],
+    "transfer_term_ids": []
+  }
+]

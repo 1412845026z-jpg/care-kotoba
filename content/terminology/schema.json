@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://care-kotoba.invalid/schema/terminology-v0.1.json",
+  "title": "Care Kotoba terminology draft",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "version", "status", "review_notice", "fictional_examples", "ja", "reading_ja", "learning_gloss", "example_ja", "feedback_guard_zh", "scenario_ids", "placement", "provenance", "authorship"],
+    "properties": {
+      "id": {"type": "string", "pattern": "^CK-T[0-9]{3}$"},
+      "version": {"const": "0.1.0"},
+      "status": {"const": "draft_pending_expert_review"},
+      "review_notice": {"const": "草稿，待介护经验者与日语教育者审稿"},
+      "fictional_examples": {"const": true},
+      "ja": {"type": "string", "minLength": 1},
+      "reading_ja": {"type": "string", "pattern": "^[ぁ-ゖー・]+$"},
+      "learning_gloss": {
+        "type": "object", "additionalProperties": false,
+        "required": ["zh-Hans", "en"],
+        "properties": {"zh-Hans": {"type": "string", "minLength": 1}, "en": {"type": "string", "minLength": 1}}
+      },
+      "example_ja": {"type": "string", "minLength": 1},
+      "feedback_guard_zh": {"type": "string", "minLength": 1},
+      "scenario_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^CK-[CRP]0[1-4]$"}},
+      "placement": {"enum": ["core", "transfer_only"]},
+      "provenance": {
+        "oneOf": [
+          {
+            "type": "object", "additionalProperties": false,
+            "required": ["kind", "source_id", "index_pdf_page", "printed_entry_page", "pdf_entry_page", "copied_definition", "copied_artwork"],
+            "properties": {
+              "kind": {"const": "common_headword_reference"},
+              "source_id": {"const": "mhlw-glossary-zh-2021"},
+              "index_pdf_page": {"type": "integer", "minimum": 1},
+              "printed_entry_page": {"type": "integer", "minimum": 1},
+              "pdf_entry_page": {"type": "integer", "minimum": 1},
+              "copied_definition": {"const": false}, "copied_artwork": {"const": false}
+            }
+          },
+          {
+            "type": "object", "additionalProperties": false,
+            "required": ["kind", "copied_definition", "copied_artwork"],
+            "properties": {"kind": {"const": "project_authored"}, "copied_definition": {"const": false}, "copied_artwork": {"const": false}}
+          }
+        ]
+      },
+      "authorship": {"type": "string", "minLength": 1}
+    }
+  }
+}
