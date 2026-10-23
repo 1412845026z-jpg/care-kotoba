@@ -16,20 +16,25 @@
 // syntax-checked here because @types/react is not available offline.
 //
 // Usage:
-//   CK_TOOL_NODE_MODULES=/opt/npm-tools/node_modules node tests/harness/offline-static-check.mjs [--json out.json]
+//   node tests/harness/offline-static-check.mjs [--json out.json]
+//   (tools come from prototype/node_modules first, then CK_TOOL_NODE_MODULES)
+//
+// Works with the project's own TypeScript (5.9.x) and with newer offline copies (6.x).
+// When the project's real @types/react is installed, the loose component shim is skipped:
+// the project `tsc --noEmit` is the authoritative component check there.
 
-import { createRequire } from 'node:module';
 import { readFileSync, readdirSync, statSync, writeFileSync, mkdtempSync, existsSync } from 'node:fs';
 import { join, relative, extname, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
+import { toolRequire, moduleDirs } from './tool-require.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..', '..'); // prototype/
-const toolModules = process.env.CK_TOOL_NODE_MODULES || join(root, 'node_modules');
-const require = createRequire(join(toolModules, 'noop.js'));
-const esbuild = require('esbuild');
-const ts = require('typescript');
+const esbuild = toolRequire('esbuild');
+const ts = toolRequire('typescript');
+const tsMajor = Number(ts.version.split('.')[0]);
+const projectHasReactTypes = existsSync(join(root, 'node_modules', '@types', 'react', 'package.json'));
 
 const SKIP_DIRS = new Set(['node_modules', 'dist', '.vinext', '.wrangler', '.sites-runtime', '.next', 'test-results', 'outputs', 'work']);
 function walk(dir, out = []) {
@@ -44,7 +49,7 @@ function walk(dir, out = []) {
 }
 
 const files = walk(root);
-const report = { root, toolModules, tools: { esbuild: esbuild.version, typescript: ts.version }, syntax: [], types: [], json: [], secrets: [], models: [] };
+const report = { root: '<prototype>', moduleDirs: moduleDirs().map((d) => (d.startsWith(root) ? '<prototype>/' + relative(root, d) : '<CK_TOOL_NODE_MODULES>')), tools: { esbuild: esbuild.version, typescript: ts.version }, syntax: [], types: [], json: [], secrets: [], models: [] };
 
 // 1. syntax
 const loaders = { '.ts': 'ts', '.tsx': 'tsx', '.mts': 'ts', '.mjs': 'js', '.js': 'js' };
@@ -72,11 +77,11 @@ const typeTargets = files.filter((f) => {
 });
 const stubDir = mkdtempSync(join(tmpdir(), 'ck-types-'));
 writeFileSync(join(stubDir, 'cloudflare-workers.d.ts'), "declare module 'cloudflare:workers' { export const env: Record<string, unknown>; }\n");
-const typeRoots = [join(toolModules, '@types')].filter(existsSync);
+const typeRoots = moduleDirs().map((d) => join(d, '@types')).filter(existsSync);
 const options = {
   strict: true, noEmit: true, target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext,
   moduleResolution: ts.ModuleResolutionKind.Bundler, lib: ['lib.dom.d.ts', 'lib.dom.iterable.d.ts', 'lib.esnext.d.ts'],
-  skipLibCheck: true, esModuleInterop: true, ignoreDeprecations: '6.0', resolveJsonModule: true, isolatedModules: true,
+  skipLibCheck: true, esModuleInterop: true, ...(tsMajor >= 6 ? { ignoreDeprecations: '6.0' } : {}), resolveJsonModule: true, isolatedModules: true,
   baseUrl: root, paths: { '@/*': ['./*'] }, types: ['node'], typeRoots,
 };
 const program = ts.createProgram([...typeTargets, join(stubDir, 'cloudflare-workers.d.ts')], options);
@@ -96,6 +101,9 @@ report.types = {
 // logic; it cannot check DOM/JSX attribute types (the real @types/react is not available
 // offline). The project `tsc --noEmit` in CI remains the authoritative check.
 const componentTargets = ['app/page.tsx', 'app/layout.tsx', 'components/practice.tsx', 'components/access.tsx', 'components/ui.tsx', 'components/admin.tsx'].map((r) => join(root, r)).filter(existsSync);
+if (projectHasReactTypes) {
+  report.components = { checked: [], skipped: 'real @types/react is installed in prototype/node_modules; the shim would conflict with it. Run the project `tsc --noEmit` (CI does) for components.', errors: [] };
+} else {
 const iconNames = new Set();
 for (const f of componentTargets) for (const m of readFileSync(f, 'utf8').matchAll(/import\s*\{([^}]*)\}\s*from\s*['"]lucide-react['"]/g)) for (const n of m[1].split(',')) { const x = n.trim().split(/\s+as\s+/)[0].trim(); if (x) iconNames.add(x); }
 writeFileSync(join(stubDir, 'react-shim.d.ts'), `
@@ -127,6 +135,7 @@ report.components = {
     return `${relative(root, d.file.fileName)}:${line + 1}:${character + 1} TS${d.code} ${msg}`;
   }),
 };
+}
 
 // 3. JSON
 for (const f of files.filter((f) => /\.(json|webmanifest)$/.test(f))) {
@@ -164,7 +173,7 @@ const jsonFail = report.json.filter((s) => !s.ok);
 const summary = {
   syntax: `${report.syntax.length - syntaxFail.length}/${report.syntax.length} files parse`,
   types: `${report.types.checked.length} server/pure modules type-checked, ${report.types.errors.length} errors`,
-  components: `${report.components.checked.length} components checked against a loose React shim, ${report.components.errors.length} errors`,
+  components: report.components.skipped ? `skipped (${report.components.skipped})` : `${report.components.checked.length} components checked against a loose React shim, ${report.components.errors.length} errors`,
   json: `${report.json.length - jsonFail.length}/${report.json.length} JSON files valid`,
   secrets: report.secrets.length ? `${report.secrets.length} suspicious matches` : 'no credential-like strings',
   models: report.models.map((m) => `${m.file}:${m.line} ${m.model}`),

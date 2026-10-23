@@ -1,12 +1,21 @@
-// Access protection for the paid AI routes (offline harness, mock OpenAI).
+// Access protection for the paid AI routes (mock OpenAI).
+// Offline harness: the suite starts its own server with an access code.
+// BASE_URL mode: needs a dev server started with CK_ACCESS_CODE=<code> and the same value in
+// CK_E2E_ACCESS_CODE; otherwise the suite is skipped (it cannot reconfigure an external server).
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { request as httpRequest } from 'node:http';
-import { setup, openScene, api } from './helpers.mjs';
+import { setup, openScene, api, EXTERNAL } from './helpers.mjs';
 
-const CODE = 'pilot-code-2026';
-let env;
-before(async () => { env = await setup({ env: { CK_ACCESS_POLICY: undefined, CK_ACCESS_CODE: CODE } }); });
+const HARNESS_CODE = 'pilot-code-2026';
+let env, code, skipAll = false;
+before(async () => {
+  env = await setup({ env: { CK_ACCESS_POLICY: undefined, CK_ACCESS_CODE: HARNESS_CODE } });
+  code = env.accessCode;
+  if (EXTERNAL && (!env.serverAccess?.required || !code)) {
+    skipAll = `external server policy is "${env.serverAccess?.policy}"${code ? '' : ' and CK_E2E_ACCESS_CODE is not set'}; start the dev server with CK_ACCESS_CODE and pass the same value in CK_E2E_ACCESS_CODE to run this suite`;
+  }
+});
 after(async () => { await env?.close(); });
 
 const chatBody = { scenarioId: 'bath-5', variant: 'gentle', locale: 'zh', level: 'gentle', messages: [{ role: 'user', text: 'こんにちは。' }] };
@@ -25,21 +34,23 @@ function rawPost(baseUrl, path, { host, body, cookie } = {}) {
   });
 }
 
-test('AI routes refuse requests without access (no Origin header, like curl)', async () => {
+test('AI routes refuse requests without access (no Origin header, like curl)', async (t) => {
+  if (skipAll) return t.skip(skipAll);
   const before = env.mock.state.requests.length;
   for (const path of ['/api/chat', '/api/feedback', '/api/speech', '/api/session']) {
     const body = path === '/api/speech' ? { text: 'こんにちは' } : path === '/api/session' ? { ...chatBody, sdp: 'v=0' } : chatBody;
     const res = await api(env.baseUrl, path, { body });
     assert.equal(res.status, 401, `${path} answered ${res.status} without access`);
-    assert.equal(res.data?.code, 'access_required');
+    assert.equal(res.data?.code, 'access_required', `${path}: expected the app's JSON refusal, got ${res.contentType}`);
   }
   assert.equal(env.mock.state.requests.length, before, 'an unauthenticated request reached the (mock) OpenAI API');
 });
 
-test('a wrong access code is rejected and the right one grants an HttpOnly cookie', async () => {
+test('a wrong access code is rejected and the right one grants an HttpOnly cookie', async (t) => {
+  if (skipAll) return t.skip(skipAll);
   const wrong = await api(env.baseUrl, '/api/access', { body: { code: 'nope' } });
   assert.equal(wrong.status, 401);
-  const ok = await api(env.baseUrl, '/api/access', { body: { code: CODE } });
+  const ok = await api(env.baseUrl, '/api/access', { body: { code } });
   assert.equal(ok.status, 200);
   const cookie = ok.headers.get('set-cookie') || '';
   assert.match(cookie, /ck_access=/);
@@ -52,7 +63,11 @@ test('a wrong access code is rejected and the right one grants an HttpOnly cooki
   assert.equal(forged.status, 401, 'a tampered cookie was accepted');
 });
 
-test('without an access code, AI routes only answer on localhost', async () => {
+test('without an access code, AI routes only answer on localhost', async (t) => {
+  // Reconfigures the server (removes the code) and spoofs the Host header. Only meaningful in the
+  // harness: a Vite dev server rejects unknown Host headers itself (an HTML 403 that is not the app's),
+  // and the test process cannot change a running Worker's environment.
+  if (EXTERNAL) return t.skip('harness only: needs to reconfigure the server and spoof Host');
   const saved = process.env.CK_ACCESS_CODE;
   delete process.env.CK_ACCESS_CODE;
   try {
@@ -60,14 +75,15 @@ test('without an access code, AI routes only answer on localhost', async () => {
     assert.equal(local.status, 200, 'local development without a code should work');
     const remote = await rawPost(env.baseUrl, '/api/chat', { host: 'care-kotoba.example.com', body: chatBody });
     assert.equal(remote.status, 403, 'a public host without access configuration must be refused');
-    assert.equal(remote.data?.code, 'access_not_configured');
+    assert.equal(remote.data?.code, 'access_not_configured', 'the 403 must be the app refusal (JSON code), not a generic host block');
   } finally {
     process.env.CK_ACCESS_CODE = saved;
   }
 });
 
-test('the learner is asked for the access code before an AI practice, and the demo needs none', async () => {
-  const page = await env.page();
+test('the learner is asked for the access code before an AI practice, and the demo needs none', async (t) => {
+  if (skipAll) return t.skip(skipAll);
+  const page = await env.page(undefined, { login: false });
   await openScene(page, env.baseUrl, '入浴を断られたとき');
   await page.getByText('まずはデモで操作を体験').click();
   await page.getByText('DEMO').first().waitFor();
@@ -80,7 +96,7 @@ test('the learner is asked for the access code before an AI practice, and the de
   await field.fill('wrong-code');
   await page.getByRole('button', { name: /確認して続ける/ }).click();
   await page.locator('.access-error').waitFor();
-  await field.fill(CODE);
+  await field.fill(code);
   await page.getByRole('button', { name: /確認して続ける/ }).click();
   await page.getByLabel('日本語で返答を入力').fill('今日は、入りたくないお気持ちなのですね。');
   await page.keyboard.press('Enter');

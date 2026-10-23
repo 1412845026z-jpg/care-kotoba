@@ -9,7 +9,11 @@
 // It does NOT reproduce OpenAI's model behaviour, timing, audio quality, VAD or
 // billing. Event shapes follow the GA Realtime API docs as checked 2026-10-23.
 
-export const SIM_LAUNCH_ARGS = ['--disable-features=WebRtcHideLocalIpsWithMdns'];
+// Both peers run in one Chromium on one machine: expose real host candidates instead of mDNS
+// names. The loopback switch is harmless but NOT sufficient for a network namespace whose only
+// interface is `lo`: there Chromium emits no ICE candidates at all (reproduced 2026-10-23 with
+// `unshare -rn`), so these tests need a machine with a normal network interface.
+export const SIM_LAUNCH_ARGS = ['--disable-features=WebRtcHideLocalIpsWithMdns', '--allow-loopback-in-peer-connection'];
 
 export async function attachRealtimeSimulator({ browser, mock }) {
   const context = await browser.newContext();
@@ -66,7 +70,26 @@ export async function attachRealtimeSimulator({ browser, mock }) {
     get callCount() { return calls; },
     lastCallId() { return sessions.at(-1)?.callId; },
     async waitForOpen(callId = api.lastCallId(), timeout = 15000) {
-      await page.waitForFunction((id) => window.__sims?.[id]?.open === true, callId, { timeout });
+      try {
+        await page.waitForFunction((id) => window.__sims?.[id]?.open === true, callId, { timeout });
+      } catch (e) {
+        // Make a connectivity failure diagnosable (environment vs app): states and candidate types on the simulator side.
+        const diag = await page.evaluate(async (id) => {
+          const s = window.__sims?.[id];
+          if (!s) return { error: 'no simulator peer for ' + id };
+          const out = { connectionState: s.pc.connectionState, iceConnectionState: s.pc.iceConnectionState, iceGatheringState: s.pc.iceGatheringState, signalingState: s.pc.signalingState, dataChannel: s.dc?.readyState || 'not received', local: [], remote: [], pairs: [] };
+          try {
+            (await s.pc.getStats()).forEach((r) => {
+              if (r.type === 'local-candidate') out.local.push(`${r.candidateType}/${r.protocol}/${r.address || r.ip || '?'}`);
+              if (r.type === 'remote-candidate') out.remote.push(`${r.candidateType}/${r.protocol}/${r.address || r.ip || '?'}`);
+              if (r.type === 'candidate-pair') out.pairs.push(r.state);
+            });
+          } catch (err) { out.statsError = String(err); }
+          return out;
+        }, callId).catch((err) => ({ error: String(err) }));
+        const hint = Array.isArray(diag.local) && diag.local.every((c) => /\/(0\.0\.0\.0|::|\?)$/.test(c)) ? ' — no usable ICE host candidate: this environment seems to have no network interface besides loopback, so two local WebRTC peers cannot connect (environment limitation, not an app result)' : '';
+        throw new Error(`simulated Realtime data channel did not open within ${timeout} ms${hint}: ${JSON.stringify(diag)}`);
+      }
     },
     async send(events, callId = api.lastCallId()) {
       const list = Array.isArray(events) ? events : [events];

@@ -1,11 +1,11 @@
-// Browser + API tests for the learner app (offline harness, mock OpenAI).
+// Browser + API tests for the learner app (offline harness or BASE_URL dev server, mock OpenAI).
 // Run: node tests/run.mjs e2e      (see tests/README.md)
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { setup, seedStorage, openScene, api, PHONE } from './helpers.mjs';
+import { setup, seedStorage, openScene, gotoApp, api, PHONE } from './helpers.mjs';
 
 let env;
-before(async () => { env = await setup(); });
+before(async () => { env = await setup(); await env.requireAiAccess(); });
 after(async () => { await env?.close(); });
 
 async function transcript(page) {
@@ -14,7 +14,7 @@ async function transcript(page) {
 
 test('home renders at 390px without horizontal overflow or page errors', async () => {
   const page = await env.page();
-  await page.goto(env.baseUrl);
+  await gotoApp(page, env.baseUrl);
   await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   assert.ok(overflow <= 1, `horizontal overflow ${overflow}px`);
@@ -78,7 +78,7 @@ test('corrupted or outdated localStorage does not break the app', async () => {
     'ck-notes': JSON.stringify([{ id: '1', text: '古い表現', sceneId: 'removed-scene' }, null, 42]),
     'ck-prefs': JSON.stringify({ locale: 'xx', goal: 'abc' }),
   });
-  await page.goto(env.baseUrl);
+  await gotoApp(page, env.baseUrl);
   await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   await page.locator('.mobile-nav button', { hasText: '学習記録' }).click();
@@ -87,7 +87,7 @@ test('corrupted or outdated localStorage does not break the app', async () => {
 
   const page2 = await env.page();
   await seedStorage(page2, { 'ck-history': JSON.stringify([{ id: 'x', sceneId: 'removed-scene', date: new Date().toISOString(), minutes: 3, score: 50, demo: false }]) });
-  await page2.goto(env.baseUrl);
+  await gotoApp(page2, env.baseUrl);
   await page2.locator('.mobile-nav button', { hasText: '学習記録' }).click();
   await page2.locator('h1', { hasText: 'できたことを、少しずつ。' }).waitFor();
   assert.deepEqual(page2.errors, []);
@@ -100,7 +100,7 @@ test('staff-to-staff scenes are not role-played as the resident', async () => {
   assert.notEqual(partner, '利用者の佐藤さん');
 
   env.mock.state.requests.length = 0;
-  const res = await api(env.baseUrl, '/api/chat', { body: { scenarioId: 'meal-6', variant: 'gentle', locale: 'zh', level: 'gentle', messages: [{ role: 'assistant', text: '田中さん、昼食の様子を教えてください。' }, { role: 'user', text: '佐藤さんは主食を半分召し上がりました。' }] } });
+  const res = await api(env.baseUrl, '/api/chat', { headers: await env.authHeaders(), body: { scenarioId: 'meal-6', variant: 'gentle', locale: 'zh', level: 'gentle', messages: [{ role: 'assistant', text: '田中さん、昼食の様子を教えてください。' }, { role: 'user', text: '佐藤さんは主食を半分召し上がりました。' }] } });
   assert.equal(res.status, 200);
   const sent = env.mock.state.requests.find((r) => r.path === '/v1/responses')?.body?.instructions || '';
   assert.ok(!sent.includes('施設利用者の佐藤さん（架空）'), 'meal-6 instructions still cast the AI as the resident');
@@ -110,12 +110,13 @@ test('health endpoint answers and reports configuration without secrets', async 
   const res = await api(env.baseUrl, '/api/health', { method: 'GET' });
   assert.equal(res.status, 200);
   assert.equal(res.data.configured, true);
-  assert.ok(!JSON.stringify(res.data).includes('test-dummy-key-not-real'), 'health leaks the API key');
+  const text = JSON.stringify(res.data);
+  assert.ok(!text.includes('test-dummy-key-not-real') && !/sk-[A-Za-z0-9_-]{10,}|Bearer /.test(text), 'health leaks key material');
 });
 
 test('responsive layout: desktop width also renders without errors', async () => {
   const page = await env.page({ viewport: { width: 1280, height: 860 }, locale: 'ja-JP' });
-  await page.goto(env.baseUrl);
+  await gotoApp(page, env.baseUrl);
   await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
   assert.deepEqual(page.errors, []);
 });

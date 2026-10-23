@@ -10,6 +10,7 @@ import { attachRealtimeSimulator, SIM_LAUNCH_ARGS, assistantTurn, userSpeech } f
 let env, sim;
 before(async () => {
   env = await setup({ launchArgs: SIM_LAUNCH_ARGS });
+  await env.requireAiAccess();
   sim = await attachRealtimeSimulator({ browser: env.browser, mock: env.mock });
 });
 after(async () => { await sim?.close(); await env?.close(); });

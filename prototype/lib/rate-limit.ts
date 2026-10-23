@@ -24,6 +24,19 @@ export function rateLimit(key: string, limit: number, windowMs: number, now = Da
   return { ok: true, retryAfterSeconds: 0 };
 }
 
+/** Check without recording (for limits that should only count failures, e.g. wrong access codes). */
+export function isRateLimited(key: string, limit: number, windowMs: number, now = Date.now()): { limited: boolean; retryAfterSeconds: number } {
+  const hits = (buckets.get(key) || []).filter((t) => t > now - windowMs);
+  buckets.set(key, hits);
+  return hits.length >= limit ? { limited: true, retryAfterSeconds: Math.max(1, Math.ceil((hits[0] + windowMs - now) / 1000)) } : { limited: false, retryAfterSeconds: 0 };
+}
+
+export function recordHit(key: string, now = Date.now()) {
+  const hits = buckets.get(key) || [];
+  hits.push(now);
+  buckets.set(key, hits);
+}
+
 export const ROUTE_LIMITS: Record<string, { limit: number; windowMs: number }> = {
   chat: { limit: 40, windowMs: 10 * 60_000 },
   feedback: { limit: 12, windowMs: 10 * 60_000 },

@@ -12,7 +12,7 @@
 //
 // This is a pilot/test gate, not an account system: no per-user identity, no organisation roles.
 import { deriveSecret, randomId, safeEqual, signToken, verifyToken } from './signing';
-import { rateLimit, ROUTE_LIMITS } from './rate-limit';
+import { isRateLimited, recordHit, ROUTE_LIMITS } from './rate-limit';
 
 export type Getter = (name: string) => string | undefined;
 export type AccessPolicy = 'code' | 'open' | 'local';
@@ -72,12 +72,14 @@ export async function grantAccess(req: Request, get: Getter, code: unknown): Pro
   const { policy, codes, ttlDays } = accessConfig(get);
   if (policy !== 'code') return { status: 200, body: { granted: true, policy } };
   if (!codes.length) return { status: 403, body: { error: 'アクセスコードが設定されていません。', code: 'access_not_configured' } };
-  const limited = rateLimit('access:' + clientKey(req), ROUTE_LIMITS.accessAttempt.limit, ROUTE_LIMITS.accessAttempt.windowMs);
-  if (!limited.ok) return { status: 429, body: { error: `試行回数が多すぎます。${limited.retryAfterSeconds}秒後にもう一度お試しください。`, code: 'rate_limited' } };
+  // Only wrong codes count towards the limit, so testers re-entering a correct code are never locked out.
+  const attemptKey = 'access:' + clientKey(req);
+  const limited = isRateLimited(attemptKey, ROUTE_LIMITS.accessAttempt.limit, ROUTE_LIMITS.accessAttempt.windowMs);
+  if (limited.limited) return { status: 429, body: { error: `試行回数が多すぎます。${limited.retryAfterSeconds}秒後にもう一度お試しください。`, code: 'rate_limited' } };
   const given = typeof code === 'string' ? code.trim().slice(0, 200) : '';
   let match = false;
   for (const c of codes) if (await safeEqual(given, c)) match = true;
-  if (!match) return { status: 401, body: { error: 'アクセスコードが正しくありません。', code: 'access_denied' } };
+  if (!match) { recordHit(attemptKey); return { status: 401, body: { error: 'アクセスコードが正しくありません。', code: 'access_denied' } }; }
   const exp = Math.floor(Date.now() / 1000) + ttlDays * 86400;
   const token = await signToken(await signingSecret(get, codes), 'access', { sub: randomId(9), exp });
   const secure = new URL(req.url).protocol === 'https:' ? '; Secure' : '';

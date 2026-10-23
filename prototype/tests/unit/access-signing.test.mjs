@@ -57,6 +57,14 @@ test('code guessing is rate limited per client', async () => {
   assert.equal(last.status, 429);
 });
 
+test('correct codes are not throttled, so testers are never locked out by successful logins', async () => {
+  const g = getter({ CK_ACCESS_CODE: 'pilot-code-1' });
+  for (let i = 0; i < 15; i++) {
+    const r = await grantAccess(new Request('https://x.test/api/access', { method: 'POST', headers: { 'cf-connecting-ip': '203.0.113.10' } }), g, 'pilot-code-1');
+    assert.equal(r.status, 200, `login ${i + 1}`);
+  }
+});
+
 test('signed tokens are bound to secret and purpose', async () => {
   const t = await signToken('s1', 'voice', { cid: 'rtc_1' });
   assert.deepEqual(await verifyToken('s1', 'voice', t), { cid: 'rtc_1' });

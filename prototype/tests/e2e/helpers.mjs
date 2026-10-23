@@ -1,9 +1,16 @@
 // Shared setup for browser tests: mock OpenAI + app + Chromium.
-// BASE_URL can point the browser at a real dev server instead of the offline
-// harness (e.g. BASE_URL=http://127.0.0.1:5173 after `pnpm dev`); in that case
-// the mock OpenAI server still starts (fixed port with CK_MOCK_PORT), and the dev
-// server must be configured with OPENAI_BASE_URL=http://127.0.0.1:<CK_MOCK_PORT>/v1
-// and a dummy OPENAI_API_KEY.
+//
+// Two modes:
+//  - Offline harness (default): starts tests/harness/server.mjs with the env each suite asks for.
+//  - BASE_URL=http://127.0.0.1:5173 : drives an already running `pnpm dev` instead. The test
+//    process cannot reconfigure that server, so:
+//      * start the mock with a fixed port (CK_MOCK_PORT=4010) and the dev server with
+//        OPENAI_BASE_URL=http://127.0.0.1:4010/v1 and a dummy OPENAI_API_KEY;
+//      * app/voice suites need either CK_ACCESS_POLICY=local on the server, or the server's
+//        access code in CK_E2E_ACCESS_CODE (the helpers then log in first);
+//      * the access suite needs a server with CK_ACCESS_CODE set and the same value in
+//        CK_E2E_ACCESS_CODE; tests that must reconfigure the server are skipped with a reason.
+// See tests/README.md.
 import { startHarness } from '../harness/server.mjs';
 import { createMockOpenAI } from '../harness/mock-openai.mjs';
 import { toolRequire } from '../harness/tool-require.mjs';
@@ -11,13 +18,17 @@ import { toolRequire } from '../harness/tool-require.mjs';
 const { chromium } = toolRequire('playwright');
 
 export const PHONE = { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: 'ja-JP', timezoneId: 'Asia/Tokyo' };
+export const EXTERNAL = !!process.env.BASE_URL;
+
+/** Readiness contract: app/page.tsx sets <html data-app-ready="true"> once React has hydrated/mounted. */
+export const READY_SELECTOR = 'html[data-app-ready="true"]';
 
 export async function setup({ env = {}, launchArgs = [] } = {}) {
   const mock = createMockOpenAI();
   const origin = await mock.listen(Number(process.env.CK_MOCK_PORT || 0));
-  if (process.env.BASE_URL) console.log(`# mock OpenAI at ${origin}/v1 (dev server needs OPENAI_BASE_URL=${origin}/v1)`);
+  if (EXTERNAL) console.log(`# mock OpenAI at ${origin}/v1 (dev server needs OPENAI_BASE_URL=${origin}/v1)`);
   let harness = null;
-  let baseUrl = process.env.BASE_URL;
+  let baseUrl = process.env.BASE_URL?.replace(/\/+$/, '');
   if (!baseUrl) {
     harness = await startHarness({
       env: { OPENAI_API_KEY: 'test-dummy-key-not-real', OPENAI_BASE_URL: `${origin}/v1`, CK_ACCESS_POLICY: 'local', CK_ACCESS_CODE: undefined, CK_RATE_LIMIT_MULTIPLIER: '100', ...env },
@@ -26,12 +37,36 @@ export async function setup({ env = {}, launchArgs = [] } = {}) {
     });
     baseUrl = harness.url;
   }
+  const serverAccess = (await api(baseUrl, '/api/access', { method: 'GET' })).data;
+  const accessCode = EXTERNAL ? process.env.CK_E2E_ACCESS_CODE || '' : env.CK_ACCESS_CODE || '';
+  let cookie = '';
+  async function loginCookie() {
+    if (cookie || !serverAccess?.required || !accessCode) return cookie;
+    const r = await api(baseUrl, '/api/access', { body: { code: accessCode } });
+    if (r.status !== 200) throw new Error(`login with the configured access code failed: HTTP ${r.status} ${JSON.stringify(r.data)}`);
+    cookie = (r.headers.get('set-cookie') || '').split(';')[0];
+    return cookie;
+  }
   const browser = await chromium.launch({ args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream', '--autoplay-policy=no-user-gesture-required', ...launchArgs] });
   const pages = [];
   return {
-    mock, baseUrl, browser,
-    async page(contextOptions = PHONE) {
+    mock, baseUrl, browser, serverAccess, accessCode,
+    /** For suites that expect AI routes to be usable: fails fast with a clear reason when they are not. */
+    async requireAiAccess() {
+      if (!serverAccess) throw new Error(`GET ${baseUrl}/api/access did not answer JSON; is this the Care Kotoba dev server?`);
+      if (serverAccess.required && !accessCode) throw new Error('the server requires an access code (policy "code"): set CK_E2E_ACCESS_CODE to it, or restart the dev server with CK_ACCESS_POLICY=local');
+      if (!serverAccess.configured) throw new Error(`the server refuses AI calls (policy "${serverAccess.policy}", not configured for this host)`);
+      await loginCookie();
+    },
+    loginCookie,
+    /** Headers for Node-side API calls that should be authorised (cookie when the server uses an access code). */
+    async authHeaders() { const c = await loginCookie(); return c ? { cookie: c } : {}; },
+    async page(contextOptions = PHONE, { login = true } = {}) {
       const context = await browser.newContext(contextOptions);
+      if (login && serverAccess?.required && accessCode) {
+        const r = await context.request.post(baseUrl + '/api/access', { data: { code: accessCode } });
+        if (!r.ok()) throw new Error(`browser login failed: HTTP ${r.status()}`);
+      }
       const page = await context.newPage();
       const errors = [];
       page.on('pageerror', (e) => errors.push(e.message));
@@ -52,8 +87,14 @@ export async function seedStorage(page, entries) {
   await page.addInitScript((e) => { for (const [k, v] of Object.entries(e)) localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v)); }, entries);
 }
 
-export async function openScene(page, baseUrl, title) {
-  await page.goto(baseUrl);
+/** Navigate and wait for the readiness contract instead of clicking server-rendered, not yet hydrated buttons. */
+export async function gotoApp(page, url) {
+  await page.goto(url);
+  await page.waitForSelector(READY_SELECTOR, { state: 'attached', timeout: 30000 });
+}
+
+export async function openScene(page, url, title) {
+  await gotoApp(page, url);
   await page.locator('.mobile-nav button', { hasText: 'シーン' }).click();
   await page.getByLabel('シーンを検索').fill(title);
   await page.locator('.scene-grid .scene-card', { hasText: title }).first().click();
@@ -64,6 +105,6 @@ export async function api(baseUrl, path, { method = 'POST', body, headers = {} }
   const res = await fetch(baseUrl + path, { method, headers: { 'content-type': 'application/json', ...headers }, body: body === undefined ? undefined : JSON.stringify(body) });
   let data = null;
   const type = res.headers.get('content-type') || '';
-  if (type.includes('json')) data = await res.json(); else await res.arrayBuffer();
-  return { status: res.status, data, headers: res.headers };
+  if (type.includes('json')) data = await res.json().catch(() => null); else await res.arrayBuffer();
+  return { status: res.status, data, headers: res.headers, contentType: type };
 }
