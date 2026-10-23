@@ -12,11 +12,13 @@ function wav(seconds = 0.3, rate = 8000) {
 }
 
 const conversationReplies = ['そうなのね。もう少し、ゆっくり説明してもらえる？', 'わかったわ。それなら、少ししてからでもいいかしら。', 'ありがとう。私の気持ちも聞いてくれて、うれしいわ。'];
+// Ruby notation the mock returns when the request schema asks for reply_ruby (CK_AI_FURIGANA=1). state.scenario.badRuby: a wrong one.
+const conversationRuby = ['そうなのね。もう{少|すこ}し、ゆっくり{説明|せつめい}してもらえる？', 'わかったわ。それなら、{少|すこ}ししてからでもいいかしら。', 'ありがとう。{私|わたし}の{気持|きも}ちも{聞|き}いてくれて、うれしいわ。'];
 
 export function createMockOpenAI() {
   const state = {
     requests: [],
-    scenario: { quoteMode: 'exact', error: null, pronunciation: false },
+    scenario: { quoteMode: 'exact', error: null, pronunciation: false, badRuby: false },
     onRealtimeCall: null, // async ({ sdp, session }) => ({ sdp, callId })
     hangups: [],
   };
@@ -39,6 +41,7 @@ export function createMockOpenAI() {
         const last = [...(body.input || [])].reverse().find((m) => m.role === 'user')?.content || '';
         return Response.json(output({
           reply: conversationReplies[Math.min(Math.max(userTurns - 1, 0), 2)],
+          ...(body?.text?.format?.schema?.properties?.reply_ruby ? { reply_ruby: state.scenario.badRuby ? '{違|ちが}う文です。' : conversationRuby[Math.min(Math.max(userTurns - 1, 0), 2)] } : {}),
           translation: '（模拟翻译）' + conversationReplies[Math.min(Math.max(userTurns - 1, 0), 2)].slice(0, 8),
           correction: userTurns === 1 && last ? { original: last, better: last.replace(/。?$/, '') + 'ませんか。', reason: '（模拟）丁寧な依頼の形にすると伝わりやすくなります。' } : null,
           suggestions: ['今は、どのようなお気持ちですか。', 'ご希望を担当の職員と確認してまいります。'],

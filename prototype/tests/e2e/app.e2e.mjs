@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { setup, seedStorage, openScene, gotoApp, api, PHONE } from './helpers.mjs';
 
 let env;
-before(async () => { env = await setup(); await env.requireAiAccess(); });
+before(async () => { env = await setup({ env: { CK_AI_FURIGANA: '1' } }); await env.requireAiAccess(); });
 after(async () => { await env?.close(); });
 
 async function transcript(page) {
@@ -256,6 +256,31 @@ test('voice check: microphone, speaker, server and WebRTC are checked without an
   assert.match(download.suggestedFilename(), /^care-kotoba-voice-check-\d+\.json$/);
   assert.equal(env.mock.state.requests.filter((r) => /realtime|responses|audio/.test(r.path)).length, 0, 'the voice check must not call the (paid) AI');
   assert.deepEqual(page.errors, []);
+});
+
+test('AI replies in text practice get validated furigana (CK_AI_FURIGANA=1); a wrong notation is not shown', async (t) => {
+  const health = await api(env.baseUrl, '/api/health', { method: 'GET' });
+  if (!health.data?.features?.aiFurigana) return t.skip('server runs without CK_AI_FURIGANA=1');
+  for (const bad of [false, true]) {
+    env.mock.state.scenario.badRuby = bad;
+    try {
+      const page = await env.page();
+      await openScene(page, env.baseUrl, '入浴を断られたとき');
+      await page.getByRole('button', { name: '文字で練習' }).click();
+      await page.getByLabel('日本語で返答を入力').fill('今日は入りたくないのですね。');
+      await page.keyboard.press('Enter');
+      await page.waitForFunction(() => document.querySelectorAll('.chat-message.assistant').length >= 2);
+      const last = page.locator('.chat-message.assistant').last();
+      const rts = await last.locator('rt').allTextContents();
+      const text = await last.locator('p').evaluate((p) => { const c = p.cloneNode(true); c.querySelectorAll('rt,rp').forEach((x) => x.remove()); return c.textContent; });
+      assert.equal(text, 'そうなのね。もう少し、ゆっくり説明してもらえる？', 'the reply text itself is unchanged');
+      if (bad) assert.deepEqual(rts, [], 'a notation that does not match the reply must not be shown');
+      else assert.deepEqual(rts, ['すこ', 'せつめい']);
+      assert.deepEqual(page.errors, []);
+    } finally {
+      env.mock.state.scenario.badRuby = false;
+    }
+  }
 });
 
 test('responsive layout: desktop width also renders without errors', async () => {

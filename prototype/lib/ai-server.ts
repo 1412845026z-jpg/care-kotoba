@@ -57,3 +57,5 @@ export function extractText(data:{output?:{type?:string;content?:{type?:string;t
 export function parseModelJson<T>(data:unknown):T|null{try{const t=extractText(data as Parameters<typeof extractText>[0]);return t?JSON.parse(t) as T:null;}catch{return null;}}
 export const stringSchema={type:'string'};
 export const correctionSchema={type:'object',properties:{original:stringSchema,better:stringSchema,reason:stringSchema},required:['original','better','reason'],additionalProperties:false};
+/** CK_AI_FURIGANA=1: text-practice replies also return furigana (model-written, validated). Off by default: more output tokens, readings not reviewed. */
+export function aiFurigana(){return ['1','true','on'].includes(String(envValue('CK_AI_FURIGANA')||'').toLowerCase());}
