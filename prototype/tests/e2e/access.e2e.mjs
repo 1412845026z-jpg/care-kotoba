@@ -1,0 +1,89 @@
+// Access protection for the paid AI routes (offline harness, mock OpenAI).
+import { test, before, after } from 'node:test';
+import assert from 'node:assert/strict';
+import { request as httpRequest } from 'node:http';
+import { setup, openScene, api } from './helpers.mjs';
+
+const CODE = 'pilot-code-2026';
+let env;
+before(async () => { env = await setup({ env: { CK_ACCESS_POLICY: undefined, CK_ACCESS_CODE: CODE } }); });
+after(async () => { await env?.close(); });
+
+const chatBody = { scenarioId: 'bath-5', variant: 'gentle', locale: 'zh', level: 'gentle', messages: [{ role: 'user', text: 'こんにちは。' }] };
+
+function rawPost(baseUrl, path, { host, body, cookie } = {}) {
+  const u = new URL(baseUrl + path);
+  return new Promise((resolve, reject) => {
+    const data = Buffer.from(JSON.stringify(body || {}));
+    const req = httpRequest({ hostname: u.hostname, port: u.port, path: u.pathname, method: 'POST', headers: { 'content-type': 'application/json', 'content-length': data.length, ...(host ? { host } : {}), ...(cookie ? { cookie } : {}) } }, (res) => {
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
+      res.on('end', () => { let json = null; try { json = JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch {} resolve({ status: res.statusCode, data: json, headers: res.headers }); });
+    });
+    req.on('error', reject);
+    req.end(data);
+  });
+}
+
+test('AI routes refuse requests without access (no Origin header, like curl)', async () => {
+  const before = env.mock.state.requests.length;
+  for (const path of ['/api/chat', '/api/feedback', '/api/speech', '/api/session']) {
+    const body = path === '/api/speech' ? { text: 'こんにちは' } : path === '/api/session' ? { ...chatBody, sdp: 'v=0' } : chatBody;
+    const res = await api(env.baseUrl, path, { body });
+    assert.equal(res.status, 401, `${path} answered ${res.status} without access`);
+    assert.equal(res.data?.code, 'access_required');
+  }
+  assert.equal(env.mock.state.requests.length, before, 'an unauthenticated request reached the (mock) OpenAI API');
+});
+
+test('a wrong access code is rejected and the right one grants an HttpOnly cookie', async () => {
+  const wrong = await api(env.baseUrl, '/api/access', { body: { code: 'nope' } });
+  assert.equal(wrong.status, 401);
+  const ok = await api(env.baseUrl, '/api/access', { body: { code: CODE } });
+  assert.equal(ok.status, 200);
+  const cookie = ok.headers.get('set-cookie') || '';
+  assert.match(cookie, /ck_access=/);
+  assert.match(cookie, /HttpOnly/i);
+  assert.match(cookie, /SameSite=Strict/i);
+  const chat = await api(env.baseUrl, '/api/chat', { body: chatBody, headers: { cookie: cookie.split(';')[0] } });
+  assert.equal(chat.status, 200, JSON.stringify(chat.data));
+  assert.ok(chat.data.reply);
+  const forged = await api(env.baseUrl, '/api/chat', { body: chatBody, headers: { cookie: cookie.split(';')[0].replace(/.$/, (c) => (c === 'A' ? 'B' : 'A')) } });
+  assert.equal(forged.status, 401, 'a tampered cookie was accepted');
+});
+
+test('without an access code, AI routes only answer on localhost', async () => {
+  const saved = process.env.CK_ACCESS_CODE;
+  delete process.env.CK_ACCESS_CODE;
+  try {
+    const local = await rawPost(env.baseUrl, '/api/chat', { body: chatBody });
+    assert.equal(local.status, 200, 'local development without a code should work');
+    const remote = await rawPost(env.baseUrl, '/api/chat', { host: 'care-kotoba.example.com', body: chatBody });
+    assert.equal(remote.status, 403, 'a public host without access configuration must be refused');
+    assert.equal(remote.data?.code, 'access_not_configured');
+  } finally {
+    process.env.CK_ACCESS_CODE = saved;
+  }
+});
+
+test('the learner is asked for the access code before an AI practice, and the demo needs none', async () => {
+  const page = await env.page();
+  await openScene(page, env.baseUrl, '入浴を断られたとき');
+  await page.getByText('まずはデモで操作を体験').click();
+  await page.getByText('DEMO').first().waitFor();
+  await page.getByRole('button', { name: /戻る/ }).click();
+
+  await openScene(page, env.baseUrl, '入浴を断られたとき');
+  await page.getByRole('button', { name: '文字で練習' }).click();
+  const field = page.getByLabel('アクセスコード');
+  await field.waitFor();
+  await field.fill('wrong-code');
+  await page.getByRole('button', { name: /確認して続ける/ }).click();
+  await page.locator('.access-error').waitFor();
+  await field.fill(CODE);
+  await page.getByRole('button', { name: /確認して続ける/ }).click();
+  await page.getByLabel('日本語で返答を入力').fill('今日は、入りたくないお気持ちなのですね。');
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelectorAll('.chat-message.assistant').length >= 2);
+  assert.deepEqual(page.errors, []);
+});

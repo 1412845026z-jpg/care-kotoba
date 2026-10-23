@@ -1,0 +1,397 @@
+{
+  "syntax": "126/126 files parse",
+  "types": "7 server/pure modules type-checked, 0 errors",
+  "json": "7/7 JSON files valid",
+  "secrets": "no credential-like strings",
+  "models": [
+    "app/api/chat/route.ts:7 gpt-4.1-mini",
+    "app/api/feedback/route.ts:8 gpt-4.1-mini",
+    "app/api/session/route.ts:6 gpt-realtime-mini",
+    "app/api/session/route.ts:6 gpt-4o-mini-transcribe",
+    "app/api/speech/route.ts:5 gpt-4o-mini-tts"
+  ]
+}
+TAP version 13
+# Subtest: AI routes refuse requests without access (no Origin header, like curl)
+not ok 1 - AI routes refuse requests without access (no Origin header, like curl)
+  ---
+  duration_ms: 283.039665
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/access.e2e.mjs:28:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    /api/chat answered 200 without access
+    
+    200 !== 401
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 401
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/access.e2e.mjs:33:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: a wrong access code is rejected and the right one grants an HttpOnly cookie
+not ok 2 - a wrong access code is rejected and the right one grants an HttpOnly cookie
+  ---
+  duration_ms: 10.439636
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/access.e2e.mjs:39:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    404 !== 401
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 401
+  actual: 404
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/access.e2e.mjs:41:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: without an access code, AI routes only answer on localhost
+not ok 3 - without an access code, AI routes only answer on localhost
+  ---
+  duration_ms: 20.460423
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/access.e2e.mjs:55:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    a public host without access configuration must be refused
+    
+    200 !== 403
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 403
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/access.e2e.mjs:62:12)
+    process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: the learner is asked for the access code before an AI practice, and the demo needs none
+not ok 4 - the learner is asked for the access code before an AI practice, and the demo needs none
+  ---
+  duration_ms: 32077.798767
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/access.e2e.mjs:69:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.waitFor: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByLabel('アクセスコード') to be visible[22m
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    TestContext.<anonymous> (<repo>/prototype/tests/e2e/access.e2e.mjs:79:15)
+  ...
+# Subtest: home renders at 390px without horizontal overflow or page errors
+ok 5 - home renders at 390px without horizontal overflow or page errors
+  ---
+  duration_ms: 907.744746
+  type: 'test'
+  ...
+# Subtest: scripted demo can be completed and is labelled as not AI-evaluated
+ok 6 - scripted demo can be completed and is labelled as not AI-evaluated
+  ---
+  duration_ms: 3262.894495
+  type: 'test'
+  ...
+# Subtest: text practice uses the mock AI and shows feedback
+ok 7 - text practice uses the mock AI and shows feedback
+  ---
+  duration_ms: 1263.649311
+  type: 'test'
+  ...
+# Subtest: feedback never shows a quote the learner did not say
+not ok 8 - feedback never shows a quote the learner did not say
+  ---
+  duration_ms: 1317.183273
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/app.e2e.mjs:55:1'
+  failureType: 'testCodeFailure'
+  error: 'fabricated quote shown: ["今日は入りたくないのですね。","早くお風呂に入ってください。"]'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/app.e2e.mjs:68:12)
+    runNextTicks (node:internal/process/task_queues:65:5)
+    process.processImmediate (node:internal/timers:453:9)
+    process.callbackTrampoline (node:internal/async_hooks:130:17)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: corrupted or outdated localStorage does not break the app
+not ok 9 - corrupted or outdated localStorage does not break the app
+  ---
+  duration_ms: 30336.948966
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/app.e2e.mjs:74:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.waitFor: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('h1').filter({ hasText: '今日も、ひとつずつ。' }) to be visible[22m
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    TestContext.<anonymous> (<repo>/prototype/tests/e2e/app.e2e.mjs:82:55)
+  ...
+# Subtest: staff-to-staff scenes are not role-played as the resident
+not ok 10 - staff-to-staff scenes are not role-played as the resident
+  ---
+  duration_ms: 833.982491
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/app.e2e.mjs:96:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected "actual" to be strictly unequal to:
+    
+    '利用者の佐藤さん'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '利用者の佐藤さん'
+  actual: '利用者の佐藤さん'
+  operator: 'notStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/app.e2e.mjs:100:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: health endpoint answers and reports configuration without secrets
+ok 11 - health endpoint answers and reports configuration without secrets
+  ---
+  duration_ms: 9.123151
+  type: 'test'
+  ...
+# Subtest: responsive layout: desktop width also renders without errors
+ok 12 - responsive layout: desktop width also renders without errors
+  ---
+  duration_ms: 636.33518
+  type: 'test'
+  ...
+# Subtest: voice: a late input transcription is shown before the reply it triggered, with no duplicates
+not ok 13 - voice: a late input transcription is shown before the reply it triggered, with no duplicates
+  ---
+  duration_ms: 5081.756733
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/voice.e2e.mjs:44:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+        [
+          'assistant',
+          'そのタオルで何をするの？'
+        ],
+        [
+    +     'assistant',
+    +     ''
+    +   ],
+    +   [
+          'user',
+          '温かいタオルで、お顔を拭いてもよろしいですか。'
+        ],
+        [
+          'assistant',
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0:
+      0: 'assistant'
+      1: 'そのタオルで何をするの？'
+    1:
+      0: 'user'
+      1: '温かいタオルで、お顔を拭いてもよろしいですか。'
+    2:
+      0: 'assistant'
+      1: 'そうなのね。少しだけなら、いいわよ。'
+  actual:
+    0:
+      0: 'assistant'
+      1: 'そのタオルで何をするの？'
+    1:
+      0: 'assistant'
+      1: ''
+    2:
+      0: 'user'
+      1: '温かいタオルで、お顔を拭いてもよろしいですか。'
+    3:
+      0: 'assistant'
+      1: 'そうなのね。少しだけなら、いいわよ。'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/voice.e2e.mjs:57:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: voice: finishing a session asks the server to hang up the Realtime call
+not ok 14 - voice: finishing a session asks the server to hang up the Realtime call
+  ---
+  duration_ms: 9503.080293
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/voice.e2e.mjs:65:1'
+  failureType: 'testCodeFailure'
+  error: 'no server-side hangup for rtc_sim2_j4ijphg6; hangups=[]'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/voice.e2e.mjs:76:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: voice: the voice transcript reaches feedback in conversation order
+not ok 15 - voice: the voice transcript reaches feedback in conversation order
+  ---
+  duration_ms: 4538.614131
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/voice.e2e.mjs:79:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+        'assistant:そのタオルで何をするの？',
+    +   'assistant:',
+        'user:お顔を拭いてもよろしいですか。',
+    -   'assistant:いいわよ。熱くしないでね。'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'assistant:そのタオルで何をするの？'
+    1: 'user:お顔を拭いてもよろしいですか。'
+    2: 'assistant:いいわよ。熱くしないでね。'
+  actual:
+    0: 'assistant:そのタオルで何をするの？'
+    1: 'assistant:'
+    2: 'user:お顔を拭いてもよろしいですか。'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/voice.e2e.mjs:95:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: voice: an interrupted reply is marked as interrupted
+not ok 16 - voice: an interrupted reply is marked as interrupted
+  ---
+  duration_ms: 4841.486367
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/voice.e2e.mjs:98:1'
+  failureType: 'testCodeFailure'
+  error: 'no assistant message marked interrupted: ["",""]'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/voice.e2e.mjs:110:10)
+    runNextTicks (node:internal/process/task_queues:65:5)
+    process.processImmediate (node:internal/timers:453:9)
+    process.callbackTrampoline (node:internal/async_hooks:130:17)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: voice: a failed transcription is shown as not recognised instead of disappearing
+not ok 17 - voice: a failed transcription is shown as not recognised instead of disappearing
+  ---
+  duration_ms: 9373.532728
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/voice.e2e.mjs:113:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    page.waitForSelector: Timeout 5000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.chat-message.user[data-status="failed"]') to be visible[22m
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    TestContext.<anonymous> (<repo>/prototype/tests/e2e/voice.e2e.mjs:119:14)
+  ...
+# Subtest: voice: losing the connection is reported and the session can be resumed with its transcript
+not ok 18 - voice: losing the connection is reported and the session can be resumed with its transcript
+  ---
+  duration_ms: 24910.089675
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/voice.e2e.mjs:122:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.waitFor: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /音声で再接続/ }) to be visible[22m
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    TestContext.<anonymous> (<repo>/prototype/tests/e2e/voice.e2e.mjs:131:16)
+  ...
+# Subtest: voice: connects under React StrictMode (development double effects)
+not ok 19 - voice: connects under React StrictMode (development double effects)
+  ---
+  duration_ms: 16855.391203
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/voice.e2e.mjs:144:1'
+  failureType: 'testCodeFailure'
+  error: 'app never posted an SDP offer to /v1/realtime/calls'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    startLive (file://<repo>/prototype/tests/e2e/voice.e2e.mjs:30:38)
+    async TestContext.<anonymous> (file://<repo>/prototype/tests/e2e/voice.e2e.mjs:146:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: voice: diagnostics can be exported after a session
+not ok 20 - voice: diagnostics can be exported after a session
+  ---
+  duration_ms: 10590.71158
+  type: 'test'
+  location: '<repo>/prototype/tests/e2e/voice.e2e.mjs:151:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    page.waitForEvent: Timeout 5000ms exceeded while waiting for event "download"
+    =========================== logs ===========================
+    waiting for event "download"
+    ============================================================
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    TestContext.<anonymous> (<repo>/prototype/tests/e2e/voice.e2e.mjs:163:46)
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 5
+# fail 15
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 158847.701026
+
+SUMMARY [{"name":"static","exitCode":0,"seconds":2.2},{"name":"unit","exitCode":0,"pass":0,"fail":0},{"name":"e2e","exitCode":1,"pass":5,"fail":15,"seconds":158.9}]

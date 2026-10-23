@@ -1,0 +1,597 @@
+{
+  "root": "<repo>/prototype",
+  "toolModules": "/opt/npm-tools/node_modules",
+  "tools": {
+    "esbuild": "0.28.2",
+    "typescript": "6.0.3"
+  },
+  "syntax": [
+    {
+      "file": "app/api/chat/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/feedback/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/health/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/session/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/speech/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/chatgpt-auth.ts",
+      "ok": true
+    },
+    {
+      "file": "app/layout.tsx",
+      "ok": true
+    },
+    {
+      "file": "app/page.tsx",
+      "ok": true
+    },
+    {
+      "file": "cloudflare-env.d.ts",
+      "ok": true
+    },
+    {
+      "file": "components/admin.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/connector-error.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/practice.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/accordion.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/alert-dialog.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/alert.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/aspect-ratio.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/attachment.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/avatar.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/badge.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/breadcrumb.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/bubble.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/button-group.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/button.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/calendar.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/card.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/carousel.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/chart.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/checkbox.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/collapsible.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/combobox.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/command.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/context-menu.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/dialog.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/direction.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/drawer.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/dropdown-menu.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/empty.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/field.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/form.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/hover-card.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/input-group.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/input-otp.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/input.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/item.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/kbd.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/label.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/marker.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/menubar.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/message-scroller.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/message.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/native-select.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/navigation-menu.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/pagination.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/popover.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/progress.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/radio-group.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/resizable.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/scroll-area.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/select.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/separator.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/sheet.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/sidebar.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/skeleton.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/slider.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/sonner.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/spinner.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/switch.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/table.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/tabs.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/textarea.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/toggle-group.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/toggle.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/tooltip.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui.tsx",
+      "ok": true
+    },
+    {
+      "file": "db/index.ts",
+      "ok": true
+    },
+    {
+      "file": "db/schema.ts",
+      "ok": true
+    },
+    {
+      "file": "drizzle.config.ts",
+      "ok": true
+    },
+    {
+      "file": "eslint.config.mjs",
+      "ok": true
+    },
+    {
+      "file": "examples/d1/app/api/notes/route.ts",
+      "ok": true
+    },
+    {
+      "file": "examples/d1/db/schema.ts",
+      "ok": true
+    },
+    {
+      "file": "hooks/use-mobile.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/ai-server.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/connector-context.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/connector-contract.mts",
+      "ok": true
+    },
+    {
+      "file": "lib/connector-errors.mts",
+      "ok": true
+    },
+    {
+      "file": "lib/connector-preview.d.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/connectors.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/content.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/utils.ts",
+      "ok": true
+    },
+    {
+      "file": "next.config.ts",
+      "ok": true
+    },
+    {
+      "file": "postcss.config.mjs",
+      "ok": true
+    },
+    {
+      "file": "public/sw.js",
+      "ok": true
+    },
+    {
+      "file": "scripts/check-secret-safety.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/connector-preview/connector-preview-session.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/connector-preview/host-binding.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/connector-preview/protocol.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/connector-preview/worker.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/execution-profile.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/install-ci.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/npm-install.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/pnpm-install.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/run-framework.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/sites-env.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/tool-environment.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/vite/connector-preview-plugin.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/vite/sites-vite-plugin.ts",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/access.e2e.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/app.e2e.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/helpers.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/voice.e2e.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/app.js",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/client-entry.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/cloudflare-workers-shim.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/lucide-shim.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/routes.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/server-entry.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/build.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/cloudflare-workers-stub.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/mock-openai.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/offline-static-check.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/realtime-sim.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/server.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/tool-require.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/run.mjs",
+      "ok": true
+    },
+    {
+      "file": "vite.config.ts",
+      "ok": true
+    },
+    {
+      "file": "worker/index.ts",
+      "ok": true
+    }
+  ],
+  "types": {
+    "checked": [
+      "app/api/chat/route.ts",
+      "app/api/feedback/route.ts",
+      "app/api/health/route.ts",
+      "app/api/session/route.ts",
+      "app/api/speech/route.ts",
+      "lib/ai-server.ts",
+      "lib/content.ts"
+    ],
+    "errors": []
+  },
+  "json": [
+    {
+      "file": ".openai/hosting.json",
+      "ok": true
+    },
+    {
+      "file": "components.json",
+      "ok": true
+    },
+    {
+      "file": "drizzle/meta/_journal.json",
+      "ok": true
+    },
+    {
+      "file": "package.json",
+      "ok": true
+    },
+    {
+      "file": "public/manifest.webmanifest",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/build-info.json",
+      "ok": true
+    },
+    {
+      "file": "tsconfig.json",
+      "ok": true
+    }
+  ],
+  "secrets": [],
+  "models": [
+    {
+      "file": "app/api/chat/route.ts",
+      "line": 7,
+      "model": "gpt-4.1-mini"
+    },
+    {
+      "file": "app/api/feedback/route.ts",
+      "line": 8,
+      "model": "gpt-4.1-mini"
+    },
+    {
+      "file": "app/api/session/route.ts",
+      "line": 6,
+      "model": "gpt-realtime-mini"
+    },
+    {
+      "file": "app/api/session/route.ts",
+      "line": 6,
+      "model": "gpt-4o-mini-transcribe"
+    },
+    {
+      "file": "app/api/speech/route.ts",
+      "line": 5,
+      "model": "gpt-4o-mini-tts"
+    }
+  ],
+  "summary": {
+    "syntax": "126/126 files parse",
+    "types": "7 server/pure modules type-checked, 0 errors",
+    "json": "7/7 JSON files valid",
+    "secrets": "no credential-like strings",
+    "models": [
+      "app/api/chat/route.ts:7 gpt-4.1-mini",
+      "app/api/feedback/route.ts:8 gpt-4.1-mini",
+      "app/api/session/route.ts:6 gpt-realtime-mini",
+      "app/api/session/route.ts:6 gpt-4o-mini-transcribe",
+      "app/api/speech/route.ts:5 gpt-4o-mini-tts"
+    ]
+  }
+}
