@@ -1,0 +1,224 @@
+{
+  "task": "ENV-001",
+  "tested_source_commit": "55f0ebb68c13283a6e6b523785668032bcbb70a7",
+  "PR5_frozen_blobs_equal_at": "45114e4a925fa2043774424f98132195e794358e",
+  "node": "v24.19.0",
+  "pnpm": "11.25.0",
+  "fake_values_only": true,
+  "no_paid_API": true,
+  "real_dev_e2e": {
+    "ranAt": "2026-10-23T13:02:56.510Z",
+    "node": "v24.19.0",
+    "mode": "e2e",
+    "results": [
+      {
+        "name": "e2e",
+        "exitCode": 1,
+        "seconds": 428.8,
+        "pass": 3,
+        "fail": 17,
+        "failures": [
+          "AI routes refuse requests without access (no Origin header, like curl)",
+          "a wrong access code is rejected and the right one grants an HttpOnly cookie",
+          "without an access code, AI routes only answer on localhost",
+          "the learner is asked for the access code before an AI practice, and the demo needs none",
+          "scripted demo can be completed and is labelled as not AI-evaluated",
+          "text practice uses the mock AI and shows feedback",
+          "feedback never shows a quote the learner did not say",
+          "corrupted or outdated localStorage does not break the app",
+          "staff-to-staff scenes are not role-played as the resident",
+          "voice: a late input transcription is shown before the reply it triggered, with no duplicates",
+          "voice: finishing a session asks the server to hang up the Realtime call",
+          "voice: the voice transcript reaches feedback in conversation order",
+          "voice: an interrupted reply is marked as interrupted",
+          "voice: a failed transcription is shown as not recognised instead of disappearing",
+          "voice: losing the connection is reported and the session can be resumed with its transcript",
+          "voice: connects under React StrictMode (development double effects)",
+          "voice: diagnostics can be exported after a session"
+        ]
+      }
+    ]
+  },
+  "real_dev_context": {
+    "tested_source": "55f0ebb68c13283a6e6b523785668032bcbb70a7",
+    "source_equal_to_PR5": "07c5fa30dc8a7832b59a4225ab9748e9f52f1653 (all app/lib/components/tests blob IDs equal)",
+    "command": [
+      "node",
+      "tests/run.mjs",
+      "e2e",
+      "--report",
+      "/workspace/scratch/b3fd2a7262f5/care-kotoba-repo-import-20261023/g0-real-e2e-report.json"
+    ],
+    "BASE_URL": "http://127.0.0.1:5173",
+    "mock_port": 4010,
+    "exit": 1,
+    "seconds": 428.877,
+    "chromium": "153.0.8010.0 (npm-packaged @sparticuz/chromium 153.0.0; bundled Playwright download failed)",
+    "real_OpenAI_blocked_in_owned_worker_entry": true
+  },
+  "environment_probe": {
+    "tested_commit": "55f0ebb68c13283a6e6b523785668032bcbb70a7",
+    "node": "v24.19.0",
+    "real_dev_server": true,
+    "instrumented_owned_worker_entry": true,
+    "entry_restored_sha256": "a0a10229cdda6f5fdb32234e3539007412233bb4938a671866c9295a44a3bdb6",
+    "fake_values_only": true,
+    "api_calls": 0,
+    "cases": [
+      {
+        "case": "none",
+        "probe": {
+          "probe_case": "none",
+          "worker_argument": null,
+          "worker_import": null,
+          "worker_process": null
+        },
+        "health_configured": false,
+        "seconds": 5.693
+      },
+      {
+        "case": "env-local-only",
+        "probe": {
+          "probe_case": "env-local-only",
+          "worker_argument": "from-env-local",
+          "worker_import": "from-env-local",
+          "worker_process": "from-env-local"
+        },
+        "health_configured": true,
+        "seconds": 5.154
+      },
+      {
+        "case": "dev-vars-only",
+        "probe": {
+          "probe_case": "dev-vars-only",
+          "worker_argument": "from-dev-vars",
+          "worker_import": "from-dev-vars",
+          "worker_process": "from-dev-vars"
+        },
+        "health_configured": true,
+        "seconds": 5.274
+      },
+      {
+        "case": "both-files",
+        "probe": {
+          "probe_case": "both-files",
+          "worker_argument": "from-dev-vars",
+          "worker_import": "from-dev-vars",
+          "worker_process": "from-dev-vars"
+        },
+        "health_configured": true,
+        "seconds": 5.127
+      },
+      {
+        "case": "process-only",
+        "probe": {
+          "probe_case": "process-only",
+          "worker_argument": "from-dev-vars",
+          "worker_import": "from-dev-vars",
+          "worker_process": "from-dev-vars"
+        },
+        "health_configured": true,
+        "seconds": 5.58
+      }
+    ]
+  },
+  "navigation_probe": {
+    "immediate": {
+      "search_count": 0
+    },
+    "reactReady": true,
+    "search_after_second_click": true,
+    "elapsed_ms": 1306,
+    "errors": []
+  },
+  "headers_and_beacon_probe": {
+    "unauth_status": 401,
+    "grant_status": 200,
+    "cookie_present": true,
+    "cookie_http_only": true,
+    "cookie_same_site_strict": true,
+    "session_status": 200,
+    "session_content_type": "application/sdp",
+    "call_id_from_mock_location": true,
+    "session_token_header_present": true,
+    "max_seconds_header_present": true,
+    "model_headers_present": true,
+    "beacon_queued": true,
+    "mock_hangups": 1
+  },
+  "local_harness_all": {
+    "ranAt": "2026-10-23T13:08:05.348Z",
+    "node": "v24.19.0",
+    "mode": "all",
+    "results": [
+      {
+        "name": "static",
+        "exitCode": 1,
+        "seconds": 3.5,
+        "failures": []
+      },
+      {
+        "name": "unit",
+        "exitCode": 0,
+        "seconds": 0.5,
+        "pass": 33,
+        "fail": 0,
+        "failures": []
+      },
+      {
+        "name": "e2e",
+        "exitCode": 1,
+        "seconds": 139.1,
+        "pass": 12,
+        "fail": 8,
+        "failures": [
+          "voice: a late input transcription is shown before the reply it triggered, with no duplicates",
+          "voice: finishing a session asks the server to hang up the Realtime call",
+          "voice: the voice transcript reaches feedback in conversation order",
+          "voice: an interrupted reply is marked as interrupted",
+          "voice: a failed transcription is shown as not recognised instead of disappearing",
+          "voice: losing the connection is reported and the session can be resumed with its transcript",
+          "voice: connects under React StrictMode (development double effects)",
+          "voice: diagnostics can be exported after a session"
+        ]
+      }
+    ]
+  },
+  "install_tsc_build": [
+    {
+      "command": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "name": "g0-install",
+      "exit_code": 0,
+      "seconds": 5.595
+    },
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "name": "g0-tsc",
+      "exit_code": 0,
+      "seconds": 5.941
+    },
+    {
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "name": "g0-build",
+      "exit_code": 0,
+      "seconds": 6.244
+    }
+  ],
+  "limits": [
+    "process-only env case inconclusive: old dev-vars value returned",
+    "local browser is npm-packaged serverless Chromium, not official Playwright download",
+    "8 mock WebRTC data-channel failures not located to binary, network or app",
+    "no real AI, device or commercial validation"
+  ]
+}

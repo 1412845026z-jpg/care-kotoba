@@ -35,3 +35,6 @@ prototype/tests/artifacts/
 .idea/
 __pycache__/
 *.pyc
+
+# Local deployment target requires separate review
+prototype/config/staging/wrangler.local.jsonc
