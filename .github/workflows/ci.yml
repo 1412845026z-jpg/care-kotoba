@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+# A PR and its branch push share one group, avoiding duplicate runner minutes.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Install, TypeScript, build (no API)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: prototype
+    env:
+      CI: "true"
+      WRANGLER_SEND_METRICS: "false"
+      CLOUDFLARE_CF_FETCH_ENABLED: "false"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Scan tracked files and archived ZIP entries (no key needed)
+        working-directory: .
+        run: |
+          python3 scripts/ci/scan_secrets.py
+          python3 -m unittest discover -s scripts/ci -p 'test_*.py' -v
+      - name: Corepack from packageManager; verify portable mode
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync } from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          import { readExecutionProfile } from './scripts/execution-profile.mjs';
+          const [major, minor] = process.versions.node.split('.').map(Number);
+          if (major !== 22 || minor < 13) throw new Error('CI requires Node 22 >=22.13');
+          const { packageManager } = JSON.parse(readFileSync('package.json', 'utf8'));
+          if (!/^pnpm@\d+\.\d+\.\d+$/.test(packageManager)) throw new Error('Expected pinned pnpm packageManager');
+          execFileSync('corepack', ['enable'], { stdio: 'inherit' });
+          execFileSync('corepack', ['prepare', packageManager, '--activate'], { stdio: 'inherit' });
+          console.log(`Node ${process.version}; ${packageManager}; profile=${readExecutionProfile()}`);
+          if (readExecutionProfile() !== 'portable') throw new Error('CI must use portable mode');
+          JS
+          pnpm --version
+      - name: Install with frozen lockfile
+        run: node scripts/ci-step.mjs pnpm install --frozen-lockfile
+      - name: TypeScript
+        run: node scripts/ci-step.mjs node node_modules/typescript/bin/tsc --noEmit
+      - name: Production build (portable, no deploy)
+        run: node scripts/ci-step.mjs pnpm build
+      - name: Confirm dependency manifests were not rewritten
+        run: git diff --exit-code -- package.json pnpm-lock.yaml pnpm-workspace.yaml
