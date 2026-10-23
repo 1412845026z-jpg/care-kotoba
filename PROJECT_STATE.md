@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （private，经 GitHub REST API 核对） |
 | 集成分支 | `main`（远端默认分支） |
-| 本次状态核对的远端代码提交 | `main` = `a79d9be4bc4042e590f8f251db253f33acfd4b08`（导入、同步、CI、内容与ENV证据/部署方案已合并；G0未合并） |
-| 核对时间与作者 | 2026-10-23T13:30:02.117Z，Codex（读取GitHub远端固定提交） |
+| 本次状态核对的远端代码提交 | `main` = `650e8fe87b8656d8a632bc7994ba147ffe2da26d`（CI工具已合并；G0/REUSE未合并） |
+| 核对时间与作者 | 2026-10-23T14:22:40.514Z，Codex（读取GitHub远端固定提交） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -54,11 +54,12 @@
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
-| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | blocked | `claude/G0-01-voice-loop`，PR #5 @ `45114e4`，尚未合并 | tsc/build与PR CI通过；真实浏览器3/20、static不兼容；见ENV-001，需Claude修复冻结测试/就绪约定 |
+| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `8bc18481865c2259e084a59a1f5e419e18ed1035`，未合并 | 已读取fix1交接；Claude报告模拟修复通过，Codex真实dev复测待做；原3/20是旧源码结果 |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
-| ENV-001 | 真实 dev server、环境变量、Cookie/响应头/sendBeacon | Codex | blocked | PR #7已合并（证据）；G0 PR #5待修复 | handoffs/2026-10-23-ENV-001-codex.md；文件注入与模拟挂断通过，浏览器17失败，等Claude修复后复测 |
+| ENV-001 | 真实 dev server、环境变量、Cookie/响应头/sendBeacon | Codex | blocked | PR #7已合并（证据）；G0 fix1待复测 | handoffs/2026-10-23-ENV-001-codex.md；文件注入与模拟挂断通过，旧源码浏览器17失败；Claude已推送fix1，等Codex真实dev复测 |
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
+| OSS-001 | 公开前历史检查与Codex for OSS申请准备 | Codex | review_ready | `codex/OSS-001-public-prep` | handoffs/2026-10-23-OSS-001-codex.md；36提交/342文件版本与25份CI日志已检查；尚未公开、未提交申请、未选择项目许可证 |
 | CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
@@ -71,17 +72,20 @@
 | --- | --- | --- |
 | 2026-10-23 归档所记录的用户要求 | 个人版拟在应用商店销售；企业版学习功能相同，增加管理和优惠套餐 | 新版本沿用同一学习核心，企业权限与管理需独立验收 |
 | 2026-10-23 归档所记录的用户要求 | 项目需长期推进，开发预算应区别于未来用户运营成本 | 费用报告分开发测试与实际运行；价格假设不能当作已获批准套餐 |
+| 2026-10-23 用户本轮要求 | 尝试将仓库公开，以个人维护者申请Codex for Open Source；取代先前保持private的偏好 | 目前完成公开前准备；可见性变更、许可证与申请提交分别记录，不意味着获批或部署授权 |
 | 2026-10-23 用户（Claude 会话） | Codex 与 Claude 只通过本仓库同步，按环境能力与文件归属分工（见上表） | 冻结文件在负责方分支合并前不由对方修改 |
 
 ## 当前阻塞与风险
 
-- G0真实dev server浏览器3/20（17失败）；首次导航点击无效，等待React绑定再点可成功。static与TypeScript5.9.3不兼容。冻结文件由Claude修复后复测，不以构建绿色代替浏览器/真机验收。
+- 旧G0源码真实dev浏览器3/20（17失败）；Claude已推送fix1（PR #5 @8bc1848），新源码待Codex真实dev复测。旧结果不外推为新head结论。
 
 - **旧模型停用日期**（OpenAI 官方弃用页，2026-10-23 核对：https://developers.openai.com/api/docs/deprecations）：`gpt-4o-mini-tts` 各快照与 `tts-1` 于 2027-01-06 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4.1-mini-2025-04-14` 于 2027-01-14 停用（建议替代 `gpt-6-luna`）；`gpt-realtime-mini` 于 2027-01-20 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4o-mini-transcribe` 于 2027-02-26 停用（建议替代 `gpt-live-transcribe` 或 `gpt-transcribe`）。原型代码仍写死这些型号。迁移前需用固定样本做真实调用比较，这会产生 API 费用，需用户授权。
 - Claude 的云端环境无法访问 npm 仓库，不能运行 `pnpm install`、完整 `tsc` 或 vinext 构建；真实构建结果依赖 CI-001 与 Codex 的环境。
 - 真实 AI 与真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪。
 
 ## 最近交接
+
+- handoffs/2026-10-23-OSS-001-codex.md：用户要求尝试公开并申请；已准备历史检查与真实申请草稿，尚未执行公开或提交表单。
 
 - handoffs/2026-10-23-CI-002-codex.md：仅补齐模拟测试依赖；PR #7已合并，G0修复请求见PR #5 review5628888205。整体CI-002仍blocked。
 

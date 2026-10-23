@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-23",
+  "scope": "All connector-visible refs including branch and PR merge refs at audit snapshot; every ancestor and unique blob; ZIP member bytes and PDF extracted text",
+  "refs": 21,
+  "commits": 36,
+  "trees": 27,
+  "unique_blobs": 342,
+  "blob_sha1_verified": 342,
+  "zip_members": 172,
+  "pdfs_extracted": 1,
+  "pdf_errors": [],
+  "images_binary_scanned_no_ocr": 3,
+  "credential_paths": [],
+  "actions_job_logs_scanned": 25,
+  "github_discussions_scanned": true,
+  "known_credential_pattern_findings": [],
+  "literal_assignments_for_review": [
+    {
+      "path": "f23b775467:prototype/tests/e2e/helpers.mjs",
+      "line": 34,
+      "synthetic_marker": true,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "dc29d9b993:prototype/tests/unit/access-signing.test.mjs",
+      "line": 29,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "dc29d9b993:prototype/tests/unit/access-signing.test.mjs",
+      "line": 39,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "dc29d9b993:prototype/tests/unit/access-signing.test.mjs",
+      "line": 44,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "dc29d9b993:prototype/tests/unit/access-signing.test.mjs",
+      "line": 54,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "dc29d9b993:prototype/tests/unit/access-signing.test.mjs",
+      "line": 61,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "b51cc28c2e:prototype/tests/e2e/helpers.mjs",
+      "line": 23,
+      "synthetic_marker": true,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "effae926a7:prototype/tests/unit/access-signing.test.mjs",
+      "line": 29,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "effae926a7:prototype/tests/unit/access-signing.test.mjs",
+      "line": 39,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "effae926a7:prototype/tests/unit/access-signing.test.mjs",
+      "line": 44,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "effae926a7:prototype/tests/unit/access-signing.test.mjs",
+      "line": 54,
+      "synthetic_marker": false,
+      "value": "[REDACTED]"
+    },
+    {
+      "path": "c2a96fa119:prototype/tests/e2e/helpers.mjs",
+      "line": 23,
+      "synthetic_marker": true,
+      "value": "[REDACTED]"
+    }
+  ],
+  "seconds": 1.626265,
+  "limitations": "Best-effort pattern and manual text review; no API validation, image OCR, unreachable/deleted server objects or guarantee of zero secrets. Existing source licensing is not changed by visibility.",
+  "literal_assignment_review": {
+    "count": 12,
+    "result": "All 12 entries are in e2e helpers or isolated access-signing unit fixtures; test context reviewed with values redacted. No deployment credentials were found in this review."
+  },
+  "github_discussions_summary": {
+    "issues_and_prs": 9,
+    "issue_comments": 1,
+    "inline_review_comments": 0,
+    "pr_review_collections": 9
+  },
+  "ref_heads": [
+    {
+      "ref": "refs/heads/claude/G0-01-voice-loop",
+      "sha": "8bc18481865c2259e084a59a1f5e419e18ed1035"
+    },
+    {
+      "ref": "refs/heads/claude/REUSE-001",
+      "sha": "a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207"
+    },
+    {
+      "ref": "refs/heads/claude/SYNC-001-import",
+      "sha": "7fff8d12e51c8c8f9bdd7193997f94fde6b6d193"
+    },
+    {
+      "ref": "refs/heads/codex/CI-001",
+      "sha": "8fac023b01c631b74cbed31c8503eaad3f7320a9"
+    },
+    {
+      "ref": "refs/heads/codex/CI-001-results",
+      "sha": "d5f5d7f12b59156e6e4ae0e6d83c5c58d622baf0"
+    },
+    {
+      "ref": "refs/heads/codex/CI-002-tooling",
+      "sha": "03e6a51986c43aa7877a70fb1e03f7ab55695cf3"
+    },
+    {
+      "ref": "refs/heads/codex/CONTENT-001",
+      "sha": "802f1e4c9c3aaa290a2ebddcf92abe39dc511eab"
+    },
+    {
+      "ref": "refs/heads/codex/ENV-001-DEPLOY-001",
+      "sha": "c02f7d94932b35e04d522563162c054f2c3837bd"
+    },
+    {
+      "ref": "refs/heads/codex/SYNC-002",
+      "sha": "5d2ae6745f1f78698c6249af7427baae9dcd4418"
+    },
+    {
+      "ref": "refs/heads/main",
+      "sha": "650e8fe87b8656d8a632bc7994ba147ffe2da26d"
+    },
+    {
+      "ref": "refs/pull/1/head",
+      "sha": "7fff8d12e51c8c8f9bdd7193997f94fde6b6d193"
+    },
+    {
+      "ref": "refs/pull/2/head",
+      "sha": "5d2ae6745f1f78698c6249af7427baae9dcd4418"
+    },
+    {
+      "ref": "refs/pull/3/head",
+      "sha": "8fac023b01c631b74cbed31c8503eaad3f7320a9"
+    },
+    {
+      "ref": "refs/pull/4/head",
+      "sha": "d5f5d7f12b59156e6e4ae0e6d83c5c58d622baf0"
+    },
+    {
+      "ref": "refs/pull/5/head",
+      "sha": "8bc18481865c2259e084a59a1f5e419e18ed1035"
+    },
+    {
+      "ref": "refs/pull/5/merge",
+      "sha": "42021785bb0483c54da1fc84edf8dbf3f1414d0c"
+    },
+    {
+      "ref": "refs/pull/6/head",
+      "sha": "802f1e4c9c3aaa290a2ebddcf92abe39dc511eab"
+    },
+    {
+      "ref": "refs/pull/7/head",
+      "sha": "c02f7d94932b35e04d522563162c054f2c3837bd"
+    },
+    {
+      "ref": "refs/pull/8/head",
+      "sha": "03e6a51986c43aa7877a70fb1e03f7ab55695cf3"
+    },
+    {
+      "ref": "refs/pull/9/head",
+      "sha": "a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207"
+    },
+    {
+      "ref": "refs/pull/9/merge",
+      "sha": "48ccb4905e582997257c486d6c54d334d0a93b19"
+    }
+  ],
+  "actions_log_snapshot": {
+    "runs": 31,
+    "jobs": 25,
+    "logs_scanned": 25,
+    "unavailable_logs": 0
+  },
+  "visibility_change_executed": false,
+  "application_submitted": false,
+  "project_license": "not selected"
+}
