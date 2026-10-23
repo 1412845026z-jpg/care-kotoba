@@ -78,6 +78,7 @@
 | A11Y-001 | 手机可读性：文字对比度达到 WCAG AA、最小字号、点击区域、输入框不触发 iOS 缩放、注音字号、窄屏溢出 | Claude | review_ready | `claude/A11Y-001`（依赖 PR #18） | verification/A11Y-001/：7 个画面的对比度问题 169→0（装饰符号除外），小于 24px 的点击区域 20→0；unit 59/59、e2e 28/28；真机观感未验证 |
 | DEVICE-PREFLIGHT-001 | 免费的「音声テスト」：浏览器支持、服务器与访问码、WebRTC 候选、麦克风音量、扬声器；可保存 JSON，用于 DEVICE-001 之前 | Claude | review_ready | `claude/DEVICE-PREFLIGHT-001`（依赖 PR #19） | handoffs/2026-10-24-DEVICE-PREFLIGHT-001-claude.md；不调用 AI；unit 61/61、e2e 29/29（Chromium 假设备）；真机未验证 |
 | ASR-CONF-001 | 识别置信度（转写 logprobs，`CK_ASR_LOGPROBS=1` 默认关闭）：不确定的句子提示学员确认，反馈不把它当语言错误 | Claude | review_ready | `claude/ASR-CONF-001`（依赖 PR #20） | handoffs/2026-10-24-ASR-CONF-001-claude.md；unit 67/67、e2e 30/30（模拟 logprobs）；阈值需在 DEVICE-001 T14 校准，真实 API 行为未验证 |
+| DRILL-001 | 局部复练：反馈卡上的「この場面だけもう一度」，以对话到该处为上下文只重练一句 | Claude | review_ready | `claude/DRILL-001`（依赖 PR #21） | handoffs/2026-10-24-DRILL-001-claude.md；unit 68/68、e2e 31/31（模拟 AI）；真实模型回应质量未验证 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -105,6 +106,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-DRILL-001-claude.md：反馈卡上的局部复练（只重练一句）。
 
 - handoffs/2026-10-24-ASR-CONF-001-claude.md：可选的识别置信度（默认关闭），真机 T14 校准阈值后再决定是否开启。
 
