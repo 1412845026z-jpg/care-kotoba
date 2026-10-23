@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-23T18:21:56.757Z",
+  "ranAt": "2026-10-23T19:04:33.005Z",
   "viewport": "390x844",
   "screens": {
     "home": {
@@ -344,7 +344,7 @@
       "unnamedControls": [],
       "inputsUnder16px": [],
       "targetsUnder24": [],
-      "targetsUnder44": 22,
+      "targetsUnder44": 23,
       "targetsUnder44Examples": [
         {
           "el": "brand-button",
@@ -431,14 +431,14 @@
         {
           "el": "BUTTON",
           "label": "ゆっくり聞く",
-          "w": 94,
-          "h": 36
+          "w": 95,
+          "h": 32
         },
         {
           "el": "BUTTON",
           "label": "場面で練習",
           "w": 82,
-          "h": 36
+          "h": 32
         },
         {
           "el": "BUTTON",
@@ -557,7 +557,7 @@
       "unnamed": 0,
       "inputsUnder16px": 0,
       "under24": 0,
-      "under44": 22,
+      "under44": 23,
       "scrollWidth": 390
     },
     "notes": {

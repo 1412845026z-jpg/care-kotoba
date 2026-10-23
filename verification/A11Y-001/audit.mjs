@@ -3,10 +3,11 @@
 // (2.5.8 AA: 24x24 CSS px; 44x44 reported as advisory). Not a full audit, no screen reader.
 // Run from prototype/: CK_TOOL_NODE_MODULES=<dir> node ../verification/A11Y-001/audit.mjs out.json
 import { writeFileSync } from 'node:fs';
-import { setup, gotoApp, openScene } from '../../prototype/tests/e2e/helpers.mjs';
+import { setup, gotoApp, openScene, PHONE } from '../../prototype/tests/e2e/helpers.mjs';
 
 const env = await setup();
-const report = { ranAt: new Date().toISOString(), viewport: '390x844', screens: {} };
+const VIEW = process.env.CK_AUDIT_VIEWPORT ? process.env.CK_AUDIT_VIEWPORT.split('x').map(Number) : null;
+const report = { ranAt: new Date().toISOString(), viewport: VIEW ? VIEW.join('x') : '390x844', screens: {} };
 
 async function audit(page, name) {
   report.screens[name] = await page.evaluate(() => {
@@ -50,11 +51,20 @@ async function audit(page, name) {
   });
 }
 
+// Tabs: bottom nav on phones, sidebar on desktop.
+const DESK = { 'シーン': 'シーンを探す', 'ノート': 'ことばノート', '学習記録': '学習の記録' };
+async function nav(page, label) {
+  const mobile = page.locator('.mobile-nav button', { hasText: label });
+  if (await mobile.isVisible()) return mobile.click();
+  return page.locator('.sidebar nav button', { hasText: DESK[label] || label }).click();
+}
+
 try {
-  const page = await env.page();
+  const ctx = VIEW ? { viewport: { width: VIEW[0], height: VIEW[1] }, locale: 'ja-JP' } : PHONE;
+  const page = await env.page(ctx);
   await gotoApp(page, env.baseUrl);
   await audit(page, 'home');
-  await page.locator('.mobile-nav button', { hasText: 'シーン' }).click();
+  await nav(page, 'シーン');
   await audit(page, 'scenes');
   await openScene(page, env.baseUrl, '入浴を断られたとき');
   await audit(page, 'scene-modal');
@@ -66,12 +76,12 @@ try {
   await page.getByText('終了して振り返る').click();
   await page.locator('.feedback-summary h2').waitFor();
   await audit(page, 'feedback');
-  const p2 = await env.page();
+  const p2 = await env.page(ctx);
   await p2.addInitScript(() => localStorage.setItem('ck-notes', JSON.stringify([{ id: 'n1', text: '今は入りたくないのですね。', sceneId: 'bath-5', original: '入りませんか。', reason: '気持ちを受け止める' }])));
   await gotoApp(p2, env.baseUrl);
-  await p2.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  await nav(p2, 'ノート');
   await audit(p2, 'notes');
-  await p2.locator('.mobile-nav button', { hasText: '学習記録' }).click();
+  await nav(p2, '学習記録');
   await audit(p2, 'progress');
 } finally {
   await env.close();

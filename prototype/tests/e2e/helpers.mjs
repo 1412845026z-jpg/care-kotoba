@@ -126,7 +126,9 @@ export async function gotoApp(page, url) {
 
 export async function openScene(page, url, title) {
   await gotoApp(page, url);
-  await page.locator('.mobile-nav button', { hasText: 'シーン' }).click();
+  const mobile = page.locator('.mobile-nav button', { hasText: 'シーン' });
+  if (await mobile.isVisible()) await mobile.click();
+  else await page.locator('.sidebar nav button', { hasText: 'シーンを探す' }).click(); // desktop layout
   await page.getByLabel('シーンを検索').fill(title);
   await page.locator('.scene-grid .scene-card', { hasText: title }).first().click();
   await page.locator('.scene-modal').waitFor();

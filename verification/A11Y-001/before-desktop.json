@@ -1,0 +1,1278 @@
+{
+  "ranAt": "2026-10-23T19:02:20.464Z",
+  "viewport": "1280x860",
+  "screens": {
+    "home": {
+      "contrast": [
+        {
+          "text": "YOUR LEARNING SPACE",
+          "cls": "workspace-label",
+          "path": "div > .sidebar > .workspace-label",
+          "color": "rgb(170, 166, 183)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.37,
+          "need": 4.5
+        },
+        {
+          "text": "シーンを探す",
+          "cls": "",
+          "path": "nav > .nav-item > span",
+          "color": "rgb(128, 116, 137)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 4.4,
+          "need": 4.5
+        },
+        {
+          "text": "個人プラン · プロトタイプ",
+          "cls": "",
+          "path": ".profile-mini > span > small",
+          "color": "rgb(162, 156, 171)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "マイラーニング",
+          "cls": "desktop-breadcrumb",
+          "path": ".app-shell > .topbar > .desktop-breadcrumb",
+          "color": "rgb(166, 162, 176)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.5,
+          "need": 4.5
+        },
+        {
+          "text": "佐",
+          "cls": "tiny-avatar",
+          "path": ".hero-visual > .float-bubble.float-one > .tiny-avatar",
+          "color": "rgb(161, 141, 172)",
+          "bg": "rgb(232, 223, 239)",
+          "size": "9px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.recommended.lavender > .scene-art > .scene-art-spark",
+          "color": "rgb(154, 128, 188)",
+          "bg": "rgb(240, 234, 250)",
+          "size": "17px",
+          "ratio": 2.89,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.recommended.mint > .scene-art > .scene-art-spark",
+          "color": "rgb(119, 163, 143)",
+          "bg": "rgb(234, 245, 240)",
+          "size": "17px",
+          "ratio": 2.54,
+          "need": 4.5
+        },
+        {
+          "text": "まずは、5分の会話から。",
+          "cls": "",
+          "path": ".right-column > .daily-card > h4",
+          "color": "rgb(137, 113, 149)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 4.32,
+          "need": 4.5
+        },
+        {
+          "text": "無理なく、続けられるペースで。",
+          "cls": "",
+          "path": ".right-column > .daily-card > p",
+          "color": "rgb(160, 138, 173)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.12,
+          "need": 4.5
+        },
+        {
+          "text": "目標を変更",
+          "cls": "text-button",
+          "path": ".right-column > .daily-card > .text-button",
+          "color": "rgb(157, 142, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3,
+          "need": 4.5
+        },
+        {
+          "text": "分",
+          "cls": "",
+          "path": ".weekly-card > .card-topline > span",
+          "color": "rgb(165, 155, 173)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.66,
+          "need": 4.5
+        },
+        {
+          "text": "日",
+          "cls": "",
+          "path": ".week-bars > div > small",
+          "color": "rgb(182, 170, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.21,
+          "need": 4.5
+        },
+        {
+          "text": "土",
+          "cls": "today",
+          "path": ".week-bars > div > .today",
+          "color": "rgb(145, 118, 177)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "0",
+          "cls": "",
+          "path": ".weekly-card > .week-total > strong",
+          "color": "rgb(135, 116, 147)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "20px",
+          "ratio": 4.24,
+          "need": 4.5
+        },
+        {
+          "text": "分",
+          "cls": "",
+          "path": ".week-total > strong > small",
+          "color": "rgb(135, 116, 147)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 4.24,
+          "need": 4.5
+        },
+        {
+          "text": "あなたのペースが、いちばん。",
+          "cls": "",
+          "path": ".weekly-card > .week-total > span",
+          "color": "rgb(176, 164, 187)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.37,
+          "need": 4.5
+        },
+        {
+          "text": "TODAY’S PHRASE",
+          "cls": "eyebrow subtle",
+          "path": ".right-column > .phrase-card > .eyebrow.subtle",
+          "color": "rgb(119, 109, 136)",
+          "bg": "rgb(246, 241, 233)",
+          "size": "8px",
+          "ratio": 4.32,
+          "need": 4.5
+        },
+        {
+          "text": "「この理解で、 合っていますか。」",
+          "cls": "",
+          "path": ".right-column > .phrase-card > blockquote",
+          "color": "rgb(153, 134, 109)",
+          "bg": "rgb(246, 241, 233)",
+          "size": "18px",
+          "ratio": 3.12,
+          "need": 4.5
+        },
+        {
+          "text": "指示を復唱したあとに。 確認できることも、大切な力です。",
+          "cls": "",
+          "path": ".right-column > .phrase-card > p",
+          "color": "rgb(185, 169, 146)",
+          "bg": "rgb(246, 241, 233)",
+          "size": "9px",
+          "ratio": 2.04,
+          "need": 4.5
+        },
+        {
+          "text": "ノートに保存",
+          "cls": "text-button",
+          "path": ".phrase-card > div > .text-button",
+          "color": "rgb(178, 155, 129)",
+          "bg": "rgb(246, 241, 233)",
+          "size": "9px",
+          "ratio": 2.36,
+          "need": 4.5
+        },
+        {
+          "text": "いつものスマホに。",
+          "cls": "",
+          "path": ".install-card > span > b",
+          "color": "rgb(156, 143, 168)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "10px",
+          "ratio": 2.89,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム画面に追加する",
+          "cls": "",
+          "path": ".install-card > span > small",
+          "color": "rgb(181, 166, 193)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.17,
+          "need": 4.5
+        },
+        {
+          "text": "Care Kotoba · Interactive prototype",
+          "cls": "",
+          "path": ".app-shell > .page-footer > small",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [
+        {
+          "el": "BUTTON",
+          "label": "3分の練習をはじめる",
+          "w": 147,
+          "h": 15
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 64,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 7,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "ホームへ",
+          "w": 193,
+          "h": 33
+        },
+        {
+          "el": "text-button",
+          "label": "すべて見る",
+          "w": 74,
+          "h": 28
+        },
+        {
+          "el": "round-button",
+          "label": "デモで体験",
+          "w": 34,
+          "h": 34
+        },
+        {
+          "el": "text-button",
+          "label": "目標を変更",
+          "w": 66,
+          "h": 28
+        },
+        {
+          "el": "round-button",
+          "label": "表現を聞く",
+          "w": 34,
+          "h": 34
+        },
+        {
+          "el": "text-button",
+          "label": "ノートに保存",
+          "w": 76,
+          "h": 28
+        },
+        {
+          "el": "install-card",
+          "label": "いつものスマホに。ホーム画面に追加する",
+          "w": 264,
+          "h": 43
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "scenes": {
+      "contrast": [
+        {
+          "text": "YOUR LEARNING SPACE",
+          "cls": "workspace-label",
+          "path": "div > .sidebar > .workspace-label",
+          "color": "rgb(170, 166, 183)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.37,
+          "need": 4.5
+        },
+        {
+          "text": "シーンを探す",
+          "cls": "",
+          "path": "nav > .nav-item.active > span",
+          "color": "rgb(128, 116, 137)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 4.4,
+          "need": 4.5
+        },
+        {
+          "text": "個人プラン · プロトタイプ",
+          "cls": "",
+          "path": ".profile-mini > span > small",
+          "color": "rgb(162, 156, 171)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "マイラーニング",
+          "cls": "desktop-breadcrumb",
+          "path": ".app-shell > .topbar > .desktop-breadcrumb",
+          "color": "rgb(166, 162, 176)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.5,
+          "need": 4.5
+        },
+        {
+          "text": "レベル",
+          "cls": "",
+          "path": ".search-row > .filter-button > span",
+          "color": "rgb(167, 154, 178)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 2.66,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.lavender > .scene-art > .scene-art-spark",
+          "color": "rgb(154, 128, 188)",
+          "bg": "rgb(240, 234, 250)",
+          "size": "17px",
+          "ratio": 2.89,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.peach > .scene-art > .scene-art-spark",
+          "color": "rgb(196, 154, 117)",
+          "bg": "rgb(252, 241, 231)",
+          "size": "17px",
+          "ratio": 2.29,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.pink > .scene-art > .scene-art-spark",
+          "color": "rgb(183, 130, 158)",
+          "bg": "rgb(249, 237, 241)",
+          "size": "17px",
+          "ratio": 2.75,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.mint > .scene-art > .scene-art-spark",
+          "color": "rgb(119, 163, 143)",
+          "bg": "rgb(234, 245, 240)",
+          "size": "17px",
+          "ratio": 2.54,
+          "need": 4.5
+        },
+        {
+          "text": "Care Kotoba · Interactive prototype",
+          "cls": "",
+          "path": ".app-shell > .page-footer > small",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [
+        {
+          "el": "BUTTON",
+          "label": "3分の練習をはじめる",
+          "w": 147,
+          "h": 15
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 64,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 11,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "ホームへ",
+          "w": 193,
+          "h": 33
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 799,
+          "h": 42
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 74,
+          "h": 38
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 110,
+          "h": 38
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 120,
+          "h": 38
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 100,
+          "h": 38
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 110,
+          "h": 38
+        },
+        {
+          "el": "BUTTON",
+          "label": "移動・移乗",
+          "w": 100,
+          "h": 38
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "scene-modal": {
+      "contrast": [
+        {
+          "text": "YOUR LEARNING SPACE",
+          "cls": "workspace-label",
+          "path": "div > .sidebar > .workspace-label",
+          "color": "rgb(170, 166, 183)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.37,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": "nav > .nav-item > span",
+          "color": "rgb(128, 116, 137)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 4.4,
+          "need": 4.5
+        },
+        {
+          "text": "個人プラン · プロトタイプ",
+          "cls": "",
+          "path": ".profile-mini > span > small",
+          "color": "rgb(162, 156, 171)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "マイラーニング",
+          "cls": "desktop-breadcrumb",
+          "path": ".app-shell > .topbar > .desktop-breadcrumb",
+          "color": "rgb(166, 162, 176)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.5,
+          "need": 4.5
+        },
+        {
+          "text": "レベル",
+          "cls": "",
+          "path": ".search-row > .filter-button > span",
+          "color": "rgb(167, 154, 178)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 2.66,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "Care Kotoba · Interactive prototype",
+          "cls": "",
+          "path": ".app-shell > .page-footer > small",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [
+        {
+          "el": "BUTTON",
+          "label": "3分の練習をはじめる",
+          "w": 147,
+          "h": 15
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 64,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 17,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "ホームへ",
+          "w": 193,
+          "h": 33
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 757,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 74,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 110,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 120,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 100,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 110,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "practice-text": {
+      "contrast": [
+        {
+          "text": "YOUR LEARNING SPACE",
+          "cls": "workspace-label",
+          "path": "div > .sidebar > .workspace-label",
+          "color": "rgb(170, 166, 183)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.37,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": "nav > .nav-item > span",
+          "color": "rgb(128, 116, 137)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 4.4,
+          "need": 4.5
+        },
+        {
+          "text": "個人プラン · プロトタイプ",
+          "cls": "",
+          "path": ".profile-mini > span > small",
+          "color": "rgb(162, 156, 171)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "マイラーニング",
+          "cls": "desktop-breadcrumb",
+          "path": ".app-shell > .topbar > .desktop-breadcrumb",
+          "color": "rgb(166, 162, 176)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.5,
+          "need": 4.5
+        },
+        {
+          "text": "レベル",
+          "cls": "",
+          "path": ".search-row > .filter-button > span",
+          "color": "rgb(167, 154, 178)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 2.66,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "Care Kotoba · Interactive prototype",
+          "cls": "",
+          "path": ".app-shell > .page-footer > small",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索",
+        "日本語で返答を入力"
+      ],
+      "targetsUnder24": [
+        {
+          "el": "BUTTON",
+          "label": "3分の練習をはじめる",
+          "w": 147,
+          "h": 15
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 64,
+          "h": 16
+        },
+        {
+          "el": "message-edit",
+          "label": "聞き取りを修正",
+          "w": 60,
+          "h": 15
+        },
+        {
+          "el": "BUTTON",
+          "label": "言い換えを保存",
+          "w": 15,
+          "h": 19
+        },
+        {
+          "el": "BUTTON",
+          "label": "返答のヒント",
+          "w": 72,
+          "h": 13
+        },
+        {
+          "el": "BUTTON",
+          "label": "訳を表示",
+          "w": 54,
+          "h": 13
+        },
+        {
+          "el": "BUTTON",
+          "label": "ふりがな：オン",
+          "w": 63,
+          "h": 13
+        }
+      ],
+      "targetsUnder44": 18,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "ホームへ",
+          "w": 193,
+          "h": 33
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 757,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 74,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 110,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 120,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 100,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 110,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "feedback": {
+      "contrast": [
+        {
+          "text": "YOUR LEARNING SPACE",
+          "cls": "workspace-label",
+          "path": "div > .sidebar > .workspace-label",
+          "color": "rgb(170, 166, 183)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.37,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": "nav > .nav-item > span",
+          "color": "rgb(128, 116, 137)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 4.4,
+          "need": 4.5
+        },
+        {
+          "text": "個人プラン · プロトタイプ",
+          "cls": "",
+          "path": ".profile-mini > span > small",
+          "color": "rgb(162, 156, 171)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "マイラーニング",
+          "cls": "desktop-breadcrumb",
+          "path": ".app-shell > .topbar > .desktop-breadcrumb",
+          "color": "rgb(166, 162, 176)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.5,
+          "need": 4.5
+        },
+        {
+          "text": "レベル",
+          "cls": "",
+          "path": ".search-row > .filter-button > span",
+          "color": "rgb(167, 154, 178)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 2.66,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "Care Kotoba · Interactive prototype",
+          "cls": "",
+          "path": ".app-shell > .page-footer > small",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        },
+        {
+          "text": "SESSION COMPLETE",
+          "cls": "session-tag",
+          "path": ".practice-root.feedback-root > .practice-top > .session-tag",
+          "color": "rgb(188, 164, 203)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.26,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [
+        {
+          "el": "BUTTON",
+          "label": "3分の練習をはじめる",
+          "w": 147,
+          "h": 15
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 64,
+          "h": 16
+        },
+        {
+          "el": "BUTTON",
+          "label": "聞いてみる",
+          "w": 70,
+          "h": 15
+        },
+        {
+          "el": "BUTTON",
+          "label": "保存",
+          "w": 40,
+          "h": 15
+        },
+        {
+          "el": "retry-sentence",
+          "label": "この表現で練習",
+          "w": 90,
+          "h": 15
+        },
+        {
+          "el": "drill-sentence",
+          "label": "この場面だけもう一度",
+          "w": 120,
+          "h": 15
+        }
+      ],
+      "targetsUnder44": 13,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "ホームへ",
+          "w": 193,
+          "h": 33
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 757,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 74,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 110,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 120,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 100,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 110,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "notes": {
+      "contrast": [
+        {
+          "text": "YOUR LEARNING SPACE",
+          "cls": "workspace-label",
+          "path": "div > .sidebar > .workspace-label",
+          "color": "rgb(170, 166, 183)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.37,
+          "need": 4.5
+        },
+        {
+          "text": "シーンを探す",
+          "cls": "",
+          "path": "nav > .nav-item > span",
+          "color": "rgb(128, 116, 137)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 4.4,
+          "need": 4.5
+        },
+        {
+          "text": "個人プラン · プロトタイプ",
+          "cls": "",
+          "path": ".profile-mini > span > small",
+          "color": "rgb(162, 156, 171)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "マイラーニング",
+          "cls": "desktop-breadcrumb",
+          "path": ".app-shell > .topbar > .desktop-breadcrumb",
+          "color": "rgb(166, 162, 176)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.5,
+          "need": 4.5
+        },
+        {
+          "text": "Care Kotoba · Interactive prototype",
+          "cls": "",
+          "path": ".app-shell > .page-footer > small",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [
+        {
+          "el": "BUTTON",
+          "label": "3分の練習をはじめる",
+          "w": 147,
+          "h": 15
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 64,
+          "h": 16
+        },
+        {
+          "el": "BUTTON",
+          "label": "ゆっくり聞く",
+          "w": 82,
+          "h": 16
+        },
+        {
+          "el": "BUTTON",
+          "label": "場面で練習",
+          "w": 72,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 2,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "ホームへ",
+          "w": 193,
+          "h": 33
+        },
+        {
+          "el": "icon-button",
+          "label": "保存を解除",
+          "w": 33,
+          "h": 33
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "progress": {
+      "contrast": [
+        {
+          "text": "YOUR LEARNING SPACE",
+          "cls": "workspace-label",
+          "path": "div > .sidebar > .workspace-label",
+          "color": "rgb(170, 166, 183)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.37,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": "nav > .nav-item > span",
+          "color": "rgb(128, 115, 138)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 4.43,
+          "need": 4.5
+        },
+        {
+          "text": "シーンを探す",
+          "cls": "",
+          "path": "nav > .nav-item > span",
+          "color": "rgb(128, 116, 137)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 4.4,
+          "need": 4.5
+        },
+        {
+          "text": "個人プラン · プロトタイプ",
+          "cls": "",
+          "path": ".profile-mini > span > small",
+          "color": "rgb(162, 156, 171)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "マイラーニング",
+          "cls": "desktop-breadcrumb",
+          "path": ".app-shell > .topbar > .desktop-breadcrumb",
+          "color": "rgb(166, 162, 176)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.5,
+          "need": 4.5
+        },
+        {
+          "text": "Care Kotoba · Interactive prototype",
+          "cls": "",
+          "path": ".app-shell > .page-footer > small",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [
+        {
+          "el": "BUTTON",
+          "label": "3分の練習をはじめる",
+          "w": 147,
+          "h": 15
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 64,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 9,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "ホームへ",
+          "w": 193,
+          "h": 33
+        },
+        {
+          "el": "skill-item",
+          "label": "日常の声かけ0/6",
+          "w": 441,
+          "h": 43
+        },
+        {
+          "el": "skill-item",
+          "label": "食事・口腔ケア0/6",
+          "w": 441,
+          "h": 43
+        },
+        {
+          "el": "skill-item",
+          "label": "入浴・清潔0/6",
+          "w": 441,
+          "h": 43
+        },
+        {
+          "el": "skill-item",
+          "label": "排泄の声かけ0/6",
+          "w": 441,
+          "h": 43
+        },
+        {
+          "el": "skill-item",
+          "label": "移動・移乗0/6",
+          "w": 441,
+          "h": 43
+        },
+        {
+          "el": "skill-item",
+          "label": "申し送り・相談0/6",
+          "w": 441,
+          "h": 43
+        },
+        {
+          "el": "skill-item",
+          "label": "体調変化の報告0/6",
+          "w": 441,
+          "h": 43
+        }
+      ],
+      "scrollWidth": 1280
+    }
+  },
+  "summary": {
+    "home": {
+      "contrast": 21,
+      "decorativeSpark": 2,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 2,
+      "under44": 7,
+      "scrollWidth": 1280
+    },
+    "scenes": {
+      "contrast": 6,
+      "decorativeSpark": 5,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 2,
+      "under44": 11,
+      "scrollWidth": 1280
+    },
+    "scene-modal": {
+      "contrast": 6,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 2,
+      "under44": 17,
+      "scrollWidth": 1280
+    },
+    "practice-text": {
+      "contrast": 6,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 2,
+      "under24": 7,
+      "under44": 18,
+      "scrollWidth": 1280
+    },
+    "feedback": {
+      "contrast": 7,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 6,
+      "under44": 13,
+      "scrollWidth": 1280
+    },
+    "notes": {
+      "contrast": 5,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 4,
+      "under44": 2,
+      "scrollWidth": 1280
+    },
+    "progress": {
+      "contrast": 6,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 2,
+      "under44": 9,
+      "scrollWidth": 1280
+    }
+  }
+}
