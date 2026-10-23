@@ -1,0 +1,1009 @@
+[
+  {
+    "id": "CK-T001",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "コミュニケーション",
+    "reading_ja": "こみゅにけーしょん",
+    "learning_gloss": {
+      "zh-Hans": "交换信息并确认彼此理解；听不清时可以请求重述。",
+      "en": "Exchanging information and checking understanding."
+    },
+    "example_ja": "もう一度、ゆっくりお願いします。",
+    "feedback_guard_zh": "听不清还只说「はい」，会掩盖缺失的信息。",
+    "scenario_ids": [
+      "CK-C01",
+      "CK-C02"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 207,
+      "printed_entry_page": 38,
+      "pdf_entry_page": 44,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T002",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "雑音",
+    "reading_ja": "ざつおん",
+    "learning_gloss": {
+      "zh-Hans": "妨碍听清说话内容的声音；练习重点是说明自己没听清。",
+      "en": "Noise that makes speech harder to hear."
+    },
+    "example_ja": "周りの音で聞き取れませんでした。もう一度お願いします。",
+    "feedback_guard_zh": "不要把没听清的姓名或顺序自行补齐。",
+    "scenario_ids": [
+      "CK-C02"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 207,
+      "printed_entry_page": 38,
+      "pdf_entry_page": 44,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T003",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "利用者",
+    "reading_ja": "りようしゃ",
+    "learning_gloss": {
+      "zh-Hans": "本练习中接受介护服务的人；报告时仍要确认具体对象。",
+      "en": "The person using the care service in this exercise."
+    },
+    "example_ja": "どちらの利用者さんのことですか。",
+    "feedback_guard_zh": "「那个利用者」不足以唯一确定对象时要再确认。",
+    "scenario_ids": [
+      "CK-C01",
+      "CK-C02"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 222,
+      "printed_entry_page": 24,
+      "pdf_entry_page": 30,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T004",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "居室",
+    "reading_ja": "きょしつ",
+    "learning_gloss": {
+      "zh-Hans": "利用者生活的房间；含糊的位置指示需要问清。",
+      "en": "The room where a resident lives."
+    },
+    "example_ja": "どの居室に持っていけばよいですか。",
+    "feedback_guard_zh": "场景没给房号时，不要求学员猜出房号。",
+    "scenario_ids": [
+      "CK-C01"
+    ],
+    "placement": "transfer_only",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 204,
+      "printed_entry_page": 45,
+      "pdf_entry_page": 51,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T005",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "更衣",
+    "reading_ja": "こうい",
+    "learning_gloss": {
+      "zh-Hans": "换衣服；开始前需要听懂本次请求，并尊重本人的回应。",
+      "en": "Changing clothes; this exercise concerns explanation and permission."
+    },
+    "example_ja": "更衣とは、着替えのことでしょうか。",
+    "feedback_guard_zh": "确认词义不等于已经确认本人愿意接受协助。",
+    "scenario_ids": [
+      "CK-C03",
+      "CK-R03"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 206,
+      "printed_entry_page": 54,
+      "pdf_entry_page": 60,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T006",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "記録",
+    "reading_ja": "きろく",
+    "learning_gloss": {
+      "zh-Hans": "留下可追溯的信息；语言练习中写清时间、来源和不知道的部分。",
+      "en": "A record that keeps the time, source and limits of information clear."
+    },
+    "example_ja": "確認した時刻と、まだ分からないことを記録します。",
+    "feedback_guard_zh": "不要把一次观察扩成长期趋势，也不要把推测写成观察。",
+    "scenario_ids": [
+      "CK-C04",
+      "CK-P02",
+      "CK-P04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 204,
+      "printed_entry_page": 72,
+      "pdf_entry_page": 78,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T007",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "観察",
+    "reading_ja": "かんさつ",
+    "learning_gloss": {
+      "zh-Hans": "有意识地看、听等获取信息；只能报告实际注意到的内容。",
+      "en": "Observing what is actually seen or heard."
+    },
+    "example_ja": "私が見たのは、床に座っているところです。",
+    "feedback_guard_zh": "「看见坐在地上」不能直接改写为「目击跌倒」。",
+    "scenario_ids": [
+      "CK-P01",
+      "CK-P02",
+      "CK-P03"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 203,
+      "printed_entry_page": 64,
+      "pdf_entry_page": 70,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T008",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "傾聴",
+    "reading_ja": "けいちょう",
+    "learning_gloss": {
+      "zh-Hans": "认真听对方表达，留出说话的时间；不强迫对方解释拒绝理由。",
+      "en": "Listening attentively and allowing the person time to speak."
+    },
+    "example_ja": "今は入りたくないのですね。",
+    "feedback_guard_zh": "有倾听的回应后，不以反复追问理由换取同意。",
+    "scenario_ids": [
+      "CK-R01",
+      "CK-R02"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 205,
+      "printed_entry_page": 38,
+      "pdf_entry_page": 44,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T009",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "受容",
+    "reading_ja": "じゅよう",
+    "learning_gloss": {
+      "zh-Hans": "先接住对方已表达的感受或选择；不代表必须同意所有事实判断。",
+      "en": "Acknowledging an expressed feeling or choice."
+    },
+    "example_ja": "ここで静かに過ごしたいのですね。",
+    "feedback_guard_zh": "不把「先接受拒绝」教成取消所有必要的沟通或报告。",
+    "scenario_ids": [
+      "CK-R01",
+      "CK-R04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 209,
+      "printed_entry_page": 39,
+      "pdf_entry_page": 45,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T010",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "共感",
+    "reading_ja": "きょうかん",
+    "learning_gloss": {
+      "zh-Hans": "尝试理解对方的感受，并用不替对方下结论的语言回应。",
+      "en": "Trying to understand a feeling without claiming to know its cause."
+    },
+    "example_ja": "見られるのは恥ずかしいのですね。",
+    "feedback_guard_zh": "没有说过的情绪和原因，不替本人编造。",
+    "scenario_ids": [
+      "CK-R02",
+      "CK-R03"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 204,
+      "printed_entry_page": 38,
+      "pdf_entry_page": 44,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T011",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "自己決定",
+    "reading_ja": "じこけってい",
+    "learning_gloss": {
+      "zh-Hans": "本人表达自己的选择；练习允许对方拒绝，不把顺从当成功标准。",
+      "en": "The person expressing their own choice, including declining."
+    },
+    "example_ja": "今日は参加しないということですね。",
+    "feedback_guard_zh": "不能因为最终没有参加或没有入浴就自动判学员失败。",
+    "scenario_ids": [
+      "CK-R01",
+      "CK-R02",
+      "CK-R04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 208,
+      "printed_entry_page": 5,
+      "pdf_entry_page": 11,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T012",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "尊厳",
+    "reading_ja": "そんげん",
+    "learning_gloss": {
+      "zh-Hans": "把对方作为值得尊重的人对待；措辞和回应都保留其意愿。",
+      "en": "Treating the person with respect for their wishes."
+    },
+    "example_ja": "今は着替えたくないのですね。",
+    "feedback_guard_zh": "不用「大家都做了」等压力语言覆盖本人已经表达的意愿。",
+    "scenario_ids": [
+      "CK-R01",
+      "CK-R03",
+      "CK-R04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 213,
+      "printed_entry_page": 7,
+      "pdf_entry_page": 13,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T013",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "秘密保持",
+    "reading_ja": "ひみつほじ",
+    "learning_gloss": {
+      "zh-Hans": "只向适当对象、在必要范围内传达工作信息；不在练习中加入真实个人资料。",
+      "en": "Keeping work information within the appropriate audience and purpose."
+    },
+    "example_ja": "この内容は、担当の方に必要な範囲で報告します。",
+    "feedback_guard_zh": "示例全部虚构；本词条不授权向企业展示学员原始录音。",
+    "scenario_ids": [
+      "CK-R03",
+      "CK-P04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 219,
+      "printed_entry_page": 8,
+      "pdf_entry_page": 14,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T014",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "個人情報",
+    "reading_ja": "こじんじょうほう",
+    "learning_gloss": {
+      "zh-Hans": "可关联到特定个人的信息；本练习使用虚构姓名和情况。",
+      "en": "Information connected to an identifiable person; examples here are fictional."
+    },
+    "example_ja": "練習には、実在する方の情報を入れないようにします。",
+    "feedback_guard_zh": "术语解释不是对特定数据处理行为的法律判断。",
+    "scenario_ids": [
+      "CK-R03",
+      "CK-P04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 207,
+      "printed_entry_page": 15,
+      "pdf_entry_page": 21,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T015",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "参加",
+    "reading_ja": "さんか",
+    "learning_gloss": {
+      "zh-Hans": "加入某项活动；本人也可以表达不参加。",
+      "en": "Taking part in an activity, which the person may also decline."
+    },
+    "example_ja": "今日は参加されないのですね。",
+    "feedback_guard_zh": "不把拒绝参加解释为性格问题或不配合。",
+    "scenario_ids": [
+      "CK-R04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 208,
+      "printed_entry_page": 25,
+      "pdf_entry_page": 31,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T016",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "自覚症状",
+    "reading_ja": "じかくしょうじょう",
+    "learning_gloss": {
+      "zh-Hans": "本人感受到并表达的不适；报告时保留本人原话和信息来源。",
+      "en": "A symptom experienced and reported by the person."
+    },
+    "example_ja": "中村さんは「右膝が痛い」と話しています。",
+    "feedback_guard_zh": "本人说过什么可以被确认；疼痛的原因和诊断可能仍未确认。",
+    "scenario_ids": [
+      "CK-P01"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 208,
+      "printed_entry_page": 75,
+      "pdf_entry_page": 81,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T017",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "摂取",
+    "reading_ja": "せっしゅ",
+    "learning_gloss": {
+      "zh-Hans": "摄入；本练习只描述已知的单次情况，不自行推定营养或病因。",
+      "en": "Intake; describe only the observed occasion in this exercise."
+    },
+    "example_ja": "今日の昼食について、私が確認した範囲を報告します。",
+    "feedback_guard_zh": "不知道数量时不能给出数字，也不能推出近几天一直如此。",
+    "scenario_ids": [
+      "CK-P02"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 212,
+      "printed_entry_page": 76,
+      "pdf_entry_page": 82,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T018",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "摂食",
+    "reading_ja": "せっしょく",
+    "learning_gloss": {
+      "zh-Hans": "进食；拒绝进食时先回应本人的意思，不凭一句话判断原因。",
+      "en": "Eating; acknowledge a refusal without inventing its cause."
+    },
+    "example_ja": "今は食べたくないのですね。",
+    "feedback_guard_zh": "不得从拒绝推断疾病、吞咽状态或长期食欲。",
+    "scenario_ids": [
+      "CK-R02",
+      "CK-P02"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 212,
+      "printed_entry_page": 49,
+      "pdf_entry_page": 55,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T019",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "転倒",
+    "reading_ja": "てんとう",
+    "learning_gloss": {
+      "zh-Hans": "跌倒；只有发现时的姿势，不一定能确认发生过跌倒。",
+      "en": "A fall; finding someone on the floor does not establish how they got there."
+    },
+    "example_ja": "転倒したかどうかは、まだ確認できていません。",
+    "feedback_guard_zh": "本词条训练事实报告，不教授遇到跌倒后的处置步骤。",
+    "scenario_ids": [
+      "CK-P03"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 215,
+      "printed_entry_page": 45,
+      "pdf_entry_page": 51,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T020",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "転落",
+    "reading_ja": "てんらく",
+    "learning_gloss": {
+      "zh-Hans": "从某处跌落；未目击过程时，不把它当作已经确认的原因。",
+      "en": "Falling from a higher place; do not assert an unseen event."
+    },
+    "example_ja": "どうして床に座っていたのかは、分かりません。",
+    "feedback_guard_zh": "不在転倒、転落或主动坐下之间猜一个作为报告事实。",
+    "scenario_ids": [
+      "CK-P03"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 215,
+      "printed_entry_page": 45,
+      "pdf_entry_page": 51,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T021",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "移乗",
+    "reading_ja": "いじょう",
+    "learning_gloss": {
+      "zh-Hans": "从床、椅子等一个位置转到另一位置；此处只训练询问不清楚的请求。",
+      "en": "Moving between a bed, chair or similar place; this card covers clarification only."
+    },
+    "example_ja": "どこからどこへの移乗でしょうか。",
+    "feedback_guard_zh": "词义卡不包含具体搬移动作、人数或个体照护方案。",
+    "scenario_ids": [
+      "CK-C03",
+      "CK-P03"
+    ],
+    "placement": "transfer_only",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 199,
+      "printed_entry_page": 45,
+      "pdf_entry_page": 51,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T022",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "清拭",
+    "reading_ja": "せいしき",
+    "learning_gloss": {
+      "zh-Hans": "用毛巾等擦拭身体；本卡只用于理解词义与请求确认。",
+      "en": "Wiping the body; this card covers vocabulary and clarification only."
+    },
+    "example_ja": "清拭という言葉の意味を、教えていただけますか。",
+    "feedback_guard_zh": "知道读音不等于知道对象、范围、时点或本人意愿。",
+    "scenario_ids": [
+      "CK-C03"
+    ],
+    "placement": "transfer_only",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 212,
+      "printed_entry_page": 55,
+      "pdf_entry_page": 61,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T023",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "口腔ケア",
+    "reading_ja": "こうくうけあ",
+    "learning_gloss": {
+      "zh-Hans": "口腔相关的清洁照护；练习重点是没听懂时请对方解释。",
+      "en": "Care of the mouth; the exercise is asking for an explanation."
+    },
+    "example_ja": "口腔ケアの、どの準備をすればよいですか。",
+    "feedback_guard_zh": "不把这个泛称扩写为具体器具、手法或医疗建议。",
+    "scenario_ids": [
+      "CK-C03"
+    ],
+    "placement": "transfer_only",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 206,
+      "printed_entry_page": 54,
+      "pdf_entry_page": 60,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T024",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "水分補給",
+    "reading_ja": "すいぶんほきゅう",
+    "learning_gloss": {
+      "zh-Hans": "补充水分；本卡练习确认指示，不设定任何人的饮水量或限制。",
+      "en": "Taking fluids; this card does not set an amount or individual care plan."
+    },
+    "example_ja": "今回の依頼で、私が確認することを教えてください。",
+    "feedback_guard_zh": "没有明确给出的饮水量、限制与本人意愿不得补造。",
+    "scenario_ids": [
+      "CK-C03",
+      "CK-R02"
+    ],
+    "placement": "transfer_only",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 211,
+      "printed_entry_page": 49,
+      "pdf_entry_page": 55,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T025",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "部分清拭",
+    "reading_ja": "ぶぶんせいしき",
+    "learning_gloss": {
+      "zh-Hans": "擦拭身体的一部分；不清楚范围时需要明确问出来。",
+      "en": "Wiping part of the body; ask which part if it is unspecified."
+    },
+    "example_ja": "どの部分のことか、確認してもよろしいですか。",
+    "feedback_guard_zh": "本卡不把任何身体部位设为默认作业范围。",
+    "scenario_ids": [
+      "CK-C03"
+    ],
+    "placement": "transfer_only",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 220,
+      "printed_entry_page": 56,
+      "pdf_entry_page": 62,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T026",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "主観的事実",
+    "reading_ja": "しゅかんてきじじつ",
+    "learning_gloss": {
+      "zh-Hans": "这里用于区分本人感受或发话这一来源，不能与「未确认」画等号。",
+      "en": "Information about a reported experience; subjective does not mean unconfirmed."
+    },
+    "example_ja": "「痛い」とご本人が話したことは確認しました。原因は分かりません。",
+    "feedback_guard_zh": "「本人说痛」与「疼痛原因」是两个断言，分别标信息来源和确认状态。",
+    "scenario_ids": [
+      "CK-C04",
+      "CK-P01",
+      "CK-P04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 209,
+      "printed_entry_page": 72,
+      "pdf_entry_page": 78,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T027",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "客観的事実",
+    "reading_ja": "きゃっかんてきじじつ",
+    "learning_gloss": {
+      "zh-Hans": "可观察或测量的信息；仍要说明谁、何时、怎样获取，不能自动推定原因。",
+      "en": "Observable information, with its observer, time and limits stated."
+    },
+    "example_ja": "14時に、私が床に座っているところを見ました。",
+    "feedback_guard_zh": "观察到的姿势是一个事实；事故过程和原因是另外的断言。",
+    "scenario_ids": [
+      "CK-C04",
+      "CK-P02",
+      "CK-P03",
+      "CK-P04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 204,
+      "printed_entry_page": 72,
+      "pdf_entry_page": 78,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T028",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "事故報告書",
+    "reading_ja": "じこほうこくしょ",
+    "learning_gloss": {
+      "zh-Hans": "事故相关的报告文书；本练习只区分已知、传闻和未确认内容。",
+      "en": "An incident report; this exercise distinguishes sources and uncertainty only."
+    },
+    "example_ja": "直接見たことと、まだ確認していないことを分けて報告します。",
+    "feedback_guard_zh": "出现这个词不代表系统已经有真实事故报告、法定流程或合规功能。",
+    "scenario_ids": [
+      "CK-C04",
+      "CK-P03"
+    ],
+    "placement": "transfer_only",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 208,
+      "printed_entry_page": 72,
+      "pdf_entry_page": 78,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T029",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "意欲",
+    "reading_ja": "いよく",
+    "learning_gloss": {
+      "zh-Hans": "想做某事的意愿；一句拒绝不能直接支持对整体意愿的判断。",
+      "en": "Willingness to do something; one refusal does not establish a general lack of motivation."
+    },
+    "example_ja": "今日は静かに過ごしたいと話されています。",
+    "feedback_guard_zh": "避免把本人今天的选择改写为「一直没有意欲」。",
+    "scenario_ids": [
+      "CK-R04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 200,
+      "printed_entry_page": 162,
+      "pdf_entry_page": 168,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T030",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "リスク",
+    "reading_ja": "りすく",
+    "learning_gloss": {
+      "zh-Hans": "可能出现不利情况的可能性；不把语言练习改写成风险诊断。",
+      "en": "The possibility of an adverse outcome; this exercise does not assess clinical risk."
+    },
+    "example_ja": "分からない点は、確認してから報告します。",
+    "feedback_guard_zh": "不能由转写或措辞推定实际身体风险等级。",
+    "scenario_ids": [
+      "CK-C02",
+      "CK-P03"
+    ],
+    "placement": "transfer_only",
+    "provenance": {
+      "kind": "common_headword_reference",
+      "source_id": "mhlw-glossary-zh-2021",
+      "index_pdf_page": 222,
+      "printed_entry_page": 36,
+      "pdf_entry_page": 42,
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Learning glosses, examples, scene mapping and feedback guards authored for Care Kotoba."
+  },
+  {
+    "id": "CK-T031",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "確認",
+    "reading_ja": "かくにん",
+    "learning_gloss": {
+      "zh-Hans": "把缺少或含糊的信息问清，并区分已经确认和仍然不知道的内容。",
+      "en": "Clarifying missing information and stating what remains unknown."
+    },
+    "example_ja": "何を、いつまでに行えばよいですか。",
+    "feedback_guard_zh": "不要求逐字命中参考句。",
+    "scenario_ids": [
+      "CK-C01",
+      "CK-C02",
+      "CK-C03",
+      "CK-C04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "project_authored",
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Common communication word and original Care Kotoba learning gloss; not attributed to a PDF entry."
+  },
+  {
+    "id": "CK-T032",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "拒否",
+    "reading_ja": "きょひ",
+    "learning_gloss": {
+      "zh-Hans": "表达不愿意；回应时先承认这一意思，不强迫给理由。",
+      "en": "Expressing that one does not want something."
+    },
+    "example_ja": "今はしたくないのですね。",
+    "feedback_guard_zh": "接受拒绝本身可以是成功结局。",
+    "scenario_ids": [
+      "CK-R01",
+      "CK-R02",
+      "CK-R03",
+      "CK-R04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "project_authored",
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Common communication word and original Care Kotoba learning gloss; not attributed to a PDF entry."
+  },
+  {
+    "id": "CK-T033",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "申し送り",
+    "reading_ja": "もうしおくり",
+    "learning_gloss": {
+      "zh-Hans": "职员之间传递工作信息；要说清这是听别人说的，还是自己观察的。",
+      "en": "A staff handover that keeps reported and directly observed information distinct."
+    },
+    "example_ja": "申し送りでは伺いましたが、私はまだ確認していません。",
+    "feedback_guard_zh": "传闻可以准确引用其来源，不能伪称自己已观察。",
+    "scenario_ids": [
+      "CK-C01",
+      "CK-P04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "project_authored",
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Common communication word and original Care Kotoba learning gloss; not attributed to a PDF entry."
+  },
+  {
+    "id": "CK-T034",
+    "version": "0.1.0",
+    "status": "draft_pending_expert_review",
+    "review_notice": "草稿，待介护经验者与日语教育者审稿",
+    "fictional_examples": true,
+    "ja": "未確認",
+    "reading_ja": "みかくにん",
+    "learning_gloss": {
+      "zh-Hans": "目前还没有核实；它描述确认状态，不评价信息提供者是否可信。",
+      "en": "Not yet checked; this labels verification status, not a person’s credibility."
+    },
+    "example_ja": "原因については、まだ確認できていません。",
+    "feedback_guard_zh": "本人原话已经听见，不代表原话中的因果判断已经证实。",
+    "scenario_ids": [
+      "CK-C04",
+      "CK-P01",
+      "CK-P02",
+      "CK-P03",
+      "CK-P04"
+    ],
+    "placement": "core",
+    "provenance": {
+      "kind": "project_authored",
+      "copied_definition": false,
+      "copied_artwork": false
+    },
+    "authorship": "Common communication word and original Care Kotoba learning gloss; not attributed to a PDF entry."
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "terms": 34,
+  "source_headwords": 30,
+  "project_authored": 4,
+  "scenarios": 12,
+  "errors": [],
+  "professional_reviewed": false,
+  "app_integrated": false,
+  "exit_code": 0,
+  "seconds": 0.032061,
+  "command": "python3 content/terminology/validate.py",
+  "baseline": "eada73b5ddb8757d95d38123f269d32546e58465",
+  "transport": "GitHub connector GET; 12 local scenario blobs matched remote SHA-1",
+  "git_fetch_executed": false,
+  "jsonschema_package_available": false
+}
