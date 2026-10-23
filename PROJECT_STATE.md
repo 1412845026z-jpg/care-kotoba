@@ -56,7 +56,7 @@
 | --- | --- | --- | --- | --- | --- |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
-| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `3a3f1a9`，未合并 | ENV-003新head：真实install/tsc/build/static通过、unit34/34、离线模拟22/22、真实dev21通过1跳过；Cookie测试约定待修，真实AI/真机未验证 |
+| G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5（head 见 PR 页面；Cookie 修复提交 `89d8ad2`），未合并 | ENV-003（Codex，@`3a3f1a9`）：真实install/tsc/build/static通过、unit34/34、离线模拟22/22、真实dev21通过1跳过。COOKIE-ENCODING-001 已修：篡改测试改变真实签名字节，token 只接受规范 base64url；离线 static 0 错误、unit 37/37、e2e 22/22。真实AI/真机未验证 |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
 | ENV-001 | 真实dev与环境变量/Cookie/响应头/sendBeacon | Codex | merged | 证据PR #7及PR #12，合并 `67fc7ab` | 环境矩阵见docs/10，标准runner补齐模拟语音；真实AI/真机未验证，Cookie测试另列待办 |
 | ENV-002 | 复核G0 fix1与REUSE、交接确认的业务问题 | Codex | merged | PR #11；合并 `eada73b` | handoffs/2026-10-23-ENV-002-codex.md；复核证据已入main，不代表真实AI或真机验收 |
