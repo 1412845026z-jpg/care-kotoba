@@ -7,4 +7,6 @@
 | `fix1-tests.json` / `.static.json` | ENV-002 第 2、3 项修复后：static 0 错误；unit 50/50；e2e 25/25 | `a8507d2` |
 | `fix1-codex-edges.json` | Codex 的 `verification/ENV-002/reproduce_edges.mjs` 在新代码上的输出：2 个 create、2 个被接受、0 个被拒；4 个注音输入都返回 null，没有异常（诊断输出，不是断言） | `a8507d2` |
 
+| `cookie-merge-tests.json` / `.static.json` | 合入 PR #5 的 Cookie 修复与最新 main 后：static 0 错误；unit 53/53；e2e 25/25 | `e1e9538` |
+
 不证明：vinext SSR、Workers 运行时、真实 OpenAI 的事件顺序和 `error.event_id`、真机表现。项目自身的 tsc / build 由 PR 上的 CI 运行。
