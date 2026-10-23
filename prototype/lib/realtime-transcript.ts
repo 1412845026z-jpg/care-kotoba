@@ -8,8 +8,10 @@
 // conversation.item.added), so order follows the conversation, not arrival.
 // Pure and immutable; unit-tested in tests/unit/realtime-transcript.test.mjs.
 
+import { confidenceOf, type AsrConfidence } from './asr-confidence';
+
 export type TurnStatus = 'pending' | 'streaming' | 'done' | 'interrupted' | 'failed' | 'empty';
-export type Turn = { id: string; role: 'user' | 'assistant'; text: string; status: TurnStatus; source: 'voice' | 'text' | 'seed'; edited?: boolean; responseId?: string };
+export type Turn = { id: string; role: 'user' | 'assistant'; text: string; status: TurnStatus; source: 'voice' | 'text' | 'seed'; edited?: boolean; responseId?: string; asr?: AsrConfidence };
 export type TranscriptState = { order: string[]; turns: Record<string, Turn>; seedCount: number };
 // Realtime server events are external JSON; only the fields used below are read.
 export type RealtimeEvent = { type?: string; [key: string]: any };
@@ -69,7 +71,8 @@ export function applyEvent(state: TranscriptState, e: RealtimeEvent): Transcript
       const t = state.turns[e.item_id];
       if (t?.edited) return upsert(state, e.item_id, { status: 'done' });
       const text = String(e.transcript || '').trim();
-      return upsert(state, e.item_id, { role: 'user', text, status: text ? 'done' : 'empty' });
+      const asr = confidenceOf(e.logprobs);
+      return upsert(state, e.item_id, { role: 'user', text, status: text ? 'done' : 'empty', ...(asr ? { asr } : {}) });
     }
     case 'conversation.item.input_audio_transcription.failed':
       if (state.turns[e.item_id]?.edited) return state;

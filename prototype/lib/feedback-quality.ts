@@ -1,10 +1,10 @@
 // Server-side checks on AI feedback: a quote presented as "what you said" must
 // actually come from the learner's lines. Pure functions, unit-tested.
 
-export type FeedbackMessage = { role: 'user' | 'assistant'; text: string; source?: 'voice' | 'text'; edited?: boolean; status?: string };
+export type FeedbackMessage = { role: 'user' | 'assistant'; text: string; source?: 'voice' | 'text'; edited?: boolean; status?: string; asrUncertain?: boolean };
 export type Correction = { original: string; better: string; reason: string };
 export type FeedbackGoal = { label: string; achieved: boolean; evidence: string; evidenceVerified?: boolean };
-export type FeedbackResult = { score: number; heading: string; summary: string; strengths: string[]; improvements: (Correction & { verified?: boolean; fromVoice?: boolean })[]; goals: FeedbackGoal[]; nextPhrase: string; quality?: Record<string, unknown> };
+export type FeedbackResult = { score: number; heading: string; summary: string; strengths: string[]; improvements: (Correction & { verified?: boolean; fromVoice?: boolean; uncertainTranscript?: boolean })[]; goals: FeedbackGoal[]; nextPhrase: string; quality?: Record<string, unknown> };
 
 const PUNCT = /[\s　、。，．,.!！?？・…‥「」『』（）()\[\]【】〈〉《》“”"'’‘：:；;~〜－\-]/g;
 
@@ -107,7 +107,12 @@ export function verifyFeedback(raw: Partial<FeedbackResult>, messages: FeedbackM
   // Lines the learner typed or corrected are reliable; an unedited voice line is an automatic
   // transcript and may contain recognition errors, so a correction of it is marked for the UI.
   const reliable = messages.filter((m) => m.role === 'user' && m.text?.trim() && (m.source !== 'voice' || m.edited)).map((m) => m.text);
-  const kept = improvements.filter((c) => c.better && !c.pronunciationOnly && isQuotedFrom(c.original, learner)).slice(0, 3).map(({ pronunciationOnly: _p, ...c }) => ({ ...c, verified: true, ...(isQuotedFrom(c.original, reliable) ? {} : { fromVoice: true }) }));
+  // Lines the recogniser itself was unsure about (transcription logprobs, CK_ASR_LOGPROBS=1).
+  const uncertain = messages.filter((m) => m.role === 'user' && m.source === 'voice' && !m.edited && m.asrUncertain && m.text?.trim()).map((m) => m.text);
+  const kept = improvements.filter((c) => c.better && !c.pronunciationOnly && isQuotedFrom(c.original, learner)).slice(0, 3).map(({ pronunciationOnly: _p, ...c }) => {
+    const fromVoice = !isQuotedFrom(c.original, reliable);
+    return { ...c, verified: true, ...(fromVoice ? { fromVoice: true } : {}), ...(fromVoice && isQuotedFrom(c.original, uncertain) ? { uncertainTranscript: true } : {}) };
+  });
   const dropped = improvements.filter((c) => !c.pronunciationOnly && !kept.some((k) => k.original === c.original && k.better === c.better)).map((c) => c.original);
   const goals = (Array.isArray(raw.goals) ? raw.goals : []).slice(0, 6).map((g) => {
     const rawEvidence = str(g?.evidence, 400);
@@ -126,7 +131,7 @@ export function verifyFeedback(raw: Partial<FeedbackResult>, messages: FeedbackM
     improvements: kept,
     goals,
     nextPhrase: str(raw.nextPhrase, 300),
-    quality: { droppedUnquotedImprovements: dropped.length, removedPronunciationClaims: pronunciation, droppedPronunciationOnlyImprovements: improvements.filter((c) => c.pronunciationOnly).length, learnerLines: learner.length, voiceLines: messages.filter((m) => m.role === 'user' && m.source === 'voice').length, editedLines: messages.filter((m) => m.role === 'user' && m.edited).length },
+    quality: { droppedUnquotedImprovements: dropped.length, removedPronunciationClaims: pronunciation, droppedPronunciationOnlyImprovements: improvements.filter((c) => c.pronunciationOnly).length, learnerLines: learner.length, voiceLines: messages.filter((m) => m.role === 'user' && m.source === 'voice').length, uncertainLines: uncertain.length, uncertainCorrections: kept.filter((c) => c.uncertainTranscript).length, editedLines: messages.filter((m) => m.role === 'user' && m.edited).length },
   };
 }
 
