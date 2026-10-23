@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本次状态核对的远端代码提交 | `main` = `e65dab61beead21791e023f06dd8688b0465e7ac`（EVAL-002 PR #14已合并；业务PR #5/#9未合并） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（固定提交、实际日志与官方资料） |
+| 本次状态核对的远端代码提交 | `main` = `c65c3e2a93ce1a790113bf831a31b1a4e1ff479e`（审稿台PR #15已合并；业务PR #5/#9未合并） |
+| 核对时间与作者 | 2026-10-24T01:35:14+09:00，Codex（最终同步快照；用户要求01:50 JST停止本轮） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -62,10 +62,10 @@
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
 | OSS-001 | 公开前检查与Codex for OSS申请准备 | Codex | blocked | 准备材料PR #10已合并；申请暂停 | 当前REST private=false，已公开；本轮Codex未改设置，变更执行者未核实；许可证未定、表单未提交 |
-| CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
+| CI-002 | G0模拟测试接入常规main CI | Codex | blocked | 工具与独立验证已由PR #8/#12合并；常规接入等业务PR #5合并 | ENV-003已验证fixed-head全套模拟；Cookie确定性测试待Claude修正，业务合并后由Codex接入 |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
-| CONTENT-003 | 12场景/34术语/60评测的离线审稿台 | Codex | review_ready | `codex/CONTENT-003-review-desk` | handoffs/2026-10-24-CONTENT-003-codex.md；12项真实浏览器检查通过，390px无溢出，JSON导出可用；未接入学员端或专业审批 |
+| CONTENT-003 | 12场景/34术语/60评测的离线审稿台 | Codex | merged | PR #15；合并 `c65c3e2` | handoffs/2026-10-24-CONTENT-003-codex.md；CI39987425175通过；12项真实浏览器检查通过，390px无溢出；未接入学员端或专业审批 |
 | EVAL-002 | 信息来源/核实状态的12条配对反馈评测草稿 | Codex | merged | PR #14；合并 `e65dab6` | handoffs/2026-10-24-EVAL-002-codex.md；CI39985347001通过；无模型调用，专业审稿未完成 |
 | ENV-003 | Claude fix2/fix1固定head真实构建与回归复核 | Codex | merged | PR #12；合并 `67fc7ab` | handoffs/2026-10-24-ENV-003-results-codex.md；G0 unit34/34、离线22/22、dev21通过1跳过；REUSE unit50/50、离线25/25、dev24通过1跳过；全部模拟 |
 | CI-003 | 标准runner固定head模拟语音复核 | Codex | merged | PR #12；合并 `67fc7ab` | handoffs/2026-10-24-CI-003-results-codex.md及ENV-003；最新run39982127800两job成功；Cookie测试待办保留 |
@@ -93,6 +93,8 @@
 
 ## 最近交接
 
+- handoffs/2026-10-24-STOP-0150-codex.md：本轮统一交接、已合并工作、固定被测SHA、Cookie测试待办与Claude接续顺序；用户指定01:50 JST停止执行。
+
 - handoffs/2026-10-24-CONTENT-003-codex.md：可离线打开的审稿页、按资料版本保存和导出意见；不改变正式内容。
 
 - handoffs/2026-10-24-EVAL-002-codex.md：12条配对评测草稿，分别检查来源、确认状态、范围、拒绝与转写不确定；无模型调用。
@@ -116,6 +118,7 @@
 
 - handoffs/2026-10-23-SYNC-001-claude.md：原归档导入与共享规则合并；已由 PR #1 以 merge commit 合并 `4118ed1`，原样导入 `77a0604` 保留。
 - handoffs/2026-10-23-CI-001-results-codex.md：main CI 真实结果、耗时与完整日志入口。
+
 
 
 
