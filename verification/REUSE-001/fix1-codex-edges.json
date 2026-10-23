@@ -1,0 +1,33 @@
+{
+  "queue": {
+    "mock_only": true,
+    "learner_messages": 2,
+    "create_events": 2,
+    "accepted_responses": 2,
+    "rejected_creates": 0,
+    "learner_messages_visible_to_first_response": 1,
+    "followup_requested_after_done": true
+  },
+  "ruby": [
+    {
+      "text": "unknown fixed text",
+      "returned_null": true,
+      "error": null
+    },
+    {
+      "text": "constructor",
+      "returned_null": true,
+      "error": null
+    },
+    {
+      "text": "toString",
+      "returned_null": true,
+      "error": null
+    },
+    {
+      "text": "__proto__",
+      "returned_null": true,
+      "error": null
+    }
+  ]
+}
