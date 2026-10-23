@@ -1,5 +1,18 @@
 export type CategoryId = 'daily'|'meal'|'bath'|'toilet'|'move'|'handover'|'report'|'memory';
-export type Scene = {id:string;category:CategoryId;title:string;en:string;action:string;context:string;starter:string;phrases:string[];goals:string[];level:1|2|3;minutes:number;};
+export type PartnerKind = 'resident'|'senior'|'colleague'|'nurse';
+export type Scene = {id:string;category:CategoryId;title:string;en:string;action:string;context:string;starter:string;phrases:string[];goals:string[];level:1|2|3;minutes:number;partner:PartnerKind;};
+// Who the AI plays. Single source for the AI instructions, the scene card and the practice screen.
+export const partners:Record<PartnerKind,{label:string;card:string;short:string;role:string;staff:boolean}>={
+ resident:{label:'佐藤さん',card:'利用者の佐藤さん',short:'佐',role:'施設利用者の佐藤さん（架空）',staff:false},
+ senior:{label:'先輩スタッフ',card:'先輩スタッフ',short:'先',role:'先輩の介護職員',staff:true},
+ colleague:{label:'同僚スタッフ',card:'同僚スタッフ',short:'同',role:'同じ施設の同僚の介護職員',staff:true},
+ nurse:{label:'看護スタッフ',card:'看護スタッフ',short:'看',role:'報告を受ける看護職員',staff:true},
+};
+// Scenes whose conversation partner differs from their category default. Before this map, these staff-to-staff
+// scenes were role-played as the resident (meal-6, toilet-6, move-5) or as a nurse although the context names a senior (report-6).
+const partnerOverrides:Record<string,PartnerKind>={'meal-6':'colleague','toilet-6':'senior','move-5':'senior','report-6':'senior'};
+const categoryPartner=(c:CategoryId):PartnerKind=>c==='handover'?'senior':c==='report'?'nurse':'resident';
+export const partnerOf=(scene:Pick<Scene,'partner'>)=>partners[scene.partner];
 export const categories:{id:CategoryId;name:string;en:string;icon:string;color:string}[]=[
  {id:'daily',name:'日常の声かけ',en:'Everyday care',icon:'sun',color:'lavender'},
  {id:'meal',name:'食事・口腔ケア',en:'Meals & oral care',icon:'utensils',color:'peach'},
@@ -77,11 +90,14 @@ const rows:Record<CategoryId,Row[]>={
  ['好きなことを話題にする','A meaningful conversation','落ち着いた時間。本人の好きなことを、決めつけずに聞きます。','今日は、何だか退屈だな。','普段、どのようなことをして過ごすのが、お好きですか。','よろしければ、もう少し教えていただけますか。','ご希望に合うことができるか、確認しますね。'],
  ],
 };
-export const scenes:Scene[]=categories.flatMap((c)=>rows[c.id].map((r,i)=>({
- id:`${c.id}-${i+1}`,category:c.id,title:r[0],en:r[1],action:r[0],context:r[2],starter:r[3],phrases:r.slice(4),
- goals:c.id==='handover'||c.id==='report'?['事実と推測を分ける','必要な情報を具体的に伝える','確認・相談で会話をつなぐ']:['これから行うことを伝える','相手の希望・気持ちを確かめる','返答を受けて言い換える'],
+export const scenes:Scene[]=categories.flatMap((c)=>rows[c.id].map((r,i)=>{
+ const id=`${c.id}-${i+1}`,partner=partnerOverrides[id]||categoryPartner(c.id);
+ return {
+ id,category:c.id,title:r[0],en:r[1],action:r[0],context:r[2],starter:r[3],phrases:r.slice(4),partner,
+ goals:partners[partner].staff?['事実と推測を分ける','必要な情報を具体的に伝える','確認・相談で会話をつなぐ']:['これから行うことを伝える','相手の希望・気持ちを確かめる','返答を受けて言い換える'],
  level:(c.id==='report'?3:c.id==='handover'||c.id==='memory'?2:1) as 1|2|3,minutes:i%3+3,
-})));
+ };
+}));
 export const variants=[{id:'gentle',label:'穏やかな会話',sub:'まずは、ゆっくり',instruction:'穏やかに、短い日本語で返答する。学習者の確認に協力する。'},
  {id:'decline',label:'断られたら？',sub:'気持ちを聞いてみよう',instruction:'最初は提案を断る、または困りごとを伝える。学習者が意向を確認したら理由を少しずつ話す。ケアを無理に受け入れる必要はない。'},
  {id:'clarify',label:'聞き返されたら？',sub:'伝わる表現に言い換え',instruction:'長い説明や曖昧な表現には「どういうこと？」「もう一度、お願いします」と聞き返す。短く明確な言い換えには自然に応じる。'},
