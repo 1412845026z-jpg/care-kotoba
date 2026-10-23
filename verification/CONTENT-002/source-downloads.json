@@ -1,0 +1,26 @@
+[
+  {
+    "id": "glossary-zh",
+    "url": "https://www.mhlw.go.jp/content/12000000/001348436.pdf",
+    "bytes": 21064098,
+    "sha256": "983cb99491db2ab30875317a652043462e87e7079bab5db922bc0d1639248c2f",
+    "seconds": 7.516,
+    "downloaded": true
+  },
+  {
+    "id": "kaigo-japanese-multilingual",
+    "url": "https://www.mhlw.go.jp/content/12000000/001184461.pdf",
+    "bytes": 16219953,
+    "sha256": "ca6fff3325b190dbcef73a6b68f0b6ace486411b9633dd3732418486f3b5e06d",
+    "seconds": 6.535,
+    "downloaded": true
+  },
+  {
+    "id": "glossary-errata",
+    "url": "https://www.mhlw.go.jp/content/12000000/001348403.pdf",
+    "bytes": 146867,
+    "sha256": "079377fdf42235cb824f2d1cddd8cf358914b69267b5959e5f7b3a7189fdae7b",
+    "seconds": 6.104,
+    "downloaded": true
+  }
+]
