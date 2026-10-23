@@ -55,7 +55,7 @@
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | review_ready | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | review_ready | `codex/SYNC-002`（基于 PR #1 的固定 head，待导入合并） | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复：AI接口访问保护、模型型号集中配置、语音转写顺序/打断/断线、服务端挂断与用量记录、反馈原话校验、本地存储容错、离线测试 | Claude | in_progress | `claude/G0-01-voice-loop`（未推送） | — |
-| CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | queued | — | — |
+| CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | in_progress | `codex/CI-001`（叠在已核验导入与 SYNC-002 上，待首次 CI 绿再整合 main） | handoffs/2026-10-23-CI-001-codex.md；本地 install / tsc / build 通过，Actions 待确认 |
 | ENV-001 | 在真实 dev server 上验证 G0-01；核实服务端环境变量注入方式（`.env.local` / `.dev.vars` / `cloudflare:workers`） | Codex | queued（等 G0-01 推送） | — | — |
 | DEPLOY-001 | 私有 staging 部署方案（只准备，等用户授权后执行） | Codex | queued | — | — |
 | CONTENT-001 | 12个核心场景规格草稿与固定评测样本（`content/`、`evals/`），标注待专业审稿 | Codex | queued | — | — |
