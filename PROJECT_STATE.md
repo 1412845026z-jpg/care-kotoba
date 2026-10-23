@@ -8,7 +8,7 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本次状态核对的远端代码提交 | `main` = `37c0fc20bcffcadd8d1cb83d747a35d5b2154048`（CONTENT-002 PR #13已合并；G0/REUSE未合并） |
+| 本次状态核对的远端代码提交 | `main` = `67fc7ab8adfb2bee827595beffd758962e6a57e9`（CI-003/ENV-003证据PR #12已合并；业务PR #5/#9未合并） |
 | 核对时间与作者 | 2026-10-24 JST，Codex（固定提交、实际日志与官方资料） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
@@ -56,7 +56,7 @@
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | review_ready | PR #5 @ `3a3f1a9`，未合并 | ENV-003新head：真实install/tsc/build/static通过、unit34/34、离线模拟22/22、真实dev21通过1跳过；Cookie测试约定待修，真实AI/真机未验证 |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | merged | `codex/CI-001`，[PR #3](https://github.com/1412845026z-jpg/care-kotoba/pull/3)；合并 `87b6118` | handoffs/2026-10-23-CI-001-results-codex.md；main CI 全绿（run 39954687547） |
-| ENV-001 | 真实dev与环境变量/Cookie/响应头/sendBeacon | Codex | review_ready | 历史证据PR #7；新回归ENV-003 | 环境注入矩阵见docs/10；标准runner现已补齐模拟语音；真实API/设备不在已验证范围 |
+| ENV-001 | 真实dev与环境变量/Cookie/响应头/sendBeacon | Codex | merged | 证据PR #7及PR #12，合并 `67fc7ab` | 环境矩阵见docs/10，标准runner补齐模拟语音；真实AI/真机未验证，Cookie测试另列待办 |
 | ENV-002 | 复核G0 fix1与REUSE、交接确认的业务问题 | Codex | merged | PR #11；合并 `eada73b` | handoffs/2026-10-23-ENV-002-codex.md；复核证据已入main，不代表真实AI或真机验收 |
 | REUSE-001 | 固定文字注音与Realtime输入排队 | Claude | review_ready | PR #9 @ `5b6146f`，依赖PR #5、未合并 | ENV-003确认旧竞争与笔记崩溃修复；unit50/50、离线模拟25/25、真实dev24通过1跳过；真实OpenAI事件时序仍待验 |
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
@@ -65,8 +65,9 @@
 | CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
-| ENV-003 | Claude fix2/fix1固定head真实构建与回归复核 | Codex | review_ready | PR #12 | handoffs/2026-10-24-ENV-003-results-codex.md；G0 unit34/34、离线22/22、dev21通过1跳过；REUSE unit50/50、离线25/25、dev24通过1跳过；全部模拟 |
-| CI-003 | 标准runner固定head模拟语音复核 | Codex | review_ready | PR #12，`codex/CI-003-runner` | 新run39982127800两job成功；完整证据见ENV-003。旧run39978029073的Cookie测试失败仍保留，未宣称已修复 |
+| EVAL-002 | 信息来源/核实状态的12条配对反馈评测草稿 | Codex | review_ready | `codex/EVAL-002-pairs` | handoffs/2026-10-24-EVAL-002-codex.md；12条/6组/0结构错误；无模型调用，专业审稿未完成 |
+| ENV-003 | Claude fix2/fix1固定head真实构建与回归复核 | Codex | merged | PR #12；合并 `67fc7ab` | handoffs/2026-10-24-ENV-003-results-codex.md；G0 unit34/34、离线22/22、dev21通过1跳过；REUSE unit50/50、离线25/25、dev24通过1跳过；全部模拟 |
+| CI-003 | 标准runner固定head模拟语音复核 | Codex | merged | PR #12；合并 `67fc7ab` | handoffs/2026-10-24-CI-003-results-codex.md及ENV-003；最新run39982127800两job成功；Cookie测试待办保留 |
 | CONTENT-002 | 34条术语草稿、12场景关联与资料来源复核 | Codex | merged | PR #13；合并 `37c0fc2` | handoffs/2026-10-24-CONTENT-002-codex.md；CI39980854437通过，尚未专业审稿或接入应用 |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
@@ -91,6 +92,8 @@
 
 ## 最近交接
 
+- handoffs/2026-10-24-EVAL-002-codex.md：12条配对评测草稿，分别检查来源、确认状态、范围、拒绝与转写不确定；无模型调用。
+
 - handoffs/2026-10-24-ENV-003-results-codex.md：新Claude修复提交的真实构建、独立诊断与标准runner全部模拟组成功；保留Cookie测试待办。
 
 - handoffs/2026-10-24-CONTENT-002-codex.md：34条术语、12场景关联；教材PDF第三方权利状态保留未确认，未复制定义或图像。
@@ -110,5 +113,6 @@
 
 - handoffs/2026-10-23-SYNC-001-claude.md：原归档导入与共享规则合并；已由 PR #1 以 merge commit 合并 `4118ed1`，原样导入 `77a0604` 保留。
 - handoffs/2026-10-23-CI-001-results-codex.md：main CI 真实结果、耗时与完整日志入口。
+
 
 
