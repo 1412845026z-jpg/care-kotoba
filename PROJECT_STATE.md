@@ -52,7 +52,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | review_ready | `claude/SYNC-001-import`（PR 见交接记录） | handoffs/2026-10-23-SYNC-001-claude.md |
+| SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | review_ready | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | queued | — | 需记录实际读取的提交号 |
 | G0-01 | 代码审计与基础修复：AI接口访问保护、模型型号集中配置、语音转写顺序/打断/断线、服务端挂断与用量记录、反馈原话校验、本地存储容错、离线测试 | Claude | in_progress | `claude/G0-01-voice-loop`（未推送） | — |
 | CI-001 | GitHub Actions：`pnpm install --frozen-lockfile`、`tsc --noEmit`、`pnpm build`、无密钥扫描；不注入 secret | Codex | queued | — | — |
