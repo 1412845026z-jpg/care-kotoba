@@ -81,6 +81,7 @@
 | DRILL-001 | 局部复练：反馈卡上的「この場面だけもう一度」，以对话到该处为上下文只重练一句 | Claude | review_ready | `claude/DRILL-001`（依赖 PR #21） | handoffs/2026-10-24-DRILL-001-claude.md；unit 68/68、e2e 31/31（模拟 AI）；真实模型回应质量未验证 |
 | VOICE-TIMER-001 | 语音练习最后 1 分钟显示倒计时（并用读屏提示），避免到时被突然结束 | Claude | review_ready | `claude/VOICE-TIMER-001`（依赖 PR #22） | verification/VOICE-TIMER-001/；unit、e2e 通过（模拟时钟）；真机 T8 待验证 |
 | A11Y-002 | 桌面布局的同类修正（侧边栏、右栏卡片的对比度与字号；所有宽度的点击区域）；`openScene` 测试辅助支持桌面布局 | Claude | review_ready | `claude/A11Y-002`（依赖 PR #24） | verification/A11Y-001/README.md「A11Y-002」：1280px 下 7 个画面的对比度问题、小于 24px 的点击区域都降为 0；unit 69/69、e2e 32/32 |
+| SMOKE-001 | 部署后用的接口冒烟脚本（`tools/smoke/api-smoke.mjs`）：默认只测免费接口，加 `--yes` 才调用对话/反馈/TTS | Claude | review_ready | `claude/SMOKE-001`（依赖 PR #25） | docs/09「部署后先跑的接口冒烟测试」；e2e 对 harness+mock 验证（不加 --yes 时 0 次 AI 请求、访问码不打印）；未对真实部署运行 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
