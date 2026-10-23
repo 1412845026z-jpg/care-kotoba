@@ -56,3 +56,13 @@ test('voice metrics: reply latency, barge-ins, usage and failures', () => {
   assert.equal(server.cancelled, 1);
   assert.ok(Object.values(server).every((v) => typeof v === 'number' || (v && typeof v === 'object') || v === null), 'server summary is numbers only');
 });
+
+import { remainingSeconds } from '@/lib/realtime-client';
+test('remaining time for the on-screen countdown', () => {
+  assert.equal(remainingSeconds(180, undefined, 1000), null);
+  assert.equal(remainingSeconds(0, 1000, 1000), null);
+  assert.equal(remainingSeconds(180, 1_000, 1_000), 180);
+  assert.equal(remainingSeconds(180, 1_000, 121_000), 60);
+  assert.equal(remainingSeconds(180, 1_000, 120_500), 61, 'rounds up so it never shows 0 too early');
+  assert.equal(remainingSeconds(180, 1_000, 999_000), 0);
+});
