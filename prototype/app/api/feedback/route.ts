@@ -1,0 +1,11 @@
+import {context,openai,json,extractText,stringSchema,correctionSchema,validateOrigin} from '@/lib/ai-server';
+export async function POST(req:Request){
+ if(!validateOrigin(req))return json({error:'Invalid origin'},403);
+ try{const body=await req.json() as Record<string,any>;const {scene,locale}=context(body);
+ const messages=(Array.isArray(body.messages)?body.messages:[]).slice(-30).map((m:{role:string;text:string})=>({role:String(m.role).slice(0,20),text:String(m.text).slice(0,1500)}));
+ if(!messages.some((m:{role:string})=>m.role==='user'))return json({error:'まず、ひとこと話してみましょう。'},400);
+ const schema={type:'object',properties:{score:{type:'integer'},heading:stringSchema,summary:stringSchema,strengths:{type:'array',items:stringSchema},improvements:{type:'array',items:correctionSchema},goals:{type:'array',items:{type:'object',properties:{label:stringSchema,achieved:{type:'boolean'},evidence:stringSchema},required:['label','achieved','evidence'],additionalProperties:false}},nextPhrase:stringSchema},required:['score','heading','summary','strengths','improvements','goals','nextPhrase'],additionalProperties:false};
+ const response=await openai('responses',{model:'gpt-4.1-mini',store:false,instructions:`Assess ONLY the learner's Japanese communication in this fictional eldercare scene: ${scene.title}. Context: ${scene.context}. Goals: ${scene.goals.join('; ')}. Write explanations in ${locale==='zh'?'简体中文':locale==='en'?'English':'やさしい日本語'}, Japanese examples in Japanese. Score 0-100 is a learning indicator, never certification of care competence. Evaluate clarity, respectful intent, and responsiveness. Never score pronunciation without audio. Do not diagnose or instruct clinical procedures. Accept equivalent natural language. Quote only actual learner text for original. Do not invent evidence or completed goals. If evidence is missing, say so. Give at most 3 improvements and one nextPhrase to retry. Empty strengths is allowed when evidence is insufficient.`,input:JSON.stringify(messages),max_output_tokens:1400,text:{format:{type:'json_schema',name:'care_feedback',strict:true,schema}}});
+ if(!response.ok)return response;const result=JSON.parse(extractText(await response.json()));result.score=Math.max(0,Math.min(100,Number(result.score)||0));return json(result);
+ }catch{return json({error:'フィードバックを作成できませんでした。もう一度お試しください。'},400);}
+}

@@ -1,0 +1,35 @@
+{
+  "checked_at_jst": "2026-10-23T17:07:41+09:00",
+  "source_commit": "e643aed9b347cf5e1f157b4878626c6664063534",
+  "source_tree_clean": true,
+  "dependency_install": {
+    "status": "passed",
+    "environment": "ChatGPT Work Linux / Node 24.19.0 / pnpm 11.25.0",
+    "packages_reused": 640,
+    "packages_downloaded": 0
+  },
+  "typescript": {
+    "status": "passed",
+    "command": "node node_modules/typescript/bin/tsc --noEmit"
+  },
+  "build": {
+    "status": "passed",
+    "environment": "ChatGPT Work Sites build helper; clean source checkout",
+    "note": "Vinext emitted route classification notices; no real API calls or browser checks were performed."
+  },
+  "interactive_design_javascript": {
+    "status": "syntax check passed",
+    "inline_svg_icons": 28,
+    "browser_runtime": "not retested in this archive turn"
+  },
+  "not_verified": [
+    "real AI end-to-end",
+    "iOS/Android native device behavior",
+    "store payments",
+    "tenant isolation in a production backend",
+    "load and soak capacity",
+    "backup restoration",
+    "teaching effectiveness",
+    "customer renewal"
+  ]
+}

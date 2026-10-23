@@ -1,0 +1,37 @@
+{
+  "project": "Care Kotoba",
+  "project_folder_label": "伦敦的雾",
+  "exported_at_jst": "2026-10-23T17:07:41+09:00",
+  "source_commit": "e643aed9b347cf5e1f157b4878626c6664063534",
+  "source_tracked_file_count": 130,
+  "original_site": {
+    "project_id": "appgprj_6adabd8e0e44819190273b8186843572",
+    "url": "https://care-kotoba-20261023.buzzyseed5.chatgpt.site",
+    "published_version_number": 1,
+    "access": "private/custom owner allowlist",
+    "changed_by_export": false
+  },
+  "plan": {
+    "library_file_id": "libfile_3c49cdfbfcf48191bcf04485d1fb5221",
+    "version": 1,
+    "pages": 25,
+    "file": "design/Care_Kotoba_Product_and_Sales_Plan_2026-10-23.pdf"
+  },
+  "ui_concept": {
+    "library_file_id": "libfile_d1cf971253b48191b6be113e631731a5",
+    "file": "design/ui_concept.png"
+  },
+  "excluded": [
+    "API secrets",
+    "source access credentials",
+    "cookies and browser sessions",
+    "billing data",
+    "Git internals/history",
+    "node_modules",
+    "build outputs",
+    "browser localStorage"
+  ],
+  "no_live_api_requests": true,
+  "no_purchase_or_topup": true,
+  "no_site_deployment_or_access_change": true
+}
