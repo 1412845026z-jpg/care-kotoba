@@ -103,7 +103,7 @@ export async function startHarness({ port = 0, env = {}, rebuild = true, rewrite
       send(res, 500, 'text/plain', Buffer.from('harness error'));
     }
   });
-  await new Promise((r) => server.listen(port, '127.0.0.1', r));
+  await new Promise((resolve, reject) => { server.once('error', reject); server.listen(port, '127.0.0.1', () => { server.off('error', reject); resolve(); }); });
   const { port: actual } = server.address();
   return { url: `http://127.0.0.1:${actual}`, close: () => new Promise((r) => { server.closeAllConnections?.(); server.close(r); }) };
 }
