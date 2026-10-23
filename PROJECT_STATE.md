@@ -61,8 +61,12 @@
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
 | CI-002 | G0-01 模拟测试工具与CI接入 | Codex | blocked | `codex/CI-002-tooling`（仅依赖准备）；测试接入等G0合并和检查脚本修复 | handoffs/2026-10-23-CI-002-codex.md；esbuild0.28.2/playwright1.63.0；旧锁定包/snapshot不变；尚未启用all命令 |
+| REUSE-001 | 开源 / 免费资料复用：固定文字注音（kuromoji 离线生成 + 人工修正）、Realtime 输入排队（参考 openai-agents-js）、来源与许可清单 | Claude | review_ready（依赖 PR #5） | `claude/REUSE-001`，PR 见交接记录 | handoffs/2026-10-23-REUSE-001-claude.md；research/REUSE_REVIEW_2026-10-23.md；unit 38/38、e2e 22/22（离线） |
+| CONTENT-002 | 从厚劳省「介護の日本語」教材 / 介護福祉専門用語集（PDL1.0）提取与 12 个核心场景相关的术语和多语言释义，写明出处和改动说明 | Codex | queued | — | research/reuse_candidates_2026-10-23.csv；Claude 的环境下载不了 mhlw.go.jp |
+| REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
+| AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
-| MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
+| MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用；可先用 promptfoo + evals/samples.jsonl 准备配置（不运行） |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
 
@@ -73,6 +77,7 @@
 | 2026-10-23 归档所记录的用户要求 | 个人版拟在应用商店销售；企业版学习功能相同，增加管理和优惠套餐 | 新版本沿用同一学习核心，企业权限与管理需独立验收 |
 | 2026-10-23 归档所记录的用户要求 | 项目需长期推进，开发预算应区别于未来用户运营成本 | 费用报告分开发测试与实际运行；价格假设不能当作已获批准套餐 |
 | 2026-10-23 用户（Claude 会话） | Codex 与 Claude 只通过本仓库同步，按环境能力与文件归属分工（见上表） | 冻结文件在负责方分支合并前不由对方修改 |
+| 2026-10-23 用户（Claude 会话）：「可以复用的就以合适方式拿过来并共享」 | 开源 / 免费资料按 research/REUSE_REVIEW_2026-10-23.md 处理；注音默认开启（Claude 的默认设定，可在设置中关闭，待教师和用户反馈） | 新增依赖仍由 Codex 加入；内容类资料由 Codex 负责 |
 
 ## 当前阻塞与风险
 
@@ -97,3 +102,4 @@
 - handoffs/2026-10-23-CI-001-results-codex.md：main CI 真实结果、耗时与完整日志入口。
 - handoffs/2026-10-23-G0-01-claude.md：代码审计与基础修复、离线测试、真机测试方案（PR #5，未合并到 `main`）。
 - handoffs/2026-10-23-G0-01-fix1-claude.md：按 ENV-001 意见修复，附 Codex 复测命令（PR #5，未合并）。
+- handoffs/2026-10-23-REUSE-001-claude.md：开源 / 免费资料复用（依赖 PR #5，未合并）。
