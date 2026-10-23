@@ -52,6 +52,28 @@ test('text practice uses the mock AI and shows feedback', async () => {
   assert.deepEqual(page.errors, []);
 });
 
+test('feedback made from text never shows a pronunciation judgement', async () => {
+  env.mock.state.scenario.pronunciation = true;
+  try {
+    const page = await env.page();
+    await openScene(page, env.baseUrl, '入浴を断られたとき');
+    await page.getByRole('button', { name: '文字で練習' }).click();
+    await page.getByLabel('日本語で返答を入力').fill('今日は入りたくないのですね。');
+    await page.keyboard.press('Enter');
+    await page.waitForFunction(() => document.querySelectorAll('.chat-message.assistant').length >= 2);
+    await page.getByText('終了して振り返る').click();
+    await page.locator('.feedback-summary h2').waitFor();
+    const shown = await page.locator('.feedback-main').innerText();
+    assert.ok(!/発音もとても|发音很清楚|発音が不明瞭/.test(shown), 'a pronunciation judgement reached the learner');
+    assert.match(shown, /発音についてのコメントは、文字からは判断できないため表示していません/);
+    assert.match(shown, /丁寧な言葉づかい/, 'the rest of the feedback is still shown');
+    assert.equal(await page.locator('.correction-card').count(), 1, 'only the text-based correction remains');
+    assert.deepEqual(page.errors, []);
+  } finally {
+    env.mock.state.scenario.pronunciation = false;
+  }
+});
+
 test('feedback never shows a quote the learner did not say', async () => {
   env.mock.state.scenario.quoteMode = 'mixed'; // mock returns one real and one fabricated quote
   try {

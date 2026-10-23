@@ -16,7 +16,7 @@ const conversationReplies = ['そうなのね。もう少し、ゆっくり説�
 export function createMockOpenAI() {
   const state = {
     requests: [],
-    scenario: { quoteMode: 'exact', error: null },
+    scenario: { quoteMode: 'exact', error: null, pronunciation: false },
     onRealtimeCall: null, // async ({ sdp, session }) => ({ sdp, callId })
     hangups: [],
   };
@@ -53,9 +53,12 @@ export function createMockOpenAI() {
         const improvements = [];
         if (state.scenario.quoteMode !== 'fabricated' && first) improvements.push({ original: first, better: '今日は、入りたくないお気持ちなのですね。', reason: '（模拟）相手の気持ちをそのまま受け止める言い方です。' });
         if (state.scenario.quoteMode !== 'exact') improvements.push({ original: '早くお風呂に入ってください。', better: '入浴について、ご希望を伺ってもよろしいですか。', reason: '（模拟）この文は学習者が言っていない捏造引用です。' });
+        // pronunciation=true: the model (wrongly) judges pronunciation from text; the server must remove it.
+        const p = state.scenario.pronunciation;
+        if (p && first) improvements.push({ original: first, better: first, reason: '（模拟）「入りたくない」の発音が不明瞭です。' });
         return Response.json(output({
-          score: 72, heading: '（模拟）気持ちを確かめる一言が言えました', summary: '（模拟フィードバック）これはテスト用の固定応答です。',
-          strengths: ['（模拟）丁寧な言葉づかい'], improvements,
+          score: 72, heading: '（模拟）気持ちを確かめる一言が言えました', summary: '（模拟フィードバック）これはテスト用の固定応答です。' + (p ? '発音もとてもきれいでした。' : ''),
+          strengths: ['（模拟）丁寧な言葉づかい', ...(p ? ['（模拟）发音很清楚。'] : [])], improvements,
           goals: [{ label: '相手の希望・気持ちを確かめる', achieved: true, evidence: first ? `「${first.slice(0, 20)}」` : '' }],
           nextPhrase: '今は、どのようなお気持ちですか。',
         }));
