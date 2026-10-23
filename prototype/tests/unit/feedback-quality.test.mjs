@@ -141,3 +141,9 @@ test('corrections of unedited voice lines are marked fromVoice; typed or learner
   ] }, m);
   assert.deepEqual(r.improvements.map((c) => [c.better, !!c.fromVoice]), [['a', true], ['b', false], ['c', false]]);
 });
+
+test('a heading that only judged pronunciation becomes a neutral heading, not an empty one', () => {
+  assert.equal(verifyFeedback({ heading: '発音がとてもきれいでした。' }, msgs).heading, '今回の振り返り');
+  assert.equal(verifyFeedback({ heading: '' }, msgs).heading, '');
+  assert.equal(verifyFeedback({ heading: '気持ちを受け止められました。' }, msgs).heading, '気持ちを受け止められました。');
+});

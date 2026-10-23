@@ -149,13 +149,15 @@ const audioCtor = (): AudioCtor | null => {
 /** Opens the microphone for `ms`, reports the peak level (0..1) through onLevel, then releases it. */
 export async function measureMic(ms: number, onLevel: (level: number) => void): Promise<NonNullable<PreflightResults['mic']>> {
   let stream: MediaStream | null = null;
-  let ctx: AudioContext | null = null;
+  // Create (and resume) the AudioContext before the first await, while the tap's user activation is
+  // still valid: iOS Safari keeps a context created later suspended and the meter would read zero.
+  const Ctor = audioCtor();
+  const ctx: AudioContext | null = Ctor ? new Ctor() : null;
+  const resumed = ctx?.resume().catch(() => {});
   try {
     stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } });
-    const Ctor = audioCtor();
-    if (!Ctor) return { granted: true, label: stream.getAudioTracks()[0]?.label };
-    ctx = new Ctor();
-    await ctx.resume().catch(() => {});
+    if (!ctx) return { granted: true, label: stream.getAudioTracks()[0]?.label };
+    await resumed;
     const analyser = ctx.createAnalyser();
     analyser.fftSize = 1024;
     ctx.createMediaStreamSource(stream).connect(analyser);
