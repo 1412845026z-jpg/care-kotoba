@@ -4,6 +4,7 @@
 // UI-agnostic: components/practice.tsx renders the snapshot it emits.
 import { addTextTurn, applyEvent, editTurn, initialTranscript, pendingUserTurns, turnsInOrder, type RealtimeEvent, type TranscriptState, type Turn } from './realtime-transcript';
 import { VoiceMetrics } from './voice-metrics';
+import { ResponseSequencer } from './response-sequencer';
 
 export type VoicePhase = 'connecting' | 'live' | 'unstable' | 'ended';
 export type VoiceActivity = 'idle' | 'listening' | 'thinking' | 'speaking';
@@ -40,11 +41,9 @@ export class VoiceSession {
   private serverEndPromise: Promise<ServerEnd> | null = null;
   private timers: ReturnType<typeof setTimeout>[] = [];
   private textSeq = 0;
-  // A response.create sent while a response is still running is rejected by the server
-  // (conversation_already_has_active_response) and the typed line would get no reply. Queue it instead.
-  // Idea taken from openai-agents-js (MIT) ResponseCreateSequencer; implemented here independently.
-  private activeResponses = 0;
-  private pendingResponseCreate = false;
+  // Decides when response.create may be sent (opening line, typed lines, retry after a rejection).
+  // See lib/response-sequencer.ts; covered by tests/unit/response-sequencer.test.mjs.
+  private responses = new ResponseSequencer((eventId) => this.send({ type: 'response.create', event_id: eventId }));
   readonly metrics = new VoiceMetrics();
   readonly startedAtIso = new Date().toISOString();
   models = { realtime: 'unknown', transcribe: 'unknown' };
@@ -114,7 +113,7 @@ export class VoiceSession {
     this.emit({ phase: 'live', liveSince: Date.now() });
     // The session instructions already contain the opening line; no per-response instruction
     // override (that would replace the role/scene instructions for this response).
-    if (!this.o.resume) this.send({ type: 'response.create' });
+    if (!this.o.resume) this.responses.request();
     this.timers.push(setTimeout(() => this.end('max_duration'), this.snap.maxSeconds * 1000));
   }
 
@@ -135,11 +134,7 @@ export class VoiceSession {
     try { e = JSON.parse(String(data)); } catch { return; }
     this.metrics.observe(e);
     this.transcript = applyEvent(this.transcript, e);
-    if (e.type === 'response.created') this.activeResponses++;
-    if (e.type === 'response.done') {
-      this.activeResponses = Math.max(0, this.activeResponses - 1);
-      if (this.activeResponses === 0 && this.pendingResponseCreate) { this.pendingResponseCreate = false; this.send({ type: 'response.create' }); }
-    }
+    this.responses.observe(e);
     let activity = this.snap.activity;
     switch (e.type) {
       case 'input_audio_buffer.speech_started': activity = 'listening'; break;
@@ -170,8 +165,7 @@ export class VoiceSession {
     const id = `ck_txt_${Date.now().toString(36)}_${++this.textSeq}`.slice(0, 32);
     this.transcript = addTextTurn(this.transcript, id, t);
     this.send({ type: 'conversation.item.create', item: { id, type: 'message', role: 'user', content: [{ type: 'input_text', text: t }] } });
-    if (this.activeResponses > 0) this.pendingResponseCreate = true;
-    else this.send({ type: 'response.create' });
+    if (this.responses.request(id) === 'queued') this.metrics.note('client.response_queued', { item: id });
     this.emit({ activity: 'thinking' });
     return true;
   }
@@ -248,6 +242,7 @@ export class VoiceSession {
       maxSeconds: this.snap.maxSeconds,
       endReason: this.snap.endReason || null,
       serverEnd: this.serverEnd,
+      responses: this.responses.state,
       ...this.metrics.summary(this.models),
       log: this.metrics.log,
     };

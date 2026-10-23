@@ -130,6 +130,25 @@ test('furigana is shown on fixed texts and can be switched off in settings', asy
   assert.deepEqual(page.errors, []);
 });
 
+test('notes whose text is an Object.prototype name render as plain text (furigana on and off)', async () => {
+  for (const furigana of [true, false]) {
+    const page = await env.page();
+    const names = ['constructor', 'toString', '__proto__', 'hasOwnProperty'];
+    await seedStorage(page, {
+      'ck-notes': JSON.stringify(names.map((text, i) => ({ id: 'n' + i, text, sceneId: 'bath-5' }))),
+      'ck-prefs': JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana }),
+    });
+    await gotoApp(page, env.baseUrl);
+    await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+    await page.locator('h1', { hasText: 'ことばノート' }).waitFor();
+    const shown = await page.$$eval('.note-card h3', (els) => els.map((e) => e.textContent));
+    assert.deepEqual(shown, names, `furigana=${furigana}`);
+    assert.equal(await page.locator('.note-card ruby').count(), 0);
+    assert.equal(await page.getByText(/couldn.t load|エラーが発生/).count(), 0, 'error boundary shown');
+    assert.deepEqual(page.errors, []);
+  }
+});
+
 test('responsive layout: desktop width also renders without errors', async () => {
   const page = await env.page({ viewport: { width: 1280, height: 860 }, locale: 'ja-JP' });
   await gotoApp(page, env.baseUrl);

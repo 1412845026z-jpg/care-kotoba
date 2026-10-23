@@ -25,10 +25,17 @@ export function plainOf(notation: string): string {
   return notation.replace(NOTATION, '$1');
 }
 
-/** Ruby segments for a known fixed text, or null when the text has no reviewed annotation. */
+const hasOwn = Object.prototype.hasOwnProperty;
+
+/**
+ * Ruby segments for a known fixed text, or null when the text has no reviewed annotation.
+ * Only the table's OWN string entries count: a note or AI reply that happens to read
+ * "constructor", "toString" or "__proto__" must not pick up Object.prototype members.
+ */
 export function furiganaFor(text: string): RubySegment[] | null {
-  const n = FURIGANA[text];
-  return n ? parseRuby(n) : null;
+  if (typeof text !== 'string' || !hasOwn.call(FURIGANA, text)) return null;
+  const n: unknown = (FURIGANA as Record<string, unknown>)[text];
+  return typeof n === 'string' && n ? parseRuby(n) : null;
 }
 
 export const FURIGANA_COVERAGE = Object.keys(FURIGANA).length;

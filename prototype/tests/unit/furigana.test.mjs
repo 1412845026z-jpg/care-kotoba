@@ -41,3 +41,11 @@ test('parser splits notation into text and ruby segments; unknown text has no fu
   assert.equal(furiganaFor('AIが自由に作った文'), null);
   assert.ok(furiganaFor('そのタオルで何をするの？'));
 });
+
+test('Object.prototype names are not annotations (ENV-002: a note reading "constructor" crashed the notes page)', () => {
+  for (const name of ['constructor', 'toString', '__proto__', 'hasOwnProperty', 'valueOf', 'isPrototypeOf', 'propertyIsEnumerable', 'toLocaleString', '__defineGetter__']) {
+    assert.equal(furiganaFor(name), null, name);
+  }
+  for (const odd of [undefined, null, 42, {}, ['口腔ケア前の説明']]) assert.equal(furiganaFor(odd), null, String(odd));
+  assert.ok(furiganaFor('口腔ケア前の説明'), 'known texts still work');
+});

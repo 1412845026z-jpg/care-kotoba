@@ -7,7 +7,7 @@
 | 来源 | 怎么用 | 为什么这样用 | 证据 |
 | --- | --- | --- | --- |
 | **kuromoji.js**（Apache-2.0）＋ mecab-ipadic | 只作为**生成工具**：离线给 318 条固定文字（场景、开场白、参考句、目标、演示回复）生成注音，再人工修正 18 处，存成 `prototype/lib/furigana-data.ts`。界面在汉字上显示注音，默认开启，可在设置和练习页切换 | 运行时直接嵌入词典约 17 MB，对手机网页太重；kuromoji 自 2018 年没有更新，不适合作为生产依赖。离线生成没有运行时依赖，也方便审稿 | `tools/furigana/`；`tests/unit/furigana.test.mjs`（覆盖率、文字一致、读音为平假名、修正已生效）；e2e「furigana …」；许可文本见 `docs/licenses/` |
-| **openai-agents-js**（MIT，OpenAI 官方） | 只作**参考**：对照了其 WebRTC 传输层。我们取 call_id、断线宽限、远端关闭的处理方式与它一致；发现一个缺口——AI 还在回答时输入文字，`response.create` 会被服务端拒绝，那句话得不到回复。参考它的 ResponseCreateSequencer 思路，在 `VoiceSession` 里**独立实现**了排队 | 没有复制代码，所以没有许可义务；为这个缺口新增了 e2e 测试，并确认去掉修复后测试会失败 | `lib/realtime-client.ts`；e2e「a line typed while the AI is still answering …」 |
+| **openai-agents-js**（MIT，OpenAI 官方） | 只作**参考**：对照了其 WebRTC 传输层。我们取 call_id、断线宽限、远端关闭的处理方式与它一致；发现一个缺口——AI 还在回答时输入文字，`response.create` 会被服务端拒绝，那句话得不到回复。参考它的 ResponseCreateSequencer 思路，在 `VoiceSession` 里**独立实现**了排队 | 没有复制代码，所以没有许可义务；为这个缺口新增了 e2e 测试，并确认去掉修复后测试会失败。2026-10-24 按 ENV-002 复核改为从**发出** `response.create` 起就算占用（第一版只在收到 `response.created` 后计数，确认前连续输入仍会发出两个 create），独立成纯逻辑模块并加单元测试 | `lib/response-sequencer.ts`、`lib/realtime-client.ts`；`tests/unit/response-sequencer.test.mjs`；e2e「a line typed while the AI is still answering …」 |
 
 ## 交给别人做，或等决定
 
