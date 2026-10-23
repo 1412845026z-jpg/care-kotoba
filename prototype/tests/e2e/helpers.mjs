@@ -20,7 +20,7 @@ export async function setup({ env = {}, launchArgs = [] } = {}) {
   let baseUrl = process.env.BASE_URL;
   if (!baseUrl) {
     harness = await startHarness({
-      env: { OPENAI_API_KEY: 'test-dummy-key-not-real', OPENAI_BASE_URL: `${origin}/v1`, CK_ACCESS_POLICY: 'local', CK_ACCESS_CODE: undefined, ...env },
+      env: { OPENAI_API_KEY: 'test-dummy-key-not-real', OPENAI_BASE_URL: `${origin}/v1`, CK_ACCESS_POLICY: 'local', CK_ACCESS_CODE: undefined, CK_RATE_LIMIT_MULTIPLIER: '100', ...env },
       rewriteOpenAI: origin,
       rebuild: !process.env.CK_E2E_NO_REBUILD,
     });
