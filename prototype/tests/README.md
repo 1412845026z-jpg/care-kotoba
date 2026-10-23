@@ -34,6 +34,19 @@ The harness (`harness/build.mjs`, `harness/server.mjs`) is not the production fr
 is replaced by placeholder icons when it is not installed, and `cloudflare:workers` env maps to `process.env`.
 Real-device and real-AI checks follow `docs/09_REAL_DEVICE_VOICE_TEST.md`.
 
+### Suites and the server settings they use (2026-10-24)
+
+| File | Covers | Harness server env |
+| --- | --- | --- |
+| `e2e/app.e2e.mjs` | home/scenes/practice/feedback flows, storage robustness, furigana, pronunciation gate, error boundaries, voice check, one-line drill, AI-reply furigana, data deletion, notes export | `CK_AI_FURIGANA=1` (the AI-furigana test skips itself when the server has it off) |
+| `e2e/access.e2e.mjs` | access code, cookie tampering and canonical encoding, localhost-only default, deleting data forgets the code | `CK_ACCESS_CODE` (harness) / `CK_E2E_ACCESS_CODE` (BASE_URL) |
+| `e2e/voice.e2e.mjs` | simulated Realtime peer: ordering, interruption, failure, hangup, resume, typed-line queueing, diagnostics, countdown, recognition confidence | `CK_ASR_LOGPROBS=1` (the include check runs only when `/api/health` reports it) |
+| `e2e/setup.e2e.mjs` | setup cleanup when Chromium fails to start | — |
+| `e2e/smoke-tool.e2e.mjs` | `tools/smoke/api-smoke.mjs` free and `--yes` modes | harness only |
+
+Test-only hooks in app code: `window.__CK_CRASH_TEST__` (error-boundary test). The mock's `state.scenario` switches:
+`quoteMode`, `error`, `pronunciation`, `badRuby`.
+
 ### Against a real dev server (BASE_URL mode)
 
 The tests wait for the **readiness contract** `<html data-app-ready="true">` (set by `app/page.tsx` after
