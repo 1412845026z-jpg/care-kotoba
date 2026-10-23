@@ -5,7 +5,33 @@
 // real-device test plan (docs/09). The verdict logic is pure and unit-tested.
 
 export type CheckStatus = 'ok' | 'warn' | 'fail' | 'skipped';
-export type CheckItem = { id: string; status: CheckStatus; title: string; detail: string };
+export type CheckItem = { id: string; status: CheckStatus; title: string; detail: string; key: string; help?: string };
+
+// Learner-language help for each message (the Japanese detail stays the main text).
+const HELP: Record<string, { zh: string; en: string }> = {
+  'support.fail': { zh: '浏览器缺少语音练习需要的功能。请用最新版 Safari 或 Chrome 打开 https 网址。文字练习仍可使用。', en: 'This browser lacks features voice practice needs. Use the latest Safari or Chrome on an https address. Text practice still works.' },
+  'support.ok': { zh: '浏览器支持语音练习。', en: 'This browser supports voice practice.' },
+  'server.unreachable': { zh: '连不上服务器，请检查网络。', en: 'The server cannot be reached. Check your connection.' },
+  'server.noai': { zh: '服务器还没有设置 AI，目前只能用演示。', en: 'AI is not set up on the server yet; only the demo works.' },
+  'server.code': { zh: 'AI 练习需要访问码，开始练习时可以输入。', en: 'AI practice needs an access code; you can enter it when you start.' },
+  'server.slow': { zh: '服务器响应较慢，对话回复也可能变慢。', en: 'The server is slow to answer; replies may be slow too.' },
+  'server.ok': { zh: '已连上服务器。', en: 'Connected to the server.' },
+  'ice.error': { zh: '无法准备语音通信（WebRTC）。', en: 'Voice connection (WebRTC) could not be prepared.' },
+  'ice.none': { zh: '找不到可用的网络通道。请检查 VPN 或公司网络的限制。', en: 'No network path was found. Check for VPN or company network restrictions.' },
+  'ice.ok': { zh: '找到了网络通道。真正的连接要在 AI 练习时才能确认。', en: 'A network path was found. The real connection is checked during AI practice.' },
+  'mic.denied': { zh: '麦克风未被允许，请在浏览器设置中允许。', en: 'Microphone access is blocked. Allow it in the browser settings.' },
+  'mic.missing': { zh: '找不到麦克风。', en: 'No microphone was found.' },
+  'mic.error': { zh: '无法使用麦克风。', en: 'The microphone cannot be used.' },
+  'mic.quiet': { zh: '几乎没有收到声音。请一边说话一边再试一次，并检查是否静音或选错了麦克风。', en: 'Almost no sound came in. Try again while speaking, and check mute or the selected microphone.' },
+  'mic.ok': { zh: '麦克风能收到声音。', en: 'The microphone picks up your voice.' },
+  'speaker.ok': { zh: '听到了测试音。', en: 'You heard the test sound.' },
+  'speaker.fail': { zh: '听不到声音。请检查音量、静音模式和连接的耳机。', en: 'No sound. Check the volume, silent mode and connected earphones.' },
+  'speaker.skipped': { zh: '还没有确认。', en: 'Not checked yet.' },
+};
+
+function withHelp(items: Omit<CheckItem, 'help'>[], locale: string): CheckItem[] {
+  return items.map((i) => ({ ...i, ...(locale === 'zh' || locale === 'en' ? { help: HELP[i.key]?.[locale] } : {}) }));
+}
 
 export type PreflightResults = {
   support?: { secureContext: boolean; getUserMedia: boolean; rtc: boolean; audioContext: boolean };
@@ -15,42 +41,42 @@ export type PreflightResults = {
   speaker?: { heard: boolean | null };
 };
 
-/** Pure: turn raw results into the list shown to the learner/tester. */
-export function verdict(r: PreflightResults): CheckItem[] {
-  const out: CheckItem[] = [];
+/** Pure: turn raw results into the list shown to the learner/tester (Japanese, plus help in zh/en). */
+export function verdict(r: PreflightResults, locale = 'ja'): CheckItem[] {
+  const out: Omit<CheckItem, 'help'>[] = [];
   const s = r.support;
   if (s) {
     const missing = [!s.secureContext && 'HTTPS', !s.getUserMedia && 'マイクAPI', !s.rtc && 'WebRTC', !s.audioContext && 'Web Audio'].filter(Boolean);
     out.push(missing.length
-      ? { id: 'support', status: 'fail', title: 'ブラウザの対応', detail: `${missing.join('・')} が使えません。Safari または Chrome の最新版で、https のページを開いてください。文字の練習はできます。` }
-      : { id: 'support', status: 'ok', title: 'ブラウザの対応', detail: '音声練習に必要な機能があります。' });
+      ? { id: 'support', key: 'support.fail', status: 'fail', title: 'ブラウザの対応', detail: `${missing.join('・')} が使えません。Safari または Chrome の最新版で、https のページを開いてください。文字の練習はできます。` }
+      : { id: 'support', key: 'support.ok', status: 'ok', title: 'ブラウザの対応', detail: '音声練習に必要な機能があります。' });
   }
   const v = r.server;
   if (v) {
-    if (!v.reachable) out.push({ id: 'server', status: 'fail', title: 'サーバー', detail: 'サーバーに接続できません。通信環境を確認してください。' });
-    else if (v.aiConfigured === false) out.push({ id: 'server', status: 'warn', title: 'サーバー', detail: 'AI がまだ設定されていません。デモ練習のみ使えます。' });
-    else if (v.accessRequired && !v.accessGranted) out.push({ id: 'server', status: 'warn', title: 'サーバー', detail: 'AI 練習にはアクセスコードが必要です。練習を始めるときに入力できます。' });
-    else out.push({ id: 'server', status: (v.ms ?? 0) > 1500 ? 'warn' : 'ok', title: 'サーバー', detail: `接続できました（${v.ms ?? '?'} ms）。${(v.ms ?? 0) > 1500 ? '応答が遅めです。会話の返事も遅れるかもしれません。' : ''}` });
+    if (!v.reachable) out.push({ id: 'server', key: 'server.unreachable', status: 'fail', title: 'サーバー', detail: 'サーバーに接続できません。通信環境を確認してください。' });
+    else if (v.aiConfigured === false) out.push({ id: 'server', key: 'server.noai', status: 'warn', title: 'サーバー', detail: 'AI がまだ設定されていません。デモ練習のみ使えます。' });
+    else if (v.accessRequired && !v.accessGranted) out.push({ id: 'server', key: 'server.code', status: 'warn', title: 'サーバー', detail: 'AI 練習にはアクセスコードが必要です。練習を始めるときに入力できます。' });
+    else out.push({ id: 'server', key: (v.ms ?? 0) > 1500 ? 'server.slow' : 'server.ok', status: (v.ms ?? 0) > 1500 ? 'warn' : 'ok', title: 'サーバー', detail: `接続できました（${v.ms ?? '?'} ms）。${(v.ms ?? 0) > 1500 ? '応答が遅めです。会話の返事も遅れるかもしれません。' : ''}` });
   }
   const i = r.ice;
   if (i) {
-    if (i.error) out.push({ id: 'ice', status: 'fail', title: '音声の通信準備', detail: `WebRTC を準備できませんでした（${i.error}）。` });
-    else if (i.total === 0) out.push({ id: 'ice', status: 'fail', title: '音声の通信準備', detail: '通信経路の候補が見つかりません。VPN や社内ネットワークの制限がないか確認してください。' });
-    else out.push({ id: 'ice', status: 'ok', title: '音声の通信準備', detail: `通信経路の候補が見つかりました（${i.total} 件）。実際の接続は AI 練習で確認されます。` });
+    if (i.error) out.push({ id: 'ice', key: 'ice.error', status: 'fail', title: '音声の通信準備', detail: `WebRTC を準備できませんでした（${i.error}）。` });
+    else if (i.total === 0) out.push({ id: 'ice', key: 'ice.none', status: 'fail', title: '音声の通信準備', detail: '通信経路の候補が見つかりません。VPN や社内ネットワークの制限がないか確認してください。' });
+    else out.push({ id: 'ice', key: 'ice.ok', status: 'ok', title: '音声の通信準備', detail: `通信経路の候補が見つかりました（${i.total} 件）。実際の接続は AI 練習で確認されます。` });
   }
   const m = r.mic;
   if (m) {
-    if (!m.granted) out.push({ id: 'mic', status: 'fail', title: 'マイク', detail: m.error === 'NotAllowedError' ? 'マイクが許可されていません。ブラウザの設定で許可してください。' : m.error === 'NotFoundError' ? 'マイクが見つかりません。' : `マイクを使えません（${m.error || '不明'}）。` });
-    else if ((m.peak ?? 0) < 0.02) out.push({ id: 'mic', status: 'warn', title: 'マイク', detail: '音がほとんど入っていません。もう一度、声を出しながら試してください。ミュートや別のマイクが選ばれていないかも確認してください。' });
-    else out.push({ id: 'mic', status: 'ok', title: 'マイク', detail: `声が入っています${m.label ? `（${m.label}）` : ''}。` });
+    if (!m.granted) out.push({ id: 'mic', key: m.error === 'NotAllowedError' ? 'mic.denied' : m.error === 'NotFoundError' ? 'mic.missing' : 'mic.error', status: 'fail', title: 'マイク', detail: m.error === 'NotAllowedError' ? 'マイクが許可されていません。ブラウザの設定で許可してください。' : m.error === 'NotFoundError' ? 'マイクが見つかりません。' : `マイクを使えません（${m.error || '不明'}）。` });
+    else if ((m.peak ?? 0) < 0.02) out.push({ id: 'mic', key: 'mic.quiet', status: 'warn', title: 'マイク', detail: '音がほとんど入っていません。もう一度、声を出しながら試してください。ミュートや別のマイクが選ばれていないかも確認してください。' });
+    else out.push({ id: 'mic', key: 'mic.ok', status: 'ok', title: 'マイク', detail: `声が入っています${m.label ? `（${m.label}）` : ''}。` });
   }
   const p = r.speaker;
   if (p) {
-    out.push(p.heard === true ? { id: 'speaker', status: 'ok', title: 'スピーカー', detail: 'テスト音が聞こえました。' }
-      : p.heard === false ? { id: 'speaker', status: 'fail', title: 'スピーカー', detail: '音が聞こえません。音量、マナーモード、接続中のイヤホンを確認してください。' }
-      : { id: 'speaker', status: 'skipped', title: 'スピーカー', detail: 'まだ確認していません。' });
+    out.push(p.heard === true ? { id: 'speaker', key: 'speaker.ok', status: 'ok', title: 'スピーカー', detail: 'テスト音が聞こえました。' }
+      : p.heard === false ? { id: 'speaker', key: 'speaker.fail', status: 'fail', title: 'スピーカー', detail: '音が聞こえません。音量、マナーモード、接続中のイヤホンを確認してください。' }
+      : { id: 'speaker', key: 'speaker.skipped', status: 'skipped', title: 'スピーカー', detail: 'まだ確認していません。' });
   }
-  return out;
+  return withHelp(out, locale);
 }
 
 export function overall(items: CheckItem[]): CheckStatus {

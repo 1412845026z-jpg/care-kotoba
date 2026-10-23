@@ -7,12 +7,12 @@ import { checkServer, checkSupport, gatherIce, measureMic, overall, playTone, ve
 
 const MARK: Record<string, string> = { ok: '✓', warn: '!', fail: '×', skipped: '–' };
 
-export function VoiceCheck({ onClose }: { onClose: () => void }) {
+export function VoiceCheck({ onClose, locale = 'ja' }: { onClose: () => void; locale?: string }) {
   const [results, setResults] = useState<PreflightResults>({});
   const [step, setStep] = useState<'idle' | 'checking' | 'mic' | 'speaker' | 'done'>('idle');
   const [level, setLevel] = useState(0);
   const [tonePlayed, setTonePlayed] = useState(false);
-  const items = verdict(results);
+  const items = verdict(results, locale);
   const total = overall(items);
 
   async function start() {
@@ -53,7 +53,7 @@ export function VoiceCheck({ onClose }: { onClose: () => void }) {
   return (
     <Modal className="voice-check-modal" onClose={onClose}>
       <div className="modal-top"><h2>音声テスト</h2><button className="icon-button" aria-label="閉じる" onClick={onClose}>×</button></div>
-      <p className="voice-check-intro">AI と話す前に、マイク・スピーカー・通信を確認します。AI には接続しないので、料金はかかりません。</p>
+      <p className="voice-check-intro">AI と話す前に、マイク・スピーカー・通信を確認します。AI には接続しないので、料金はかかりません。{locale === 'zh' ? <small lang="zh-Hans">在和 AI 对话前，检查麦克风、扬声器和网络。不连接 AI，不产生费用。</small> : locale === 'en' ? <small lang="en">Checks your microphone, speaker and connection before talking to the AI. No AI is called, so it costs nothing.</small> : null}</p>
       {step === 'idle' && <button className="btn btn-primary full-width" onClick={start}>テストを始める</button>}
       {step === 'checking' && <p className="voice-check-busy" role="status">{level > 0 || results.server ? '声を出してください…' : '確認しています…'}</p>}
       {step === 'checking' && results.server && <div className="voice-meter" aria-label="マイクの音量"><i style={{ width: `${Math.round(level * 100)}%` }} /></div>}
@@ -67,7 +67,7 @@ export function VoiceCheck({ onClose }: { onClose: () => void }) {
       )}
       {items.length > 0 && (
         <ul className="voice-check-list">
-          {items.map((i) => <li key={i.id} data-status={i.status}><span aria-hidden="true">{MARK[i.status]}</span><div><b>{i.title}</b><p>{i.detail}</p></div></li>)}
+          {items.map((i) => <li key={i.id} data-status={i.status}><span aria-hidden="true">{MARK[i.status]}</span><div><b>{i.title}</b><p>{i.detail}</p>{i.help && <p className="voice-check-help" lang={locale === 'zh' ? 'zh-Hans' : 'en'}>{i.help}</p>}</div></li>)}
         </ul>
       )}
       {step === 'done' && (
