@@ -56,6 +56,8 @@
 | `cd prototype && CK_TOOL_NODE_MODULES=/opt/npm-tools/node_modules node tests/run.mjs all` | static 0 错误；unit 80/80（原 71 + 新 9）；e2e 47/47（原 40 + 新 7），e2e 用时 160s |
 | `node ../verification/A11Y-001/audit.mjs`（390px 和 `CK_AUDIT_VIEWPORT=1280x860`） | 10 个画面，对比度问题 0，小于 24px 的点击区域 0，无横向溢出 |
 
+之后的 `86bb4a9`：多行的草稿回复（CONTENT-004 的 B3 改成了分行）在指示里合成一行引用。重新运行 static 0、unit 81/81、与草稿相关的 e2e 7/7。这次只改了指示文字的格式，没有重跑全部 e2e。GitHub CI（install/tsc/build）在 `c3632f5` 和 `dc5b7e6` 上都通过。
+
 **不证明：**
 
 - 真实模型是否遵守隐藏信息和不施压的规则；
