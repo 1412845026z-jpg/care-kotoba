@@ -1,14 +1,6 @@
-# ONE-TIME PR trigger. After successful artifact collection, retain only
-# workflow_dispatch before this task is merged. No push/schedule/main generation.
+# Manual local-CPU regeneration only. No PR/push/schedule trigger.
 name: Free local CPU audio samples (one-time)
 on:
-  pull_request:
-    paths:
-      - scripts/ci/audio_samples.py
-      - scripts/ci/audio_sentences.mjs
-      - scripts/ci/audio-requirements.txt
-      - scripts/ci/audio-requirements.lock
-      - .github/workflows/audio-samples.yml
   workflow_dispatch:
 permissions:
   contents: read
@@ -18,10 +10,7 @@ concurrency:
 jobs:
   generate:
     # Public repo, standard free Linux runner. Never a larger/GPU runner.
-    if: >-
-      (github.event_name == 'pull_request' && github.head_ref == 'codex/AUDIO-SAMPLES-001' &&
-      github.event.pull_request.head.repo.full_name == github.repository) ||
-      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/AUDIO-SAMPLES-001')
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/AUDIO-SAMPLES-001'
     runs-on: ubuntu-24.04
     timeout-minutes: 35
     env:

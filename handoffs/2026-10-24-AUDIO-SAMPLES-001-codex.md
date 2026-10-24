@@ -18,3 +18,12 @@
 - run40071049200，head70d9b4b：工具、Python环境、固定模型/CPU引擎/字典校验成功；Kokoro10段已生成。VOICEVOX在麒ヶ島宗麟正常style筛选处停止；未把该轮写成整项通过。artifact12551795413 SHA256 b30fd8ceb0e786c14551a3ea329e8b7b7652692c2646555abe40bf11cbda26c0校验通过，暂存scratch。
 - 固定0.26.0的SpeakerStyle还定义streaming_talk，并明确支持常规audio_query/synthesis；旧筛选只接受talk过严，现同时接受这两种正式talk类型，仍拒绝唱歌类型，并保存三个角色的原始speakers元数据。若仍不匹配，会打印实际style并失败。
 - 两声音及UniDic完整sha已从实得产物固定；Python全部实际版本存audio-requirements.lock。修正字典许可收集：COPYING仅是三许可选择说明，BSD文件名无LICENSE关键字，现在明确保留BSD原文并要求存在；仍只选BSD许可用于临时字典，不把数据或工具代码并入App。
+
+## 最终样本结果
+
+- 第三轮源head8a2a6967dc21cf3616cfed2632f2a46e7b377737，PR merge checkout e2c6e683c91c9abad8501056f16c985aba0fc85a，免费Ubuntu CPU run40071495822全部成功；同head常规CI40071495817成功（应用代码未变）。
+- artifact12551019475 SHA256 0f6353da641462fd3be4a41b4f7c374bdb4d6c66b3c2df0d9e3164945c279f07校验后提取；25单句＋5比较MP3，共1,522,374字节。全部24k单声道，原PCM削波0；第二位代理用ffmpeg独立解码验证非静音/无越界削波，单句2.2293–4.9秒。5比较时长符合每段＋0.7秒间隔及MP3 padding。
+- 三个VOICEVOX正常style确实是streaming_talk（53/52/11），原始元数据/UUID/policy/hash和BSD许可全文都已保留。Kokoro原始phonemes与VOICEVOX音调query也留档；没有宣称真正试听或日语自然度验收。
+- 两个巨大pip原始报告内含上游README/code examples，未复制入仓库；转成tool-install-lock.json，保留版本、下载hash、依赖约束与原报告sha。原artifact manifest另存runner-SHA256SUMS.json；当前文件校验单独SHA256SUMS.json，音频未修改。
+- workflow改manual-only并限定任务分支，Python实际版本及声音/UniDic完整sha固定；没有自动付费步骤。最终工具元数据整理不改变已生成音频或App。无模型/引擎二进制进入仓库、无App新依赖、付费API、部署或hooks。
+- 试听入口和候选意见见verification/AUDIO-SAMPLES-001/README.md；本环境不支持音频输入，未虚构听感。用户下一步可逐句选择声音。正式全量AUDIO-001/App接入及付费路径仍blocked。

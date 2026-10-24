@@ -1,0 +1,18 @@
+{
+  "speaker": {
+    "name": "雀松朱司",
+    "speaker_uuid": "0acebdee-a4a5-4e12-a695-e19609728e30",
+    "styles": [
+      {
+        "name": "ノーマル",
+        "id": 52,
+        "type": "streaming_talk"
+      }
+    ],
+    "version": "0.17.0",
+    "supported_features": {
+      "permitted_synthesis_morphing": "ALL"
+    }
+  },
+  "policySha256": "de3df510273708187ad3c456f29fd400aaebdffabd9601ad1109692bb3f15e94"
+}

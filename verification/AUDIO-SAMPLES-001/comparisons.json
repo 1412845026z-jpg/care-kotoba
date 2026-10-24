@@ -1,0 +1,72 @@
+[
+  {
+    "sentenceId": "s1",
+    "file": "s1-comparison.mp3",
+    "voiceOrder": [
+      "kokoro-jf_alpha",
+      "kokoro-jm_kumo",
+      "voicevox-kigashima",
+      "voicevox-wakamatsu",
+      "voicevox-kurono"
+    ],
+    "gapSeconds": 0.7,
+    "sha256": "699fe9389c4140c080ae3398abb4de5590365b1fb0b28f85cd1576b04ce900ec",
+    "bytes": 156333
+  },
+  {
+    "sentenceId": "s2",
+    "file": "s2-comparison.mp3",
+    "voiceOrder": [
+      "kokoro-jf_alpha",
+      "kokoro-jm_kumo",
+      "voicevox-kigashima",
+      "voicevox-wakamatsu",
+      "voicevox-kurono"
+    ],
+    "gapSeconds": 0.7,
+    "sha256": "7737ad354602363a723790b67d187770adaddb0385bf20dabdd5927d0a725b79",
+    "bytes": 207981
+  },
+  {
+    "sentenceId": "s3",
+    "file": "s3-comparison.mp3",
+    "voiceOrder": [
+      "kokoro-jf_alpha",
+      "kokoro-jm_kumo",
+      "voicevox-kigashima",
+      "voicevox-wakamatsu",
+      "voicevox-kurono"
+    ],
+    "gapSeconds": 0.7,
+    "sha256": "08675dd60379c73453b999da90ccf2b3e0b8d23349da8c373b18ec9de8477908",
+    "bytes": 130221
+  },
+  {
+    "sentenceId": "s4",
+    "file": "s4-comparison.mp3",
+    "voiceOrder": [
+      "kokoro-jf_alpha",
+      "kokoro-jm_kumo",
+      "voicevox-kigashima",
+      "voicevox-wakamatsu",
+      "voicevox-kurono"
+    ],
+    "gapSeconds": 0.7,
+    "sha256": "bde7eb63e1de70c485880607f2f85ecd7b659acf48b411aad1ca456eb9757c8f",
+    "bytes": 183021
+  },
+  {
+    "sentenceId": "s5",
+    "file": "s5-comparison.mp3",
+    "voiceOrder": [
+      "kokoro-jf_alpha",
+      "kokoro-jm_kumo",
+      "voicevox-kigashima",
+      "voicevox-wakamatsu",
+      "voicevox-kurono"
+    ],
+    "gapSeconds": 0.7,
+    "sha256": "65cb303e7d9c54cfe651bdee0a9161fa51285eb13089a7e8576f34536bb74e64",
+    "bytes": 146541
+  }
+]

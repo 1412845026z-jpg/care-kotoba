@@ -216,7 +216,7 @@ def generate_kokoro(cache, out):
             raw = cache / f"{sentence['id']}-{voice['id']}.wav"
             sf.write(raw, audio, 24000, subtype='PCM_16')
             encoded = encode(raw, out / 'audio' / f"{sentence['id']}-{voice['id']}.mp3")
-            records.append({**sentence, **voice, **encoded, 'speed': 0.9, 'phonemes': [p.phonemes for p in parts],
+            records.append({**sentence, **voice, **encoded, 'sentenceId': sentence['id'], 'voiceId': voice['id'], 'speed': 0.9, 'phonemes': [p.phonemes for p in parts],
                             'peak': round(float(np.max(np.abs(audio))), 6)})
             print(f"generated {sentence['id']}-{voice['id']}", flush=True)
     write_json(out / 'kokoro-results.json', {'cpuOnly': True, 'networkPolicy': 'All Python socket connections rejected during inference',
@@ -286,7 +286,7 @@ def generate_voicevox(cache, out):
                 raw = cache / f"{sentence['id']}-{voice['id']}.wav"
                 raw.write_bytes(request(f'/synthesis?speaker={style}&enable_interrogative_upspeak=true', query, 'POST'))
                 write_json(out / 'queries' / f"{sentence['id']}-{voice['id']}.json", query)
-                records.append({**sentence, **voice, **encode(raw, out / 'audio' / f"{sentence['id']}-{voice['id']}.mp3"),
+                records.append({**sentence, **voice, **encode(raw, out / 'audio' / f"{sentence['id']}-{voice['id']}.mp3"), 'sentenceId': sentence['id'], 'voiceId': voice['id'],
                                 'speakerUuid': speaker['speaker_uuid'], 'styleId': style, 'styleName': 'ノーマル', 'styleType': normal[0].get('type', 'talk'), 'speedScale': 0.9})
                 print(f"generated {sentence['id']}-{voice['id']}", flush=True)
         write_json(out / 'voicevox-results.json', {'engineVersion': version, 'cpuOnly': True, 'clientRequests': calls, 'records': records})
@@ -299,6 +299,28 @@ def generate_voicevox(cache, out):
                 os.killpg(proc.pid, signal.SIGKILL)
                 proc.wait(timeout=10)
         log.close()
+
+
+def compact_install_reports(out):
+    # pip reports embed entire upstream READMEs. Retain resolution, provenance
+    # and archive hashes without copying unrelated documentation/code samples.
+    reports = []
+    for name in ['torch-install-report.json', 'pip-install-report.json']:
+        path = out / name
+        if not path.exists():
+            continue
+        value = json.loads(path.read_text())
+        reports.append({'rawFile': name, 'rawSha256': sha256(path), 'pipVersion': value.get('pip_version'),
+            'environment': value.get('environment'), 'install': [{
+                'name': item['metadata']['name'], 'version': item['metadata']['version'],
+                'requested': item.get('requested'), 'download': item.get('download_info'),
+                'requiresPython': item['metadata'].get('requires_python'),
+                'requiresDist': item['metadata'].get('requires_dist'),
+                'licenseExpression': item['metadata'].get('license_expression'),
+            } for item in value['install']]})
+        path.unlink()
+    if reports:
+        write_json(out / 'tool-install-lock.json', {'scope': 'Temporary tools only; raw reports in original runner artifact', 'reports': reports})
 
 
 def comparisons(cache, out):
@@ -332,6 +354,7 @@ def comparisons(cache, out):
         'scope': 'Temporary synthesis venv only; no engine, model, package code, or GPL/AGPL library is incorporated into the App or committed to the repository.',
         'warning': 'Kokoro English extras can install phonemizer-fork (GPL) and eSpeak tooling. These are isolated tools, unused for the selected Japanese G2P. Voice audio licensing is separate.',
         'packages': package_licenses})
+    compact_install_reports(out)
     artifacts = [{'file': str(p.relative_to(out)), 'bytes': p.stat().st_size, 'sha256': sha256(p)} for p in sorted(out.rglob('*')) if p.is_file() and p.name != 'SHA256SUMS.json']
     if len(list((out / 'audio').glob('*.mp3'))) != 30:
         raise RuntimeError('Expected 25 individual samples plus 5 sentence comparisons')

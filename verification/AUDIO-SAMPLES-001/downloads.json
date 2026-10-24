@@ -1,0 +1,104 @@
+{
+  "kokoroRevision": "8542409da2986c0ab5d41b3cf0411f7a58caab38",
+  "voicevoxRevision": "7ebc23342bd812f5a72816330f62f110ccca8bdc",
+  "resourceRevision": "37c265375e05313486ebf2024b1679d6952a53d8",
+  "voicevoxPartManifest": [
+    "voicevox_engine-linux-cpu-x64-0.26.0.7z.001"
+  ],
+  "unidicLicenseFiles": [
+    "unidic/licenses/BSD",
+    "unidic/licenses/COPYING"
+  ],
+  "files": [
+    {
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/8542409da2986c0ab5d41b3cf0411f7a58caab38/kokoro-v1_0.pth",
+      "file": "kokoro-v1_0.pth",
+      "bytes": 327212226,
+      "sha256": "496dba118d1a58f5f3db2efc88dbdc216e0483fc89fe6e47ee1f2c53f18ad1e4"
+    },
+    {
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/8542409da2986c0ab5d41b3cf0411f7a58caab38/config.json",
+      "file": "config.json",
+      "bytes": 2351,
+      "sha256": "5abb01e2403b072bf03d04fde160443e209d7a0dad49a423be15196b9b43c17f"
+    },
+    {
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/8542409da2986c0ab5d41b3cf0411f7a58caab38/README.md",
+      "file": "README.md",
+      "bytes": 8295,
+      "sha256": "c32156b644b2545306853e25a77db8b4ed5fd011b34d3d4a599428a1822e7c38"
+    },
+    {
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/8542409da2986c0ab5d41b3cf0411f7a58caab38/VOICES.md",
+      "file": "VOICES.md",
+      "bytes": 7569,
+      "sha256": "e6595b5ce8d3c787ed4c9f5acff298c506e44626f4916930288775953bacc8c2"
+    },
+    {
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/8542409da2986c0ab5d41b3cf0411f7a58caab38/voices/jf_alpha.pt",
+      "file": "jf_alpha.pt",
+      "bytes": 523425,
+      "sha256": "1bf4c9dc69e45ee46183b071f4db766349aac5592acbcfeaf051018048a5d787"
+    },
+    {
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/resolve/8542409da2986c0ab5d41b3cf0411f7a58caab38/voices/jm_kumo.pt",
+      "file": "jm_kumo.pt",
+      "bytes": 523425,
+      "sha256": "98340afd68b1cee84fe0cd95528cfa6d4b39e416aa75a9df64049d52c8b55896"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hexgrad/kokoro/dfb907a02bba8152ca444717ca5d78747ccb4bec/LICENSE",
+      "file": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hexgrad/misaki/fba1236595f2d2bf21d414ba6e57d25256afada3/LICENSE",
+      "file": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/VOICEVOX/voicevox_engine/7ebc23342bd812f5a72816330f62f110ccca8bdc/LICENSE",
+      "file": "LICENSE",
+      "bytes": 344,
+      "sha256": "6ec5d5928a194e6a8cf8466add9ad778faf0216a5d11d7a3449ee9dec759e007"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/VOICEVOX/voicevox_engine/7ebc23342bd812f5a72816330f62f110ccca8bdc/LGPL_LICENSE",
+      "file": "LGPL_LICENSE",
+      "bytes": 7651,
+      "sha256": "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/VOICEVOX/voicevox_resource/37c265375e05313486ebf2024b1679d6952a53d8/engine/README.md",
+      "file": "engine_README.md",
+      "bytes": 15369,
+      "sha256": "75e1803a359235cedcea2e7d795d37e79ab1ba06006dc4717b6a066aaead6bed"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/VOICEVOX/voicevox_resource/37c265375e05313486ebf2024b1679d6952a53d8/engine/engine_manifest_assets/terms_of_service.md",
+      "file": "engine_engine_manifest_assets_terms_of_service.md",
+      "bytes": 940,
+      "sha256": "462ec4d4d92476ff8b40d05d50d010944719420b84cd58e4f578a4dc4195c570"
+    },
+    {
+      "url": "https://github.com/VOICEVOX/voicevox_engine/releases/download/0.26.0/voicevox_engine-linux-cpu-x64-0.26.0.7z.txt",
+      "file": "voicevox_engine-linux-cpu-x64-0.26.0.7z.txt",
+      "bytes": 44,
+      "sha256": "fb4deae84b10bf0c7ea8f02c9e78c6415e810f836ed7128977318c8cc48ea1d2"
+    },
+    {
+      "url": "https://github.com/VOICEVOX/voicevox_engine/releases/download/0.26.0/voicevox_engine-linux-cpu-x64-0.26.0.7z.001",
+      "file": "voicevox_engine-linux-cpu-x64-0.26.0.7z.001",
+      "bytes": 1848012250,
+      "sha256": "3a74cf1bdef6b415f2acf7501f50b43e8d1ebcff85b923f693a7c4a60734d943"
+    },
+    {
+      "url": "https://cotonoha-dic.s3-ap-northeast-1.amazonaws.com/unidic-3.1.0.zip",
+      "file": "unidic-3.1.0.zip",
+      "bytes": 525943040,
+      "sha256": "638718c4c63625ab300de4c92c67925d54c0e9e3830009eaa992f29819d59c43"
+    }
+  ]
+}

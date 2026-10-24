@@ -1,0 +1,18 @@
+{
+  "speaker": {
+    "name": "麒ヶ島宗麟",
+    "speaker_uuid": "7d1e7ba7-f957-40e5-a3fc-da49f769ab65",
+    "styles": [
+      {
+        "name": "ノーマル",
+        "id": 53,
+        "type": "streaming_talk"
+      }
+    ],
+    "version": "0.17.0",
+    "supported_features": {
+      "permitted_synthesis_morphing": "ALL"
+    }
+  },
+  "policySha256": "6669e6a13ce6521fdc85364346298982f4d726850a4a03c30d2b7b5e4151ec43"
+}
