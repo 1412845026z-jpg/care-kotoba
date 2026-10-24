@@ -1,0 +1,6 @@
+{
+  "mode": "offline-loopback-only",
+  "nodeBlocked": [],
+  "browserBlocked": [],
+  "websocketBlocked": []
+}

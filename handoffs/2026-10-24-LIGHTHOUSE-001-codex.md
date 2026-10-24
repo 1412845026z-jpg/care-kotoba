@@ -42,3 +42,7 @@ root 将最新集成 main 合入本任务分支，仅整合 PROJECT_STATE 与本
 ## 本轮接续
 
 已核对并快进到业务集成main6148494798ad58fbc0b8a29ea431587580d3ec98（#46→#49，当前源码已通过常规CI40077969512及A11Y硬门）。Node语法、diff空白检查通过，准备从该固定main发布。此前本机分数仅针对a3b0060；正式新源码报告仍待当前分支免费runner，不能混用。
+
+## 已推送与整合入口
+
+工作分支 `codex/LIGHTHOUSE-001` 已实际推送，提交 `efdf11dec70a026f35d25be0c7886ba1fe75dcf7`。PR#53已merge02e8367；CI40078527301与报告40078527309通过，原始ZIP已留档。共同整合入口为本轮交付PR，合并前根PROJECT_STATE只将文档标review_ready；Lighthouse代码已由PR #53进入main。

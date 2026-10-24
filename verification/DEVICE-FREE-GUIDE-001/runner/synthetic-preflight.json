@@ -1,0 +1,102 @@
+{
+  "kind": "care-kotoba-voice-preflight",
+  "version": 1,
+  "at": "2026-10-24T08:29:55.978Z",
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+  "results": {
+    "support": {
+      "secureContext": true,
+      "getUserMedia": true,
+      "rtc": true,
+      "audioContext": true
+    },
+    "server": {
+      "reachable": true,
+      "ms": 38,
+      "aiConfigured": false,
+      "accessRequired": false,
+      "accessGranted": true,
+      "realtimeModel": "gpt-realtime-mini",
+      "maxSeconds": 180
+    },
+    "ice": {
+      "total": 0,
+      "host": 0,
+      "srflx": 0,
+      "relay": 0,
+      "ms": 2505
+    },
+    "speech": {
+      "dictation": true,
+      "jaVoices": 0
+    },
+    "mic": {
+      "granted": true,
+      "peak": 0.423,
+      "label": "Fake Default Audio Input"
+    },
+    "speaker": {
+      "heard": false
+    }
+  },
+  "items": [
+    {
+      "id": "support",
+      "key": "support.ok",
+      "status": "ok",
+      "title": "ブラウザの対応",
+      "detail": "音声練習に必要な機能があります。",
+      "help": "浏览器支持语音练习。"
+    },
+    {
+      "id": "server",
+      "key": "server.noai",
+      "status": "warn",
+      "title": "サーバー",
+      "detail": "AI がまだ設定されていません。デモ練習のみ使えます。",
+      "help": "服务器还没有设置 AI，目前只能用演示。"
+    },
+    {
+      "id": "ice",
+      "key": "ice.none",
+      "status": "fail",
+      "title": "音声の通信準備",
+      "detail": "通信経路の候補が見つかりません。VPN や社内ネットワークの制限がないか確認してください。",
+      "help": "找不到可用的网络通道。请检查 VPN 或公司网络的限制。"
+    },
+    {
+      "id": "mic",
+      "key": "mic.ok",
+      "status": "ok",
+      "title": "マイク",
+      "detail": "声が入っています（Fake Default Audio Input）。",
+      "help": "麦克风能收到声音。"
+    },
+    {
+      "id": "speaker",
+      "key": "speaker.fail",
+      "status": "fail",
+      "title": "スピーカー",
+      "detail": "音が聞こえません。音量、マナーモード、接続中のイヤホンを確認してください。",
+      "help": "听不到声音。请检查音量、静音模式和连接的耳机。"
+    },
+    {
+      "id": "dictation",
+      "key": "dictation.ok",
+      "status": "ok",
+      "title": "声で入力（無料）",
+      "detail": "端末のブラウザの音声認識で、文字練習に日本語を入力できます。",
+      "help": "可以用浏览器自带的语音识别输入日语（免费；声音可能由浏览器提供商处理）。"
+    },
+    {
+      "id": "voice",
+      "key": "voice.none",
+      "status": "info",
+      "title": "日本語の読み上げ（端末）",
+      "detail": "端末の日本語音声が見つかりません。端末の設定で日本語の音声を追加できます。",
+      "help": "找不到日语朗读声音。可以在手机设置里添加日语语音。"
+    }
+  ],
+  "overall": "fail",
+  "note": "No AI call was made. Fictional practice app; no personal data."
+}

@@ -1,0 +1,276 @@
+{
+  "ranAt": "2026-10-24T08:12:17.340Z",
+  "sourceCommit": "e5adb4913e6d333cd8eda59ca4d6328e29db7700",
+  "node": "v22.23.3",
+  "mode": "offline harness + loopback mock AI",
+  "paidApiCalls": 0,
+  "auditScript": "verification/A11Y-001/audit.mjs",
+  "auditScriptSha256": "41a4ff801381a3aef0081d8449a541426e9c70b400f329326c519e0e88126fc1",
+  "hardGateFields": [
+    "contrast",
+    "targetsUnder24",
+    "textUnder12px"
+  ],
+  "viewports": {
+    "390x844": {
+      "audit": {
+        "passed": true,
+        "screens": {
+          "home": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "scenes": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "scene-modal": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "practice-text": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "feedback": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "notes": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "progress": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "settings": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "home-core": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "scenes-core": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "core-modal": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          }
+        },
+        "failures": []
+      },
+      "axe": {
+        "findingsBlockCI": false,
+        "home": {
+          "violations": 0,
+          "violationNodes": 0,
+          "incomplete": 0,
+          "ruleIds": []
+        },
+        "scene-modal": {
+          "violations": 3,
+          "violationNodes": 10,
+          "incomplete": 1,
+          "ruleIds": [
+            "aria-dialog-name",
+            "button-name",
+            "color-contrast"
+          ]
+        },
+        "practice-text": {
+          "violations": 5,
+          "violationNodes": 17,
+          "incomplete": 1,
+          "ruleIds": [
+            "button-name",
+            "color-contrast",
+            "landmark-no-duplicate-banner",
+            "landmark-unique",
+            "region"
+          ]
+        },
+        "feedback": {
+          "violations": 6,
+          "violationNodes": 7,
+          "incomplete": 0,
+          "ruleIds": [
+            "button-name",
+            "color-contrast",
+            "heading-order",
+            "landmark-no-duplicate-banner",
+            "landmark-no-duplicate-main",
+            "landmark-unique"
+          ]
+        },
+        "notes": {
+          "violations": 1,
+          "violationNodes": 1,
+          "incomplete": 0,
+          "ruleIds": [
+            "heading-order"
+          ]
+        },
+        "settings": {
+          "violations": 2,
+          "violationNodes": 2,
+          "incomplete": 0,
+          "ruleIds": [
+            "aria-dialog-name",
+            "heading-order"
+          ]
+        }
+      }
+    },
+    "1280x860": {
+      "audit": {
+        "passed": true,
+        "screens": {
+          "home": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "scenes": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "scene-modal": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "practice-text": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "feedback": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "notes": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "progress": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "settings": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "admin": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "home-core": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "scenes-core": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          },
+          "core-modal": {
+            "contrast": 0,
+            "targetsUnder24": 0,
+            "textUnder12px": 0
+          }
+        },
+        "failures": []
+      },
+      "axe": {
+        "findingsBlockCI": false,
+        "home": {
+          "violations": 2,
+          "violationNodes": 2,
+          "incomplete": 0,
+          "ruleIds": [
+            "label-content-name-mismatch",
+            "landmark-unique"
+          ]
+        },
+        "scene-modal": {
+          "violations": 3,
+          "violationNodes": 10,
+          "incomplete": 1,
+          "ruleIds": [
+            "aria-dialog-name",
+            "color-contrast",
+            "label-content-name-mismatch"
+          ]
+        },
+        "practice-text": {
+          "violations": 5,
+          "violationNodes": 21,
+          "incomplete": 1,
+          "ruleIds": [
+            "color-contrast",
+            "label-content-name-mismatch",
+            "landmark-no-duplicate-banner",
+            "landmark-unique",
+            "region"
+          ]
+        },
+        "feedback": {
+          "violations": 6,
+          "violationNodes": 7,
+          "incomplete": 0,
+          "ruleIds": [
+            "color-contrast",
+            "heading-order",
+            "label-content-name-mismatch",
+            "landmark-no-duplicate-banner",
+            "landmark-no-duplicate-main",
+            "landmark-unique"
+          ]
+        },
+        "notes": {
+          "violations": 2,
+          "violationNodes": 2,
+          "incomplete": 0,
+          "ruleIds": [
+            "heading-order",
+            "label-content-name-mismatch"
+          ]
+        },
+        "settings": {
+          "violations": 3,
+          "violationNodes": 3,
+          "incomplete": 0,
+          "ruleIds": [
+            "aria-dialog-name",
+            "heading-order",
+            "label-content-name-mismatch"
+          ]
+        }
+      }
+    }
+  },
+  "passed": true,
+  "errors": []
+}

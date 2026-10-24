@@ -1,0 +1,111 @@
+{
+  "pr46": {
+    "ciSourceCommit": "e5adb4913e6d333cd8eda59ca4d6328e29db7700",
+    "tests": [
+      {
+        "name": "static",
+        "exitCode": 0,
+        "seconds": 2.2,
+        "failures": []
+      },
+      {
+        "name": "unit",
+        "exitCode": 0,
+        "seconds": 1,
+        "pass": 92,
+        "fail": 0,
+        "failures": []
+      },
+      {
+        "name": "e2e",
+        "exitCode": 0,
+        "seconds": 90.7,
+        "pass": 58,
+        "fail": 0,
+        "failures": []
+      }
+    ],
+    "viewports": {
+      "390x844": {
+        "screens": 11,
+        "hardGatesPassed": true,
+        "axeRuleInstances": 17,
+        "axeNodes": 37
+      },
+      "1280x860": {
+        "screens": 12,
+        "hardGatesPassed": true,
+        "axeRuleInstances": 21,
+        "axeNodes": 45
+      }
+    }
+  },
+  "pr49": {
+    "ciSourceCommit": "1306d937d168af9154985595599e5e6d24dc86f9",
+    "tests": [
+      {
+        "name": "static",
+        "exitCode": 0,
+        "seconds": 1.4,
+        "failures": []
+      },
+      {
+        "name": "unit",
+        "exitCode": 0,
+        "seconds": 0.7,
+        "pass": 99,
+        "fail": 0,
+        "failures": []
+      },
+      {
+        "name": "e2e",
+        "exitCode": 0,
+        "seconds": 92.4,
+        "pass": 62,
+        "fail": 0,
+        "failures": []
+      }
+    ],
+    "viewports": {
+      "390x844": {
+        "screens": 12,
+        "hardGatesPassed": true,
+        "axeRuleInstances": 15,
+        "axeNodes": 35
+      },
+      "1280x860": {
+        "screens": 13,
+        "hardGatesPassed": true,
+        "axeRuleInstances": 19,
+        "axeNodes": 43
+      }
+    }
+  },
+  "businessMerges": {
+    "46": "11949bd63aab075029d13736fe5d3c2fd20b1944",
+    "49": "6148494798ad58fbc0b8a29ea431587580d3ec98",
+    "53": "02e83670a994a6673ebf21be543dd9c1614cbad9"
+  },
+  "workflowRuns": {
+    "46": 40076990478,
+    "49": 40077969512,
+    "53ci": 40078527301,
+    "53lighthouse": 40078527309
+  },
+  "taskCommits": {
+    "LEGAL-001": "a73c254d449d9e125c92bbc779f0e9f66b0b46f4",
+    "REAL-AI-PILOT-PLAN-001": "1ceb8e7d3bc051873ebd1d5e382877cda194f318",
+    "AUDIO-PICK-001": "f2e52e723a25e35da161f9442cbf2e60d863bde0",
+    "DEVICE-FREE-GUIDE-001": "e4b798b6e13a1677598340bd9b82d01a4cfb24ef",
+    "LIGHTHOUSE-001": "efdf11dec70a026f35d25be0c7886ba1fe75dcf7"
+  },
+  "paidApiCallsThisRound": 0,
+  "deployments": 0,
+  "notProven": [
+    "real AI",
+    "physical phone",
+    "human audio audition",
+    "professional legal/tax approval",
+    "earlier16:43 legal checklist"
+  ]
+}

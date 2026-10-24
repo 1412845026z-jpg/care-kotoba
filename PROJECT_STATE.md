@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本轮核对的业务集成提交 | `fb549890677dad7594fa55bfbb895808195bc4c5`（#43/#44/#47/#48/#50已顺序合并；App代码仍为#44 a567b8d；#51文档/证据已merge ce81cfc） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#43/#44固定源审查与字体/SEC通过；#47 ts-fsrs正式依赖通过常规CI并合并；免费音频样本已生成并合并；A11Y常规CI已合并且稳定复测通过） |
+| 本轮核对的业务集成提交 | `02e83670a994a6673ebf21be543dd9c1614cbad9`（#46→#49→#53已合并；应用代码为#49 merge6148494；四文档与最终证据见本轮交付PR） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#46/#49构建、模拟测试与A11Y硬门通过；#53常规CI和手机Lighthouse报告通过；main6148494无key真实dev回放通过） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -57,11 +57,15 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| LIGHTHOUSE-001 | 固定Lighthouse13.5.0手机CI报告（只报告） | Codex | in_progress | `codex/LIGHTHOUSE-001`；本轮核查后推送，未部署/付费 | handoffs/2026-10-24-LIGHTHOUSE-001-codex.md |
-| MERGE-2 | 顺序整合#46/#49并复核常规CI和A11Y硬门 | Codex | in_progress | `codex/MERGE-2`；先解决#46仅PROJECT_STATE冲突 | handoffs/2026-10-24-MERGE-2-codex.md；保留main已有依赖/许可/证据，App原样继承Claude |
+| DEVICE-FREE-GUIDE-001 | 最新main免费手机测试中文指南与no-key回放 | Codex | review_ready | `codex/DEVICE-FREE-GUIDE-001` @e4b798b；整合本轮交付PR | handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md；main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户 |
+| AUDIO-PICK-001 | 手机30段免费试听清单及候选组合 | Codex | review_ready | `codex/AUDIO-PICK-001` @f2e52e7；整合本轮交付PR | handoffs/2026-10-24-AUDIO-PICK-001-codex.md；30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App |
+| REAL-AI-PILOT-PLAN-001 | ≤3000日元首次真实AI测试计划（不执行） | Codex | review_ready | `codex/REAL-AI-PILOT-PLAN-001` @1ceb8e7；整合本轮交付PR | handoffs/2026-10-24-REAL-AI-PILOT-PLAN-001-codex.md；只交计划；条件预算¥113、建议另批¥1000，未花钱；旧实时价/逐次计量/鉴权待解决 |
+| LEGAL-001 | 经营合规与A/B卖方方案官方来源对照 | Codex | review_ready | `codex/LEGAL-001` @a73c254；整合本轮交付PR | handoffs/2026-10-24-LEGAL-001-codex.md；经营方案明确范围与30来源索引；16:43旧清单仍待补核，未获专业签核 |
+| LIGHTHOUSE-001 | 固定Lighthouse13.5.0手机CI报告（只报告） | Codex | merged | `codex/LIGHTHOUSE-001` @efdf11d；整合本轮交付PR | handoffs/2026-10-24-LIGHTHOUSE-001-codex.md；PR#53已merge02e8367；CI40078527301与报告40078527309通过，原始ZIP已留档 |
+| MERGE-2 | 顺序合并#46/#49与本轮六项任务证据整合 | Codex | review_ready | `codex/MERGE-2`，本轮交付PR；#46 merge11949bd→#49 merge6148494 | handoffs/2026-10-24-MERGE-2-codex.md；#53 Lighthouse已merge02e8367，四文档分支已推送；待本PR最终CI |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
 | REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
-| REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude | review_ready | `claude/REVIEW-001`，PR #49，head69c36a4；#46已merge11949bd，base已改main | #47依赖已合并；Claude报告unit99/e2e62，Codex整合当前main仅解决共享状态冲突，待完整CI，本轮不改其功能 |
+| REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude + Codex整合 | merged | `claude/REVIEW-001`，PR #49，head3e709a9；merge6148494 | CI40077969512：static0/unit99/e2e62，两尺寸12/13屏硬门通过；模拟非真实AI/真机 |
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude + Codex整合 | merged | `claude/START-FLOW-001`，PR #46，head9f346a6；merge11949bd | CI40076990478通过（含两尺寸A11Y硬门）；handoffs/2026-10-24-MERGE-2-codex.md |
 | AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | merged | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；PR #48，merge137ff8a，最终CI40072582215通过；run40071495822成功，25单句＋5对比，1.52MB；无削波，未真正试听；不接入App |
 | A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | merged | `codex/A11Y-CI-001` | handoffs/2026-10-24-A11Y-CI-001-codex.md；PR #50 headde1089b，mergefb54989；CI40073435460双job通过；audit11/12屏三项0，axe稳定17/21实例仅报告，详见交接 |
@@ -142,7 +146,11 @@
 
 ## 当前阻塞与风险
 
-- A11Y-CI-001的原audit三项为0；axe稳定报告仍有9类规则（手机17/桌面21个画面×规则实例），目前只报告不阻断。共同根因和opacity对比度盲点已交Claude，未改App/audit/tests，不能写成全面无障碍验收通过。
+- START-FLOW键盘选择会话类型后焦点落到BODY，见DEVICE-FREE-GUIDE-001回放；交Claude处理，未改产品代码。
+- 本轮真实AI计划已写好但未执行：旧实时型号音频价、逐次用量关联及Access鉴权通路仍待解决。官方TTS指南已确认新Realtime替代不是`/v1/audio/speech`直接替换；后续MODEL-001需另做工作流迁移。
+- LEGAL-001的16:43原清单尚未恢复；本轮完成当前明确经营范围与A/B对照，不宣称未知旧清单或专业审查已完成。
+
+- 最新#49两尺寸原audit三项为0；axe六页仍有9类规则（手机15/桌面19个画面×规则实例，原#46为17/21），只报告不阻断。共同根因和opacity对比度盲点已交Claude，未改App/audit/tests，不能写成全面无障碍验收通过。
 
 - 免费阶段之外的真实T1–T14、真实core-roleplay-check --yes、MODEL-001及付费托管均为blocked，不自动配置key、充值或升级。免费C也只做方案，部署仍待单独授权。
 
@@ -157,6 +165,13 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-LEGAL-001-codex.md：经营方案明确范围与30来源索引；16:43旧清单仍待补核，未获专业签核。
+- handoffs/2026-10-24-REAL-AI-PILOT-PLAN-001-codex.md：只交计划；条件预算¥113、建议另批¥1000，未花钱；旧实时价/逐次计量/鉴权待解决。
+- handoffs/2026-10-24-AUDIO-PICK-001-codex.md：30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App。
+- handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md：main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户。
+- handoffs/2026-10-24-LIGHTHOUSE-001-codex.md：PR#53已merge02e8367；CI40078527301与报告40078527309通过，原始ZIP已留档。
+- handoffs/2026-10-24-MERGE-2-codex.md：本轮顺序合并、各分支实际提交与最终验证证据。
 
 - handoffs/2026-10-24-ASSET-SOURCES-001-codex.md：5来源许可表与最终证据/状态整合。
 - handoffs/2026-10-24-A11Y-CI-001-codex.md：两尺寸三项硬门、六页axe稳定报告及移交Claude的实际问题。

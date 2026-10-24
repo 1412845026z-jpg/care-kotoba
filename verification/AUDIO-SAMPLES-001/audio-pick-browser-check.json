@@ -1,0 +1,463 @@
+{
+  "dateJst": "2026-10-24",
+  "sourceCommit": "a3b006095580b234e51100ac70565a7d6a296e12",
+  "scope": "Chromium mobile viewport / local file, not physical iPhone or Android listening",
+  "tests": [
+    {
+      "file": "mobile-listen.html",
+      "audioCount": 30,
+      "documentWidth": 390,
+      "viewport": 390,
+      "visualViewportWidth": 390,
+      "scriptCount": 0,
+      "textarea": true,
+      "images": 0,
+      "all30MediaMetadataDecoded": true,
+      "all30PlayPromisesResolved": true,
+      "playStates": [
+        {
+          "label": "第3句，五种声音依序对比",
+          "duration": 16.196333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "第1句，五种声音依序对比",
+          "duration": 19.449667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "第2句，五种声音依序对比",
+          "duration": 25.912667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "第4句，五种声音依序对比",
+          "duration": 22.799,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "第5句，五种声音依序对比",
+          "duration": 18.230667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第3句",
+          "duration": 2.421333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第1句",
+          "duration": 2.965333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第2句",
+          "duration": 4.309333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第4句",
+          "duration": 3.701333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第5句",
+          "duration": 2.773333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第3句",
+          "duration": 2.570667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第1句",
+          "duration": 3.114667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第2句",
+          "duration": 4.512,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第4句",
+          "duration": 3.893333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第5句",
+          "duration": 2.88,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第3句",
+          "duration": 2.775,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第1句",
+          "duration": 3.5,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第2句",
+          "duration": 4.35,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第4句",
+          "duration": 3.925,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第5句",
+          "duration": 3.25,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第3句",
+          "duration": 2.229333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第1句",
+          "duration": 2.794667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第2句",
+          "duration": 4.341333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第4句",
+          "duration": 3.829333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第5句",
+          "duration": 2.677333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第3句",
+          "duration": 2.7,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第1句",
+          "duration": 3.575,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第2句",
+          "duration": 4.9,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第4句",
+          "duration": 3.95,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第5句",
+          "duration": 3.15,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        }
+      ],
+      "externalRequests": [],
+      "consoleAndPageErrors": []
+    },
+    {
+      "file": "index.html",
+      "audioCount": 30,
+      "documentWidth": 390,
+      "viewport": 390,
+      "visualViewportWidth": 390,
+      "scriptCount": 0,
+      "textarea": true,
+      "images": 0,
+      "all30MediaMetadataDecoded": true,
+      "all30PlayPromisesResolved": true,
+      "playStates": [
+        {
+          "label": "第3句，五种声音依序对比",
+          "duration": 16.196333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "第1句，五种声音依序对比",
+          "duration": 19.449667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "第2句，五种声音依序对比",
+          "duration": 25.912667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "第4句，五种声音依序对比",
+          "duration": 22.799,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "第5句，五种声音依序对比",
+          "duration": 18.230667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第3句",
+          "duration": 2.421333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第1句",
+          "duration": 2.965333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第2句",
+          "duration": 4.309333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第4句",
+          "duration": 3.701333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "麒ヶ島宗麟，第5句",
+          "duration": 2.773333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第3句",
+          "duration": 2.570667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第1句",
+          "duration": 3.114667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第2句",
+          "duration": 4.512,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第4句",
+          "duration": 3.893333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "雀松朱司，第5句",
+          "duration": 2.88,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第3句",
+          "duration": 2.775,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第1句",
+          "duration": 3.5,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第2句",
+          "duration": 4.35,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第4句",
+          "duration": 3.925,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jf_alpha，第5句",
+          "duration": 3.25,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第3句",
+          "duration": 2.229333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第1句",
+          "duration": 2.794667,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第2句",
+          "duration": 4.341333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第4句",
+          "duration": 3.829333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "玄野武宏，第5句",
+          "duration": 2.677333,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第3句",
+          "duration": 2.7,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第1句",
+          "duration": 3.575,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第2句",
+          "duration": 4.9,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第4句",
+          "duration": 3.95,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "label": "Kokoro · jm_kumo，第5句",
+          "duration": 3.15,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        }
+      ],
+      "externalRequests": [],
+      "consoleAndPageErrors": []
+    }
+  ],
+  "embeddedBytesExactMatchOriginals": true,
+  "originalRetainedManifestEntriesValidated": 82,
+  "originalAudioFilesExactBaselineBytes": 30,
+  "baselineCommit": "a3b006095580b234e51100ac70565a7d6a296e12"
+}

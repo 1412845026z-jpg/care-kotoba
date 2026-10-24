@@ -1,0 +1,30 @@
+{
+  "sourceCommit": "a3b006095580b234e51100ac70565a7d6a296e12",
+  "inspectionOnly": true,
+  "paidCalls": 0,
+  "nodeDryRun": "node tools/smoke/core-roleplay-check.mjs --base http://127.0.0.1:9 (without --yes; exits before any network branch)",
+  "sourceSha256": {
+    "prototype/lib/models.ts": "eb29df696664717f09a6dea7b23ffab1fa289c749dbc9bf9e4dc3eabf512a42f",
+    "prototype/lib/cost.ts": "19069865444a05401b1457ee68eab54dd255996facdfc83fecc750f13636dc9f",
+    "prototype/lib/voice-metrics.ts": "2b42e2ea7cafc869da848e9c7b6a6d5acb3d3196984b4d9cfbf86bf0a59e2a7c",
+    "prototype/lib/ai-server.ts": "e1a8c7890014263da1171a2272514388e0b221bc8780226d4752b1e28d697c05",
+    "prototype/app/api/chat/route.ts": "ba9152a88f642451b94b8cfceb826d1a01cb9ad34a8c7ff82a424085cebbdea3",
+    "prototype/app/api/feedback/route.ts": "2ca49f9d63fc030cd6bd955d9a8d2115adaabbf420d89858637647e787437e20",
+    "prototype/app/api/session/route.ts": "4df3cf217fdd22bfe0c84e4c6245e0366cb1b89cc83802a0189060e7bcbb1e1e",
+    "prototype/app/api/speech/route.ts": "bddc1dc62c7623731efdda9a2f526d601561a9cc45ead288683045bc5f3655d1",
+    "tools/smoke/api-smoke.mjs": "d206308bb66f98900327c87303f72f34f038b88f3479bd4019701f3399a35e8c",
+    "tools/smoke/core-roleplay-check.mjs": "f5d820be00609f626661c4d27373cef944bc78ff692263b9e46cf0ec468be388"
+  },
+  "validation": {
+    "corePlanProbeCount": 28,
+    "manualTextSessions": 3,
+    "manualVoiceSessions": 3,
+    "textModelCalls": 48,
+    "budgetMathChecked": true
+  },
+  "limitations": [
+    "Legacy realtime audio price remains unconfirmed",
+    "Per-practice provider usage missing from text/TTS route outputs",
+    "No real AI, credentials, credit balance, deployment or device validation"
+  ]
+}

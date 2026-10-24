@@ -1,0 +1,29 @@
+{
+  "sourceCommit": "a3b006095580b234e51100ac70565a7d6a296e12",
+  "paidApiCalls": 0,
+  "topups": 0,
+  "deployments": 0,
+  "hooks": 0,
+  "checks": {
+    "toolSyntax": "pass",
+    "corePlanExitCode": 0,
+    "corePlanPaidCalls": 0,
+    "corePlanProbes": 28,
+    "budgetIndependentDecimalUsd": "0.46922",
+    "budgetWithBufferJpy": "112.612800",
+    "monthlyAssumptionJpy": "463.44000000",
+    "sourceHashManifest": "provenance.json",
+    "appChanges": false,
+    "testsChanges": false,
+    "projectStateChanges": false,
+    "recheckedPlanOnIntegrationBaseline": true
+  },
+  "documentSha256": "02b5e80bc9e3101457b5c6dd0b544a1de1ad5a57d0b15f992e3ce9d913bb99d1",
+  "notRun": [
+    "Paid smoke --yes",
+    "Real AI",
+    "Device voice",
+    "Platform configuration"
+  ],
+  "integrationBaseline": "6148494798ad58fbc0b8a29ea431587580d3ec98"
+}
