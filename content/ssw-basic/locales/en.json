@@ -1,0 +1,1232 @@
+{
+  "locale": "en",
+  "status": "draft_unreviewed",
+  "topics": {
+    "T01": {
+      "title": "Greetings and entering or leaving a room"
+    },
+    "T02": {
+      "title": "Asking someone to repeat or explain"
+    },
+    "T03": {
+      "title": "Checking instructions from colleagues"
+    },
+    "T04": {
+      "title": "Getting up, resting and going to bed"
+    },
+    "T05": {
+      "title": "Clothing and personal appearance"
+    },
+    "T06": {
+      "title": "Before a meal"
+    },
+    "T07": {
+      "title": "Meals and drinks"
+    },
+    "T08": {
+      "title": "Mouth care and grooming"
+    },
+    "T09": {
+      "title": "Toileting"
+    },
+    "T10": {
+      "title": "Bathing and keeping clean"
+    },
+    "T11": {
+      "title": "Moving and transfers"
+    },
+    "T12": {
+      "title": "The room and living environment"
+    },
+    "T13": {
+      "title": "Activities and everyday conversation"
+    },
+    "T14": {
+      "title": "Responding to worries"
+    },
+    "T15": {
+      "title": "Brief observations and reports"
+    },
+    "T16": {
+      "title": "Team communication and asking for help"
+    },
+    "T17": {
+      "title": "Infection prevention and handwashing"
+    },
+    "T18": {
+      "title": "Laundry and linen"
+    },
+    "T19": {
+      "title": "Checking health and comfort"
+    },
+    "T20": {
+      "title": "Messages about medicines"
+    },
+    "T21": {
+      "title": "Schedules and outings"
+    },
+    "T22": {
+      "title": "Visitors and family"
+    },
+    "T23": {
+      "title": "Safety and emergency drills"
+    },
+    "T24": {
+      "title": "Everyday items and aids"
+    }
+  },
+  "scenes": {
+    "SSW-S01": {
+      "title": "Checking a name",
+      "goal": "Introduce yourself, then briefly confirm how the person wants to be addressed.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. You meet the resident for the first time after the staff member in charge has introduced you.",
+      "check": "Use the name the person gives you. Complicated honorific language is not needed.",
+      "lines": [
+        "I am Hayashi, your care worker from today. Please tell me your name.",
+        "My name is Yamada. Please call me Yamada-san.",
+        "Yamada-san, then. It is nice to meet you.",
+        "Yes. It is nice to meet you too."
+      ]
+    },
+    "SSW-S02": {
+      "title": "May I come in?",
+      "goal": "Ask before entering the room and wait for the person to agree.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. You are outside the room and have not entered yet.",
+      "check": "Get permission before saying you will enter. If the person says no, do not go in anyway.",
+      "lines": [
+        "Yamada-san, it is Hayashi. May I come in?",
+        "Yes, please come in.",
+        "Thank you. I will come in now.",
+        "Please come this way."
+      ]
+    },
+    "SSW-S03": {
+      "title": "Asking how someone feels this morning",
+      "goal": "Use a simple morning greeting to ask how the person feels today.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. This is a routine morning greeting, not a diagnosis.",
+      "check": "Briefly reflect the person's feeling. Do not add a cause or your own assessment.",
+      "lines": [
+        "Good morning. How are you today?",
+        "I am a little sleepy.",
+        "You are a little sleepy.",
+        "Yes, I am still sleepy."
+      ]
+    },
+    "SSW-S04": {
+      "title": "How to call when you need something",
+      "goal": "Before leaving, explain the call button that has been checked for use.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. Before you leave, the facility has checked that the call button works and is in a position where the person can use it.",
+      "check": "Confirm where the button is. Do not promise a specific arrival time.",
+      "lines": [
+        "When you need something, please use this button to call.",
+        "Do I press here?",
+        "Yes, right here. Please call if you need something.",
+        "I understand."
+      ]
+    },
+    "SSW-S05": {
+      "title": "Please say that again",
+      "goal": "Ask directly for a repeat when you did not hear clearly.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. A colleague is explaining where an item is.",
+      "check": "Say that you did not hear or ask for a repeat. Do not just answer \"yes\".",
+      "lines": [
+        "The towels are on top of that shelf.",
+        "Excuse me. Could you say that again, please?",
+        "The towels are on top of that shelf.",
+        "On top of the shelf, right? Thank you."
+      ]
+    },
+    "SSW-S06": {
+      "title": "More slowly, please",
+      "goal": "Ask the person to speak more slowly when the speed is hard to follow.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. A colleague is telling you the time and place of the next activity.",
+      "check": "Asking for slower speech is enough. Line breaks in text do not mean a recording has been slowed down.",
+      "lines": [
+        "Please come to the lounge at two o'clock.",
+        "Excuse me. More slowly, please.",
+        "The time is two o'clock. The place is the lounge.",
+        "Two o'clock in the lounge, right?"
+      ]
+    },
+    "SSW-S07": {
+      "title": "Asking what a word means",
+      "goal": "Ask what a work-related word means when you do not understand it.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. A colleague is naming a storage area.",
+      "check": "Name the word you do not understand. Do not guess its meaning.",
+      "lines": [
+        "The aprons are in the linen room.",
+        "What is a linen room?",
+        "It is a room where towels and similar items are kept.",
+        "I understand. Please also tell me where it is."
+      ]
+    },
+    "SSW-S08": {
+      "title": "One thing at a time, please",
+      "goal": "When you receive several instructions at once, ask for them one at a time.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. A colleague gives you two ordinary preparation tasks at once.",
+      "check": "Ask for the instructions in parts or ask for the first task. You do not have to remember the whole list at once.",
+      "lines": [
+        "Please carry the towels over and set out the cups too.",
+        "Excuse me. One thing at a time, please.",
+        "First, please take the towels to the lounge.",
+        "First, I will take the towels to the lounge."
+      ]
+    },
+    "SSW-S09": {
+      "title": "Asking who it is for",
+      "goal": "If an instruction does not say who an item is for, ask first.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. A colleague asks you to fetch a towel but has not said who will use it.",
+      "check": "Ask who it is for. The ordinary word \"dare\" with a polite sentence ending is acceptable.",
+      "lines": [
+        "Please bring a towel.",
+        "Whose towel is it?",
+        "It is Yamada-san's towel.",
+        "Yamada-san's towel, right?"
+      ]
+    },
+    "SSW-S10": {
+      "title": "Checking the item and the place",
+      "goal": "When an item or destination is unclear, ask about both.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. A colleague's ordinary preparation request is not specific enough.",
+      "check": "Check both the item and the room. Do not guess what \"that\" means.",
+      "lines": [
+        "Please put that in the room.",
+        "What should I put in which room?",
+        "Please put this box in the staff room.",
+        "I will put this box in the staff room."
+      ]
+    },
+    "SSW-S11": {
+      "title": "Asking when it must be finished",
+      "goal": "After you understand a task, ask when it needs to be finished.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. This is ordinary preparation of items. No deadline has been given yet.",
+      "check": "Ask about the deadline. Distinguish \"nanji ni\" for a start time from \"nanji made ni\" for a completion deadline.",
+      "lines": [
+        "Please set out the cups in the dining room.",
+        "By what time should I set them out?",
+        "By eleven thirty, please.",
+        "By eleven thirty. I understand."
+      ]
+    },
+    "SSW-S12": {
+      "title": "Repeating an instruction briefly",
+      "goal": "Briefly repeat the item, quantity and destination you have heard.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. This is ordinary preparation of items. All the needed information has been given.",
+      "check": "Keep the item, quantity and destination correct. You do not need to repeat every word.",
+      "lines": [
+        "Please bring two cups to the dining room.",
+        "I will take two cups to the dining room.",
+        "Yes, please.",
+        "I understand. I will take them there."
+      ]
+    },
+    "SSW-S13": {
+      "title": "Asking whether someone wants to get up",
+      "goal": "Ask whether the person wants to get up now and accept their preference.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The facility has confirmed that getting-up arrangements can follow the person's preference at this time. This is not practice in helping someone physically get up.",
+      "check": "Accept the person's preference first. Do not reply by forcing them to get up.",
+      "lines": [
+        "It is morning. Would you like to get up now?",
+        "I would like to sleep a little longer.",
+        "I understand. I will come back later.",
+        "Yes, please."
+      ]
+    },
+    "SSW-S14": {
+      "title": "Asking about a wish to rest",
+      "goal": "When the person says they are tired, ask whether they want to rest.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. This is after an everyday activity. Arrangements follow the facility's plan; do not judge the cause of the tiredness.",
+      "check": "Acknowledge the tiredness and ask what the person wants. Do not make a medical assessment.",
+      "lines": [
+        "I am a little tired.",
+        "Would you like to rest for a while?",
+        "Yes, I would like to rest here for a while.",
+        "I understand. Let us rest for a while."
+      ]
+    },
+    "SSW-S15": {
+      "title": "Asking about the light before bed",
+      "goal": "Before bedtime, check how much light the person wants to keep.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The facility has confirmed which lighting can be adjusted. This scene practices one preference about the room.",
+      "check": "Listen when the person wants some light left on. Do not turn every light off automatically.",
+      "lines": [
+        "May I turn off the light before you go to sleep?",
+        "Please leave some light on.",
+        "I will leave some light on.",
+        "Yes, please do that."
+      ]
+    },
+    "SSW-S16": {
+      "title": "When someone says they could not sleep",
+      "goal": "When the person says they did not sleep well, first acknowledge what they said.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. This is a simple morning conversation. Do not guess the cause or give advice about medicine or treatment.",
+      "check": "Reflect what the person said. Do not add your own explanation for the poor sleep.",
+      "lines": [
+        "Did you sleep well last night?",
+        "I did not sleep very well.",
+        "You did not sleep very well.",
+        "Yes, I woke up many times."
+      ]
+    },
+    "SSW-S17": {
+      "title": "Choosing clothes",
+      "goal": "Show two suitable items of clothing and let the person choose.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. Both items belong to the person and have been confirmed as available choices.",
+      "check": "Repeat the person's choice. Do not say you will decide for them.",
+      "lines": [
+        "Which clothes would you like today?",
+        "I would like the blue ones.",
+        "The blue ones. I will get them ready here.",
+        "Yes, thank you."
+      ]
+    },
+    "SSW-S18": {
+      "title": "Asking what help is needed with changing",
+      "goal": "First ask which parts the person wants help with.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. Support with changing clothes is allowed by the facility's plan. This scene does not practice physical techniques.",
+      "check": "Keep the limit expressed by \"dake\" (only). Let the person do the parts they can do themselves.",
+      "lines": [
+        "Which part of changing clothes would you like help with?",
+        "Just the buttons, please.",
+        "Just the buttons. I will help with those.",
+        "Yes, I can do the rest myself."
+      ]
+    },
+    "SSW-S19": {
+      "title": "Respecting a wish for privacy",
+      "goal": "When the person expresses a concern before changing, first protect their privacy.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. This is before support with changing clothes. The facility has confirmed that a screen or curtain is available.",
+      "check": "Respond to the person's need for privacy, then use the screen or curtain after getting permission.",
+      "lines": [
+        "I do not want anyone to see me changing.",
+        "May I close the curtain?",
+        "Yes, please close it.",
+        "Yes, I will close it."
+      ]
+    },
+    "SSW-S20": {
+      "title": "Asking about feeling cold or warm",
+      "goal": "When the person mentions feeling cold or warm, ask what available clothing they would like.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The facility has confirmed that another item of the person's own clothing can be added. Do not assess body temperature or diagnose a cause.",
+      "check": "Ask what the person wants. Do not make a medical judgment from the word \"cold\".",
+      "lines": [
+        "I am a little cold.",
+        "Would you like to put on another jacket?",
+        "Yes, I would like that jacket.",
+        "That jacket. I will bring it."
+      ]
+    },
+    "SSW-S21": {
+      "title": "Announcing mealtime",
+      "goal": "Simply announce the meal and ask whether the person wants to go to the dining room.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The facility's meal arrangements have been checked. This is not practice in physical assistance with moving.",
+      "check": "Check the person's preference. This is an invitation to a place, not proof of a safe way to assist movement.",
+      "lines": [
+        "It is lunchtime. Would you like to go to the dining room?",
+        "Yes, I would like to go to the dining room.",
+        "I understand. Let us go together.",
+        "Yes, please."
+      ]
+    },
+    "SSW-S22": {
+      "title": "Asking where someone wants to sit",
+      "goal": "Ask the person to choose between seats that have been confirmed as suitable.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The facility has confirmed that both seats are suitable for this person.",
+      "check": "Understand the person's choice of place. Do not replace it with the staff member's preference.",
+      "lines": [
+        "Would you prefer to sit by the window or here?",
+        "I would like to sit by the window.",
+        "By the window. Let us choose that seat.",
+        "Yes, I like it because I can see outside."
+      ]
+    },
+    "SSW-S23": {
+      "title": "Explaining today's menu",
+      "goal": "When asked about the menu, give only information you have checked.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The menu that can be offered to this person for this meal has been checked. Do not judge whether a food is suitable for a medical condition.",
+      "check": "Give only the menu information that has been confirmed. If you do not know, check first instead of guessing.",
+      "lines": [
+        "What is for lunch today?",
+        "Today's dish is fish.",
+        "Fish. I am looking forward to it.",
+        "Yes. I will let you know when it is ready."
+      ]
+    },
+    "SSW-S24": {
+      "title": "Asking where the hand towels are",
+      "goal": "Ask a colleague where the items you need to prepare are kept.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. This is ordinary preparation before a meal. The items have been confirmed as available for this meal.",
+      "check": "Match each item with the right location. Long sentences are not needed.",
+      "lines": [
+        "Where are the hand towels and cups?",
+        "The hand towels are on the shelf, and the cups are on the counter.",
+        "The hand towels are on the shelf, and the cups are on the counter, right?",
+        "Yes, that is correct."
+      ]
+    },
+    "SSW-S25": {
+      "title": "Asking about a drink preference",
+      "goal": "Ask the person to choose between drinks that have been confirmed as available.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The facility has checked the individual plan and confirmed that both water and tea can be offered in this scene.",
+      "check": "Confirm the person's choice. Language practice is not an assessment of food or drink safety.",
+      "lines": [
+        "Would you like tea or water?",
+        "Tea, please.",
+        "Tea. I will get it ready.",
+        "Thank you."
+      ]
+    },
+    "SSW-S26": {
+      "title": "Asking about drink temperature",
+      "goal": "Before serving a drink, ask what temperature the person prefers.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The facility has confirmed the temperature range that can be offered. The procedure for checking the temperature is outside this lesson.",
+      "check": "Understand the temperature preference. The word \"warm\" does not guarantee that the actual temperature is safe.",
+      "lines": [
+        "Would you prefer your tea warm?",
+        "Please let it cool a little.",
+        "I will let it cool a little before I bring it.",
+        "Yes, please."
+      ]
+    },
+    "SSW-S27": {
+      "title": "Taking a break during a meal",
+      "goal": "When the person says the pace is too fast, respond and ask whether they want a break.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The person has a confirmed meal support plan. This is not instruction in feeding or swallowing techniques.",
+      "check": "Respond to \"fast\" and ask about a break. Do not urge the person to eat more or continue.",
+      "lines": [
+        "It is a little too fast.",
+        "I will slow down. Would you like a short break?",
+        "Yes, I would like a short break.",
+        "I understand. Let us take a short break."
+      ]
+    },
+    "SSW-S28": {
+      "title": "Not wanting to eat right now",
+      "goal": "When the person declines food, first accept what they are telling you.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. This practices communicating the person's wishes. Further checks and reporting follow the facility's plan; no nutrition or treatment decisions are made.",
+      "check": "First acknowledge the refusal. Do not demand a reason or put pressure on the person.",
+      "lines": [
+        "Would you like to eat?",
+        "I do not want to eat right now.",
+        "You do not want to eat right now. I understand.",
+        "Yes, not right now."
+      ]
+    },
+    "SSW-S29": {
+      "title": "Asking about brushing teeth",
+      "goal": "Ask what the person wants before starting mouth care.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The individual mouth-care support plan has been confirmed. This is not instruction in cleaning techniques or oral treatment.",
+      "check": "Acknowledge the person's wish to do it themselves. Do not take over straight away.",
+      "lines": [
+        "You have finished your meal. Would you like to brush your teeth?",
+        "Yes, I would like to brush them myself.",
+        "You would like to brush them yourself. I will get things ready.",
+        "Yes, please."
+      ]
+    },
+    "SSW-S30": {
+      "title": "Preparing a toothbrush",
+      "goal": "Before preparing mouth-care items, ask a colleague who they belong to and where they are.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. These are personal items confirmed by the facility. This lesson only practices asking questions, not using the items.",
+      "check": "Check whose personal items they are. Do not guess from their appearance.",
+      "lines": [
+        "Where are Yamada-san's toothbrush and cup?",
+        "They are in the basket with the name on it.",
+        "The basket with the name on it. I will check.",
+        "Yes, please check the name."
+      ]
+    },
+    "SSW-S31": {
+      "title": "Where dentures are kept",
+      "goal": "Ask a colleague about the storage place that has already been assigned.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. Do not pick up, put in or remove dentures. Only confirm the place assigned by the facility.",
+      "check": "Check only whose dentures they are and where they are kept. Handling dentures is outside this practice.",
+      "lines": [
+        "Where should Yamada-san's dentures be kept?",
+        "They go in the case with the name on it.",
+        "The case with Yamada-san's name on it, right?",
+        "Yes. The place is here."
+      ]
+    },
+    "SSW-S32": {
+      "title": "Asking before wiping a face",
+      "goal": "Explain what you intend to do and ask permission before touching the person's face.",
+      "context": "Fictional facility and people. The facility has confirmed that the items, timing and support in this scene follow the individual support plan. The towel and the form of support have been confirmed under the individual plan. This is not instruction in cleaning techniques.",
+      "check": "Get permission first, then explain the next step. Do not treat silence as permission.",
+      "lines": [
+        "May I wipe your face with a towel?",
+        "Yes, please.",
+        "All right, I will wipe your face now.",
+        "Thank you."
+      ]
+    },
+    "SSW-S33": {
+      "title": "Ask whether someone wants to use the toilet",
+      "goal": "Use a short, private question to check whether the resident wants to use the toilet.",
+      "context": "Speak quietly in the resident's room. The facility has confirmed that toileting support can be provided under the person's care plan. Practise checking their wishes only.",
+      "check": "Acknowledge what the person wants, then ask whether they need help. Do not ask loudly in a public area.",
+      "lines": [
+        "I'll ask quietly. Would you like to go to the toilet?",
+        "Yes. I think I'd like to go soon.",
+        "You'd like to go now. Would you like some help?",
+        "Yes, please."
+      ]
+    },
+    "SSW-S34": {
+      "title": "Ask why someone used the call bell",
+      "goal": "When you answer a call, first ask what the resident needs.",
+      "context": "You have arrived in the resident's room but do not yet know why they used the call bell. Ask what they need without guessing.",
+      "check": "Repeat the need the person actually stated. Do not add pain, incontinence, or another reason that they did not mention.",
+      "lines": [
+        "Thank you for waiting. What is the matter?",
+        "I'd like to go to the toilet.",
+        "You'd like to go to the toilet.",
+        "Yes. Please help me."
+      ]
+    },
+    "SSW-S35": {
+      "title": "Check which part needs help",
+      "goal": "Understand what the person can do themselves and check which parts they want help with.",
+      "context": "The facility has already decided the method and scope of support. The resident wants to do some parts of dressing themselves. This scene does not teach a care technique.",
+      "check": "Confirm the specific help requested. Do not take over everything the person can do themselves.",
+      "lines": [
+        "Which part would you like help with?",
+        "Please help me pull up my trousers.",
+        "You'd like help pulling up your trousers. I understand.",
+        "I can do the rest myself."
+      ]
+    },
+    "SSW-S36": {
+      "title": "Ask before closing the privacy curtain",
+      "goal": "Ask whether to close the curtain before helping someone change soiled clothes.",
+      "context": "The resident says their clothes are soiled and wants to change. The facility has confirmed that dressing support can be provided. First discuss privacy.",
+      "check": "Ask about privacy first. Do not blame the person or describe their soiled clothes in front of others.",
+      "lines": [
+        "My clothes are soiled. I'd like to change.",
+        "May I close the curtain first?",
+        "Yes. Please make sure others cannot see me.",
+        "I understand. I'll close it now."
+      ]
+    },
+    "SSW-S37": {
+      "title": "When someone does not want a bath",
+      "goal": "Use a short response to accept that the person does not want a bath now.",
+      "context": "The facility has confirmed the available bathing arrangements. Whether and when bathing takes place still depends on the person's wishes and the facility's procedures. Do not practise forcing someone to agree.",
+      "check": "Acknowledge the refusal. Do not demand a reason or treat taking a bath as the only acceptable choice.",
+      "lines": [
+        "It's bath time. Would you like to have a bath now?",
+        "I don't want to have a bath now.",
+        "I understand. You don't want a bath now.",
+        "That's right. I'd like to rest for a little while."
+      ]
+    },
+    "SSW-S38": {
+      "title": "Ask how the water temperature feels",
+      "goal": "Understand whether the water feels hot or cold and respond briefly.",
+      "context": "The actual water temperature and bathing conditions have already been checked under the facility's procedures. Practise asking how it feels and responding, without giving temperature values or adjustment instructions.",
+      "check": "Respond to the feeling the person actually reports. Do not guess the temperature or treat these lines as instructions for bathing.",
+      "lines": [
+        "How does the water temperature feel?",
+        "It's a little hot.",
+        "It feels hot. I'll check.",
+        "Yes, please."
+      ]
+    },
+    "SSW-S39": {
+      "title": "Ask before washing someone's hair",
+      "goal": "Ask for consent in a short question before starting.",
+      "context": "The resident has asked for their hair to be washed, and the facility has confirmed that this support can be provided. This scene does not show how to wash hair.",
+      "check": "Even when the person has requested help, check whether they are ready to start. Complicated honorific language is not required.",
+      "lines": [
+        "Could you wash my hair too?",
+        "Yes. May I start washing it now?",
+        "Yes, please.",
+        "Then I'll start now."
+      ]
+    },
+    "SSW-S40": {
+      "title": "Ask before wiping someone's body",
+      "goal": "Use a simple question to check consent before wiping the person's body.",
+      "context": "The resident has asked for help washing with a towel, and the facility has confirmed that warm-towel support can be provided. This scene does not teach the method.",
+      "check": "Ask and respect the person's wishes. Do not turn the example into instructions about body parts or the order of care tasks.",
+      "lines": [
+        "I'd like you to wipe my body today.",
+        "May I wipe your body with a warm towel?",
+        "Yes. That would be good.",
+        "I understand. I'll get things ready."
+      ]
+    },
+    "SSW-S41": {
+      "title": "Check where someone wants to go",
+      "goal": "Repeat the destination the person has chosen.",
+      "context": "The facility has already confirmed the appropriate mobility support. Check the destination and whether the person wants to leave now. Do not teach moving or lifting techniques.",
+      "check": "Do not choose the destination for the person. Confirm the dining room because that is the destination they named.",
+      "lines": [
+        "Where would you like to go?",
+        "I'd like to go to the dining room.",
+        "The dining room. Would you like to go now?",
+        "Yes, please."
+      ]
+    },
+    "SSW-S42": {
+      "title": "Speak before starting to move",
+      "goal": "Briefly explain that movement will start and check whether the person is ready.",
+      "context": "The person's mobility plan, support method, and checks before setting off have already been confirmed under the facility's procedures. Practise speaking before moving only.",
+      "check": "Explain and check before starting. Silence does not mean consent. This scene does not assess or teach wheelchair operation.",
+      "lines": [
+        "It's time to go to the dining room in your wheelchair.",
+        "Yes, I understand.",
+        "We'll start moving now. Are you ready?",
+        "Yes, I'm ready."
+      ]
+    },
+    "SSW-S43": {
+      "title": "When someone wants to rest",
+      "goal": "Briefly acknowledge and accept the person's wish to rest.",
+      "context": "The facility has confirmed the mobility plan and available places to rest. Practise communication only, without giving walking or physical-support instructions.",
+      "check": "Do not hurry someone who asks to rest. Language practice does not replace the facility's arrangements for safe movement.",
+      "lines": [
+        "Is this pace all right for you?",
+        "I'd like to rest for a little while.",
+        "I understand. Let's rest for a while.",
+        "Thank you."
+      ]
+    },
+    "SSW-S44": {
+      "title": "Confirm roles and the spoken signal",
+      "goal": "Before working together, agree who will give the spoken signal and ask to confirm each person's role.",
+      "context": "The facility has assigned two staff members to provide support together. They have received separate training on the care procedure. This dialogue does not teach physical techniques.",
+      "check": "Clearly agree who gives the signal. Do not add instructions about lifting, turning, or standing.",
+      "lines": [
+        "Which of us will give the signal?",
+        "I'll give the spoken signal. Let's confirm our roles first.",
+        "Yes. Let's check first.",
+        "Let's start after we finish checking."
+      ]
+    },
+    "SSW-S45": {
+      "title": "When someone says the room is cold",
+      "goal": "Acknowledge the person's feeling and ask whether they would like the room adjusted.",
+      "context": "The facility has set the permitted range of room adjustments. This scene does not discuss body temperature or treatment.",
+      "check": "Check the person's wishes based on what they actually say. Do not infer an illness from feeling cold.",
+      "lines": [
+        "This room is a little cold.",
+        "You feel cold. Shall I make it a little warmer?",
+        "Yes, please.",
+        "I understand. I'll check."
+      ]
+    },
+    "SSW-S46": {
+      "title": "Ask about the curtains",
+      "goal": "Understand that the person wants less light, then ask whether to close the curtains.",
+      "context": "It is daytime, and most of the room's light comes from outside. The facility allows the curtains to be adjusted to the resident's wishes. Practise checking their preference only.",
+      "check": "First check the light level the person wants. Do not change the room just for the staff's convenience.",
+      "lines": [
+        "Is this amount of light all right?",
+        "I'd like it a little darker.",
+        "May I close the curtains a little?",
+        "Yes, please."
+      ]
+    },
+    "SSW-S47": {
+      "title": "Look for glasses together",
+      "goal": "When an item's location is unknown, offer to check together and ask for a clue.",
+      "context": "The resident cannot find their glasses. You have not seen where they are. Do not invent a location.",
+      "check": "Do not say where the glasses are before checking. Offer to look together first.",
+      "lines": [
+        "Where are my glasses?",
+        "Let's check together. When did you use them?",
+        "I put them on the desk a little while ago.",
+        "On the desk. Let's look together."
+      ]
+    },
+    "SSW-S48": {
+      "title": "Ask before tidying up",
+      "goal": "Repeat which item the person wants left where it is.",
+      "context": "The facility allows help with tidying the desk. The resident can decide what happens to their belongings. The staff member does not read the letter.",
+      "check": "Accurately acknowledge the request to leave something alone. Do not throw away or open the letter without permission.",
+      "lines": [
+        "May I tidy up your desk?",
+        "Please leave this letter as it is.",
+        "I'll leave the letter where it is.",
+        "Yes, please."
+      ]
+    },
+    "SSW-S49": {
+      "title": "Ask what someone enjoys",
+      "goal": "Ask about the person's interests and respond in simple language.",
+      "context": "This is a relaxed daytime conversation. The person does not have to join an activity.",
+      "check": "Respond to the person's interest. Do not use childish praise or require a complicated explanation.",
+      "lines": [
+        "What do you enjoy doing?",
+        "I like listening to songs.",
+        "You like listening to songs.",
+        "Yes. I like old songs."
+      ]
+    },
+    "SSW-S50": {
+      "title": "Invite someone to an activity",
+      "goal": "Explain the confirmed location and let the person choose whether to join.",
+      "context": "The facility has confirmed an afternoon singing activity in the dining room. Taking part is the resident's choice. Do not promise arrangements that have not been confirmed.",
+      "check": "Give only the confirmed location. Ask whether the person wants to join rather than ordering them to attend.",
+      "lines": [
+        "There's a singing activity this afternoon. Would you like to join?",
+        "Where will it be?",
+        "In the dining room. Shall we go together?",
+        "Yes. I'd like to go."
+      ]
+    },
+    "SSW-S51": {
+      "title": "When someone does not want to join",
+      "goal": "Calmly accept a refusal and ask how the person would like to spend their time.",
+      "context": "The resident may choose not to join this activity. The facility has confirmed the available arrangements for resting in their room. Do not practise forcing them to attend.",
+      "check": "Accept that the person can say no. Do not say they must attend because everyone else is going.",
+      "lines": [
+        "Would you like to join the exercises today?",
+        "I don't want to go today.",
+        "I understand. Would you like to stay in your room for now?",
+        "Yes. I'd like to rest in my room."
+      ]
+    },
+    "SSW-S52": {
+      "title": "When someone wants to call their family",
+      "goal": "Acknowledge the wish to contact family and explain that you will check the arrangements.",
+      "context": "The resident wants to contact their family. The time and the facility's telephone arrangements still need to be checked. Do not enter real phone numbers or family details.",
+      "check": "Accept the request and say you will check any unconfirmed time. Do not promise an immediate connection or enter a real phone number.",
+      "lines": [
+        "I'd like to call my family.",
+        "You'd like to call your family. I'll check.",
+        "Please do.",
+        "Let's check together what time you can call."
+      ]
+    },
+    "SSW-S53": {
+      "title": "Answer the same question again",
+      "goal": "Give a simple, clear answer when the person asks again.",
+      "context": "Today's lunch time has been confirmed as twelve o'clock. Practise repeating information without judging the resident's cognitive state.",
+      "check": "Repeat the confirmed time. Do not scold the person by saying you already told them.",
+      "lines": [
+        "What time is lunch?",
+        "At twelve o'clock.",
+        "What time did you say?",
+        "Lunch is at twelve o'clock."
+      ]
+    },
+    "SSW-S54": {
+      "title": "Explain the place and your role",
+      "goal": "Explain your staff role in a short sentence.",
+      "context": "You are both in the facility's dining room. The resident asks where they are and who you are. Do not assume why they are asking.",
+      "check": "Simply state your actual role. Do not invent a previous meeting or a family relationship with the resident.",
+      "lines": [
+        "Where is this?",
+        "This is the dining room at this facility.",
+        "May I ask who you are?",
+        "I'm a care staff member. I'm here to help."
+      ]
+    },
+    "SSW-S55": {
+      "title": "Acknowledge the wish to go home",
+      "goal": "First acknowledge the person's wish to go home in a short response.",
+      "context": "The resident says they want to go home. You do not yet know the reason or what arrangements are possible. Do not promise transport or make a decision about going out.",
+      "check": "First respond to the wish the person has expressed. Do not guess their reason or invent arrangements for going home.",
+      "lines": [
+        "I'd like to go home.",
+        "You'd like to go home.",
+        "I'm worried about things at home.",
+        "You're worried. May I listen to what's on your mind?"
+      ]
+    },
+    "SSW-S56": {
+      "title": "When someone worries about a missing item",
+      "goal": "Acknowledge the worry and offer to check together without saying the item was stolen.",
+      "context": "The resident cannot find their wallet. You do not yet know why it is missing or where it is. This is a fictional conversation.",
+      "check": "Do not confirm or deny an unverified theft. Acknowledge the worry and offer to check together first.",
+      "lines": [
+        "My wallet is missing. Did someone take it?",
+        "You're worried because you can't find it.",
+        "Yes. It's always here.",
+        "Let's check together."
+      ]
+    },
+    "SSW-S57": {
+      "title": "Briefly report how much someone ate",
+      "goal": "Use simple amounts to report how much food you actually saw the person eat.",
+      "context": "You observed that the fictional resident Yamada ate half of the rice and all of the side dishes at this meal. Practise reporting only, without making food plans or clinical judgments.",
+      "check": "Report only the amounts that have been confirmed. Do not infer a cause or illness from how much the person ate.",
+      "lines": [
+        "How much lunch did Yamada eat?",
+        "They ate half of the rice.",
+        "What about the side dishes?",
+        "They ate all of the side dishes."
+      ]
+    },
+    "SSW-S58": {
+      "title": "Report the person's own words about pain",
+      "goal": "Quote what the resident said about where it hurts.",
+      "context": "The resident clearly said their right knee hurts. Report those words to the nurse without making a diagnosis or suggesting treatment.",
+      "check": "Keep the source clear by saying the person said it. Do not turn their words into a confirmed diagnosis. Report left or right only as stated.",
+      "lines": [
+        "What is the matter?",
+        "The resident says, 'My right knee hurts.'",
+        "I understand. I'll check.",
+        "Please do."
+      ]
+    },
+    "SSW-S59": {
+      "title": "Report only the time you have confirmed",
+      "goal": "Clearly say when a time has not yet been checked.",
+      "context": "It has been confirmed that the resident went to the toilet at ten o'clock. Any earlier time is unconfirmed. Practise record-related communication without guessing times or how often they went.",
+      "check": "If you do not know, say it has not been checked. Do not invent a time. The records in this dialogue are fictional.",
+      "lines": [
+        "Were you able to check what time they went to the toilet?",
+        "I've confirmed that they went at ten o'clock.",
+        "What about before that?",
+        "I haven't been able to confirm the earlier time."
+      ]
+    },
+    "SSW-S60": {
+      "title": "Report what you see and call for help",
+      "goal": "Briefly report the observed situation and location, then request help immediately.",
+      "context": "You unexpectedly see a resident sitting on the corridor floor in front of the dining room. You have called the nurse using the facility's emergency contact procedure and are connected. You did not see a fall. Practise an immediate report, without arranging a wait or teaching moving techniques or diagnosis.",
+      "check": "Ask for help immediately and state what you saw and where. Do not turn seeing someone on the floor into a claim that you saw them fall. These practice lines do not replace the facility's emergency procedures.",
+      "lines": [
+        "Hello. What has happened?",
+        "A resident is sitting on the corridor floor in front of the dining room. Please come immediately.",
+        "In front of the dining room. I'm coming right away.",
+        "Yes, please."
+      ]
+    },
+    "SSW-S61": {
+      "title": "Ask for help with an unfamiliar task",
+      "goal": "Ask for an explanation in a short sentence instead of pretending you know what to do.",
+      "context": "A colleague asks you to prepare some items, but you do not yet understand how. Ask for help before trying the task alone.",
+      "check": "Say that you do not understand and ask for an explanation. Simple polite language is enough; complicated honorifics are not required.",
+      "lines": [
+        "Please do this preparation.",
+        "I don't know how to do it. Please show me.",
+        "Of course. Let's check together.",
+        "Please do."
+      ]
+    },
+    "SSW-S62": {
+      "title": "Report that a task is finished",
+      "goal": "Briefly report preparation that you have actually completed.",
+      "context": "Fresh towels have been prepared and placed on the shelf in the changing room. The facility assigned this preparation task. Practise reporting completion only.",
+      "check": "Only say a task is finished when you have actually completed it. Give the location according to confirmed facts.",
+      "lines": [
+        "Have you finished getting the towels ready?",
+        "Yes. I've prepared fresh towels.",
+        "Where did you put them?",
+        "I put them on the shelf in the changing room."
+      ]
+    },
+    "SSW-S63": {
+      "title": "Explain a delay and ask for help",
+      "goal": "Explain the delay in simple language and ask for support.",
+      "context": "You are preparing items assigned by the facility and expect not to finish at the planned time. Practise communication only. This does not mean leaving a person who needs care.",
+      "check": "Explain the current situation and ask for help. Do not invent a completion time or hide the delay.",
+      "lines": [
+        "Do you think you'll finish at the planned time?",
+        "I'm a little behind. Could you help me?",
+        "Yes. I'll come over now.",
+        "Thank you. I'd appreciate your help."
+      ]
+    },
+    "SSW-S64": {
+      "title": "Clarify one point during handover",
+      "goal": "Ask one specific question about the part you did not understand.",
+      "context": "A senior colleague says to do the usual preparation, but you do not know which items they mean. The time, after the meal, is already known. Ask about the missing detail.",
+      "check": "Ask specifically what to prepare. Do not guess medicines, food, or care tasks. Repeat the answer after the colleague explains.",
+      "lines": [
+        "Please do the usual preparation after the meal.",
+        "Please tell me what I should prepare.",
+        "The songbooks for the afternoon activity.",
+        "The songbooks. I understand."
+      ]
+    },
+    "SSW-S65": {
+      "title": "Inviting someone to wash their hands before a meal",
+      "goal": "Use a short sentence to invite someone to wash their hands.",
+      "context": "The meal is being prepared according to the facility's arrangements. Practice a routine invitation before eating. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Invite the person calmly. Do not add a long list of handwashing steps to this sentence.",
+      "lines": [
+        "Is it time to eat already?",
+        "Yes. Would you like to wash your hands before the meal?",
+        "That's a good idea. I will.",
+        "I can help if you need me to."
+      ]
+    },
+    "SSW-S66": {
+      "title": "Asking where the soap and towels are",
+      "goal": "Ask a colleague exactly where the items are.",
+      "context": "A colleague asks you to prepare the handwashing supplies used at the facility. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask where the requested items are. After the answer, briefly repeat the location to confirm.",
+      "lines": [
+        "Please get things ready for handwashing.",
+        "Where are the soap and towels?",
+        "They are beside the washbasin.",
+        "Beside the washbasin, right? Understood."
+      ]
+    },
+    "SSW-S67": {
+      "title": "Asking what to do with used gloves",
+      "goal": "Say what you do not understand and ask a colleague to explain.",
+      "context": "Before dealing with used gloves, you are unsure of the facility's rules. This example does not teach how to take gloves off or dispose of them. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Say clearly that you do not know and ask for help. Do not guess the facility's rules.",
+      "lines": [
+        "What do you do with used gloves?",
+        "I don't know what to do with them. Please explain.",
+        "Let's check together.",
+        "Yes, please."
+      ]
+    },
+    "SSW-S68": {
+      "title": "Passing on what someone said about a cough",
+      "goal": "Make clear that the information comes from what the person said.",
+      "context": "A resident has just said they have a cough. Pass this on to the nurse without deciding the cause or naming an illness. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Say that this is the person's own report. Do not turn a report of a cough into a diagnosis.",
+      "lines": [
+        "Has something happened?",
+        "Sato says, 'I have a cough.'",
+        "Understood. I'll go and check.",
+        "Thank you. Sato is in their room."
+      ]
+    },
+    "SSW-S69": {
+      "title": "Asking before replacing a wet towel",
+      "goal": "Ask for permission before replacing a personal item.",
+      "context": "The resident says their towel is wet. A clean replacement towel is available at the facility. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask first, then explain that you will prepare the replacement. Respect the person's choice.",
+      "lines": [
+        "My towel has got wet.",
+        "May I replace it with a fresh towel?",
+        "Yes, please.",
+        "Understood. I'll get one ready."
+      ]
+    },
+    "SSW-S70": {
+      "title": "Explaining before changing a sheet",
+      "goal": "Briefly explain what you want to change and ask if the time is suitable.",
+      "context": "The sheet needs changing. The facility has already arranged the timing and staff. This example does not teach how to get up or move someone. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Explain that you want to change the sheet. Accept the person's request to do it later.",
+      "lines": [
+        "What are you going to do?",
+        "I'd like to change the sheet. Is now a good time?",
+        "Please do it a little later.",
+        "Understood. I'll check the time."
+      ]
+    },
+    "SSW-S71": {
+      "title": "Asking which clothes someone wants washed",
+      "goal": "Confirm which clothes the person wants washed.",
+      "context": "The facility has confirmed that these clothes can be washed. You are only checking which item the person wants to send for washing. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask the person to point out the clothes. Do not simply take all their clothes away.",
+      "lines": [
+        "I'd like some laundry done.",
+        "Which clothes would you like washed?",
+        "This shirt, please.",
+        "This shirt, right? Understood."
+      ]
+    },
+    "SSW-S72": {
+      "title": "Checking where a clothing name label is",
+      "goal": "Ask a colleague where the name label is.",
+      "context": "You are sorting clothes for the fictional resident Sato. You have not checked the labels yet. Do not guess who owns the clothes from their appearance. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask where the label is, then check it. Do not guess who owns the clothes.",
+      "lines": [
+        "Are you checking Sato's clothes?",
+        "Where is the name label?",
+        "It's inside the collar.",
+        "Inside the collar, right? I'll check."
+      ]
+    },
+    "SSW-S73": {
+      "title": "Speaking before taking someone's temperature",
+      "goal": "Explain what you are about to do and ask for permission.",
+      "context": "The facility has confirmed the temperature check and who is responsible. This example does not teach measurement methods or how to interpret a reading. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Explain first and ask for permission. This practice does not teach how to judge a temperature reading.",
+      "lines": [
+        "What are you going to do next?",
+        "I'm going to take your temperature. May I?",
+        "Yes, please.",
+        "Thank you. I'll get ready."
+      ]
+    },
+    "SSW-S74": {
+      "title": "Speaking before checking someone's blood pressure",
+      "goal": "Use one short question to ask for the person's agreement.",
+      "context": "The facility has confirmed the blood pressure check and who is responsible. This example does not teach how to use the device, positioning, or medical limits. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask for permission. You do not need to recite device instructions or medical explanations.",
+      "lines": [
+        "What are you going to do this time?",
+        "I'm going to check your blood pressure. May I?",
+        "Yes, I understand.",
+        "Thank you. I'll get ready."
+      ]
+    },
+    "SSW-S75": {
+      "title": "Asking the nurse what time to do a check",
+      "goal": "Ask for the time that you have not been told.",
+      "context": "The nurse has asked you to check a temperature as arranged by the facility, but has not yet said what time. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask what time the task is scheduled. Do not decide how often to measure the temperature yourself.",
+      "lines": [
+        "Please check the temperature.",
+        "What time should I check it?",
+        "At ten o'clock, please.",
+        "Ten o'clock, right? Understood."
+      ]
+    },
+    "SSW-S76": {
+      "title": "Promptly passing on a report of dizziness",
+      "goal": "Use the person's own words and clearly ask the nurse to come.",
+      "context": "The resident has just said they feel dizzy. Ask the nurse for help promptly. Do not diagnose or give instructions about standing up, drinking, or treatment. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Report the person's words about dizziness and ask for help. Do not add a cause or treatment advice.",
+      "lines": [
+        "What's happened?",
+        "Sato says they feel dizzy. Please come.",
+        "I'm coming now. Where are they?",
+        "In the dining room. Thank you."
+      ]
+    },
+    "SSW-S77": {
+      "title": "Checking medicine times with the nurse",
+      "goal": "Ask the nurse to confirm arrangements involving medicine.",
+      "context": "You are unsure of the scheduled medicine time and ask the nurse. This example does not cover medicine names, doses, or giving medicine on your own. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Confirm the arrangement. Do not decide medicine times from memory or a guess.",
+      "lines": [
+        "What would you like to check?",
+        "Please tell me the time for Sato's medicine.",
+        "I'll check the schedule.",
+        "Thank you."
+      ]
+    },
+    "SSW-S78": {
+      "title": "Acknowledging that someone does not want medicine",
+      "goal": "Repeat the person's wish and say that you will tell the nurse.",
+      "context": "The resident says they do not want to take medicine. This example does not ask you to persuade them or decide to stop or change their medicine. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Acknowledge and pass on the person's wish. Do not force them to take medicine or promise to stop it yourself.",
+      "lines": [
+        "I don't want to take my medicine now.",
+        "You don't want to take it now, right? I'll tell the nurse.",
+        "I want someone to listen to me.",
+        "Understood. I'll call the nurse."
+      ]
+    },
+    "SSW-S79": {
+      "title": "Reporting medicine left on a table",
+      "goal": "Report only the item and location that you can see.",
+      "context": "You can see medicine left on the table. You do not know whether it was taken earlier or what happened. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Only report that medicine is left on the table. Do not conclude that a dose was missed, spat out, or taken incorrectly.",
+      "lines": [
+        "Have you noticed anything?",
+        "There is medicine left on the table. Please check.",
+        "I'll check now.",
+        "Thank you."
+      ]
+    },
+    "SSW-S80": {
+      "title": "Saying that medicine instructions are unclear",
+      "goal": "Say clearly that you do not understand and ask for an explanation.",
+      "context": "You receive an instruction about medicine but do not understand its meaning. This example gives no instructions for giving or taking medicine. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask about the part you do not understand. Do not carry out an instruction while its meaning is unclear.",
+      "lines": [
+        "Is there anything you don't understand?",
+        "I don't understand the medicine instructions. Please explain.",
+        "Which part?",
+        "Please tell me what this word means."
+      ]
+    },
+    "SSW-S81": {
+      "title": "Giving a confirmed time for a hospital visit",
+      "goal": "Give a confirmed time in a short sentence.",
+      "context": "The facility has confirmed a hospital visit scheduled for ten today. Pass on that arrangement without promising that the schedule cannot change. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Only give the confirmed time. Keep the meaning that it is scheduled, rather than guaranteed.",
+      "lines": [
+        "What time is the hospital visit?",
+        "Today's hospital visit is scheduled for ten o'clock.",
+        "Ten o'clock, right?",
+        "Yes. I'll tell you if the schedule changes."
+      ]
+    },
+    "SSW-S82": {
+      "title": "Asking the time and place for rehabilitation",
+      "goal": "Ask about the schedule, then briefly repeat it to confirm.",
+      "context": "A colleague asks you to get ready for a rehabilitation activity arranged by the facility. This example does not cover exercises or deciding whether an activity is suitable. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask for both the time and the place. Do not invent the location yourself.",
+      "lines": [
+        "Please get ready for rehabilitation.",
+        "What time does it start, and where?",
+        "It starts at two o'clock in the room on floor 1.",
+        "Two o'clock, floor 1, right? Understood."
+      ]
+    },
+    "SSW-S83": {
+      "title": "Asking what someone wants to take on an outing",
+      "goal": "Check what the person wants to take.",
+      "context": "The facility has confirmed the outing arrangements. You are preparing personal items that can be taken along. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask what the person wants, then confirm the item. Do not choose for them.",
+      "lines": [
+        "I'm getting ready to go out.",
+        "Is there anything you would like to take with you?",
+        "I'd like to take my hat.",
+        "Your hat, right? I'll get it ready here."
+      ]
+    },
+    "SSW-S84": {
+      "title": "Asking whether someone wants to rest after returning",
+      "goal": "Check whether the person wants to rest.",
+      "context": "The resident has returned from an outing arranged by the facility. This practice only asks whether they would like to rest. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask what the person wants. Do not decide their next activity just because they have returned from an outing.",
+      "lines": [
+        "I'm back.",
+        "Welcome back. Would you like a short rest?",
+        "Yes, I'd like to rest.",
+        "Understood. Please call me if you need anything."
+      ]
+    },
+    "SSW-S85": {
+      "title": "Asking a visitor's name and reason for visiting",
+      "goal": "Use short, polite questions to confirm the visitor's details.",
+      "context": "You are meeting a visitor for the first time. Yamada and Sato are fictional names. Do not disclose a resident's details before the visitor's identity is checked. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "First confirm the name and reason for visiting, then contact the responsible staff member according to the facility's rules.",
+      "lines": [
+        "Hello. This is my first visit.",
+        "Please tell me your name and the reason for your visit.",
+        "I'm Yamada. I've come to visit Sato.",
+        "I'll check with the staff member in charge. Please wait."
+      ]
+    },
+    "SSW-S86": {
+      "title": "Referring a visitor's question to the staff member in charge",
+      "goal": "Do not guess an answer. Say that you will contact the responsible staff member.",
+      "context": "A visitor asks about something you do not know. Their identity and permission to receive information have not been confirmed. This example does not share health details. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Do not invent health information or disclose details without permission. Refer the question to the responsible staff member.",
+      "lines": [
+        "How is Sato feeling?",
+        "I don't know. I'll check with the staff member in charge.",
+        "I'd like to ask the person in charge.",
+        "Understood. I'll call the staff member in charge."
+      ]
+    },
+    "SSW-S87": {
+      "title": "Checking a telephone message briefly",
+      "goal": "Ask who left the message and what the message was.",
+      "context": "A colleague passes on a fictional telephone message. It contains no real phone number or personal contact details. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Check who the message came from and what was said. Do not add anything you did not hear when passing it on.",
+      "lines": [
+        "Could you pass on the message from the call just now?",
+        "Who was it from, and what was the message?",
+        "It was from Yamada. They said they would call later.",
+        "Yamada said they would call later, right?"
+      ]
+    },
+    "SSW-S88": {
+      "title": "Asking what someone wants to tell their family",
+      "goal": "Check whom the person wants to contact and what they want to say.",
+      "context": "The resident wants to contact family. Check the contact method and timing according to the facility's rules. Do not promise that family will visit. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Confirm the person's wish. Do not turn wanting to see family into a confirmed visit.",
+      "lines": [
+        "I'd like to contact my family.",
+        "Who would you like to contact, and what would you like to tell them?",
+        "I'd like to tell my daughter that I want to see her.",
+        "Understood. I'll check how we can contact her."
+      ]
+    },
+    "SSW-S89": {
+      "title": "Briefly explaining that an evacuation drill is starting",
+      "goal": "Make clear that this is a drill.",
+      "context": "The facility has scheduled an evacuation drill, and staff will guide people. This example does not teach real fire evacuation routes or how to carry someone. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Clearly say that it is a drill. Do not create the impression that a real emergency is happening.",
+      "lines": [
+        "What's planned for today?",
+        "An evacuation drill is about to start.",
+        "Is there a real fire?",
+        "No, it's a drill. The staff will guide you."
+      ]
+    },
+    "SSW-S90": {
+      "title": "Asking again where to meet for a drill",
+      "goal": "Ask a colleague to repeat a place name you did not hear clearly.",
+      "context": "This is a planned drill. You did not clearly hear the meeting place specified by the facility. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Only ask for the place you did not hear. Do not guess the route or meeting point.",
+      "lines": [
+        "Please meet in the lounge before the drill.",
+        "Please tell me the meeting place again.",
+        "It's the lounge.",
+        "The lounge, right? Understood."
+      ]
+    },
+    "SSW-S91": {
+      "title": "Asking a colleague to check items in a corridor",
+      "goal": "Say what you see and where it is, and ask a colleague to come.",
+      "context": "You see items in the corridor that need to be checked by the responsible staff member. Do not decide how to deal with them or move residents yourself. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Describe the items and their location, then directly ask for someone to check.",
+      "lines": [
+        "Has something happened?",
+        "There are some items in the corridor. Could you come?",
+        "I'm coming now. Whereabouts are they?",
+        "In front of the dining room."
+      ]
+    },
+    "SSW-S92": {
+      "title": "Reporting an unusual sound from a machine",
+      "goal": "Only describe what seems different and ask a colleague to check.",
+      "context": "A machine that is not being used makes a sound that is different from usual. The responsible staff member needs to check it. This example does not teach repairs or operation. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Describe the sound you hear. Do not diagnose a fault or suggest repairs yourself.",
+      "lines": [
+        "What's happened?",
+        "This machine is making a different sound from usual.",
+        "I'll check now.",
+        "Thank you. It's here."
+      ]
+    },
+    "SSW-S93": {
+      "title": "Asking where someone wants their glasses placed",
+      "goal": "Check where the person wants a personal item placed.",
+      "context": "The resident wants their glasses nearby. The facility has confirmed a suitable space where the glasses can be placed. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "First ask where the person wants the glasses. Do not decide for them.",
+      "lines": [
+        "I'd like to keep my glasses nearby.",
+        "Where would you like me to put your glasses?",
+        "On the table, please.",
+        "Understood. I'll put them here."
+      ]
+    },
+    "SSW-S94": {
+      "title": "Calling a staff member when a hearing aid does not help enough",
+      "goal": "Acknowledge that the person cannot hear clearly and say you will get someone to check.",
+      "context": "The resident says they cannot hear clearly even with a hearing aid. This example does not teach adjustment, fitting, or diagnosis. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Show that you have heard the person's difficulty and contact the responsible staff member. Do not adjust the hearing aid yourself.",
+      "lines": [
+        "Even with my hearing aid, it's hard to hear.",
+        "You're finding it hard to hear, right? I'll call the staff member in charge.",
+        "Yes, please.",
+        "Understood. I'll ask them to check."
+      ]
+    },
+    "SSW-S95": {
+      "title": "Checking who owns an item you found",
+      "goal": "Ask first when you do not know who owns an item.",
+      "context": "You have found a pair of glasses and do not yet know who owns them. Do not present unknown information as a confirmed fact. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Keep the owner unconfirmed when you do not know. Do not decide from the item's appearance.",
+      "lines": [
+        "What are you holding?",
+        "Whose glasses are these?",
+        "I don't know yet either.",
+        "Understood. I'll check with the staff member in charge."
+      ]
+    },
+    "SSW-S96": {
+      "title": "Asking whether someone can reach the call button",
+      "goal": "Check whether the person can reach an item where it has been placed.",
+      "context": "The call button has been placed according to the facility's arrangements. Ask whether the person can reach it. This example does not use the answer to independently assess mobility. This example practices communication only. For actual care, follow the facility's plan and the responsible staff member's instructions. All people and details are fictional.",
+      "check": "Ask whether the person can reach the button. Do not simply say that it is in place and leave.",
+      "lines": [
+        "Where is the call button?",
+        "It's here. Can you reach it?",
+        "Yes, I can reach it.",
+        "Please use this button to call when you need something."
+      ]
+    }
+  }
+}

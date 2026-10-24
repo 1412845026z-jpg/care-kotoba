@@ -48,6 +48,8 @@ jobs:
           python3 evals/source-confidence/validate.py
           python3 content/review/build.py --check
           python3 tools/ssw-basic/build.py --check
+          python3 tools/ssw-basic/check_locales.py
+          python3 -m unittest discover -s tools/ssw-basic -p 'test_check_locales.py' -v
           python3 -m unittest discover -s evals -p 'test_*.py' -v
       - name: Corepack from packageManager; verify portable mode
         run: |
