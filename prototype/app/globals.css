@@ -524,3 +524,30 @@ ruby rt{font-size:max(.55em,10px)}
 .radio-circle{width:16px;height:16px;border-color:var(--line-2);background:var(--paper)}
 .radio-circle i{width:8px;height:8px;background:var(--violet)}
 .scene-modal-title h2{color:var(--ink);font-weight:700}
+
+/* REVIEW-001｜ことばノートの「今日の復習」 */
+.review-card{display:flex;align-items:center;justify-content:space-between;gap:16px 20px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:22px 0 26px}
+.review-card h2{font-size:19px;color:var(--ink);margin-bottom:6px}
+.review-card p{font-size:14px;line-height:1.8;color:var(--ink-2)}
+.review-card p strong{font-family:var(--serif);font-size:20px;color:var(--ink);margin:0 2px}
+.review-card .review-note{font-size:12px;color:var(--muted);margin-top:4px}
+.review-session{display:block}
+.review-progress{display:flex;justify-content:space-between;gap:12px;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em;margin-bottom:12px}
+.review-cue small{display:block;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.review-cue-line{font-family:var(--serif);font-size:18px!important;line-height:1.65!important;color:var(--ink)!important;background:var(--bg);border-radius:10px;padding:12px 14px;margin:6px 0 10px}
+.review-question{font-size:14px;color:var(--ink-2)}
+.review-reveal{margin-top:16px;width:100%}
+.review-answer{margin-top:14px}
+.review-phrase{font-family:var(--serif);font-size:20px!important;line-height:1.7!important;color:#1f4a39!important;background:var(--mint-soft);border-radius:10px;padding:12px 14px}
+.review-reason{font-size:13px!important;color:var(--coral-ink)!important;background:var(--coral-soft);border-radius:10px;padding:10px 14px;margin-top:8px}
+.review-listen{margin-top:12px;min-height:40px;padding:8px 16px;font-size:13px}
+.review-ask{margin-top:16px;font-size:13px!important;font-weight:700;color:var(--ink)!important}
+.review-answers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.review-answers button{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:56px;padding:8px 6px;border:1px solid var(--line-2);border-radius:var(--radius);background:var(--paper);color:var(--ink)}
+.review-answers button:hover{border-color:var(--violet)}
+.review-answers b{font-size:15px;font-weight:700}
+.review-answers small{font-size:12px;color:var(--muted)}
+.review-done h2{font-size:19px}
+.review-card p{word-break:auto-phrase}
+.review-progress{align-items:center}.review-progress .text-button{margin-left:auto;min-height:32px;font-size:12px}
+.review-progress>span:nth-child(2){flex:1;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}

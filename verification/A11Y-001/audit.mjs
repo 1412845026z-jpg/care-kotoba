@@ -83,6 +83,11 @@ try {
   await gotoApp(p2, env.baseUrl);
   await nav(p2, 'ノート');
   await audit(p2, 'notes');
+  // REVIEW-001: the review session with the answer shown.
+  await p2.getByRole('button', { name: /復習をはじめる/ }).click();
+  await p2.getByRole('button', { name: '答えを見る' }).click();
+  await p2.locator('.review-answers').waitFor();
+  await audit(p2, 'review');
   await nav(p2, '学習記録');
   await audit(p2, 'progress');
   // DEAI-001: settings sheet, and the sample organisation screen where the sidebar exists (desktop).

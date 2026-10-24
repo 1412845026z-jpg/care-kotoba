@@ -6,3 +6,8 @@
 - #46通过并merge后再改#49 base为main；需要时同样仅整合共享状态，等待其当前完整CI通过再merge。当前未报告任何新合并成功。
 - 免费约束：不调用付费API、不充值、不部署、不开真实--yes、不安装impeccable钩子。真机及真实AI仍未验证。
 - 下一步：发布已解析状态的整合commit、检查CI日志/产物、按顺序合并并在本交接补实际SHA和证据。
+
+## 接续确认
+
+- #46 当前源9f346a6已通过CI40076990478（install/TypeScript/build/static/unit/mock浏览器与两尺寸A11Y硬门），于本轮以merge commit11949bd63aab075029d13736fe5d3c2fd20b1944进入main；测试合成提交e5adb4913e6d333cd8eda59ca4d6328e29db7700。原#52重复验证同一源的40077023304也通过，不混淆两PR的artifact。
+- #49 base已由claude/START-FLOW-001改main；69c36a4与当前main只有PROJECT_STATE冲突，保留main完整状态、将START-FLOW记merged并保留REVIEW-DEP的merged ba8568b。App、components、lib、tests原样继承Claude来源。下一步快进发布整合头并等待#49当前完整CI。
