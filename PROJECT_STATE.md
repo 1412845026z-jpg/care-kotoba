@@ -57,6 +57,8 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
+| REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | in_progress | `codex/REVIEW-DEP-001` | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；标准runner生成锁文件中 |
+| REVIEW-001 | 间隔复习交互与功能实现 | Claude | queued | 待REVIEW-DEP-001合并 | Codex本轮不改app/components/lib/tests |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | merged | [PR #5](https://github.com/1412845026z-jpg/care-kotoba/pull/5)，head `a6c6f58`；合并 `0420ff7` | ENV-003（Codex，@`3a3f1a9`）真实install/tsc/build/static、unit34/34、离线22/22、真实dev21通过1跳过；之后的 COOKIE-ENCODING-001 修复（`89d8ad2`）离线 static 0 错误、unit 37/37、e2e 22/22，PR CI run 39998125919 通过。真实AI/真机未验证 |
