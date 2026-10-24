@@ -7,7 +7,7 @@ import {ArrowLeft,ArrowRight,Bookmark,Check,ChevronRight,Languages,Square,Volume
 import {BasicCourse,BasicProgress,BasicScene,SPEAKER_JA} from '@/lib/basic-course';
 import {JaText} from './ruby';
 import {Modal,Support,Gloss} from './ui';
-import {pick,SAY,type Texts} from '@/lib/i18n';
+import {pick,SAY,isReviewed,type Texts} from '@/lib/i18n';
 import {loadMediaIndex,playableTurns,statusLabel,type MediaClip,type MediaIndex,type SceneMedia} from '@/lib/scene-media';
 import {useSceneAudio,type Playing} from './scene-audio';
 
@@ -28,7 +28,8 @@ export function BasicCourseView({course,progress,onProgress,locale,furigana,noti
   <section className="page-title"><h1 tabIndex={-1}>基礎の声かけ</h1><p>介護の仕事で毎日使う、短いやりとり。相手のことばを読んで、自分で言ってから答えを見ます。<Support locale={locale} t={SAY.basicIntro}/></p>
    <p className="basic-facts"><span>{course.topics.length} テーマ · {total} 場面</span><span>練習済み {doneCount}</span><span>AIを使わないので、料金はかかりません</span></p>
    <p className="basic-draft">架空の場面です。介護経験者と日本語教師による審稿の前の草稿です。<Support locale={locale} t={SAY.basicDraft}/></p>
-   {locale!=='ja'&&!pick(locale,Object.fromEntries(Object.keys(course.support).map(l=>[l,l])))&&<p className="basic-draft basic-nosupport"><Support locale={locale} t={SAY.basicNoSupport}/></p>}
+   {/* Which language the explanations are shown in (e.g. English for a Vietnamese learner), and whether they are drafts. */}
+   {locale!=='ja'&&(()=>{const shown=pick(locale,Object.fromEntries(Object.keys(course.support).map(l=>[l,l])));if(!shown)return <p className="basic-draft basic-nosupport"><Support locale={locale} t={SAY.basicNoSupport}/></p>;return isReviewed(course.support[shown.text]?.status)?null:<p className="basic-draft basic-trdraft"><Support locale={shown.text} t={SAY.basicTrDraft}/></p>;})()}
   </section>
   {!current?<section className="basic-topics" aria-label="テーマ">{course.topics.map(t=>{const list=scenesOf(t.id),n=list.filter(s=>done(s.id)).length;return <button key={t.id} className={'basic-topic'+(n===list.length?' is-done':'')} onClick={()=>setTopic(t.id)}><span className="basic-topic-name"><b>{t.titleJa}</b><Support locale={locale} t={t.title}/></span><span className="basic-topic-count">{n}/{list.length}</span><ChevronRight size={16}/></button>;})}</section>
   :<section className="basic-topic-detail" aria-labelledby="basic-topic-title">

@@ -94,6 +94,7 @@ export const SAY = {
   reviewNote: { zh: '（只记录在这台设备上，不打分。）', en: '(Kept on this device only. No scores.)', vi: '(Chỉ lưu trên máy này. Không chấm điểm.)', my: '(ဤဖုန်းတွင်သာ သိမ်းသည်။ အမှတ်မပေးပါ။)', id: '(Hanya disimpan di perangkat ini. Tanpa nilai.)' },
   basicIntro: { zh: '（每天工作中会用到的简短对话。先读对方的话，自己说出来，再看参考答案。）', en: '(Short everyday exchanges at work. Read the other person’s line, say yours, then check.)', vi: '(Những đoạn hội thoại ngắn dùng hằng ngày trong công việc. Đọc lời người kia, tự nói câu của mình, rồi xem đáp án tham khảo.)', id: '(Percakapan singkat yang dipakai setiap hari di tempat kerja. Baca ucapan lawan bicara, ucapkan bagian Anda, lalu lihat jawaban contoh.)' },
   basicDraft: { zh: '（虚构场景；尚未经介护经验者和日语教师审稿。）', en: '(Fictional scenes; drafts not yet reviewed by care professionals or Japanese teachers.)', vi: '(Tình huống hư cấu; bản nháp chưa được người có kinh nghiệm chăm sóc hay giáo viên tiếng Nhật kiểm tra.)', id: '(Situasi fiksi; draf belum diperiksa oleh tenaga perawat atau guru bahasa Jepang.)' },
+  basicTrDraft: { zh: '（这些说明是编辑草稿，尚未审稿。）', en: '(These explanations are drafts and have not been reviewed yet.)', vi: '(Phần giải thích này là bản nháp, chưa được kiểm tra.)', id: '(Penjelasan ini masih draf dan belum diperiksa.)' },
   basicNoSupport: { en: '(Explanations for this course are not yet available in your language. For now they are in Japanese only.)', vi: '(Khóa học này chưa có phần giải thích bằng tiếng Việt. Hiện tại chỉ có tiếng Nhật.)', id: '(Penjelasan kursus ini belum tersedia dalam bahasa Indonesia. Untuk sementara hanya dalam bahasa Jepang.)' },
   uiDraft: { en: '(Interface words in this language are drafts, not yet checked by native speakers.)', vi: '(Phần chữ giao diện bằng tiếng Việt là bản nháp, chưa được người bản ngữ kiểm tra.)', id: '(Teks antarmuka dalam bahasa Indonesia masih draf dan belum diperiksa penutur asli.)' },
   basicTurn: { zh: '（你会怎么说？先说出来，再看答案。）', en: '(What would you say? Say it aloud, then check.)', vi: '(Bạn sẽ nói thế nào? Hãy nói thành tiếng rồi xem đáp án.)', my: '(ဘယ်လိုပြောမလဲ။ အသံထွက်ပြောပြီးမှ အဖြေကြည့်ပါ။)', id: '(Apa yang akan Anda katakan? Ucapkan dulu, lalu lihat jawabannya.)' },
@@ -105,3 +106,6 @@ export type SayKey = keyof typeof SAY;
 
 /** AI explanations and translations are written in this language (server side). */
 export const languageName = (locale: string) => ({ zh: '简体中文', en: 'English', vi: 'Tiếng Việt', my: 'မြန်မာဘာသာ (Burmese)', id: 'Bahasa Indonesia' } as Record<string, string>)[locale] || 'やさしい日本語';
+
+/** A content status counts as reviewed only when it says so plainly (draft_unreviewed, *_pending_* are not). */
+export const isReviewed = (status: string | undefined) => !!status && /reviewed|approved/.test(status) && !/unreviewed|pending|draft|not_/.test(status);

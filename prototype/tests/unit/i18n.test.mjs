@@ -2,7 +2,7 @@
 // back to English (marked lang="en"); Chinese is never shown under another language's label.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { LOCALES, LOCALE_INFO, pick, UI, SAY, TOAST_GLOSS, languageName, isLocale, langTag } from '@/lib/i18n';
+import { LOCALES, LOCALE_INFO, pick, UI, SAY, TOAST_GLOSS, languageName, isLocale, langTag, isReviewed } from '@/lib/i18n';
 import { sanitizePrefs, DEFAULT_PREFS } from '@/lib/storage';
 import { verdict } from '@/lib/voice-preflight';
 
@@ -63,4 +63,9 @@ test('voice test help: Chinese for zh, English for en/vi/my/id, none for Japanes
   assert.match(help('zh'), HAN);
   for (const l of ['en', 'vi', 'my', 'id']) assert.equal(help(l), 'This browser supports voice practice.', l);
   assert.equal(help('ja'), undefined);
+});
+
+test('only a plainly reviewed status counts as reviewed', () => {
+  for (const st of ['draft_unreviewed', 'draft_pending_expert_review', 'not_reviewed', '', undefined]) assert.equal(isReviewed(st), false, String(st));
+  for (const st of ['reviewed', 'native_reviewed', 'approved']) assert.equal(isReviewed(st), true, st);
 });

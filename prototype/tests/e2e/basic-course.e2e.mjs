@@ -108,6 +108,7 @@ test('basic course with a support language: explanations in the languages the co
   await openBasic(zh);
   assert.equal(await zh.locator('.basic-topic [lang="zh-Hans"]').count(), 24, 'topic names in Chinese');
   assert.equal(await zh.locator('.basic-nosupport').count(), 0);
+  assert.equal(await zh.locator('.basic-trdraft [lang="zh-Hans"]').count(), 1, 'Chinese explanations are marked as drafts');
   await zh.locator('.basic-topic', { hasText: '挨拶・入退室' }).click();
   await zh.locator('.basic-scene-row', { hasText: '入ってもいいですか' }).click();
   const modal = zh.locator('.basic-modal');
@@ -127,6 +128,9 @@ test('basic course with a support language: explanations in the languages the co
   await openBasic(en);
   assert.equal(await en.locator('.basic-nosupport').count(), shown ? 0 : 1, 'the "not in your language yet" note only when nothing usable exists');
   if (!shown) assert.equal(await en.locator('.basic-nosupport [lang="vi"]').count(), 1, 'the note is in Vietnamese');
+  // Draft explanations say so, in the language they are written in.
+  if (shown && !/reviewed/.test(src.support[shown].status.replace(/unreviewed/, ''))) assert.equal(await en.locator(`.basic-trdraft [lang="${tag}"]`).count(), 1, 'draft note for the shown explanations');
+  if (shown) assert.equal(await en.locator(`.basic-topic [lang="${tag}"]`).count(), src.catalog.topics.filter((t) => src.topicLangs(t).includes(shown)).length, 'topic names in the shown language');
   assert.equal(await en.locator('[lang="zh-Hans"]').count(), 0, 'Chinese explanations are not shown to a Vietnamese learner');
   await en.locator('.basic-topic', { hasText: '挨拶・入退室' }).click();
   await en.locator('.basic-scene-row', { hasText: '入ってもいいですか' }).click();
