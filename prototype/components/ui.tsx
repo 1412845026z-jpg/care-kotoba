@@ -11,6 +11,8 @@ export function readStore(key:string):unknown{try{const v=localStorage.getItem(k
 export function writeStore(key:string,v:unknown){try{localStorage.setItem(key,JSON.stringify(v));}catch{}}
 export function dateKey(d=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(d);}
 export function support(locale:string,zh:string,en:string,ja=''){return locale==='zh'?zh:locale==='en'?en:ja;}
+/** Support-language text marked with its language, so Chinese gets Simplified glyphs and screen readers switch voice. */
+export function Support({locale,zh,en,ja=''}:{locale:string;zh:string;en:string;ja?:string}){const t=support(locale,zh,en,ja);if(!t)return null;return <span lang={locale==='zh'?'zh-Hans':locale==='en'?'en':'ja'}>{t}</span>;}
 export function Logo({small=false}:{small?:boolean}){return <div className={'logo'+(small?' small':'')}>Care Kotoba</div>;}
 export function CategoryIcon({category,size=22}:{category:string;size?:number}){const c=findCategory(category);const Icon=icons[c?.icon||'sun'];return <Icon size={size} strokeWidth={1.7}/>;}
 export function Orb({active=false}:{active?:boolean}){return <div aria-hidden="true" className={'orb-wrap '+(active?'orb-active':'')}><div className="orb-aura"/><div className="orb-ring ring-one"/><div className="orb-ring ring-two"/><div className="orb-body"><div className="orb-sheen"/><div className="orb-wave">{[13,22,33,21,41,30,18,31,43,24,15].map((h,i)=><i key={i} style={{height:h,animationDelay:`${i*.09}s`}}/>)}</div></div></div>;}

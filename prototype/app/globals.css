@@ -506,3 +506,21 @@ ruby rt{font-size:max(.55em,10px)}
 .assignments-section>.assignment-empty>p{color:var(--ink-2)}
 .assignment-empty button{min-height:32px;color:var(--violet);font-weight:700}
 .admin-main .card-topline>div>p,.admin-main .table-footer>span{color:var(--muted)}
+
+/* START-FLOW-001｜会話のタイプは既定（穏やかな会話）で、変えたいときだけ開く */
+.variant-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 0;padding:12px 14px 12px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper)}
+.variant-row>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;min-width:0}
+.variant-row-label{flex-basis:100%;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.variant-row b{font-size:15px;font-weight:700;color:var(--ink)}
+.variant-row small{font-size:13px;color:var(--ink-2)}
+.variant-row .text-button{min-height:44px;padding:0 2px;flex-shrink:0}
+.variant-row .text-button svg{transition:transform .18s}
+.variant-row .rotate-90{transform:rotate(90deg)}
+.variant-grid{margin-top:10px}
+.variant-grid>button{border:1px solid var(--line);background:var(--paper);border-radius:var(--radius);min-height:56px}
+.variant-grid>button.selected{border-color:var(--violet);background:var(--violet-soft)}
+.variant-grid b{font-size:14px;font-weight:700;color:var(--ink)}
+.variant-grid small{color:var(--ink-2)}
+.radio-circle{width:16px;height:16px;border-color:var(--line-2);background:var(--paper)}
+.radio-circle i{width:8px;height:8px;background:var(--violet)}
+.scene-modal-title h2{color:var(--ink);font-weight:700}

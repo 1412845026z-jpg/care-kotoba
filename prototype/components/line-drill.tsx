@@ -5,7 +5,7 @@
 // the conversation up to that moment as context. Uses the normal /api/chat route.
 import { useState } from 'react';
 import { JaText } from './ruby';
-import { support } from './ui';
+import {Support} from './ui';
 import { type DrillMessage } from '@/lib/drill';
 export { contextBefore } from '@/lib/drill';
 
@@ -45,7 +45,7 @@ export function LineDrill(props: {
   return (
     <section className="line-drill" aria-label="この場面だけもう一度">
       <div className="line-drill-head"><h3>この場面だけ、もう一度</h3><button className="icon-button" aria-label="閉じる" onClick={props.onClose}>×</button></div>
-      <p className="line-drill-help">{support(locale, '只重练这一句：看对方的话，再回答一次。', 'Replay just this moment: read the partner’s line and answer again.', '相手のことばを見て、もう一度だけ答えてみましょう。')}</p>
+      <p className="line-drill-help"><Support locale={locale} zh={'只重练这一句：看对方的话，再回答一次。'} en={'Replay just this moment: read the partner’s line and answer again.'} ja={'相手のことばを見て、もう一度だけ答えてみましょう。'}/></p>
       {partnerLine ? <div className="line-drill-partner"><small>{props.partnerName}</small><p><JaText text={partnerLine.text} on={props.furigana} /></p></div> : <p className="line-drill-help">（会話のはじめの一言です）</p>}
       <div className="line-drill-before"><small>さっきのあなた</small><p>{original}</p></div>
       <button className="text-button" aria-expanded={hint} onClick={() => setHint(!hint)}>{hint ? 'ヒントを隠す' : 'ヒントを見る'}</button>
@@ -59,7 +59,7 @@ export function LineDrill(props: {
           <p><JaText text={result.reply} ruby={result.ruby} on={props.furigana} /></p>
           {result.correction
             ? <div className="line-drill-correction"><small>こんな言い方も</small><b>{result.correction.better}</b><p>{result.correction.reason}</p></div>
-            : <p className="line-drill-ok">伝わりました。{support(locale, '（这次没有需要修改的地方。）', '(Nothing to correct this time.)')}</p>}
+            : <p className="line-drill-ok">伝わりました。<Support locale={locale} zh={'（这次没有需要修改的地方。）'} en={'(Nothing to correct this time.)'}/></p>}
           <button className="btn btn-white full-width" onClick={() => { setAnswer(''); setResult(null); }}>{tries >= 1 ? 'もう一度ちがう言い方で' : 'もう一度'}</button>
         </div>
       )}
