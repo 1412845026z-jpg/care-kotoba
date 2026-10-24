@@ -1,0 +1,271 @@
+$ node scripts/run-framework.mjs dev --host 127.0.0.1 --port 5173
+
+  vinext dev  (Vite 8.0.13)
+
+Sites local sign-in: seedy@sites.test
+Using secrets defined in .dev.vars
+Using secrets defined in .dev.vars
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+ GET /__ck_ci_network 200 in 78ms
+ GET /api/access 200 in 267ms
+ POST /api/access 200 in 18ms
+ POST /api/access 200 in 14ms
+ GET / 200 in 1.1s (compile: 1792817111.0s, render: 972ms)
+ GET /api/access 200 in 14ms
+ GET / 200 in 34ms (compile: 1792817110.9s, render: 23ms)
+ GET /api/health 200 in 15ms
+ GET /api/access 200 in 7ms
+ GET / 200 in 33ms (compile: 1792817110.9s, render: 22ms)
+ GET /api/access 200 in 11ms
+ POST /api/chat 200 in 53ms
+ POST /api/feedback 200 in 25ms
+ POST /api/access 200 in 10ms
+ GET /?core=1 200 in 29ms (compile: 1792817110.9s, render: 19ms)
+ GET /api/access 200 in 17ms
+ POST /api/chat 200 in 13ms
+ POST /api/feedback 200 in 11ms
+ POST /api/access 200 in 10ms
+ GET /?core=1 200 in 36ms (compile: 1792817110.9s, render: 26ms)
+ GET /api/access 200 in 20ms
+ POST /api/access 200 in 16ms
+ GET / 200 in 32ms (compile: 1792817110.9s, render: 19ms)
+ GET /api/access 200 in 18ms
+ GET /api/access 200 in 8ms
+ POST /api/chat 401 in 12ms
+ POST /api/feedback 401 in 7ms
+ POST /api/speech 401 in 15ms
+ POST /api/session 401 in 20ms
+ POST /api/access 401 in 8ms
+ POST /api/access 200 in 9ms
+ POST /api/chat 200 in 16ms
+ POST /api/chat 401 in 8ms
+ POST /api/chat 401 in 11ms
+ GET / 200 in 33ms (compile: 1792817110.9s, render: 21ms)
+ GET /api/access 200 in 14ms
+ GET / 200 in 30ms (compile: 1792817110.9s, render: 20ms)
+ GET /api/access 200 in 31ms
+ POST /api/access 401 in 9ms
+ POST /api/access 200 in 12ms
+ POST /api/chat 200 in 12ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 29ms (compile: 1792817110.9s, render: 19ms)
+ GET /api/access 200 in 18ms
+ GET /api/access 200 in 8ms
+ DELETE /api/access 200 in 10ms
+ GET /api/access 200 in 8ms
+ GET /api/access 200 in 8ms
+ POST /api/access 200 in 11ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 44ms (compile: 1792817110.9s, render: 28ms)
+ GET /api/access 200 in 19ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 26ms (compile: 1792817110.9s, render: 16ms)
+ GET /api/access 200 in 11ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 29ms (compile: 1792817110.9s, render: 19ms)
+ GET /api/access 200 in 14ms
+ POST /api/chat 200 in 14ms
+ POST /api/feedback 200 in 12ms
+ POST /api/access 200 in 6ms
+ GET / 200 in 22ms (compile: 1792817110.9s, render: 14ms)
+ GET /api/access 200 in 15ms
+ POST /api/chat 200 in 12ms
+{"evt":"feedback_pronunciation_removed","scene":"bath-5","count":3}
+ POST /api/feedback 200 in 11ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 34ms (compile: 1792817110.9s, render: 21ms)
+ GET /api/access 200 in 14ms
+ POST /api/chat 200 in 13ms
+ POST /api/feedback 200 in 15ms
+ POST /api/chat 200 in 11ms
+ POST /api/access 200 in 6ms
+ GET / 200 in 26ms (compile: 1792817110.9s, render: 16ms)
+ GET /api/access 200 in 16ms
+ POST /api/chat 200 in 15ms
+{"evt":"feedback_unquoted_dropped","scene":"bath-5","count":1}
+ POST /api/feedback 200 in 11ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 25ms (compile: 1792817110.9s, render: 16ms)
+ GET /api/access 200 in 13ms
+ POST /api/access 200 in 7ms
+ GET / 200 in 25ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 14ms
+ POST /api/access 200 in 6ms
+ GET / 200 in 35ms (compile: 1792817110.9s, render: 25ms)
+ GET /api/access 200 in 16ms
+ POST /api/chat 200 in 8ms
+ GET /api/health 200 in 6ms
+ POST /api/access 200 in 11ms
+ GET / 200 in 32ms (compile: 1792817110.9s, render: 20ms)
+ GET /api/access 200 in 10ms
+ GET / 200 in 28ms (compile: 1792817110.9s, render: 16ms)
+ GET /api/access 200 in 9ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 32ms (compile: 1792817110.9s, render: 20ms)
+ GET /api/access 200 in 15ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 26ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 11ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 30ms (compile: 1792817110.9s, render: 17ms)
+ GET /api/access 200 in 15ms
+ POST /api/access 200 in 7ms
+ GET / 200 in 27ms (compile: 1792817110.9s, render: 17ms)
+ GET /api/access 200 in 14ms
+ POST /api/access 200 in 13ms
+ GET / 200 in 24ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 14ms
+ GET /api/health 200 in 11ms
+ GET /api/access 200 in 10ms
+ GET /api/health 200 in 10ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 30ms (compile: 1792817110.9s, render: 18ms)
+ GET /api/access 200 in 16ms
+ POST /api/chat 200 in 17ms
+ POST /api/access 200 in 15ms
+ GET / 200 in 26ms (compile: 1792817110.9s, render: 16ms)
+ GET /api/access 200 in 18ms
+{"evt":"chat_ruby_rejected"}
+ POST /api/chat 200 in 11ms
+ POST /api/access 200 in 19ms
+ GET / 200 in 25ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 15ms
+{"evt":"voice_session_error","status":500,"code":"server_error"}
+ POST /api/session 502 in 10ms
+ GET /api/health 200 in 10ms
+ GET /api/access 200 in 10ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 23ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 13ms
+ DELETE /api/access 200 in 8ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 33ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 13ms
+ POST /api/access 200 in 13ms
+ GET / 200 in 28ms (compile: 1792817110.9s, render: 17ms)
+ GET /api/access 200 in 17ms
+ GET /api/access 200 in 7ms
+ POST /api/access 200 in 10ms
+ POST /api/access 200 in 10ms
+ GET / 200 in 29ms (compile: 1792817110.9s, render: 18ms)
+ GET /api/access 200 in 15ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 27ms (compile: 1792817110.9s, render: 13ms)
+ GET /api/access 200 in 15ms
+ POST /api/access 200 in 8ms
+ GET /?core=1 200 in 25ms (compile: 1792817110.9s, render: 16ms)
+ GET /api/access 200 in 13ms
+ POST /api/access 200 in 7ms
+ GET /?core=1 200 in 38ms (compile: 1792817110.9s, render: 27ms)
+ GET /api/access 200 in 11ms
+ POST /api/chat 200 in 14ms
+ POST /api/feedback 200 in 10ms
+ GET / 200 in 26ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 8ms
+ POST /api/access 200 in 7ms
+ GET / 200 in 31ms (compile: 1792817110.9s, render: 23ms)
+ GET /api/access 200 in 19ms
+ GET /api/access 200 in 7ms
+ POST /api/access 200 in 10ms
+ POST /api/access 200 in 10ms
+ GET / 200 in 28ms (compile: 1792817110.9s, render: 18ms)
+ GET /api/access 200 in 14ms
+ POST /api/chat 200 in 14ms
+ POST /api/chat 200 in 9ms
+ POST /api/feedback 200 in 10ms
+ POST /api/access 200 in 6ms
+ GET / 200 in 21ms (compile: 1792817110.9s, render: 13ms)
+ GET /api/access 200 in 14ms
+ POST /api/access 200 in 7ms
+ GET / 200 in 21ms (compile: 1792817110.9s, render: 12ms)
+ GET /api/access 200 in 12ms
+ POST /api/access 200 in 6ms
+ GET / 200 in 25ms (compile: 1792817110.9s, render: 16ms)
+ GET /api/access 200 in 12ms
+ GET /api/health 200 in 9ms
+ GET /api/access 200 in 8ms
+ GET /api/access 200 in 8ms
+ GET /api/access 200 in 7ms
+ GET /api/access 200 in 6ms
+ GET /api/access 200 in 7ms
+ POST /api/access 200 in 14ms
+ POST /api/access 200 in 7ms
+ GET / 200 in 33ms (compile: 1792817110.9s, render: 20ms)
+ GET /api/access 200 in 15ms
+{"evt":"voice_session_start","sid":"kLKJeQ5rkl5l","callId":"rtc_sim1_kku6ioql","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 150ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 22ms (compile: 1792817110.9s, render: 14ms)
+ GET /api/access 200 in 14ms
+{"evt":"voice_session_start","sid":"mzs_KaDCnLLG","callId":"rtc_sim2_dtmguak7","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 138ms
+ POST /api/feedback 200 in 15ms
+{"evt":"voice_session_end","sid":"mzs_KaDCnLLG","callId":"rtc_sim2_dtmguak7","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.2,"responses":1,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":null,"latencyP95":null,"estimatedCostUsd":0.004801,"errors":0,"tokens":{"textIn":300,"textCached":600,"audioIn":120,"audioCached":0,"textOut":30,"audioOut":160}}}
+ POST /api/session/end 200 in 28ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 29ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 15ms
+{"evt":"voice_session_start","sid":"qHOwWusp5Os3","callId":"rtc_sim3_34ywplco","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 139ms
+ POST /api/feedback 200 in 15ms
+{"evt":"voice_session_end","sid":"qHOwWusp5Os3","callId":"rtc_sim3_34ywplco","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":1,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.3,"responses":2,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":0,"latencyP95":0,"estimatedCostUsd":0.009489,"errors":0,"tokens":{"textIn":600,"textCached":1200,"audioIn":240,"audioCached":0,"textOut":60,"audioOut":320}}}
+ POST /api/session/end 200 in 18ms
+ GET /api/health 200 in 7ms
+ POST /api/access 200 in 12ms
+ GET / 200 in 25ms (compile: 1792817110.9s, render: 15ms)
+ GET /api/access 200 in 11ms
+{"evt":"voice_session_start","sid":"b-efWDuGznm8","callId":"rtc_sim4_p599snll","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 136ms
+ POST /api/feedback 200 in 14ms
+{"evt":"voice_session_end","sid":"b-efWDuGznm8","callId":"rtc_sim4_p599snll","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.3,"responses":1,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":null,"latencyP95":null,"estimatedCostUsd":0.004801,"errors":0,"tokens":{"textIn":300,"textCached":600,"audioIn":120,"audioCached":0,"textOut":30,"audioOut":160}}}
+ POST /api/session/end 200 in 16ms
+ POST /api/access 200 in 7ms
+ GET / 200 in 38ms (compile: 1792817110.9s, render: 29ms)
+ GET /api/access 200 in 10ms
+{"evt":"voice_session_start","sid":"ufeZKu9piy2t","callId":"rtc_sim5_9wgftits","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 136ms
+ POST /api/access 200 in 7ms
+ GET / 200 in 23ms (compile: 1792817110.9s, render: 14ms)
+ GET /api/access 200 in 13ms
+{"evt":"voice_session_start","sid":"ocuUINU44nnV","callId":"rtc_sim6_zmufkumt","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 135ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 28ms (compile: 1792817110.9s, render: 18ms)
+ GET /api/access 200 in 20ms
+{"evt":"voice_session_start","sid":"1QM8tmUaVhB1","callId":"rtc_sim7_euzardz6","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 148ms
+ POST /api/access 200 in 8ms
+ GET / 200 in 28ms (compile: 1792817110.9s, render: 17ms)
+ GET /api/access 200 in 16ms
+{"evt":"voice_session_start","sid":"sLzb4JwlmVKK","callId":"rtc_sim8_trsmq9fa","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 149ms
+{"evt":"voice_session_end","sid":"sLzb4JwlmVKK","callId":"rtc_sim8_trsmq9fa","scene":"daily-2","reason":"remote_closed","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.2,"responses":1,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":null,"latencyP95":null,"estimatedCostUsd":0.004801,"errors":0,"tokens":{"textIn":300,"textCached":600,"audioIn":120,"audioCached":0,"textOut":30,"audioOut":160}}}
+ POST /api/session/end 200 in 15ms
+{"evt":"voice_session_start","sid":"y_7NO3JsfHby","callId":"rtc_sim9_px6qv9ci","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":true,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 148ms
+ POST /api/access 200 in 9ms
+ GET / 200 in 30ms (compile: 1792817110.9s, render: 17ms)
+ GET /api/access 200 in 16ms
+{"evt":"voice_session_start","sid":"xanOx9nQj8yp","callId":"rtc_sim10_l868et26","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 142ms
+ POST /api/access 200 in 11ms
+ GET /?strict 200 in 31ms (compile: 1792817110.9s, render: 18ms)
+ GET /api/access 200 in 14ms
+{"evt":"voice_session_start","sid":"jHQ4dXPYjSW4","callId":"rtc_sim11_7v8rufbt","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 145ms
+ POST /api/access 200 in 10ms
+ GET / 200 in 33ms (compile: 1792817110.9s, render: 20ms)
+ GET /api/access 200 in 16ms
+{"evt":"voice_session_start","sid":"HBljAr31t9CV","callId":"rtc_sim12_3ucs6lbr","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 141ms
+ POST /api/feedback 200 in 23ms
+{"evt":"voice_session_end","sid":"HBljAr31t9CV","callId":"rtc_sim12_3ucs6lbr","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.7,"responses":2,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":399,"latencyP95":399,"estimatedCostUsd":0.009489,"errors":0,"tokens":{"textIn":600,"textCached":1200,"audioIn":240,"audioCached":0,"textOut":60,"audioOut":320}}}
+ POST /api/session/end 200 in 26ms
+ POST /api/access 200 in 9ms
+ GET /?core=1 200 in 32ms (compile: 1792817110.9s, render: 20ms)
+ GET /api/access 200 in 15ms
+{"evt":"voice_session_start","sid":"DhW_28iRhs3y","callId":"rtc_sim13_q56ua3yp","scene":"CK-C01","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+ POST /api/session 200 in 147ms
+ GET /__ck_ci_network 200 in 5ms
+  ➜  Tunnel closed
+[ELIFECYCLE] Command failed.
