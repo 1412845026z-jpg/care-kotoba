@@ -2,7 +2,7 @@
 
 - 用户指令（15:07 复用开源代码 / 15:11「开始」）。交互按 Claude 15:07 的提案：看提示 → 自己说 → 看答案、听 → 自己选「まだ／もう少し／思い出せた」；只存本机、不打分。
 - 复用：**ts-fsrs 5.4.2**（MIT，open-spaced-repetition/ts-fsrs，FSRS 算法），由 Codex 在 REVIEW-DEP-001（PR #47，merge ba8568b）加入依赖、锁文件和 `docs/licenses/TS_FSRS_LICENSE.txt`。本任务没有改依赖。
-- 分支：`claude/REVIEW-001`，基于 `claude/START-FLOW-001`（已含 main 的 #47）。**PR 的 base 是 `claude/START-FLOW-001`**：先合并 #46，再合并本 PR（#46 合并后把 base 改为 main）。
+- 分支：`claude/REVIEW-001`，PR #49，基于 `claude/START-FLOW-001`（已含 main 的 #47）。**PR 的 base 是 `claude/START-FLOW-001`**：先合并 #46，再合并本 PR（#46 合并后把 base 改为 main）。
 - 没有调用付费 API，没有部署；复习功能完全离线，不访问服务器。
 
 ## 做了什么

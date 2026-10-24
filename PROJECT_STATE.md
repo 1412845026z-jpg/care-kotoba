@@ -104,7 +104,7 @@
 | DESIGN-SKILLS-001 | 接入两份设计技能与共同设计依据 | Claude | merged | PR #43，head768abbe，merge21639c7 | vendor195项校验、CI40065123200；显式读取技能通过，CLI自动发现未实测 |
 | DEAI-001 | 按概念图视觉去AI化 | Claude | merged | PR #44，head a567b8d，merge dc9d60c | 独立runner40069650388：static0/unit92/offline54/dev46通过8跳过；SEC与Google字体共15检查，控制台0错误；真机未验收 |
 | START-FLOW-001 | 开始练习一步到位：会話のタイプ默认收起、开始按钮在第一屏；辅助语言文字加 `lang` | Claude | review_ready | `claude/START-FLOW-001`，PR #46（#44 合并后 base 改为 main） | handoffs/2026-10-24-START-FLOW-001-claude.md |
-| REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs 5.4.2，MIT）：今日の復習 → 提示 → 自己说 → 答案/听 → まだ／もう少し／思い出せた；只存本机、不打分 | Claude（功能）+ Codex（依赖 REVIEW-DEP-001，#47 已合并） | in_progress | `claude/REVIEW-001`（base 为 `claude/START-FLOW-001`，先合并 #46） | handoffs/2026-10-24-REVIEW-001-claude.md；verification/REVIEW-001 |
+| REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs 5.4.2，MIT）：今日の復習 → 提示 → 自己说 → 答案/听 → まだ／もう少し／思い出せた；只存本机、不打分 | Claude（功能）+ Codex（依赖 REVIEW-DEP-001，#47 已合并） | review_ready | `claude/REVIEW-001`，PR #49（base 为 `claude/START-FLOW-001`，先合并 #46） | handoffs/2026-10-24-REVIEW-001-claude.md；verification/REVIEW-001 |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
