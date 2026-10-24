@@ -9,8 +9,9 @@ node tests/run.mjs unit                                                    # one
 node tests/run.mjs e2e --filter voice                                      # test-name filter
 ```
 
-`--filter` is a regular expression for test names; only files that mention it are started (node:test 22.x
-otherwise runs a file's `after` hook before its slow async `before` has finished and the process hangs). Each group
+`--filter` is a regular expression for test names; only files with a test whose name matches are started (node:test
+22.x otherwise runs a file's `after` hook before its slow async `before` has finished and the process hangs; matching
+the file text was not enough, because a pattern found only in a comment still hung). Each group
 is stopped after `CK_TEST_TIMEOUT_SECONDS` (default 1800) and reported as failed, so a leaked resource cannot hang CI.
 `setup()` closes the mock / harness / Chromium it already started when a later step fails (for example a missing
 Chromium executable) and rethrows the original error; `e2e/setup.e2e.mjs` checks this.
@@ -40,7 +41,8 @@ Real-device and real-AI checks follow `docs/09_REAL_DEVICE_VOICE_TEST.md`.
 | --- | --- | --- |
 | `e2e/app.e2e.mjs` | home/scenes/practice/feedback flows, storage robustness, furigana, pronunciation gate, error boundaries, voice check, one-line drill, AI-reply furigana, data deletion, notes export | `CK_AI_FURIGANA=1` (the AI-furigana test skips itself when the server has it off) |
 | `e2e/access.e2e.mjs` | access code, cookie tampering and canonical encoding, localhost-only default, deleting data forgets the code | `CK_ACCESS_CODE` (harness) / `CK_E2E_ACCESS_CODE` (BASE_URL) |
-| `e2e/voice.e2e.mjs` | simulated Realtime peer: ordering, interruption, failure, hangup, resume, typed-line queueing, diagnostics, countdown, recognition confidence | `CK_ASR_LOGPROBS=1` (the include check runs only when `/api/health` reports it) |
+| `e2e/voice.e2e.mjs` | simulated Realtime peer: ordering, interruption, failure, hangup, resume, typed-line queueing, diagnostics, countdown, recognition confidence, core-draft session instructions | `CK_ASR_LOGPROBS=1` (the include check runs only when `/api/health` reports it) |
+| `e2e/core-preview.e2e.mjs` | optional 「コア練習（草稿）」: hidden by default, settings and `?core=1`, draft modal, server-side hidden facts (also absent from the harness bundle), not counted in the 48 | harness bundle check skips itself in BASE_URL mode |
 | `e2e/setup.e2e.mjs` | setup cleanup when Chromium fails to start | — |
 | `e2e/smoke-tool.e2e.mjs` | `tools/smoke/api-smoke.mjs` free and `--yes` modes | harness only |
 

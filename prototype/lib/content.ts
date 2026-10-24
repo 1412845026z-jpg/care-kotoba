@@ -1,8 +1,13 @@
-export type CategoryId = 'daily'|'meal'|'bath'|'toilet'|'move'|'handover'|'report'|'memory';
+export type BaseCategoryId = 'daily'|'meal'|'bath'|'toilet'|'move'|'handover'|'report'|'memory';
+/** 'core' = the optional core-practice drafts (lib/core-scenarios.ts), hidden unless the learner turns the preview on. */
+export type CategoryId = BaseCategoryId|'core';
 export type PartnerKind = 'resident'|'senior'|'colleague'|'nurse';
-export type Scene = {id:string;category:CategoryId;title:string;en:string;action:string;context:string;starter:string;phrases:string[];goals:string[];level:1|2|3;minutes:number;partner:PartnerKind;};
+export type PartnerInfo = {label:string;card:string;short:string;role:string;staff:boolean};
+export type Scene = {id:string;category:CategoryId;title:string;en:string;action:string;context:string;starter:string;phrases:string[];goals:string[];level:1|2|3;minutes:number;partner:PartnerKind;
+ /** Scene-specific partner (core drafts name roles such as リーダー); overrides partners[partner]. */ cast?:PartnerInfo;
+ /** Present only on core-practice drafts. */ core?:{skill:'clarification'|'refusal_respect'|'report_certainty';version:string;status:string};};
 // Who the AI plays. Single source for the AI instructions, the scene card and the practice screen.
-export const partners:Record<PartnerKind,{label:string;card:string;short:string;role:string;staff:boolean}>={
+export const partners:Record<PartnerKind,PartnerInfo>={
  resident:{label:'佐藤さん',card:'利用者の佐藤さん',short:'佐',role:'施設利用者の佐藤さん（架空）',staff:false},
  senior:{label:'先輩スタッフ',card:'先輩スタッフ',short:'先',role:'先輩の介護職員',staff:true},
  colleague:{label:'同僚スタッフ',card:'同僚スタッフ',short:'同',role:'同じ施設の同僚の介護職員',staff:true},
@@ -11,9 +16,10 @@ export const partners:Record<PartnerKind,{label:string;card:string;short:string;
 // Scenes whose conversation partner differs from their category default. Before this map, these staff-to-staff
 // scenes were role-played as the resident (meal-6, toilet-6, move-5) or as a nurse although the context names a senior (report-6).
 const partnerOverrides:Record<string,PartnerKind>={'meal-6':'colleague','toilet-6':'senior','move-5':'senior','report-6':'senior'};
-const categoryPartner=(c:CategoryId):PartnerKind=>c==='handover'?'senior':c==='report'?'nurse':'resident';
-export const partnerOf=(scene:Pick<Scene,'partner'>)=>partners[scene.partner];
-export const categories:{id:CategoryId;name:string;en:string;icon:string;color:string}[]=[
+const categoryPartner=(c:BaseCategoryId):PartnerKind=>c==='handover'?'senior':c==='report'?'nurse':'resident';
+export const partnerOf=(scene:Pick<Scene,'partner'|'cast'>):PartnerInfo=>scene.cast||partners[scene.partner];
+/** The 8 regular fields (48 scenes). The optional core category lives in lib/core-scenarios.ts. */
+export const categories:{id:BaseCategoryId;name:string;en:string;icon:string;color:string}[]=[
  {id:'daily',name:'日常の声かけ',en:'Everyday care',icon:'sun',color:'lavender'},
  {id:'meal',name:'食事・口腔ケア',en:'Meals & oral care',icon:'utensils',color:'peach'},
  {id:'bath',name:'入浴・清潔',en:'Bathing & hygiene',icon:'droplets',color:'blue'},
@@ -24,7 +30,7 @@ export const categories:{id:CategoryId;name:string;en:string;icon:string;color:s
  {id:'memory',name:'気持ちに寄り添う',en:'Person-centred talk',icon:'flower',color:'mint'},
 ];
 type Row=[string,string,string,string,string,string,string];
-const rows:Record<CategoryId,Row[]>={
+const rows:Record<BaseCategoryId,Row[]>={
  daily:[
  ['朝の挨拶と体調確認','A gentle start','朝、居室を訪ねました。相手はまだ眠そうです。','もう朝なの？ まだ少し眠いわ。','おはようございます。よく眠れましたか。','今のお体の調子はいかがですか。','少ししてから、また伺いましょうか。'],
  ['お顔を拭く前のひとこと','Before washing a face','温かいタオルを用意しました。何をするのか説明して、意向を確認します。','そのタオルで何をするの？','温かいタオルで、お顔を拭いてもよろしいですか。','熱くありませんか。','今はお休みになりたいですか。後ほど伺いましょうか。'],

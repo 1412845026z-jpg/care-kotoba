@@ -20,4 +20,13 @@ Add `leak_markers_ja` to each `hidden_information` entry and have the roleplay c
 
 ## Verification and outcome
 
-In progress. Exact runner, counts, explained skips and merge SHAs will be appended after execution; Claude's CI results are background evidence, not Codex's independent retest.
+PR #35 passed independent run [40058494059](https://github.com/1412845026z-jpg/care-kotoba/actions/runs/40058494059), Node22.23.3 / pnpm11.25.0, exact source `a4d7831b437eeae7a6f3073742bdf820d0b38d37`, tree `7dbe5c000f009a1814ef0c30947754273628ad58`:
+
+- Frozen install, real TypeScript and production build passed (no deployment); static0, unit81/81, offline47/47.
+- Real Vinext dev42 passed /0 failed /5 explained skips: Host/environment reconfiguration, harness bundle inspection and the three harness-only api-smoke cases. All these cases passed offline.
+- SEC-001 policy preservation and all10 browser checks passed. Core mobile list/dialog/ruby, mock text practice/feedback and desktop UI had no normal-flow CSP violations; deliberate nonce-less injection was blocked and the valid nonce/microphone checks passed.
+- Worker guard0 external attempts; temporary Worker edits restored byte-for-byte and dummy environment removed. Raw reports: `verification/CORE-ENV-001/runner-preview/`. Downloaded artifact SHA256 `866abeadc135329770ac68ca073b9d0b7203c90447cf1534ab483a3b878adb5f` verified before extraction.
+- Core generator check fingerprint `396444ed86eeacf7`; existing 夜中/一回/二人 readings and contextual 後 readings reviewed (preview-readings.json). No content or generated file was modified.
+- PR #35 merged with expected-head lease as `b038f60dceccf142232a8dfce890f23f196337e5`; its tree equals the independently tested source tree. No conflict.
+
+PR #37 latest head captured after #35 merge: `2cf1a0e55741f260aed619e512c594b71153a97e`. Read-only merge rehearsal with main is conflict-free, tree `930af37293d8afc8b128d7321762cc07da95a422`. Retest in progress; do not merge until it passes. Active roleplay tool checks are offline harness+mock only; real-dev skips the harness-only tool cases. No real model calls.
