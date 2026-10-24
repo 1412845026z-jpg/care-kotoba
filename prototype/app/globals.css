@@ -272,3 +272,9 @@ nav > .nav-item > span{color:#675c79}nav > .nav-item.active > span{color:#5b4399
 .wide-main>.category-pills>button.core-pill{border-style:dashed;border-color:#a9bccd;color:#45647e}.wide-main>.category-pills>button.core-pill.selected{color:#fff;background:#4c6f8c;border-color:#4c6f8c;border-style:solid}.category-pills>.core-pill>small{color:inherit}
 .core-notice{margin:0 0 16px;padding:12px 14px;background:#f2f6fa;border:1px solid #d6e2ec;border-radius:12px;font-size:13px;line-height:1.7;color:#3d5268}
 .core-modal-note{margin:18px 0 6px;padding:14px 16px;background:#f2f6fa;border:1px solid #d6e2ec;border-radius:12px}.core-modal-note b{display:block;font-size:13px;color:#3d5a73}.core-modal-note p{margin:6px 0 0;font-size:12px;line-height:1.7;color:#465a6c}
+/* FREE-VOICE-001: free dictation (browser speech recognition) in text/demo practice, and its one-time notice. */
+.chat-composer>button.dictate-button{background:#fff;color:#5b4399;border:1px solid #cdbbe0;min-width:40px;min-height:40px}.chat-composer>button.dictate-button.active{background:#5b4399;color:#fff;border-color:#5b4399;animation:dictate-pulse 1.2s ease-in-out infinite}.chat-composer>button[type=submit]{min-width:40px;min-height:40px;background:#6f55b0}.chat-composer>button:disabled{opacity:.55}
+@keyframes dictate-pulse{0%,100%{box-shadow:0 0 0 0 #5b439955}50%{box-shadow:0 0 0 6px #5b439900}}
+@media (prefers-reduced-motion:reduce){.chat-composer>button.dictate-button.active{animation:none}}
+.dictation-consent{margin:10px 0 0;padding:12px 14px;background:#f6f2fb;border:1px solid #e2d6ef;border-radius:12px}.dictation-consent p{margin:0 0 10px;font-size:13px;line-height:1.7;color:#43355a}.dictation-consent>div{display:flex;gap:8px}.dictation-consent .btn{min-height:40px}
+.voice-check-list li[data-status=info]>span{background:#e8eef5;color:#3d5a73}

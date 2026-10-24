@@ -4,7 +4,8 @@
 // It never calls /api/session, so it costs nothing. Used by components/voice-check.tsx and by the
 // real-device test plan (docs/09). The verdict logic is pure and unit-tested.
 
-export type CheckStatus = 'ok' | 'warn' | 'fail' | 'skipped';
+/** 'info': a free extra that is missing on this device (browser dictation, Japanese device voice); it does not affect voice practice. */
+export type CheckStatus = 'ok' | 'warn' | 'fail' | 'skipped' | 'info';
 export type CheckItem = { id: string; status: CheckStatus; title: string; detail: string; key: string; help?: string };
 
 // Learner-language help for each message (the Japanese detail stays the main text).
@@ -27,6 +28,10 @@ const HELP: Record<string, { zh: string; en: string }> = {
   'speaker.ok': { zh: '听到了测试音。', en: 'You heard the test sound.' },
   'speaker.fail': { zh: '听不到声音。请检查音量、静音模式和连接的耳机。', en: 'No sound. Check the volume, silent mode and connected earphones.' },
   'speaker.skipped': { zh: '还没有确认。', en: 'Not checked yet.' },
+  'dictation.ok': { zh: '可以用浏览器自带的语音识别输入日语（免费；声音可能由浏览器提供商处理）。', en: 'The browser’s own speech recognition can type your Japanese (free; the vendor may process the audio).' },
+  'dictation.none': { zh: '这个浏览器没有语音输入。可以用键盘的语音输入或文字输入。', en: 'This browser has no speech input. Use the keyboard’s dictation or type.' },
+  'voice.ok': { zh: '手机里有日语朗读声音，AI 声音不能用时也能朗读参考表达。', en: 'A Japanese device voice is available for reading phrases when the AI voice is not.' },
+  'voice.none': { zh: '找不到日语朗读声音。可以在手机设置里添加日语语音。', en: 'No Japanese device voice was found. You can add one in the phone settings.' },
 };
 
 function withHelp(items: Omit<CheckItem, 'help'>[], locale: string): CheckItem[] {
@@ -39,6 +44,7 @@ export type PreflightResults = {
   ice?: { total: number; host: number; srflx: number; relay: number; ms: number; error?: string };
   mic?: { granted: boolean; error?: string; peak?: number; label?: string };
   speaker?: { heard: boolean | null };
+  speech?: { dictation: boolean; jaVoices: number };
 };
 
 /** Pure: turn raw results into the list shown to the learner/tester (Japanese, plus help in zh/en). */
@@ -76,13 +82,20 @@ export function verdict(r: PreflightResults, locale = 'ja'): CheckItem[] {
       : p.heard === false ? { id: 'speaker', key: 'speaker.fail', status: 'fail', title: 'スピーカー', detail: '音が聞こえません。音量、マナーモード、接続中のイヤホンを確認してください。' }
       : { id: 'speaker', key: 'speaker.skipped', status: 'skipped', title: 'スピーカー', detail: 'まだ確認していません。' });
   }
+  const sp = r.speech;
+  if (sp) {
+    out.push(sp.dictation ? { id: 'dictation', key: 'dictation.ok', status: 'ok', title: '声で入力（無料）', detail: '端末のブラウザの音声認識で、文字練習に日本語を入力できます。' }
+      : { id: 'dictation', key: 'dictation.none', status: 'info', title: '声で入力（無料）', detail: 'このブラウザには音声入力がありません。キーボードの音声入力か、文字で入力できます。' });
+    out.push(sp.jaVoices > 0 ? { id: 'voice', key: 'voice.ok', status: 'ok', title: '日本語の読み上げ（端末）', detail: `端末の日本語音声があります（${sp.jaVoices} 種類）。` }
+      : { id: 'voice', key: 'voice.none', status: 'info', title: '日本語の読み上げ（端末）', detail: '端末の日本語音声が見つかりません。端末の設定で日本語の音声を追加できます。' });
+  }
   return withHelp(out, locale);
 }
 
 export function overall(items: CheckItem[]): CheckStatus {
   if (items.some((i) => i.status === 'fail')) return 'fail';
   if (items.some((i) => i.status === 'warn' || i.status === 'skipped')) return 'warn';
-  return items.length ? 'ok' : 'skipped';
+  return items.some((i) => i.status !== 'info') ? 'ok' : 'skipped';
 }
 
 // ---- Browser probes (not unit-tested; covered by e2e with Chromium's fake devices) -----------

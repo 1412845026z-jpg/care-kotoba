@@ -4,8 +4,9 @@
 import { useState } from 'react';
 import { Modal } from './ui';
 import { checkServer, checkSupport, gatherIce, measureMic, overall, playTone, verdict, type PreflightResults } from '@/lib/voice-preflight';
+import { dictationSupported, loadJapaneseVoices } from '@/lib/browser-speech';
 
-const MARK: Record<string, string> = { ok: '✓', warn: '!', fail: '×', skipped: '–' };
+const MARK: Record<string, string> = { ok: '✓', warn: '!', fail: '×', skipped: '–', info: 'i' };
 
 export function VoiceCheck({ onClose, locale = 'ja' }: { onClose: () => void; locale?: string }) {
   const [results, setResults] = useState<PreflightResults>({});
@@ -18,8 +19,8 @@ export function VoiceCheck({ onClose, locale = 'ja' }: { onClose: () => void; lo
   async function start() {
     setStep('checking');
     const support = checkSupport();
-    const [server, ice] = await Promise.all([checkServer(), support.rtc ? gatherIce() : Promise.resolve(undefined)]);
-    setResults((r) => ({ ...r, support, server, ...(ice ? { ice } : {}) }));
+    const [server, ice, jaVoices] = await Promise.all([checkServer(), support.rtc ? gatherIce() : Promise.resolve(undefined), loadJapaneseVoices()]);
+    setResults((r) => ({ ...r, support, server, ...(ice ? { ice } : {}), speech: { dictation: dictationSupported(), jaVoices: jaVoices.length } }));
     setStep('mic');
   }
 

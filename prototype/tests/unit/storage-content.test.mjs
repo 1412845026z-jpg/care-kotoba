@@ -27,7 +27,7 @@ test('history keeps valid records (even for unknown scenes) and clamps numbers',
 });
 
 test('prefs only accept known values', () => {
-  assert.deepEqual(sanitizePrefs({ locale: 'en', level: 'challenge', goal: '10', plan: 'company', furigana: false, corePreview: true }), { locale: 'en', level: 'challenge', goal: 10, plan: 'company', furigana: false, corePreview: true });
+  assert.deepEqual(sanitizePrefs({ locale: 'en', level: 'challenge', goal: '10', plan: 'company', furigana: false, corePreview: true }), { locale: 'en', level: 'challenge', goal: 10, plan: 'company', furigana: false, corePreview: true, dictationConsent: false });
   assert.equal(sanitizePrefs({}).corePreview, false, 'the core drafts are hidden unless turned on');
   assert.equal(sanitizePrefs({ corePreview: 'yes' }).corePreview, false);
   assert.equal(sanitizePrefs({}).furigana, true, 'furigana defaults to on for N4 learners');
