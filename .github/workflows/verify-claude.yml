@@ -86,6 +86,8 @@ jobs:
         run: node scripts/ci-step.mjs pnpm build
       - name: Static and unit tests
         working-directory: verified-source/prototype
+        env:
+          CK_TEST_TIMEOUT_SECONDS: "600"
         run: |
           mkdir -p ../../review-results
           node tests/run.mjs static --report ../../review-results/static.json
