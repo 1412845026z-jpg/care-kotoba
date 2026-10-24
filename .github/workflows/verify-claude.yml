@@ -9,6 +9,8 @@ on:
       - verification/CORE-ENV-001/request.json
       - scripts/ci/security_browser_probe.mjs
       - scripts/ci/free_voice_browser_probe.mjs
+      - scripts/ci/google_fonts_browser_probe.mjs
+      - verification/MERGE/request.json
       - verification/FREE-VOICE-ENV-001/request.json
   workflow_dispatch:
     inputs:
@@ -28,7 +30,7 @@ concurrency:
 # request file on the ENV-004 tooling PR. No source SHA is hardcoded in this workflow.
 jobs:
   mock-review:
-    if: github.event_name != 'pull_request' || github.head_ref == 'codex/ENV-004' || github.head_ref == 'codex/CORE-ENV-001' || github.head_ref == 'codex/FREE-VOICE-ENV-001'
+    if: github.event_name != 'pull_request' || github.head_ref == 'codex/MERGE' || github.head_ref == 'codex/ENV-004' || github.head_ref == 'codex/CORE-ENV-001' || github.head_ref == 'codex/FREE-VOICE-ENV-001'
     name: Source review / mock only / Node 22
     runs-on: ubuntu-24.04
     timeout-minutes: 18
@@ -46,7 +48,7 @@ jobs:
         id: request
         env:
           REQUESTED_SHA: ${{ inputs.sha }}
-          REVIEW_REQUEST_PATH: ${{ github.head_ref == 'codex/FREE-VOICE-ENV-001' && 'verification/FREE-VOICE-ENV-001/request.json' || github.head_ref == 'codex/CORE-ENV-001' && 'verification/CORE-ENV-001/request.json' || 'verification/ENV-004/request.json' }}
+          REVIEW_REQUEST_PATH: ${{ github.head_ref == 'codex/MERGE' && 'verification/MERGE/request.json' || github.head_ref == 'codex/FREE-VOICE-ENV-001' && 'verification/FREE-VOICE-ENV-001/request.json' || github.head_ref == 'codex/CORE-ENV-001' && 'verification/CORE-ENV-001/request.json' || 'verification/ENV-004/request.json' }}
         run: |
           node --input-type=module <<'JS'
           import { readFileSync, appendFileSync } from 'node:fs';
