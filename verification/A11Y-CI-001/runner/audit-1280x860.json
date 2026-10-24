@@ -1,0 +1,793 @@
+{
+  "ranAt": "2026-10-24T07:17:47.382Z",
+  "viewport": "1280x860",
+  "screens": {
+    "home": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 7,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "text-button",
+          "label": "すべて見る",
+          "w": 68,
+          "h": 28
+        },
+        {
+          "el": "text-button",
+          "label": "デモで操作を体験",
+          "w": 94,
+          "h": 28
+        },
+        {
+          "el": "text-button",
+          "label": "目標を変更",
+          "w": 66,
+          "h": 32
+        },
+        {
+          "el": "text-button",
+          "label": "ノートに保存",
+          "w": 75,
+          "h": 32
+        },
+        {
+          "el": "install-card",
+          "label": "いつものスマホに。ホーム画面に追加する",
+          "w": 264,
+          "h": 43
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "scenes": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [],
+      "targetsUnder44": 12,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 805,
+          "h": 42
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 104,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 113,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 95,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 104,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "scene-modal": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [],
+      "targetsUnder44": 18,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 763,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 104,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 113,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 95,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "practice-text": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索",
+        "日本語で返答を入力"
+      ],
+      "targetsUnder24": [],
+      "targetsUnder44": 25,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 763,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 104,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 113,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 95,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "feedback": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [],
+      "targetsUnder44": 18,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 763,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 104,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 113,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 95,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "notes": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 6,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "text-button notes-export",
+          "label": "書き出す",
+          "w": 36,
+          "h": 32
+        },
+        {
+          "el": "icon-button",
+          "label": "保存を解除",
+          "w": 33,
+          "h": 33
+        },
+        {
+          "el": "BUTTON",
+          "label": "ゆっくり聞く",
+          "w": 76,
+          "h": 32
+        },
+        {
+          "el": "BUTTON",
+          "label": "場面で練習",
+          "w": 67,
+          "h": 32
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "progress": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 2,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "settings": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "SELECT",
+        "ふりがな",
+        "コア練習（草稿）",
+        "声で入力",
+        "SELECT",
+        "SELECT"
+      ],
+      "targetsUnder24": [],
+      "targetsUnder44": 6,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "icon-button",
+          "label": "閉じる",
+          "w": 33,
+          "h": 33
+        },
+        {
+          "el": "text-button settings-admin",
+          "label": "音声テスト（マイク・スピーカー）",
+          "w": 166,
+          "h": 28
+        },
+        {
+          "el": "text-button settings-admin",
+          "label": "法人向け管理を見てみる",
+          "w": 121,
+          "h": 28
+        },
+        {
+          "el": "text-button settings-admin",
+          "label": "この端末の学習データを削除",
+          "w": 117,
+          "h": 28
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "admin": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "学員を検索",
+        "グループで絞り込み"
+      ],
+      "targetsUnder24": [],
+      "targetsUnder44": 8,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "text-button",
+          "label": "組織設定",
+          "w": 58,
+          "h": 28
+        },
+        {
+          "el": "btn btn-white btn-sm",
+          "label": "レポートを書き出す",
+          "w": 150,
+          "h": 38
+        },
+        {
+          "el": "INPUT",
+          "label": "学員を検索",
+          "w": 291,
+          "h": 35
+        },
+        {
+          "el": "SELECT",
+          "label": "グループで絞り込み",
+          "w": 114,
+          "h": 38
+        },
+        {
+          "el": "text-button",
+          "label": "新しい課題",
+          "w": 67,
+          "h": 28
+        },
+        {
+          "el": "BUTTON",
+          "label": "課題を作成",
+          "w": 67,
+          "h": 32
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "home-core": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 8,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "text-button",
+          "label": "すべて見る",
+          "w": 68,
+          "h": 28
+        },
+        {
+          "el": "btn btn-soft",
+          "label": "開く",
+          "w": 81,
+          "h": 41
+        },
+        {
+          "el": "text-button",
+          "label": "デモで操作を体験",
+          "w": 94,
+          "h": 28
+        },
+        {
+          "el": "text-button",
+          "label": "目標を変更",
+          "w": 66,
+          "h": 32
+        },
+        {
+          "el": "text-button",
+          "label": "ノートに保存",
+          "w": 75,
+          "h": 32
+        },
+        {
+          "el": "install-card",
+          "label": "いつものスマホに。ホーム画面に追加する",
+          "w": 264,
+          "h": 43
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "scenes-core": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [],
+      "targetsUnder44": 13,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 805,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 104,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 113,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 95,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 104,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    },
+    "core-modal": {
+      "contrast": [],
+      "textUnder12px": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [],
+      "targetsUnder44": 18,
+      "targetsUnder44Examples": [
+        {
+          "el": "BUTTON",
+          "label": "4分、練習する",
+          "w": 145,
+          "h": 32
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 60,
+          "h": 32
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 805,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 104,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 113,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 95,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 104,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 1280
+    }
+  },
+  "summary": {
+    "home": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 7,
+      "scrollWidth": 1280
+    },
+    "scenes": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 12,
+      "scrollWidth": 1280
+    },
+    "scene-modal": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 18,
+      "scrollWidth": 1280
+    },
+    "practice-text": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 2,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 25,
+      "scrollWidth": 1280
+    },
+    "feedback": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 18,
+      "scrollWidth": 1280
+    },
+    "notes": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 6,
+      "scrollWidth": 1280
+    },
+    "progress": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 2,
+      "scrollWidth": 1280
+    },
+    "settings": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 6,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 6,
+      "scrollWidth": 1280
+    },
+    "admin": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 2,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 8,
+      "scrollWidth": 1280
+    },
+    "home-core": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 8,
+      "scrollWidth": 1280
+    },
+    "scenes-core": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 13,
+      "scrollWidth": 1280
+    },
+    "core-modal": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 0,
+      "textUnder12": 0,
+      "under44": 18,
+      "scrollWidth": 1280
+    }
+  }
+}

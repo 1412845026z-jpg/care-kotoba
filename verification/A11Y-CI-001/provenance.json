@@ -1,0 +1,15 @@
+{
+  "head": "de1089b559d431b7e3eae2e767935661e7dc701f",
+  "checkout": "8003f5845f7f5424e7f22296c9dbe93bd2c5119a",
+  "run": 40073435460,
+  "merge": "fb549890677dad7594fa55bfbb895808195bc4c5",
+  "a11y_artifact": 12551728193,
+  "a11y_artifact_sha256": "c2aad67050267679f33737ce0295b01aa8724e38668933557df556a93f31e293",
+  "mock_artifact": 12551973762,
+  "mock_artifact_sha256": "f4477650e0c8564d8b7dddcdf9a41ec046518657eba99cf5f83f5e52aa6cb330",
+  "axe_findings_block_ci": false,
+  "app_modified": false,
+  "audit_modified": false,
+  "tests_modified": false,
+  "paid_api_calls": 0
+}
