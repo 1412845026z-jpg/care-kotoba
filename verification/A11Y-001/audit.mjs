@@ -16,12 +16,14 @@ async function audit(page, name) {
     const bgOf = (el) => { for (let e = el; e; e = e.parentElement) { const c = parse(getComputedStyle(e).backgroundColor); if (c && c.a > 0.5) return c; if (getComputedStyle(e).backgroundImage !== 'none') return null; } return { r: 255, g: 255, b: 255, a: 1 }; };
     const visible = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none' && Number(s.opacity) > 0.1; };
     const contrast = [];
+    const tiny = []; // DEAI-001: text under 12px (furigana <rt> excluded; it is sized relative to its base)
     const seen = new Set();
     for (const el of document.querySelectorAll('body *')) {
       if (!visible(el) || ['SCRIPT', 'STYLE', 'svg', 'path'].includes(el.tagName)) continue;
       const own = [...el.childNodes].filter((n) => n.nodeType === 3 && n.textContent.trim()).map((n) => n.textContent.trim()).join(' ');
       if (!own) continue;
       const s = getComputedStyle(el);
+      if (parseFloat(s.fontSize) < 12 && !['RT', 'RP'].includes(el.tagName) && tiny.length < 20) tiny.push({ text: own.slice(0, 30), cls: String(el.className).slice(0, 50), size: s.fontSize });
       const fg = parse(s.color), bg = bgOf(el);
       if (!fg || !bg) continue;
       const a = fg.a; const mix = { r: fg.r * a + bg.r * (1 - a), g: fg.g * a + bg.g * (1 - a), b: fg.b * a + bg.b * (1 - a) };
@@ -47,7 +49,7 @@ async function audit(page, name) {
       else if (r.width < 44 || r.height < 44) advisory.push({ el: desc, label: (label || '').slice(0, 30), w: Math.round(r.width), h: Math.round(r.height) });
     }
     const zoomInputs = [...document.querySelectorAll('input, select, textarea')].filter(visible).filter((e) => parseFloat(getComputedStyle(e).fontSize) < 16).map((e) => (e.getAttribute('aria-label') || e.name || e.className || e.tagName).toString().slice(0, 40));
-    return { contrast, unnamedControls: names, inputsUnder16px: zoomInputs, targetsUnder24: small, targetsUnder44: advisory.length, targetsUnder44Examples: advisory.slice(0, 8), scrollWidth: document.documentElement.scrollWidth };
+    return { contrast, textUnder12px: tiny, unnamedControls: names, inputsUnder16px: zoomInputs, targetsUnder24: small, targetsUnder44: advisory.length, targetsUnder44Examples: advisory.slice(0, 8), scrollWidth: document.documentElement.scrollWidth };
   });
 }
 
@@ -83,6 +85,17 @@ try {
   await audit(p2, 'notes');
   await nav(p2, '学習記録');
   await audit(p2, 'progress');
+  // DEAI-001: settings sheet, and the sample organisation screen where the sidebar exists (desktop).
+  await p2.locator('.topbar .lang-button').click();
+  await p2.locator('.settings-modal').waitFor();
+  await audit(p2, 'settings');
+  await p2.keyboard.press('Escape');
+  await p2.locator('.settings-modal').waitFor({ state: 'detached' }).catch(() => {});
+  if (await p2.locator('.sidebar').isVisible()) {
+    await p2.locator('.sidebar button', { hasText: '法人向け管理' }).click();
+    await p2.locator('.admin-main').waitFor();
+    await audit(p2, 'admin');
+  }
   // CORE-PREVIEW-001: the optional core drafts (hidden by default; turned on via prefs here).
   const p3 = await env.page(ctx);
   await p3.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true, corePreview: true })));
@@ -100,7 +113,7 @@ try {
 } finally {
   await env.close();
 }
-const summary = Object.fromEntries(Object.entries(report.screens).map(([k, v]) => [k, { contrast: v.contrast.filter((c) => c.text !== '✦').length, decorativeSpark: v.contrast.filter((c) => c.text === '✦').length, unnamed: v.unnamedControls.length, inputsUnder16px: v.inputsUnder16px.length, under24: v.targetsUnder24.length, under44: v.targetsUnder44, scrollWidth: v.scrollWidth }]));
+const summary = Object.fromEntries(Object.entries(report.screens).map(([k, v]) => [k, { contrast: v.contrast.filter((c) => c.text !== '✦').length, decorativeSpark: v.contrast.filter((c) => c.text === '✦').length, unnamed: v.unnamedControls.length, inputsUnder16px: v.inputsUnder16px.length, under24: v.targetsUnder24.length, textUnder12: v.textUnder12px.length, under44: v.targetsUnder44, scrollWidth: v.scrollWidth }]));
 report.summary = summary;
 writeFileSync(process.argv[2], JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(summary));

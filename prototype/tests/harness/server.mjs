@@ -30,7 +30,7 @@ const placeholders = {
   '/icon-512.png': () => png(512, [124, 101, 189]),
 };
 
-const shell = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#f8f9fc"><title>Care Kotoba | 介護のことばを、現場の力に。</title><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" href="/icon-192.png"><link rel="stylesheet" href="/__harness/globals.css"></head><body class="antialiased"><div id="root" style="display:contents"></div><script type="module" src="/__harness/app.js"></script></body></html>`;
+const shell = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#f6f1e8"><title>Care Kotoba | 介護のことばを、現場の力に。</title><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" href="/icon-192.png"><link rel="stylesheet" href="/__harness/globals.css"></head><body class="antialiased"><div id="root" style="display:contents"></div><script type="module" src="/__harness/app.js"></script></body></html>`;
 
 function matchRoute(routes, pathname) {
   for (const r of routes) {

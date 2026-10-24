@@ -104,7 +104,7 @@ test('the learner is asked for the access code before an AI practice, and the de
   const page = await env.page(undefined, { login: false });
   await openScene(page, env.baseUrl, '入浴を断られたとき');
   await page.getByText('まずはデモで操作を体験').click();
-  await page.getByText('DEMO').first().waitFor();
+  await page.locator('.engine-badge.demo', { hasText: 'デモ' }).waitFor();
   await page.getByRole('button', { name: /戻る/ }).click();
 
   await openScene(page, env.baseUrl, '入浴を断られたとき');

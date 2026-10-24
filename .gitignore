@@ -41,5 +41,8 @@ prototype/config/staging/wrangler.local.jsonc
 
 # Working files of the vendored design skills (tools/design-skills/README.md)
 .taste-skill/
-.impeccable/
+# impeccable: keep surface briefs (direction contracts) and the shared config; ignore runtime state
+.impeccable/*
+!.impeccable/surfaces/
+!.impeccable/config.json
 **/skills/impeccable/scripts/bin/
