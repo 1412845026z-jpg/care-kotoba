@@ -59,7 +59,7 @@ async function audit(page, name) {
 }
 
 // Tabs: bottom nav on phones, sidebar on desktop.
-const DESK = { 'シーン': 'シーンを探す', 'ノート': 'ことばノート', '学習記録': '学習の記録' };
+const DESK = { 'シーン': 'シーンを探す', 'ノート': 'ことばノート', '学習記録': '学習の記録', '基礎': '基礎の声かけ' };
 async function nav(page, label) {
   const mobile = page.locator('.mobile-nav button', { hasText: label });
   if (await mobile.isVisible()) return mobile.click();
@@ -106,6 +106,17 @@ try {
     await p2.locator('.admin-main').waitFor();
     await audit(p2, 'admin');
   }
+  // SSW-BASIC-APP-001: the basic course list and a practice sheet with the answer shown.
+  const p4 = await env.page(ctx);
+  await gotoApp(p4, env.baseUrl);
+  await nav(p4, '基礎');
+  await p4.locator('.basic-topic').first().waitFor();
+  await audit(p4, 'basic');
+  await p4.locator('.basic-topic').first().click();
+  await p4.locator('.basic-scene-row').nth(1).click();
+  await p4.getByRole('button', { name: '答えを見る' }).click();
+  await p4.locator('.basic-answer').waitFor();
+  await audit(p4, 'basic-practice');
   // CORE-PREVIEW-001: the optional core drafts (hidden by default; turned on via prefs here).
   const p3 = await env.page(ctx);
   await p3.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true, corePreview: true })));

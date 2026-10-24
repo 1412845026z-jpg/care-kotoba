@@ -69,6 +69,7 @@
 | REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
 | REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude + Codex整合 | merged | `claude/REVIEW-001`，PR #49，head3e709a9；merge6148494 | CI40077969512：static0/unit99/e2e62，两尺寸12/13屏硬门通过；模拟非真实AI/真机 |
 | A11Y-003 | A11Y-CI-001 交给 Claude 的 axe 项（弹窗名称、按钮名称、练习覆盖的 landmark/焦点、标题层级、opacity 对比度）＋选完会話のタイプ后焦点丢失；修正会话舞台文字的对比度回退；audit.mjs 计入 opacity 与渐变 | Claude | review_ready | `claude/A11Y-003`，PR #57 | handoffs/2026-10-24-A11Y-003-claude.md |
+| SSW-BASIC-APP-001 | 基础课（特定技能介护 24 主题 96 场景）接入 App：「基礎」页、逐字注音（由审过的假名对齐生成）、先说再看答案、设备语音、ことばノート与复习联动、本机进度；不调用 AI | Claude | review_ready | `claude/SSW-BASIC-APP-001`，PR #59（base 为 `claude/A11Y-003`，先合并 #57） | handoffs/2026-10-24-SSW-BASIC-APP-001-claude.md；verification/SSW-BASIC-APP-001 |
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude + Codex整合 | merged | `claude/START-FLOW-001`，PR #46，head9f346a6；merge11949bd | CI40076990478通过（含两尺寸A11Y硬门）；handoffs/2026-10-24-MERGE-2-codex.md |
 | AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | merged | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；PR #48，merge137ff8a，最终CI40072582215通过；run40071495822成功，25单句＋5对比，1.52MB；无削波，未真正试听；不接入App |
 | A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | merged | `codex/A11Y-CI-001` | handoffs/2026-10-24-A11Y-CI-001-codex.md；PR #50 headde1089b，mergefb54989；CI40073435460双job通过；audit11/12屏三项0，axe稳定17/21实例仅报告，详见交接 |
@@ -251,4 +252,6 @@
 - 用户明确主要支持特定技能外国介护人员，参考免费介护教材核对日常场景与常用说法，课程简单、实用；常用句重复正常，不为差异刻意改得不自然。首批新96微场景与旧48/12草稿并存，不把数量当全面覆盖。
 - 用户要求区分年长男女利用者、年轻/较年长男女职员及领导的声线与语言风格，优先用AI生成虚构角色声音。已写8档角色和16条试听文本；自然度、年龄感与一致性仍待实际生成/真人试听。
 - 单句录音按voice_profile+delivery_style+text+配置版本复用。当前553是待合成文本资产，不是已生成音频，8种角色也不是全部台词都乘8重录。
-- 沿用免费阶段限制。Higgsfield只读取模型/声线并get_cost报价0.01平台credits，未提交生成；无收费API、充值、部署或新插件安装。App由Claude接入，当前只新增独立基础课资料/审稿页。
+- 沿用免费阶段限制。Higgsfield只读取模型/声线并get_cost报价0.01平台credits，未提交生成；无收费API、充值、部署或新插件安装。App由Claude接入，当前只新增独立基础课资料/审稿页。- handoffs/2026-10-24-SSW-BASIC-APP-001-claude.md：基础课 96 场景接入 App（注音 384/384 对齐，AI 请求 0），笔记与复习联动。
+
+
