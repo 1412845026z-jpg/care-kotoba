@@ -1,7 +1,7 @@
 # LEGAL-UI-001｜App 内「ライセンスとデータの扱い」（Claude，2026-10-24）
 
 - 来源：用户关心上架后的合法性（16:40）；LEGAL-001（Codex，docs/14）要求的「商店披露与第三方许可准备」中，App 内需要实现的部分。
-- 分支：`claude/LEGAL-UI-001`，基于 `claude/SSW-BASIC-APP-001`（PR #59 未合并）。**PR 的 base 是 `claude/SSW-BASIC-APP-001`**：合并顺序 #57 → #59 → 本 PR。
+- 分支：`claude/LEGAL-UI-001`，PR #60，基于 `claude/SSW-BASIC-APP-001`（PR #59 未合并）。**PR 的 base 是 `claude/SSW-BASIC-APP-001`**：合并顺序 #57 → #59 → 本 PR。
 - 这不是隐私政策或利用规约。正式文件在公开前起草，并由专业人士确认。没有调用付费 API，没有改依赖、CI 或部署配置。
 
 ## 做了什么
