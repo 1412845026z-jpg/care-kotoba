@@ -4,7 +4,7 @@
 - 仓库与工作分支：https://github.com/1412845026z-jpg/care-kotoba ，`claude/SCENE-AV-APP-001`（从 `claude/I18N-001` @ `87bed74` 分出，**包含 PR #62 的提交，请先合并 #62**）
 - 开始时的集成分支 / 基准提交：`main` @ `ac44224` ＋ `claude/I18N-001`
 - 已推送代码提交：`61d22c6`
-- PR / 审查入口：见 PROJECT_STATE 本任务行
+- PR / 审查入口：https://github.com/1412845026z-jpg/care-kotoba/pull/63
 - 任务状态：review_ready（App 侧）；接入真实素材另列 SCENE-AV-APP-002（等 Codex 的素材）
 - 合并证据：未合并
 
