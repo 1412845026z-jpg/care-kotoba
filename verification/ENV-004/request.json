@@ -1,0 +1,4 @@
+{
+  "sha": "c3632f5850b32dda59a6622db76ac742f62235ee",
+  "purpose": "Retest the newly supplied PR #30 synthetic-crash/dev-overlay compatibility fix; preserve earlier failed evidence."
+}

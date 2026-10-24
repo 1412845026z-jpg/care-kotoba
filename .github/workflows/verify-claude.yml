@@ -1,6 +1,11 @@
 name: Pinned Claude mock verification
 
 on:
+  pull_request:
+    paths:
+      - .github/workflows/verify-claude.yml
+      - scripts/ci/verify_claude.py
+      - verification/ENV-004/request.json
   workflow_dispatch:
     inputs:
       sha:
@@ -15,10 +20,11 @@ concurrency:
   group: pinned-claude-review-${{ github.ref }}
   cancel-in-progress: true
 
-# Manual fixed-source review, independent of regular main CI. Every run must
-# explicitly name an immutable source SHA; there are no hardcoded business heads.
+# Fixed-source review: supply a full SHA manually, or commit an explicit review
+# request file on the ENV-004 tooling PR. No source SHA is hardcoded in this workflow.
 jobs:
   mock-review:
+    if: github.event_name != 'pull_request' || github.head_ref == 'codex/ENV-004'
     name: Source review / mock only / Node 22
     runs-on: ubuntu-24.04
     timeout-minutes: 18
@@ -32,10 +38,21 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Resolve explicit source request
+        id: request
+        env:
+          REQUESTED_SHA: ${{ inputs.sha }}
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync, appendFileSync } from 'node:fs';
+          const sha = process.env.REQUESTED_SHA || JSON.parse(readFileSync('verification/ENV-004/request.json', 'utf8')).sha;
+          if (!/^[0-9a-f]{40}$/.test(sha)) throw new Error('A full 40-character source SHA is required');
+          appendFileSync(process.env.GITHUB_OUTPUT, `sha=${sha}\n`);
+          JS
       - name: Checkout exact reviewed source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.sha }}
+          ref: ${{ steps.request.outputs.sha }}
           path: verified-source
           persist-credentials: false
       - name: Node 22
@@ -47,7 +64,7 @@ jobs:
         id: source
         working-directory: verified-source/prototype
         env:
-          REVIEW_SHA: ${{ inputs.sha }}
+          REVIEW_SHA: ${{ steps.request.outputs.sha }}
         run: |
           ACTUAL_SHA=$(git rev-parse HEAD)
           [[ "$REVIEW_SHA" =~ ^[0-9a-f]{40}$ ]]
