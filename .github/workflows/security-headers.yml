@@ -1,0 +1,70 @@
+name: Worker security header verification
+on:
+  pull_request:
+    paths:
+      - prototype/worker/**
+      - scripts/ci/verify_claude.py
+      - scripts/ci/security_browser_probe.mjs
+      - scripts/ci/check_security_policy.mjs
+      - .github/workflows/security-headers.yml
+  push:
+    branches: [main, codex/SEC-001]
+    paths:
+      - prototype/worker/**
+      - scripts/ci/security_browser_probe.mjs
+      - scripts/ci/check_security_policy.mjs
+      - .github/workflows/security-headers.yml
+permissions:
+  contents: read
+concurrency:
+  group: worker-security-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  headers:
+    name: CSP, API, furigana and mock WebRTC / Node 22
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    env:
+      CI: "true"
+      WRANGLER_SEND_METRICS: "false"
+      CLOUDFLARE_CF_FETCH_ENABLED: "false"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Use pinned pnpm and install frozen dependencies
+        working-directory: prototype
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+          pnpm install --frozen-lockfile
+          pnpm exec playwright install chromium
+      - name: Policy and transport preservation checks
+        run: node scripts/ci/check_security_policy.mjs
+      - name: Complete offline suite (simulated AI and peer)
+        working-directory: prototype
+        env:
+          CK_TEST_TIMEOUT_SECONDS: "600"
+        run: |
+          mkdir -p ../security-results/offline
+          NODE_OPTIONS="--import=$GITHUB_WORKSPACE/scripts/ci/local_fetch_only.mjs" node tests/run.mjs all --report ../security-results/offline/tests.json
+      - name: Real dev security assertions and complete mock browser suite
+        run: python3 scripts/ci/verify_claude.py --source . --mode real-dev --browser-probe scripts/ci/security_browser_probe.mjs --report-dir security-results/real-dev
+      - name: Confirm source and environment restored
+        if: ${{ !cancelled() }}
+        run: |
+          git diff --exit-code
+          test ! -e prototype/.dev.vars
+          test ! -e prototype/.env.local
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ always() }}
+        with:
+          name: worker-security-${{ github.sha }}
+          path: security-results/
+          retention-days: 7
+          if-no-files-found: warn

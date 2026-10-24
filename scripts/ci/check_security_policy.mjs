@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {mkdtempSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join,resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const req=createRequire(new URL('../../prototype/package.json',import.meta.url));
+const dir=mkdtempSync(join(tmpdir(),'ck-security-'));
+try {
+ const file=join(dir,'policy.mjs');
+ req('esbuild').buildSync({entryPoints:[resolve('prototype/worker/security-headers.ts')],bundle:true,platform:'node',format:'esm',outfile:file});
+ const {createSecurityPolicy,securityRequest,securityResponse}=await import(pathToFileURL(file).href);
+ const prod=createSecurityPolicy(new URL('https://example.invalid'),false);
+ const dev=createSecurityPolicy(new URL('http://127.0.0.1:5173'),true);
+ assert(!/script-src [^;]*'unsafe-(inline|eval)'/.test(prod.csp));
+ assert.match(dev.csp,/script-src [^;]*'unsafe-eval'/);
+ assert.match(dev.csp,/connect-src [^;]*ws:\/\/127\.0\.0\.1:5173/);
+ assert.notEqual(prod.nonce,createSecurityPolicy(new URL('https://example.invalid'),false).nonce);
+ const original=new Request('https://example.invalid/api/chat',{method:'POST',body:'{"test":true}',headers:{'content-type':'application/json',cookie:'ck_test=fake','content-security-policy':"script-src 'unsafe-inline'",'content-security-policy-report-only':'caller-controlled'}});
+ const trusted=securityRequest(original,prod.csp);
+ assert.equal(trusted.headers.get('content-security-policy'),prod.csp);
+ assert.equal(trusted.headers.get('content-security-policy-report-only'),null);
+ assert.equal(trusted.headers.get('cookie'),'ck_test=fake');
+ assert.equal(await trusted.text(),'{"test":true}');
+ const h=new Headers({'content-type':'application/sdp','x-ck-session':'test-session','cache-control':'no-store'});h.append('set-cookie','a=1');h.append('set-cookie','b=2');
+ const api=securityResponse(new Response('v=0\r\n',{status:200,headers:h}),original,prod.csp);
+ assert.equal(await api.text(),'v=0\r\n');assert.equal(api.headers.get('x-ck-session'),'test-session');assert.equal(api.headers.get('cache-control'),'no-store');assert.equal(api.headers.getSetCookie().length,2);
+ assert(api.headers.has('strict-transport-security'));
+ const http=securityResponse(new Response('<html/>',{headers:{'content-type':'text/html'}}),new Request('http://localhost/'),dev.csp);
+ assert(!http.headers.has('strict-transport-security'));assert.equal(http.headers.get('cache-control'),'no-store');
+ console.log('Security policy checks passed: production/development split, nonce freshness, untrusted header replacement, POST/cookies/SDP preservation, HSTS scope.');
+}finally{rmSync(dir,{recursive:true,force:true});}
