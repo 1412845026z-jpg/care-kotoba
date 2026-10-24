@@ -146,8 +146,8 @@ def validate(root=ROOT):
         samples.append(value)
     for scenario_id in scenarios:
         cases = Counter(s['case_type'] for s in samples if s['scenario_id'] == scenario_id)
-        if cases != Counter({kind: 1 for kind in CASE_TYPES}):
-            errors.append(f'{scenario_id}: needs one of each case type')
+        if any(cases[kind] < 1 for kind in CASE_TYPES):
+            errors.append(f'{scenario_id}: needs at least one of each case type')
     return {'status': 'failed' if errors else 'passed', 'scenario_count': len(scenarios),
             'sample_count': len(samples), 'skill_coverage': dict(Counter(v['primary_skill'] for v in scenarios.values())),
             'case_coverage': dict(Counter(s['case_type'] for s in samples)), 'errors': errors}

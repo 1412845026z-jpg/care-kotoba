@@ -1,17 +1,17 @@
 [
   {
     "id": "CK-T001",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
     "ja": "コミュニケーション",
-    "reading_ja": "こみゅにけーしょん",
+    "reading_ja": "コミュニケーション",
     "learning_gloss": {
       "zh-Hans": "交换信息并确认彼此理解；听不清时可以请求重述。",
       "en": "Exchanging information and checking understanding."
     },
-    "example_ja": "もう一度、ゆっくりお願いします。",
+    "example_ja": "職員間のコミュニケーションでは、分からない言葉をそのままにせず聞き返します。",
     "feedback_guard_zh": "听不清还只说「はい」，会掩盖缺失的信息。",
     "scenario_ids": [
       "CK-C01",
@@ -31,7 +31,7 @@
   },
   {
     "id": "CK-T002",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -41,7 +41,7 @@
       "zh-Hans": "妨碍听清说话内容的声音；练习重点是说明自己没听清。",
       "en": "Noise that makes speech harder to hear."
     },
-    "example_ja": "周りの音で聞き取れませんでした。もう一度お願いします。",
+    "example_ja": "雑音で聞き取れませんでした。もう一度お願いします。",
     "feedback_guard_zh": "不要把没听清的姓名或顺序自行补齐。",
     "scenario_ids": [
       "CK-C02"
@@ -180,7 +180,7 @@
   },
   {
     "id": "CK-T007",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -190,7 +190,7 @@
       "zh-Hans": "有意识地看、听等获取信息；只能报告实际注意到的内容。",
       "en": "Observing what is actually seen or heard."
     },
-    "example_ja": "私が見たのは、床に座っているところです。",
+    "example_ja": "観察したのは、床に座っている姿です。そこに至る経緯は見ていません。",
     "feedback_guard_zh": "「看见坐在地上」不能直接改写为「目击跌倒」。",
     "scenario_ids": [
       "CK-P01",
@@ -211,7 +211,7 @@
   },
   {
     "id": "CK-T008",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -221,7 +221,7 @@
       "zh-Hans": "认真听对方表达，留出说话的时间；不强迫对方解释拒绝理由。",
       "en": "Listening attentively and allowing the person time to speak."
     },
-    "example_ja": "今は入りたくないのですね。",
+    "example_ja": "傾聴では、先に結論を決めず、ご本人が話す内容を聞きます。",
     "feedback_guard_zh": "有倾听的回应后，不以反复追问理由换取同意。",
     "scenario_ids": [
       "CK-R01",
@@ -241,7 +241,7 @@
   },
   {
     "id": "CK-T009",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -251,7 +251,7 @@
       "zh-Hans": "先接住对方已表达的感受或选择；不代表必须同意所有事实判断。",
       "en": "Acknowledging an expressed feeling or choice."
     },
-    "example_ja": "ここで静かに過ごしたいのですね。",
+    "example_ja": "受容を意識して、まず「今はしたくない」という気持ちを受け止めます。",
     "feedback_guard_zh": "不把「先接受拒绝」教成取消所有必要的沟通或报告。",
     "scenario_ids": [
       "CK-R01",
@@ -271,7 +271,7 @@
   },
   {
     "id": "CK-T010",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -281,7 +281,7 @@
       "zh-Hans": "尝试理解对方的感受，并用不替对方下结论的语言回应。",
       "en": "Trying to understand a feeling without claiming to know its cause."
     },
-    "example_ja": "見られるのは恥ずかしいのですね。",
+    "example_ja": "共感を示すときも、話されていない気持ちを決めつけないようにします。",
     "feedback_guard_zh": "没有说过的情绪和原因，不替本人编造。",
     "scenario_ids": [
       "CK-R02",
@@ -301,7 +301,7 @@
   },
   {
     "id": "CK-T011",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -311,7 +311,7 @@
       "zh-Hans": "本人表达自己的选择；练习允许对方拒绝，不把顺从当成功标准。",
       "en": "The person expressing their own choice, including declining."
     },
-    "example_ja": "今日は参加しないということですね。",
+    "example_ja": "自己決定を尊重して、今日は参加しないという希望を担当者に伝えます。",
     "feedback_guard_zh": "不能因为最终没有参加或没有入浴就自动判学员失败。",
     "scenario_ids": [
       "CK-R01",
@@ -332,7 +332,7 @@
   },
   {
     "id": "CK-T012",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -342,7 +342,7 @@
       "zh-Hans": "把对方作为值得尊重的人对待；措辞和回应都保留其意愿。",
       "en": "Treating the person with respect for their wishes."
     },
-    "example_ja": "今は着替えたくないのですね。",
+    "example_ja": "尊厳を大切にし、見られるのが恥ずかしいという言葉を受け止めます。",
     "feedback_guard_zh": "不用「大家都做了」等压力语言覆盖本人已经表达的意愿。",
     "scenario_ids": [
       "CK-R01",
@@ -363,7 +363,7 @@
   },
   {
     "id": "CK-T013",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -373,7 +373,7 @@
       "zh-Hans": "只向适当对象、在必要范围内传达工作信息；不在练习中加入真实个人资料。",
       "en": "Keeping work information within the appropriate audience and purpose."
     },
-    "example_ja": "この内容は、担当の方に必要な範囲で報告します。",
+    "example_ja": "秘密保持のため、報告する相手と共有する範囲を確認します。",
     "feedback_guard_zh": "示例全部虚构；本词条不授权向企业展示学员原始录音。",
     "scenario_ids": [
       "CK-R03",
@@ -393,7 +393,7 @@
   },
   {
     "id": "CK-T014",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -403,7 +403,7 @@
       "zh-Hans": "可关联到特定个人的信息；本练习使用虚构姓名和情况。",
       "en": "Information connected to an identifiable person; examples here are fictional."
     },
-    "example_ja": "練習には、実在する方の情報を入れないようにします。",
+    "example_ja": "練習には、実在する方の個人情報を入れないようにします。",
     "feedback_guard_zh": "术语解释不是对特定数据处理行为的法律判断。",
     "scenario_ids": [
       "CK-R03",
@@ -452,7 +452,7 @@
   },
   {
     "id": "CK-T016",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -462,7 +462,7 @@
       "zh-Hans": "本人感受到并表达的不适；报告时保留本人原话和信息来源。",
       "en": "A symptom experienced and reported by the person."
     },
-    "example_ja": "中村さんは「右膝が痛い」と話しています。",
+    "example_ja": "自覚症状について、中村さんは「左のひざが痛い」と話しています。原因は未確認です。",
     "feedback_guard_zh": "本人说过什么可以被确认；疼痛的原因和诊断可能仍未确认。",
     "scenario_ids": [
       "CK-P01"
@@ -481,7 +481,7 @@
   },
   {
     "id": "CK-T017",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -491,7 +491,7 @@
       "zh-Hans": "摄入；本练习只描述已知的单次情况，不自行推定营养或病因。",
       "en": "Intake; describe only the observed occasion in this exercise."
     },
-    "example_ja": "今日の昼食について、私が確認した範囲を報告します。",
+    "example_ja": "今日の昼食の摂取量について、私が確認した範囲を報告します。",
     "feedback_guard_zh": "不知道数量时不能给出数字，也不能推出近几天一直如此。",
     "scenario_ids": [
       "CK-P02"
@@ -510,7 +510,7 @@
   },
   {
     "id": "CK-T018",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -520,7 +520,7 @@
       "zh-Hans": "进食；拒绝进食时先回应本人的意思，不凭一句话判断原因。",
       "en": "Eating; acknowledge a refusal without inventing its cause."
     },
-    "example_ja": "今は食べたくないのですね。",
+    "example_ja": "摂食の様子は、まだ自分では確認していません。",
     "feedback_guard_zh": "不得从拒绝推断疾病、吞咽状态或长期食欲。",
     "scenario_ids": [
       "CK-R02",
@@ -569,7 +569,7 @@
   },
   {
     "id": "CK-T020",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -579,7 +579,7 @@
       "zh-Hans": "从某处跌落；未目击过程时，不把它当作已经确认的原因。",
       "en": "Falling from a higher place; do not assert an unseen event."
     },
-    "example_ja": "どうして床に座っていたのかは、分かりません。",
+    "example_ja": "転落したかどうかは分かりません。床に座っている姿だけを見ました。",
     "feedback_guard_zh": "不在転倒、転落或主动坐下之间猜一个作为报告事实。",
     "scenario_ids": [
       "CK-P03"
@@ -657,12 +657,12 @@
   },
   {
     "id": "CK-T023",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
     "ja": "口腔ケア",
-    "reading_ja": "こうくうけあ",
+    "reading_ja": "こうくうケア",
     "learning_gloss": {
       "zh-Hans": "口腔相关的清洁照护；练习重点是没听懂时请对方解释。",
       "en": "Care of the mouth; the exercise is asking for an explanation."
@@ -686,7 +686,7 @@
   },
   {
     "id": "CK-T024",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -696,7 +696,7 @@
       "zh-Hans": "补充水分；本卡练习确认指示，不设定任何人的饮水量或限制。",
       "en": "Taking fluids; this card does not set an amount or individual care plan."
     },
-    "example_ja": "今回の依頼で、私が確認することを教えてください。",
+    "example_ja": "水分補給について、今回頼まれた準備の内容を確認します。",
     "feedback_guard_zh": "没有明确给出的饮水量、限制与本人意愿不得补造。",
     "scenario_ids": [
       "CK-C03",
@@ -716,7 +716,7 @@
   },
   {
     "id": "CK-T025",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -726,7 +726,7 @@
       "zh-Hans": "擦拭身体的一部分；不清楚范围时需要明确问出来。",
       "en": "Wiping part of the body; ask which part if it is unspecified."
     },
-    "example_ja": "どの部分のことか、確認してもよろしいですか。",
+    "example_ja": "部分清拭とは、どのような意味ですか。",
     "feedback_guard_zh": "本卡不把任何身体部位设为默认作业范围。",
     "scenario_ids": [
       "CK-C03"
@@ -745,7 +745,7 @@
   },
   {
     "id": "CK-T026",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -755,7 +755,7 @@
       "zh-Hans": "这里用于区分本人感受或发话这一来源，不能与「未确认」画等号。",
       "en": "Information about a reported experience; subjective does not mean unconfirmed."
     },
-    "example_ja": "「痛い」とご本人が話したことは確認しました。原因は分かりません。",
+    "example_ja": "主観的事実を伝えるときは、ご本人の言葉と、誰から聞いたかを添えます。",
     "feedback_guard_zh": "「本人说痛」与「疼痛原因」是两个断言，分别标信息来源和确认状态。",
     "scenario_ids": [
       "CK-C04",
@@ -776,7 +776,7 @@
   },
   {
     "id": "CK-T027",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -786,7 +786,7 @@
       "zh-Hans": "可观察或测量的信息；仍要说明谁、何时、怎样获取，不能自动推定原因。",
       "en": "Observable information, with its observer, time and limits stated."
     },
-    "example_ja": "14時に、私が床に座っているところを見ました。",
+    "example_ja": "客観的事実として、14時10分に床に座っている姿を見たと報告します。",
     "feedback_guard_zh": "观察到的姿势是一个事实；事故过程和原因是另外的断言。",
     "scenario_ids": [
       "CK-C04",
@@ -808,7 +808,7 @@
   },
   {
     "id": "CK-T028",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -818,7 +818,7 @@
       "zh-Hans": "事故相关的报告文书；本练习只区分已知、传闻和未确认内容。",
       "en": "An incident report; this exercise distinguishes sources and uncertainty only."
     },
-    "example_ja": "直接見たことと、まだ確認していないことを分けて報告します。",
+    "example_ja": "事故報告書には、直接見たことと、まだ確認していないことを分けて書きます。",
     "feedback_guard_zh": "出现这个词不代表系统已经有真实事故报告、法定流程或合规功能。",
     "scenario_ids": [
       "CK-C04",
@@ -838,7 +838,7 @@
   },
   {
     "id": "CK-T029",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -848,7 +848,7 @@
       "zh-Hans": "想做某事的意愿；一句拒绝不能直接支持对整体意愿的判断。",
       "en": "Willingness to do something; one refusal does not establish a general lack of motivation."
     },
-    "example_ja": "今日は静かに過ごしたいと話されています。",
+    "example_ja": "参加しないという選択だけで、意欲がないとは決めつけられません。",
     "feedback_guard_zh": "避免把本人今天的选择改写为「一直没有意欲」。",
     "scenario_ids": [
       "CK-R04"
@@ -867,17 +867,17 @@
   },
   {
     "id": "CK-T030",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
     "ja": "リスク",
-    "reading_ja": "りすく",
+    "reading_ja": "リスク",
     "learning_gloss": {
       "zh-Hans": "可能出现不利情况的可能性；不把语言练习改写成风险诊断。",
       "en": "The possibility of an adverse outcome; this exercise does not assess clinical risk."
     },
-    "example_ja": "分からない点は、確認してから報告します。",
+    "example_ja": "聞き違いのリスクを減らすため、分からない点を確認します。",
     "feedback_guard_zh": "不能由转写或措辞推定实际身体风险等级。",
     "scenario_ids": [
       "CK-C02",
@@ -897,7 +897,7 @@
   },
   {
     "id": "CK-T031",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -907,7 +907,7 @@
       "zh-Hans": "把缺少或含糊的信息问清，并区分已经确认和仍然不知道的内容。",
       "en": "Clarifying missing information and stating what remains unknown."
     },
-    "example_ja": "何を、いつまでに行えばよいですか。",
+    "example_ja": "確認させてください。何を、いつまでに行えばよいですか。",
     "feedback_guard_zh": "不要求逐字命中参考句。",
     "scenario_ids": [
       "CK-C01",
@@ -925,7 +925,7 @@
   },
   {
     "id": "CK-T032",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -935,7 +935,7 @@
       "zh-Hans": "表达不愿意；回应时先承认这一意思，不强迫给理由。",
       "en": "Expressing that one does not want something."
     },
-    "example_ja": "今はしたくないのですね。",
+    "example_ja": "拒否の理由を必ず聞き出すのではなく、話すかどうかも本人に選んでもらいます。",
     "feedback_guard_zh": "接受拒绝本身可以是成功结局。",
     "scenario_ids": [
       "CK-R01",
@@ -979,7 +979,7 @@
   },
   {
     "id": "CK-T034",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "draft_pending_expert_review",
     "review_notice": "草稿，待介护经验者与日语教育者审稿",
     "fictional_examples": true,
@@ -989,7 +989,7 @@
       "zh-Hans": "目前还没有核实；它描述确认状态，不评价信息提供者是否可信。",
       "en": "Not yet checked; this labels verification status, not a person’s credibility."
     },
-    "example_ja": "原因については、まだ確認できていません。",
+    "example_ja": "原因は未確認です。分かったことと分からないことを分けて伝えます。",
     "feedback_guard_zh": "本人原话已经听见，不代表原话中的因果判断已经证实。",
     "scenario_ids": [
       "CK-C04",
