@@ -124,6 +124,20 @@ test('voice: a line the recogniser was unsure about asks the learner to check it
   assert.deepEqual(page.errors, []);
 });
 
+test('voice: the last minute shows a countdown instead of elapsed time', async () => {
+  const page = await env.page();
+  await startLive(page);
+  await openingTurn();
+  const time = page.locator('.stage-top .session-time');
+  assert.doesNotMatch(await time.innerText(), /残り/);
+  // Move the page clock 125 s ahead (the session limit is 180 s by default); the countdown appears on the next tick.
+  await page.evaluate(() => { const real = Date.now.bind(Date); Date.now = () => real() + 125_000; });
+  await page.waitForFunction(() => document.querySelector('.stage-top .session-time')?.textContent.includes('残り'), null, { timeout: 5000 });
+  assert.match(await time.innerText(), /残り 0:5\d/);
+  assert.ok(await time.evaluate((e) => e.classList.contains('time-warning')));
+  assert.deepEqual(page.errors, []);
+});
+
 test('voice: an interrupted reply is marked as interrupted', async () => {
   const page = await env.page();
   await startLive(page);
