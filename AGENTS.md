@@ -40,3 +40,10 @@
 - 当前阶段的文件归属与冻结范围见 PROJECT_STATE.md「当前分工与文件归属」。对方负责且标为冻结的文件，在其分支合并前不要修改；发现问题写进 handoffs/ 记录或 PR 评论。
 - `prototype/package.json`、`pnpm-lock.yaml` 等依赖与锁文件只由当前负责构建环境的一方修改；另一方需要依赖时，在交接记录写明包名、版本和用途。
 - 不产生新费用：不调用付费 AI API、不充值、不开通付费服务；需要花钱、部署或对外发布的步骤只准备方案，等用户授权。
+
+## 设计评审技能（2026-10-24 用户要求接入）
+
+- 仓库里原样放入了两份第三方设计技能：impeccable（Apache-2.0）和 taste-skill（`design-taste-frontend`，MIT）。Claude Code 读 `.claude/skills/`，Codex 读 `.agents/skills/`。来源提交、文件哈希和许可见 `tools/design-skills/`（`README.md`、`manifest.json`）与 `docs/licenses/`。
+- 共同的设计依据是根目录的 `PRODUCT.md`（产品事实）和 `DESIGN.md`（当前视觉系统）。视觉评审和改动以这两份文件为准，产品约束（手机优先、WCAG AA、注音、平易尊重的语气、虚构场景、不出认证分数）优先于技能的审美偏好。
+- 不在本仓库里修改技能文件，升级时用 `node tools/design-skills/vendor.mjs` 重新放入。没有用户同意时，不运行 impeccable 的 launcher（它会下载并运行引擎二进制），不安装它的编辑钩子，也不用 taste-skill 的 `assets.mjs` 把外部图片放进产品。具体规则见 `tools/design-skills/README.md`。
+
