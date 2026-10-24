@@ -1,0 +1,10 @@
+{
+  "samples": 12,
+  "paired_contexts": 6,
+  "acceptable": 6,
+  "unacceptable": 6,
+  "uncertain_transcripts": 2,
+  "errors": [],
+  "model_calls": 0,
+  "professional_reviewed": false
+}

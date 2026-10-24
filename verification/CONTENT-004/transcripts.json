@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "scenario_count": 12,
+  "sample_count": 84,
+  "skill_coverage": {
+    "clarification": 4,
+    "report_certainty": 4,
+    "refusal_respect": 4
+  },
+  "case_coverage": {
+    "positive": 24,
+    "common_error": 24,
+    "uncertain_transcript": 12,
+    "acceptable_variation": 24
+  },
+  "errors": [],
+  "seconds": 0.005406
+}
