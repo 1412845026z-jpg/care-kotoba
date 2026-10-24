@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "task": "SSW-CONTENT-001",
   "status": "draft_not_generated_or_listened",
   "fictional": true,
@@ -216,7 +216,9 @@
     "deduplication_key": [
       "text_ja",
       "voice_profile_id",
-      "delivery_style_id"
+      "role_delivery_style_id",
+      "delivery_style_id",
+      "delivery_spec_version"
     ],
     "deduplication_scope_zh": "在已锁定的声音身份与合成配置版本内去重。相同文本、相同声线、相同表达风格只生成并保存一份音频，多个场景引用该资产。",
     "identity_revision_rule_zh": "seed、参考声音、模型或关键配置发生变化时，增加identity_revision并使用新的缓存命名空间，不静默覆盖或误复用旧音频。",
@@ -243,6 +245,86 @@
     "real_voice_cloning_allowed": false,
     "rights_rule_zh": "优先使用AI生成的原创虚构声音；不克隆真实声纹，不以真人、名人或可识别人物音频作模仿目标。生成模型及输出的许可仍需逐项核对。",
     "naturalness_acceptance_zh": "API请求成功、文件可播放或时长有效，只证明技术链路；不能据此认定自然日语、正确重音、年龄印象或教学效果已获真人验收。",
-    "adult_respect_rule_zh": "所有角色都是成年人。老人不统一颤抖或病弱，职员不采用娃娃音，带班不采用吼叫、讽刺或威压；不从声线推断疾病、能力或应受服从程度。"
+    "adult_respect_rule_zh": "所有角色都是成年人。老人不统一颤抖或病弱，职员不采用娃娃音，带班不采用吼叫、讽刺或威压；不从声线推断疾病、能力或应受服从程度。",
+    "emotional_delivery": {
+      "direction_file": "speech-delivery.json",
+      "per_utterance_direction_files": [
+        "delivery-01-32.json",
+        "delivery-33-64.json",
+        "delivery-65-96.json"
+      ],
+      "same_identity_across_emotions": true,
+      "composition_zh": "保留固定人物音色，将角色基础倾向与当前句子情绪结合。人物描述中的平稳不是所有情境都用平调；当前紧急求助可以明确紧迫，日常期待可以轻微愉快。",
+      "semantic_rule_zh": "按照原文与上下文表达感情；不另加台词、笑声、哭声或呻吟，不把关切变成诊断，不把安慰变成安全保证，不用热情劝服对方接受照护。",
+      "browser_limit_zh": "预览页系统TTS只作读音辅助，不保证表达情绪。调速或变调不能证明已完成情感合成。",
+      "acceptance_zh": "同一固定声线跨情绪对照，核对语义、自然抑扬、句间停顿、角色连续性、日语可懂度与是否过度表演；不能仅以成功返回音频验收。"
+    },
+    "emotion_audition": {
+      "status": "script_only_not_generated_or_listened",
+      "generated_asset_count": 0,
+      "note_zh": "补充于原16条身份试音稿。以下是情感对照试音要求，尚未计入实际录音数量或费用；先做少量对照再决定全量。",
+      "comparisons": [
+        {
+          "id": "staff_same_text_different_context",
+          "voice_profile_id": "young_female_staff",
+          "text_ja": "わかりました。",
+          "directions": [
+            {
+              "context_zh": "同事交接后确认已理解",
+              "style_id": "calm_confirmation"
+            },
+            {
+              "context_zh": "听到本人表示现在不想参加，接纳其意愿",
+              "style_id": "gentle_acknowledgment"
+            }
+          ]
+        },
+        {
+          "id": "staff_everyday_and_urgent",
+          "voice_profile_id": "young_male_staff",
+          "scene_turns": [
+            {
+              "scene_id": "SSW-S03",
+              "turn": 0
+            },
+            {
+              "scene_id": "SSW-S60",
+              "turn": 1
+            }
+          ],
+          "purpose_zh": "温和关切与紧迫求助都保持同一个职员身份；求助时地点和来援请求清楚。"
+        },
+        {
+          "id": "resident_preference_and_worry",
+          "voice_profile_id": "elderly_female",
+          "scene_turns": [
+            {
+              "scene_id": "SSW-S55",
+              "turn": 0
+            },
+            {
+              "scene_id": "SSW-S55",
+              "turn": 2
+            }
+          ],
+          "purpose_zh": "表达回家希望与担心家事的差别，不统一虚弱或夸张惊慌。"
+        },
+        {
+          "id": "staff_explanation_and_reassurance",
+          "voice_profile_id": "mature_female_staff",
+          "scene_turns": [
+            {
+              "scene_id": "SSW-S89",
+              "turn": 1
+            },
+            {
+              "scene_id": "SSW-S89",
+              "turn": 3
+            }
+          ],
+          "purpose_zh": "训练的清楚说明与回应担心的安抚；不演成真实火灾恐慌。"
+        }
+      ]
+    }
   }
 }

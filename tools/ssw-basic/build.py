@@ -10,6 +10,7 @@ import re
 ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / 'content/ssw-basic'
 INPUTS = ['scenes-01-32.json', 'scenes-33-64.json', 'scenes-65-96.json']
+DELIVERY_INPUTS = ['delivery-01-32.json', 'delivery-33-64.json', 'delivery-65-96.json']
 ROLES = {'worker', 'resident', 'colleague', 'nurse', 'visitor'}
 TOPICS = [
     ('挨拶・入退室', '问候与进出房间'), ('聞き返し', '没听懂时再问一次'),
@@ -34,6 +35,44 @@ def dump(value):
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
+
+
+def read_delivery(scenes):
+    document = json.loads((BASE / 'speech-delivery.json').read_text(encoding='utf-8'))
+    styles = {s['id']: s for s in document['styles']}
+    assert len(styles) == len(document['styles']), 'Duplicate delivery style ID'
+    assert document['version'] and document['global_instruction_ja'].strip()
+    for style in styles.values():
+        assert style['intensity'] in {'low', 'moderate'}, 'Unsupported emotional intensity'
+        assert 0 < len(style['instruction_ja']) <= 128, 'Missing or overlong delivery instruction'
+        assert style['name_zh'].strip() and style['emotion_zh'].strip()
+    annotations = []
+    for name in DELIVERY_INPUTS:
+        group = json.loads((BASE / name).read_text(encoding='utf-8'))
+        assert isinstance(group, list) and len(group) == 32, f'{name}: expected 32 annotations'
+        annotations.extend(group)
+    assert [a['scene_id'] for a in annotations] == [s['id'] for s in scenes], 'Delivery coverage/order mismatch'
+    for scene, annotation in zip(scenes, annotations):
+        sid = scene['id']
+        assert len(annotation['dialogue']) == 4 and len(annotation['alternatives']) == 2, f'{sid}: incomplete delivery coverage'
+        for turn, direction in zip(scene['dialogue'], annotation['dialogue']):
+            assert direction['style_id'] in styles and direction['note_zh'].strip(), f'{sid}: invalid dialogue direction'
+            style = styles[direction['style_id']]
+            turn['delivery'] = {**direction, 'name_zh': style['name_zh'], 'emotion_zh': style['emotion_zh']}
+        assert all(s in styles for s in annotation['alternatives']), f'{sid}: invalid alternative direction'
+        scene['practice']['alternative_delivery'] = [
+            {'style_id': s, 'name_zh': styles[s]['name_zh'], 'emotion_zh': styles[s]['emotion_zh']}
+            for s in annotation['alternatives']]
+    voices = json.loads((BASE / 'voice-profiles.json').read_text(encoding='utf-8'))
+    voice_ids = {v['id'] for v in voices['voice_profiles']}
+    by_scene = {s['id']: s for s in scenes}
+    for comparison in voices['synthesis_rules']['emotion_audition']['comparisons']:
+        assert comparison['voice_profile_id'] in voice_ids, 'Unresolved audition voice profile'
+        for direction in comparison.get('directions', []):
+            assert direction['style_id'] in styles, 'Unresolved audition delivery style'
+        for reference in comparison.get('scene_turns', []):
+            assert reference['scene_id'] in by_scene and 0 <= reference['turn'] < 4, 'Unresolved audition line'
+    return document
 
 
 def read_pack():
@@ -96,25 +135,31 @@ def read_pack():
             errors.append(f'{sid}: missing practice check')
     if errors:
         raise ValueError('\n'.join(errors))
+    delivery = read_delivery(scenes)
     counts = Counter(s['topic_id'] for s in scenes)
     assert len(counts) == 24 and set(counts.values()) == {4}, 'Expected 24 topics with four scenes each'
-    paths = [BASE / name for name in INPUTS] + [sources_path, Path(__file__), BASE / 'template.html']
+    paths = [BASE / name for name in INPUTS + DELIVERY_INPUTS] + [sources_path, Path(__file__), BASE / 'template.html', BASE / 'speech-delivery.json', BASE / 'voice-profiles.json']
     hashes = {str(p.relative_to(ROOT)): digest(p.read_bytes()) for p in paths}
     topics = [{'id': f'T{i:02d}', 'title_ja': ja, 'title_zh': zh, 'scene_count': counts[f'T{i:02d}']} for i, (ja, zh) in enumerate(TOPICS, 1)]
-    return scenes, topics, source_document, hashes
+    return scenes, topics, source_document, hashes, delivery
 
 
-def build_audio_plan(scenes):
+def build_audio_plan(scenes, delivery):
     entries = {}
     occurrences = 0
+    role_text_pairs = set()
+    styles = {s['id']: s for s in delivery['styles']}
     for scene in scenes:
-        uses = [(t['speaker'], t['ja'], t['kana'], {'scene_id': scene['id'], 'kind': 'dialogue', 'turn': i}) for i, t in enumerate(scene['dialogue'])]
-        uses += [('worker', text, None, {'scene_id': scene['id'], 'kind': 'alternative', 'alternative': i}) for i, text in enumerate(scene['practice']['alternatives_ja'])]
-        for role, text, kana, use in uses:
+        uses = [(t['speaker'], t['ja'], t['kana'], t['delivery']['style_id'], {'scene_id': scene['id'], 'kind': 'dialogue', 'turn': i}) for i, t in enumerate(scene['dialogue'])]
+        uses += [('worker', text, None, scene['practice']['alternative_delivery'][i]['style_id'], {'scene_id': scene['id'], 'kind': 'alternative', 'alternative': i}) for i, text in enumerate(scene['practice']['alternatives_ja'])]
+        for role, text, kana, style_id, use in uses:
             occurrences += 1
-            identity = json.dumps([role, text], ensure_ascii=False, separators=(',', ':'))
+            role_text_pairs.add((role, text))
+            identity = json.dumps([role, text, style_id, delivery['version']], ensure_ascii=False, separators=(',', ':'))
             aid = 'ssw-' + digest(identity.encode())[:16]
             entry = entries.setdefault(identity, {'asset_id': aid, 'role': role, 'text_ja': text,
+                'delivery_style_id': style_id, 'delivery_spec_version': delivery['version'],
+                'delivery_instruction_ja': styles[style_id]['instruction_ja'],
                 'kana_candidates': [], 'scene_uses': [], 'status': 'pending_voice_choice_and_text_review',
                 'voice_id': None, 'mp3_file': None})
             if kana and kana not in entry['kana_candidates']:
@@ -133,12 +178,15 @@ def build_audio_plan(scenes):
             entry['reading_review'] = 'Authored reading still awaits Japanese-educator review.'
         assets.append(entry)
     assert len({a['asset_id'] for a in assets}) == len(assets), 'Audio asset ID collision'
-    return {'version': '0.1.0', 'kind': 'synthesis_plan_only', 'generated_mp3_count': 0,
+    return {'version': '0.2.0', 'kind': 'synthesis_plan_only', 'generated_mp3_count': 0,
         'voice_selection': 'not_selected', 'review_status': 'draft_pending_expert_review',
         'dialogue_line_occurrences': sum(len(s['dialogue']) for s in scenes),
         'alternative_line_occurrences': sum(len(s['practice']['alternatives_ja']) for s in scenes),
-        'total_occurrences': occurrences, 'unique_role_text_assets': len(assets),
-        'note_zh': '这是按角色和句子去重的待合成清单，不是已生成录音。原30段仍是音色样本；浏览器临时朗读也不计作MP3。',
+        'total_occurrences': occurrences, 'unique_role_text_assets': len(role_text_pairs),
+        'unique_delivery_assets': len(assets), 'delivery_spec': delivery,
+        'planning_key': ['role', 'text_ja', 'delivery_style_id', 'delivery_spec_version'],
+        'recording_key_requires_zh': '正式录音还需固定voice_profile_id、身份revision、模型及配置版本。逐句note_zh仅为编辑理由，不拼入合成指令；如实际提示不同，必须改变style_id或规格版本。',
+        'note_zh': '这是按角色、句子及表达风格去重的待合成清单，不是已生成录音。同句同声线同风格复用；情绪要求不同不能直接共用录音。原30段仍是音色样本；系统临时朗读不计作MP3或情感试听。',
         'assets': assets}
 
 
@@ -146,17 +194,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Validate that deterministic generated outputs are current')
     args = parser.parse_args()
-    scenes, topics, sources, hashes = read_pack()
-    audio = build_audio_plan(scenes)
-    catalog = {'version': '0.1.0', 'status': 'draft_pending_expert_review', 'fictional': True,
+    scenes, topics, sources, hashes, delivery = read_pack()
+    audio = build_audio_plan(scenes, delivery)
+    catalog = {'version': '0.2.0', 'status': 'draft_pending_expert_review', 'fictional': True,
         'audience_zh': '在日本介护现场工作的特定技能等外国介护人员；先练简单、尊重的工作沟通。',
         'difficulty_note_zh': 'basic是本项目的编辑分层，不是官方JLPT、CEFR或技能资格认定。每次只练一个沟通目标。',
         'scope_note_zh': '96个微场景是基础覆盖首版，不代表穷尽介护场景；不提供诊断、药物剂量、移乘技术或临床处置教学。实际工作遵循设施安排与负责人指示。',
         'reuse_note_zh': '参考官方免费教材核对主题与常用词；对话、读音辅助与中文说明由项目原创。没有导入教材原文、题目、音频或插图；不是官方教材。',
         'audio_note_zh': '全量音色尚未选择，新增MP3尚未生成。预览页只在用户点击后调用浏览器或系统临时朗读，可能需联网。',
+        'delivery_note_zh': '每句和替代表达已有语气方向。系统朗读不保证表达这些情感；正式AI录音须在同一声线下对照情境试听。',
         'counts': {'topics': len(topics), 'scenes': len(scenes), 'dialogue_lines': 384, 'alternative_answers': 192,
-            'unique_planned_audio_assets': audio['unique_role_text_assets'], 'generated_mp3_files': 0},
-        'source_files_sha256': hashes, 'topics': topics, 'source_index': sources, 'scenes': scenes}
+            'unique_role_text_assets': audio['unique_role_text_assets'],
+            'unique_planned_audio_assets': audio['unique_delivery_assets'], 'generated_mp3_files': 0},
+        'source_files_sha256': hashes, 'topics': topics, 'source_index': sources, 'speech_delivery': delivery, 'scenes': scenes}
     payload = json.dumps(catalog, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     template = (BASE / 'template.html').read_text(encoding='utf-8')
     assert template.count('__SSW_BASIC_DATA__') == 1, 'Expected exactly one template data marker'
@@ -166,7 +216,8 @@ def main():
     for topic in topics:
         group = [s for s in scenes if s['topic_id'] == topic['id']]
         coverage.append(f'| {topic["id"]} {topic["title_zh"]} | '+ '、'.join(s['id'] for s in group) + ' | ' + '；'.join(s['title_zh'] for s in group) + ' |')
-    coverage += ['', f'合计：{len(scenes)}场景，384轮台词，192条替代回答；按角色与文字去重后{audio["unique_role_text_assets"]}条待合成资产；本次新增MP3为0。', '',
+    coverage += ['', f'合计：{len(scenes)}场景，384轮台词，192条替代回答；按角色与文字去重后{audio["unique_role_text_assets"]}条基础文本，考虑表达风格后{audio["unique_delivery_assets"]}条待合成资产；本次新增MP3为0。', '',
+        '384轮台词和192条替代表达均有逐句语气标注。语气与固定人物声线分别控制；系统朗读不保证实现情感，不能代替正式合成和听验。', '',
         '## 仍需补核', '',
         '- 由介护经验者核查工作真实性、本人意向与语言任务边界；由日语教育者核查自然度、读音和学员负担。',
         '- 替代回答未单独提供假名，不能把待合成清单当成已审稿的朗读稿；同句不同读音时也需先消除分歧。',
@@ -186,7 +237,8 @@ def main():
     if stale:
         raise SystemExit('Stale or missing outputs: ' + ', '.join(stale) + '; run python3 tools/ssw-basic/build.py')
     print(dump({'checked' if args.check else 'built': True, 'scenes': len(scenes), 'topics': len(topics),
-        'dialogue_lines': 384, 'alternative_answers': 192, 'unique_planned_audio_assets': audio['unique_role_text_assets'],
+        'dialogue_lines': 384, 'alternative_answers': 192, 'unique_role_text_assets': audio['unique_role_text_assets'],
+        'unique_planned_audio_assets': audio['unique_delivery_assets'],
         'generated_mp3_files': 0, 'paid_api_calls': 0}).strip())
 
 

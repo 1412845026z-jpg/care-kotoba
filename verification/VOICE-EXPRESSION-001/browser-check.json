@@ -1,0 +1,52 @@
+{
+  "mode": "file:// Chromium; synthetic speech API",
+  "audibleEmotionVerified": false,
+  "paidCalls": 0,
+  "checks": [
+    {
+      "width": 360,
+      "dimensions": {
+        "scroll": 360,
+        "width": 360
+      },
+      "all384Directions": true,
+      "defaultHidden": true,
+      "toggleAndFilter": true,
+      "emergencyVersusDrill": true,
+      "practiceAlternativesAndKeyboard": true,
+      "speechContainsOnlyAuthoredJapanese": true,
+      "conversationAndStop": true
+    },
+    {
+      "width": 390,
+      "dimensions": {
+        "scroll": 390,
+        "width": 390
+      },
+      "all384Directions": true,
+      "defaultHidden": true,
+      "toggleAndFilter": true,
+      "emergencyVersusDrill": true,
+      "practiceAlternativesAndKeyboard": true,
+      "speechContainsOnlyAuthoredJapanese": true,
+      "conversationAndStop": true
+    },
+    {
+      "width": 1280,
+      "dimensions": {
+        "scroll": 1280,
+        "width": 1280
+      },
+      "all384Directions": true,
+      "defaultHidden": true,
+      "toggleAndFilter": true,
+      "emergencyVersusDrill": true,
+      "practiceAlternativesAndKeyboard": true,
+      "speechContainsOnlyAuthoredJapanese": true,
+      "conversationAndStop": true
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": [],
+  "passed": true
+}

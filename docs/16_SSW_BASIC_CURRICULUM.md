@@ -16,7 +16,7 @@
 
 ## 文件与接入
 
-`content/ssw-basic/index.html` 为可直接打开的独立审稿／练习页；三份scenes JSON合并为catalog；audio-plan列明后续需要哪些录音，按角色与文字去重，避免同句在多个单元重复生成。页面的系统日语朗读不是MP3生成，也没有接入OpenAI或付费接口。
+`content/ssw-basic/index.html` 为可直接打开的独立审稿／练习页；三份scenes JSON合并为catalog；audio-plan列明后续需要哪些录音，按角色、文字及逐句表达风格去重，避免同句同语气在多个单元重复生成。正式录音还要区分固定人物身份与模型配置。页面的系统日语朗读不是MP3生成，也没有接入OpenAI或付费接口。
 
 当前App代码归Claude负责，本次不改prototype/app、components、lib、tests，不改旧核心场景和生成schema。给Claude的下一步是读取catalog，通过新的基础课程入口呈现这些完整对话，沿用可开关注音、中文帮助和现有练习／笔记能力；接入必须明确基础课程、旧48场景与核心草稿的不同状态，不把新增文件当成界面已上线。
 

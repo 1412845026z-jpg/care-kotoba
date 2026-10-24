@@ -1,0 +1,802 @@
+[
+  {
+    "scene_id": "SSW-S01",
+    "dialogue": [
+      {
+        "style_id": "warm_greeting",
+        "note_zh": "首次介绍自己并询问称呼，亲切自然地建立联系。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "本人说明希望的称呼，表达自己的选择。"
+      },
+      {
+        "style_id": "warm_greeting",
+        "note_zh": "确认姓名后友好问候，语尾自然温暖。"
+      },
+      {
+        "style_id": "warm_greeting",
+        "note_zh": "回应初次问候，轻微明亮而不夸张。"
+      }
+    ],
+    "alternatives": [
+      "warm_greeting",
+      "warm_greeting"
+    ]
+  },
+  {
+    "scene_id": "SSW-S02",
+    "dialogue": [
+      {
+        "style_id": "respectful_request",
+        "note_zh": "进入私人房间前征求同意，留出答复空间。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "清楚地表示同意进入，语气自然。"
+      },
+      {
+        "style_id": "grateful",
+        "note_zh": "感谢对方同意，礼貌进入而不夸张客套。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "邀请对方到这边来，温和地指引。"
+      }
+    ],
+    "alternatives": [
+      "grateful",
+      "calm_confirmation"
+    ]
+  },
+  {
+    "scene_id": "SSW-S03",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "早上问候并关切当天感受，问题结尾等待回应。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "自然说出有点困的感受，不添加病弱或痛苦。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "复述本人感受，让对方知道自己听到了。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "确认仍有睡意，平常回应而不夸张迟缓。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S04",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "说明有需要时怎样呼叫，按钮和用途说清楚。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "认真确认按的位置，轻微疑问而不演成困惑。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "确认按钮位置并再次说明可呼叫，耐心清楚。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "简短表示已经理解，自然收尾。"
+      }
+    ],
+    "alternatives": [
+      "clear_guidance",
+      "clear_guidance"
+    ]
+  },
+  {
+    "scene_id": "SSW-S05",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "清楚指出毛巾的位置，物品和方位分明。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "坦诚请对方重复，不表现羞耻或慌张。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "再次说明同一位置，保持耐心不显不耐烦。"
+      },
+      {
+        "style_id": "grateful",
+        "note_zh": "复述位置并感谢帮助，语气认真温暖。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S06",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "交代时间和地点，两个信息自然分开。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "礼貌请求放慢速度，直率而不反复道歉。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "配合对方分开说明时间与地点，耐心清晰。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述确认时间地点，表达已经跟上。"
+      }
+    ],
+    "alternatives": [
+      "respectful_request",
+      "respectful_request"
+    ]
+  },
+  {
+    "scene_id": "SSW-S07",
+    "dialogue": [
+      {
+        "style_id": "neutral_report",
+        "note_zh": "平稳说明围裙的位置，突出地点词。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "询问不懂的词义，认真直接。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "用简单解释帮助理解，语气支持。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "表示理解后请求告知位置，自然衔接。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S08",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "交代两件事情，信息明确而不催促。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "礼貌请求逐项说明，不表现无能或慌张。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "配合拆解第一项任务，重点突出先做什么。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述第一项任务，语气合作。"
+      }
+    ],
+    "alternatives": [
+      "respectful_request",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S09",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "清楚交代拿毛巾的任务，不用威压语气。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "确认是谁的毛巾，疑问词说清楚。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "提供所属人的信息，名字清楚。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述所属人，表达理解与核对。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S10",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "自然交代放置任务，不用情绪掩盖原句的含糊。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "分别确认物品与房间，认真问清楚。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "补明箱子和职员室，分句清楚。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述物品和地点，合作确认。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S11",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "明确说明摆杯子的任务，语气平稳。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "确认完成时限，不表现被催促的焦虑。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "清楚说出十一点半前，礼貌而不催逼。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述截止时间并表示理解。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S12",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "说明数量和地点，信息分明而不命令式吼叫。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述两个杯子与食堂，语尾保留确认感。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "确认对方理解并委托，合作自然。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "明确表示理解和将执行，短句不机械。"
+      }
+    ],
+    "alternatives": [
+      "calm_confirmation",
+      "calm_confirmation"
+    ]
+  },
+  {
+    "scene_id": "SSW-S13",
+    "dialogue": [
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "询问现在是否想起床，保留继续休息的选择。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "自然表达还想睡一会儿，不默认病弱。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳本人意愿并说明稍后再来，不劝起床。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "平和地请对方稍后再来，表达已接受安排。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S14",
+    "dialogue": [
+      {
+        "style_id": "discomfort",
+        "note_zh": "表达有点疲倦，让对方理解感受而不添喘息。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "温和提出休息选择，不强行决定。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "清楚说出想在这里休息的意愿。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳休息希望，支持而不居高临下。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S15",
+    "dialogue": [
+      {
+        "style_id": "respectful_request",
+        "note_zh": "关灯前征得同意，语气轻柔但不故意耳语。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "请求保留一点照明，表达清楚而不附加恐惧。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳照明偏好，温和确认会如何安排。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "确认这样合适，平稳收尾。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S16",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "温和关切昨夜睡眠，留出回应的间隔。"
+      },
+      {
+        "style_id": "discomfort",
+        "note_zh": "表达没睡好的不适，不演成痛苦或虚弱。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "复述没睡好的感受，耐心倾听而不判断原因。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "补充醒了几次的经历，清楚叙述。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S17",
+    "dialogue": [
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "提供穿衣选择，语气友好而不替本人决定。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "明确说出蓝色衣服的偏好，自然自主。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "确认颜色并说明准备，语气合作。"
+      },
+      {
+        "style_id": "grateful",
+        "note_zh": "感谢对方帮助准备，温暖而克制。"
+      }
+    ],
+    "alternatives": [
+      "calm_confirmation",
+      "calm_confirmation"
+    ]
+  },
+  {
+    "scene_id": "SSW-S18",
+    "dialogue": [
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "询问需要协助的范围，尊重本人能做的部分。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "清楚请求只协助纽扣，不表演依赖。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳只协助纽扣的范围，耐心确认。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "自然说明其他部分自己能做，不添逞强或防御。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S19",
+    "dialogue": [
+      {
+        "style_id": "respectful_decline",
+        "note_zh": "明确表达不愿被看见的界限，不擅自添加羞耻或怒气。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "提出拉帘选项并征求意见，轻柔克制。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "清楚请求把帘子拉上，不需耳语。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳隐私需要并说明将拉帘，语气稳妥。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S20",
+    "dialogue": [
+      {
+        "style_id": "discomfort",
+        "note_zh": "自然说出有点冷的感受，不增添颤抖或喘息。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "询问是否想加衣服，关切但不强迫。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "本人选择想穿的外套，意愿明确。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "确认所选外套并表示去拿，耐心回应。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S21",
+    "dialogue": [
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "告知用餐时间并邀请，保留是否去的选择。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "表达想去食堂的意愿，自然积极。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳意愿后提出一起去，支持而不催促。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然请对方陪同，合作回应。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S22",
+    "dialogue": [
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "给出两个座位选项，温和等待本人选择。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "清楚说明想坐窗边，自主自然。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳窗边的选择，语气合作。"
+      },
+      {
+        "style_id": "friendly_interest",
+        "note_zh": "谈到喜欢看外面的原因，可以带轻微愉快。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S23",
+    "dialogue": [
+      {
+        "style_id": "friendly_interest",
+        "note_zh": "对午餐内容表示自然兴趣，不演成急迫索取。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "清楚告知已确认的菜品，保持日常亲切。"
+      },
+      {
+        "style_id": "friendly_interest",
+        "note_zh": "原句明确表达期待，可让语调轻微明亮。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "回应期待并说明准备好会通知，温和自然。"
+      }
+    ],
+    "alternatives": [
+      "neutral_report",
+      "neutral_report"
+    ]
+  },
+  {
+    "scene_id": "SSW-S24",
+    "dialogue": [
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "认真询问两类物品的位置，信息分开。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "分别说明架子和台面，方便对方理解。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "按物品复述位置，合作核对。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "明确表示复述正确，短句自然。"
+      }
+    ],
+    "alternatives": [
+      "calm_confirmation",
+      "calm_confirmation"
+    ]
+  },
+  {
+    "scene_id": "SSW-S25",
+    "dialogue": [
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "询问茶和水的选择，友好而不诱导。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "礼貌请求茶，表达自然意愿。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "确认茶的选择并说明准备，耐心回应。"
+      },
+      {
+        "style_id": "grateful",
+        "note_zh": "感谢准备饮品，语气自然温暖。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S26",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "关切饮品温度偏好，问题结尾等待回应。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "请求稍微放凉，清楚而不表示责备。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳温度要求并说明先放凉，语气耐心。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然确认并委托对方，不额外表演释然。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S27",
+    "dialogue": [
+      {
+        "style_id": "discomfort",
+        "note_zh": "说出节奏太快造成的不适，不添加呛咳或慌张。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "先回应节奏再询问休息，关切而不防御。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "表达想休息的意愿，清楚自然。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳休息请求，语气支持、不催进度。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S28",
+    "dialogue": [
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "自然询问是否想吃饭，允许本人拒绝。"
+      },
+      {
+        "style_id": "respectful_decline",
+        "note_zh": "清楚表达现在不想吃，不附加愤怒或悲伤。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳当前拒绝，不说成劝食或失望。"
+      },
+      {
+        "style_id": "respectful_decline",
+        "note_zh": "再次平和说明现在先不用，意愿明确。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S29",
+    "dialogue": [
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "饭后询问刷牙意愿，友好而不强制。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "表达希望自己刷牙，体现自主选择。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳本人自己刷的希望并说明准备用品。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然请对方准备，回应清楚。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S30",
+    "dialogue": [
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "询问指定人的用品位置，姓名和物品说清楚。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "说明写有名字的篮子，重点清晰。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述位置并表示确认，认真合作。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "提醒核对姓名，明确而不责备。"
+      }
+    ],
+    "alternatives": [
+      "calm_confirmation",
+      "calm_confirmation"
+    ]
+  },
+  {
+    "scene_id": "SSW-S31",
+    "dialogue": [
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "确认指定人的假牙收纳位置，认真问清楚。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "说明有名字的收纳盒，清楚提供指引。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述姓名与收纳盒，合作确认。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "确认并指出位置，语气耐心。"
+      }
+    ],
+    "alternatives": [
+      "calm_confirmation",
+      "calm_confirmation"
+    ]
+  },
+  {
+    "scene_id": "SSW-S32",
+    "dialogue": [
+      {
+        "style_id": "respectful_request",
+        "note_zh": "擦脸前请求同意，温和等待答复。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "清楚表示同意并请对方帮助，语气自然。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接受同意后说明将擦脸，温和而不幼儿化。"
+      },
+      {
+        "style_id": "grateful",
+        "note_zh": "感谢协助，表达自然温暖。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  }
+]
