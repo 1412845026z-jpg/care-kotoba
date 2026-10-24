@@ -3,13 +3,14 @@
 // that point at a scene id this version does not know are KEPT (a later
 // content update may rename scenes) and simply skipped where a scene is needed.
 
-export type Preferences = { locale: 'zh' | 'en' | 'ja'; level: 'gentle' | 'challenge'; goal: number; plan: 'personal' | 'company'; furigana: boolean; corePreview: boolean };
+export type Preferences = { locale: 'zh' | 'en' | 'ja'; level: 'gentle' | 'challenge'; goal: number; plan: 'personal' | 'company'; furigana: boolean; corePreview: boolean; dictationConsent: boolean };
 export type Note = { id: string; text: string; sceneId: string; original?: string; reason?: string };
 export type RecordItem = { id: string; sceneId: string; date: string; minutes: number; score: number | null; demo: boolean };
 export type Assignment = { id: string; sceneId: string; group: string; date: string };
 
 /** corePreview: show the optional 「コア練習（草稿）」 drafts (lib/core-scenarios.ts). Off by default. */
-export const DEFAULT_PREFS: Preferences = { locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true, corePreview: false };
+/** dictationConsent: the learner agreed (once per device) to the browser's own speech recognition (lib/browser-speech.ts). */
+export const DEFAULT_PREFS: Preferences = { locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true, corePreview: false, dictationConsent: false };
 
 const isObj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
 const s = (v: unknown, max: number) => (typeof v === 'string' && v.length > 0 ? v.slice(0, max) : null);
@@ -52,6 +53,7 @@ export function sanitizePrefs(raw: unknown): Preferences {
     plan: p.plan === 'personal' || p.plan === 'company' ? p.plan : DEFAULT_PREFS.plan,
     furigana: typeof p.furigana === 'boolean' ? p.furigana : DEFAULT_PREFS.furigana,
     corePreview: p.corePreview === true,
+    dictationConsent: p.dictationConsent === true,
   };
 }
 

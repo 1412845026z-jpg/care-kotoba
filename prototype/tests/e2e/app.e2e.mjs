@@ -253,12 +253,14 @@ test('voice check: microphone, speaker, server and WebRTC are checked without an
   await page.getByRole('button', { name: 'テスト音を鳴らす' }).click({ timeout: 15000 });
   await page.getByRole('button', { name: '聞こえた' }).click();
   const list = page.locator('.voice-check-list li');
-  assert.deepEqual(await list.evaluateAll((els) => els.map((e) => e.querySelector('b').textContent)), ['ブラウザの対応', 'サーバー', '音声の通信準備', 'マイク', 'スピーカー']);
+  // The last two are free extras (FREE-VOICE-001): 'ok' or 'info', never counted against voice practice.
+  assert.deepEqual(await list.evaluateAll((els) => els.map((e) => e.querySelector('b').textContent)), ['ブラウザの対応', 'サーバー', '音声の通信準備', 'マイク', 'スピーカー', '声で入力（無料）', '日本語の読み上げ（端末）']);
   const status = Object.fromEntries(await list.evaluateAll((els) => els.map((e) => [e.querySelector('b').textContent, e.dataset.status])));
   assert.equal(status['サーバー'], 'ok');
   assert.equal(status['スピーカー'], 'ok');
   assert.ok(['ok', 'warn'].includes(status['マイク']), `mic ${status['マイク']}`); // Chromium's fake device plays a beep
   assert.ok(['ok', 'fail'].includes(status['音声の通信準備'])); // 'fail' only where the machine has no usable interface
+  assert.ok(['ok', 'info'].includes(status['声で入力（無料）']) && ['ok', 'info'].includes(status['日本語の読み上げ（端末）']));
   const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: '結果を保存（JSON）' }).click()]);
   assert.match(download.suggestedFilename(), /^care-kotoba-voice-check-\d+\.json$/);
   assert.equal(env.mock.state.requests.filter((r) => /realtime|responses|audio/.test(r.path)).length, 0, 'the voice check must not call the (paid) AI');
