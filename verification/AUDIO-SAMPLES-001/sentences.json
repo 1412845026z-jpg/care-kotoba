@@ -1,0 +1,38 @@
+{
+  "sourceCommit": "e2c6e683c91c9abad8501056f16c985aba0fc85a",
+  "sourcePath": "prototype/lib/content.ts",
+  "sourceSha256": "8ccbfad0d5d4c605b496984942a6e226a65be91512a9b0710c1cc4ba925c9f36",
+  "note": "Existing learner reference phrases, identical text for all voices. Elderly voice timbre comparison is not NPC dialogue validation.",
+  "sentences": [
+    {
+      "id": "s1",
+      "sceneId": "daily-1",
+      "phraseIndex": 0,
+      "text": "おはようございます。よく眠れましたか。"
+    },
+    {
+      "id": "s2",
+      "sceneId": "daily-5",
+      "phraseIndex": 0,
+      "text": "聞こえにくかったですね。もう一度、ゆっくりお伝えします。"
+    },
+    {
+      "id": "s3",
+      "sceneId": "handover-2",
+      "phraseIndex": 2,
+      "text": "この理解で、合っていますか。"
+    },
+    {
+      "id": "s4",
+      "sceneId": "report-1",
+      "phraseIndex": 1,
+      "text": "ご本人は「体がだるい」とおっしゃっています。"
+    },
+    {
+      "id": "s5",
+      "sceneId": "report-3",
+      "phraseIndex": 1,
+      "text": "転倒した瞬間は、見ていません。"
+    }
+  ]
+}

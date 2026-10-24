@@ -1,0 +1,193 @@
+{
+  "accent_phrases": [
+    {
+      "moras": [
+        {
+          "text": "テ",
+          "consonant": "t",
+          "consonant_length": 0.060207247734069824,
+          "vowel": "e",
+          "vowel_length": 0.11188707500696182,
+          "pitch": 4.329288482666016
+        },
+        {
+          "text": "ン",
+          "consonant": null,
+          "consonant_length": null,
+          "vowel": "N",
+          "vowel_length": 0.06357870250940323,
+          "pitch": 4.944794654846191
+        },
+        {
+          "text": "ト",
+          "consonant": "t",
+          "consonant_length": 0.07327573001384735,
+          "vowel": "o",
+          "vowel_length": 0.06832077354192734,
+          "pitch": 5.013418197631836
+        },
+        {
+          "text": "オ",
+          "consonant": null,
+          "consonant_length": null,
+          "vowel": "o",
+          "vowel_length": 0.07801149785518646,
+          "pitch": 5.001887321472168
+        }
+      ],
+      "accent": 4,
+      "pause_mora": null,
+      "is_interrogative": false
+    },
+    {
+      "moras": [
+        {
+          "text": "シ",
+          "consonant": "sh",
+          "consonant_length": 0.06891954690217972,
+          "vowel": "I",
+          "vowel_length": 0.04467138648033142,
+          "pitch": 0.0
+        },
+        {
+          "text": "タ",
+          "consonant": "t",
+          "consonant_length": 0.022314485162496567,
+          "vowel": "a",
+          "vowel_length": 0.05872596800327301,
+          "pitch": 5.011219501495361
+        }
+      ],
+      "accent": 2,
+      "pause_mora": null,
+      "is_interrogative": false
+    },
+    {
+      "moras": [
+        {
+          "text": "シュ",
+          "consonant": "sh",
+          "consonant_length": 0.09453092515468597,
+          "vowel": "u",
+          "vowel_length": 0.07014196366071701,
+          "pitch": 4.993019104003906
+        },
+        {
+          "text": "ン",
+          "consonant": null,
+          "consonant_length": null,
+          "vowel": "N",
+          "vowel_length": 0.05902113765478134,
+          "pitch": 4.93754243850708
+        },
+        {
+          "text": "カ",
+          "consonant": "k",
+          "consonant_length": 0.07271693646907806,
+          "vowel": "a",
+          "vowel_length": 0.0929948017001152,
+          "pitch": 4.861221790313721
+        },
+        {
+          "text": "ン",
+          "consonant": null,
+          "consonant_length": null,
+          "vowel": "N",
+          "vowel_length": 0.05185723304748535,
+          "pitch": 4.779243469238281
+        },
+        {
+          "text": "ワ",
+          "consonant": "w",
+          "consonant_length": 0.051505543291568756,
+          "vowel": "a",
+          "vowel_length": 0.23422133922576904,
+          "pitch": 4.675256729125977
+        }
+      ],
+      "accent": 5,
+      "pause_mora": {
+        "text": "、",
+        "consonant": null,
+        "consonant_length": null,
+        "vowel": "pau",
+        "vowel_length": 0.25162288546562195,
+        "pitch": 0.0
+      },
+      "is_interrogative": false
+    },
+    {
+      "moras": [
+        {
+          "text": "ミ",
+          "consonant": "m",
+          "consonant_length": 0.06531133502721786,
+          "vowel": "i",
+          "vowel_length": 0.056747764348983765,
+          "pitch": 4.9329376220703125
+        },
+        {
+          "text": "テ",
+          "consonant": "t",
+          "consonant_length": 0.06920978426933289,
+          "vowel": "e",
+          "vowel_length": 0.07182963192462921,
+          "pitch": 4.870428085327148
+        }
+      ],
+      "accent": 1,
+      "pause_mora": null,
+      "is_interrogative": false
+    },
+    {
+      "moras": [
+        {
+          "text": "イ",
+          "consonant": null,
+          "consonant_length": null,
+          "vowel": "i",
+          "vowel_length": 0.06652294099330902,
+          "pitch": 4.6476593017578125
+        },
+        {
+          "text": "マ",
+          "consonant": "m",
+          "consonant_length": 0.04486405849456787,
+          "vowel": "a",
+          "vowel_length": 0.0676567554473877,
+          "pitch": 4.553740978240967
+        },
+        {
+          "text": "セ",
+          "consonant": "s",
+          "consonant_length": 0.10755984485149384,
+          "vowel": "e",
+          "vowel_length": 0.11199792474508286,
+          "pitch": 4.616825580596924
+        },
+        {
+          "text": "ン",
+          "consonant": null,
+          "consonant_length": null,
+          "vowel": "N",
+          "vowel_length": 0.11433804780244827,
+          "pitch": 4.516365051269531
+        }
+      ],
+      "accent": 3,
+      "pause_mora": null,
+      "is_interrogative": false
+    }
+  ],
+  "speedScale": 0.9,
+  "pitchScale": 0.0,
+  "intonationScale": 1.0,
+  "volumeScale": 1.0,
+  "prePhonemeLength": 0.1,
+  "postPhonemeLength": 0.1,
+  "pauseLength": null,
+  "pauseLengthScale": 1.0,
+  "outputSamplingRate": 24000,
+  "outputStereo": false,
+  "kana": "テントオ'/_シタ'/シュンカンワ'、ミ'テ/イマセ'ン"
+}

@@ -1,0 +1,33 @@
+{
+  "speaker": {
+    "name": "玄野武宏",
+    "speaker_uuid": "c30dc15a-0992-4f8d-8bb8-ad3b314e6a6f",
+    "styles": [
+      {
+        "name": "ノーマル",
+        "id": 11,
+        "type": "streaming_talk"
+      },
+      {
+        "name": "喜び",
+        "id": 39,
+        "type": "streaming_talk"
+      },
+      {
+        "name": "ツンギレ",
+        "id": 40,
+        "type": "streaming_talk"
+      },
+      {
+        "name": "悲しみ",
+        "id": 41,
+        "type": "streaming_talk"
+      }
+    ],
+    "version": "0.16.1",
+    "supported_features": {
+      "permitted_synthesis_morphing": "ALL"
+    }
+  },
+  "policySha256": "29f33c8f7b91e4a318a41e47c15adae4fa44a8e89c3cec92b00a3dca8c1e3da1"
+}

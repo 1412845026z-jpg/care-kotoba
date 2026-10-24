@@ -1,0 +1,5 @@
+7zip	23.01+dfsg-11
+build-essential	12.10ubuntu1
+cmake	3.28.3-1build7
+ffmpeg	7:6.1.1-3ubuntu5
+python3-venv	3.12.3-0ubuntu2.1

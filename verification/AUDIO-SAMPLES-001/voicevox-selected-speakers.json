@@ -1,0 +1,62 @@
+[
+  {
+    "name": "玄野武宏",
+    "speaker_uuid": "c30dc15a-0992-4f8d-8bb8-ad3b314e6a6f",
+    "styles": [
+      {
+        "name": "ノーマル",
+        "id": 11,
+        "type": "streaming_talk"
+      },
+      {
+        "name": "喜び",
+        "id": 39,
+        "type": "streaming_talk"
+      },
+      {
+        "name": "ツンギレ",
+        "id": 40,
+        "type": "streaming_talk"
+      },
+      {
+        "name": "悲しみ",
+        "id": 41,
+        "type": "streaming_talk"
+      }
+    ],
+    "version": "0.16.1",
+    "supported_features": {
+      "permitted_synthesis_morphing": "ALL"
+    }
+  },
+  {
+    "name": "雀松朱司",
+    "speaker_uuid": "0acebdee-a4a5-4e12-a695-e19609728e30",
+    "styles": [
+      {
+        "name": "ノーマル",
+        "id": 52,
+        "type": "streaming_talk"
+      }
+    ],
+    "version": "0.17.0",
+    "supported_features": {
+      "permitted_synthesis_morphing": "ALL"
+    }
+  },
+  {
+    "name": "麒ヶ島宗麟",
+    "speaker_uuid": "7d1e7ba7-f957-40e5-a3fc-da49f769ab65",
+    "styles": [
+      {
+        "name": "ノーマル",
+        "id": 53,
+        "type": "streaming_talk"
+      }
+    ],
+    "version": "0.17.0",
+    "supported_features": {
+      "permitted_synthesis_morphing": "ALL"
+    }
+  }
+]

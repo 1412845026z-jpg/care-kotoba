@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本轮核对的业务集成提交 | `dc9d60c980bdb1f8f5cd0a7510ee89f845a53ad8`（#43→#44顺序merge；#44固定源a567b8d，应用树37f5c2f2） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#40免费语音固定源ENV/CSP与无API key探测已通过；docs/10免费手机方案及证据已合并PR #41（cecef27）；本补记只改文档状态） |
+| 本轮核对的业务集成提交 | `fb549890677dad7594fa55bfbb895808195bc4c5`（#43/#44/#47/#48/#50已顺序合并；App代码仍为#44 a567b8d；#51文档/证据已merge ce81cfc） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#43/#44固定源审查与字体/SEC通过；#47 ts-fsrs正式依赖通过常规CI并合并；免费音频样本已生成并合并；A11Y常规CI已合并且稳定复测通过） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -57,10 +57,14 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
+| MERGE-2 | 顺序整合#46/#49并复核常规CI和A11Y硬门 | Codex | in_progress | `codex/MERGE-2`；先解决#46仅PROJECT_STATE冲突 | handoffs/2026-10-24-MERGE-2-codex.md；保留main已有依赖/许可/证据，App原样继承Claude |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
-| REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | review_ready | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，常规CI待结果 |
-| REVIEW-001 | 间隔复习交互与功能实现 | Claude | queued | 待REVIEW-DEP-001合并 | Codex本轮不改app/components/lib/tests |
+| REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
+| REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude | review_ready | `claude/REVIEW-001`，PR #49，head69c36a4；依赖#46 | #47依赖已合并；Claude报告unit99/e2e62，Codex未复测或合并，本轮不改其功能 |
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude | review_ready | `claude/START-FLOW-001`，PR #46，head6d22f31 | 未在本轮授权合并范围，保持开放；handoffs/2026-10-24-START-FLOW-001-claude.md |
+| AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | merged | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；PR #48，merge137ff8a，最终CI40072582215通过；run40071495822成功，25单句＋5对比，1.52MB；无削波，未真正试听；不接入App |
+| A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | merged | `codex/A11Y-CI-001` | handoffs/2026-10-24-A11Y-CI-001-codex.md；PR #50 headde1089b，mergefb54989；CI40073435460双job通过；audit11/12屏三项0，axe稳定17/21实例仅报告，详见交接 |
+| ASSET-SOURCES-001 | 可选日本介护图源许可对照（无图片接入） | Codex | merged | `codex/ASSET-SOURCES-001`，PR #51，mergece81cfc | handoffs/2026-10-24-ASSET-SOURCES-001-codex.md；CI40074152466双job通过，5来源许可表及本轮证据均已入main |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | merged | [PR #5](https://github.com/1412845026z-jpg/care-kotoba/pull/5)，head `a6c6f58`；合并 `0420ff7` | ENV-003（Codex，@`3a3f1a9`）真实install/tsc/build/static、unit34/34、离线22/22、真实dev21通过1跳过；之后的 COOKIE-ENCODING-001 修复（`89d8ad2`）离线 static 0 错误、unit 37/37、e2e 22/22，PR CI run 39998125919 通过。真实AI/真机未验证 |
@@ -104,9 +108,7 @@
 | DEVICE-FREE-001 | 实际手机免费F1–F10（A/B可开始，C仅方案） | 用户 + Claude整理 + Codex支持 | queued | — | 无API key；记录Android/iPhone型号、浏览器与JSON。C需另行授权部署，Free容量/实际声音均未在真机或云端验收 |
 | DESIGN-SKILLS-001 | 接入两份设计技能与共同设计依据 | Claude | merged | PR #43，head768abbe，merge21639c7 | vendor195项校验、CI40065123200；显式读取技能通过，CLI自动发现未实测 |
 | DEAI-001 | 按概念图视觉去AI化 | Claude | merged | PR #44，head a567b8d，merge dc9d60c | 独立runner40069650388：static0/unit92/offline54/dev46通过8跳过；SEC与Google字体共15检查，控制台0错误；真机未验收 |
-| START-FLOW-001 | 开始练习一步到位：会話のタイプ默认收起、开始按钮在第一屏；辅助语言文字加 `lang` | Claude | review_ready | `claude/START-FLOW-001`，PR #46（#44 合并后 base 改为 main） | handoffs/2026-10-24-START-FLOW-001-claude.md |
-| REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs 5.4.2，MIT） | Claude（功能）+ Codex（依赖 REVIEW-DEP-001） | queued：2026-10-24 15:11 用户「开始」；交互：今日の復習 → 听 → 自己说 → 思い出せた／もう少し／まだ，只存本机、不打分；等 ts-fsrs 依赖合并 | — | research/REUSE_REVIEW_2026-10-23.md |
-| AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
+| AUDIO-001 | 全量固定参考句音频与App接入 | 待用户选择声音后分工 | blocked | 免费五句比较样本见AUDIO-SAMPLES-001 | 当前只生成免费样本；正式接入/全量生成待声音选择，OpenAI付费生成仍blocked |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
 
@@ -122,7 +124,6 @@
 | 2026-10-24 15:07 用户（Codex本轮） | 可直接复用成熟开源代码，须可商用、固定版本、docs/07记录来源和保留许可；GPL/AGPL不并入。授权本轮ts-fsrs5.4.2与axe4.14.0；免费本机音频样本 | 不调用付费API、不部署、不安装impeccable钩子；内容schema提案仍暂缓 |
 | 2026-10-24 13:53 用户（Claude 会话）：接入 taste-skill 与 impeccable，「方便之后对于整个产品的视觉传达视觉审美方面进行更专业的评价和把控」 | 两份技能原样放入仓库，供 Claude 和 Codex 做视觉评审；`PRODUCT.md` 和 `DESIGN.md` 为共同设计依据；产品约束优先于技能的审美偏好 | 视觉方向的大改（例如改用概念图风格）与引擎/钩子的开启仍需用户决定 |
 | 2026-10-24 14:14 用户（Claude 会话）：「尽量的去 AI 化……不要看起来像是 AI 的通用模板」，方向选「按你的概念图方向（推荐）」 | 学员端视觉改为 `design/ui_concept.png` 的方向：暖白纸色、明朝体标题、深紫只用于行动、薄荷强调；首页先给今天的场景和对方的一句话；反馈页先给引用的原话，分数降为页脚小字；最小字号 12px；不用 eyebrow、渐变（会话舞台除外）、淡色方块图标 | `DESIGN.md` 已重写；分数是否完全删除、口号与字标的处理、场景照片等待用户确认（见 DEAI-001 交接） |
-| 2026-10-24 15:07 用户（Claude 会话）：「GitHub 上面……已经做好的那些文件仓库代码可以拿来用就直接拿来用」，15:11「开始」 | 成熟的开源代码可以直接复用：许可需可商用（MIT/Apache/BSD/MPL 等；GPL/AGPL 不并入）、固定版本、在 docs/07 记录来源与许可并保留许可文本；依赖仍由 Codex 加入。本轮分工：Claude 做 START-FLOW-001、REVIEW-001；Codex 做 #43/#44 合并与字体/CSP 确认、REVIEW-DEP-001（ts-fsrs 5.4.2）、AUDIO-SAMPLES-001（Kokoro / VOICEVOX 免费样本）、A11Y-CI-001（audit.mjs + axe-core 进 CI） | 全部免费；声音的选择等用户听样本后决定 |
 | 2026-10-24 12:54 用户（Claude 会话）：「真机测试……能用免费的就用免费，需要付费的先往后靠」 | 真机测试先做不花钱的部分（docs/09「先做免费的真机测试」F1–F10）；真实 AI / Realtime / TTS 等付费测试（T1–T14、角色检查 `--yes`、MODEL-001）往后放，等用户另行授权 | 免费部署方式 C 仍需用户授权部署；浏览器语音识别由浏览器提供商处理声音，需告知并取得同意 |
 | 2026-10-24 用户（Claude 会话）：「我先做可选的预览入口（推荐）」 | 12 个核心场景先作为「コア練習（草稿）」单独入口接进应用，默认隐藏，原有 48 个场景不动；GPT 同时按审阅意见修改内容 | 草稿不计入 48 场景进度；正式替换或合并原场景需另行决定，并需要专业审稿 |
 | 2026-10-23 用户（Claude 会话）：「可以复用的就以合适方式拿过来并共享」 | 开源 / 免费资料按 research/REUSE_REVIEW_2026-10-23.md 处理；注音默认开启（Claude 的默认设定，可在设置中关闭，待教师和用户反馈） | 新增依赖仍由 Codex 加入；内容类资料由 Codex 负责 |
@@ -132,7 +133,15 @@
 - 改 `content/scenarios` 后先跑核心生成器，再重生注音并运行两个 `--check`；逐句检查机器读音，重点为夜中、一回、二人、後。改隐藏信息后还要不加 `--yes` 跑角色检查工具，检查过期标志词。
 - `hidden_information[].leak_markers_ja` 结构提案已按最新用户指令暂缓，不实施，当前字段结构未改。
 
+## 本轮用户决定（2026-10-24，MERGE-2等）
+
+- Claude 18:20 JST之前不工作；Codex按用户授权整合#46→#49，只解决共享状态冲突，不编辑prototype/app、components、lib、tests；缺陷写交接/PR评论。
+- 本轮全部免费：不调用付费API、不充值、不部署、不安装impeccable钩子；REAL-AI-PILOT-PLAN-001只写预算待批准，未授权真实--yes。
+- LEGAL-001经营文档不写任何个人信息；原16:43任务记录尚未检索到，按当前明确条目和已有经营范围研究，不伪称旧范围已恢复。
+
 ## 当前阻塞与风险
+
+- A11Y-CI-001的原audit三项为0；axe稳定报告仍有9类规则（手机17/桌面21个画面×规则实例），目前只报告不阻断。共同根因和opacity对比度盲点已交Claude，未改App/audit/tests，不能写成全面无障碍验收通过。
 
 - 免费阶段之外的真实T1–T14、真实core-roleplay-check --yes、MODEL-001及付费托管均为blocked，不自动配置key、充值或升级。免费C也只做方案，部署仍待单独授权。
 
@@ -148,7 +157,11 @@
 
 ## 最近交接
 
-- handoffs/2026-10-24-START-FLOW-001-claude.md：场景说明弹窗一步开始（会話のタイプ默认收起），辅助语言文字加 `lang`。
+- handoffs/2026-10-24-ASSET-SOURCES-001-codex.md：5来源许可表与最终证据/状态整合。
+- handoffs/2026-10-24-A11Y-CI-001-codex.md：两尺寸三项硬门、六页axe稳定报告及移交Claude的实际问题。
+- handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md：25免费本机音频＋5对比、角色条款/署名、冻结版本与未完成试听。
+- handoffs/2026-10-24-REVIEW-DEP-001-codex.md：ts-fsrs5.4.2/MIT依赖与锁文件，仅依赖不改功能。
+
 - handoffs/2026-10-24-MERGE-codex.md：#43/#44顺序合并、固定源真实dev字体与15项SEC检查、来源许可。
 
 - handoffs/2026-10-24-DEAI-001-claude.md：按概念图方向去 AI 化（首页、反馈页、字号、配色与字体、设置/法人示例对比度），检查与截图在 verification/DEAI-001。

@@ -15,3 +15,7 @@
 - 未完成：最终常规CI与合并，结果随后由下一任务交接补记。
 
 - 前序MERGE证据PR #45已通过最终CI40070094209/security40070094228/fixed40070094239，并merge45c938cca0f810cfff7127be4db0991a5661a6c0；当前依赖提交继承该main的工具/许可，不覆盖Claude的#44。
+
+## 已合并（后序AUDIO任务确认）
+
+最终head fd95db8e07a6d2d0c95b298df173914b8f2680cc；CI40070483006（PR merge checkout d630bd3，同应用/依赖树）全部成功：frozen install、tsc、build、static0、unit92/92、offline54/54、清单未改写。报告保留verification/REVIEW-DEP-001/ci。#47以merge commit ba8568b31ed22a99961c3a0a6fbf55bfd67ae8c4合并，PROJECT_STATE现标merged。未修改app/components/lib/tests，也未实现复习功能。

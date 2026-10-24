@@ -26,17 +26,17 @@
 
 ## 2026-10-24：实际采用与候选的进度
 
-本节合并Claude的[固定提交复用评估](https://github.com/1412845026z-jpg/care-kotoba/blob/a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207/research/REUSE_REVIEW_2026-10-23.md)与Codex复核结果。PR #9尚未合并，表内“PR实现”不能读成已进入main或已上线。
+本节合并Claude的[固定提交复用评估](https://github.com/1412845026z-jpg/care-kotoba/blob/a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207/research/REUSE_REVIEW_2026-10-23.md)与Codex后续复核。PR #9及其后续修复已经合并main；进入main不代表已部署或完成专业验收。
 
 | 来源 | 当前用途与落点 | 本轮结论 |
 | --- | --- | --- |
 | Playwright 1.63.0 / esbuild 0.28.2 | main已固定为开发测试依赖；不调用AI即可运行模拟测试 | 工具安装和真实构建已验证；测试通过仍不等于真机通过 |
-| kuromoji.js / mecab-ipadic | PR #9离线生成318条固定文字注音；不把约17MB词典装入浏览器运行时 | Claude记录生成与人工修正；Codex真实dev非语音注音测试通过。词典查找的继承属性问题仍待修复；专业读音审稿未完成 |
-| openai-agents-js | PR #9只参考Realtime序列控制的思路，没有把SDK加入依赖 | Claude称为独立实现；Codex已复现response.created确认前的竞争，尚不能把排队缺口写成全部解决。参考记录不替代以后复制代码时的许可核对 |
+| kuromoji.js / mecab-ipadic | main的离线固定文字注音生成器及人工读音修正；不把约17MB词典装入浏览器运行时 | 继承属性问题已修复并有回归覆盖；真实dev注音通过。夜中、一回、二人、後已有人工复核记录；专业读音审稿未完成 |
+| openai-agents-js | main只参考Realtime序列控制思路，独立实现，没有把SDK加入依赖 | 已修复从发出response.create即占用的竞争窗口，模拟回归通过；真实OpenAI事件时序未验收。未来复制SDK代码仍须保留其MIT声明 |
 | ts-fsrs 5.4.2 | REVIEW-DEP-001固定运行依赖（无传递依赖），功能由Claude REVIEW-001实现 | MIT；锁文件和npm integrity固定正式版，不使用6.0.0-beta；未接入调度或学习状态功能 |
 | promptfoo | 模型迁移候选；固定评测数据已存在于evals/ | 尚未接入CLI或运行真实模型；未来真实评测调用须另获费用授权 |
 | 厚生劳动省所载教材 | CONTENT-002仅核对30个常用词的词形、读音与页码，另写4个项目词条和原创教学说明 | 新数据见content/terminology/；尚未接入应用、未专业审稿，不复制教材定义、译文段落或图像 |
-| 日本介護福祉士会学习网站 / 预生成语音 / 自托管模型 | 链接或候选 | 免费学习、开源引擎和模型权重许可各不相同；本轮未下载语音权重、生成音频或接入托管 |
+| 日本介護福祉士会学习网站 / 预生成语音 / 自托管模型 | 链接或候选 | 免费学习、开源引擎和模型权重许可各不相同；本轮免费本机样本见AUDIO-SAMPLES-001；未接入托管或App |
 
 PR #9的kuromoji Apache-2.0文本和NAIST/ICOT词典声明分别位于其`docs/licenses/KUROMOJI_JS_LICENSE-2.0.txt`、`MECAB_IPADIC_NOTICE.txt`。Codex已读取词典声明中的署名与免责声明条件；发布声明应随实际采用的生成流程和产物范围核对，不因“工具不随包发布”就删掉已有来源说明。本轮没有完成整个依赖树的许可审计。
 
@@ -68,3 +68,22 @@ CONTENT-002只记录常用词形、读音与出处页码，学习释义、虚构
 来源：[npm精确版本](https://www.npmjs.com/package/ts-fsrs/v/5.4.2)、[上游](https://github.com/open-spaced-repetition/ts-fsrs)。2026-10-24 npm latest正式版为5.4.2，6.0.0-beta仅预发布，本次不采用。MIT原文取自经过npm sha512 integrity校验的正式tarball，保留在 `docs/licenses/TS_FSRS_LICENSE.txt`；出处、gitHead、完整性和artifact记录见 `verification/REVIEW-DEP-001/package-evidence.json`。
 
 `prototype/package.json`固定 `ts-fsrs: 5.4.2`；锁文件只新增该依赖的importer、package与snapshot，原有解析逐项保持。没有新增传递依赖。包代码不修改，商业分发需随产品保留MIT版权与许可声明。REVIEW-001的交互、存储和复习调度仍由Claude实现；安装依赖不代表功能已经完成。
+
+## AUDIO-SAMPLES-001（样本，不接入产品）
+
+Kokoro-82M v1.0固定HF revision `8542409da2986c0ab5d41b3cf0411f7a58caab38`（Apache-2.0），用kokoro0.9.4 / misaki[ja]0.9.4和本地CPU；日语候选jf_alpha、jm_kumo。VOICEVOX engine0.26.0固定官方CPU发行包完整SHA-256（源码LGPL-3.0/另行授权），仅作临时隔离工具；声音选麒ヶ島宗麟、雀松朱司、玄野武宏，均正常样式。每个角色另有条款，必须分别署名 `VOICEVOX:麒ヶ島宗麟`、`VOICEVOX:雀松朱司`、`VOICEVOX:玄野武宏`，不能把引擎许可等同于音频或角色图像许可。
+
+逐来源、商业使用条件、角色条款链接、许可原文与实际生成记录见 `verification/AUDIO-SAMPLES-001/README.md` 及其 `licenses/`（已保留）。模型/引擎/依赖代码不进入App或仓库；临时工具环境含GPL相关包时也不并入App，生成音频许可单独核对。无远程推理API、无费用、无部署。25段单句与5段对比已由免费CPU生成并检验；仅为技术检视，真正试听尚未完成，官方角色定位不代表实际日本语质量验收。
+
+## A11Y-CI-001：axe 仅用于开发测试
+
+| 固定来源 | 许可与保留文本 | 范围 |
+| --- | --- | --- |
+| [@axe-core/playwright 4.14.0](https://www.npmjs.com/package/@axe-core/playwright/v/4.14.0)，上游commit [2375f7f5523a2accaeef91a3cb12e30a46e7fbea](https://github.com/dequelabs/axe-core-npm/tree/2375f7f5523a2accaeef91a3cb12e30a46e7fbea/packages/playwright) | MPL-2.0；`docs/licenses/AXE_CORE_PLAYWRIGHT_MPL-2.0.txt`（正式npm包原文），npm sha512见`verification/A11Y-CI-001/package-evidence.json` | 精确devDependency，库源文件不修改，不接入App运行时 |
+| [axe-core 4.14.0](https://github.com/dequelabs/axe-core/tree/v4.14.0)（上述包的唯一新增传递依赖） | MPL-2.0；同一完整MPL文本及npm包自身许可；精确解析/完整性固定于锁文件 | 复用既有playwright-core1.63.0，无第二份Playwright或付费服务 |
+
+MPL允许商业使用，但相关覆盖文件仍遵守MPL的源码提供与修改分发条件；保留许可和上游源码链接，不将MPL误写成MIT。脚本只在离线harness/回环mock扫描首页、场景说明、练习、反馈、笔记、设置。axe发现先报告不阻断；执行/导航失败仍作为CI故障。原audit的contrast / targetsUnder24 / textUnder12px原始数组任一非空就失败。没有改audit.mjs或prototype/tests。
+
+## 可选图源调查（尚无素材采用）
+
+5个来源的商业/改编/署名/免费范围见`research/ASSET_SOURCE_LICENSES_2026-10-24.md`。Open Peeps、Humaaans、Open Doodles为CC0候选；Loose Drawing与PAKUTASO为自订许可候选，不能混同CC0。这里只调查许可，没有选图、下载、改编或放入产品；采用前才固定具体素材ID/哈希、保留许可快照并核对人物等条件。
