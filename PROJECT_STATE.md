@@ -58,8 +58,8 @@
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
 | COORD-CLAUDE-002 | 按用户要求通过共享仓库双向分配任务 | Codex | in_progress | `codex/COORD-CLAUDE-002`；基于main，仅任务文档 | 见本日handoff；不包含未经授权公开的迁移代码/素材 |
-| LICENSE-UI-002 | 复核客户端固定依赖许可清单、完整原文和键盘访问 | Claude | queued | 从最新适合的Claude集成分支领取 | 见COORD-CLAUDE-002；scheduler/plugin-rsc的浏览器输出、MIT原文、许可滚动键盘可达 |
-| I18N-CONTENT-QA | 语言包主题ID校验和实际翻译覆盖测试 | Claude | queued | 保留I18N-001结构，与内容方协调 | 真实语言包不能被固定zh-only断言拒绝，未知topics键应明确报错 |
+| LICENSE-UI-002 | 复核客户端固定依赖许可清单、完整原文和键盘访问 | Claude | in_progress | 从最新适合的Claude集成分支领取 | 见COORD-CLAUDE-002；scheduler/plugin-rsc的浏览器输出、MIT原文、许可滚动键盘可达 |
+| I18N-CONTENT-QA | 语言包主题ID校验和实际翻译覆盖测试 | Claude | review_ready | `claude/I18N-CONTENT-QA`，代码 `68fb479`（PR 见交接；合并顺序 #62→#63→本PR） | handoffs/2026-10-24-I18N-CONTENT-QA-claude.md；未知 topic/形状错误报错；测试按 content 实际来源核对（不再写死 zh）；static0/unit119/e2e84；临时英语包验证通过 |
 | SSW-EN-001 | 基础96场英语辅助语言编辑草稿 | Codex | in_progress | 本地内容准备，按I18N语言包接口 | draft_unreviewed；保留日语原文，实际交付与App接入分别记录 |
 | I18N-001 | 日语注音优先、可选en/zh/vi/my/id辅助语言与界面 | Claude | review_ready | `claude/I18N-001`，PR #62，代码 `d2744f4` | handoffs/2026-10-24-I18N-001-claude.md；默认「日本語だけ」、旧设置保留；关键界面对照＋vi/my/id缺译退英语（lang=en）、不退中文；基础课生成器支持`<字段>_<语言>`与`content/ssw-basic/locales/`语言包（目前内容只有中文）；static0/unit114/e2e79，A11Y两尺寸19/20屏硬门0；vi/my/id为未审稿草稿，缅甸文真机未测 |
 | SCENE-AV-APP-001 | 场景图在上、对应对话在下与录音播放（App 侧） | Claude | review_ready | `claude/SCENE-AV-APP-001`，PR #63（含 #62 提交，先合 #62），代码 `61d22c6` | handoffs/2026-10-24-SCENE-AV-APP-001-claude.md；读 `/media/ssw/index.json`（格式提议见交接）；逐句/整段（答案前不播放答案）/停止，关闭/换场/离开停止；缺素材退回设备语音并标明；未用真实素材（`content/scene-av` 未推送）；static0/unit118/e2e84，A11Y 20/21屏0 |
@@ -182,6 +182,7 @@
 
 ## 最近交接
 
+- handoffs/2026-10-24-I18N-CONTENT-QA-claude.md：语言包按实际来源核对、未知主题报错；接着做 I18N-EN-APP-001 与 LICENSE-UI-002。
 - handoffs/2026-10-24-SCENE-AV-APP-001-claude.md：App 侧场景图与录音播放；提出 `public/media/ssw/index.json` 最小接口，等 Codex 确认与推送素材。
 - handoffs/2026-10-24-I18N-001-claude.md：六种辅助语言（默认日语），关键界面对照、vi/my/id缺译退英语；基础课语言包格式；vi/my/id未审稿、缅甸文真机未测。
 - handoffs/2026-10-24-LEGAL-001-codex.md：经营方案明确范围与30来源索引；16:43旧清单仍待补核，未获专业签核。
