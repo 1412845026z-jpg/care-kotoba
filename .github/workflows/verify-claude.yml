@@ -1,16 +1,6 @@
 name: Pinned Claude mock verification
 
 on:
-  push:
-    branches: [codex/ENV-004]
-    paths:
-      - .github/workflows/verify-claude.yml
-      - scripts/ci/verify_claude.py
-      - scripts/ci/local_fetch_only.mjs
-  pull_request:
-    paths:
-      - .github/workflows/verify-claude.yml
-      - scripts/ci/verify_claude.py
   workflow_dispatch:
     inputs:
       sha:
@@ -25,11 +15,10 @@ concurrency:
   group: pinned-claude-review-${{ github.ref }}
   cancel-in-progress: true
 
-# Fixed-source review, independent of regular main CI. Manual runs accept a full
-# commit SHA; ENV-004 branch pushes review the latest PR #30 head and record its SHA.
+# Manual fixed-source review, independent of regular main CI. Every run must
+# explicitly name an immutable source SHA; there are no hardcoded business heads.
 jobs:
   mock-review:
-    if: github.event_name != 'pull_request' || github.head_ref == 'codex/ENV-004'
     name: Source review / mock only / Node 22
     runs-on: ubuntu-24.04
     timeout-minutes: 18
@@ -46,7 +35,7 @@ jobs:
       - name: Checkout exact reviewed source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.sha || 'refs/pull/30/head' }}
+          ref: ${{ inputs.sha }}
           path: verified-source
           persist-credentials: false
       - name: Node 22
@@ -61,10 +50,8 @@ jobs:
           REVIEW_SHA: ${{ inputs.sha }}
         run: |
           ACTUAL_SHA=$(git rev-parse HEAD)
-          if [ -n "$REVIEW_SHA" ]; then
-            [[ "$REVIEW_SHA" =~ ^[0-9a-f]{40}$ ]]
-            test "$ACTUAL_SHA" = "$REVIEW_SHA"
-          fi
+          [[ "$REVIEW_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$ACTUAL_SHA" = "$REVIEW_SHA"
           echo "sha=$ACTUAL_SHA" >> "$GITHUB_OUTPUT"
           mkdir -p ../../review-results
           git show -s --format='%H %T' > ../../review-results/source.txt

@@ -20,3 +20,5 @@ The temporary Worker guard and fake environment file are restored/removed in `fi
 ## Saved result
 
 The initial standard-runner run completed with failure: offline 40/40 and unit 71/71 passed; real-dev was 34 pass, 2 fail, 4 skip. See `runner-initial/real-dev/tests.tap.txt` for exact pointer-interception traces and `runner-initial/source.txt` for source identity. Both failures are synthetic-crash tests blocked by the development error overlay. No business PR in the ordered chain was merged. Full interpretation and next action are in the ENV-004 handoff. Local ICE-related voice failures are saved separately under `local-offline`, `local-real-dev` and `local-ice-probe.json`.
+
+Final workflow mode is manual-only with required full SHA input. The earlier automatic ENV-004 branch/PR trigger description documents how run40048821852 was launched; it is not the final workflow configuration. New reviews must provide their source SHA explicitly.
