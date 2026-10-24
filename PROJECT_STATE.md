@@ -99,7 +99,7 @@
 | FREE-VOICE-ENV-001 | #40复测、免费手机A/C方案与证据整合 | Codex | merged | codex/FREE-VOICE-ENV-001，PR #41；mergececef27 | #40已合并，docs/10和证据/验证工具已进main；最终常规CI/安全/固定源均通过；无依赖/付费API/部署 |
 | DEVICE-FREE-001 | 实际手机免费F1–F10（A/B可开始，C仅方案） | 用户 + Claude整理 + Codex支持 | queued | — | 无API key；记录Android/iPhone型号、浏览器与JSON。C需另行授权部署，Free容量/实际声音均未在真机或云端验收 |
 | DESIGN-SKILLS-001 | 接入 impeccable 与 taste-skill（Claude/Codex 双方可用）、`PRODUCT.md`、`DESIGN.md`、第一次视觉评审（DESIGN-BASELINE-001） | Claude | review_ready | `claude/DESIGN-SKILLS-001` | handoffs/2026-10-24-DESIGN-SKILLS-001-claude.md；`vendor.mjs --check` 通过；评审 27/40、5 个优先问题，改动待用户决定 |
-| DEAI-001 | 视觉去 AI 化：按概念图改为「申し送りノート」风格（首页第一屏、反馈页顺序、最小字号、去掉模板装饰、设置/法人示例对比度） | Claude | review_ready | `claude/DEAI-001`（PR base 为 `claude/DESIGN-SKILLS-001`，先合并 #43） | handoffs/2026-10-24-DEAI-001-claude.md；verification/DEAI-001；static0/unit92/e2e54；A11Y 390/1280 全 0；taste 6F4W→1F3W，impeccable detect 21→15（390）；真机与部署环境字体未验证 |
+| DEAI-001 | 视觉去 AI 化：按概念图改为「申し送りノート」风格（首页第一屏、反馈页顺序、最小字号、去掉模板装饰、设置/法人示例对比度） | Claude | review_ready | `claude/DEAI-001`，PR #44（base 为 `claude/DESIGN-SKILLS-001`，先合并 #43） | handoffs/2026-10-24-DEAI-001-claude.md；verification/DEAI-001；static0/unit92/e2e54；A11Y 390/1280 全 0；taste 6F4W→1F3W，impeccable detect 21→15（390）；真机与部署环境字体未验证 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
