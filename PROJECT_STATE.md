@@ -8,7 +8,7 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本次状态核对的远端代码提交 | `main` = `4a851fd4319e8abc97c20910c01bd080be83e408`（用户指定的#17→#30业务链及独立#23已按merge commit合并） |
+| 本次状态核对的远端代码提交 | `main` = `2e9b5c5a5dc9656f7e621a4d57095f5c195d266d`（用户指定的#17→#30业务链及独立#23已按merge commit合并） |
 | 核对时间与作者 | 2026-10-24 JST，Codex（已完成指定业务链合并，业务、CI、安全头和内容均已合并，汇总ENV-004证据） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
@@ -31,7 +31,7 @@
 | 原样导入 | `python3 -I tools/verify_archive.py`（163个清单文件 + 130个原源码） | `77a0604`（claude/SYNC-001-import） | 通过，0错误 |
 | 导入后校验 | `python3 -I tools/verify_import.py`（含130个源码的 git blob 比对） | SYNC-001 分支 HEAD，见交接记录 | 见 handoffs/2026-10-23-SYNC-001-claude.md；开发分支上改用 `--allow-changes`，列出有意修改的文件 |
 | TypeScript / 生产构建 | [main Actions run 39954687547](https://github.com/1412845026z-jpg/care-kotoba/actions/runs/39954687547)；Node22.23.3 / pnpm11.25.0 / portable | `87b611863046f8bb0b602aeb1bfb9e1b60396432` | install、tsc、build、离线凭证扫描全部通过；不代表浏览器/真实语音通过 |
-| 离线测试（G0-01） | `node tests/run.mjs all`：静态检查 + 单元测试 + 浏览器 / 语音模拟测试（Claude 沙箱） | `55f0ebb` → `2bfe1a0` | 基线 5/20 → 首轮 20/20、unit 33/33 → fix2：unit 34/34、e2e 22/22；模拟环境，不是真实 AI 或真机；CI 尚未运行这些测试（CI-002） |
+| 离线测试（G0-01） | `node tests/run.mjs all`：静态检查 + 单元测试 + 浏览器 / 语音模拟测试（Claude 沙箱） | `55f0ebb` → `2bfe1a0` | 基线 5/20 → 首轮 20/20、unit 33/33 → fix2：unit 34/34、e2e 22/22；模拟环境，不是真实 AI 或真机；该历史阶段CI尚未接入；现已由CI-002接入 |
 | 业务合并（G0-01 + REUSE-001） | PR #5、#9 以 merge commit 合并；合并后 main 的 CI；合并树与 Claude 离线测试过的树比较 | `8b55117` | main CI run 39998856202 success（install/tsc/build/数据校验）；main 树 `4d9137f` = 被测 `a242639` 树；离线 static 0 错误、unit 53/53、e2e 25/25（模拟，非真实 AI/真机） |
 | 真实构建与 dev（G0-01） | Codex ENV-002：本机 frozen install、tsc、build、static、unit；真实 vinext dev + 本机 mock | `8bc1848` | 全部 exit0，unit 34/34；dev 完整组 11 通过、8 项语音失败（无可用 ICE 候选）、1 跳过；语音未验收 |
 | 真实 AI / 语音 | 无成功端到端验收记录 | — | 未验证 |
@@ -87,10 +87,10 @@
 | LOCAL-DATA-001 | 设置里「この端末の学習データを削除」（两步确认）：删除笔记、记录、设置和访问码 cookie，适合机构里共用的设备 | Claude | merged | [PR #29](https://github.com/1412845026z-jpg/care-kotoba/pull/29)，merge a802321 | e2e 两项通过（本机数据清空；访问码失效） |
 | NOTES-EXPORT-001 | 「ことばノート」可书出为文本文件；删除本机数据前的确认里提示先书出 | Claude | merged | [PR #30](https://github.com/1412845026z-jpg/care-kotoba/pull/30)，merge 4381de1 | e2e 通过（下载内容含表达、原来的说法、场景） |
 | CONTENT-QA-001 | 术语只读第二道读音核对 | Claude + Codex合并 | merged | PR #23，merge f49f95a | 原CI通过，未改content/ |
-| ENV-004 | 最新PR #30标准runner与真实dev复测、顺序合并记录 | Codex | review_ready | codex/ENV-004，PR #31 | c3632f5：static0/unit71/离线40/真实dev36通过4跳过；指定13PR全部顺序合并；本PR另对当前main固定SHA复核，见ENV-004-final交接 |
+| ENV-004 | 最新PR #30标准runner与真实dev复测、顺序合并记录 | Codex | merged | PR #31，merge2e9b5c5；最终证据/状态补记在codex/ENV-004-state | 固定主干4a851fd标准run40052153140：static0/unit71/离线40/真实dev36通过4明确跳过；全部指定PR顺序合并，见ENV-004-final交接 |
 | CONTENT-004 | 按CONTENT-REVIEW-001修订场景/术语/评测 | Codex | merged | PR #34，merge4a851fd | 12场景/34术语/84转写+12配对=96评测；字段结构保留；提交后数据已跑生成器与--check（隔离环境），预览/注音接入仍归Claude；见CONTENT-004交接 |
 | SEC-001 | docs/08 #16的Worker CSP等响应头 | Codex | merged | PR #33，merge86ebc70 | 完整业务树unit71/离线40/真实dev36通过4有原因跳过，7项CSP/API/注音/麦克风断言及模拟WebRTC通过；见SEC-001交接 |
-| CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude | review_ready | claude/CORE-PREVIEW-001 @78e25dd，未合并 | Codex读取该版本交接，使用生成器对修改后、合并后的content做了隔离检查；未独立验收整个预览分支。需吸收最新main并重生注音，再提交复核 |
+| CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude | review_ready | PR #35，claude/CORE-PREVIEW-001 @ff8acc2，未合并 | 新head的生成器与已测78e25dd逐字节相同；Codex未验收整个预览分支。需吸收最新main、重生模块/注音并交付新SHA复核 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -111,7 +111,7 @@
 
 - ENV-004复测新head c3632f5通过（标准runner40050738078：static0、unit71、离线40、真实dev36通过4明确跳过）。指定业务链已全部合并；此前开发浮层失败是历史证据。真实AI/真机仍未验证。
 
-- 业务 PR #5、#9 已合并到 main（`8b55117`）。常规 main CI 目前只跑 install/tsc/build/数据校验，static/unit/模拟浏览器测试还没接入（CI-002，Codex）；真实 AI、真实事件顺序、真机、服务端强制时长与用量对账仍未验证。
+- 指定业务链、CI-002、CONTENT-004和SEC-001均已合并。常规CI已接入static/unit/模拟浏览器；固定主干4a851fd通过完整复测。真实AI、真实事件顺序、真机、服务端强制时长与用量对账仍未验证。
 
 - **旧模型停用日期**（OpenAI 官方弃用页，2026-10-23 核对：https://developers.openai.com/api/docs/deprecations）：`gpt-4o-mini-tts` 各快照与 `tts-1` 于 2027-01-06 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4.1-mini-2025-04-14` 于 2027-01-14 停用（建议替代 `gpt-6-luna`）；`gpt-realtime-mini` 于 2027-01-20 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4o-mini-transcribe` 于 2027-02-26 停用（建议替代 `gpt-live-transcribe` 或 `gpt-transcribe`）。原型代码仍写死这些型号。迁移前需用固定样本做真实调用比较，这会产生 API 费用，需用户授权。
 - Claude 的云端环境无法访问 npm 仓库，不能运行 `pnpm install`、完整 `tsc` 或 vinext 构建；真实构建结果依赖 CI-001 与 Codex 的环境。
