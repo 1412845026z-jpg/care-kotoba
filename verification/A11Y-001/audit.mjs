@@ -83,6 +83,20 @@ try {
   await audit(p2, 'notes');
   await nav(p2, '学習記録');
   await audit(p2, 'progress');
+  // CORE-PREVIEW-001: the optional core drafts (hidden by default; turned on via prefs here).
+  const p3 = await env.page(ctx);
+  await p3.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true, corePreview: true })));
+  await gotoApp(p3, env.baseUrl);
+  await p3.locator('.core-entry').scrollIntoViewIfNeeded();
+  await audit(p3, 'home-core');
+  await nav(p3, 'シーン');
+  await p3.locator('.core-pill').click();
+  await p3.locator('.core-notice').waitFor();
+  await p3.waitForTimeout(600); // let the pill colour transition finish before measuring
+  await audit(p3, 'scenes-core');
+  await p3.locator('.scene-grid .scene-card').first().click();
+  await p3.locator('.scene-modal .core-modal-note').waitFor();
+  await audit(p3, 'core-modal');
 } finally {
   await env.close();
 }

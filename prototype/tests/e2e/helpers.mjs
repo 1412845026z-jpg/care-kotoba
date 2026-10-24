@@ -134,6 +134,17 @@ export async function openScene(page, url, title) {
   await page.locator('.scene-modal').waitFor();
 }
 
+/** Opens one of the optional core drafts (CORE-PREVIEW-001): ?core=1 turns the preview on, then the core pill lists them. */
+export async function openCoreScene(page, baseUrl, title) {
+  await gotoApp(page, `${baseUrl}/?core=1`);
+  const mobile = page.locator('.mobile-nav button', { hasText: 'シーン' });
+  if (await mobile.isVisible()) await mobile.click();
+  else await page.locator('.sidebar nav button', { hasText: 'シーンを探す' }).click();
+  await page.locator('.core-pill').click();
+  await page.locator('.scene-grid .scene-card', { hasText: title }).first().click();
+  await page.locator('.scene-modal').waitFor();
+}
+
 export async function api(baseUrl, path, { method = 'POST', body, headers = {} } = {}) {
   const res = await fetch(baseUrl + path, { method, headers: { 'content-type': 'application/json', ...headers }, body: body === undefined ? undefined : JSON.stringify(body) });
   let data = null;

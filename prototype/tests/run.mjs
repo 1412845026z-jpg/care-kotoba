@@ -35,11 +35,13 @@ function run(name, cmd, cmdArgs, extraEnv = {}) {
   results.push({ name, exitCode: r.status ?? 1, timedOut: r.error?.code === 'ETIMEDOUT' || undefined, seconds: Math.round((Date.now() - started) / 100) / 10, pass: pass && Number(pass), fail: fail && Number(fail), failures: [...out.matchAll(/^not ok \d+ - (.+)$/gm)].map((m) => m[1]) });
 }
 
-// With --filter, only run files that mention the pattern. Passing --test-name-pattern to a file with
-// no matching test makes node:test (22.x) run its `after` hook before a slow async `before` hook has
-// finished, so resources started by `before` are never closed and the process hangs.
+// With --filter, only run files that have a test whose NAME matches the pattern. Passing
+// --test-name-pattern to a file with no matching test makes node:test (22.x) run its `after` hook before
+// a slow async `before` hook has finished, so resources started by `before` are never closed and the
+// process hangs. (Matching the whole file text was not enough: a pattern found only in a comment hung.)
 const filterRe = filter ? new RegExp(filter) : null;
-const mentionsFilter = (file) => !filterRe || filterRe.test(readFileSync(file, 'utf8'));
+const testNames = (text) => [...text.matchAll(/\btest\(\s*(['"`])((?:\\.|(?!\1).)*)\1/g)].map((m) => m[2]);
+const mentionsFilter = (file) => !filterRe || testNames(readFileSync(file, 'utf8')).some((n) => filterRe.test(n));
 
 const nodeTest = (files) => ['--test', '--test-concurrency=1', '--test-reporter=tap', ...(filter ? ['--test-name-pattern', filter] : []), ...files];
 

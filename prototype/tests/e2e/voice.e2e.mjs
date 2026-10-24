@@ -4,7 +4,7 @@
 // model, speech recognition, VAD timing, audio quality or billing.
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { setup, openScene } from './helpers.mjs';
+import { setup, openScene, openCoreScene } from './helpers.mjs';
 import { attachRealtimeSimulator, SIM_LAUNCH_ARGS, assistantTurn, userSpeech } from '../harness/realtime-sim.mjs';
 
 let env, sim;
@@ -231,4 +231,23 @@ test('voice: diagnostics can be exported after a session', async () => {
   assert.ok(diag.sessions[0].latency.samples.length >= 1, 'no reply latency samples');
   assert.ok(diag.sessions[0].estimatedCostUsd > 0, 'no cost estimate');
   assert.ok(diag.sessions[0].serverEnd?.hangup, 'server end result missing');
+});
+
+test('voice: a core draft session carries the draft instructions and still asks for the opening line first (CORE-PREVIEW-001)', async () => {
+  const page = await env.page();
+  await openCoreScene(page, env.baseUrl, '「いつもどおり」の準備を具体化する');
+  const callsBefore = sim.callCount;
+  await page.getByRole('button', { name: /音声でAIと話す/ }).click();
+  const deadline = Date.now() + 15000;
+  while (sim.callCount === callsBefore) {
+    if (Date.now() > deadline) throw new Error('app never posted an SDP offer to /v1/realtime/calls');
+    await new Promise((r) => setTimeout(r, 100));
+  }
+  await sim.waitForOpen();
+  const instructions = sim.sessions.at(-1).session?.instructions || '';
+  assert.ok(instructions.includes('Opening line (your first utterance in this scene): 「木村さんの準備、いつもどおりお願い。」'));
+  assert.ok(instructions.includes('10時の家族面会で使う写真アルバム') && instructions.includes('Reveal a hidden fact only when'), 'the partner gets the hidden fact with the reveal rule');
+  assert.ok(instructions.includes('最初の発話（Opening line）を一度だけ話して'), 'a new voice session still speaks the opening line once');
+  await sim.waitForClientEvent('response.create');
+  assert.deepEqual(page.errors, []);
 });
