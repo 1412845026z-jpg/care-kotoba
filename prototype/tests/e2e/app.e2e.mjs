@@ -16,7 +16,7 @@ async function transcript(page) {
 test('home renders at 390px without horizontal overflow or page errors', async () => {
   const page = await env.page();
   await gotoApp(page, env.baseUrl);
-  await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
+  await page.locator('h1', { hasText: '次の声かけを、ここで。' }).waitFor();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   assert.ok(overflow <= 1, `horizontal overflow ${overflow}px`);
   assert.deepEqual(page.errors, []);
@@ -131,7 +131,7 @@ test('corrupted or outdated localStorage does not break the app', async () => {
     'ck-prefs': JSON.stringify({ locale: 'xx', goal: 'abc' }),
   });
   await gotoApp(page, env.baseUrl);
-  await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
+  await page.locator('h1', { hasText: '次の声かけを、ここで。' }).waitFor();
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   await page.locator('.mobile-nav button', { hasText: '学習記録' }).click();
   await page.locator('h1', { hasText: 'できたことを、少しずつ。' }).waitFor();
@@ -220,7 +220,7 @@ test('a crash in one screen shows a recoverable message instead of blanking the 
   await box.waitFor();
   await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
   await box.getByRole('button', { name: 'ホームに戻る' }).click();
-  await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
+  await page.locator('h1', { hasText: '次の声かけを、ここで。' }).waitFor();
   assert.deepEqual(page.errors.filter((e) => !/crash test: notes|screen-error|The above error occurred/.test(e)), []);
 });
 
@@ -356,7 +356,7 @@ test('notes can be saved as a text file', async () => {
 test('responsive layout: desktop width also renders without errors', async () => {
   const page = await env.page({ viewport: { width: 1280, height: 860 }, locale: 'ja-JP' });
   await gotoApp(page, env.baseUrl);
-  await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
+  await page.locator('h1', { hasText: '次の声かけを、ここで。' }).waitFor();
   assert.deepEqual(page.errors, []);
 });
 
