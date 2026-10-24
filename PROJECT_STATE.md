@@ -62,7 +62,7 @@
 | REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude | queued | 依赖已由PR #47 merge ba8568b提供 | 功能由Claude实现；Codex本轮未改app/components/lib/tests |
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude | review_ready | `claude/START-FLOW-001`，PR #46，head6d22f31 | 未在本轮授权合并范围，保持开放；handoffs/2026-10-24-START-FLOW-001-claude.md |
 | AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | review_ready | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；PR #48；run40071495822成功，25单句＋5对比，1.52MB；无削波，未真正试听；不接入App |
-| A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | queued | `codex/A11Y-CI-001`（待步骤3完成） | 用户授权axe4.14.0开发依赖；不修改audit.mjs或prototype/tests |
+| A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | in_progress | `codex/A11Y-CI-001` | handoffs/2026-10-24-A11Y-CI-001-codex.md；axe4.14.0/MPL开发依赖；三项门禁及六页报告待正式CI |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | merged | [PR #5](https://github.com/1412845026z-jpg/care-kotoba/pull/5)，head `a6c6f58`；合并 `0420ff7` | ENV-003（Codex，@`3a3f1a9`）真实install/tsc/build/static、unit34/34、离线22/22、真实dev21通过1跳过；之后的 COOKIE-ENCODING-001 修复（`89d8ad2`）离线 static 0 错误、unit 37/37、e2e 22/22，PR CI run 39998125919 通过。真实AI/真机未验证 |

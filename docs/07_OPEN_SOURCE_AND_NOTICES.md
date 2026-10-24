@@ -74,3 +74,12 @@ CONTENT-002只记录常用词形、读音与出处页码，学习释义、虚构
 Kokoro-82M v1.0固定HF revision `8542409da2986c0ab5d41b3cf0411f7a58caab38`（Apache-2.0），用kokoro0.9.4 / misaki[ja]0.9.4和本地CPU；日语候选jf_alpha、jm_kumo。VOICEVOX engine0.26.0固定官方CPU发行包完整SHA-256（源码LGPL-3.0/另行授权），仅作临时隔离工具；声音选麒ヶ島宗麟、雀松朱司、玄野武宏，均正常样式。每个角色另有条款，必须分别署名 `VOICEVOX:麒ヶ島宗麟`、`VOICEVOX:雀松朱司`、`VOICEVOX:玄野武宏`，不能把引擎许可等同于音频或角色图像许可。
 
 逐来源、商业使用条件、角色条款链接、许可原文与实际生成记录见 `verification/AUDIO-SAMPLES-001/README.md` 及其 `licenses/`（已保留）。模型/引擎/依赖代码不进入App或仓库；临时工具环境含GPL相关包时也不并入App，生成音频许可单独核对。无远程推理API、无费用、无部署。25段单句与5段对比已由免费CPU生成并检验；仅为技术检视，真正试听尚未完成，官方角色定位不代表实际日本语质量验收。
+
+## A11Y-CI-001：axe 仅用于开发测试
+
+| 固定来源 | 许可与保留文本 | 范围 |
+| --- | --- | --- |
+| [@axe-core/playwright 4.14.0](https://www.npmjs.com/package/@axe-core/playwright/v/4.14.0)，上游commit [2375f7f5523a2accaeef91a3cb12e30a46e7fbea](https://github.com/dequelabs/axe-core-npm/tree/2375f7f5523a2accaeef91a3cb12e30a46e7fbea/packages/playwright) | MPL-2.0；`docs/licenses/AXE_CORE_PLAYWRIGHT_MPL-2.0.txt`（正式npm包原文），npm sha512见`verification/A11Y-CI-001/package-evidence.json` | 精确devDependency，库源文件不修改，不接入App运行时 |
+| [axe-core 4.14.0](https://github.com/dequelabs/axe-core/tree/v4.14.0)（上述包的唯一新增传递依赖） | MPL-2.0；同一完整MPL文本及npm包自身许可；精确解析/完整性固定于锁文件 | 复用既有playwright-core1.63.0，无第二份Playwright或付费服务 |
+
+MPL允许商业使用，但相关覆盖文件仍遵守MPL的源码提供与修改分发条件；保留许可和上游源码链接，不将MPL误写成MIT。脚本只在离线harness/回环mock扫描首页、场景说明、练习、反馈、笔记、设置。axe发现先报告不阻断；执行/导航失败仍作为CI故障。原audit的contrast / targetsUnder24 / textUnder12px原始数组任一非空就失败。没有改audit.mjs或prototype/tests。
