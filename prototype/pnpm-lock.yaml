@@ -77,6 +77,9 @@ importers:
       tailwind-merge:
         specifier: 3.6.0
         version: 3.6.0
+      ts-fsrs:
+        specifier: 5.4.2
+        version: 5.4.2
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -4975,6 +4978,10 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
+  ts-fsrs@5.4.2:
+    resolution: {integrity: sha512-z4qop4pzTcyTzuJ566d9EaX/4bZZzhYfeaPImfVr+xcYT65c5oBgFDijUhCE/D+C78eaolHIhKRZ04/RwF+v2g==}
+    engines: {node: '>=20.0.0'}
+
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
@@ -9577,3 +9584,4 @@ snapshots:
     dependencies:
       playwright-core: 1.63.0
 
+  ts-fsrs@5.4.2: {}
