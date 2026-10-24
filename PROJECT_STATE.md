@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本次状态核对的远端代码提交 | `main` = `2e9b5c5a5dc9656f7e621a4d57095f5c195d266d`（用户指定的#17→#30业务链及独立#23已按merge commit合并） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（已完成指定业务链合并，业务、CI、安全头和内容均已合并，汇总ENV-004证据） |
+| 本轮核对的业务集成提交 | `b46bf98ad847f42f87ce1021e20869f4b863c32d`（#35→#37按merge commit合并；对应被测业务树930af372） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#35固定SHA及#37最新head独立ENV/CSP/mock复测通过并顺序合并；CORE-ENV-001证据PR #38） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -64,7 +64,7 @@
 | REUSE-001 | 开源 / 免费资料复用：固定文字注音、Realtime 输入排队、来源与许可清单 | Claude | merged | [PR #9](https://github.com/1412845026z-jpg/care-kotoba/pull/9)，head `a242639`；合并 `8b55117`（合并树与被测树 `4d9137f` 相同） | ENV-003（@`5b6146f`）unit50/50、离线25/25、真实dev24通过1跳过；合入 Cookie 修复与 main 后离线 static 0 错误、unit 53/53、e2e 25/25，PR CI run 39998437073 通过。真实OpenAI事件时序未验证 |
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
-| OSS-001 | 公开前检查与Codex for OSS申请准备 | Codex | blocked | 准备材料PR #10已合并；申请暂停 | 当前REST private=false，已公开；本轮Codex未改设置，变更执行者未核实；许可证未定、表单未提交 |
+| OSS-001 | 公开前检查与Codex for OSS申请 | Codex | blocked | 准备材料PR #10已合并；2026-10-24申请已提交 | 仓库公开，许可证仍未确定；用户确认邮箱与条款后已提交，官方页面确认接收，等待外部审核；尚未获批。未在仓库记录个人邮箱 |
 | CI-002 | G0模拟测试接入常规main CI | Codex | merged | PR #32，merge c917a68 | 已在完整业务树通过static0/unit71/e2e40；安装Chromium、600秒超时、循环回环fetch保护已接入常规CI；见handoffs/2026-10-24-CI-002-main-codex.md |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
@@ -90,12 +90,14 @@
 | ENV-004 | 最新PR #30标准runner与真实dev复测、顺序合并记录 | Codex | merged | PR #31，merge2e9b5c5；最终证据/状态补记在codex/ENV-004-state | 固定主干4a851fd标准run40052153140：static0/unit71/离线40/真实dev36通过4明确跳过；全部指定PR顺序合并，见ENV-004-final交接 |
 | CONTENT-004 | 按CONTENT-REVIEW-001修订场景/术语/评测 | Codex | merged | PR #34，merge4a851fd | 12场景/34术语/84转写+12配对=96评测；字段结构保留；提交后数据已跑生成器与--check（隔离环境），预览/注音接入仍归Claude；见CONTENT-004交接 |
 | SEC-001 | docs/08 #16的Worker CSP等响应头 | Codex | merged | PR #33，merge86ebc70 | 完整业务树unit71/离线40/真实dev36通过4有原因跳过，7项CSP/API/注音/麦克风断言及模拟WebRTC通过；见SEC-001交接 |
-| CORE-PREVIEW-001 | 默认隐藏的「コア練習（草稿）」入口与生成器；服务端按隐藏信息、分支、反馈规则生成角色指示，隐藏信息不进浏览器 | Claude | review_ready | PR #35，`claude/CORE-PREVIEW-001`，已吸收 main `c7a810a` 并用 CONTENT-004 内容重新生成（`83b701c`） | handoffs/2026-10-24-CORE-PREVIEW-001-claude.md；@`83b701c` 离线 static 0 / unit 81 / e2e 47（模拟 AI）；GitHub CI（含 CI-002 测试）@`a4d7831` run 40057219144 success：static 0 / unit 81 / e2e 47；待 Codex 固定 SHA 复测（real-dev 与 SEC-001 安全头）；真实模型是否遵守未验证 |
-| CORE-EVAL-001 | 核心草稿角色检查工具 `tools/smoke/core-roleplay-check.mjs`：28 个固定探测经 `/api/chat`，用标志词检查隐藏信息是否过早透露；不加 `--yes` 不调用 | Claude | review_ready | `claude/CORE-EVAL-001`（依赖 PR #35） | handoffs/2026-10-24-CORE-EVAL-001-claude.md；@`c656db7` 离线 static 0 / unit 81 / e2e 50（模拟 AI）；真实模型未运行，需授权费用 |
+| CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude + Codex复测 | merged | PR #35，head a4d7831；merge b038f60 | 独立run40058494059：static0/unit81/offline47/真实dev42通过5注明原因跳过，10项CSP检查通过；CORE-ENV-001交接 |
+| CORE-EVAL-001 | 核心草稿的角色检查工具 | Claude + Codex复测 | merged | PR #37，head 2cf1a0e；merge b46bf98 | #35合并后独立run40058975902：static0/unit81/offline50/真实dev42通过8注明原因跳过；10项CSP检查通过，全部mock；dry-run及过期标志词检查0请求 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
+
+| CORE-ENV-001 | 核心预览/角色检查工具的独立ENV验收与合并证据 | Codex | review_ready | codex/CORE-ENV-001，PR #38 | #35→#37已按merge commit合并；固定源的两次标准runner均通过，证据与验证工具待PR #38整合；无依赖/付费API/部署 |
 
 ## 已确认的产品决定
 
@@ -108,6 +110,11 @@
 | 2026-10-23 用户（Claude 会话） | Codex 与 Claude 只通过本仓库同步，按环境能力与文件归属分工（见上表） | 冻结文件在负责方分支合并前不由对方修改 |
 | 2026-10-24 用户（Claude 会话）：「我先做可选的预览入口（推荐）」 | 12 个核心场景先作为「コア練習（草稿）」单独入口接进应用，默认隐藏，原有 48 个场景不动；GPT 同时按审阅意见修改内容 | 草稿不计入 48 场景进度；正式替换或合并原场景需另行决定，并需要专业审稿 |
 | 2026-10-23 用户（Claude 会话）：「可以复用的就以合适方式拿过来并共享」 | 开源 / 免费资料按 research/REUSE_REVIEW_2026-10-23.md 处理；注音默认开启（Claude 的默认设定，可在设置中关闭，待教师和用户反馈） | 新增依赖仍由 Codex 加入；内容类资料由 Codex 负责 |
+
+### 2026-10-24 后续内容修改要求（用户本轮指令）
+
+- 改 `content/scenarios` 后先跑核心生成器，再重生注音并运行两个 `--check`；逐句检查机器读音，重点为夜中、一回、二人、後。改隐藏信息后还要不加 `--yes` 跑角色检查工具，检查过期标志词。
+- `hidden_information[].leak_markers_ja` 仅为交接中的可选结构提案，待用户确认，当前字段结构未改。
 
 ## 当前阻塞与风险
 
@@ -122,6 +129,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-CORE-ENV-001-codex.md：#35/#37独立复测与顺序合并、10项CSP检查、角色工具0请求dry-run/过期标志词检查、后续内容生成/注音要求。
 
 - handoffs/2026-10-24-CORE-EVAL-001-claude.md：核心草稿的角色检查工具（真实模型运行前的准备，需授权费用才运行）。
 

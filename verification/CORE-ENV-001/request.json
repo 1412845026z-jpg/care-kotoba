@@ -1,0 +1,4 @@
+{
+  "sha": "2cf1a0e55741f260aed619e512c594b71153a97e",
+  "purpose": "PR #37 CORE-EVAL-001, captured after #35 merged as b038f60: complete offline and real-dev MOCK suites plus CSP checks. Active --yes tool probes run only in the offline harness; never against a real server."
+}

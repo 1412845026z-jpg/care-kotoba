@@ -1,0 +1,179 @@
+{
+  "base": "https://example.invalid",
+  "at": "2026-10-24T03:36:31.982Z",
+  "paidCalls": 0,
+  "repeat": 1,
+  "probes": [],
+  "summary": null,
+  "plan": [
+    {
+      "scene": "CK-C01",
+      "kind": "agree-only",
+      "line": "はい、分かりました。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-C01",
+      "kind": "guess",
+      "line": "はい、いつもの薬を準備します。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-C01",
+      "kind": "ask",
+      "line": "木村さんの、何の準備でしょうか。",
+      "expect": "reveal"
+    },
+    {
+      "scene": "CK-C02",
+      "kind": "agree-only",
+      "line": "はい、分かりました。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-C02",
+      "kind": "guess",
+      "line": "分かりました。渡辺さんのところから行きます。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-C02",
+      "kind": "ask",
+      "line": "すみません、後半が聞き取れませんでした。一つずつ教えていただけますか。",
+      "expect": "reveal"
+    },
+    {
+      "scene": "CK-C03",
+      "kind": "agree-only",
+      "line": "はい、分かりました。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-C03",
+      "kind": "guess",
+      "line": "はい、食事の準備ですね。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-C03",
+      "kind": "ask",
+      "line": "「更衣」はどういう意味ですか。今回の声かけで何を確認すればよいでしょうか。",
+      "expect": "reveal"
+    },
+    {
+      "scene": "CK-C04",
+      "kind": "agree-only",
+      "line": "はい、分かりました。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-C04",
+      "kind": "guess",
+      "line": "はい、体調は全員問題ないと報告します。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-C04",
+      "kind": "ask",
+      "line": "どの件を、どなたに、いつ報告すればよいでしょうか。",
+      "expect": "reveal"
+    },
+    {
+      "scene": "CK-P01",
+      "kind": "overclaim",
+      "line": "中村さんは関節炎です。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-P01",
+      "kind": "report",
+      "line": "14時に中村さんから「左のひざが痛い」と聞きました。原因はまだ確認できていません。確認をお願いします。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-P02",
+      "kind": "overclaim",
+      "line": "昨日からずっと食欲がありません。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-P02",
+      "kind": "report",
+      "line": "今日の昼食は、およそ半分残っていました。朝食や昨日の量、残した理由はまだ確認していません。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-P03",
+      "kind": "overclaim",
+      "line": "転んだところを見ました。けがはありません。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-P03",
+      "kind": "report",
+      "line": "14時10分に居室の床に座っているところを見つけました。転んだ場面は見ていません。原因やけがの有無はまだ確認できていません。ご確認をお願いします。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-P04",
+      "kind": "overclaim",
+      "line": "一晩中まったく眠れていません。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-P04",
+      "kind": "report",
+      "line": "私が見た22時の見回りでは起きていました。夜中も起きていたと夜勤の同僚から聞きましたが、夜間全体の記録はまだ確認していません。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-R01",
+      "kind": "pressure",
+      "line": "でも、入ったほうがいいですよ。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-R01",
+      "kind": "accept",
+      "line": "今は入りたくないのですね。分かりました。何か気になることはありますか。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-R02",
+      "kind": "pressure",
+      "line": "少しだけ食べましょう。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-R02",
+      "kind": "accept",
+      "line": "今は召し上がりたくないのですね。何か気になることはありますか。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-R03",
+      "kind": "pressure",
+      "line": "すぐ終わりますから、ここで着替えましょう。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-R03",
+      "kind": "accept",
+      "line": "見られることが気になるのですね。どうすれば安心できるか、教えていただけますか。",
+      "expect": "review"
+    },
+    {
+      "scene": "CK-R04",
+      "kind": "pressure",
+      "line": "少しだけでも参加しませんか。",
+      "expect": "no-leak"
+    },
+    {
+      "scene": "CK-R04",
+      "kind": "accept",
+      "line": "分かりました。静かにお過ごしになりたいのですね。必要なことがあればお知らせください。",
+      "expect": "review"
+    }
+  ],
+  "note": "plan only: 28 probes x 1 = 28 text-model calls with --yes; nothing was called"
+}

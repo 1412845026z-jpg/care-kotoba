@@ -1,0 +1,334 @@
+TAP version 13
+# Subtest: AI routes refuse requests without access (no Origin header, like curl)
+ok 1 - AI routes refuse requests without access (no Origin header, like curl)
+  ---
+  duration_ms: 667.080834
+  type: 'test'
+  ...
+# Subtest: a wrong access code is rejected and the right one grants an HttpOnly cookie
+ok 2 - a wrong access code is rejected and the right one grants an HttpOnly cookie
+  ---
+  duration_ms: 34.184747
+  type: 'test'
+  ...
+# Subtest: without an access code, AI routes only answer on localhost
+ok 3 - without an access code, AI routes only answer on localhost
+  ---
+  duration_ms: 13.146
+  type: 'test'
+  ...
+# Subtest: the learner is asked for the access code before an AI practice, and the demo needs none
+ok 4 - the learner is asked for the access code before an AI practice, and the demo needs none
+  ---
+  duration_ms: 2731.815117
+  type: 'test'
+  ...
+# Subtest: deleting this device's learning data also forgets the access code
+ok 5 - deleting this device's learning data also forgets the access code
+  ---
+  duration_ms: 1105.4144
+  type: 'test'
+  ...
+# Subtest: home renders at 390px without horizontal overflow or page errors
+ok 6 - home renders at 390px without horizontal overflow or page errors
+  ---
+  duration_ms: 1218.815813
+  type: 'test'
+  ...
+# Subtest: scripted demo can be completed and is labelled as not AI-evaluated
+ok 7 - scripted demo can be completed and is labelled as not AI-evaluated
+  ---
+  duration_ms: 3427.260362
+  type: 'test'
+  ...
+# Subtest: text practice uses the mock AI and shows feedback
+ok 8 - text practice uses the mock AI and shows feedback
+  ---
+  duration_ms: 1363.319742
+  type: 'test'
+  ...
+# {"evt":"feedback_pronunciation_removed","scene":"bath-5","count":3}
+# Subtest: feedback made from text never shows a pronunciation judgement
+ok 9 - feedback made from text never shows a pronunciation judgement
+  ---
+  duration_ms: 1417.349337
+  type: 'test'
+  ...
+# Subtest: local re-practice: one moment is replayed with the conversation up to it as context
+ok 10 - local re-practice: one moment is replayed with the conversation up to it as context
+  ---
+  duration_ms: 1501.773228
+  type: 'test'
+  ...
+# {"evt":"feedback_unquoted_dropped","scene":"bath-5","count":1}
+# Subtest: feedback never shows a quote the learner did not say
+ok 11 - feedback never shows a quote the learner did not say
+  ---
+  duration_ms: 1409.983023
+  type: 'test'
+  ...
+# Subtest: corrupted or outdated localStorage does not break the app
+ok 12 - corrupted or outdated localStorage does not break the app
+  ---
+  duration_ms: 1473.486111
+  type: 'test'
+  ...
+# Subtest: staff-to-staff scenes are not role-played as the resident
+ok 13 - staff-to-staff scenes are not role-played as the resident
+  ---
+  duration_ms: 1065.617719
+  type: 'test'
+  ...
+# Subtest: health endpoint answers and reports configuration without secrets
+ok 14 - health endpoint answers and reports configuration without secrets
+  ---
+  duration_ms: 4.259146
+  type: 'test'
+  ...
+# Subtest: furigana is shown on fixed texts and can be switched off in settings
+ok 15 - furigana is shown on fixed texts and can be switched off in settings
+  ---
+  duration_ms: 2086.739023
+  type: 'test'
+  ...
+# Subtest: notes whose text is an Object.prototype name render as plain text (furigana on and off)
+ok 16 - notes whose text is an Object.prototype name render as plain text (furigana on and off)
+  ---
+  duration_ms: 1358.929455
+  type: 'test'
+  ...
+# Subtest: a crash in one screen shows a recoverable message instead of blanking the app
+ok 17 - a crash in one screen shows a recoverable message instead of blanking the app
+  ---
+  duration_ms: 966.351215
+  type: 'test'
+  ...
+# Subtest: a crash inside practice can be closed without losing the app
+ok 18 - a crash inside practice can be closed without losing the app
+  ---
+  duration_ms: 1479.204103
+  type: 'test'
+  ...
+# Subtest: voice check: microphone, speaker, server and WebRTC are checked without any AI call
+ok 19 - voice check: microphone, speaker, server and WebRTC are checked without any AI call
+  ---
+  duration_ms: 7206.481049
+  type: 'test'
+  ...
+# {"evt":"chat_ruby_rejected"}
+# Subtest: AI replies in text practice get validated furigana (CK_AI_FURIGANA=1); a wrong notation is not shown
+ok 20 - AI replies in text practice get validated furigana (CK_AI_FURIGANA=1); a wrong notation is not shown
+  ---
+  duration_ms: 2518.644513
+  type: 'test'
+  ...
+# {"evt":"voice_session_error","status":500,"code":"server_error"}
+# Subtest: when voice cannot start, the free voice check can be opened from the error panel
+ok 21 - when voice cannot start, the free voice check can be opened from the error panel
+  ---
+  duration_ms: 1739.830395
+  type: 'test'
+  ...
+# Subtest: settings: the learner can delete this device's learning data (two steps)
+ok 22 - settings: the learner can delete this device's learning data (two steps)
+  ---
+  duration_ms: 1271.399699
+  type: 'test'
+  ...
+# Subtest: notes can be saved as a text file
+ok 23 - notes can be saved as a text file
+  ---
+  duration_ms: 762.199234
+  type: 'test'
+  ...
+# Subtest: responsive layout: desktop width also renders without errors
+ok 24 - responsive layout: desktop width also renders without errors
+  ---
+  duration_ms: 747.472788
+  type: 'test'
+  ...
+# Subtest: hidden by default: no core entry, the library still shows the regular 48 scenes
+ok 25 - hidden by default: no core entry, the library still shows the regular 48 scenes
+  ---
+  duration_ms: 1291.252357
+  type: 'test'
+  ...
+# Subtest: turning the preview on in settings adds the entry; "all" stays 48 and the drafts are labelled as drafts
+ok 26 - turning the preview on in settings adds the entry; "all" stays 48 and the drafts are labelled as drafts
+  ---
+  duration_ms: 2079.566613
+  type: 'test'
+  ...
+# Subtest: ?core=1 turns the preview on (link for reviewers)
+ok 27 - ?core=1 turns the preview on (link for reviewers)
+  ---
+  duration_ms: 809.121536
+  type: 'test'
+  ...
+# Subtest: a core draft: no variant choice, opening line, hidden facts stay on the server, practice does not count toward the 48
+ok 28 - a core draft: no variant choice, opening line, hidden facts stay on the server, practice does not count toward the 48
+  ---
+  duration_ms: 1813.837129
+  type: 'test'
+  ...
+# Subtest: the browser bundle carries no hidden facts (harness bundle)
+ok 29 - the browser bundle carries no hidden facts (harness bundle)
+  ---
+  duration_ms: 78.826967
+  type: 'test'
+  ...
+# Subtest: desktop layout: the core pill and notice render without errors
+ok 30 - desktop layout: the core pill and notice render without errors
+  ---
+  duration_ms: 931.189198
+  type: 'test'
+  ...
+# Subtest: setup closes already started servers when Chromium fails to launch, and keeps the original error
+ok 31 - setup closes already started servers when Chromium fails to launch, and keeps the original error
+  ---
+  duration_ms: 405.433681
+  type: 'test'
+  ...
+# Subtest: a process whose setup fails exits on its own instead of hanging
+ok 32 - a process whose setup fails exits on its own instead of hanging
+  ---
+  duration_ms: 388.766291
+  type: 'test'
+  ...
+# Subtest: smoke tool: without --yes only free routes are called
+ok 33 - smoke tool: without --yes only free routes are called
+  ---
+  duration_ms: 649.260938
+  type: 'test'
+  ...
+# Subtest: smoke tool: --yes exercises chat, feedback and speech through the app
+ok 34 - smoke tool: --yes exercises chat, feedback and speech through the app
+  ---
+  duration_ms: 169.612253
+  type: 'test'
+  ...
+# Subtest: smoke tool: a wrong access code fails clearly
+ok 35 - smoke tool: a wrong access code fails clearly
+  ---
+  duration_ms: 154.474879
+  type: 'test'
+  ...
+# Subtest: core roleplay check: plan only without --yes (no AI request, no access code printed)
+ok 36 - core roleplay check: plan only without --yes (no AI request, no access code printed)
+  ---
+  duration_ms: 34.451478
+  type: 'test'
+  ...
+# Subtest: core roleplay check: --yes runs every probe through /api/chat with the draft instructions
+ok 37 - core roleplay check: --yes runs every probe through /api/chat with the draft instructions
+  ---
+  duration_ms: 259.764853
+  type: 'test'
+  ...
+# Subtest: core roleplay check: a reply that discloses the hidden fact too early is flagged
+ok 38 - core roleplay check: a reply that discloses the hidden fact too early is flagged
+  ---
+  duration_ms: 152.896285
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"-QusmZ0uAcq1","callId":"rtc_sim1_06b2xt25","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: a late input transcription is shown before the reply it triggered, with no duplicates
+ok 39 - voice: a late input transcription is shown before the reply it triggered, with no duplicates
+  ---
+  duration_ms: 2392.548738
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"imdZzAETQck1","callId":"rtc_sim2_uhioyfbn","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"imdZzAETQck1","callId":"rtc_sim2_uhioyfbn","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.3,"responses":1,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":null,"latencyP95":null,"estimatedCostUsd":0.004801,"errors":0,"tokens":{"textIn":300,"textCached":600,"audioIn":120,"audioCached":0,"textOut":30,"audioOut":160}}}
+# Subtest: voice: finishing a session asks the server to hang up the Realtime call
+ok 40 - voice: finishing a session asks the server to hang up the Realtime call
+  ---
+  duration_ms: 1549.400784
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"Vp402S8CRnUt","callId":"rtc_sim3_o82b7o0v","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"Vp402S8CRnUt","callId":"rtc_sim3_o82b7o0v","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.3,"responses":2,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":0,"latencyP95":0,"estimatedCostUsd":0.009489,"errors":0,"tokens":{"textIn":600,"textCached":1200,"audioIn":240,"audioCached":0,"textOut":60,"audioOut":320}}}
+# Subtest: voice: the voice transcript reaches feedback in conversation order
+ok 41 - voice: the voice transcript reaches feedback in conversation order
+  ---
+  duration_ms: 1604.870004
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"xPTnhKZ0kqKe","callId":"rtc_sim4_mrxlvxho","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"xPTnhKZ0kqKe","callId":"rtc_sim4_mrxlvxho","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":1,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.3,"responses":1,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":null,"latencyP95":null,"estimatedCostUsd":0.004801,"errors":0,"tokens":{"textIn":300,"textCached":600,"audioIn":120,"audioCached":0,"textOut":30,"audioOut":160}}}
+# Subtest: voice: a line the recogniser was unsure about asks the learner to check it, and feedback does not call it an error
+ok 42 - voice: a line the recogniser was unsure about asks the learner to check it, and feedback does not call it an error
+  ---
+  duration_ms: 1643.202873
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"mfZKeoJFUGIZ","callId":"rtc_sim5_oen7v5n4","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: the last minute shows a countdown instead of elapsed time
+ok 43 - voice: the last minute shows a countdown instead of elapsed time
+  ---
+  duration_ms: 2208.542246
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"Aoznzv50KWje","callId":"rtc_sim6_w3ilmscj","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: an interrupted reply is marked as interrupted
+ok 44 - voice: an interrupted reply is marked as interrupted
+  ---
+  duration_ms: 1981.583284
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"BYgV7M6Ra40u","callId":"rtc_sim7_k64ecjrx","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: a failed transcription is shown as not recognised instead of disappearing
+ok 45 - voice: a failed transcription is shown as not recognised instead of disappearing
+  ---
+  duration_ms: 1546.403496
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"hUrIA-gomkgy","callId":"rtc_sim8_a9q49je0","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"hUrIA-gomkgy","callId":"rtc_sim8_a9q49je0","scene":"daily-2","reason":"remote_closed","hangup":"done","serverSeconds":0,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.3,"responses":1,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":null,"latencyP95":null,"estimatedCostUsd":0.004801,"errors":0,"tokens":{"textIn":300,"textCached":600,"audioIn":120,"audioCached":0,"textOut":30,"audioOut":160}}}
+# {"evt":"voice_session_start","sid":"saMkPKwL95Bn","callId":"rtc_sim9_f1adcmuk","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":true,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: losing the connection is reported and the session can be resumed with its transcript
+ok 46 - voice: losing the connection is reported and the session can be resumed with its transcript
+  ---
+  duration_ms: 1828.730788
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"SlzeJajfpQwX","callId":"rtc_sim10_92q0uvot","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: a line typed while the AI is still answering gets its reply after that answer (no rejected response.create)
+ok 47 - voice: a line typed while the AI is still answering gets its reply after that answer (no rejected response.create)
+  ---
+  duration_ms: 2085.3169
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"6_NOLEpxbIq_","callId":"rtc_sim11_duxfyei5","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: connects under React StrictMode (development double effects)
+ok 48 - voice: connects under React StrictMode (development double effects)
+  ---
+  duration_ms: 2320.546225
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"yVP-XEizXn5h","callId":"rtc_sim12_kh1j3gr5","scene":"daily-2","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# {"evt":"voice_session_end","sid":"yVP-XEizXn5h","callId":"rtc_sim12_kh1j3gr5","scene":"daily-2","reason":"finish","hangup":"done","serverSeconds":1,"maxSeconds":180,"overMax":false,"client":{"durationSeconds":0.7,"responses":2,"cancelled":0,"failed":0,"transcriptionFailed":0,"bargeIns":0,"latencyP50":388,"latencyP95":388,"estimatedCostUsd":0.009489,"errors":0,"tokens":{"textIn":600,"textCached":1200,"audioIn":240,"audioCached":0,"textOut":60,"audioOut":320}}}
+# Subtest: voice: diagnostics can be exported after a session
+ok 49 - voice: diagnostics can be exported after a session
+  ---
+  duration_ms: 3179.758086
+  type: 'test'
+  ...
+# {"evt":"voice_session_start","sid":"mHCvq-T7qffc","callId":"rtc_sim13_66kxq1dg","scene":"CK-C01","model":"gpt-realtime-mini","transcribe":"gpt-4o-mini-transcribe","resume":false,"maxSeconds":180,"hangupAvailable":true}
+# Subtest: voice: a core draft session carries the draft instructions and still asks for the opening line first (CORE-PREVIEW-001)
+ok 50 - voice: a core draft session carries the draft instructions and still asks for the opening line first (CORE-PREVIEW-001)
+  ---
+  duration_ms: 1938.958684
+  type: 'test'
+  ...
+1..50
+# tests 50
+# suites 0
+# pass 50
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 73869.795032
+
+SUMMARY [{"name":"e2e","exitCode":0,"pass":50,"fail":0,"seconds":73.9}]

@@ -1,0 +1,16 @@
+[
+  {
+    "pr": 35,
+    "reviewed_head": "a4d7831b437eeae7a6f3073742bdf820d0b38d37",
+    "merge_sha": "b038f60dceccf142232a8dfce890f23f196337e5",
+    "method": "merge",
+    "run_id": 40058494059
+  },
+  {
+    "pr": 37,
+    "reviewed_head": "2cf1a0e55741f260aed619e512c594b71153a97e",
+    "merge_sha": "b46bf98ad847f42f87ce1021e20869f4b863c32d",
+    "method": "merge",
+    "run_id": 40058975902
+  }
+]

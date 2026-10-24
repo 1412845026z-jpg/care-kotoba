@@ -1,0 +1,17 @@
+{
+  "source_sha": "2cf1a0e55741f260aed619e512c594b71153a97e",
+  "plan": {
+    "exit_code": 0,
+    "probes": 28,
+    "paidCalls": 0,
+    "fetchAttempts": 0
+  },
+  "stale_marker_fixture": {
+    "expected_exit_code": 2,
+    "actual_exit_code": 2,
+    "stderr": "leak markers out of date (content/scenarios changed):\n  CK-C01: marker 「アルバム」 is not in its hidden fact any more\n  CK-C01: marker 「談話室」 is not in its hidden fact any more\n  CK-C01: marker 「面会」 is not in its hidden fact any more\n",
+    "fetchAttempts": 0
+  },
+  "tracked_content_unchanged": true,
+  "note": "No --yes flag, no server, all fetch blocked by an imported guard. Only a temporary copy of CK-C01 hidden facts was changed for the expected stale-marker result."
+}

@@ -6,6 +6,8 @@ on:
       - .github/workflows/verify-claude.yml
       - scripts/ci/verify_claude.py
       - verification/ENV-004/request.json
+      - verification/CORE-ENV-001/request.json
+      - scripts/ci/security_browser_probe.mjs
   workflow_dispatch:
     inputs:
       sha:
@@ -24,7 +26,7 @@ concurrency:
 # request file on the ENV-004 tooling PR. No source SHA is hardcoded in this workflow.
 jobs:
   mock-review:
-    if: github.event_name != 'pull_request' || github.head_ref == 'codex/ENV-004'
+    if: github.event_name != 'pull_request' || github.head_ref == 'codex/ENV-004' || github.head_ref == 'codex/CORE-ENV-001'
     name: Source review / mock only / Node 22
     runs-on: ubuntu-24.04
     timeout-minutes: 18
@@ -42,10 +44,11 @@ jobs:
         id: request
         env:
           REQUESTED_SHA: ${{ inputs.sha }}
+          REVIEW_REQUEST_PATH: ${{ github.head_ref == 'codex/CORE-ENV-001' && 'verification/CORE-ENV-001/request.json' || 'verification/ENV-004/request.json' }}
         run: |
           node --input-type=module <<'JS'
           import { readFileSync, appendFileSync } from 'node:fs';
-          const sha = process.env.REQUESTED_SHA || JSON.parse(readFileSync('verification/ENV-004/request.json', 'utf8')).sha;
+          const sha = process.env.REQUESTED_SHA || JSON.parse(readFileSync(process.env.REVIEW_REQUEST_PATH, 'utf8')).sha;
           if (!/^[0-9a-f]{40}$/.test(sha)) throw new Error('A full 40-character source SHA is required');
           appendFileSync(process.env.GITHUB_OUTPUT, `sha=${sha}\n`);
           JS
@@ -104,6 +107,11 @@ jobs:
       - name: Install official Chromium
         working-directory: verified-source/prototype
         run: pnpm exec playwright install --with-deps chromium
+      - name: Core generator and security policy checks on exact source
+        working-directory: verified-source
+        run: |
+          node tools/core-scenarios/generate.mjs --check
+          node scripts/ci/check_security_policy.mjs
       - name: Offline browser suite (simulated AI and WebRTC peer)
         id: offline
         continue-on-error: true
@@ -112,7 +120,7 @@ jobs:
         id: realdev
         if: ${{ !cancelled() }}
         continue-on-error: true
-        run: python3 scripts/ci/verify_claude.py --source verified-source --mode real-dev --report-dir review-results/real-dev
+        run: python3 scripts/ci/verify_claude.py --source verified-source --mode real-dev --browser-probe scripts/ci/security_browser_probe.mjs --report-dir review-results/real-dev
       - name: Confirm tracked source restored and no fake environment remains
         if: ${{ !cancelled() }}
         working-directory: verified-source
