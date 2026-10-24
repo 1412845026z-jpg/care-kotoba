@@ -35,7 +35,9 @@ const HELP: Record<string, { zh: string; en: string }> = {
 };
 
 function withHelp(items: Omit<CheckItem, 'help'>[], locale: string): CheckItem[] {
-  return items.map((i) => ({ ...i, ...(locale === 'zh' || locale === 'en' ? { help: HELP[i.key]?.[locale] } : {}) }));
+  // Chinese and English help exist; the other support languages (vi/my/id) use the English help, shown with lang="en".
+  const lang = locale === 'zh' ? 'zh' : locale === 'ja' ? null : 'en';
+  return items.map((i) => ({ ...i, ...(lang ? { help: HELP[i.key]?.[lang] } : {}) }));
 }
 
 export type PreflightResults = {

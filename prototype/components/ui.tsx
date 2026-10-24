@@ -4,15 +4,20 @@ import {Sun,Utensils,Droplets,Heart,Move,MessageCircle,Activity,Flower2,Target,C
 import {Scene} from '@/lib/content';
 import {findCategory} from '@/lib/core-scenarios';
 import {JaText} from './ruby';
+import {pick,UI,type Texts,type UiKey} from '@/lib/i18n';
 export type {Preferences,Note,RecordItem} from '@/lib/storage';
 const icons:Record<string,typeof Sun>={sun:Sun,utensils:Utensils,droplets:Droplets,heart:Heart,move:Move,message:MessageCircle,activity:Activity,flower:Flower2,target:Target};
 /** Raw JSON from localStorage (unknown shape). Callers must sanitise it — see lib/storage.ts. */
 export function readStore(key:string):unknown{try{const v=localStorage.getItem(key);return v?JSON.parse(v):null;}catch{return null;}}
 export function writeStore(key:string,v:unknown){try{localStorage.setItem(key,JSON.stringify(v));}catch{}}
 export function dateKey(d=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(d);}
-export function support(locale:string,zh:string,en:string,ja=''){return locale==='zh'?zh:locale==='en'?en:ja;}
-/** Support-language text marked with its language, so Chinese gets Simplified glyphs and screen readers switch voice. */
-export function Support({locale,zh,en,ja=''}:{locale:string;zh:string;en:string;ja?:string}){const t=support(locale,zh,en,ja);if(!t)return null;return <span lang={locale==='zh'?'zh-Hans':locale==='en'?'en':'ja'}>{t}</span>;}
+/** Plain support-language text (for strings such as error messages). vi/my/id fall back to English; Japanese-only gives ''. */
+export function support(locale:string,zh:string,en:string,ja='',more:Texts={}){return pick(locale,{...more,zh,en,ja})?.text||'';}
+/** Support-language text marked with its language, so Chinese gets Simplified glyphs and screen readers switch voice.
+ *  Give the texts either as props or as t (an entry of SAY in lib/i18n.ts). A fallback to English is marked lang="en". */
+export function Support({locale,t,...rest}:Texts&{locale:string;t?:Texts}){const r=pick(locale,{...rest,...t});if(!r)return null;return <span lang={r.lang}>{r.text}</span>;}
+/** A short gloss of a key interface word in the support language, under or after the Japanese label. Nothing for Japanese only. */
+export function Gloss({locale,k,className='gloss'}:{locale:string;k:UiKey;className?:string}){const r=pick(locale,UI[k]);if(!r||r.lang==='ja')return null;return <small className={className} lang={r.lang}>{r.text}</small>;}
 export function Logo({small=false}:{small?:boolean}){return <div className={'logo'+(small?' small':'')}>Care Kotoba</div>;}
 export function CategoryIcon({category,size=22}:{category:string;size?:number}){const c=findCategory(category);const Icon=icons[c?.icon||'sun'];return <Icon size={size} strokeWidth={1.7}/>;}
 export function Orb({active=false}:{active?:boolean}){return <div aria-hidden="true" className={'orb-wrap '+(active?'orb-active':'')}><div className="orb-aura"/><div className="orb-ring ring-one"/><div className="orb-ring ring-two"/><div className="orb-body"><div className="orb-sheen"/><div className="orb-wave">{[13,22,33,21,41,30,18,31,43,24,15].map((h,i)=><i key={i} style={{height:h,animationDelay:`${i*.09}s`}}/>)}</div></div></div>;}

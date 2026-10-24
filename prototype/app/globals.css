@@ -603,14 +603,14 @@ ruby rt{opacity:1}
 .basic-title{font-size:22px;line-height:1.45;color:var(--ink);margin:12px 0 6px}
 .basic-goal{font-size:14px;line-height:1.8;color:var(--ink);font-weight:700}
 .basic-context{font-size:13px;line-height:1.8;color:var(--ink-2);margin-top:4px}
-.basic-zh-toggle{margin-top:6px;min-height:36px}
+.basic-tr-toggle{margin-top:6px;min-height:36px}
 .basic-dialogue{display:flex;flex-direction:column;gap:10px;margin:14px 0 6px}
 .basic-line{position:relative;padding:10px 46px 10px 14px;border-radius:var(--radius);border:1px solid var(--line);background:var(--paper);max-width:92%}
 .basic-line.is-partner{align-self:flex-start;background:var(--bg)}
 .basic-line.is-you{align-self:flex-end;background:var(--violet-soft);border-color:#e1d7ec}
 .basic-speaker{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:2px}
 .basic-line p{font-family:var(--serif);font-size:18px;line-height:1.75;color:var(--ink)}
-.basic-kana,.basic-zh{display:block;font-size:12px;line-height:1.7;color:var(--ink-2);margin-top:2px}
+.basic-kana,.basic-tr{display:block;font-size:12px;line-height:1.7;color:var(--ink-2);margin-top:2px}
 .basic-listen{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;color:var(--violet)}
 .basic-turn{border:1px dashed var(--line-2);border-radius:var(--radius);padding:16px;background:var(--paper)}
 .basic-turn b{font-size:15px;color:var(--ink)}
@@ -655,3 +655,36 @@ ruby rt{opacity:1}
 .settings-about{margin-top:6px;min-height:40px}
 .footer-about{font-size:12px;min-height:32px}
 .about-flow-head b{line-height:1.6}
+/* I18N-001: support-language glosses under Japanese labels, and scripts BIZ UD does not cover.
+   Vietnamese: BIZ UD has no Vietnamese subset (stacked diacritics would mix fonts glyph by glyph), so the
+   device's own sans font is used. Burmese: device fonts (Android Noto Sans Myanmar, iOS Myanmar Sangam MN,
+   Windows Myanmar Text); the script needs extra line height for stacked marks. Nothing is downloaded. */
+:lang(vi){font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Arial,sans-serif}
+:lang(my){font-family:'Noto Sans Myanmar','Myanmar Sangam MN','Myanmar Text','Padauk',system-ui,sans-serif;line-height:1.9;word-break:normal;overflow-wrap:anywhere}
+.gloss,.nav-gloss,.btn-gloss,.toast-gloss,.settings-gloss{font-size:12px;font-weight:400;letter-spacing:0}
+.nav-gloss{display:block;color:var(--muted);margin-top:2px;line-height:1.35}
+.sidebar .nav-item>span{line-height:1.4;text-align:left}
+.btn-gloss{color:inherit;line-height:1.35}
+.btn .btn-gloss,.text-button .btn-gloss{flex-basis:100%;order:9;text-align:center}
+.btn:has(.btn-gloss),.text-button:has(.btn-gloss){flex-wrap:wrap;white-space:normal;row-gap:2px}
+.correction-card button .btn-gloss,.demo-feedback-example button .btn-gloss{display:block;flex-basis:100%;order:9}
+.correction-card button:has(.btn-gloss),.demo-feedback-example button:has(.btn-gloss){flex-wrap:wrap}
+.practice-finish:has(.btn-gloss){flex-wrap:wrap;row-gap:0;max-width:46vw}
+.practice-finish .btn-gloss{flex-basis:100%;order:9;line-height:1.25}
+.toast-gloss{display:block;color:var(--ink-2);margin-top:2px}
+.settings-label>.settings-gloss{margin-left:9px;color:var(--muted)}
+.settings-lang-note{margin:-10px 0 22px;color:var(--muted)}
+.settings-lang-note>span{display:block;margin-top:4px}
+.basic-nosupport{margin-top:6px}
+@media(max-width:900px){
+ .mobile-nav.has-gloss{height:calc(80px + env(safe-area-inset-bottom));padding-top:8px}
+ .mobile-nav.has-gloss button{gap:2px;min-width:0;flex:1 1 0;padding:0 2px}
+ .mobile-nav .nav-gloss{margin-top:0;text-align:center;max-width:100%;line-height:1.25;color:var(--muted)}
+ .mobile-nav .nav-gloss:lang(my){line-height:1.6}
+ .mobile-nav>.active>.nav-gloss{color:var(--violet)}
+ .app-shell.has-gloss{padding-bottom:92px}
+ .mobile-nav.has-gloss~.toast{bottom:100px}
+}
+.topbar .logo,.prototype-tag,.lang-button span{white-space:nowrap}
+.basic-finish:has(.btn-gloss){flex-direction:column;align-items:stretch}
+@media(max-width:420px){.app-shell.has-gloss .topbar-actions{gap:8px}.app-shell.has-gloss .lang-button{gap:4px}.app-shell.has-gloss .lang-button>svg:last-child{display:none}.app-shell.has-gloss .topbar .logo{font-size:20px}}
