@@ -1,0 +1,582 @@
+{
+  "ranAt": "2026-10-23T18:21:56.757Z",
+  "viewport": "390x844",
+  "screens": {
+    "home": {
+      "contrast": [
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.recommended.lavender > .scene-art > .scene-art-spark",
+          "color": "rgb(154, 128, 188)",
+          "bg": "rgb(240, 234, 250)",
+          "size": "17px",
+          "ratio": 2.89,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.recommended.mint > .scene-art > .scene-art-spark",
+          "color": "rgb(119, 163, 143)",
+          "bg": "rgb(234, 245, 240)",
+          "size": "17px",
+          "ratio": 2.54,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 10,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 59,
+          "h": 32
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "btn btn-dark",
+          "label": "AIと話してみる",
+          "w": 193,
+          "h": 43
+        },
+        {
+          "el": "text-button",
+          "label": "すべて見る",
+          "w": 67,
+          "h": 32
+        },
+        {
+          "el": "round-button",
+          "label": "デモで体験",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "active",
+          "label": "ホーム",
+          "w": 65,
+          "h": 43
+        },
+        {
+          "el": "BUTTON",
+          "label": "シーン",
+          "w": 65,
+          "h": 43
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "scenes": {
+      "contrast": [
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.lavender > .scene-art > .scene-art-spark",
+          "color": "rgb(154, 128, 188)",
+          "bg": "rgb(240, 234, 250)",
+          "size": "17px",
+          "ratio": 2.89,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.peach > .scene-art > .scene-art-spark",
+          "color": "rgb(196, 154, 117)",
+          "bg": "rgb(252, 241, 231)",
+          "size": "17px",
+          "ratio": 2.29,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.pink > .scene-art > .scene-art-spark",
+          "color": "rgb(183, 130, 158)",
+          "bg": "rgb(249, 237, 241)",
+          "size": "17px",
+          "ratio": 2.75,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.mint > .scene-art > .scene-art-spark",
+          "color": "rgb(119, 163, 143)",
+          "bg": "rgb(234, 245, 240)",
+          "size": "17px",
+          "ratio": 2.54,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 17,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 59,
+          "h": 32
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 244,
+          "h": 42
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 111,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 122,
+          "h": 37
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 100,
+          "h": 37
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "scene-modal": {
+      "contrast": [
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 23,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 59,
+          "h": 32
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 204,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 36
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 111,
+          "h": 36
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 122,
+          "h": 36
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "practice-text": {
+      "contrast": [
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 29,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 59,
+          "h": 32
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 204,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 36
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 111,
+          "h": 36
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 122,
+          "h": 36
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "feedback": {
+      "contrast": [
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 22,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 59,
+          "h": 32
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 204,
+          "h": 42
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 75,
+          "h": 36
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 111,
+          "h": 36
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 122,
+          "h": 36
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "notes": {
+      "contrast": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 10,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 59,
+          "h": 32
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "icon-button",
+          "label": "保存を解除",
+          "w": 33,
+          "h": 33
+        },
+        {
+          "el": "BUTTON",
+          "label": "ゆっくり聞く",
+          "w": 94,
+          "h": 36
+        },
+        {
+          "el": "BUTTON",
+          "label": "場面で練習",
+          "w": 82,
+          "h": 36
+        },
+        {
+          "el": "BUTTON",
+          "label": "ホーム",
+          "w": 65,
+          "h": 43
+        },
+        {
+          "el": "BUTTON",
+          "label": "シーン",
+          "w": 65,
+          "h": 43
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "progress": {
+      "contrast": [],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [],
+      "targetsUnder44": 15,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 59,
+          "h": 32
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "skill-item",
+          "label": "日常の声かけ0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "食事・口腔ケア0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "入浴・清潔0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "排泄の声かけ0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "移動・移乗0/6",
+          "w": 316,
+          "h": 34
+        }
+      ],
+      "scrollWidth": 390
+    }
+  },
+  "summary": {
+    "home": {
+      "contrast": 0,
+      "decorativeSpark": 2,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "under44": 10,
+      "scrollWidth": 390
+    },
+    "scenes": {
+      "contrast": 0,
+      "decorativeSpark": 5,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "under44": 17,
+      "scrollWidth": 390
+    },
+    "scene-modal": {
+      "contrast": 0,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "under44": 23,
+      "scrollWidth": 390
+    },
+    "practice-text": {
+      "contrast": 0,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "under44": 29,
+      "scrollWidth": 390
+    },
+    "feedback": {
+      "contrast": 0,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "under44": 22,
+      "scrollWidth": 390
+    },
+    "notes": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "under44": 10,
+      "scrollWidth": 390
+    },
+    "progress": {
+      "contrast": 0,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 0,
+      "under44": 15,
+      "scrollWidth": 390
+    }
+  }
+}
