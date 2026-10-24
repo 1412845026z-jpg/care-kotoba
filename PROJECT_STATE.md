@@ -90,11 +90,13 @@
 | ENV-004 | 最新PR #30标准runner与真实dev复测、顺序合并记录 | Codex | merged | PR #31，merge2e9b5c5；最终证据/状态补记在codex/ENV-004-state | 固定主干4a851fd标准run40052153140：static0/unit71/离线40/真实dev36通过4明确跳过；全部指定PR顺序合并，见ENV-004-final交接 |
 | CONTENT-004 | 按CONTENT-REVIEW-001修订场景/术语/评测 | Codex | merged | PR #34，merge4a851fd | 12场景/34术语/84转写+12配对=96评测；字段结构保留；提交后数据已跑生成器与--check（隔离环境），预览/注音接入仍归Claude；见CONTENT-004交接 |
 | SEC-001 | docs/08 #16的Worker CSP等响应头 | Codex | merged | PR #33，merge86ebc70 | 完整业务树unit71/离线40/真实dev36通过4有原因跳过，7项CSP/API/注音/麦克风断言及模拟WebRTC通过；见SEC-001交接 |
-| CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude | review_ready | PR #35，claude/CORE-PREVIEW-001 @ff8acc2，未合并 | 新head的生成器与已测78e25dd逐字节相同；Codex未验收整个预览分支。需吸收最新main、重生模块/注音并交付新SHA复核 |
+| CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude + Codex复测 | review_ready | PR #35，claude/CORE-PREVIEW-001 @a4d7831，未合并 | 已吸收main与CONTENT-004；CORE-ENV-001正按固定SHA独立复测offline、真实dev与CSP；通过后合并 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
+
+| CORE-ENV-001 | #35固定SHA与#37最新head的ENV/CSP/mock复测及顺序合并 | Codex | in_progress | codex/CORE-ENV-001 | handoffs/2026-10-24-CORE-ENV-001-codex.md；#35通过后再测#37，无付费API或部署；可选schema变更待确认 |
 
 ## 已确认的产品决定
 
@@ -120,6 +122,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-CORE-ENV-001-codex.md：#35/#37独立复测、合并门槛、后续内容生成/注音要求及未实施的标志词字段提案。
 
 - handoffs/2026-10-24-ENV-004-final-codex.md：本轮最终汇总、合并顺序、主干与待Claude的预览/注音接续。旧失败证据保留，已被c3632f5通过结果替代。
 

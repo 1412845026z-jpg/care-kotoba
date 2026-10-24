@@ -2,11 +2,11 @@
 import assert from 'node:assert/strict';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { writeFileSync } from 'node:fs';
+import { existsSync, writeFileSync } from 'node:fs';
 const args=process.argv.slice(2);
 const opt=k=>args[args.indexOf(k)+1];
 const source=resolve(opt('--source'));
-const {setup,gotoApp,openScene,api}=await import(pathToFileURL(join(source,'prototype/tests/e2e/helpers.mjs')).href);
+const {setup,gotoApp,openScene,openCoreScene,PHONE,api}=await import(pathToFileURL(join(source,'prototype/tests/e2e/helpers.mjs')).href);
 const results=[];
 let env;
 try {
@@ -52,6 +52,46 @@ try {
   assert.deepEqual(page.errors,[],'normal application did not create page/console errors');
   assert.deepEqual(await page.evaluate(()=>window.__ckCspViolations),[],'normal application did not violate CSP');
   results.push('mock text chat, feedback and furigana under enforced CSP');
+  if(existsSync(join(source,'prototype/lib/core-scenarios-data.ts'))){
+    const core=await env.page();
+    await core.addInitScript(()=>{
+      window.__ckCspViolations=[];
+      document.addEventListener('securitypolicyviolation',e=>window.__ckCspViolations.push({directive:e.effectiveDirective,blocked:e.blockedURI}));
+    });
+    await openCoreScene(core,env.baseUrl,'「いつもどおり」の準備を具体化する');
+    assert.equal(await core.locator('.scene-grid .scene-card').count(),12);
+    assert.match(await core.locator('.core-notice').textContent(),/審稿前/);
+    assert.equal(await core.locator('.scene-modal .variant-grid').count(),0);
+    assert(await core.locator('.scene-modal ruby rt').count()>0,'core draft has furigana');
+    assert.deepEqual(await core.evaluate(()=>window.__ckCspViolations),[]);
+    results.push('core mobile list, draft dialog and ruby render under enforced CSP');
+    env.mock.state.requests.length=0;
+    await core.getByRole('button',{name:'文字で練習'}).click();
+    await core.locator('.chat-message.assistant',{hasText:'いつもどおり'}).waitFor();
+    await core.getByLabel('日本語で返答を入力').fill('木村さんの、何の準備でしょうか。');
+    await core.keyboard.press('Enter');
+    await core.waitForFunction(()=>document.querySelectorAll('.chat-message.assistant').length>=2);
+    const coreChat=env.mock.state.requests.find(r=>r.path==='/v1/responses'&&r.body?.text?.format?.name==='care_conversation');
+    assert(coreChat?.body?.instructions?.includes('10時の家族面会で使う写真アルバム'));
+    assert(coreChat.body.instructions.includes('Reveal a hidden fact only when'));
+    await core.getByText('終了して振り返る').click();
+    await core.locator('.feedback-summary h2').waitFor();
+    const coreFeedback=env.mock.state.requests.find(r=>r.path==='/v1/responses'&&r.body?.text?.format?.name==='care_feedback');
+    assert(coreFeedback?.body?.instructions?.includes('never expect the learner to know or guess it'));
+    assert.deepEqual(core.errors,[]);
+    assert.deepEqual(await core.evaluate(()=>window.__ckCspViolations),[]);
+    results.push('core text practice and feedback use core instructions without CSP violations');
+    const desktop=await env.page({...PHONE,viewport:{width:1280,height:860},isMobile:false,hasTouch:false,deviceScaleFactor:1});
+    await desktop.addInitScript(()=>{
+      window.__ckCspViolations=[];
+      document.addEventListener('securitypolicyviolation',e=>window.__ckCspViolations.push({directive:e.effectiveDirective,blocked:e.blockedURI}));
+    });
+    await openCoreScene(desktop,env.baseUrl,'「いつもどおり」の準備を具体化する');
+    assert.equal(await desktop.locator('.scene-grid .scene-card').count(),12);
+    assert.deepEqual(desktop.errors,[]);
+    assert.deepEqual(await desktop.evaluate(()=>window.__ckCspViolations),[]);
+    results.push('core desktop list and dialog render under enforced CSP');
+  }
   const currentNonce=await page.locator('script[nonce]').first().evaluate(e=>e.nonce);
   await page.evaluate(()=>{const s=document.createElement('script');s.textContent='window.__ckUntrustedExecuted=true';document.body.appendChild(s);});
   await page.waitForFunction(()=>window.__ckCspViolations.length>0);
