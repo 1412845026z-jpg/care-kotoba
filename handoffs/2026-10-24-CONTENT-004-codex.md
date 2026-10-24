@@ -28,3 +28,7 @@ A later fetch found Claude's `claude/CORE-PREVIEW-001` at `78e25dd9f32511bfa1494
 Ran that exact provider generator and its `--check` in a temporary isolated tree containing the revised content: both passed, 12 scenarios. Fingerprints and commands are in `verification/CONTENT-004/core-generator-compatibility.json`. No provider code or generated runtime module was copied into this PR, so the paused dependency chain was not bypassed. **Post-merge application generation and furigana regeneration still await CORE-PREVIEW integration.**
 
 Also accepted its two content notes: Japanese `学員` becomes `学習者`, and P01's title now uses `本人の言葉のまま`. Affected scenarios and their pinned transcript samples increment again to 0.2.1 (other revised scenarios remain 0.2.0). No field shape changed. The earlier statement that the generator was absent describes the initial sync, not the final sync.
+
+## Combined source synchronization
+
+The requested business chain is now merged through #30 at 4381de1. This branch includes that main as an additional parent while preserving the data revisions. Retest the current combined tree in CI; runtime/core-preview integration is still separate from data-generator compatibility.

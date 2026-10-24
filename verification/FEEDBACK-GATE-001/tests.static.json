@@ -1,0 +1,742 @@
+{
+  "root": "<prototype>",
+  "moduleDirs": [
+    "<CK_TOOL_NODE_MODULES>"
+  ],
+  "tools": {
+    "esbuild": "0.28.2",
+    "typescript": "6.0.3"
+  },
+  "syntax": [
+    {
+      "file": "app/api/access/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/chat/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/feedback/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/health/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/session/end/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/session/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/api/speech/route.ts",
+      "ok": true
+    },
+    {
+      "file": "app/chatgpt-auth.ts",
+      "ok": true
+    },
+    {
+      "file": "app/layout.tsx",
+      "ok": true
+    },
+    {
+      "file": "app/page.tsx",
+      "ok": true
+    },
+    {
+      "file": "cloudflare-env.d.ts",
+      "ok": true
+    },
+    {
+      "file": "components/access.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/admin.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/connector-error.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/practice.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ruby.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/screen-boundary.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/accordion.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/alert-dialog.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/alert.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/aspect-ratio.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/attachment.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/avatar.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/badge.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/breadcrumb.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/bubble.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/button-group.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/button.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/calendar.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/card.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/carousel.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/chart.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/checkbox.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/collapsible.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/combobox.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/command.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/context-menu.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/dialog.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/direction.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/drawer.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/dropdown-menu.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/empty.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/field.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/form.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/hover-card.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/input-group.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/input-otp.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/input.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/item.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/kbd.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/label.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/marker.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/menubar.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/message-scroller.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/message.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/native-select.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/navigation-menu.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/pagination.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/popover.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/progress.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/radio-group.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/resizable.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/scroll-area.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/select.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/separator.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/sheet.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/sidebar.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/skeleton.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/slider.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/sonner.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/spinner.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/switch.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/table.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/tabs.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/textarea.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/toggle-group.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/toggle.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui/tooltip.tsx",
+      "ok": true
+    },
+    {
+      "file": "components/ui.tsx",
+      "ok": true
+    },
+    {
+      "file": "db/index.ts",
+      "ok": true
+    },
+    {
+      "file": "db/schema.ts",
+      "ok": true
+    },
+    {
+      "file": "drizzle.config.ts",
+      "ok": true
+    },
+    {
+      "file": "eslint.config.mjs",
+      "ok": true
+    },
+    {
+      "file": "examples/d1/app/api/notes/route.ts",
+      "ok": true
+    },
+    {
+      "file": "examples/d1/db/schema.ts",
+      "ok": true
+    },
+    {
+      "file": "hooks/use-mobile.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/access.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/ai-server.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/connector-context.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/connector-contract.mts",
+      "ok": true
+    },
+    {
+      "file": "lib/connector-errors.mts",
+      "ok": true
+    },
+    {
+      "file": "lib/connector-preview.d.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/connectors.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/content.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/cost.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/feedback-quality.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/furigana-data.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/furigana.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/models.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/rate-limit.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/realtime-client.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/realtime-transcript.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/response-sequencer.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/signing.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/storage.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/utils.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/voice-metrics.ts",
+      "ok": true
+    },
+    {
+      "file": "lib/voice-server.ts",
+      "ok": true
+    },
+    {
+      "file": "next.config.ts",
+      "ok": true
+    },
+    {
+      "file": "postcss.config.mjs",
+      "ok": true
+    },
+    {
+      "file": "public/sw.js",
+      "ok": true
+    },
+    {
+      "file": "scripts/check-secret-safety.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/ci-step.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/connector-preview/connector-preview-session.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/connector-preview/host-binding.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/connector-preview/protocol.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/connector-preview/worker.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/execution-profile.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/install-ci.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/npm-install.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/pnpm-install.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/run-framework.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/sites-env.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/tool-environment.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/vite/connector-preview-plugin.mjs",
+      "ok": true
+    },
+    {
+      "file": "scripts/vite/sites-vite-plugin.ts",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/access.e2e.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/app.e2e.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/helpers.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/setup.e2e.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/e2e/voice.e2e.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/app.js",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/client-entry.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/cloudflare-workers-shim.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/lucide-shim.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/routes.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/server-entry.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/build.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/cloudflare-workers-stub.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/mock-openai.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/offline-static-check.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/realtime-sim.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/server.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/tool-require.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/run.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/unit/access-signing.test.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/unit/feedback-quality.test.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/unit/furigana.test.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/unit/models-cost-metrics.test.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/unit/realtime-transcript.test.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/unit/response-sequencer.test.mjs",
+      "ok": true
+    },
+    {
+      "file": "tests/unit/storage-content.test.mjs",
+      "ok": true
+    },
+    {
+      "file": "vite.config.ts",
+      "ok": true
+    },
+    {
+      "file": "worker/index.ts",
+      "ok": true
+    }
+  ],
+  "types": {
+    "checked": [
+      "app/api/access/route.ts",
+      "app/api/chat/route.ts",
+      "app/api/feedback/route.ts",
+      "app/api/health/route.ts",
+      "app/api/session/end/route.ts",
+      "app/api/session/route.ts",
+      "app/api/speech/route.ts",
+      "lib/access.ts",
+      "lib/ai-server.ts",
+      "lib/content.ts",
+      "lib/cost.ts",
+      "lib/feedback-quality.ts",
+      "lib/furigana-data.ts",
+      "lib/furigana.ts",
+      "lib/models.ts",
+      "lib/rate-limit.ts",
+      "lib/realtime-client.ts",
+      "lib/realtime-transcript.ts",
+      "lib/response-sequencer.ts",
+      "lib/signing.ts",
+      "lib/storage.ts",
+      "lib/voice-metrics.ts",
+      "lib/voice-server.ts"
+    ],
+    "errors": []
+  },
+  "json": [
+    {
+      "file": ".openai/hosting.json",
+      "ok": true
+    },
+    {
+      "file": "components.json",
+      "ok": true
+    },
+    {
+      "file": "drizzle/meta/_journal.json",
+      "ok": true
+    },
+    {
+      "file": "package.json",
+      "ok": true
+    },
+    {
+      "file": "public/manifest.webmanifest",
+      "ok": true
+    },
+    {
+      "file": "tests/harness/.build/build-info.json",
+      "ok": true
+    },
+    {
+      "file": "tsconfig.json",
+      "ok": true
+    }
+  ],
+  "secrets": [],
+  "models": [
+    {
+      "file": "lib/models.ts",
+      "line": 27,
+      "model": "gpt-4o-mini-tts"
+    },
+    {
+      "file": "lib/models.ts",
+      "line": 28,
+      "model": "tts-1"
+    },
+    {
+      "file": "lib/models.ts",
+      "line": 29,
+      "model": "gpt-4.1-mini"
+    },
+    {
+      "file": "lib/models.ts",
+      "line": 30,
+      "model": "gpt-realtime-mini"
+    },
+    {
+      "file": "lib/models.ts",
+      "line": 31,
+      "model": "gpt-4o-mini-transcribe"
+    }
+  ],
+  "components": {
+    "checked": [
+      "app/page.tsx",
+      "app/layout.tsx",
+      "components/practice.tsx",
+      "components/access.tsx",
+      "components/ui.tsx",
+      "components/admin.tsx",
+      "components/ruby.tsx",
+      "components/screen-boundary.tsx"
+    ],
+    "note": "loose React/lucide/next shim; JSX attribute types unchecked",
+    "errors": []
+  },
+  "summary": {
+    "syntax": "154/154 files parse",
+    "types": "23 server/pure modules type-checked, 0 errors",
+    "components": "8 components checked against a loose React shim, 0 errors",
+    "json": "7/7 JSON files valid",
+    "secrets": "no credential-like strings",
+    "models": [
+      "lib/models.ts:27 gpt-4o-mini-tts",
+      "lib/models.ts:28 tts-1",
+      "lib/models.ts:29 gpt-4.1-mini",
+      "lib/models.ts:30 gpt-realtime-mini",
+      "lib/models.ts:31 gpt-4o-mini-transcribe"
+    ]
+  }
+}

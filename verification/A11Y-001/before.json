@@ -1,0 +1,2403 @@
+{
+  "ranAt": "2026-10-23T18:22:00.882Z",
+  "viewport": "390x844",
+  "screens": {
+    "home": {
+      "contrast": [
+        {
+          "text": "PREVIEW",
+          "cls": "prototype-tag",
+          "path": ".topbar > .topbar-actions > .prototype-tag",
+          "color": "rgb(156, 152, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.81,
+          "need": 4.5
+        },
+        {
+          "text": "中文",
+          "cls": "",
+          "path": ".topbar-actions > .lang-button > span",
+          "color": "rgb(141, 123, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "LEARN A LITTLE. CARE A LOT.",
+          "cls": "eyebrow",
+          "path": ".greeting > div > .eyebrow",
+          "color": "rgb(139, 132, 157)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "7px",
+          "ratio": 3.39,
+          "need": 4.5
+        },
+        {
+          "text": "現場で伝わる日本語を、一緒に練習しましょう。",
+          "cls": "",
+          "path": ".greeting > div > p",
+          "color": "rgb(135, 122, 147)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "10px",
+          "ratio": 3.81,
+          "need": 4.5
+        },
+        {
+          "text": "0",
+          "cls": "",
+          "path": ".greeting > .streak-pill > strong",
+          "color": "rgb(187, 155, 106)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "12px",
+          "ratio": 2.62,
+          "need": 4.5
+        },
+        {
+          "text": "学習日",
+          "cls": "",
+          "path": ".greeting > .streak-pill > span",
+          "color": "rgb(166, 154, 139)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.76,
+          "need": 4.5
+        },
+        {
+          "text": "AI CONVERSATION",
+          "cls": "hero-badge",
+          "path": ".hero-card > .hero-copy > .hero-badge",
+          "color": "rgb(138, 113, 186)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 4.08,
+          "need": 4.5
+        },
+        {
+          "text": "PICK A MOMENT",
+          "cls": "eyebrow subtle",
+          "path": ".section-heading > div > .eyebrow.subtle",
+          "color": "rgb(170, 161, 184)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "すべて見る",
+          "cls": "text-button",
+          "path": ".section-block > .section-heading > .text-button",
+          "color": "rgb(157, 142, 184)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "9px",
+          "ratio": 2.85,
+          "need": 4.5
+        },
+        {
+          "text": "最初の一歩に",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.recommended.lavender > .scene-art > .scene-art-sticker",
+          "color": "rgb(154, 128, 188)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.39,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.recommended.lavender > .scene-art > .scene-art-spark",
+          "color": "rgb(154, 128, 188)",
+          "bg": "rgb(240, 234, 250)",
+          "size": "17px",
+          "ratio": 2.89,
+          "need": 4.5
+        },
+        {
+          "text": "Before washing a face",
+          "cls": "",
+          "path": ".scene-card.recommended.lavender > .scene-card-body > small",
+          "color": "rgb(148, 134, 158)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.41,
+          "need": 4.5
+        },
+        {
+          "text": "4 分",
+          "cls": "",
+          "path": ".scene-card-body > div > span",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "Lv. 1",
+          "cls": "scene-level",
+          "path": ".scene-card-body > div > .scene-level",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "気持ちに寄り添う",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.recommended.mint > .scene-art > .scene-art-sticker",
+          "color": "rgb(119, 163, 143)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.83,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.recommended.mint > .scene-art > .scene-art-spark",
+          "color": "rgb(119, 163, 143)",
+          "bg": "rgb(234, 245, 240)",
+          "size": "17px",
+          "ratio": 2.54,
+          "need": 4.5
+        },
+        {
+          "text": "8分野 · 48シーン",
+          "cls": "muted-count",
+          "path": ".section-block > .section-heading > .muted-count",
+          "color": "rgb(170, 162, 180)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.34,
+          "need": 4.5
+        },
+        {
+          "text": "6 シーン",
+          "cls": "",
+          "path": ".category-tile > span > small",
+          "color": "rgb(153, 138, 165)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.21,
+          "need": 4.5
+        },
+        {
+          "text": "上手に話すより、まず話してみる。",
+          "cls": "",
+          "path": ".little-banner > div > strong",
+          "color": "rgb(110, 138, 121)",
+          "bg": "rgb(237, 243, 239)",
+          "size": "10px",
+          "ratio": 3.35,
+          "need": 4.5
+        },
+        {
+          "text": "聞き返しても、言い直しても大丈夫。ここは練習する場所です。",
+          "cls": "",
+          "path": ".little-banner > div > p",
+          "color": "rgb(154, 173, 159)",
+          "bg": "rgb(237, 243, 239)",
+          "size": "8px",
+          "ratio": 2.11,
+          "need": 4.5
+        },
+        {
+          "text": "ことばをつなぐ。ケアをつなぐ。",
+          "cls": "",
+          "path": ".app-shell > .page-footer > span",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": ".mobile-nav > .active > span",
+          "color": "rgb(156, 128, 185)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.39,
+          "need": 4.5
+        },
+        {
+          "text": "シーン",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(180, 166, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.3,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 41,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 9,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "btn btn-dark",
+          "label": "AIと話してみる",
+          "w": 193,
+          "h": 43
+        },
+        {
+          "el": "text-button",
+          "label": "すべて見る",
+          "w": 67,
+          "h": 28
+        },
+        {
+          "el": "round-button",
+          "label": "デモで体験",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "active",
+          "label": "ホーム",
+          "w": 65,
+          "h": 43
+        },
+        {
+          "el": "BUTTON",
+          "label": "シーン",
+          "w": 65,
+          "h": 43
+        },
+        {
+          "el": "BUTTON",
+          "label": "ノート",
+          "w": 65,
+          "h": 43
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "scenes": {
+      "contrast": [
+        {
+          "text": "PREVIEW",
+          "cls": "prototype-tag",
+          "path": ".topbar > .topbar-actions > .prototype-tag",
+          "color": "rgb(156, 152, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.81,
+          "need": 4.5
+        },
+        {
+          "text": "中文",
+          "cls": "",
+          "path": ".topbar-actions > .lang-button > span",
+          "color": "rgb(141, 123, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "SCENARIO LIBRARY",
+          "cls": "eyebrow subtle",
+          "path": ".wide-main > .page-title > .eyebrow.subtle",
+          "color": "rgb(170, 161, 184)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "ひとつの動作から、想定外のひとことまで。あなたの仕事に近い場面を。",
+          "cls": "",
+          "path": ".wide-main > .page-title > p",
+          "color": "rgb(135, 122, 147)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "11px",
+          "ratio": 3.81,
+          "need": 4.5
+        },
+        {
+          "text": "48 シーン",
+          "cls": "",
+          "path": ".page-title > .library-stats > span",
+          "color": "rgb(161, 148, 173)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.71,
+          "need": 4.5
+        },
+        {
+          "text": "すべて",
+          "cls": "selected",
+          "path": ".wide-main > .category-pills > .selected",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(135, 112, 183)",
+          "size": "9px",
+          "ratio": 4.17,
+          "need": 4.5
+        },
+        {
+          "text": "48",
+          "cls": "",
+          "path": ".category-pills > .selected > small",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(135, 112, 183)",
+          "size": "8px",
+          "ratio": 4.17,
+          "need": 4.5
+        },
+        {
+          "text": "日常の声かけ",
+          "cls": "",
+          "path": ".wide-main > .category-pills > button",
+          "color": "rgb(148, 128, 159)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.59,
+          "need": 4.5
+        },
+        {
+          "text": "48 シーン",
+          "cls": "",
+          "path": ".wide-main > .library-result > small",
+          "color": "rgb(174, 160, 187)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "9px",
+          "ratio": 2.33,
+          "need": 4.5
+        },
+        {
+          "text": "日常の声かけ",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.lavender > .scene-art > .scene-art-sticker",
+          "color": "rgb(154, 128, 188)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 3.39,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.lavender > .scene-art > .scene-art-spark",
+          "color": "rgb(154, 128, 188)",
+          "bg": "rgb(240, 234, 250)",
+          "size": "17px",
+          "ratio": 2.89,
+          "need": 4.5
+        },
+        {
+          "text": "A gentle start",
+          "cls": "",
+          "path": ".scene-card.lavender > .scene-card-body > small",
+          "color": "rgb(148, 134, 158)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.41,
+          "need": 4.5
+        },
+        {
+          "text": "3 分",
+          "cls": "",
+          "path": ".scene-card-body > div > span",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "Lv. 1",
+          "cls": "scene-level",
+          "path": ".scene-card-body > div > .scene-level",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "食事・口腔ケア",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.peach > .scene-art > .scene-art-sticker",
+          "color": "rgb(196, 154, 117)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.55,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.peach > .scene-art > .scene-art-spark",
+          "color": "rgb(196, 154, 117)",
+          "bg": "rgb(252, 241, 231)",
+          "size": "17px",
+          "ratio": 2.29,
+          "need": 4.5
+        },
+        {
+          "text": "入浴・清潔",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.blue > .scene-art > .scene-art-sticker",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "排泄の声かけ",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.pink > .scene-art > .scene-art-sticker",
+          "color": "rgb(183, 130, 158)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 3.13,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.pink > .scene-art > .scene-art-spark",
+          "color": "rgb(183, 130, 158)",
+          "bg": "rgb(249, 237, 241)",
+          "size": "17px",
+          "ratio": 2.75,
+          "need": 4.5
+        },
+        {
+          "text": "移動・移乗",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.mint > .scene-art > .scene-art-sticker",
+          "color": "rgb(119, 163, 143)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.83,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.mint > .scene-art > .scene-art-spark",
+          "color": "rgb(119, 163, 143)",
+          "bg": "rgb(234, 245, 240)",
+          "size": "17px",
+          "ratio": 2.54,
+          "need": 4.5
+        },
+        {
+          "text": "ことばをつなぐ。ケアをつなぐ。",
+          "cls": "",
+          "path": ".app-shell > .page-footer > span",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(176, 160, 189)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.44,
+          "need": 4.5
+        },
+        {
+          "text": "シーン",
+          "cls": "",
+          "path": ".mobile-nav > .active > span",
+          "color": "rgb(160, 134, 186)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.18,
+          "need": 4.5
+        },
+        {
+          "text": "ノート",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(180, 166, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.3,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 41,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 16,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 244,
+          "h": 42
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 67,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 99,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 108,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 90,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 99,
+          "h": 35
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "scene-modal": {
+      "contrast": [
+        {
+          "text": "PREVIEW",
+          "cls": "prototype-tag",
+          "path": ".topbar > .topbar-actions > .prototype-tag",
+          "color": "rgb(156, 152, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.81,
+          "need": 4.5
+        },
+        {
+          "text": "中文",
+          "cls": "",
+          "path": ".topbar-actions > .lang-button > span",
+          "color": "rgb(141, 123, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "SCENARIO LIBRARY",
+          "cls": "eyebrow subtle",
+          "path": ".wide-main > .page-title > .eyebrow.subtle",
+          "color": "rgb(170, 161, 184)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "ひとつの動作から、想定外のひとことまで。あなたの仕事に近い場面を。",
+          "cls": "",
+          "path": ".wide-main > .page-title > p",
+          "color": "rgb(135, 122, 147)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "11px",
+          "ratio": 3.81,
+          "need": 4.5
+        },
+        {
+          "text": "48 シーン",
+          "cls": "",
+          "path": ".page-title > .library-stats > span",
+          "color": "rgb(161, 148, 173)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.71,
+          "need": 4.5
+        },
+        {
+          "text": "すべて",
+          "cls": "selected",
+          "path": ".wide-main > .category-pills > .selected",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(135, 112, 183)",
+          "size": "9px",
+          "ratio": 4.17,
+          "need": 4.5
+        },
+        {
+          "text": "48",
+          "cls": "",
+          "path": ".category-pills > .selected > small",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(135, 112, 183)",
+          "size": "8px",
+          "ratio": 4.17,
+          "need": 4.5
+        },
+        {
+          "text": "日常の声かけ",
+          "cls": "",
+          "path": ".wide-main > .category-pills > button",
+          "color": "rgb(148, 128, 159)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.59,
+          "need": 4.5
+        },
+        {
+          "text": "1 シーン",
+          "cls": "",
+          "path": ".wide-main > .library-result > small",
+          "color": "rgb(174, 160, 187)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "9px",
+          "ratio": 2.33,
+          "need": 4.5
+        },
+        {
+          "text": "入浴・清潔",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.blue > .scene-art > .scene-art-sticker",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "Responding to refusal",
+          "cls": "",
+          "path": ".scene-card.blue > .scene-card-body > small",
+          "color": "rgb(148, 134, 158)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.41,
+          "need": 4.5
+        },
+        {
+          "text": "4 分",
+          "cls": "",
+          "path": ".scene-card-body > div > span",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "Lv. 1",
+          "cls": "scene-level",
+          "path": ".scene-card-body > div > .scene-level",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "ことばをつなぐ。ケアをつなぐ。",
+          "cls": "",
+          "path": ".app-shell > .page-footer > span",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(180, 166, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.3,
+          "need": 4.5
+        },
+        {
+          "text": "シーン",
+          "cls": "",
+          "path": ".mobile-nav > .active > span",
+          "color": "rgb(156, 128, 185)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.39,
+          "need": 4.5
+        },
+        {
+          "text": "入浴・清潔",
+          "cls": "category-chip blue",
+          "path": ".modal.scene-modal > .modal-top > .category-chip.blue",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "10px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "4 分",
+          "cls": "",
+          "path": ".scene-modal-title > .scene-meta > span",
+          "color": "rgb(183, 165, 196)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.28,
+          "need": 4.5
+        },
+        {
+          "text": "こんな場面です",
+          "cls": "context-label",
+          "path": ".modal.scene-modal > .context-card > .context-label",
+          "color": "rgb(160, 135, 178)",
+          "bg": "rgb(248, 245, 251)",
+          "size": "9px",
+          "ratio": 2.94,
+          "need": 4.5
+        },
+        {
+          "text": "佐",
+          "cls": "person-avatar",
+          "path": ".context-card > .context-person > .person-avatar",
+          "color": "rgb(174, 148, 190)",
+          "bg": "rgb(229, 220, 237)",
+          "size": "11px",
+          "ratio": 2.03,
+          "need": 4.5
+        },
+        {
+          "text": "利用者の佐藤さん",
+          "cls": "",
+          "path": ".context-person > div > b",
+          "color": "rgb(141, 114, 157)",
+          "bg": "rgb(248, 245, 251)",
+          "size": "11px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "AIが演じる、架空の会話相手",
+          "cls": "",
+          "path": ".context-person > div > small",
+          "color": "rgb(170, 146, 186)",
+          "bg": "rgb(248, 245, 251)",
+          "size": "9px",
+          "ratio": 2.58,
+          "need": 4.5
+        },
+        {
+          "text": "AI",
+          "cls": "ai-small",
+          "path": ".context-card > .context-person > .ai-small",
+          "color": "rgb(185, 157, 203)",
+          "bg": "rgb(248, 245, 251)",
+          "size": "8px",
+          "ratio": 2.22,
+          "need": 4.5
+        },
+        {
+          "text": "穏やかな会話",
+          "cls": "",
+          "path": ".selected > span > b",
+          "color": "rgb(140, 108, 159)",
+          "bg": "rgb(245, 238, 252)",
+          "size": "11px",
+          "ratio": 3.89,
+          "need": 4.5
+        },
+        {
+          "text": "まずは、ゆっくり",
+          "cls": "",
+          "path": ".selected > span > small",
+          "color": "rgb(168, 140, 185)",
+          "bg": "rgb(245, 238, 252)",
+          "size": "9px",
+          "ratio": 2.6,
+          "need": 4.5
+        },
+        {
+          "text": "困ったときの、参考表現",
+          "cls": "",
+          "path": ".modal.scene-modal > .example-details > summary",
+          "color": "rgb(162, 139, 180)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.05,
+          "need": 4.5
+        },
+        {
+          "text": "文字で練習",
+          "cls": "btn btn-soft",
+          "path": ".modal.scene-modal > .modal-sticky-actions > .btn.btn-soft",
+          "color": "rgb(128, 101, 179)",
+          "bg": "rgb(241, 236, 249)",
+          "size": "11px",
+          "ratio": 4.09,
+          "need": 4.5
+        },
+        {
+          "text": "まずはデモで操作を体験",
+          "cls": "demo-link",
+          "path": ".modal.scene-modal > .modal-sticky-actions > .demo-link",
+          "color": "rgb(179, 160, 195)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.4,
+          "need": 4.5
+        },
+        {
+          "text": "言葉の練習用の場面です。実際の介助は、施設の手順と担当者の指示に従ってください。",
+          "cls": "scene-disclaimer",
+          "path": ".modal-backdrop > .modal.scene-modal > .scene-disclaimer",
+          "color": "rgb(190, 177, 199)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.04,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 41,
+          "h": 16
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 16,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 21,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 220,
+          "h": 42
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 67,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 99,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 108,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 90,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 99,
+          "h": 35
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "practice-text": {
+      "contrast": [
+        {
+          "text": "PREVIEW",
+          "cls": "prototype-tag",
+          "path": ".topbar > .topbar-actions > .prototype-tag",
+          "color": "rgb(156, 152, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.81,
+          "need": 4.5
+        },
+        {
+          "text": "中文",
+          "cls": "",
+          "path": ".topbar-actions > .lang-button > span",
+          "color": "rgb(141, 123, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "SCENARIO LIBRARY",
+          "cls": "eyebrow subtle",
+          "path": ".wide-main > .page-title > .eyebrow.subtle",
+          "color": "rgb(170, 161, 184)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "ひとつの動作から、想定外のひとことまで。あなたの仕事に近い場面を。",
+          "cls": "",
+          "path": ".wide-main > .page-title > p",
+          "color": "rgb(135, 122, 147)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "11px",
+          "ratio": 3.81,
+          "need": 4.5
+        },
+        {
+          "text": "48 シーン",
+          "cls": "",
+          "path": ".page-title > .library-stats > span",
+          "color": "rgb(161, 148, 173)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.71,
+          "need": 4.5
+        },
+        {
+          "text": "すべて",
+          "cls": "selected",
+          "path": ".wide-main > .category-pills > .selected",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(135, 112, 183)",
+          "size": "9px",
+          "ratio": 4.17,
+          "need": 4.5
+        },
+        {
+          "text": "48",
+          "cls": "",
+          "path": ".category-pills > .selected > small",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(135, 112, 183)",
+          "size": "8px",
+          "ratio": 4.17,
+          "need": 4.5
+        },
+        {
+          "text": "日常の声かけ",
+          "cls": "",
+          "path": ".wide-main > .category-pills > button",
+          "color": "rgb(148, 128, 159)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.59,
+          "need": 4.5
+        },
+        {
+          "text": "1 シーン",
+          "cls": "",
+          "path": ".wide-main > .library-result > small",
+          "color": "rgb(174, 160, 187)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "9px",
+          "ratio": 2.33,
+          "need": 4.5
+        },
+        {
+          "text": "入浴・清潔",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.blue > .scene-art > .scene-art-sticker",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "Responding to refusal",
+          "cls": "",
+          "path": ".scene-card.blue > .scene-card-body > small",
+          "color": "rgb(148, 134, 158)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.41,
+          "need": 4.5
+        },
+        {
+          "text": "4 分",
+          "cls": "",
+          "path": ".scene-card-body > div > span",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "Lv. 1",
+          "cls": "scene-level",
+          "path": ".scene-card-body > div > .scene-level",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "ことばをつなぐ。ケアをつなぐ。",
+          "cls": "",
+          "path": ".app-shell > .page-footer > span",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(180, 166, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.3,
+          "need": 4.5
+        },
+        {
+          "text": "シーン",
+          "cls": "",
+          "path": ".mobile-nav > .active > span",
+          "color": "rgb(156, 128, 185)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.39,
+          "need": 4.5
+        },
+        {
+          "text": "戻る",
+          "cls": "",
+          "path": ".practice-top > .practice-back > span",
+          "color": "rgb(163, 138, 182)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.06,
+          "need": 4.5
+        },
+        {
+          "text": "入浴・清潔",
+          "cls": "",
+          "path": ".practice-top > .practice-top-title > small",
+          "color": "rgb(178, 157, 194)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.47,
+          "need": 4.5
+        },
+        {
+          "text": "入浴を断られたとき",
+          "cls": "",
+          "path": ".practice-top > .practice-top-title > strong",
+          "color": "rgb(141, 107, 161)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 4.42,
+          "need": 4.5
+        },
+        {
+          "text": "終了して振り返る",
+          "cls": "practice-finish",
+          "path": ".practice-root > .practice-top > .practice-finish",
+          "color": "rgb(155, 114, 177)",
+          "bg": "rgb(236, 229, 246)",
+          "size": "8px",
+          "ratio": 3.15,
+          "need": 4.5
+        },
+        {
+          "text": "会話のノート",
+          "cls": "",
+          "path": ".chat-panel-heading > div > h3",
+          "color": "rgb(151, 117, 171)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.85,
+          "need": 4.5
+        },
+        {
+          "text": "1 ターン",
+          "cls": "",
+          "path": ".conversation-panel > .chat-panel-heading > span",
+          "color": "rgb(196, 174, 208)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.04,
+          "need": 4.5
+        },
+        {
+          "text": "佐藤さん",
+          "cls": "message-speaker",
+          "path": ".chat-scroll > .chat-message.assistant > .message-speaker",
+          "color": "rgb(176, 146, 192)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.72,
+          "need": 4.5
+        },
+        {
+          "text": "今日は入りたくないのですね。",
+          "cls": "",
+          "path": ".chat-scroll > .chat-message.user > p",
+          "color": "rgb(148, 106, 172)",
+          "bg": "rgb(238, 229, 247)",
+          "size": "13px",
+          "ratio": 3.5,
+          "need": 4.5
+        },
+        {
+          "text": "聞き取りを修正",
+          "cls": "message-edit",
+          "path": ".chat-scroll > .chat-message.user > .message-edit",
+          "color": "rgb(179, 150, 194)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.61,
+          "need": 4.5
+        },
+        {
+          "text": "こんな言い方も",
+          "cls": "",
+          "path": ".inline-coaching > div > small",
+          "color": "rgb(188, 158, 208)",
+          "bg": "rgb(246, 241, 251)",
+          "size": "8px",
+          "ratio": 2.11,
+          "need": 4.5
+        },
+        {
+          "text": "今日は入りたくないのですねませんか。",
+          "cls": "",
+          "path": ".inline-coaching > div > b",
+          "color": "rgb(149, 106, 171)",
+          "bg": "rgb(246, 241, 251)",
+          "size": "10px",
+          "ratio": 3.83,
+          "need": 4.5
+        },
+        {
+          "text": "（模拟）丁寧な依頼の形にすると伝わりやすくなります。",
+          "cls": "",
+          "path": ".inline-coaching > div > p",
+          "color": "rgb(175, 137, 190)",
+          "bg": "rgb(246, 241, 251)",
+          "size": "8px",
+          "ratio": 2.64,
+          "need": 4.5
+        },
+        {
+          "text": "返答のヒント",
+          "cls": "",
+          "path": ".composer-area > .quick-suggestions > button",
+          "color": "rgb(163, 131, 183)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.24,
+          "need": 4.5
+        },
+        {
+          "text": "不用担心说错，听不懂时也可以练习追问。",
+          "cls": "",
+          "path": ".conversation-panel > .composer-area > p",
+          "color": "rgb(177, 147, 191)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.69,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 41,
+          "h": 16
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 16,
+          "h": 16
+        },
+        {
+          "el": "message-edit",
+          "label": "聞き取りを修正",
+          "w": 53,
+          "h": 14
+        },
+        {
+          "el": "BUTTON",
+          "label": "言い換えを保存",
+          "w": 15,
+          "h": 19
+        },
+        {
+          "el": "BUTTON",
+          "label": "返答のヒント",
+          "w": 72,
+          "h": 13
+        },
+        {
+          "el": "BUTTON",
+          "label": "訳を表示",
+          "w": 54,
+          "h": 13
+        },
+        {
+          "el": "BUTTON",
+          "label": "ふりがな：オン",
+          "w": 63,
+          "h": 13
+        }
+      ],
+      "targetsUnder44": 22,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 220,
+          "h": 42
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 67,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 99,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 108,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 90,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 99,
+          "h": 35
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "feedback": {
+      "contrast": [
+        {
+          "text": "PREVIEW",
+          "cls": "prototype-tag",
+          "path": ".topbar > .topbar-actions > .prototype-tag",
+          "color": "rgb(156, 152, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.81,
+          "need": 4.5
+        },
+        {
+          "text": "中文",
+          "cls": "",
+          "path": ".topbar-actions > .lang-button > span",
+          "color": "rgb(141, 123, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "SCENARIO LIBRARY",
+          "cls": "eyebrow subtle",
+          "path": ".wide-main > .page-title > .eyebrow.subtle",
+          "color": "rgb(170, 161, 184)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "ひとつの動作から、想定外のひとことまで。あなたの仕事に近い場面を。",
+          "cls": "",
+          "path": ".wide-main > .page-title > p",
+          "color": "rgb(135, 122, 147)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "11px",
+          "ratio": 3.81,
+          "need": 4.5
+        },
+        {
+          "text": "48 シーン",
+          "cls": "",
+          "path": ".page-title > .library-stats > span",
+          "color": "rgb(161, 148, 173)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.71,
+          "need": 4.5
+        },
+        {
+          "text": "すべて",
+          "cls": "selected",
+          "path": ".wide-main > .category-pills > .selected",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(135, 112, 183)",
+          "size": "9px",
+          "ratio": 4.17,
+          "need": 4.5
+        },
+        {
+          "text": "48",
+          "cls": "",
+          "path": ".category-pills > .selected > small",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(135, 112, 183)",
+          "size": "8px",
+          "ratio": 4.17,
+          "need": 4.5
+        },
+        {
+          "text": "日常の声かけ",
+          "cls": "",
+          "path": ".wide-main > .category-pills > button",
+          "color": "rgb(148, 128, 159)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.59,
+          "need": 4.5
+        },
+        {
+          "text": "1 シーン",
+          "cls": "",
+          "path": ".wide-main > .library-result > small",
+          "color": "rgb(174, 160, 187)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "9px",
+          "ratio": 2.33,
+          "need": 4.5
+        },
+        {
+          "text": "練習済み",
+          "cls": "scene-art-sticker",
+          "path": ".scene-card.blue > .scene-art > .scene-art-sticker",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.67,
+          "need": 4.5
+        },
+        {
+          "text": "✦",
+          "cls": "scene-art-spark",
+          "path": ".scene-card.blue > .scene-art > .scene-art-spark",
+          "color": "rgb(131, 162, 187)",
+          "bg": "rgb(237, 243, 249)",
+          "size": "17px",
+          "ratio": 2.39,
+          "need": 4.5
+        },
+        {
+          "text": "Responding to refusal",
+          "cls": "",
+          "path": ".scene-card.blue > .scene-card-body > small",
+          "color": "rgb(148, 134, 158)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.41,
+          "need": 4.5
+        },
+        {
+          "text": "4 分",
+          "cls": "",
+          "path": ".scene-card-body > div > span",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "Lv. 1",
+          "cls": "scene-level",
+          "path": ".scene-card-body > div > .scene-level",
+          "color": "rgb(154, 138, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 3.2,
+          "need": 4.5
+        },
+        {
+          "text": "ことばをつなぐ。ケアをつなぐ。",
+          "cls": "",
+          "path": ".app-shell > .page-footer > span",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(180, 166, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.3,
+          "need": 4.5
+        },
+        {
+          "text": "シーン",
+          "cls": "",
+          "path": ".mobile-nav > .active > span",
+          "color": "rgb(156, 128, 185)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.39,
+          "need": 4.5
+        },
+        {
+          "text": "YOUR NEXT LITTLE STEP",
+          "cls": "eyebrow subtle",
+          "path": ".practice-root.feedback-root > .feedback-main > .eyebrow.subtle",
+          "color": "rgb(170, 161, 184)",
+          "bg": "rgb(246, 245, 250)",
+          "size": "9px",
+          "ratio": 2.28,
+          "need": 4.5
+        },
+        {
+          "text": "おつかれさまでした。",
+          "cls": "",
+          "path": ".practice-root.feedback-root > .feedback-main > h1",
+          "color": "rgb(143, 109, 165)",
+          "bg": "rgb(246, 245, 250)",
+          "size": "22px",
+          "ratio": 3.95,
+          "need": 4.5
+        },
+        {
+          "text": "入浴を断られたとき",
+          "cls": "feedback-scene",
+          "path": ".practice-root.feedback-root > .feedback-main > .feedback-scene",
+          "color": "rgb(182, 156, 198)",
+          "bg": "rgb(246, 245, 250)",
+          "size": "12px",
+          "ratio": 2.26,
+          "need": 4.5
+        },
+        {
+          "text": "学習の目安",
+          "cls": "",
+          "path": ".ring-stat > div > small",
+          "color": "rgb(170, 160, 182)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.5,
+          "need": 4.5
+        },
+        {
+          "text": "AI COMMUNICATION FEEDBACK",
+          "cls": "feedback-label",
+          "path": ".feedback-summary > div > .feedback-label",
+          "color": "rgb(181, 156, 197)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.46,
+          "need": 4.5
+        },
+        {
+          "text": "（模拟）気持ちを確かめる一言が言えました",
+          "cls": "",
+          "path": ".feedback-summary > div > h2",
+          "color": "rgb(153, 118, 174)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "16px",
+          "ratio": 3.78,
+          "need": 4.5
+        },
+        {
+          "text": "（模拟フィードバック）これはテスト用の固定応答です。",
+          "cls": "",
+          "path": ".feedback-summary > div > p",
+          "color": "rgb(166, 133, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 3.15,
+          "need": 4.5
+        },
+        {
+          "text": "この場面で、伝わったこと",
+          "cls": "",
+          "path": ".feedback-main > .feedback-goals > h3",
+          "color": "rgb(172, 140, 189)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "13px",
+          "ratio": 2.9,
+          "need": 4.5
+        },
+        {
+          "text": "相手の希望・気持ちを確かめる",
+          "cls": "",
+          "path": ".achieved > div > b",
+          "color": "rgb(157, 121, 177)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 3.62,
+          "need": 4.5
+        },
+        {
+          "text": "「今日は入りたくないのですね。」",
+          "cls": "",
+          "path": ".achieved > div > p",
+          "color": "rgb(166, 133, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.15,
+          "need": 4.5
+        },
+        {
+          "text": "よかったところ",
+          "cls": "",
+          "path": ".feedback-strengths > div > h3",
+          "color": "rgb(171, 193, 174)",
+          "bg": "rgb(240, 246, 241)",
+          "size": "12px",
+          "ratio": 1.75,
+          "need": 4.5
+        },
+        {
+          "text": "（模拟）丁寧な言葉づかい",
+          "cls": "",
+          "path": ".feedback-strengths > div > p",
+          "color": "rgb(171, 193, 174)",
+          "bg": "rgb(240, 246, 241)",
+          "size": "10px",
+          "ratio": 1.75,
+          "need": 4.5
+        },
+        {
+          "text": "次のひとことを、もっと自然に。",
+          "cls": "",
+          "path": ".feedback-improvements > .section-heading > h3",
+          "color": "rgb(164, 137, 181)",
+          "bg": "rgb(246, 245, 250)",
+          "size": "14px",
+          "ratio": 2.84,
+          "need": 4.5
+        },
+        {
+          "text": "あなたのことば",
+          "cls": "",
+          "path": ".feedback-improvements > .correction-card > small",
+          "color": "rgb(193, 167, 208)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.16,
+          "need": 4.5
+        },
+        {
+          "text": "今日は入りたくないのですね。",
+          "cls": "original",
+          "path": ".feedback-improvements > .correction-card > .original",
+          "color": "rgb(192, 167, 205)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "13px",
+          "ratio": 2.18,
+          "need": 4.5
+        },
+        {
+          "text": "こんな伝え方も",
+          "cls": "better-label",
+          "path": ".feedback-improvements > .correction-card > .better-label",
+          "color": "rgb(188, 158, 208)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "今日は、入りたくないお気持ちなのですね。",
+          "cls": "better",
+          "path": ".feedback-improvements > .correction-card > .better",
+          "color": "rgb(158, 118, 182)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "15px",
+          "ratio": 3.67,
+          "need": 4.5
+        },
+        {
+          "text": "（模拟）相手の気持ちをそのまま受け止める言い方です。",
+          "cls": "correction-reason",
+          "path": ".feedback-improvements > .correction-card > .correction-reason",
+          "color": "rgb(166, 133, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 3.15,
+          "need": 4.5
+        },
+        {
+          "text": "聞いてみる",
+          "cls": "",
+          "path": ".correction-card > div > button",
+          "color": "rgb(188, 155, 204)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.41,
+          "need": 4.5
+        },
+        {
+          "text": "この表現で練習",
+          "cls": "retry-sentence",
+          "path": ".correction-card > div > .retry-sentence",
+          "color": "rgb(162, 129, 180)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.31,
+          "need": 4.5
+        },
+        {
+          "text": "評価は会話の文章に基づく学習上の目安です。発音や介助技術、独り立ちの可否は判定し",
+          "cls": "feedback-footnote",
+          "path": ".practice-root.feedback-root > .feedback-main > .feedback-footnote",
+          "color": "rgb(180, 148, 198)",
+          "bg": "rgb(246, 245, 250)",
+          "size": "8px",
+          "ratio": 2.42,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [
+        "シーンを検索"
+      ],
+      "targetsUnder24": [
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 41,
+          "h": 16
+        },
+        {
+          "el": "BUTTON",
+          "label": "検索をクリア",
+          "w": 16,
+          "h": 16
+        },
+        {
+          "el": "BUTTON",
+          "label": "聞いてみる",
+          "w": 70,
+          "h": 15
+        },
+        {
+          "el": "BUTTON",
+          "label": "保存",
+          "w": 40,
+          "h": 15
+        },
+        {
+          "el": "retry-sentence",
+          "label": "この表現で練習",
+          "w": 90,
+          "h": 15
+        }
+      ],
+      "targetsUnder44": 17,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "INPUT",
+          "label": "シーンを検索",
+          "w": 220,
+          "h": 42
+        },
+        {
+          "el": "selected",
+          "label": "すべて 48",
+          "w": 67,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "日常の声かけ",
+          "w": 99,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "食事・口腔ケア",
+          "w": 108,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "入浴・清潔",
+          "w": 90,
+          "h": 35
+        },
+        {
+          "el": "BUTTON",
+          "label": "排泄の声かけ",
+          "w": 99,
+          "h": 35
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "notes": {
+      "contrast": [
+        {
+          "text": "PREVIEW",
+          "cls": "prototype-tag",
+          "path": ".topbar > .topbar-actions > .prototype-tag",
+          "color": "rgb(156, 152, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.81,
+          "need": 4.5
+        },
+        {
+          "text": "中文",
+          "cls": "",
+          "path": ".topbar-actions > .lang-button > span",
+          "color": "rgb(141, 123, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "YOUR WORDS, READY FOR WORK",
+          "cls": "eyebrow subtle",
+          "path": ".wide-main > .page-title > .eyebrow.subtle",
+          "color": "rgb(170, 161, 184)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "覚えておきたいひとことを、あなたのことばに。",
+          "cls": "",
+          "path": ".wide-main > .page-title > p",
+          "color": "rgb(135, 122, 147)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "11px",
+          "ratio": 3.81,
+          "need": 4.5
+        },
+        {
+          "text": "1",
+          "cls": "",
+          "path": ".note-heading > h3 > span",
+          "color": "rgb(170, 150, 189)",
+          "bg": "rgb(237, 230, 245)",
+          "size": "10px",
+          "ratio": 2.21,
+          "need": 4.5
+        },
+        {
+          "text": "聞く・場面でもう一度練習する",
+          "cls": "muted-count",
+          "path": ".wide-main > .note-heading > .muted-count",
+          "color": "rgb(170, 162, 180)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "7px",
+          "ratio": 2.34,
+          "need": 4.5
+        },
+        {
+          "text": "入浴・清潔",
+          "cls": "",
+          "path": ".note-card > .note-top > span",
+          "color": "rgb(180, 155, 199)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.48,
+          "need": 4.5
+        },
+        {
+          "text": "入りませんか。",
+          "cls": "note-original",
+          "path": ".notes-grid > .note-card > .note-original",
+          "color": "rgb(187, 174, 197)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 2.11,
+          "need": 4.5
+        },
+        {
+          "text": "気持ちを受け止める",
+          "cls": "note-reason",
+          "path": ".notes-grid > .note-card > .note-reason",
+          "color": "rgb(161, 132, 178)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 3.25,
+          "need": 4.5
+        },
+        {
+          "text": "ゆっくり聞く",
+          "cls": "",
+          "path": ".note-card > .note-actions > button",
+          "color": "rgb(162, 125, 182)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "11px",
+          "ratio": 3.42,
+          "need": 4.5
+        },
+        {
+          "text": "ことばをつなぐ。ケアをつなぐ。",
+          "cls": "",
+          "path": ".app-shell > .page-footer > span",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(162, 138, 186)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 3.05,
+          "need": 4.5
+        },
+        {
+          "text": "シーン",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(180, 166, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.3,
+          "need": 4.5
+        },
+        {
+          "text": "ノート",
+          "cls": "",
+          "path": ".mobile-nav > .active > span",
+          "color": "rgb(174, 156, 189)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.53,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 41,
+          "h": 16
+        },
+        {
+          "el": "BUTTON",
+          "label": "ゆっくり聞く",
+          "w": 88,
+          "h": 17
+        },
+        {
+          "el": "BUTTON",
+          "label": "場面で練習",
+          "w": 77,
+          "h": 17
+        }
+      ],
+      "targetsUnder44": 7,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "icon-button",
+          "label": "保存を解除",
+          "w": 33,
+          "h": 33
+        },
+        {
+          "el": "BUTTON",
+          "label": "ホーム",
+          "w": 65,
+          "h": 43
+        },
+        {
+          "el": "BUTTON",
+          "label": "シーン",
+          "w": 65,
+          "h": 43
+        },
+        {
+          "el": "active",
+          "label": "ノート",
+          "w": 65,
+          "h": 43
+        },
+        {
+          "el": "BUTTON",
+          "label": "学習記録",
+          "w": 65,
+          "h": 43
+        }
+      ],
+      "scrollWidth": 390
+    },
+    "progress": {
+      "contrast": [
+        {
+          "text": "PREVIEW",
+          "cls": "prototype-tag",
+          "path": ".topbar > .topbar-actions > .prototype-tag",
+          "color": "rgb(156, 152, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "7px",
+          "ratio": 2.81,
+          "need": 4.5
+        },
+        {
+          "text": "中文",
+          "cls": "",
+          "path": ".topbar-actions > .lang-button > span",
+          "color": "rgb(141, 123, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.87,
+          "need": 4.5
+        },
+        {
+          "text": "SMALL STEPS, REAL PROGRESS",
+          "cls": "eyebrow subtle",
+          "path": ".wide-main > .page-title > .eyebrow.subtle",
+          "color": "rgb(170, 161, 184)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 2.35,
+          "need": 4.5
+        },
+        {
+          "text": "昨日よりひとこと多く伝えられた。それも、大切な成長です。",
+          "cls": "",
+          "path": ".wide-main > .page-title > p",
+          "color": "rgb(135, 122, 147)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "11px",
+          "ratio": 3.81,
+          "need": 4.5
+        },
+        {
+          "text": "練習したシーン",
+          "cls": "",
+          "path": ".progress-stats > .stat-card > span",
+          "color": "rgb(165, 146, 180)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.85,
+          "need": 4.5
+        },
+        {
+          "text": "/ 48",
+          "cls": "",
+          "path": ".stat-card > strong > small",
+          "color": "rgb(182, 169, 193)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.23,
+          "need": 4.5
+        },
+        {
+          "text": "AI練習を完了したシーン",
+          "cls": "muted-count",
+          "path": ".skill-overview > .section-heading > .muted-count",
+          "color": "rgb(170, 162, 180)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "8px",
+          "ratio": 2.46,
+          "need": 4.5
+        },
+        {
+          "text": "日常の声かけ",
+          "cls": "",
+          "path": ".skill-item > div > b",
+          "color": "rgb(147, 128, 158)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 3.61,
+          "need": 4.5
+        },
+        {
+          "text": "0 /6",
+          "cls": "",
+          "path": ".skill-grid > .skill-item > small",
+          "color": "rgb(182, 169, 193)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.23,
+          "need": 4.5
+        },
+        {
+          "text": "ここから、あなたの記録がはじまります。",
+          "cls": "",
+          "path": ".section-block > .empty-state > h3",
+          "color": "rgb(152, 124, 167)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "14px",
+          "ratio": 3.64,
+          "need": 4.5
+        },
+        {
+          "text": "ひとつの場面で練習して、振り返りを残してみましょう。",
+          "cls": "",
+          "path": ".section-block > .empty-state > p",
+          "color": "rgb(167, 140, 182)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "10px",
+          "ratio": 2.97,
+          "need": 4.5
+        },
+        {
+          "text": "はじめの練習へ",
+          "cls": "btn btn-soft",
+          "path": ".section-block > .empty-state > .btn.btn-soft",
+          "color": "rgb(128, 101, 179)",
+          "bg": "rgb(241, 236, 249)",
+          "size": "10px",
+          "ratio": 4.09,
+          "need": 4.5
+        },
+        {
+          "text": "ことばをつなぐ。ケアをつなぐ。",
+          "cls": "",
+          "path": ".app-shell > .page-footer > span",
+          "color": "rgb(188, 179, 196)",
+          "bg": "rgb(248, 249, 252)",
+          "size": "8px",
+          "ratio": 1.92,
+          "need": 4.5
+        },
+        {
+          "text": "ホーム",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(179, 164, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.34,
+          "need": 4.5
+        },
+        {
+          "text": "シーン",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(180, 166, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.3,
+          "need": 4.5
+        },
+        {
+          "text": "ノート",
+          "cls": "",
+          "path": ".mobile-nav > button > span",
+          "color": "rgb(164, 141, 187)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.96,
+          "need": 4.5
+        },
+        {
+          "text": "学習記録",
+          "cls": "",
+          "path": ".mobile-nav > .active > span",
+          "color": "rgb(178, 163, 190)",
+          "bg": "rgb(255, 255, 255)",
+          "size": "9px",
+          "ratio": 2.37,
+          "need": 4.5
+        }
+      ],
+      "unnamedControls": [],
+      "inputsUnder16px": [],
+      "targetsUnder24": [
+        {
+          "el": "lang-button",
+          "label": "中文",
+          "w": 41,
+          "h": 16
+        }
+      ],
+      "targetsUnder44": 14,
+      "targetsUnder44Examples": [
+        {
+          "el": "brand-button",
+          "label": "carekotoba",
+          "w": 160,
+          "h": 33
+        },
+        {
+          "el": "mobile-user avatar avatar-purple",
+          "label": "学習設定",
+          "w": 30,
+          "h": 30
+        },
+        {
+          "el": "skill-item",
+          "label": "日常の声かけ0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "食事・口腔ケア0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "入浴・清潔0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "排泄の声かけ0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "移動・移乗0/6",
+          "w": 316,
+          "h": 34
+        },
+        {
+          "el": "skill-item",
+          "label": "申し送り・相談0/6",
+          "w": 316,
+          "h": 34
+        }
+      ],
+      "scrollWidth": 390
+    }
+  },
+  "summary": {
+    "home": {
+      "contrast": 21,
+      "decorativeSpark": 2,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 1,
+      "under44": 9,
+      "scrollWidth": 390
+    },
+    "scenes": {
+      "contrast": 21,
+      "decorativeSpark": 5,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 1,
+      "under44": 16,
+      "scrollWidth": 390
+    },
+    "scene-modal": {
+      "contrast": 29,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 2,
+      "under44": 21,
+      "scrollWidth": 390
+    },
+    "practice-text": {
+      "contrast": 30,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 7,
+      "under44": 22,
+      "scrollWidth": 390
+    },
+    "feedback": {
+      "contrast": 37,
+      "decorativeSpark": 1,
+      "unnamed": 0,
+      "inputsUnder16px": 1,
+      "under24": 5,
+      "under44": 17,
+      "scrollWidth": 390
+    },
+    "notes": {
+      "contrast": 14,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 3,
+      "under44": 7,
+      "scrollWidth": 390
+    },
+    "progress": {
+      "contrast": 17,
+      "decorativeSpark": 0,
+      "unnamed": 0,
+      "inputsUnder16px": 0,
+      "under24": 1,
+      "under44": 14,
+      "scrollWidth": 390
+    }
+  }
+}

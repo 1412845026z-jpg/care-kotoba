@@ -5,7 +5,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { request as httpRequest } from 'node:http';
-import { setup, openScene, api, EXTERNAL } from './helpers.mjs';
+import { setup, openScene, gotoApp, api, EXTERNAL } from './helpers.mjs';
 
 const HARNESS_CODE = 'pilot-code-2026';
 let env, code, skipAll = false;
@@ -120,4 +120,18 @@ test('the learner is asked for the access code before an AI practice, and the de
   await page.keyboard.press('Enter');
   await page.waitForFunction(() => document.querySelectorAll('.chat-message.assistant').length >= 2);
   assert.deepEqual(page.errors, []);
+});
+
+test('deleting this device\'s learning data also forgets the access code', async (t) => {
+  if (skipAll) return t.skip(skipAll);
+  const page = await env.page();
+  await gotoApp(page, env.baseUrl);
+  const before = await page.evaluate(() => fetch('/api/access').then((r) => r.json()));
+  assert.equal(before.granted, true, 'test setup: the browser is logged in');
+  await page.getByRole('button', { name: '学習設定' }).click();
+  await page.getByRole('button', { name: 'この端末の学習データを削除' }).click();
+  await page.getByRole('button', { name: '削除する' }).click();
+  await page.locator('.toast', { hasText: '削除しました' }).waitFor();
+  const after = await page.evaluate(() => fetch('/api/access').then((r) => r.json()));
+  assert.equal(after.granted, false, 'access cookie still valid after deleting local data');
 });
