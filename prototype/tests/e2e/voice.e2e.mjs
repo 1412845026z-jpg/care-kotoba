@@ -94,6 +94,9 @@ test('voice: the voice transcript reaches feedback in conversation order', async
   if (!Array.isArray(sent)) sent = sent.messages;
   const order = sent.map((m) => m.role + ':' + m.text);
   assert.deepEqual(order.slice(0, 3), ['assistant:そのタオルで何をするの？', 'user:お顔を拭いてもよろしいですか。', 'assistant:いいわよ。熱くしないでね。']);
+  // A correction of an unedited voice line is shown as an automatic transcript, not as a sure error.
+  await page.locator('.correction-card').first().waitFor();
+  assert.match(await page.locator('.correction-card').first().innerText(), /音声の聞き取り結果/);
 });
 
 test('voice: an interrupted reply is marked as interrupted', async () => {

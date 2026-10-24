@@ -52,6 +52,28 @@ test('text practice uses the mock AI and shows feedback', async () => {
   assert.deepEqual(page.errors, []);
 });
 
+test('feedback made from text never shows a pronunciation judgement', async () => {
+  env.mock.state.scenario.pronunciation = true;
+  try {
+    const page = await env.page();
+    await openScene(page, env.baseUrl, '入浴を断られたとき');
+    await page.getByRole('button', { name: '文字で練習' }).click();
+    await page.getByLabel('日本語で返答を入力').fill('今日は入りたくないのですね。');
+    await page.keyboard.press('Enter');
+    await page.waitForFunction(() => document.querySelectorAll('.chat-message.assistant').length >= 2);
+    await page.getByText('終了して振り返る').click();
+    await page.locator('.feedback-summary h2').waitFor();
+    const shown = await page.locator('.feedback-main').innerText();
+    assert.ok(!/発音もとても|发音很清楚|発音が不明瞭/.test(shown), 'a pronunciation judgement reached the learner');
+    assert.match(shown, /発音についてのコメントは、文字からは判断できないため表示していません/);
+    assert.match(shown, /丁寧な言葉づかい/, 'the rest of the feedback is still shown');
+    assert.equal(await page.locator('.correction-card').count(), 1, 'only the text-based correction remains');
+    assert.deepEqual(page.errors, []);
+  } finally {
+    env.mock.state.scenario.pronunciation = false;
+  }
+});
+
 test('feedback never shows a quote the learner did not say', async () => {
   env.mock.state.scenario.quoteMode = 'mixed'; // mock returns one real and one fabricated quote
   try {
@@ -147,6 +169,41 @@ test('notes whose text is an Object.prototype name render as plain text (furigan
     assert.equal(await page.getByText(/couldn.t load|エラーが発生/).count(), 0, 'error boundary shown');
     assert.deepEqual(page.errors, []);
   }
+});
+
+test('a crash in one screen shows a recoverable message instead of blanking the app', async () => {
+  const page = await env.page();
+  await page.addInitScript(() => { window.__CK_CRASH_TEST__ = 'notes'; });
+  await gotoApp(page, env.baseUrl);
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  const box = page.locator('.screen-error[data-screen="notes"]');
+  await box.waitFor();
+  assert.match(await box.innerText(), /この画面を表示できませんでした/);
+  assert.equal(await page.locator('.mobile-nav').count(), 1, 'navigation is still there');
+  await page.locator('.mobile-nav button', { hasText: 'シーン' }).click();
+  await page.locator('h1', { hasText: 'その場面を、練習しよう。' }).waitFor();
+  assert.equal(await page.locator('.screen-error').count(), 0, 'another tab renders normally');
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  await box.waitFor();
+  await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
+  await box.getByRole('button', { name: 'ホームに戻る' }).click();
+  await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
+  assert.deepEqual(page.errors.filter((e) => !/crash test: notes|screen-error/.test(e)), []);
+});
+
+test('a crash inside practice can be closed without losing the app', async () => {
+  const page = await env.page();
+  await page.addInitScript(() => { window.__CK_CRASH_TEST__ = 'practice'; });
+  await openScene(page, env.baseUrl, '入浴を断られたとき');
+  await page.getByRole('button', { name: /まずはデモで操作を体験/ }).click();
+  const box = page.locator('.screen-error.overlay[data-screen="practice"]');
+  await box.waitFor();
+  await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
+  await box.getByRole('button', { name: '練習を閉じる' }).click();
+  await page.locator('.screen-error').waitFor({ state: 'detached' });
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  await page.locator('h1', { hasText: 'ことばノート' }).waitFor();
+  assert.deepEqual(page.errors.filter((e) => !/crash test: practice|screen-error/.test(e)), []);
 });
 
 test('responsive layout: desktop width also renders without errors', async () => {
