@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本次状态核对的远端代码提交 | `main` = `8b55117a2bffe667fea900c5aeebad54b2842fe5`（业务 PR #5 `0420ff7`、PR #9 `8b55117` 已以 merge commit 合并；main CI run 39998856202 success） |
-| 核对时间与作者 | 2026-10-24 JST 凌晨，Claude（合并后核对远端 main 与 CI） |
+| 本次状态核对的远端代码提交 | `main` = `4381de1e3a97a88e4bb8610365c1b18fc2c5df98`（用户指定的#17→#30业务链及独立#23已按merge commit合并） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（已完成指定业务链合并，准备常规CI接入） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -65,7 +65,7 @@
 | DEPLOY-001 | 新私有 staging 方案（仅准备） | Codex | merged | PR #7；合并 `a79d9be`，方案已入main | docs/10_LOCAL_ENV_AND_DEPLOY.md；handoffs/2026-10-23-DEPLOY-001-codex.md；未部署，待另行授权 |
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
 | OSS-001 | 公开前检查与Codex for OSS申请准备 | Codex | blocked | 准备材料PR #10已合并；申请暂停 | 当前REST private=false，已公开；本轮Codex未改设置，变更执行者未核实；许可证未定、表单未提交 |
-| CI-002 | G0模拟测试接入常规main CI | Codex | queued | 业务 PR #5/#9 已合并（main `8b55117`），可以开始 | 把 `node tests/run.mjs static/unit/e2e` 加入常规 main CI（需 Playwright Chromium）；`verify-claude.yml` 仍固定旧 head。见 handoffs/2026-10-24-MERGE-001-claude.md |
+| CI-002 | G0模拟测试接入常规main CI | Codex | in_progress | `codex/CI-002`，PR #32，与已合并业务链同步 | 新工作流在当前整合树上运行；71/40预期。原main53/25与独立c3632f5的71/40分别已通过，见handoffs/2026-10-24-CI-002-main-codex.md |
 | DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
 | CONTENT-003 | 12场景/34术语/60评测的离线审稿台 | Codex | merged | PR #15；合并 `c65c3e2` | handoffs/2026-10-24-CONTENT-003-codex.md；CI39987425175通过；12项真实浏览器检查通过，390px无溢出；未接入学员端或专业审批 |
@@ -73,19 +73,19 @@
 | ENV-003 | Claude fix2/fix1固定head真实构建与回归复核 | Codex | merged | PR #12；合并 `67fc7ab` | handoffs/2026-10-24-ENV-003-results-codex.md；G0 unit34/34、离线22/22、dev21通过1跳过；REUSE unit50/50、离线25/25、dev24通过1跳过；全部模拟 |
 | CI-003 | 标准runner固定head模拟语音复核 | Codex | merged | PR #12；合并 `67fc7ab` | handoffs/2026-10-24-CI-003-results-codex.md及ENV-003；最新run39982127800两job成功；Cookie测试待办保留 |
 | CONTENT-002 | 34条术语草稿、12场景关联与资料来源复核 | Codex | merged | PR #13；合并 `37c0fc2` | handoffs/2026-10-24-CONTENT-002-codex.md；CI39980854437通过，尚未专业审稿或接入应用 |
-| CONTENT-REVIEW-001 | 用离线审稿台审阅 12 场景/34 术语/60 评测，导出意见 | Claude | review_ready | `claude/MERGE-001-state` | verification/CONTENT-REVIEW-001/：建议修改 6、保留草稿 6；AI 审阅意见，不是专业审批；源数据未改，是否采纳由 Codex 决定 |
-| FEEDBACK-GATE-001 | 反馈守门：删去由文字推断的发音评价、标出未修正的语音转写、每个画面的错误边界 | Claude | review_ready | `claude/FEEDBACK-GATE-001`（依赖 PR #17 的记录） | handoffs/2026-10-24-FEEDBACK-GATE-001-claude.md；离线 static 0 错误、unit 59/59、e2e 28/28；与 EVAL-002 的可确定门槛一致（发音 12/12、引用 6/6）；真实模型输出未验证 |
-| A11Y-001 | 手机可读性：文字对比度达到 WCAG AA、最小字号、点击区域、输入框不触发 iOS 缩放、注音字号、窄屏溢出 | Claude | review_ready | `claude/A11Y-001`（依赖 PR #18） | verification/A11Y-001/：7 个画面的对比度问题 169→0（装饰符号除外），小于 24px 的点击区域 20→0；unit 59/59、e2e 28/28；真机观感未验证 |
-| DEVICE-PREFLIGHT-001 | 免费的「音声テスト」：浏览器支持、服务器与访问码、WebRTC 候选、麦克风音量、扬声器；可保存 JSON，用于 DEVICE-001 之前 | Claude | review_ready | `claude/DEVICE-PREFLIGHT-001`（依赖 PR #19） | handoffs/2026-10-24-DEVICE-PREFLIGHT-001-claude.md；不调用 AI；unit 61/61、e2e 29/29（Chromium 假设备）；真机未验证 |
-| ASR-CONF-001 | 识别置信度（转写 logprobs，`CK_ASR_LOGPROBS=1` 默认关闭）：不确定的句子提示学员确认，反馈不把它当语言错误 | Claude | review_ready | `claude/ASR-CONF-001`（依赖 PR #20） | handoffs/2026-10-24-ASR-CONF-001-claude.md；unit 67/67、e2e 30/30（模拟 logprobs）；阈值需在 DEVICE-001 T14 校准，真实 API 行为未验证 |
-| DRILL-001 | 局部复练：反馈卡上的「この場面だけもう一度」，以对话到该处为上下文只重练一句 | Claude | review_ready | `claude/DRILL-001`（依赖 PR #21） | handoffs/2026-10-24-DRILL-001-claude.md；unit 68/68、e2e 31/31（模拟 AI）；真实模型回应质量未验证 |
-| VOICE-TIMER-001 | 语音练习最后 1 分钟显示倒计时（并用读屏提示），避免到时被突然结束 | Claude | review_ready | `claude/VOICE-TIMER-001`（依赖 PR #22） | verification/VOICE-TIMER-001/；unit、e2e 通过（模拟时钟）；真机 T8 待验证 |
-| A11Y-002 | 桌面布局的同类修正（侧边栏、右栏卡片的对比度与字号；所有宽度的点击区域）；`openScene` 测试辅助支持桌面布局 | Claude | review_ready | `claude/A11Y-002`（依赖 PR #24） | verification/A11Y-001/README.md「A11Y-002」：1280px 下 7 个画面的对比度问题、小于 24px 的点击区域都降为 0；unit 69/69、e2e 32/32 |
-| SMOKE-001 | 部署后用的接口冒烟脚本（`tools/smoke/api-smoke.mjs`）：默认只测免费接口，加 `--yes` 才调用对话/反馈/TTS | Claude | review_ready | `claude/SMOKE-001`（依赖 PR #25） | docs/09「部署后先跑的接口冒烟测试」；e2e 对 harness+mock 验证（不加 --yes 时 0 次 AI 请求、访问码不打印）；未对真实部署运行 |
-| AI-FURIGANA-001 | 文字练习中 AI 回复的注音（`CK_AI_FURIGANA=1`，默认关闭）：模型写注音，服务端验证与原文完全一致才显示 | Claude | review_ready | `claude/AI-FURIGANA-001`（依赖 PR #26） | 单元测试和 e2e 用模拟模型验证（错误的注音不显示）；真实模型的读音准确度和增加的输出费用未验证 |
-| VOICE-CHECK-LINK-001 | 语音无法开始时，可以从错误提示直接打开免费的音声测试 | Claude | review_ready | `claude/VOICE-CHECK-LINK-001`（依赖 PR #27） | e2e（模拟会话失败）通过 |
-| LOCAL-DATA-001 | 设置里「この端末の学習データを削除」（两步确认）：删除笔记、记录、设置和访问码 cookie，适合机构里共用的设备 | Claude | review_ready | `claude/LOCAL-DATA-001`（依赖 PR #28） | e2e 两项通过（本机数据清空；访问码失效） |
-| NOTES-EXPORT-001 | 「ことばノート」可书出为文本文件；删除本机数据前的确认里提示先书出 | Claude | review_ready | `claude/NOTES-EXPORT-001`（依赖 PR #29） | e2e 通过（下载内容含表达、原来的说法、场景） |
+| CONTENT-REVIEW-001 | 用离线审稿台审阅 12 场景/34 术语/60 评测，导出意见 | Claude | merged | [PR #17](https://github.com/1412845026z-jpg/care-kotoba/pull/17)，merge 9088127 | verification/CONTENT-REVIEW-001/：建议修改 6、保留草稿 6；AI 审阅意见，不是专业审批；源数据未改，是否采纳由 Codex 决定 |
+| FEEDBACK-GATE-001 | 反馈守门：删去由文字推断的发音评价、标出未修正的语音转写、每个画面的错误边界 | Claude | merged | [PR #18](https://github.com/1412845026z-jpg/care-kotoba/pull/18)，merge 3659709 | handoffs/2026-10-24-FEEDBACK-GATE-001-claude.md；离线 static 0 错误、unit 59/59、e2e 28/28；与 EVAL-002 的可确定门槛一致（发音 12/12、引用 6/6）；真实模型输出未验证 |
+| A11Y-001 | 手机可读性：文字对比度达到 WCAG AA、最小字号、点击区域、输入框不触发 iOS 缩放、注音字号、窄屏溢出 | Claude | merged | [PR #19](https://github.com/1412845026z-jpg/care-kotoba/pull/19)，merge 8e0cb8f | verification/A11Y-001/：7 个画面的对比度问题 169→0（装饰符号除外），小于 24px 的点击区域 20→0；unit 59/59、e2e 28/28；真机观感未验证 |
+| DEVICE-PREFLIGHT-001 | 免费的「音声テスト」：浏览器支持、服务器与访问码、WebRTC 候选、麦克风音量、扬声器；可保存 JSON，用于 DEVICE-001 之前 | Claude | merged | [PR #20](https://github.com/1412845026z-jpg/care-kotoba/pull/20)，merge 65bf52c | handoffs/2026-10-24-DEVICE-PREFLIGHT-001-claude.md；不调用 AI；unit 61/61、e2e 29/29（Chromium 假设备）；真机未验证 |
+| ASR-CONF-001 | 识别置信度（转写 logprobs，`CK_ASR_LOGPROBS=1` 默认关闭）：不确定的句子提示学员确认，反馈不把它当语言错误 | Claude | merged | [PR #21](https://github.com/1412845026z-jpg/care-kotoba/pull/21)，merge a28f592 | handoffs/2026-10-24-ASR-CONF-001-claude.md；unit 67/67、e2e 30/30（模拟 logprobs）；阈值需在 DEVICE-001 T14 校准，真实 API 行为未验证 |
+| DRILL-001 | 局部复练：反馈卡上的「この場面だけもう一度」，以对话到该处为上下文只重练一句 | Claude | merged | [PR #22](https://github.com/1412845026z-jpg/care-kotoba/pull/22)，merge def8d99 | handoffs/2026-10-24-DRILL-001-claude.md；unit 68/68、e2e 31/31（模拟 AI）；真实模型回应质量未验证 |
+| VOICE-TIMER-001 | 语音练习最后 1 分钟显示倒计时（并用读屏提示），避免到时被突然结束 | Claude | merged | [PR #24](https://github.com/1412845026z-jpg/care-kotoba/pull/24)，merge 5fbbf06 | verification/VOICE-TIMER-001/；unit、e2e 通过（模拟时钟）；真机 T8 待验证 |
+| A11Y-002 | 桌面布局的同类修正（侧边栏、右栏卡片的对比度与字号；所有宽度的点击区域）；`openScene` 测试辅助支持桌面布局 | Claude | merged | [PR #25](https://github.com/1412845026z-jpg/care-kotoba/pull/25)，merge b06d889 | verification/A11Y-001/README.md「A11Y-002」：1280px 下 7 个画面的对比度问题、小于 24px 的点击区域都降为 0；unit 69/69、e2e 32/32 |
+| SMOKE-001 | 部署后用的接口冒烟脚本（`tools/smoke/api-smoke.mjs`）：默认只测免费接口，加 `--yes` 才调用对话/反馈/TTS | Claude | merged | [PR #26](https://github.com/1412845026z-jpg/care-kotoba/pull/26)，merge c9e6c10 | docs/09「部署后先跑的接口冒烟测试」；e2e 对 harness+mock 验证（不加 --yes 时 0 次 AI 请求、访问码不打印）；未对真实部署运行 |
+| AI-FURIGANA-001 | 文字练习中 AI 回复的注音（`CK_AI_FURIGANA=1`，默认关闭）：模型写注音，服务端验证与原文完全一致才显示 | Claude | merged | [PR #27](https://github.com/1412845026z-jpg/care-kotoba/pull/27)，merge 01dff70 | 单元测试和 e2e 用模拟模型验证（错误的注音不显示）；真实模型的读音准确度和增加的输出费用未验证 |
+| VOICE-CHECK-LINK-001 | 语音无法开始时，可以从错误提示直接打开免费的音声测试 | Claude | merged | [PR #28](https://github.com/1412845026z-jpg/care-kotoba/pull/28)，merge 0054d06 | e2e（模拟会话失败）通过 |
+| LOCAL-DATA-001 | 设置里「この端末の学習データを削除」（两步确认）：删除笔记、记录、设置和访问码 cookie，适合机构里共用的设备 | Claude | merged | [PR #29](https://github.com/1412845026z-jpg/care-kotoba/pull/29)，merge a802321 | e2e 两项通过（本机数据清空；访问码失效） |
+| NOTES-EXPORT-001 | 「ことばノート」可书出为文本文件；删除本机数据前的确认里提示先书出 | Claude | merged | [PR #30](https://github.com/1412845026z-jpg/care-kotoba/pull/30)，merge 4381de1 | e2e 通过（下载内容含表达、原来的说法、场景） |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -103,6 +103,8 @@
 | 2026-10-23 用户（Claude 会话）：「可以复用的就以合适方式拿过来并共享」 | 开源 / 免费资料按 research/REUSE_REVIEW_2026-10-23.md 处理；注音默认开启（Claude 的默认设定，可在设置中关闭，待教师和用户反馈） | 新增依赖仍由 Codex 加入；内容类资料由 Codex 负责 |
 
 ## 当前阻塞与风险
+
+- ENV-004复测新head c3632f5通过（标准runner40050738078：static0、unit71、离线40、真实dev36通过4明确跳过）。指定业务链已全部合并；此前开发浮层失败是历史证据。真实AI/真机仍未验证。
 
 - 业务 PR #5、#9 已合并到 main（`8b55117`）。常规 main CI 目前只跑 install/tsc/build/数据校验，static/unit/模拟浏览器测试还没接入（CI-002，Codex）；真实 AI、真实事件顺序、真机、服务端强制时长与用量对账仍未验证。
 
