@@ -40,6 +40,14 @@ jobs:
           package-manager-cache: false
       - name: Extract existing five reference phrases (no App install)
         run: node --experimental-strip-types scripts/ci/audio_sentences.mjs . "$RUNNER_TEMP/audio-output"
+      - name: Free isolated synthesis tools (no App packages)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install --yes --no-install-recommends ffmpeg 7zip python3-venv build-essential cmake
+          dpkg-query -W ffmpeg 7zip python3-venv build-essential cmake > "$RUNNER_TEMP/audio-output/system-tool-versions.txt"
+          mkdir -p "$RUNNER_TEMP/audio-output/licenses/system-tools"
+          cp /usr/share/doc/ffmpeg/copyright "$RUNNER_TEMP/audio-output/licenses/system-tools/ffmpeg-copyright.txt"
+          cp /usr/share/doc/7zip/copyright "$RUNNER_TEMP/audio-output/licenses/system-tools/7zip-copyright.txt"
       - name: Create isolated CPU synthesis environment
         run: |
           set -euo pipefail
