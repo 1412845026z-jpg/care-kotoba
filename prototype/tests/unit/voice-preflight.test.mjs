@@ -44,7 +44,7 @@ test('typical phone problems are reported with a next step, never as an AI or sk
 test('every message has help in Chinese and English for learners; Japanese UI shows none', () => {
   const variants = [good, { support: { ...good.support, rtc: false } }, { server: { reachable: false } }, { server: { ...good.server, aiConfigured: false } }, { server: { ...good.server, accessRequired: true } }, { server: { ...good.server, ms: 3000 } }, { ice: { total: 0, host: 0, srflx: 0, relay: 0, ms: 1, error: 'NotSupportedError' } }, { ice: { total: 0, host: 0, srflx: 0, relay: 0, ms: 1 } }, { mic: { granted: false, error: 'NotAllowedError' } }, { mic: { granted: false, error: 'NotFoundError' } }, { mic: { granted: false, error: 'AbortError' } }, { mic: { granted: true, peak: 0 } }, { speaker: { heard: false } }, { speaker: { heard: null } }];
   for (const v of variants) {
-    for (const locale of ['zh', 'en']) for (const i of verdict({ ...good, ...v }, locale)) assert.ok(i.help && i.help.length > 4, `${locale} ${i.key}`);
+    for (const locale of ['zh', 'en', 'vi', 'my', 'id']) for (const i of verdict({ ...good, ...v }, locale)) assert.ok(i.help && i.help.length > 4, `${locale} ${i.key}`);
     for (const i of verdict({ ...good, ...v }, 'ja')) assert.equal(i.help, undefined);
   }
 });

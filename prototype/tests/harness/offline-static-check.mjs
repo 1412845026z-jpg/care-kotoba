@@ -111,6 +111,7 @@ declare module 'react' {
   export type ReactNode = any; export type FormEvent<T = any> = any; export type KeyboardEvent<T = any> = any; export type ChangeEvent<T = any> = any;
   export function useState<S>(initial: S | (() => S)): [S, (value: S | ((prev: S) => S)) => void];
   export function useEffect(effect: () => void | (() => void), deps?: readonly unknown[]): void;
+  export function useCallback<T extends (...args: any[]) => any>(fn: T, deps: readonly unknown[]): T;
   export function useRef<T>(initial: T): { current: T };
   export function useRef<T>(initial: T | null): { current: T | null };
   export const StrictMode: any; export function createElement(...args: any[]): any;

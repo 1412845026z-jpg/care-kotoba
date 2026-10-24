@@ -7,7 +7,8 @@ import {Note} from '@/lib/storage';
 import {findScene} from '@/lib/core-scenarios';
 import {REVIEW_ANSWERS,ReviewStore,ReviewAnswer,dueNoteIds,nextDue,previewAnswers,answer,intervalLabel} from '@/lib/review';
 import {JaText} from './ruby';
-import {sayText,Support} from './ui';
+import {sayText,Support,Gloss} from './ui';
+import {SAY} from '@/lib/i18n';
 
 const dayLabel=(d:Date)=>new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'long',day:'numeric',weekday:'short'}).format(d);
 
@@ -22,7 +23,7 @@ export function ReviewPanel({notes,store,onStore,furigana,locale,notify,onActive
  if(!notes.length)return null;
  const nextLine=next?<>次は {dayLabel(next)}。</>:null;
 
- if(!queue)return <section className="review-card" aria-labelledby="review-title"><div><h2 id="review-title">今日の復習</h2>{due.length?<p>保存したひとことを <strong>{due.length}</strong> つ、思い出してみましょう。</p>:<p>今日の分は終わりました。{nextLine}</p>}<p className="review-note">記録はこの端末だけに残り、点数はつきません。<Support locale={locale} zh="（只记录在这台设备上，不打分。）" en="(Kept on this device only. No scores.)"/></p></div>{due.length>0&&<button className="btn btn-primary" onClick={()=>{setQueue(due);setPos(0);setShown(false);onActive?.(true);}}>復習をはじめる <ArrowRight size={17}/></button>}</section>;
+ if(!queue)return <section className="review-card" aria-labelledby="review-title"><div><h2 id="review-title">今日の復習</h2>{due.length?<p>保存したひとことを <strong>{due.length}</strong> つ、思い出してみましょう。</p>:<p>今日の分は終わりました。{nextLine}</p>}<p className="review-note">記録はこの端末だけに残り、点数はつきません。<Support locale={locale} t={SAY.reviewNote}/></p></div>{due.length>0&&<button className="btn btn-primary" onClick={()=>{setQueue(due);setPos(0);setShown(false);onActive?.(true);}}>復習をはじめる<Gloss locale={locale} k="review.start" className="btn-gloss"/> <ArrowRight size={17}/></button>}</section>;
 
  const live=queue.filter(id=>notes.some(n=>n.id===id)); // a phrase unsaved during the session is skipped
  if(pos>=live.length)return <section className="review-card review-done" aria-live="polite"><div><h2>おつかれさまでした。</h2><p>今日の復習は終わりです。{nextLine}</p></div><button className="btn btn-white" onClick={()=>{setQueue(null);onActive?.(false);}}>閉じる</button></section>;

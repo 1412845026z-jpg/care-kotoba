@@ -2,14 +2,18 @@
 // content/ssw-basic by tools/ssw-basic-app/generate.mjs into ./basic-course-data.ts and loaded on demand.
 // Practice here is scripted: no AI call, no cost.
 
-export type BasicLine = { speaker: 'worker' | 'resident' | 'colleague' | 'nurse' | 'visitor' | 'family' | 'leader'; ja: string; kana: string; zh: string; ruby: string | null };
+import type { Texts } from './i18n';
+
+/** Support-language texts: only the languages the content has (see tools/ssw-basic-app/generate.mjs). */
+export type BasicLine = { speaker: 'worker' | 'resident' | 'colleague' | 'nurse' | 'visitor' | 'family' | 'leader'; ja: string; kana: string; tr: Texts; ruby: string | null };
 export type BasicScene = {
-  id: string; topicId: string; titleJa: string; titleZh: string; goalZh: string; contextZh: string; partner: string;
+  id: string; topicId: string; titleJa: string; title: Texts; goal: Texts; context: Texts; partner: string;
   dialogue: BasicLine[];
-  practice: { cueTurn: number; responseTurn: number; alternatives: string[]; checkZh: string };
+  practice: { cueTurn: number; responseTurn: number; alternatives: string[]; check: Texts };
 };
-export type BasicTopic = { id: string; titleJa: string; titleZh: string };
-export type BasicCourse = { status: string; sourceDigest: string; topics: BasicTopic[]; scenes: BasicScene[] };
+export type BasicTopic = { id: string; titleJa: string; title: Texts };
+/** support: per language, the review status and the number of scenes with explanations. */
+export type BasicCourse = { status: string; sourceDigest: string; support: Partial<Record<string, { status: string; scenes: number }>>; topics: BasicTopic[]; scenes: BasicScene[] };
 
 export const loadBasicCourse = () => import('./basic-course-data').then((m) => m.BASIC_COURSE);
 

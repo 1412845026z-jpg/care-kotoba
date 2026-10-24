@@ -2,7 +2,8 @@
 // 「音声テスト」: checks microphone, speaker, server and WebRTC readiness without placing an AI call
 // (no cost). Results can be saved as JSON for the real-device test (docs/09).
 import { useState } from 'react';
-import { Modal } from './ui';
+import { Modal, Support } from './ui';
+import { SAY } from '@/lib/i18n';
 import { checkServer, checkSupport, gatherIce, measureMic, overall, playTone, verdict, type PreflightResults } from '@/lib/voice-preflight';
 import { dictationSupported, loadJapaneseVoices } from '@/lib/browser-speech';
 
@@ -54,7 +55,7 @@ export function VoiceCheck({ onClose, locale = 'ja' }: { onClose: () => void; lo
   return (
     <Modal className="voice-check-modal" onClose={onClose}>
       <div className="modal-top"><h2>音声テスト</h2><button className="icon-button" aria-label="閉じる" onClick={onClose}>×</button></div>
-      <p className="voice-check-intro">AI と話す前に、マイク・スピーカー・通信を確認します。AI には接続しないので、料金はかかりません。{locale === 'zh' ? <small lang="zh-Hans">在和 AI 对话前，检查麦克风、扬声器和网络。不连接 AI，不产生费用。</small> : locale === 'en' ? <small lang="en">Checks your microphone, speaker and connection before talking to the AI. No AI is called, so it costs nothing.</small> : null}</p>
+      <p className="voice-check-intro">AI と話す前に、マイク・スピーカー・通信を確認します。AI には接続しないので、料金はかかりません。{locale !== 'ja' && <small><Support locale={locale} t={SAY.voiceCheckIntro} /></small>}</p>
       {step === 'idle' && <button className="btn btn-primary full-width" onClick={start}>テストを始める</button>}
       {step === 'checking' && <p className="voice-check-busy" role="status">{level > 0 || results.server ? '声を出してください…' : '確認しています…'}</p>}
       {step === 'checking' && results.server && <div className="voice-meter" aria-label="マイクの音量"><i style={{ width: `${Math.round(level * 100)}%` }} /></div>}

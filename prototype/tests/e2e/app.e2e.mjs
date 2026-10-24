@@ -34,7 +34,7 @@ test('scripted demo can be completed and is labelled as not AI-evaluated', async
   }
   await page.getByText('終了して振り返る').click();
   await page.getByText('ひとつ、会話を体験しました。').waitFor();
-  // The note is shown in the learner's support language (default zh).
+  // The note is shown in the learner's support language (default: Japanese only).
   assert.match(await page.locator('.feedback-summary p').first().textContent(), /AI評価は行っていません|没有进行真实 AI 评价|without an AI evaluation/);
   assert.deepEqual(page.errors, []);
 });
@@ -332,7 +332,7 @@ test('settings: the learner can delete this device\'s learning data (two steps)'
   const stored = await page.evaluate(() => ({ notes: localStorage.getItem('ck-notes'), history: localStorage.getItem('ck-history'), prefs: JSON.parse(localStorage.getItem('ck-prefs')), assign: localStorage.getItem('ck-demo-assignments') }));
   assert.equal(stored.notes, '[]');
   assert.equal(stored.history, '[]');
-  assert.equal(stored.prefs.locale, 'zh', 'settings back to defaults');
+  assert.equal(stored.prefs.locale, 'ja', 'settings back to defaults');
   assert.equal(stored.assign, null);
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   assert.equal(await page.locator('.note-card').count(), 0);

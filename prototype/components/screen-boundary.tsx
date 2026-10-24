@@ -3,6 +3,8 @@
 // the whole app (docs/08 #16; ENV-002 showed a notes-page crash taking over the page). Now only the
 // broken screen is replaced by a message; navigation, saved notes and history keep working.
 import { Component, type ReactNode } from 'react';
+import { Support } from './ui';
+import { SAY } from '@/lib/i18n';
 
 type Props = { children: ReactNode; label: string; resetKey?: unknown; onHome?: () => void; homeLabel?: string; overlay?: boolean; locale?: string };
 type State = { error: Error | null };
@@ -35,7 +37,7 @@ export class ScreenBoundary extends Component<Props, State> {
       <section className={'screen-error' + (overlay ? ' overlay' : '')} role="alert" data-screen={this.props.label}>
         <h2>この画面を表示できませんでした</h2>
         <p>ノートや学習記録は消えていません。</p>
-        {this.props.locale === 'zh' ? <p lang="zh-Hans">这个画面出错了。笔记和学习记录都还在。</p> : this.props.locale === 'en' ? <p lang="en">This screen could not be shown. Your notes and history are safe.</p> : null}
+        {this.props.locale && this.props.locale !== 'ja' ? <p><Support locale={this.props.locale} t={SAY.screenError} /></p> : null}
         <div className="screen-error-actions">
           <button className="btn btn-primary" onClick={() => this.setState({ error: null })}>もう一度表示する</button>
           {onHome && <button className="btn btn-white" onClick={() => { this.setState({ error: null }); onHome(); }}>{homeLabel || 'ホームに戻る'}</button>}

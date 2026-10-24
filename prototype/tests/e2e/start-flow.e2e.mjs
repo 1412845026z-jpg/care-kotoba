@@ -64,14 +64,14 @@ test('scene sheet: closing and reopening goes back to the default type', async (
   assert.equal(await page.locator('.scene-modal .variant-grid').count(), 0);
 });
 
-test('support-language text is marked with its language (zh-Hans by default, en when chosen)', async () => {
+test('support-language text is marked with its language (Japanese only by default, en when chosen)', async () => {
   const page = await env.page();
   await openScene(page, env.baseUrl, '入浴を断られたとき');
   await page.getByRole('button', { name: '文字で練習' }).click();
   const hint = page.locator('.composer-area > p [lang]');
   await hint.waitFor();
-  assert.equal(await hint.getAttribute('lang'), 'zh-Hans');
-  assert.match(await hint.textContent(), /不用担心说错/);
+  assert.equal(await hint.getAttribute('lang'), 'ja');
+  assert.match(await hint.textContent(), /言い直しても/);
 
   const p2 = await env.page();
   await p2.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'en', level: 'gentle', goal: 5, plan: 'personal', furigana: true })));
