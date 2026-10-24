@@ -26,13 +26,13 @@
 
 ## 2026-10-24：实际采用与候选的进度
 
-本节合并Claude的[固定提交复用评估](https://github.com/1412845026z-jpg/care-kotoba/blob/a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207/research/REUSE_REVIEW_2026-10-23.md)与Codex复核结果。PR #9尚未合并，表内“PR实现”不能读成已进入main或已上线。
+本节合并Claude的[固定提交复用评估](https://github.com/1412845026z-jpg/care-kotoba/blob/a43e7edebf5cf7be8a7f0c8b9a3ac0c975dd2207/research/REUSE_REVIEW_2026-10-23.md)与Codex后续复核。PR #9及其后续修复已经合并main；进入main不代表已部署或完成专业验收。
 
 | 来源 | 当前用途与落点 | 本轮结论 |
 | --- | --- | --- |
 | Playwright 1.63.0 / esbuild 0.28.2 | main已固定为开发测试依赖；不调用AI即可运行模拟测试 | 工具安装和真实构建已验证；测试通过仍不等于真机通过 |
-| kuromoji.js / mecab-ipadic | PR #9离线生成318条固定文字注音；不把约17MB词典装入浏览器运行时 | Claude记录生成与人工修正；Codex真实dev非语音注音测试通过。词典查找的继承属性问题仍待修复；专业读音审稿未完成 |
-| openai-agents-js | PR #9只参考Realtime序列控制的思路，没有把SDK加入依赖 | Claude称为独立实现；Codex已复现response.created确认前的竞争，尚不能把排队缺口写成全部解决。参考记录不替代以后复制代码时的许可核对 |
+| kuromoji.js / mecab-ipadic | main的离线固定文字注音生成器及人工读音修正；不把约17MB词典装入浏览器运行时 | 继承属性问题已修复并有回归覆盖；真实dev注音通过。夜中、一回、二人、後已有人工复核记录；专业读音审稿未完成 |
+| openai-agents-js | main只参考Realtime序列控制思路，独立实现，没有把SDK加入依赖 | 已修复从发出response.create即占用的竞争窗口，模拟回归通过；真实OpenAI事件时序未验收。未来复制SDK代码仍须保留其MIT声明 |
 | ts-fsrs 5.4.2 | REVIEW-DEP-001固定运行依赖（无传递依赖），功能由Claude REVIEW-001实现 | MIT；锁文件和npm integrity固定正式版，不使用6.0.0-beta；未接入调度或学习状态功能 |
 | promptfoo | 模型迁移候选；固定评测数据已存在于evals/ | 尚未接入CLI或运行真实模型；未来真实评测调用须另获费用授权 |
 | 厚生劳动省所载教材 | CONTENT-002仅核对30个常用词的词形、读音与页码，另写4个项目词条和原创教学说明 | 新数据见content/terminology/；尚未接入应用、未专业审稿，不复制教材定义、译文段落或图像 |

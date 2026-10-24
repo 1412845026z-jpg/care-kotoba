@@ -80,8 +80,8 @@ def prepare(cache, out):
     for name in ['config.json', 'README.md', 'VOICES.md']:
         dest = cache / 'kokoro' / name if name == 'config.json' else out / 'licenses/kokoro' / name
         entries.append(download(hf + name, dest, max_bytes=100_000))
-    for voice, prefix in [('jf_alpha', '1bf4c9dc'), ('jm_kumo', '98340afd')]:
-        entries.append(download(hf + f'voices/{voice}.pt', cache / f'kokoro/{voice}.pt', prefix=prefix, max_bytes=2_000_000))
+    for voice, digest in [('jf_alpha', '1bf4c9dc69e45ee46183b071f4db766349aac5592acbcfeaf051018048a5d787'), ('jm_kumo', '98340afd68b1cee84fe0cd95528cfa6d4b39e416aa75a9df64049d52c8b55896')]:
+        entries.append(download(hf + f'voices/{voice}.pt', cache / f'kokoro/{voice}.pt', expected=digest, max_bytes=2_000_000))
     for repo, rev, names in [
         ('hexgrad/kokoro', 'dfb907a02bba8152ca444717ca5d78747ccb4bec', ['LICENSE']),
         ('hexgrad/misaki', 'fba1236595f2d2bf21d414ba6e57d25256afada3', ['LICENSE']),
@@ -117,7 +117,7 @@ def prepare(cache, out):
     # Pin dictionary data to its named 3.1.0 release, never the downloader's `latest` alias.
     import unidic
     dictionary = cache / 'unidic-3.1.0.zip'
-    entries.append(download('https://cotonoha-dic.s3-ap-northeast-1.amazonaws.com/unidic-3.1.0.zip', dictionary, max_bytes=1_000_000_000))
+    entries.append(download('https://cotonoha-dic.s3-ap-northeast-1.amazonaws.com/unidic-3.1.0.zip', dictionary, expected='638718c4c63625ab300de4c92c67925d54c0e9e3830009eaa992f29819d59c43', max_bytes=1_000_000_000))
     unpack = cache / 'unidic-unpack'
     unpack.mkdir(exist_ok=True)
     with zipfile.ZipFile(dictionary) as archive:
@@ -136,14 +136,14 @@ def prepare(cache, out):
     # extracted package and preserve relative paths instead of flattening names.
     dictionary_licenses = []
     for p in sorted(unpack.rglob('*')):
-        if p.is_file() and any(x in p.name.upper() for x in ['LICENSE', 'COPYING', 'COPYRIGHT', 'AUTHORS', 'NOTICE']):
+        if p.is_file() and (p.name.upper() in ['BSD', 'GPL', 'LGPL'] or any(x in p.name.upper() for x in ['LICENSE', 'COPYING', 'COPYRIGHT', 'AUTHORS', 'NOTICE'])):
             target = out / 'licenses/unidic' / p.relative_to(unpack)
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(p, target)
-            if p.stat().st_size and any(x in p.name.upper() for x in ['LICENSE', 'COPYING', 'COPYRIGHT']):
+            if p.stat().st_size and ('BSD' in p.name.upper() or any(x in p.name.upper() for x in ['LICENSE', 'COPYING', 'COPYRIGHT'])):
                 dictionary_licenses.append(str(p.relative_to(unpack)))
-    if not dictionary_licenses:
-        raise RuntimeError('UniDic archive contains no nonempty license/copyright file; review before generating audio')
+    if not dictionary_licenses or not any('BSD' in p.upper() for p in dictionary_licenses):
+        raise RuntimeError('UniDic BSD license text missing; review before generating audio')
     # Retain the installed venv dictionary and copied legal files, not duplicate
     # downloaded/extracted data. The named release and ZIP digest remain logged.
     dictionary.unlink()
@@ -258,7 +258,9 @@ def generate_voicevox(cache, out):
         if version != '0.26.0':
             raise RuntimeError(f'Wrong engine version: {version!r}')
         speakers = json.loads(request('/speakers'))
+        write_json(out / 'voicevox-selected-speakers.json', [s for s in speakers if s['name'] in [v.get('name') for v in VOICES]])
         manifest = json.loads(request('/engine_manifest'))
+        manifest.pop('icon', None)  # Legal notices retained; engine artwork is not a deliverable.
         write_json(out / 'voicevox-engine-manifest.json', manifest)
         records = []
         for voice in [v for v in VOICES if v['engine'] == 'voicevox']:
@@ -266,9 +268,9 @@ def generate_voicevox(cache, out):
             if len(selected) != 1:
                 raise RuntimeError(f"Missing or ambiguous speaker: {voice['name']}")
             speaker = selected[0]
-            normal = [s for s in speaker['styles'] if s['name'] == 'ノーマル' and s.get('type', 'talk') == 'talk']
+            normal = [s for s in speaker['styles'] if s['name'] == 'ノーマル' and s.get('type', 'talk') in ('talk', 'streaming_talk')]
             if len(normal) != 1:
-                raise RuntimeError(f"Missing normal talk style: {voice['name']}")
+                raise RuntimeError(f"Missing normal talk style: {voice['name']}; actual styles={speaker['styles']!r}")
             style = normal[0]['id']
             info = json.loads(request('/speaker_info?' + urllib.parse.urlencode({'speaker_uuid': speaker['speaker_uuid']})))
             policy = info.get('policy')
@@ -285,7 +287,7 @@ def generate_voicevox(cache, out):
                 raw.write_bytes(request(f'/synthesis?speaker={style}&enable_interrogative_upspeak=true', query, 'POST'))
                 write_json(out / 'queries' / f"{sentence['id']}-{voice['id']}.json", query)
                 records.append({**sentence, **voice, **encode(raw, out / 'audio' / f"{sentence['id']}-{voice['id']}.mp3"),
-                                'speakerUuid': speaker['speaker_uuid'], 'styleId': style, 'styleName': 'ノーマル', 'speedScale': 0.9})
+                                'speakerUuid': speaker['speaker_uuid'], 'styleId': style, 'styleName': 'ノーマル', 'styleType': normal[0].get('type', 'talk'), 'speedScale': 0.9})
                 print(f"generated {sentence['id']}-{voice['id']}", flush=True)
         write_json(out / 'voicevox-results.json', {'engineVersion': version, 'cpuOnly': True, 'clientRequests': calls, 'records': records})
     finally:

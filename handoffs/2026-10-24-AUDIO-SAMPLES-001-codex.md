@@ -12,3 +12,9 @@
 
 - run40070931508，head afe5e458：提取五句通过；runner未预装ffmpeg，工具检查立即exit1。没有下载模型或执行合成，不作为音频通过证据。
 - 临时runner显式安装Ubuntu官方免费ffmpeg、7zip、venv与编译工具，保留实际版本及ffmpeg/7zip版权许可。只用于样本生成，不把工具（包括GPL/LGPL实现）代码并入App或仓库，不产生服务费用。
+
+## 第二轮与版本冻结
+
+- run40071049200，head70d9b4b：工具、Python环境、固定模型/CPU引擎/字典校验成功；Kokoro10段已生成。VOICEVOX在麒ヶ島宗麟正常style筛选处停止；未把该轮写成整项通过。artifact12551795413 SHA256 b30fd8ceb0e786c14551a3ea329e8b7b7652692c2646555abe40bf11cbda26c0校验通过，暂存scratch。
+- 固定0.26.0的SpeakerStyle还定义streaming_talk，并明确支持常规audio_query/synthesis；旧筛选只接受talk过严，现同时接受这两种正式talk类型，仍拒绝唱歌类型，并保存三个角色的原始speakers元数据。若仍不匹配，会打印实际style并失败。
+- 两声音及UniDic完整sha已从实得产物固定；Python全部实际版本存audio-requirements.lock。修正字典许可收集：COPYING仅是三许可选择说明，BSD文件名无LICENSE关键字，现在明确保留BSD原文并要求存在；仍只选BSD许可用于临时字典，不把数据或工具代码并入App。

@@ -7,6 +7,7 @@ on:
       - scripts/ci/audio_samples.py
       - scripts/ci/audio_sentences.mjs
       - scripts/ci/audio-requirements.txt
+      - scripts/ci/audio-requirements.lock
       - .github/workflows/audio-samples.yml
   workflow_dispatch:
 permissions:
@@ -58,7 +59,7 @@ jobs:
           "$RUNNER_TEMP/audio-venv/bin/python" -m pip install --disable-pip-version-check 'pip==25.1.1'
           "$RUNNER_TEMP/audio-venv/bin/python" -m pip install --disable-pip-version-check --report "$RUNNER_TEMP/audio-output/torch-install-report.json" --index-url https://download.pytorch.org/whl/cpu 'torch==2.7.1+cpu'
           printf '%s\n' 'torch==2.7.1+cpu' > "$RUNNER_TEMP/audio-constraints.txt"
-          "$RUNNER_TEMP/audio-venv/bin/python" -m pip install --disable-pip-version-check --report "$RUNNER_TEMP/audio-output/pip-install-report.json" -c "$RUNNER_TEMP/audio-constraints.txt" -r scripts/ci/audio-requirements.txt
+          "$RUNNER_TEMP/audio-venv/bin/python" -m pip install --disable-pip-version-check --report "$RUNNER_TEMP/audio-output/pip-install-report.json" -c "$RUNNER_TEMP/audio-constraints.txt" -r scripts/ci/audio-requirements.lock
           "$RUNNER_TEMP/audio-venv/bin/python" -m pip freeze --all > "$RUNNER_TEMP/audio-output/requirements-freeze.txt"
           "$RUNNER_TEMP/audio-venv/bin/python" -m pip check
       - name: Download only fixed public models and official CPU engine; verify hashes
