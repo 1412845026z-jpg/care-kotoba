@@ -3,7 +3,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { setup, seedStorage, openScene, gotoApp, api, PHONE } from './helpers.mjs';
+import { setup, seedStorage, openScene, gotoApp, api, PHONE, EXTERNAL, hideDevErrorOverlay, devErrorOverlayPresent, simulateDevErrorOverlay } from './helpers.mjs';
 
 let env;
 before(async () => { env = await setup({ env: { CK_AI_FURIGANA: '1' } }); await env.requireAiAccess(); });
@@ -204,10 +204,13 @@ test('notes whose text is an Object.prototype name render as plain text (furigan
 test('a crash in one screen shows a recoverable message instead of blanking the app', async () => {
   const page = await env.page();
   await page.addInitScript(() => { window.__CK_CRASH_TEST__ = 'notes'; });
+  await hideDevErrorOverlay(page);
   await gotoApp(page, env.baseUrl);
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   const box = page.locator('.screen-error[data-screen="notes"]');
   await box.waitFor();
+  if (!EXTERNAL) await simulateDevErrorOverlay(page); // harness: prove the dev overlay cannot block the checks below
+  else if (await devErrorOverlayPresent(page)) console.log('# dev server error overlay present after the deliberate crash (hidden for this test; production builds have none)');
   assert.match(await box.innerText(), /この画面を表示できませんでした/);
   assert.equal(await page.locator('.mobile-nav').count(), 1, 'navigation is still there');
   await page.locator('.mobile-nav button', { hasText: 'シーン' }).click();
@@ -218,22 +221,25 @@ test('a crash in one screen shows a recoverable message instead of blanking the 
   await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
   await box.getByRole('button', { name: 'ホームに戻る' }).click();
   await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
-  assert.deepEqual(page.errors.filter((e) => !/crash test: notes|screen-error/.test(e)), []);
+  assert.deepEqual(page.errors.filter((e) => !/crash test: notes|screen-error|The above error occurred/.test(e)), []);
 });
 
 test('a crash inside practice can be closed without losing the app', async () => {
   const page = await env.page();
   await page.addInitScript(() => { window.__CK_CRASH_TEST__ = 'practice'; });
+  await hideDevErrorOverlay(page);
   await openScene(page, env.baseUrl, '入浴を断られたとき');
   await page.getByRole('button', { name: /まずはデモで操作を体験/ }).click();
   const box = page.locator('.screen-error.overlay[data-screen="practice"]');
   await box.waitFor();
+  if (!EXTERNAL) await simulateDevErrorOverlay(page);
+  else if (await devErrorOverlayPresent(page)) console.log('# dev server error overlay present after the deliberate crash (hidden for this test; production builds have none)');
   await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
   await box.getByRole('button', { name: '練習を閉じる' }).click();
   await page.locator('.screen-error').waitFor({ state: 'detached' });
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   await page.locator('h1', { hasText: 'ことばノート' }).waitFor();
-  assert.deepEqual(page.errors.filter((e) => !/crash test: practice|screen-error/.test(e)), []);
+  assert.deepEqual(page.errors.filter((e) => !/crash test: practice|screen-error|The above error occurred/.test(e)), []);
 });
 
 test('voice check: microphone, speaker, server and WebRTC are checked without any AI call', async () => {
