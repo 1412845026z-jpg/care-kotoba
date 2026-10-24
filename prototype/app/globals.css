@@ -226,3 +226,42 @@ ruby{ruby-align:center}
 .correction-card .line-drill button{font-size:14px;justify-content:center}.correction-card .line-drill .btn-primary{color:#fff;background:#6c55a8}.correction-card .line-drill .btn-primary:disabled{opacity:.55}.correction-card .line-drill .btn-white{color:#4b3f63}.correction-card .line-drill .text-button{color:#5f3f8f;font-size:13px;min-height:32px;padding:0}.correction-card .line-drill .icon-button{color:#5f5577;font-size:20px;min-width:36px;min-height:36px}
 .session-time.time-warning{color:#8a3b12;background:#fff1e0;border-radius:8px;padding:2px 8px;font-weight:600}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ---- A11Y-002 (2026-10-24, Claude): the same readability fixes for the desktop layout (sidebar,
+   right column, desktop-only labels) and tap/click targets at every width. Generated colours keep the
+   hue (verification/A11Y-001/audit.mjs with CK_AUDIT_VIEWPORT=1280x860). Remove to restore. */
+.app-shell > .page-footer > small{color:#7a6a88} /* 1.92 -> 4.7 */
+.app-shell > .topbar > .desktop-breadcrumb{color:#777185} /* 2.5 -> 4.68 */
+.hero-visual > .float-bubble.float-one > .tiny-avatar{color:#715b7d} /* 2.35 -> 4.64 */
+.install-card > span > b{color:#7b6b8a} /* 2.89 -> 4.63 */
+.install-card > span > small{color:#806794} /* 2.17 -> 4.65 */
+.phrase-card > div > .text-button{color:#7f684e} /* 2.36 -> 4.68 */
+.practice-root.feedback-root > .practice-top > .session-tag{color:#8c63a6} /* 2.26 -> 4.72 */
+.profile-mini > span > small{color:#797185} /* 2.67 -> 4.65 */
+.right-column > .daily-card > .text-button{color:#7c68a0} /* 3 -> 4.83 */
+.right-column > .daily-card > h4{color:#846c90} /* 4.32 -> 4.64 */
+.right-column > .daily-card > p{color:#856996} /* 3.12 -> 4.71 */
+.right-column > .phrase-card > .eyebrow.subtle{color:#726882} /* 4.32 -> 4.65 */
+.right-column > .phrase-card > blockquote{color:#796955} /* 3.12 -> 4.71 */
+.right-column > .phrase-card > p{color:#7c6a50} /* 2.04 -> 4.63 */
+.search-row > .filter-button > span{color:#7f6c8e} /* 2.66 -> 4.73 */
+.week-bars > div > .today{color:#8466a8} /* 3.87 -> 4.72 */
+.week-bars > div > small{color:#7f6b8c} /* 2.21 -> 4.79 */
+.week-total > strong > small{color:#7f6c8b} /* 4.24 -> 4.75 */
+.weekly-card > .card-topline > span{color:#7d6f87} /* 2.66 -> 4.67 */
+.weekly-card > .week-total > span{color:#806d91} /* 2.37 -> 4.65 */
+.weekly-card > .week-total > strong{color:#7f6c8b} /* 4.24 -> 4.75 */
+div > .sidebar > .workspace-label{color:#77718b} /* 2.37 -> 4.65 */
+nav > .nav-item > span{color:#7b6f83} /* 4.4 -> 4.73 */
+nav > .nav-item.active > span{color:#5b4399}
+.lang-button{min-height:32px}
+.daily-card .text-button,.daily-card button,.phrase-card .text-button{min-height:32px}
+.quick-suggestions button{min-height:32px}.message-edit{min-height:28px}
+.correction-card>div>button,.note-actions button{min-height:32px}
+.inline-coaching button{min-width:32px;min-height:32px}
+.workspace-label,.profile-mini small,.desktop-breadcrumb,.week-bars small,.week-total span,.weekly-card .card-topline span,.install-card small,.page-footer small,.session-tag,.phrase-card p,.daily-card p,.phrase-card .eyebrow{font-size:11px}
+.week-bars small{font-size:11px}
+.nav-item>span{color:#6f6480}.nav-item.active>span{color:#5b4399}
+.daily-card .daily-checklist div{color:#73608a;font-size:11px}
+.sidebar button:not(.nav-item):not(.brand-button){min-height:32px}
+nav > .nav-item > span{color:#675c79}nav > .nav-item.active > span{color:#5b4399}
