@@ -87,5 +87,59 @@ jobs:
       - name: Confirm dependency manifests were not rewritten
         run: git diff --exit-code -- package.json pnpm-lock.yaml pnpm-workspace.yaml
 
-
-
+  a11y:
+    name: Accessibility (offline gates + informational axe)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: prototype
+    env:
+      CI: "true"
+      WRANGLER_SEND_METRICS: "false"
+      CLOUDFLARE_CF_FETCH_ENABLED: "false"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Use pinned pnpm
+        run: |
+          node --input-type=module <<'JS'
+          import { execFileSync } from 'node:child_process';
+          import { readFileSync } from 'node:fs';
+          const [major, minor] = process.versions.node.split('.').map(Number);
+          if (major !== 22 || minor < 13) throw new Error('CI requires Node 22 >=22.13');
+          const { packageManager } = JSON.parse(readFileSync('package.json', 'utf8'));
+          if (!/^pnpm@\d+\.\d+\.\d+$/.test(packageManager)) throw new Error('Expected pinned pnpm');
+          execFileSync('corepack', ['enable'], { stdio: 'inherit' });
+          execFileSync('corepack', ['prepare', packageManager, '--activate'], { stdio: 'inherit' });
+          JS
+      - name: Install frozen dependencies and Chromium
+        run: |
+          node scripts/ci-step.mjs pnpm install --frozen-lockfile
+          pnpm exec playwright install chromium
+      - name: Audit two viewports and report axe findings (loopback mocks only)
+        working-directory: .
+        run: node scripts/ci/run_a11y.mjs --out a11y-results
+      - name: Add accessibility summary
+        if: ${{ always() }}
+        working-directory: .
+        run: |
+          if [ -f a11y-results/summary.md ]; then cat a11y-results/summary.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Keep accessibility reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: a11y-${{ github.sha }}
+          path: a11y-results/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Confirm dependency manifests were not rewritten
+        run: git diff --exit-code -- package.json pnpm-lock.yaml pnpm-workspace.yaml

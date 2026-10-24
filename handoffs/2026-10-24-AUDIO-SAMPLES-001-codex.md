@@ -27,3 +27,7 @@
 - 两个巨大pip原始报告内含上游README/code examples，未复制入仓库；转成tool-install-lock.json，保留版本、下载hash、依赖约束与原报告sha。原artifact manifest另存runner-SHA256SUMS.json；当前文件校验单独SHA256SUMS.json，音频未修改。
 - workflow改manual-only并限定任务分支，Python实际版本及声音/UniDic完整sha固定；没有自动付费步骤。最终工具元数据整理不改变已生成音频或App。无模型/引擎二进制进入仓库、无App新依赖、付费API、部署或hooks。
 - 试听入口和候选意见见verification/AUDIO-SAMPLES-001/README.md；本环境不支持音频输入，未虚构听感。用户下一步可逐句选择声音。正式全量AUDIO-001/App接入及付费路径仍blocked。
+
+## 已合并（后序A11Y任务确认）
+
+最终head7ef59a85acb44c49995f94d61df193431a2559c0，最终常规CI40072582215成功；#48以merge commit137ff8aadfc3f6cebca9a4761ae0f922113aa6f6合并。样本与许可已进入main；真实试听仍未完成。
