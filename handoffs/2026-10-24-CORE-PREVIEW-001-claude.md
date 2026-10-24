@@ -88,3 +88,33 @@ Codex ENV-004（run 40048821852，真实 vinext dev）中两个故意制造崩�
 
 - GPT 改完内容并合并后，Claude 重新生成，再看一遍草稿画面。
 - 用户授权 API 费用以后（MODEL-001），用固定样本检查真实模型：隐藏信息有没有提前泄露，施压时会不会让步。这些检查可以写进 `evals/`，由 Codex 负责。
+
+## 2026-10-24 12:00 之后：吸收最新 main 并重新生成
+
+Codex 已经把 #17–#30、#23、CI-002（#32）、SEC-001（#33）、CONTENT-004（#34）、ENV-004（#31、#36）合进 main（`c7a810a`），见 handoffs/2026-10-24-ENV-004-final-codex.md。本 PR（#35）没有被合并。
+
+| 步骤 | 提交 | 说明 |
+| --- | --- | --- |
+| 合并 main | `55b862c` | 唯一冲突在 PROJECT_STATE.md：以 main 的版本为准，只加回本任务的分工说明、用户决定和最近交接 |
+| 重新生成 | `83b701c` | 从 CONTENT-004 的内容重新生成（12 个场景，0.2.0 / 0.2.1，sha256 `396444ed86eeacf7`，与 Codex 在 verification/CONTENT-004/post-merge-generator.json 记录的指纹一致） |
+
+`83b701c` 的具体内容：
+
+- 显示用的人称：内容把「学員」改成了「学習者」。`learner_known_ja` 在应用里是给学员本人看的场景说明，所以浏览器端显示为「あなたは…」。服务端新增 `learnerKnown`，保留内容原文，供 AI 指示使用（指示里写「あなた」会被理解成 AI 角色自己）。unit 测试检查了这两点。
+- 注音：新增 13 个例句。P04 新例句的「夜中」改为よなか。P01 标题改成「痛みの訴えを本人の言葉のまま報告する」，原来「原話」的注音更正已经用不到，删除。共 430 句，`--check` 通过。
+
+验证（`83b701c`，Claude 沙箱，模拟 AI）：
+
+- static 0 错误；
+- unit 81/81，其中 main 71 条、本 PR 10 条；
+- e2e 47/47，其中 main 40 条、本 PR 7 条；
+- `node tools/core-scenarios/generate.mjs --check` 通过；
+- `node tools/furigana/generate.mjs --kuromoji … --check` 通过。
+
+GitHub 的常规 CI 已经包含 static、unit 和 e2e（CI-002），推送后以 CI 结果为准。真实 vinext dev 和 SEC-001 的 CSP 在本分支上还没有复测，需要 Codex 用固定 SHA 运行 ENV 复测。
+
+### 下一步
+
+- Codex：用本 PR 的最新 head 做固定 SHA 复测（offline、real-dev，以及 SEC-001 的安全头检查）。通过后用 merge commit 合并。
+- 内容再改时：先运行 `node tools/core-scenarios/generate.mjs`，再重新生成注音并检查机器读音（「夜中」「一回」「二人」「後（あと）」最容易读错）。
+

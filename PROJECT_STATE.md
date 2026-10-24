@@ -90,7 +90,7 @@
 | ENV-004 | 最新PR #30标准runner与真实dev复测、顺序合并记录 | Codex | merged | PR #31，merge2e9b5c5；最终证据/状态补记在codex/ENV-004-state | 固定主干4a851fd标准run40052153140：static0/unit71/离线40/真实dev36通过4明确跳过；全部指定PR顺序合并，见ENV-004-final交接 |
 | CONTENT-004 | 按CONTENT-REVIEW-001修订场景/术语/评测 | Codex | merged | PR #34，merge4a851fd | 12场景/34术语/84转写+12配对=96评测；字段结构保留；提交后数据已跑生成器与--check（隔离环境），预览/注音接入仍归Claude；见CONTENT-004交接 |
 | SEC-001 | docs/08 #16的Worker CSP等响应头 | Codex | merged | PR #33，merge86ebc70 | 完整业务树unit71/离线40/真实dev36通过4有原因跳过，7项CSP/API/注音/麦克风断言及模拟WebRTC通过；见SEC-001交接 |
-| CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude | review_ready | PR #35，claude/CORE-PREVIEW-001 @ff8acc2，未合并 | 新head的生成器与已测78e25dd逐字节相同；Codex未验收整个预览分支。需吸收最新main、重生模块/注音并交付新SHA复核 |
+| CORE-PREVIEW-001 | 默认隐藏的「コア練習（草稿）」入口与生成器；服务端按隐藏信息、分支、反馈规则生成角色指示，隐藏信息不进浏览器 | Claude | review_ready | PR #35，`claude/CORE-PREVIEW-001`，已吸收 main `c7a810a` 并用 CONTENT-004 内容重新生成（`83b701c`） | handoffs/2026-10-24-CORE-PREVIEW-001-claude.md；@`83b701c` 离线 static 0 / unit 81 / e2e 47（模拟 AI）；待 Codex 固定 SHA 复测（含 real-dev 与 SEC-001 安全头）；真实模型是否遵守未验证 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
