@@ -9,7 +9,7 @@
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
 | 本轮核对的业务集成提交 | `dc9d60c980bdb1f8f5cd0a7510ee89f845a53ad8`（#43→#44顺序merge；#44固定源a567b8d，应用树37f5c2f2） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#40免费语音固定源ENV/CSP与无API key探测已通过；docs/10免费手机方案及证据已合并PR #41（cecef27）；本补记只改文档状态） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#43/#44固定源审查与字体/SEC通过；#47 ts-fsrs正式依赖通过常规CI并合并；免费音频样本处理中） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -58,9 +58,11 @@
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
-| REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | review_ready | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，常规CI待结果 |
+| REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
 | REVIEW-001 | 间隔复习交互与功能实现 | Claude | queued | 待REVIEW-DEP-001合并 | Codex本轮不改app/components/lib/tests |
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude | review_ready | `claude/START-FLOW-001`，PR #46，head6d22f31 | 未在本轮授权合并范围，保持开放；handoffs/2026-10-24-START-FLOW-001-claude.md |
+| AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | in_progress | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；标准免费CPU runner本地引擎，产物待生成；不接入App |
+| A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | queued | `codex/A11Y-CI-001`（待步骤3完成） | 用户授权axe4.14.0开发依赖；不修改audit.mjs或prototype/tests |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | merged | [PR #5](https://github.com/1412845026z-jpg/care-kotoba/pull/5)，head `a6c6f58`；合并 `0420ff7` | ENV-003（Codex，@`3a3f1a9`）真实install/tsc/build/static、unit34/34、离线22/22、真实dev21通过1跳过；之后的 COOKIE-ENCODING-001 修复（`89d8ad2`）离线 static 0 错误、unit 37/37、e2e 22/22，PR CI run 39998125919 通过。真实AI/真机未验证 |

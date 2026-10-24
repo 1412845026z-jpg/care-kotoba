@@ -68,3 +68,9 @@ CONTENT-002只记录常用词形、读音与出处页码，学习释义、虚构
 来源：[npm精确版本](https://www.npmjs.com/package/ts-fsrs/v/5.4.2)、[上游](https://github.com/open-spaced-repetition/ts-fsrs)。2026-10-24 npm latest正式版为5.4.2，6.0.0-beta仅预发布，本次不采用。MIT原文取自经过npm sha512 integrity校验的正式tarball，保留在 `docs/licenses/TS_FSRS_LICENSE.txt`；出处、gitHead、完整性和artifact记录见 `verification/REVIEW-DEP-001/package-evidence.json`。
 
 `prototype/package.json`固定 `ts-fsrs: 5.4.2`；锁文件只新增该依赖的importer、package与snapshot，原有解析逐项保持。没有新增传递依赖。包代码不修改，商业分发需随产品保留MIT版权与许可声明。REVIEW-001的交互、存储和复习调度仍由Claude实现；安装依赖不代表功能已经完成。
+
+## AUDIO-SAMPLES-001（样本，不接入产品）
+
+Kokoro-82M v1.0固定HF revision `8542409da2986c0ab5d41b3cf0411f7a58caab38`（Apache-2.0），用kokoro0.9.4 / misaki[ja]0.9.4和本地CPU；日语候选jf_alpha、jm_kumo。VOICEVOX engine0.26.0固定官方CPU发行包完整SHA-256（源码LGPL-3.0/另行授权），仅作临时隔离工具；声音选麒ヶ島宗麟、雀松朱司、玄野武宏，均正常样式。每个角色另有条款，必须分别署名 `VOICEVOX:麒ヶ島宗麟`、`VOICEVOX:雀松朱司`、`VOICEVOX:玄野武宏`，不能把引擎许可等同于音频或角色图像许可。
+
+逐来源、商业使用条件、角色条款链接、许可原文与实际生成记录见 `verification/AUDIO-SAMPLES-001/README.md` 及其 `licenses/`（生成后填入）。模型/引擎/依赖代码不进入App或仓库；临时工具环境含GPL相关包时也不并入App，生成音频许可单独核对。无远程推理API、无费用、无部署。当前样本任务进行中，不把技术波形检查写成已经试听，也不把官方角色定位写成实际日本语质量验收。
