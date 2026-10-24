@@ -631,3 +631,27 @@ ruby rt{opacity:1}
 .basic-done-note{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--mint-ink)}
 @media(max-width:560px){.basic-finish .btn{flex:1}}
 .basic-modal .scene-disclaimer{color:var(--muted)}
+
+/* LEGAL-UI-001｜ライセンスとデータの扱い */
+.about-main .page-title p{word-break:auto-phrase}
+.about-section{margin-top:28px}
+.about-section h2{font-size:19px;color:var(--ink);margin-bottom:12px}
+.about-flows,.about-notices{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.about-flows li{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.about-flow-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px 12px;flex-wrap:wrap}
+.about-flow-head b{font-size:14px;color:var(--ink)}
+.about-flow-head span{font-size:12px;font-weight:700;color:var(--violet);background:var(--violet-soft);border-radius:999px;padding:2px 9px}
+.about-flows p{font-size:13px;line-height:1.85;color:var(--ink-2);margin-top:6px}
+.about-zh{color:var(--muted)!important}
+.about-note{font-size:13px;line-height:1.8;color:var(--muted);margin-bottom:10px}
+.about-notices details{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.about-notices summary{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:52px;padding:10px 16px;cursor:pointer;list-style:none}
+.about-notices summary::-webkit-details-marker{display:none}
+.about-notices summary b{font-size:14px;color:var(--ink)}
+.about-notices summary small{font-size:12px;color:var(--muted)}
+.about-license{font-size:12px;font-weight:700;color:var(--mint-ink);background:var(--mint-soft);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.about-role,.about-url{font-size:13px;color:var(--ink-2);padding:0 16px;margin-top:4px;word-break:break-all}
+.about-notices pre{margin:10px 16px 16px;padding:12px;background:var(--bg);border-radius:10px;font-size:12px;line-height:1.6;color:var(--ink-2);white-space:pre-wrap;word-break:break-word;max-height:320px;overflow:auto}
+.settings-about{margin-top:6px;min-height:40px}
+.footer-about{font-size:12px;min-height:32px}
+.about-flow-head b{line-height:1.6}

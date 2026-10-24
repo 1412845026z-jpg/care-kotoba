@@ -117,6 +117,12 @@ try {
   await p4.getByRole('button', { name: '答えを見る' }).click();
   await p4.locator('.basic-answer').waitFor();
   await audit(p4, 'basic-practice');
+  // LEGAL-UI-001: the about page with one notice opened.
+  await p4.keyboard.press('Escape');
+  await p4.locator('.basic-modal').waitFor({ state: 'detached' }).catch(() => {});
+  await p4.locator('.footer-about').click();
+  await p4.locator('.about-notices summary').first().click();
+  await audit(p4, 'about');
   // CORE-PREVIEW-001: the optional core drafts (hidden by default; turned on via prefs here).
   const p3 = await env.page(ctx);
   await p3.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true, corePreview: true })));
