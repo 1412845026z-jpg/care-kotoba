@@ -123,6 +123,28 @@ try {
   await p4.locator('.footer-about').click();
   await p4.locator('.about-notices summary').first().click();
   await audit(p4, 'about');
+  // I18N-001: support-language glosses (Burmese: taller script in the bottom nav; Vietnamese: device font).
+  const p5 = await env.page(ctx);
+  await p5.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'my', level: 'gentle', goal: 5, plan: 'personal', furigana: true })));
+  await gotoApp(p5, env.baseUrl);
+  await audit(p5, 'home-my');
+  await openScene(p5, env.baseUrl, '入浴を断られたとき');
+  await audit(p5, 'scene-modal-my');
+  await p5.keyboard.press('Escape');
+  await p5.locator('.scene-modal').waitFor({ state: 'detached' }).catch(() => {});
+  await p5.locator('.topbar .lang-button').click();
+  await p5.getByRole('button', { name: /この端末の学習データを削除/ }).click();
+  await p5.locator('.clear-confirm').scrollIntoViewIfNeeded();
+  await audit(p5, 'settings-my');
+  const p6 = await env.page(ctx);
+  await p6.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'vi', level: 'gentle', goal: 5, plan: 'personal', furigana: true })));
+  await gotoApp(p6, env.baseUrl);
+  await nav(p6, '基礎');
+  await p6.locator('.basic-topic').first().click();
+  await p6.locator('.basic-scene-row').nth(1).click();
+  await p6.getByRole('button', { name: /答えを見る/ }).click();
+  await p6.locator('.basic-answer').waitFor();
+  await audit(p6, 'basic-practice-vi');
   // CORE-PREVIEW-001: the optional core drafts (hidden by default; turned on via prefs here).
   const p3 = await env.page(ctx);
   await p3.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true, corePreview: true })));

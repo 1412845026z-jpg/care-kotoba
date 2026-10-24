@@ -43,7 +43,10 @@ test('basic course: 24 topics, scene practice hides the answer until asked, devi
   await modal.locator('.basic-answer').waitFor();
   assert.match(await modal.locator('.basic-answer .basic-line p').textContent(), /失礼/);
   assert.ok(await modal.locator('.basic-alts li').count() >= 1, 'alternative answers listed');
-  assert.match(await modal.locator('.basic-check').textContent(), /\S/, 'Chinese point shown (support language zh)');
+  // Default is Japanese only: no Chinese explanation and no translation toggle.
+  assert.equal(await modal.locator('.basic-check').count(), 0);
+  assert.equal(await modal.locator('[lang="zh-Hans"]').count(), 0);
+  assert.equal(await modal.locator('.basic-tr-toggle').count(), 0);
   const spoken = await page.evaluate(() => window.__spoken);
   assert.equal(spoken.length, 1);
   assert.equal(spoken[0].lang, 'ja-JP');
@@ -91,6 +94,39 @@ test('basic course: practised scenes and saved lines are kept; notes link back t
   await page.getByRole('button', { name: '削除する' }).click();
   await page.waitForFunction(() => Object.keys(JSON.parse(localStorage.getItem('ck-basic') || '{}')).length === 0);
   assert.deepEqual(page.errors, []);
+});
+
+test('basic course with a support language: Chinese explanations where they exist; English learners are told there are none yet', async () => {
+  const zh = await env.page();
+  await zh.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true })));
+  await gotoApp(zh, env.baseUrl);
+  await openBasic(zh);
+  assert.equal(await zh.locator('.basic-topic [lang="zh-Hans"]').count(), 24, 'topic names in Chinese');
+  assert.equal(await zh.locator('.basic-nosupport').count(), 0);
+  await zh.locator('.basic-topic', { hasText: '挨拶・入退室' }).click();
+  await zh.locator('.basic-scene-row', { hasText: '入ってもいいですか' }).click();
+  const modal = zh.locator('.basic-modal');
+  assert.equal(await modal.locator('.basic-goal').getAttribute('lang'), 'zh-Hans');
+  await modal.getByRole('button', { name: '訳を表示' }).click();
+  assert.equal(await modal.locator('.basic-tr[lang="zh-Hans"]').count(), 2);
+  await modal.getByRole('button', { name: /答えを見る/ }).click();
+  assert.match(await modal.locator('.basic-check').textContent(), /\S/);
+  assert.equal(await modal.locator('.basic-check').getAttribute('lang'), 'zh-Hans');
+  assert.equal(await modal.locator('.btn-gloss[lang="zh-Hans"]').count() >= 2, true, 'save / done buttons glossed');
+
+  const en = await env.page();
+  await en.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'vi', level: 'gentle', goal: 5, plan: 'personal', furigana: true })));
+  await gotoApp(en, env.baseUrl);
+  await openBasic(en);
+  assert.equal(await en.locator('.basic-nosupport [lang="vi"]').count(), 1, 'Vietnamese: no explanations yet, said in Vietnamese');
+  assert.equal(await en.locator('[lang="zh-Hans"]').count(), 0, 'Chinese explanations are not shown to a Vietnamese learner');
+  await en.locator('.basic-topic', { hasText: '挨拶・入退室' }).click();
+  await en.locator('.basic-scene-row', { hasText: '入ってもいいですか' }).click();
+  const m2 = en.locator('.basic-modal');
+  assert.equal(await m2.locator('.basic-goal, .basic-tr-toggle').count(), 0);
+  assert.equal(await m2.locator('.basic-turn p [lang="vi"]').count(), 1, 'the prompt is glossed in Vietnamese');
+  assert.equal(await m2.locator('.basic-turn .btn-gloss').getAttribute('lang'), 'vi');
+  assert.deepEqual([...zh.errors, ...en.errors], []);
 });
 
 test('basic course: corrupted progress data does not break the page', async () => {
