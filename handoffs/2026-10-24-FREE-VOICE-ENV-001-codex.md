@@ -29,3 +29,10 @@ Independent [run40063459564](https://github.com/1412845026z-jpg/care-kotoba/acti
 - Removed the obsolete active plan to configure an AI key and execute paid testing. No deployment or provider-key command was added to CI. T1–T14, live roleplay --yes and MODEL-001 remain blocked; F1–F10 is queued for physical-device results, C also waits for deployment authorization.
 - `leak_markers_ja` is deferred by the latest user instruction; it supersedes the earlier proposal. No content schema change.
 - Documentation/tooling/evidence integration preserves the reviewed application/content/dependency trees. This does not verify actual phone/browser-provider behaviour, Access setup, cloud Free performance or deployment.
+
+
+## Evidence/docs integration completed
+
+PR #41 merged as `cecef274efa790214812d26fe24d252772dc9095` after final routine CI40063924666, security40063924669 and pinned-source40063924681 all passed. docs/10, the verifier/probes, raw reports and blocked/free task split are in main. The application/content/dependency objects still match reviewed c663f56 exactly.
+
+This follow-up changes only PROJECT_STATE.md and this handoff, after confirming #41 actually entered main. FREE-VOICE-ENV-001 is marked merged; DEVICE-FREE-001 remains queued for real F1–F10, paid work remains blocked, C remains undeployed and the schema proposal remains deferred.
