@@ -6,7 +6,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[2]
-LOCALES = {"en", "zh", "vi", "my", "id"}
+LOCALES = {"en", "zh", "vi", "ms", "my", "id"}
 SCRIPTS = {"zh": r"[\u4e00-\u9fff]", "my": r"[\u1000-\u109f]"}
 FIELDS = {"title", "goal", "context", "check"}
 

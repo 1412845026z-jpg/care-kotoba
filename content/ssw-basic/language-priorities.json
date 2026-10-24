@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "date_jst": "2026-10-24",
+  "learning_locale": "ja",
+  "default_locale": "ja",
+  "primary_support_locales": ["zh", "vi", "ms", "id", "my"],
+  "optional_support_locales": ["en"],
+  "language_selection": "explicit_user_choice",
+  "native_names": {
+    "ja": "日本語",
+    "zh": "中文",
+    "vi": "Tiếng Việt",
+    "ms": "Bahasa Melayu",
+    "id": "Bahasa Indonesia",
+    "my": "မြန်မာ",
+    "en": "English"
+  },
+  "notes": [
+    "Japanese remains the language being learned. Users choose their interface/support language; nationality does not select a language automatically.",
+    "Malay uses ms. Burmese uses my. Do not remap existing my preferences to Malay or substitute Indonesian text for Malay.",
+    "English remains an optional supported language. Prioritize the five primary support languages in new content and UI work.",
+    "This file records content priorities, not proof that the App consumes every locale or that translations are professionally reviewed."
+  ]
+}

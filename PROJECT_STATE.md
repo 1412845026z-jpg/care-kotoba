@@ -57,6 +57,9 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
+| LOCALE-PRIORITY-001 | 目标语言优先zh/vi/ms/id/my，英语可选靠后 | Codex | review_ready | `codex/LOCALE-PRIORITY-001`，仅新语言要求/内容工具 | content/ssw-basic/language-priorities.json；ms=马来语，my=缅甸语，用户自行选择 |
+| I18N-PRIORITY-002 | App加入独立ms、目标语言排序与关键UI草稿覆盖 | Claude | queued | 见本日LOCALE-PRIORITY-001交接 | 保留旧my/en设置，不用国籍推断；生成器SUPPORT/SCRIPT、语名与7语言验证同步 |
+| SSW-PRIORITY-PACKS-001 | vi/ms/id/my基础96场辅助内容草稿 | Codex | in_progress | Codex源语言包范围，不改App | 四语言并行编写，实际交付后逐项登记；未审稿不称准确或全量App支持 |
 | COORD-CLAUDE-002 | 按用户要求通过共享仓库双向分配任务 | Codex | review_ready | `codex/COORD-CLAUDE-002`；基于main，仅任务文档 | 见本日handoff；不包含未经授权公开的迁移代码/素材 |
 | LICENSE-UI-002 | 复核客户端固定依赖许可清单、完整原文和键盘访问 | Claude | queued | 从最新适合的Claude集成分支领取 | 见COORD-CLAUDE-002；scheduler/plugin-rsc的浏览器输出、MIT原文、许可滚动键盘可达 |
 | I18N-CONTENT-QA | 语言包主题ID校验和实际翻译覆盖测试 | Claude | queued | 保留I18N-001结构，与内容方协调 | 真实语言包不能被固定zh-only断言拒绝，未知topics键应明确报错 |

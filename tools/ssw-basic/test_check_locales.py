@@ -61,6 +61,19 @@ class LocaleValidation(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "duplicate JSON key"):
                 load_json(path)
 
+    def test_malay_and_burmese_are_distinct_supported_languages(self):
+        malay = {"locale": "ms", "status": "draft_unreviewed",
+                 "topics": {"T01": {"title": "Sapaan"}},
+                 "scenes": {"SSW-S01": {"title": "Minta izin", "goal": "Minta izin dahulu.",
+                                        "context": "Bilik rekaan.", "check": "Tunggu jawapan.",
+                                        "lines": ["Bolehkah saya masuk?", "Silakan masuk."]}}}
+        burmese = {"locale": "my", "status": "draft_unreviewed",
+                   "scenes": {"SSW-S01": {"lines": ["ဝင်လို့ရပါသလား။"]}}}
+        self.assertEqual(validate_pack(malay, self.catalog, "ms", True)[0], [])
+        self.assertEqual(validate_pack(burmese, self.catalog, "my")[0], [])
+        self.assertTrue(validate_pack(malay, self.catalog, "my")[0])
+        self.assertTrue(validate_pack(burmese, self.catalog, "ms")[0])
+
 
 if __name__ == "__main__":
     unittest.main()
