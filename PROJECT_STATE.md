@@ -57,10 +57,11 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| COORD-CLAUDE-002 | 按用户要求通过共享仓库双向分配任务 | Codex | in_progress | `codex/COORD-CLAUDE-002`；基于main，仅任务文档 | 见本日handoff；不包含未经授权公开的迁移代码/素材 |
+| COORD-CLAUDE-002 | 按用户要求通过共享仓库双向分配任务 | Codex | review_ready | `codex/COORD-CLAUDE-002`；基于main，仅任务文档 | 见本日handoff；不包含未经授权公开的迁移代码/素材 |
 | LICENSE-UI-002 | 复核客户端固定依赖许可清单、完整原文和键盘访问 | Claude | queued | 从最新适合的Claude集成分支领取 | 见COORD-CLAUDE-002；scheduler/plugin-rsc的浏览器输出、MIT原文、许可滚动键盘可达 |
 | I18N-CONTENT-QA | 语言包主题ID校验和实际翻译覆盖测试 | Claude | queued | 保留I18N-001结构，与内容方协调 | 真实语言包不能被固定zh-only断言拒绝，未知topics键应明确报错 |
-| SSW-EN-001 | 基础96场英语辅助语言编辑草稿 | Codex | in_progress | 本地内容准备，按I18N语言包接口 | draft_unreviewed；保留日语原文，实际交付与App接入分别记录 |
+| SSW-EN-001 | 基础96场英语辅助语言编辑草稿 | Codex | review_ready | `codex/SSW-EN-001`；独立内容分支，不含迁移改动 | 24主题/96场/384句，draft_unreviewed；结构7测试和Claude生成器接口通过，App待Claude接入 |
+| I18N-EN-APP-001 | 消费英语语言包并验证多语言/英语回退 | Claude | queued | 基于I18N-001，按SSW-EN-001交接领取 | 先处理zh-only覆盖断言；重生数据、保留草稿标记；不改日语原文 |
 | I18N-001 | 日语注音优先、可选en/zh/vi/my/id辅助语言与界面 | Claude | queued | 从最新main创建`claude/I18N-001` | 用户2026-10-24最新要求；详见handoffs/2026-10-24-COORD-MEDIA-I18N-001-codex.md；先做可用语言架构与完整界面词条，内容缺译退回简明日语/英语，不冒称全量翻译 |
 | SCENE-AV-APP-001 | 场景图在上、对应对话在下与预生成音频接入 | Claude | queued | #57→#59→#60后从main独立分支 | 先读SCENE-AV-001真实3图/15音频manifest；媒体由Codex增补，App不负责合成；逐句/整段/停止、缺素材回退有据，不调用付费API |
 | FULL-MEDIA-001 | 96场景配图、384轮台词与192替代句实际音频增补 | Codex | in_progress | `codex/FULL-MEDIA-001`准备中 | 保留96场既有384轮/192替代文本；逐场独立图与角色/情绪音频；已完成3图/12轮+3对照，完整数量按实际文件登记 |
