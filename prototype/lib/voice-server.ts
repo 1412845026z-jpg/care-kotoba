@@ -18,3 +18,5 @@ export function turnDetection(get:Getter){
 }
 
 export async function sessionSecret(get:Getter){return deriveSecret(get('CK_SESSION_SECRET')||get('OPENAI_API_KEY')||'ck-unkeyed','ck-voice-session-v1');}
+/** CK_ASR_LOGPROBS=1 asks the Realtime session for transcription logprobs (recognition confidence). Off by default: unverified on real devices. */
+export function asrLogprobs(get:Getter){return ['1','true','on'].includes(String(get('CK_ASR_LOGPROBS')||'').toLowerCase());}

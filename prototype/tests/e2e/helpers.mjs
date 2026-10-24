@@ -126,11 +126,28 @@ export async function gotoApp(page, url) {
 
 export async function openScene(page, url, title) {
   await gotoApp(page, url);
-  await page.locator('.mobile-nav button', { hasText: 'シーン' }).click();
+  const mobile = page.locator('.mobile-nav button', { hasText: 'シーン' });
+  if (await mobile.isVisible()) await mobile.click();
+  else await page.locator('.sidebar nav button', { hasText: 'シーンを探す' }).click(); // desktop layout
   await page.getByLabel('シーンを検索').fill(title);
   await page.locator('.scene-grid .scene-card', { hasText: title }).first().click();
   await page.locator('.scene-modal').waitFor();
 }
+
+// Development servers show their own error overlay for errors that React already caught in an error boundary
+// (vinext: #__vinext_dev_error_overlay_root). It covers the page and intercepts clicks (ENV-004, real dev).
+// The crash tests check OUR boundary, which is what learners see in production builds, so they hide it.
+const DEV_OVERLAY = '#__vinext_dev_error_overlay_root,[data-vinext-dev-error-overlay],vite-error-overlay,nextjs-portal';
+export async function hideDevErrorOverlay(page) {
+  await page.addInitScript((sel) => {
+    const add = () => { const s = document.createElement('style'); s.dataset.ckTest = 'hide-dev-overlay'; s.textContent = `${sel}{display:none!important;pointer-events:none!important}`; document.head.appendChild(s); };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add); else add();
+  }, DEV_OVERLAY);
+}
+/** True when a dev error overlay element is in the page (hidden or not); the offline harness never has one. */
+export const devErrorOverlayPresent = (page) => page.evaluate((sel) => !!document.querySelector(sel), DEV_OVERLAY);
+/** Harness only: puts a full-screen element like vinext's overlay into the page, to prove hideDevErrorOverlay works. */
+export const simulateDevErrorOverlay = (page) => page.evaluate(() => { const d = document.createElement('div'); d.id = '__vinext_dev_error_overlay_root'; d.setAttribute('data-vinext-dev-error-overlay', ''); d.style.cssText = 'position:fixed;inset:0;z-index:2147483647;background:#0003'; document.body.appendChild(d); });
 
 export async function api(baseUrl, path, { method = 'POST', body, headers = {} } = {}) {
   const res = await fetch(baseUrl + path, { method, headers: { 'content-type': 'application/json', ...headers }, body: body === undefined ? undefined : JSON.stringify(body) });

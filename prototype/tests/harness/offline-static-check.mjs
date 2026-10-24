@@ -100,7 +100,7 @@ report.types = {
 // undefined names, wrong prop shapes between our own components and wrong types in our
 // logic; it cannot check DOM/JSX attribute types (the real @types/react is not available
 // offline). The project `tsc --noEmit` in CI remains the authoritative check.
-const componentTargets = ['app/page.tsx', 'app/layout.tsx', 'components/practice.tsx', 'components/access.tsx', 'components/ui.tsx', 'components/admin.tsx', 'components/ruby.tsx'].map((r) => join(root, r)).filter(existsSync);
+const componentTargets = ['app/page.tsx', 'app/layout.tsx', 'components/practice.tsx', 'components/access.tsx', 'components/ui.tsx', 'components/admin.tsx', 'components/ruby.tsx', 'components/screen-boundary.tsx', 'components/voice-check.tsx', 'components/line-drill.tsx'].map((r) => join(root, r)).filter(existsSync);
 if (projectHasReactTypes) {
   report.components = { checked: [], skipped: 'real @types/react is installed in prototype/node_modules; the shim would conflict with it. Run the project `tsc --noEmit` (CI does) for components.', errors: [] };
 } else {
@@ -114,6 +114,7 @@ declare module 'react' {
   export function useRef<T>(initial: T): { current: T };
   export function useRef<T>(initial: T | null): { current: T | null };
   export const StrictMode: any; export function createElement(...args: any[]): any;
+  export class Component<P = any, S = any> { constructor(props: P); props: Readonly<P>; state: S; setState(state: Partial<S> | ((prev: S) => Partial<S>)): void; }
 }
 declare namespace React { type ReactNode = any; type FormEvent<T = any> = any; type KeyboardEvent<T = any> = any; }
 declare module 'react/jsx-runtime' { export const jsx: any; export const jsxs: any; export const Fragment: any; }
