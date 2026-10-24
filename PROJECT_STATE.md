@@ -99,6 +99,7 @@
 | FREE-VOICE-ENV-001 | #40复测、免费手机A/C方案与证据整合 | Codex | merged | codex/FREE-VOICE-ENV-001，PR #41；mergececef27 | #40已合并，docs/10和证据/验证工具已进main；最终常规CI/安全/固定源均通过；无依赖/付费API/部署 |
 | DEVICE-FREE-001 | 实际手机免费F1–F10（A/B可开始，C仅方案） | 用户 + Claude整理 + Codex支持 | queued | — | 无API key；记录Android/iPhone型号、浏览器与JSON。C需另行授权部署，Free容量/实际声音均未在真机或云端验收 |
 | DESIGN-SKILLS-001 | 接入 impeccable 与 taste-skill（Claude/Codex 双方可用）、`PRODUCT.md`、`DESIGN.md`、第一次视觉评审（DESIGN-BASELINE-001） | Claude | review_ready | `claude/DESIGN-SKILLS-001` | handoffs/2026-10-24-DESIGN-SKILLS-001-claude.md；`vendor.mjs --check` 通过；评审 27/40、5 个优先问题，改动待用户决定 |
+| DEAI-001 | 视觉去 AI 化：按概念图改为「申し送りノート」风格（首页第一屏、反馈页顺序、最小字号、去掉模板装饰、设置/法人示例对比度） | Claude | review_ready | `claude/DEAI-001`（PR base 为 `claude/DESIGN-SKILLS-001`，先合并 #43） | handoffs/2026-10-24-DEAI-001-claude.md；verification/DEAI-001；static0/unit92/e2e54；A11Y 390/1280 全 0；taste 6F4W→1F3W，impeccable detect 21→15（390）；真机与部署环境字体未验证 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -114,6 +115,7 @@
 | 2026-10-23 用户本轮要求 | 尝试将仓库公开，以个人维护者申请Codex for Open Source；取代先前保持private的偏好 | 目前完成公开前准备；可见性变更、许可证与申请提交分别记录，不意味着获批或部署授权 |
 | 2026-10-23 用户（Claude 会话） | Codex 与 Claude 只通过本仓库同步，按环境能力与文件归属分工（见上表） | 冻结文件在负责方分支合并前不由对方修改 |
 | 2026-10-24 13:53 用户（Claude 会话）：接入 taste-skill 与 impeccable，「方便之后对于整个产品的视觉传达视觉审美方面进行更专业的评价和把控」 | 两份技能原样放入仓库，供 Claude 和 Codex 做视觉评审；`PRODUCT.md` 和 `DESIGN.md` 为共同设计依据；产品约束优先于技能的审美偏好 | 视觉方向的大改（例如改用概念图风格）与引擎/钩子的开启仍需用户决定 |
+| 2026-10-24 14:14 用户（Claude 会话）：「尽量的去 AI 化……不要看起来像是 AI 的通用模板」，方向选「按你的概念图方向（推荐）」 | 学员端视觉改为 `design/ui_concept.png` 的方向：暖白纸色、明朝体标题、深紫只用于行动、薄荷强调；首页先给今天的场景和对方的一句话；反馈页先给引用的原话，分数降为页脚小字；最小字号 12px；不用 eyebrow、渐变（会话舞台除外）、淡色方块图标 | `DESIGN.md` 已重写；分数是否完全删除、口号与字标的处理、场景照片等待用户确认（见 DEAI-001 交接） |
 | 2026-10-24 12:54 用户（Claude 会话）：「真机测试……能用免费的就用免费，需要付费的先往后靠」 | 真机测试先做不花钱的部分（docs/09「先做免费的真机测试」F1–F10）；真实 AI / Realtime / TTS 等付费测试（T1–T14、角色检查 `--yes`、MODEL-001）往后放，等用户另行授权 | 免费部署方式 C 仍需用户授权部署；浏览器语音识别由浏览器提供商处理声音，需告知并取得同意 |
 | 2026-10-24 用户（Claude 会话）：「我先做可选的预览入口（推荐）」 | 12 个核心场景先作为「コア練習（草稿）」单独入口接进应用，默认隐藏，原有 48 个场景不动；GPT 同时按审阅意见修改内容 | 草稿不计入 48 场景进度；正式替换或合并原场景需另行决定，并需要专业审稿 |
 | 2026-10-23 用户（Claude 会话）：「可以复用的就以合适方式拿过来并共享」 | 开源 / 免费资料按 research/REUSE_REVIEW_2026-10-23.md 处理；注音默认开启（Claude 的默认设定，可在设置中关闭，待教师和用户反馈） | 新增依赖仍由 Codex 加入；内容类资料由 Codex 负责 |
@@ -138,6 +140,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-DEAI-001-claude.md：按概念图方向去 AI 化（首页、反馈页、字号、配色与字体、设置/法人示例对比度），检查与截图在 verification/DEAI-001。
 
 - handoffs/2026-10-24-DESIGN-SKILLS-001-claude.md：接入两份设计评审技能、PRODUCT.md / DESIGN.md、第一次视觉评审（verification/DESIGN-BASELINE-001）。
 
