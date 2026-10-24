@@ -57,6 +57,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
+| MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | in_progress | `codex/MERGE`；#43已合并21639c7；#44待固定源复测 | handoffs/2026-10-24-MERGE-codex.md；源a567b8d，无付费/部署/hooks |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | merged | [PR #5](https://github.com/1412845026z-jpg/care-kotoba/pull/5)，head `a6c6f58`；合并 `0420ff7` | ENV-003（Codex，@`3a3f1a9`）真实install/tsc/build/static、unit34/34、离线22/22、真实dev21通过1跳过；之后的 COOKIE-ENCODING-001 修复（`89d8ad2`）离线 static 0 错误、unit 37/37、e2e 22/22，PR CI run 39998125919 通过。真实AI/真机未验证 |
@@ -98,7 +99,7 @@
 | FREE-VOICE-001 | 免费真机测试方案与浏览器语音输入 | Claude + Codex复测 | merged | PR #40，head c663f56；merge68f444e | 独立run40063459564：static0/unit89/offline54/真实dev46通过8跳过，14项CSP检查及无API key探测通过；真实识别/可听朗读待F5/F6 |
 | FREE-VOICE-ENV-001 | #40复测、免费手机A/C方案与证据整合 | Codex | merged | codex/FREE-VOICE-ENV-001，PR #41；mergececef27 | #40已合并，docs/10和证据/验证工具已进main；最终常规CI/安全/固定源均通过；无依赖/付费API/部署 |
 | DEVICE-FREE-001 | 实际手机免费F1–F10（A/B可开始，C仅方案） | 用户 + Claude整理 + Codex支持 | queued | — | 无API key；记录Android/iPhone型号、浏览器与JSON。C需另行授权部署，Free容量/实际声音均未在真机或云端验收 |
-| DESIGN-SKILLS-001 | 接入 impeccable 与 taste-skill（Claude/Codex 双方可用）、`PRODUCT.md`、`DESIGN.md`、第一次视觉评审（DESIGN-BASELINE-001） | Claude | review_ready | `claude/DESIGN-SKILLS-001` | handoffs/2026-10-24-DESIGN-SKILLS-001-claude.md；`vendor.mjs --check` 通过；评审 27/40、5 个优先问题，改动待用户决定 |
+| DESIGN-SKILLS-001 | 接入 impeccable 与 taste-skill（Claude/Codex 双方可用）、`PRODUCT.md`、`DESIGN.md`、第一次视觉评审（DESIGN-BASELINE-001） | Claude | merged | `claude/DESIGN-SKILLS-001` | handoffs/2026-10-24-DESIGN-SKILLS-001-claude.md；`vendor.mjs --check` 通过；评审 27/40、5 个优先问题，改动待用户决定 |；Codex审查及CI40065123200通过，merge21639c7
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -113,6 +114,7 @@
 | 2026-10-23 最新用户要求 | 先继续Care Kotoba开发，重新审核Claude整理后的仓库并提供转交反馈 | 本轮暂停公开/申请；不修改可见性，聚焦固定版本复测和缺陷交接 |
 | 2026-10-23 用户本轮要求 | 尝试将仓库公开，以个人维护者申请Codex for Open Source；取代先前保持private的偏好 | 目前完成公开前准备；可见性变更、许可证与申请提交分别记录，不意味着获批或部署授权 |
 | 2026-10-23 用户（Claude 会话） | Codex 与 Claude 只通过本仓库同步，按环境能力与文件归属分工（见上表） | 冻结文件在负责方分支合并前不由对方修改 |
+| 2026-10-24 15:07 用户（Codex本轮） | 可直接复用成熟开源代码，须可商用、固定版本、docs/07记录来源和保留许可；GPL/AGPL不并入。授权本轮ts-fsrs5.4.2与axe4.14.0；免费本机音频样本 | 不调用付费API、不部署、不安装impeccable钩子；内容schema提案仍暂缓 |
 | 2026-10-24 13:53 用户（Claude 会话）：接入 taste-skill 与 impeccable，「方便之后对于整个产品的视觉传达视觉审美方面进行更专业的评价和把控」 | 两份技能原样放入仓库，供 Claude 和 Codex 做视觉评审；`PRODUCT.md` 和 `DESIGN.md` 为共同设计依据；产品约束优先于技能的审美偏好 | 视觉方向的大改（例如改用概念图风格）与引擎/钩子的开启仍需用户决定 |
 | 2026-10-24 12:54 用户（Claude 会话）：「真机测试……能用免费的就用免费，需要付费的先往后靠」 | 真机测试先做不花钱的部分（docs/09「先做免费的真机测试」F1–F10）；真实 AI / Realtime / TTS 等付费测试（T1–T14、角色检查 `--yes`、MODEL-001）往后放，等用户另行授权 | 免费部署方式 C 仍需用户授权部署；浏览器语音识别由浏览器提供商处理声音，需告知并取得同意 |
 | 2026-10-24 用户（Claude 会话）：「我先做可选的预览入口（推荐）」 | 12 个核心场景先作为「コア練習（草稿）」单独入口接进应用，默认隐藏，原有 48 个场景不动；GPT 同时按审阅意见修改内容 | 草稿不计入 48 场景进度；正式替换或合并原场景需另行决定，并需要专业审稿 |
