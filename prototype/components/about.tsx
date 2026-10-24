@@ -7,6 +7,7 @@ import {ArrowLeft} from 'lucide-react';
 import type {Notice} from '@/lib/notices-data';
 import {Support} from './ui';
 import {SAY,pick} from '@/lib/i18n';
+import {loadMediaIndex} from '@/lib/scene-media';
 
 const FLOWS:{title:string;where:string;text:string;zh:string;en:string}[]=[
  {title:'ことばノート・練習の記録・復習・基礎の練習済み・学習設定',where:'この端末だけ',text:'この端末（ブラウザ）の中に保存します。サーバーには送りません。設定の「この端末の学習データを削除」で消せます。',zh:'只保存在这台设备的浏览器里，不发送到服务器；可在设置中删除。',en:'Stored only in this device’s browser, never sent to the server. You can delete it in Settings.'},
@@ -21,14 +22,15 @@ const FLOWS:{title:string;where:string;text:string;zh:string;en:string}[]=[
 ];
 
 export function AboutView({locale,onBack}:{locale:string;onBack:()=>void}){
- const [notices,setNotices]=useState<Notice[]|null>(null);
- useEffect(()=>{import('@/lib/notices-data').then(m=>setNotices(m.NOTICES)).catch(()=>setNotices([]));},[]);
+ const [notices,setNotices]=useState<Notice[]|null>(null),[credits,setCredits]=useState<string[]>([]);
+ useEffect(()=>{import('@/lib/notices-data').then(m=>setNotices(m.NOTICES)).catch(()=>setNotices([]));loadMediaIndex().then(m=>setCredits(m.credits));},[]);
  return <main className="wide-main about-main">
   <button className="text-button basic-back" onClick={onBack}><ArrowLeft size={15}/>もどる</button>
   <section className="page-title"><h1 tabIndex={-1}>ライセンスとデータの扱い</h1><p>この試作版で、データがどこに送られるかと、使っているオープンソースの一覧です。正式な利用規約とプライバシーポリシーは、公開の前に作り、専門家の確認を受けます。<Support locale={locale} t={SAY.aboutIntro}/></p></section>
   <section className="about-section" aria-labelledby="about-data"><h2 id="about-data">データの扱い（試作版）</h2>
    <ul className="about-flows">{FLOWS.map(f=><li key={f.title}><div className="about-flow-head"><b>{f.title}</b><span>{f.where}</span></div><p>{f.text}</p>{(()=>{const r=pick(locale,{zh:f.zh,en:f.en});return r&&<p className="about-zh" lang={r.lang}>{r.text}</p>;})()}</li>)}</ul>
   </section>
+  {credits.length>0&&<section className="about-section" aria-labelledby="about-media"><h2 id="about-media">基礎の声かけの画像と録音</h2><p className="about-note">場面の画像と録音は、架空の人物の試作素材です。録音は試聴確認の前のものを含みます。</p><ul className="about-credits">{credits.map(c=><li key={c}>{c}</li>)}</ul></section>}
   <section className="about-section" aria-labelledby="about-oss"><h2 id="about-oss">オープンソース</h2>
    <p className="about-note">端末に届くプログラム・文字・データに含まれるものです。サーバーだけで使うものと開発用の道具は、リポジトリの docs/07 にあります。</p>
    {!notices?<p className="about-note">読み込んでいます…</p>:<ul className="about-notices">{notices.map(n=><li key={n.name}><details><summary><span><b>{n.name}</b> <small>{n.version}</small></span><span className="about-license">{n.license}</span></summary><p className="about-role">{n.roleJa}</p><p className="about-url" translate="no">{n.url}</p><pre lang="en" translate="no">{n.text}</pre></details></li>)}</ul>}

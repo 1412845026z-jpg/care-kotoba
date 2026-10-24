@@ -145,6 +145,17 @@ try {
   await p6.getByRole('button', { name: /答えを見る/ }).click();
   await p6.locator('.basic-answer').waitFor();
   await audit(p6, 'basic-practice-vi');
+  // SCENE-AV-APP-001: a basic scene with a picture and the listening bar (fixture index and a 1x1 picture).
+  const p7 = await env.page(ctx);
+  const png = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64');
+  const mediaIndex = { version: 1, status: 'draft_not_listened', credits: ['監査用の画像'], scenes: { 'SSW-S02': { image: { src: '/media/ssw/SSW-S02/scene.png', width: 1536, height: 1024, alt_ja: '居室のドアの前の職員', credit: '監査用の画像' }, lines: [{ turn: 0, src: '/media/ssw/SSW-S02/t0.mp3' }] } } };
+  await p7.route('**/media/ssw/**', (r) => { const u = new URL(r.request().url()).pathname; if (u.endsWith('index.json')) return r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(mediaIndex) }); if (u.endsWith('.png')) return r.fulfill({ status: 200, contentType: 'image/png', body: png }); return r.fulfill({ status: 404, body: '' }); });
+  await gotoApp(p7, env.baseUrl);
+  await nav(p7, '基礎');
+  await p7.locator('.basic-topic').first().click();
+  await p7.locator('.basic-scene-row').nth(1).click();
+  await p7.locator('.basic-figure img').waitFor();
+  await audit(p7, 'basic-media');
   // CORE-PREVIEW-001: the optional core drafts (hidden by default; turned on via prefs here).
   const p3 = await env.page(ctx);
   await p3.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true, corePreview: true })));

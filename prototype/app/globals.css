@@ -688,3 +688,14 @@ ruby rt{opacity:1}
 .topbar .logo,.prototype-tag,.lang-button span{white-space:nowrap}
 .basic-finish:has(.btn-gloss){flex-direction:column;align-items:stretch}
 @media(max-width:420px){.app-shell.has-gloss .topbar-actions{gap:8px}.app-shell.has-gloss .lang-button{gap:4px}.app-shell.has-gloss .lang-button>svg:last-child{display:none}.app-shell.has-gloss .topbar .logo{font-size:20px}}
+/* SCENE-AV-APP-001: scene picture above the exchange; the line being read is outlined. */
+.basic-figure{margin:12px 0 4px}
+.basic-figure img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line);background:var(--bg)}
+.basic-figure figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6}
+.basic-audio-bar{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:12px 0 2px}
+.basic-audio-bar small{font-size:12px;color:var(--muted)}
+.basic-audio-bar .btn.is-active{background:var(--violet-soft);color:var(--violet)}
+.basic-line.is-playing{outline:2px solid var(--violet);outline-offset:1px}
+.basic-listen[aria-pressed="true"]{background:var(--violet-soft);color:var(--violet)}
+.about-credits{display:grid;gap:6px;padding:0;list-style:none}
+.about-credits li{font-size:13px;line-height:1.7;color:var(--ink-2);padding:10px 14px;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow-wrap:anywhere}
