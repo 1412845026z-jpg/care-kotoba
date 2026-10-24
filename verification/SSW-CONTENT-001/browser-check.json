@@ -1,0 +1,62 @@
+{
+  "physicalPhone": false,
+  "audibleSpeechVerified": false,
+  "mode": "file:// Chromium; synthetic speech API; no provider calls",
+  "checks": [
+    {
+      "width": 360,
+      "dimensions": {
+        "scroll": 360,
+        "width": 360
+      },
+      "scenes": 96,
+      "topics": 24,
+      "dialogueTurns": 384,
+      "filter": true,
+      "search": true,
+      "kanaToggle": true,
+      "translationToggle": true,
+      "practiceRevealKeyboard": true,
+      "syntheticJapaneseSpeechCall": true,
+      "stopCall": true
+    },
+    {
+      "width": 390,
+      "dimensions": {
+        "scroll": 390,
+        "width": 390
+      },
+      "scenes": 96,
+      "topics": 24,
+      "dialogueTurns": 384,
+      "filter": true,
+      "search": true,
+      "kanaToggle": true,
+      "translationToggle": true,
+      "practiceRevealKeyboard": true,
+      "syntheticJapaneseSpeechCall": true,
+      "stopCall": true
+    },
+    {
+      "width": 1280,
+      "dimensions": {
+        "scroll": 1280,
+        "width": 1280
+      },
+      "scenes": 96,
+      "topics": 24,
+      "dialogueTurns": 384,
+      "filter": true,
+      "search": true,
+      "kanaToggle": true,
+      "translationToggle": true,
+      "practiceRevealKeyboard": true,
+      "syntheticJapaneseSpeechCall": true,
+      "stopCall": true
+    }
+  ],
+  "externalRequests": [],
+  "errors": [],
+  "noJapaneseVoiceDoesNotFallbackToEnglish": true,
+  "passed": true
+}

@@ -57,6 +57,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
+| SSW-CONTENT-001 | 特定技能基础96场景与角色声线准备 | Codex | review_ready | `codex/SSW-CONTENT-001`；PR #56，内容源82a0444 | content/ssw-basic；24类/384对白/192替代、8声线16试听文本；553待合成文本资产；未生成新MP3/图片、未接入App，独立AI编辑复核非专业签核 |
 | DEVICE-FREE-GUIDE-001 | 最新main免费手机测试中文指南与no-key回放 | Codex | merged | `codex/DEVICE-FREE-GUIDE-001` @e4b798b；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md；main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户 |
 | AUDIO-PICK-001 | 手机30段免费试听清单及候选组合 | Codex | merged | `codex/AUDIO-PICK-001` @f2e52e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-AUDIO-PICK-001-codex.md；30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App |
 | REAL-AI-PILOT-PLAN-001 | ≤3000日元首次真实AI测试计划（不执行） | Codex | merged | `codex/REAL-AI-PILOT-PLAN-001` @1ceb8e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-REAL-AI-PILOT-PLAN-001-codex.md；只交计划；条件预算¥113、建议另批¥1000，未花钱；旧实时价/逐次计量/鉴权待解决 |
@@ -241,3 +242,10 @@
 - handoffs/2026-10-23-G0-01-claude.md：代码审计与基础修复、离线测试、真机测试方案（PR #5，未合并到 `main`）。
 - handoffs/2026-10-23-G0-01-fix1-claude.md：按 ENV-001 意见修复，附 Codex 复测命令（PR #5，未合并）。
 - handoffs/2026-10-23-REUSE-001-claude.md：开源 / 免费资料复用（依赖 PR #5，未合并）。
+
+## 2026-10-24 基础课程与语音新要求
+
+- 用户明确主要支持特定技能外国介护人员，参考免费介护教材核对日常场景与常用说法，课程简单、实用；常用句重复正常，不为差异刻意改得不自然。首批新96微场景与旧48/12草稿并存，不把数量当全面覆盖。
+- 用户要求区分年长男女利用者、年轻/较年长男女职员及领导的声线与语言风格，优先用AI生成虚构角色声音。已写8档角色和16条试听文本；自然度、年龄感与一致性仍待实际生成/真人试听。
+- 单句录音按voice_profile+delivery_style+text+配置版本复用。当前553是待合成文本资产，不是已生成音频，8种角色也不是全部台词都乘8重录。
+- 沿用免费阶段限制。Higgsfield只读取模型/声线并get_cost报价0.01平台credits，未提交生成；无收费API、充值、部署或新插件安装。App由Claude接入，当前只新增独立基础课资料/审稿页。

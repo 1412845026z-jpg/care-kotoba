@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "checked_date_jst": "2026-10-24",
+  "policy_zh": "导入主题/来源索引与项目原创短对话，不整书搬运。免费公开与商用复制授权分开核对。",
+  "sources": [
+    {
+      "id": "kaigo-japanese-basic",
+      "title": "介護の日本語（日本語版）",
+      "publisher": "公益社団法人日本介護福祉士会",
+      "publication": "2017-11",
+      "url": "https://www.mhlw.go.jp/content/12000000/001184460.pdf",
+      "landing_url": "https://www.mhlw.go.jp/stf/newpage_28131.html",
+      "checked_date_jst": "2026-10-24",
+      "actual_review": "50-page PDF opened; preface and contents (physical PDF pages2–4) checked, not a line-by-line reproduction of the book.",
+      "topic_use": "Basic workplace vocabulary and communication topics only. Project dialogue and kana/Chinese scaffolds are independently written.",
+      "permission_to_reproduce_text_audio_artwork": "not_confirmed",
+      "commercial_import": "No book text, original translations, recordings, illustrations, exercise sets or page layouts copied.",
+      "rights_url": "https://aft.kaigo-nihongo.jp/rpv/terms.aspx"
+    },
+    {
+      "id": "ssw-official-textbook-2025",
+      "title": "介護の特定技能評価試験学習テキスト 改訂2版",
+      "publisher": "公益社団法人日本介護福祉士会",
+      "publication": "2025-03 (official landing page)",
+      "url": "https://www.mhlw.go.jp/content/12000000/001471473.pdf",
+      "landing_url": "https://www.mhlw.go.jp/stf/newpage_28131.html",
+      "checked_date_jst": "2026-10-24",
+      "actual_review": "Official current listing checked; full 20MB PDF not read in this review because the web retrieval size limit rejected it.",
+      "topic_use": "Learner group and coverage cross-check starting point only; no claims about unreviewed specific pages.",
+      "permission_to_reproduce_text_audio_artwork": "not_confirmed",
+      "commercial_import": "No original exam questions, passages, recordings or images imported.",
+      "rights_url": "https://aft.kaigo-nihongo.jp/rpv/terms.aspx"
+    },
+    {
+      "id": "carenavi-reference",
+      "title": "日本語でケアナビ",
+      "publisher": "国際交流基金関西国際センター",
+      "url": "https://www.jpf.go.jp/j/kansai/clip/carenavi/index.html",
+      "rights_url": "https://ind.nihongodecarenavi.jp/jpn/about-copyright.html",
+      "checked_date_jst": "2026-10-24",
+      "actual_review": "Official service introduction and copyright page opened.",
+      "topic_use": "External vocabulary/reading resource; not a source of copied dialogue.",
+      "permission_to_reproduce_text_audio_artwork": "not_permitted_without_permission_outside_private_use",
+      "commercial_import": "Link only; no bulk text/audio/images."
+    },
+    {
+      "id": "irodori-method-reference",
+      "title": "いろどり 生活の日本語",
+      "publisher": "国際交流基金",
+      "url": "https://www.irodori.jpf.go.jp/about.html",
+      "rights_url": "https://www.irodori.jpf.go.jp/privacy.html",
+      "checked_date_jst": "2026-10-24",
+      "actual_review": "Official introduction and terms opened.",
+      "topic_use": "Only general one-task-per-scene teaching approach; not care-specific or a sentence bank.",
+      "permission_to_reproduce_text_audio_artwork": "not_permitted_to_create_separate_teaching_material_without_permission",
+      "commercial_import": "No original dialogue/audio/artwork. A1/A2 is not claimed as an official JLPT equivalence."
+    },
+    {
+      "id": "project-workplace-extension",
+      "title": "Care Kotoba 原创工作沟通补充",
+      "publisher": "Care Kotoba project",
+      "checked_date_jst": "2026-10-24",
+      "topic_use": "Original coverage extensions based on broad routine workplace communication needs. Not presented as a transcription, adaptation or officially approved portion of any textbook.",
+      "permission_to_reproduce_text_audio_artwork": "project_original_draft",
+      "actual_review": "AI-assisted editorial draft; human care practitioner and Japanese teacher review pending."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date_jst": "2026-10-24",
+  "baseline_commit": "3b8c69f6e17044dfe6e219ce0fd280baf504e468",
+  "task": "SSW-CONTENT-001",
+  "sources_read": "Official basic textbook preface/contents and publisher/resource terms; current SSW listing, not whole current large textbook",
+  "counts": {
+    "topics": 24,
+    "scenes": 96,
+    "dialogue_turns": 384,
+    "alternative_responses": 192,
+    "unique_role_text_assets_planned": 553,
+    "voice_profiles": 8,
+    "voice_preview_scripts": 16,
+    "new_mp3_files": 0,
+    "generated_images": 0
+  },
+  "manual_editorial_review": "independent second AI editor read all scenes; fixes documented in qa-review.md; not human professional approval",
+  "source_sha256": {
+    "content/ssw-basic/scenes-01-32.json": "fd288470be6523aebdb0a0a83eefe07e7fc07f768909fb2c701c3d6358db00e9",
+    "content/ssw-basic/scenes-33-64.json": "046353196557fd9ac2dc6b57103a638ebff01db994a00eb7b411a234e414c8dd",
+    "content/ssw-basic/scenes-65-96.json": "26f2a54b44cece6ff31353b42a8dbe456ef32acef30ff38e366f8a6b378d0b8f",
+    "content/ssw-basic/catalog.json": "f35852d60fb01048d8ba5496e9464f4883057075a7a0a5ccc43c273167f0ed02",
+    "content/ssw-basic/audio-plan.json": "b61c7a59a47dcfa1b916cf0d8fbf1e1ad9ec97e4caaac3a2137b7ad1192ca409",
+    "content/ssw-basic/sources.json": "418f2d81becf27f352d41beff920d0b86a23b23b6ba0c7cba7fd3a9d540fe9d8",
+    "content/ssw-basic/voice-profiles.json": "7bf8be0a3b7f90f5ab02dc52a8173a0512278d5af9095f776a1f57021aaa2b86",
+    "content/ssw-basic/index.html": "ea01dba423aa3323d1907dbb70857b68416bfaaaca166dfe70a610b10fa27352",
+    "content/ssw-basic/qa-review.md": "a96801abc31d0ebc2de3f3b3a5b44147289a6ca5be7e55d992534ab5deb308a4"
+  },
+  "api_generations": 0,
+  "higgsfield_cost_preflight_only": true,
+  "initial_browser_fixture_failure": "A plain fake voice object could not be assigned to native SpeechSynthesisUtterance.voice; the complete speech test interface was replaced with coherent synthetic doubles. Product code was not changed for this probe.",
+  "font_qa_note": "First local screenshot had CJK tofu because host fonts were absent. Official google/fonts NotoSansJP and NotoSansSC were downloaded to scratch only for QA and used via a temporary FONTCONFIG_FILE. No fonts were embedded in the product or added to App dependencies. Latest screenshots render Japanese and Chinese. Browser/API doubles do not replace physical phone or audible voice tests.",
+  "not_done": [
+    "App integration",
+    "final character voice generation",
+    "human listening and naturalness review",
+    "professional Japanese/care practitioner review",
+    "scene images"
+  ],
+  "unchanged": [
+    "prototype/**",
+    "content/scenarios/**",
+    "tools/core-scenarios/**",
+    "original 30 voice samples"
+  ]
+}

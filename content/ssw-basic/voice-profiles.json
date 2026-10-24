@@ -1,0 +1,248 @@
+{
+  "version": "0.1.0",
+  "task": "SSW-CONTENT-001",
+  "status": "draft_not_generated_or_listened",
+  "fictional": true,
+  "purpose_zh": "面向特定技能外国介护人员的基础短对话，先比较声线，再固定角色身份。年龄均为拟议听感目标，不是对任何真实人物年龄、健康或能力的判定。",
+  "shared_sample_line_ja": "こんにちは。もう一度、ゆっくりお願いします。",
+  "voice_profiles": [
+    {
+      "id": "elderly_female",
+      "role_zh": "年长女性利用者",
+      "age_impression_zh": "约70—85岁的成年女性年龄印象，个体健康与能力不由声音推断",
+      "gender_presentation": "female",
+      "description_zh": "温和、清楚的中低音域，有自然的年龄质感和停顿。可以平静、愉快或表达自己的希望；不默认颤抖、沙哑、病弱或听力受损。",
+      "voice_design_prompt_en": "Create an original fictional adult female voice for short standard Japanese care conversations, with a perceived age around 70 to 85. Use a comfortable mid-low register, warm resonance, intelligible consonants, and modest natural pauses. The speaker is an adult expressing ordinary choices, preferences, and feelings. Age should be suggested subtly through timbre and cadence, without forced trembling, breathlessness, exaggerated rasp, or caricature. Do not imitate any identifiable real person. Keep the voice natural and distinct from the other profiles; clear speech need not sound youthful.",
+      "delivery_instruction_ja": "自然な日本語で、落ち着いて話してください。言葉の区切りを明確にし、震え声や弱々しさを誇張しないでください。",
+      "sample_lines_ja": [
+        "こんにちは。もう一度、ゆっくりお願いします。",
+        "窓のそばで、少し休みたいです。"
+      ],
+      "status": "draft_not_generated_or_listened",
+      "actual_voice_id": null,
+      "actor_roles": [
+        "resident"
+      ]
+    },
+    {
+      "id": "elderly_male",
+      "role_zh": "年长男性利用者",
+      "age_impression_zh": "约70—85岁的成年男性年龄印象，个体健康与能力不由声音推断",
+      "gender_presentation": "male",
+      "description_zh": "自然沉稳的中低音域，柔和而有清晰句尾。与年长女性声线在音色和共鸣上可区分，但不靠过度低沉、迟缓或虚弱来扮演老人。",
+      "voice_design_prompt_en": "Create an original fictional adult male voice for short standard Japanese care conversations, with a perceived age around 70 to 85. Aim for a rounded, relaxed mid-low register and clear sentence endings. Give the voice a subtly lived-in timbre with varied natural intonation, rather than making every phrase slow, frail, stern, or gravelly. The speaker can make choices and ask for help confidently. Do not imitate an identifiable real person or use a celebrity reference. Keep the identity recognizably different from the other seven profiles.",
+      "delivery_instruction_ja": "自然な日本語で、穏やかにはっきり話してください。声を無理に低くせず、遅さや弱さで年齢を誇張しないでください。",
+      "sample_lines_ja": [
+        "こんにちは。もう一度、ゆっくりお願いします。",
+        "お茶を、少し冷ましてください。"
+      ],
+      "status": "draft_not_generated_or_listened",
+      "actual_voice_id": null,
+      "actor_roles": [
+        "resident"
+      ]
+    },
+    {
+      "id": "young_female_staff",
+      "role_zh": "年轻女性介护职员",
+      "age_impression_zh": "约20—35岁的成年女性年龄印象",
+      "gender_presentation": "female",
+      "description_zh": "明亮但不过尖的成人中音域，亲切、清楚，短句间留出回应空间。避免娃娃音、撒娇音、夸张动漫腔和对利用者的幼儿化语气。",
+      "voice_design_prompt_en": "Create an original fictional adult female staff voice for standard Japanese care conversations, with a perceived age around 20 to 35. Use an open, clear middle register, light natural energy, and a calm conversational pace. Sound like an adult colleague offering practical support, not a child, cartoon character, sales announcer, or exaggerated cute persona. Leave room for the other person to respond and keep questions easy to understand. Do not imitate any identifiable real person. The voice should be distinct while remaining appropriate for respectful everyday workplace communication.",
+      "delivery_instruction_ja": "大人の職員として、短く明確に話してください。親しみやすく、返事を待つ間を取り、幼い声や大げさな抑揚を避けてください。",
+      "sample_lines_ja": [
+        "こんにちは。もう一度、ゆっくりお願いします。",
+        "どこをお手伝いしますか。"
+      ],
+      "status": "draft_not_generated_or_listened",
+      "actual_voice_id": null,
+      "actor_roles": [
+        "worker",
+        "colleague"
+      ]
+    },
+    {
+      "id": "young_male_staff",
+      "role_zh": "年轻男性介护职员",
+      "age_impression_zh": "约20—35岁的成年男性年龄印象",
+      "gender_presentation": "male",
+      "description_zh": "轻盈、清晰的成人中音域，语气自然、耐心，不刻意压低声音，也不把年轻表现成急促。适合简短说明和同事间确认。",
+      "voice_design_prompt_en": "Create an original fictional adult male staff voice for standard Japanese care conversations, with a perceived age around 20 to 35. Use a clear, easy middle register with a light baritone quality and unforced warmth. The delivery should be patient, matter-of-fact, and conversational, without rushing, artificial depth, theatrical confidence, or a childlike quality. Clearly separate short phrases and allow the listener to answer. Do not imitate an identifiable real person. Make this an individual voice identity rather than merely a pitch-shifted version of another profile.",
+      "delivery_instruction_ja": "自然な高さで、はっきり話してください。説明は短く区切り、急がず、相手の返事を待ってください。",
+      "sample_lines_ja": [
+        "こんにちは。もう一度、ゆっくりお願いします。",
+        "もう一度、ゆっくり言いますね。"
+      ],
+      "status": "draft_not_generated_or_listened",
+      "actual_voice_id": null,
+      "actor_roles": [
+        "worker",
+        "colleague"
+      ]
+    },
+    {
+      "id": "mature_female_staff",
+      "role_zh": "中年女性介护职员",
+      "age_impression_zh": "约45—60岁的成年女性年龄印象",
+      "gender_presentation": "female",
+      "description_zh": "柔和、饱满且稳定的中音域，表达明确、节奏从容。年龄印象来自音色与韵律，不把年资表现为居高临下或过度“母亲式”劝说。",
+      "voice_design_prompt_en": "Create an original fictional adult female staff voice for standard Japanese care conversations, with a perceived age around 45 to 60. Use a full, balanced middle register, stable resonance, and relaxed but purposeful phrasing. Convey everyday professional ease through clarity and timing, not dominance, maternal scolding, or overprotective affection. The speaker treats the listener as an adult and can explain, ask, or confirm in simple language. Do not imitate an identifiable real person. Preserve a distinct vocal identity, separate from both the young staff and elderly resident profiles.",
+      "delivery_instruction_ja": "落ち着いた自然な声で、短く具体的に話してください。相手を大人として尊重し、言い聞かせる口調を避けてください。",
+      "sample_lines_ja": [
+        "こんにちは。もう一度、ゆっくりお願いします。",
+        "今は休みたいんですね。わかりました。"
+      ],
+      "status": "draft_not_generated_or_listened",
+      "actual_voice_id": null,
+      "actor_roles": [
+        "worker",
+        "colleague"
+      ]
+    },
+    {
+      "id": "mature_male_staff",
+      "role_zh": "中年男性介护职员",
+      "age_impression_zh": "约45—60岁的成年男性年龄印象",
+      "gender_presentation": "male",
+      "description_zh": "稳定、温和的中低音域，句尾清晰、语速适中。可以可靠而不强势，不用低吼、官腔或说教来表示经验。",
+      "voice_design_prompt_en": "Create an original fictional adult male staff voice for standard Japanese care conversations, with a perceived age around 45 to 60. Use a comfortable, moderately low middle register, steady resonance, and clearly articulated endings. Sound approachable and practical rather than booming, officious, commanding, or moralizing. Maintain a normal conversational rhythm with brief pauses around important information. Do not imitate an identifiable real person. This profile should have its own timbre and phrasing, not be a slowed or lowered copy of the young male staff voice.",
+      "delivery_instruction_ja": "穏やかな自然な声で、要点を一つずつ話してください。声を張り上げず、相手が聞き返しやすい間を取ってください。",
+      "sample_lines_ja": [
+        "こんにちは。もう一度、ゆっくりお願いします。",
+        "何をするか、一緒に確認しましょう。"
+      ],
+      "status": "draft_not_generated_or_listened",
+      "actual_voice_id": null,
+      "actor_roles": [
+        "worker",
+        "colleague"
+      ]
+    },
+    {
+      "id": "female_leader",
+      "role_zh": "女性带班／指导职员",
+      "age_impression_zh": "拟设约40—60岁的成年女性；带班沟通方式独立于年龄",
+      "gender_presentation": "female",
+      "description_zh": "有清晰辨识度的成年中音域，给出具体任务并欢迎询问，能承认信息不足。带班感来自信息组织与支持，不靠凶、催促或讽刺；年轻声线也可叠加同一带班风格。",
+      "voice_design_prompt_en": "Create an original fictional adult female voice identity for a Japanese care team lead, with a perceived age around 40 to 60. Use a clear, composed middle register and a distinctive but natural resonance. Speaking style should organize concrete information in short steps, invite clarification, and offer help. Leadership is a communication style rather than a biological property of age or gender. Avoid shouting, sarcasm, intimidation, exaggerated authority, or performance-review language. Do not imitate any identifiable real person. Preserve this identity separately from other staff profiles even when they use the same supportive leader delivery style.",
+      "delivery_instruction_ja": "用件を一つずつ、具体的に伝えてください。落ち着いて質問を歓迎し、命令調、皮肉、威圧を避けてください。",
+      "sample_lines_ja": [
+        "こんにちは。もう一度、ゆっくりお願いします。",
+        "わからないことは、一緒に確認しましょう。"
+      ],
+      "status": "draft_not_generated_or_listened",
+      "actual_voice_id": null,
+      "actor_roles": [
+        "worker",
+        "colleague",
+        "leader"
+      ]
+    },
+    {
+      "id": "male_leader",
+      "role_zh": "男性带班／指导职员",
+      "age_impression_zh": "拟设约40—60岁的成年男性；带班沟通方式独立于年龄",
+      "gender_presentation": "male",
+      "description_zh": "清晰、平稳的成人中音域，先说清对象、物品或时间，再给对方确认机会。避免用更低、更响或更严厉来代表领导身份，不把服从命令当作语言学习目标。",
+      "voice_design_prompt_en": "Create an original fictional adult male voice identity for a Japanese care team lead, with a perceived age around 40 to 60. Use an even, articulate middle register with unforced projection and a distinct natural timbre. Deliver concrete tasks in short units, allow questions, and support shared understanding. Leadership should not be represented by a deeper pitch, louder volume, age, or gender alone. Avoid a drill-sergeant tone, sarcasm, scolding, and coercion. Do not imitate an identifiable real person. The identity must remain distinguishable from the other staff voices without caricature.",
+      "delivery_instruction_ja": "対象、物、時間を短い言葉で明確に伝えてください。相手の確認を待ち、怒鳴ったり、返事を急がせたりしないでください。",
+      "sample_lines_ja": [
+        "こんにちは。もう一度、ゆっくりお願いします。",
+        "まず、この箱を食堂に運びます。質問はありますか。"
+      ],
+      "status": "draft_not_generated_or_listened",
+      "actual_voice_id": null,
+      "actor_roles": [
+        "worker",
+        "colleague",
+        "leader"
+      ]
+    }
+  ],
+  "delivery_styles": [
+    {
+      "id": "resident_preference",
+      "name_zh": "利用者表达自己的希望",
+      "intent_zh": "表达或确认利用者希望休息",
+      "applies_to_actor_roles": [
+        "resident"
+      ],
+      "delivery_instruction_ja": "自分の希望を、普段の話し方で伝えてください。弱さや不安を勝手に付け足さず、自然な間で話してください。",
+      "example_ja": "少し休みたいです。",
+      "meaning_zh": "表达自己的休息希望。",
+      "guard_zh": "利用者有自己的意向；不默认认知障碍、痛苦或被动服从。"
+    },
+    {
+      "id": "worker_support",
+      "name_zh": "介护职员询问并支持选择",
+      "intent_zh": "表达或确认利用者希望休息",
+      "applies_to_actor_roles": [
+        "worker"
+      ],
+      "delivery_instruction_ja": "短い質問で希望を聞き、返事を待ってください。落ち着いた声で、選択を押し付けずに話してください。",
+      "example_ja": "少し休みますか。",
+      "meaning_zh": "询问本人是否想休息。",
+      "guard_zh": "语气友好不代表已得到同意；不把询问改成强制安排。"
+    },
+    {
+      "id": "colleague_confirmation",
+      "name_zh": "同事之间简短确认",
+      "intent_zh": "表达或确认利用者希望休息",
+      "applies_to_actor_roles": [
+        "worker",
+        "colleague"
+      ],
+      "delivery_instruction_ja": "同僚に、聞いたことと確認することを短く伝えてください。事実を足さず、確認しやすい区切りで話してください。",
+      "example_ja": "少し休みたいと聞きました。確認します。",
+      "meaning_zh": "说明已听到休息希望，并表示会确认。",
+      "guard_zh": "保留信息来源和未确认状态，不因语气有把握而把传闻变成已核实事实。"
+    },
+    {
+      "id": "leader_clear_support",
+      "name_zh": "带班职员清晰说明与支持",
+      "intent_zh": "表达或确认利用者希望休息",
+      "applies_to_actor_roles": [
+        "worker",
+        "colleague",
+        "leader"
+      ],
+      "delivery_instruction_ja": "確認する内容を一つずつ、具体的に伝えてください。質問を歓迎し、相手を急がせずに話してください。",
+      "example_ja": "休みたいか、ご本人に確認しましょう。",
+      "meaning_zh": "具体指出需要向本人确认是否想休息。",
+      "guard_zh": "带班风格可叠加年轻或中年职员声线；目标是问清并合作，不是要求下属服从。"
+    }
+  ],
+  "synthesis_rules": {
+    "deduplication_key": [
+      "text_ja",
+      "voice_profile_id",
+      "delivery_style_id"
+    ],
+    "deduplication_scope_zh": "在已锁定的声音身份与合成配置版本内去重。相同文本、相同声线、相同表达风格只生成并保存一份音频，多个场景引用该资产。",
+    "identity_revision_rule_zh": "seed、参考声音、模型或关键配置发生变化时，增加identity_revision并使用新的缓存命名空间，不静默覆盖或误复用旧音频。",
+    "cross_profile_reuse_allowed": false,
+    "cross_profile_rule_zh": "不同声线的同一句话分别合成；不得复用同一个MP3、只改角色标签来冒充多角色。仅调速或变调也不能作为不同原创声线已生成的证明。",
+    "style_rule_zh": "表达风格叠加于声线，不改变原文、角色、人称、事实、否定或同意状态；同一风格可由不同年龄职员表达。",
+    "audition_first": {
+      "profile_count": 8,
+      "lines_per_profile": 2,
+      "planned_asset_count": 16,
+      "shared_line_distinct_asset_count": 8,
+      "generated_asset_count": 0,
+      "listen_completed": false,
+      "note_zh": "共同句同文也需要8个不同声线资产；每档另有1条角色句。本文件只是设计，16段均尚未生成。"
+    },
+    "bulk_generation_gates_zh": [
+      "先为8档生成少量试听，核对是否确实为不同声音身份。",
+      "由真人听验日语自然度、词语读音、短句停顿、年龄印象及角色可区分性。",
+      "选定后锁定voice_profile_id、实际voice_id、seed或等效身份参数、生成参考声音、identity_revision、模型版本及配置版本／指纹。",
+      "若模型不支持seed或参考声音，明确记录不支持，采用其实际支持的身份锁定方法；不要伪造参数。",
+      "固定身份后才批量生成，并保留文本到音频资产的对应及来源记录。"
+    ],
+    "original_ai_voice_preferred": true,
+    "real_voice_cloning_allowed": false,
+    "rights_rule_zh": "优先使用AI生成的原创虚构声音；不克隆真实声纹，不以真人、名人或可识别人物音频作模仿目标。生成模型及输出的许可仍需逐项核对。",
+    "naturalness_acceptance_zh": "API请求成功、文件可播放或时长有效，只证明技术链路；不能据此认定自然日语、正确重音、年龄印象或教学效果已获真人验收。",
+    "adult_respect_rule_zh": "所有角色都是成年人。老人不统一颤抖或病弱，职员不采用娃娃音，带班不采用吼叫、讽刺或威压；不从声线推断疾病、能力或应受服从程度。"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "checked_date_jst": "2026-10-24",
+  "installed_plugin_found": "Higgsfield",
+  "catalog_models": [
+    "qwen_audio_tts",
+    "elevenlabs_v4",
+    "elevenlabs_v4_turbo"
+  ],
+  "qwen_catalog_supports_ja": true,
+  "qwen_catalog_features": [
+    "preset or reference voice",
+    "instruction up to128 chars",
+    "speech_rate",
+    "pitch_rate",
+    "seed"
+  ],
+  "voice_design_endpoint_confirmed_in_plugin": false,
+  "voice_list_read": true,
+  "voice_age_or_japanese_quality_inferred_from_names": false,
+  "quote": {
+    "model": "qwen_audio_tts",
+    "original_text": "おはようございます。今日はどうですか。",
+    "get_cost": true,
+    "credits": 0.01,
+    "no_job_submitted": true,
+    "not_a_currency_conversion_or_batch_total": true
+  },
+  "generated_clips": 0,
+  "paid_generation_calls": 0,
+  "new_plugins_installed": 0,
+  "no_new_subscription": true,
+  "local_environment": {
+    "memory_gib_approx": 9.7,
+    "logical_cpu": 9,
+    "nvidia_device_visible": false,
+    "torch_transformers_qwen_tts_installed": false,
+    "model_downloaded": false
+  },
+  "not_verified": [
+    "actual Japanese voice naturalness",
+    "age/gender impression",
+    "eight voice casting",
+    "voice consistency",
+    "commercial output suitability of specific provider workflow"
+  ]
+}
