@@ -9,7 +9,7 @@ import { support } from './ui';
 import { type DrillMessage } from '@/lib/drill';
 export { contextBefore } from '@/lib/drill';
 
-type ChatReply = { reply: string; translation?: string; correction: { original: string; better: string; reason: string } | null };
+type ChatReply = { reply: string; ruby?: string; translation?: string; correction: { original: string; better: string; reason: string } | null };
 
 export function LineDrill(props: {
   sceneId: string; variant: string; locale: string; level: string; furigana: boolean;
@@ -56,7 +56,7 @@ export function LineDrill(props: {
       {result && (
         <div className="line-drill-result" role="status">
           <small>{props.partnerName}の返事</small>
-          <p><JaText text={result.reply} on={props.furigana} /></p>
+          <p><JaText text={result.reply} ruby={result.ruby} on={props.furigana} /></p>
           {result.correction
             ? <div className="line-drill-correction"><small>こんな言い方も</small><b>{result.correction.better}</b><p>{result.correction.reason}</p></div>
             : <p className="line-drill-ok">伝わりました。{support(locale, '（这次没有需要修改的地方。）', '(Nothing to correct this time.)')}</p>}

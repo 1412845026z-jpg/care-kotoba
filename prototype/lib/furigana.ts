@@ -39,3 +39,20 @@ export function furiganaFor(text: string): RubySegment[] | null {
 }
 
 export const FURIGANA_COVERAGE = Object.keys(FURIGANA).length;
+
+const KANJI = /[㐀-䶿一-鿿豈-﫿々〆]/;
+
+/**
+ * Accept a model-written ruby notation for `plain` only if it annotates exactly that text, puts
+ * readings on kanji only and uses hiragana readings. Anything else returns null (show plain text).
+ */
+export function validRuby(notation: unknown, plain: string): string | null {
+  if (typeof notation !== 'string' || !notation || notation.length > 4 * plain.length + 50) return null;
+  if (plainOf(notation) !== plain) return null;
+  if (/[{}|]/.test(notation.replace(NOTATION, ''))) return null; // stray notation characters
+  for (const seg of parseRuby(notation)) {
+    if (typeof seg === 'string') continue;
+    if (!KANJI.test(seg.base) || !/^[ぁ-ゖー]+$/.test(seg.rt)) return null;
+  }
+  return notation;
+}
