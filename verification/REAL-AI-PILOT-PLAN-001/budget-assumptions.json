@@ -1,0 +1,66 @@
+{
+  "task": "REAL-AI-PILOT-PLAN-001",
+  "checkedAt": "2026-10-24",
+  "sourceCommit": "a3b006095580b234e51100ac70565a7d6a296e12",
+  "executedPaidCalls": 0,
+  "executionStatus": "blocked_pending_user_budget_environment_price_and_metering_approval",
+  "exchangeJpyPerUsd": 200,
+  "exchangeIsBudgetAssumption": true,
+  "settlementBuffer": 0.2,
+  "proposedBudgetJpy": 1000,
+  "suggestedManualStopUsd": 1,
+  "suggestedProjectHardLimitUsd": 3,
+  "hardLimitMayOvershoot": true,
+  "text": {
+    "calls": 48,
+    "chatCalls": 41,
+    "feedbackCalls": 7,
+    "inputTokensPerCallAssumption": 6000,
+    "inputTokens": 288000,
+    "outputTokens": 40550,
+    "inputPricePerMillionUsd": 0.4,
+    "outputPricePerMillionUsd": 1.6
+  },
+  "voice": {
+    "sessions": 3,
+    "maxSecondsPerSession": 120,
+    "maxAssistantResponsesPerSession": 4,
+    "inputSpeechMinutesTotal": 3,
+    "outputSpeechMinutesTotal": 3,
+    "textInputTokens": 72000,
+    "textOutputTokens": 1200,
+    "audioInputTokensIncludingReinputAssumption": 15000,
+    "audioOutputTokens": 3600,
+    "textInputPricePerMillionUsd": 0.6,
+    "textOutputPricePerMillionUsd": 2.4,
+    "audioInputPricePerMillionUsd": 10,
+    "audioOutputPricePerMillionUsd": 20,
+    "audioPriceIsConfirmedFor": "gpt-realtime-2.1-mini",
+    "audioPriceIsNotConfirmedFor": "gpt-realtime-mini",
+    "transcribeEstimatePerMinuteUsd": 0.003
+  },
+  "tts": {
+    "calls": 1,
+    "targetMaxSeconds": 10,
+    "textInputTokensAssumption": 100,
+    "audioOutputTokensAssumption": 1000,
+    "textInputPricePerMillionUsd": 0.6,
+    "audioOutputPricePerMillionUsd": 12
+  },
+  "sources": [
+    "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+    "https://developers.openai.com/api/docs/models/gpt-realtime-mini",
+    "https://developers.openai.com/api/docs/pricing",
+    "https://developers.openai.com/api/docs/models/gpt-4o-mini-tts",
+    "https://developers.openai.com/api/docs/guides/spend-limits"
+  ],
+  "calculation": {
+    "textUsd": 0.18008,
+    "voiceConditionalUsd": 0.26808,
+    "transcriptionEstimatedUsd": 0.009000000000000001,
+    "ttsEstimatedUsd": 0.01206,
+    "subtotalUsd": 0.46921999999999997,
+    "subtotalJpy": 93.844,
+    "withBufferJpy": 112.6128
+  }
+}
