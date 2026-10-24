@@ -90,7 +90,8 @@
 | ENV-004 | 最新PR #30标准runner与真实dev复测、顺序合并记录 | Codex | merged | PR #31，merge2e9b5c5；最终证据/状态补记在codex/ENV-004-state | 固定主干4a851fd标准run40052153140：static0/unit71/离线40/真实dev36通过4明确跳过；全部指定PR顺序合并，见ENV-004-final交接 |
 | CONTENT-004 | 按CONTENT-REVIEW-001修订场景/术语/评测 | Codex | merged | PR #34，merge4a851fd | 12场景/34术语/84转写+12配对=96评测；字段结构保留；提交后数据已跑生成器与--check（隔离环境），预览/注音接入仍归Claude；见CONTENT-004交接 |
 | SEC-001 | docs/08 #16的Worker CSP等响应头 | Codex | merged | PR #33，merge86ebc70 | 完整业务树unit71/离线40/真实dev36通过4有原因跳过，7项CSP/API/注音/麦克风断言及模拟WebRTC通过；见SEC-001交接 |
-| CORE-PREVIEW-001 | 默认隐藏的「コア練習（草稿）」入口与生成器；服务端按隐藏信息、分支、反馈规则生成角色指示，隐藏信息不进浏览器 | Claude | review_ready | PR #35，`claude/CORE-PREVIEW-001`，已吸收 main `c7a810a` 并用 CONTENT-004 内容重新生成（`83b701c`） | handoffs/2026-10-24-CORE-PREVIEW-001-claude.md；@`83b701c` 离线 static 0 / unit 81 / e2e 47（模拟 AI）；待 Codex 固定 SHA 复测（含 real-dev 与 SEC-001 安全头）；真实模型是否遵守未验证 |
+| CORE-PREVIEW-001 | 默认隐藏的「コア練習（草稿）」入口与生成器；服务端按隐藏信息、分支、反馈规则生成角色指示，隐藏信息不进浏览器 | Claude | review_ready | PR #35，`claude/CORE-PREVIEW-001`，已吸收 main `c7a810a` 并用 CONTENT-004 内容重新生成（`83b701c`） | handoffs/2026-10-24-CORE-PREVIEW-001-claude.md；@`83b701c` 离线 static 0 / unit 81 / e2e 47（模拟 AI）；GitHub CI（含 CI-002 测试）@`a4d7831` run 40057219144 success：static 0 / unit 81 / e2e 47；待 Codex 固定 SHA 复测（real-dev 与 SEC-001 安全头）；真实模型是否遵守未验证 |
+| CORE-EVAL-001 | 核心草稿角色检查工具 `tools/smoke/core-roleplay-check.mjs`：28 个固定探测经 `/api/chat`，用标志词检查隐藏信息是否过早透露；不加 `--yes` 不调用 | Claude | review_ready | `claude/CORE-EVAL-001`（依赖 PR #35） | handoffs/2026-10-24-CORE-EVAL-001-claude.md；@`c656db7` 离线 static 0 / unit 81 / e2e 50（模拟 AI）；真实模型未运行，需授权费用 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -121,6 +122,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-CORE-EVAL-001-claude.md：核心草稿的角色检查工具（真实模型运行前的准备，需授权费用才运行）。
 
 - handoffs/2026-10-24-CORE-PREVIEW-001-claude.md：核心场景草稿的可选预览入口（默认隐藏）、生成器、草稿用的 AI 指示；已吸收含 CONTENT-004 的 main 并重新生成。
 
