@@ -1,0 +1,802 @@
+[
+  {
+    "scene_id": "SSW-S65",
+    "dialogue": [
+      {
+        "style_id": "friendly_interest",
+        "note_zh": "日常询问饭点，轻微兴趣即可，不预设期待或焦躁。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "邀请用餐前洗手，语气亲切并留出选择。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "自然表示愿意洗手，轻快确认即可。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "提出有需要可以帮忙，不替本人决定。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S66",
+    "dialogue": [
+      {
+        "style_id": "respectful_request",
+        "note_zh": "同事礼貌交代准备洗手用品，要求清楚。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "认真询问尚不清楚的用品位置。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "明确告知位置，方便对方找到用品。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述位置并表示理解，语气合作。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S67",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "同事询问平时如何处理，语气开放，不像考问。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "坦诚说明不懂并求教，不夸张羞怯。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "提出一起确认，表现支持而非责备。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然接受帮助并请对方指导。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S68",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "护士关切询问来意，等待对方说明。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "清楚转述本人说咳嗽，不模仿咳嗽或补病情。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "确认听见并表示前去查看，平稳可靠。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "交代本人所在位置，信息清楚不夸大紧急。"
+      }
+    ],
+    "alternatives": [
+      "neutral_report",
+      "neutral_report"
+    ]
+  },
+  {
+    "scene_id": "SSW-S69",
+    "dialogue": [
+      {
+        "style_id": "neutral_report",
+        "note_zh": "说明毛巾湿了这一日常情况，不添懊恼。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "温和询问能否更换，等待本人同意。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然同意并请职员更换。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接住请求后说明去准备，语气温和。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S70",
+    "dialogue": [
+      {
+        "style_id": "uncertain",
+        "note_zh": "询问将要做什么，表达轻微不明白，不添恐惧。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "说明想换床单并征询当前是否方便。"
+      },
+      {
+        "style_id": "respectful_decline",
+        "note_zh": "平和表达希望晚一点，拒绝无需歉疚。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳暂缓意愿，不劝说或显得不耐烦。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S71",
+    "dialogue": [
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然提出想洗衣服的请求。"
+      },
+      {
+        "style_id": "gentle_check",
+        "note_zh": "询问具体想洗哪件，耐心等待回答。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "明确指出希望清洗的衣物。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述这件衬衫，表示已理解本人选择。"
+      }
+    ],
+    "alternatives": [
+      "gentle_check",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S72",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "同事询问核对衣物的进展，不用审问语气。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "认真问清姓名标签位置，不猜测。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "简短说清标签所在部位。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述位置并说明会核对，语气认真。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S73",
+    "dialogue": [
+      {
+        "style_id": "uncertain",
+        "note_zh": "询问接下来做什么，只有自然疑问。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "先说明测温再征求同意，句尾温和。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然同意并请对方进行安排。"
+      },
+      {
+        "style_id": "grateful",
+        "note_zh": "感谢配合，温暖而不过分热情。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S74",
+    "dialogue": [
+      {
+        "style_id": "uncertain",
+        "note_zh": "询问接下来项目，不自动表现为担心。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "说明测压并征询同意，不像发命令。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "表示已听懂，平稳回应。"
+      },
+      {
+        "style_id": "grateful",
+        "note_zh": "感谢理解与配合，语气温暖自然。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S75",
+    "dialogue": [
+      {
+        "style_id": "respectful_request",
+        "note_zh": "护士清楚交代体温确认工作，保持合作。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "询问尚未交代的时间，重点说清何时。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "明确给出十点这个时刻。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述十点以确认理解，语气平稳。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S76",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "护士专注询问发生何事，迅速接住求助。"
+      },
+      {
+        "style_id": "urgent_call",
+        "note_zh": "立即报告头晕并请求来查看，紧迫清楚，不尖叫。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "表示马上前去并明确问地点，专注可靠。"
+      },
+      {
+        "style_id": "urgent_call",
+        "note_zh": "清楚突出食堂这一地点与求助，保持紧迫而不慌乱。"
+      }
+    ],
+    "alternatives": [
+      "urgent_call",
+      "urgent_call"
+    ]
+  },
+  {
+    "scene_id": "SSW-S77",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "护士开放地询问要确认什么。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "认真询问服药时间，不装成已经知道。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "说明会核对计划，平稳回应。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然请护士帮忙确认。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S78",
+    "dialogue": [
+      {
+        "style_id": "respectful_decline",
+        "note_zh": "明确表达现在不想服药，平和而有自主意愿。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "先接纳不想服药的意思，再说明转告护士。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "表达希望有人听自己说，诚恳而不演成哀求。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "回应本人希望并说明会叫护士，不施压。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S79",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "护士询问观察到的事情，语气认真开放。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "报告桌上仍有药这一所见，并请求确认。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "表示现在会确认，不增加未核实判断。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然请护士查看，简短但不冷漠。"
+      }
+    ],
+    "alternatives": [
+      "neutral_report",
+      "neutral_report"
+    ]
+  },
+  {
+    "scene_id": "SSW-S80",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "护士邀请提出不懂的地方，语气支持。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "坦诚表示不理解指示并请求说明。"
+      },
+      {
+        "style_id": "gentle_check",
+        "note_zh": "进一步问清具体哪部分，不表现为责备。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "具体指出想确认词义，清楚而不急促。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S81",
+    "dialogue": [
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "询问通院时间，保持日常确认的语气。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "清楚传达十点的已知计划，强调仍是予定。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述时间以确认自己听懂。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "说明计划若变会告知，可靠而不作额外保证。"
+      }
+    ],
+    "alternatives": [
+      "neutral_report",
+      "neutral_report"
+    ]
+  },
+  {
+    "scene_id": "SSW-S82",
+    "dialogue": [
+      {
+        "style_id": "respectful_request",
+        "note_zh": "同事交代准备工作，要求简短清楚。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "一次问清开始时刻和地点，认真自然。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "将时间与地点分开说清，便于记住。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "简短复述两点与一楼，表达合作。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S83",
+    "dialogue": [
+      {
+        "style_id": "neutral_report",
+        "note_zh": "说明正在准备外出，不强加兴奋或焦虑。"
+      },
+      {
+        "style_id": "gentle_check",
+        "note_zh": "关心本人想带什么，留出回答空间。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "自然表达希望带帽子。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "确认帽子这个选择并说明会备好。"
+      }
+    ],
+    "alternatives": [
+      "gentle_check",
+      "gentle_check"
+    ]
+  },
+  {
+    "scene_id": "SSW-S84",
+    "dialogue": [
+      {
+        "style_id": "warm_greeting",
+        "note_zh": "回到设施时自然打招呼。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "亲切欢迎回来，再温和询问是否休息。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "表达想休息，不自动附加疲惫呻吟。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳休息意愿并提醒可呼叫，语气支持。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_offer"
+    ]
+  },
+  {
+    "scene_id": "SSW-S85",
+    "dialogue": [
+      {
+        "style_id": "warm_greeting",
+        "note_zh": "访客初次到访，礼貌自然打招呼。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "礼貌询问姓名与来意，清楚但不生硬。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "简短介绍自己并说明面会来意。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "说明先确认负责人并请等待，语气专业友好。"
+      }
+    ],
+    "alternatives": [
+      "respectful_request",
+      "respectful_request"
+    ]
+  },
+  {
+    "scene_id": "SSW-S86",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "询问利用者身体情况，体现自然关心，不预设病情。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "诚实说明自己不清楚并会确认，避免冷淡推脱。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然提出希望询问负责人。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接住访客请求并说明会叫负责人。"
+      }
+    ],
+    "alternatives": [
+      "neutral_report",
+      "neutral_report"
+    ]
+  },
+  {
+    "scene_id": "SSW-S87",
+    "dialogue": [
+      {
+        "style_id": "respectful_request",
+        "note_zh": "礼貌请同事转交留言，不用命令口吻。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "先问清来电者和留言内容，认真专注。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "转述来电者及稍后再打的消息，不补事实。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述关键信息确认听懂。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S88",
+    "dialogue": [
+      {
+        "style_id": "preference",
+        "note_zh": "自然表达想联系家人的愿望。"
+      },
+      {
+        "style_id": "gentle_check",
+        "note_zh": "关心希望联系谁及传达什么，耐心询问。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "温和表达想见女儿，不强加哭腔或悲伤。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "接纳愿望并说明会核对联系方式，不承诺来访。"
+      }
+    ],
+    "alternatives": [
+      "gentle_check",
+      "gentle_check"
+    ]
+  },
+  {
+    "scene_id": "SSW-S89",
+    "dialogue": [
+      {
+        "style_id": "friendly_interest",
+        "note_zh": "日常询问今天安排，带一点自然兴趣。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "说明即将进行训练，平稳清楚而非警报口吻。"
+      },
+      {
+        "style_id": "concern",
+        "note_zh": "对是否真有火灾表示轻微担心，不演成恐慌。"
+      },
+      {
+        "style_id": "reassurance",
+        "note_zh": "明确回答只是训练并说明有职员引导，温和安抚。"
+      }
+    ],
+    "alternatives": [
+      "neutral_report",
+      "neutral_report"
+    ]
+  },
+  {
+    "scene_id": "SSW-S90",
+    "dialogue": [
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "说清训练前集合要求，平稳而有条理。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "没听清地点时礼貌再问，不必慌张。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "再次说清谈话室，不显不耐烦。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "复述地点，表示已经理解。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S91",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "同事询问发生的情况，认真接收信息。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "报告走廊有物品并请同事来确认，不添危急情节。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "表示会来并明确问所在位置。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "简短清楚指出食堂前这个位置。"
+      }
+    ],
+    "alternatives": [
+      "neutral_report",
+      "neutral_report"
+    ]
+  },
+  {
+    "scene_id": "SSW-S92",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "同事关切询问状况，等待具体说明。"
+      },
+      {
+        "style_id": "concern",
+        "note_zh": "对设备声音不同表示轻度在意，不夸大成故障灾情。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "回应现在会确认，平稳可靠。"
+      },
+      {
+        "style_id": "neutral_report",
+        "note_zh": "清楚说明设备在这里并请确认，不增加推测。"
+      }
+    ],
+    "alternatives": [
+      "concern",
+      "concern"
+    ]
+  },
+  {
+    "scene_id": "SSW-S93",
+    "dialogue": [
+      {
+        "style_id": "preference",
+        "note_zh": "自然表达希望眼镜放在身边。"
+      },
+      {
+        "style_id": "respectful_offer",
+        "note_zh": "尊重本人意愿，温和询问放置位置。"
+      },
+      {
+        "style_id": "preference",
+        "note_zh": "明确选择桌上这个位置。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "确认选择并说明放这里，语气合作。"
+      }
+    ],
+    "alternatives": [
+      "respectful_offer",
+      "respectful_request"
+    ]
+  },
+  {
+    "scene_id": "SSW-S94",
+    "dialogue": [
+      {
+        "style_id": "neutral_report",
+        "note_zh": "清楚说明听不清的感受，不添痛苦或虚弱演技。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "先接住听不清的困难，再说明会叫负责人。"
+      },
+      {
+        "style_id": "respectful_request",
+        "note_zh": "自然请职员帮忙联系。"
+      },
+      {
+        "style_id": "gentle_acknowledgment",
+        "note_zh": "回应请求并说明会请人确认，语气支持。"
+      }
+    ],
+    "alternatives": [
+      "gentle_acknowledgment",
+      "gentle_acknowledgment"
+    ]
+  },
+  {
+    "scene_id": "SSW-S95",
+    "dialogue": [
+      {
+        "style_id": "gentle_check",
+        "note_zh": "同事自然询问手里是什么，不用盘问口吻。"
+      },
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "认真询问眼镜属于谁，保留未知状态。"
+      },
+      {
+        "style_id": "uncertain",
+        "note_zh": "诚实表示自己也不知道，轻微不确定即可。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "理解当前未知并说明会询问负责人。"
+      }
+    ],
+    "alternatives": [
+      "patient_clarification",
+      "patient_clarification"
+    ]
+  },
+  {
+    "scene_id": "SSW-S96",
+    "dialogue": [
+      {
+        "style_id": "patient_clarification",
+        "note_zh": "询问呼叫按钮位置，清楚表达需求。"
+      },
+      {
+        "style_id": "gentle_check",
+        "note_zh": "说明位置后关切询问是否够得着，等本人回答。"
+      },
+      {
+        "style_id": "calm_confirmation",
+        "note_zh": "自然确认够得到，不添过分兴奋。"
+      },
+      {
+        "style_id": "clear_guidance",
+        "note_zh": "清楚说明有需要怎样呼叫，语气支持。"
+      }
+    ],
+    "alternatives": [
+      "gentle_check",
+      "gentle_check"
+    ]
+  }
+]

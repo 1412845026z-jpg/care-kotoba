@@ -23,11 +23,11 @@
 <section class="controls" aria-label="会話の絞り込みと表示設定">
 <label class="field">ことばで探す / 搜索<input id="search" type="search" placeholder="例：トイレ、食事、听不懂" autocomplete="off"></label>
 <label class="field">場面 / 分类<select id="topic"><option value="all">すべて / 全部分类</option></select></label>
-<div class="checks"><label><input id="kana" type="checkbox" checked>かな / 假名</label><label><input id="translation" type="checkbox" checked>中文</label></div>
+<div class="checks"><label><input id="kana" type="checkbox" checked>かな / 假名</label><label><input id="translation" type="checkbox" checked>中文</label><label><input id="delivery" type="checkbox">話し方 / 语气提示</label></div>
 <fieldset class="mode"><legend>練習のしかた / 查看方式</legend><div class="checks"><label><input name="mode" value="dialogue" type="radio" checked>会話を読む / 看对话</label><label><input name="mode" value="practice" type="radio">自分で答える / 先自己回答</label></div></fieldset>
 </section>
 <div class="toolbar"><p id="count" aria-live="polite"></p><button id="stop" type="button">朗読を止める / 停止朗读</button></div>
-<p class="speech-note" lang="zh-Hans">朗读按钮只在点击后使用浏览器或系统的日语声音，可能需要联网；这是临时朗读，不是新增 MP3，也不是已选定的角色音色。没有日语声音时会提示，不改用英语声音。请只用于这些虚构句子。</p>
+<p class="speech-note" lang="zh-Hans">朗读按钮只在点击后使用浏览器或系统的日语声音，可能需要联网；这是临时朗读，不是新增 MP3，也不是已选定的角色音色。可打开「语气提示」练习表达；端末朗读不保证表现这些情感。没有日语声音时会提示，不改用英语声音。请只用于这些虚构句子。</p>
 <p id="speech-status" class="status" role="status" aria-live="polite"></p>
 <section id="scenes" class="grid" aria-label="基本の短い会話"></section>
 <footer lang="zh-Hans"><p>主题参考官方免费教材，句子、对话与中文辅助由本项目原创；未复制教材原文、录音、试题或插图。当前只含日语、假名和中文辅助，不表示已完成其他语言本地化。</p><p>可下载本页后在浏览器打开；不需要账户。本页没有录音、上传或自动外站请求。端末朗读是否联网取决于浏览器或系统声音。</p><p id="audio-plan-note"></p></footer>
@@ -41,7 +41,7 @@ const roleNames={worker:'介護職員 / 学员',resident:'利用者',colleague:'
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const counts=pack.counts;
 byId('stats').textContent=`${counts.topics} 分类 · ${counts.scenes} 个微场景 · ${counts.dialogue_lines} 轮台词 · ${counts.alternative_answers} 条替代表达`;
-byId('audio-plan-note').textContent=`配套待合成清单有 ${counts.unique_planned_audio_assets} 条按角色和文字去重的资产。本批新增 MP3：${counts.generated_mp3_files}。音色选择、文本专业审稿、全量合成和真正试听仍未完成。`;
+byId('audio-plan-note').textContent=`配套待合成清单有 ${counts.unique_planned_audio_assets} 条按角色、文字和表达风格去重的资产（基础文本 ${counts.unique_role_text_assets} 条）。本批新增 MP3：${counts.generated_mp3_files}。音色选择、文本专业审稿、全量合成和真正试听仍未完成。`;
 for(const t of pack.topics){const o=document.createElement('option');o.value=t.id;o.textContent=`${t.id} ${t.title_ja} / ${t.title_zh}`;byId('topic').append(o);}
 let speechSequence=0;
 function speechStatus(message){byId('speech-status').textContent=message;}
@@ -59,13 +59,14 @@ function speak(lines){
   window.speechSynthesis.speak(utterance);
  };next();
 }
-function turnHTML(turn,index,sid){return `<div class="turn"><div class="turn-top"><span class="role">${escapeHTML(roleNames[turn.speaker]||turn.speaker)}</span><button class="read" type="button" data-read="${index}" data-scene="${sid}" aria-label="${escapeHTML(turn.ja)} を端末で朗読">朗読 / 朗读</button></div><p class="ja" lang="ja">${escapeHTML(turn.ja)}</p><p class="kana" lang="ja"${byId('kana').checked?'':' hidden'}>${escapeHTML(turn.kana)}</p><p class="translation" lang="zh-Hans"${byId('translation').checked?'':' hidden'}>${escapeHTML(turn.zh)}</p></div>`;}
+function deliveryHTML(direction){return `<p class="delivery speech-note" lang="zh-Hans"${byId('delivery').checked?'':' hidden'}>语气：${escapeHTML(direction.name_zh)} · ${escapeHTML(direction.note_zh||direction.emotion_zh)}</p>`;}
+function turnHTML(turn,index,sid){return `<div class="turn"><div class="turn-top"><span class="role">${escapeHTML(roleNames[turn.speaker]||turn.speaker)}</span><button class="read" type="button" data-read="${index}" data-scene="${sid}" aria-label="${escapeHTML(turn.ja)} を端末で朗読">朗読 / 朗读</button></div><p class="ja" lang="ja">${escapeHTML(turn.ja)}</p><p class="kana" lang="ja"${byId('kana').checked?'':' hidden'}>${escapeHTML(turn.kana)}</p><p class="translation" lang="zh-Hans"${byId('translation').checked?'':' hidden'}>${escapeHTML(turn.zh)}</p>${deliveryHTML(turn.delivery)}</div>`;}
 function cardHTML(scene,practice){
  const topic=pack.topics.find(t=>t.id===scene.topic_id);
  const heading=`<div class="id">${escapeHTML(scene.id)} · ${escapeHTML(topic.title_ja)}</div><h2>${escapeHTML(scene.title_ja)}</h2><p class="zh-title" lang="zh-Hans">${escapeHTML(scene.title_zh)}</p><p class="goal" lang="zh-Hans">这次练习：${escapeHTML(scene.goal_zh)}</p><p class="context" lang="zh-Hans">${escapeHTML(scene.context_zh)}</p>`;
  if(!practice)return `<article class="scene" data-card="${scene.id}">${heading}<div>${scene.dialogue.map((t,i)=>turnHTML(t,i,scene.id)).join('')}</div><div class="scene-actions"><button type="button" data-conversation="${scene.id}">会話を朗読 / 朗读整段</button></div></article>`;
  const cue=scene.dialogue[scene.practice.cue_turn],response=scene.dialogue[scene.practice.response_turn];
- return `<article class="scene" data-card="${scene.id}">${heading}<div class="practice-cue">${turnHTML(cue,scene.practice.cue_turn,scene.id)}</div><p lang="zh-Hans">回应练习：你会怎样接下一句？先自己说，再看参考。完整提问与说明请切到整段对话练习。</p><button class="primary" type="button" data-reveal="${scene.id}" aria-expanded="false" aria-controls="answer-${scene.id}">参考を見る / 看参考回答</button><div id="answer-${scene.id}" class="answer" hidden><p class="role">参考回答（不是唯一答案）</p>${turnHTML(response,scene.practice.response_turn,scene.id)}<h3 lang="zh-Hans">也可以这样说</h3><ul>${scene.practice.alternatives_ja.map((text,i)=>`<li><p class="ja" lang="ja">${escapeHTML(text)}</p><button class="read" type="button" data-alternative="${i}" data-scene="${scene.id}" aria-label="${escapeHTML(text)} を端末で朗読">朗読 / 朗读</button></li>`).join('')}</ul><p class="check" lang="zh-Hans">核对：${escapeHTML(scene.practice.check_zh)}</p></div></article>`;
+ return `<article class="scene" data-card="${scene.id}">${heading}<div class="practice-cue">${turnHTML(cue,scene.practice.cue_turn,scene.id)}</div><p lang="zh-Hans">回应练习：你会怎样接下一句？先自己说，再看参考。完整提问与说明请切到整段对话练习。</p><button class="primary" type="button" data-reveal="${scene.id}" aria-expanded="false" aria-controls="answer-${scene.id}">参考を見る / 看参考回答</button><div id="answer-${scene.id}" class="answer" hidden><p class="role">参考回答（不是唯一答案）</p>${turnHTML(response,scene.practice.response_turn,scene.id)}<h3 lang="zh-Hans">也可以这样说</h3><ul>${scene.practice.alternatives_ja.map((text,i)=>`<li><p class="ja" lang="ja">${escapeHTML(text)}</p>${deliveryHTML(scene.practice.alternative_delivery[i])}<button class="read" type="button" data-alternative="${i}" data-scene="${scene.id}" aria-label="${escapeHTML(text)} を端末で朗読">朗読 / 朗读</button></li>`).join('')}</ul><p class="check" lang="zh-Hans">核对：${escapeHTML(scene.practice.check_zh)}</p></div></article>`;
 }
 function render(){
  stopSpeech('');const query=byId('search').value.trim().toLocaleLowerCase();const topic=byId('topic').value;
@@ -78,6 +79,7 @@ for(const id of ['search','topic'])byId(id).addEventListener(id==='search'?'inpu
 for(const input of document.querySelectorAll('input[name=mode]'))input.addEventListener('change',render);
 byId('kana').addEventListener('change',()=>document.querySelectorAll('.kana').forEach(p=>p.hidden=!byId('kana').checked));
 byId('translation').addEventListener('change',()=>document.querySelectorAll('.translation').forEach(p=>p.hidden=!byId('translation').checked));
+byId('delivery').addEventListener('change',()=>document.querySelectorAll('.delivery').forEach(p=>p.hidden=!byId('delivery').checked));
 byId('stop').addEventListener('click',()=>stopSpeech());
 byId('scenes').addEventListener('click',event=>{
  const b=event.target.closest('button');if(!b)return;

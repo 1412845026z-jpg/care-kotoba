@@ -1,0 +1,28 @@
+{
+  "baseline": "2f2808ff005091de5fefb6150ec323e2f70db875",
+  "all_directions": 576,
+  "styles": 19,
+  "unchanged_scene_text_and_prototype": true,
+  "same_text_different_delivery_separate_assets": true,
+  "same_text_same_delivery_reused": true,
+  "spec_revision_changes_asset_ids": true,
+  "independent_qa_hashes_match": true,
+  "unique_role_text_assets": 553,
+  "unique_delivery_assets": 553,
+  "generated_mp3_count": 0,
+  "paid_calls": 0,
+  "audible_emotion_verified": false,
+  "input_hashes": {
+    "content/ssw-basic/scenes-01-32.json": "fd288470be6523aebdb0a0a83eefe07e7fc07f768909fb2c701c3d6358db00e9",
+    "content/ssw-basic/scenes-33-64.json": "046353196557fd9ac2dc6b57103a638ebff01db994a00eb7b411a234e414c8dd",
+    "content/ssw-basic/scenes-65-96.json": "26f2a54b44cece6ff31353b42a8dbe456ef32acef30ff38e366f8a6b378d0b8f",
+    "content/ssw-basic/delivery-01-32.json": "00a8a98265c85a009c13a907ca8628993b1128f2733fdf63bdc95104c5a21bd2",
+    "content/ssw-basic/delivery-33-64.json": "c36df893c47451854ae0b623a781f1c152e20cfef9ab35d5b3ccc3bc85019991",
+    "content/ssw-basic/delivery-65-96.json": "78ffe12693b3f290cf98d6b291a6386397fb6a5469a48f9fe5460d9f90df716d",
+    "content/ssw-basic/sources.json": "418f2d81becf27f352d41beff920d0b86a23b23b6ba0c7cba7fd3a9d540fe9d8",
+    "tools/ssw-basic/build.py": "36add99223f6042f6d3d1d6f707708cdbe251f15d34dff6049d145a312e0feae",
+    "content/ssw-basic/template.html": "3af00ea37fd46dbd9aae3a039e504c52933c93cbe2d60807f1bfb8c0e1525c20",
+    "content/ssw-basic/speech-delivery.json": "09a0c06c7c9c67cf885ea6a1d5fff1682f12810f550155018e0574dfaf2d9d7e",
+    "content/ssw-basic/voice-profiles.json": "a9c956f0a1d7db634ccc4d4c2b5ece9b194b4f119a567be490500daab451c249"
+  }
+}

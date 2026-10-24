@@ -1,0 +1,143 @@
+{
+  "version": "1.0.0",
+  "task": "VOICE-EXPRESSION-001",
+  "status": "authored_direction_not_audio_acceptance",
+  "global_instruction_ja": "文の意味と場面に合わせ、自然な感情と抑揚をつけてください。同じ人物の声を保ち、言葉や事実を足さず、短い文を明瞭に話してください。",
+  "composition_order_zh": "声音身份保持固定；角色的基础倾向叠加当前句子的表达风格。紧急求助等语义优先于基础的平稳语气，不把所有句子压成同一种情绪。",
+  "note_rule_zh": "逐句note_zh解释本句为什么使用该语气，供编辑审阅，不朗读、不自动拼入合成提示；正式表达指令由style_id与本文件版本唯一确定。",
+  "styles": [
+    {
+      "id": "warm_greeting",
+      "name_zh": "亲切问候",
+      "emotion_zh": "友好、轻微明亮",
+      "intensity": "low",
+      "instruction_ja": "自然で親しみのある挨拶。少し明るい声で、相手に届くように話す。大げさに弾ませない。"
+    },
+    {
+      "id": "friendly_interest",
+      "name_zh": "愉快交流",
+      "emotion_zh": "兴趣、轻微愉快",
+      "intensity": "low",
+      "instruction_ja": "話題への関心や小さな喜びを、自然な抑揚で伝える。笑い声を足さず、子ども扱いしない。"
+    },
+    {
+      "id": "gentle_check",
+      "name_zh": "温和询问",
+      "emotion_zh": "关切、等待回应",
+      "intensity": "low",
+      "instruction_ja": "相手の気持ちや体調を、やさしく気にかけて尋ねる。質問の終わりに自然な間を取り、答えを急がせない。"
+    },
+    {
+      "id": "gentle_acknowledgment",
+      "name_zh": "接纳并回应",
+      "emotion_zh": "理解、耐心",
+      "intensity": "low",
+      "instruction_ja": "相手の言葉を受け止め、やさしく応じる。繰り返しでも、いら立ちや説得する調子を出さない。"
+    },
+    {
+      "id": "reassurance",
+      "name_zh": "温和安慰",
+      "emotion_zh": "共情、支持",
+      "intensity": "low",
+      "instruction_ja": "相手の気持ちを受け止め、支える気持ちで話す。落ち着いた自然な抑揚で、安心や結果を勝手に断言しない。"
+    },
+    {
+      "id": "respectful_offer",
+      "name_zh": "尊重地提议",
+      "emotion_zh": "亲切、留有选择",
+      "intensity": "low",
+      "instruction_ja": "手伝いや選択肢を、押し付けずに提案する。やわらかな疑問の調子で、相手が断れる余地を残す。"
+    },
+    {
+      "id": "respectful_request",
+      "name_zh": "礼貌请求",
+      "emotion_zh": "诚恳、克制",
+      "intensity": "low",
+      "instruction_ja": "お願いしたい内容を、丁寧で自然な声で伝える。命令や責める調子にせず、必要以上に恐縮しない。"
+    },
+    {
+      "id": "respectful_decline",
+      "name_zh": "自然拒绝",
+      "emotion_zh": "明确意愿、平和",
+      "intensity": "low",
+      "instruction_ja": "断る気持ちや今は望まないことを、穏やかにはっきり伝える。怒り、悲しみ、申し訳なさを勝手に足さない。"
+    },
+    {
+      "id": "preference",
+      "name_zh": "表达希望",
+      "emotion_zh": "自然意愿",
+      "intensity": "low",
+      "instruction_ja": "自分の希望や好みを、普段の自然な話し方で伝える。弱々しさや甘えを足さず、希望する内容をわかりやすく話す。"
+    },
+    {
+      "id": "patient_clarification",
+      "name_zh": "耐心确认不明处",
+      "emotion_zh": "认真、愿意问清",
+      "intensity": "low",
+      "instruction_ja": "わからない点を率直に、確認する気持ちで尋ねる。焦りや恥ずかしさを誇張せず、聞きたい言葉を明瞭にする。"
+    },
+    {
+      "id": "uncertain",
+      "name_zh": "有所不确定",
+      "emotion_zh": "轻微犹豫、疑问",
+      "intensity": "low",
+      "instruction_ja": "まだわからない気持ちを、控えめな疑問や短い間で表す。混乱や恐怖を大げさに演じず、言葉を聞き取りやすくする。"
+    },
+    {
+      "id": "concern",
+      "name_zh": "表达担心",
+      "emotion_zh": "担忧、认真",
+      "intensity": "low",
+      "instruction_ja": "気になっていることへの心配を、控えめで真剣な調子で伝える。泣き声や震え声を足さず、恐怖を煽らない。"
+    },
+    {
+      "id": "discomfort",
+      "name_zh": "表达身体不适",
+      "emotion_zh": "不舒服、希望被理解",
+      "intensity": "low",
+      "instruction_ja": "体のつらさや不快感を、無理のない自然な声で伝える。うめき声、息切れ、激しい痛みの演技を勝手に足さない。"
+    },
+    {
+      "id": "neutral_report",
+      "name_zh": "清楚陈述或报告",
+      "emotion_zh": "认真、平稳",
+      "intensity": "low",
+      "instruction_ja": "見聞きしたことや予定を、落ち着いて明瞭に伝える。重要な語の前後に自然な区切りを置き、無感情な棒読みにしない。"
+    },
+    {
+      "id": "calm_confirmation",
+      "name_zh": "平稳确认",
+      "emotion_zh": "理解、合作",
+      "intensity": "low",
+      "instruction_ja": "聞いた内容や自分の理解を、協力する自然な調子で確認する。短い返事にも意味に合う抑揚をつけ、機械的にしない。"
+    },
+    {
+      "id": "clear_guidance",
+      "name_zh": "清楚说明与支持",
+      "emotion_zh": "可靠、耐心",
+      "intensity": "low",
+      "instruction_ja": "必要なことを一つずつ、明確で支える調子で伝える。威圧や皮肉を使わず、相手が理解できる区切りを取る。"
+    },
+    {
+      "id": "urgent_call",
+      "name_zh": "明确紧急求助",
+      "emotion_zh": "紧迫、专注",
+      "intensity": "moderate",
+      "instruction_ja": "急いで助けが必要だと明確に伝える。場所と依頼の言葉をはっきり強調し、叫ばず、早口で言葉を潰さない。"
+    },
+    {
+      "id": "grateful",
+      "name_zh": "自然感谢",
+      "emotion_zh": "感谢、温暖",
+      "intensity": "low",
+      "instruction_ja": "助けや配慮への感謝を、温かく自然な抑揚で伝える。大げさなお礼や笑い声を足さない。"
+    },
+    {
+      "id": "relief",
+      "name_zh": "稍感安心",
+      "emotion_zh": "轻微放松、释然",
+      "intensity": "low",
+      "instruction_ja": "確認できて少しほっとした気持ちを、自然にやわらいだ語尾で伝える。ため息や喜びの声を足さず、結果を広げて断言しない。"
+    }
+  ]
+}
