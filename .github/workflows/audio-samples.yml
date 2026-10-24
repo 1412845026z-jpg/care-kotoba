@@ -1,0 +1,79 @@
+# Manual local-CPU regeneration only. No PR/push/schedule trigger.
+name: Free local CPU audio samples (one-time)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: audio-samples-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  generate:
+    # Public repo, standard free Linux runner. Never a larger/GPU runner.
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/AUDIO-SAMPLES-001'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      CI: 'true'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      DO_NOT_TRACK: '1'
+      CUDA_VISIBLE_DEVICES: ''
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Extract existing five reference phrases (no App install)
+        run: node --experimental-strip-types scripts/ci/audio_sentences.mjs . "$RUNNER_TEMP/audio-output"
+      - name: Free isolated synthesis tools (no App packages)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install --yes --no-install-recommends ffmpeg 7zip python3-venv build-essential cmake
+          dpkg-query -W ffmpeg 7zip python3-venv build-essential cmake > "$RUNNER_TEMP/audio-output/system-tool-versions.txt"
+          mkdir -p "$RUNNER_TEMP/audio-output/licenses/system-tools"
+          cp /usr/share/doc/ffmpeg/copyright "$RUNNER_TEMP/audio-output/licenses/system-tools/ffmpeg-copyright.txt"
+          cp /usr/share/doc/7zip/copyright "$RUNNER_TEMP/audio-output/licenses/system-tools/7zip-copyright.txt"
+      - name: Create isolated CPU synthesis environment
+        run: |
+          set -euo pipefail
+          command -v ffmpeg
+          command -v 7z || command -v 7zz
+          python3 --version
+          python3 -m venv "$RUNNER_TEMP/audio-venv"
+          "$RUNNER_TEMP/audio-venv/bin/python" -m pip install --disable-pip-version-check 'pip==25.1.1'
+          "$RUNNER_TEMP/audio-venv/bin/python" -m pip install --disable-pip-version-check --report "$RUNNER_TEMP/audio-output/torch-install-report.json" --index-url https://download.pytorch.org/whl/cpu 'torch==2.7.1+cpu'
+          printf '%s\n' 'torch==2.7.1+cpu' > "$RUNNER_TEMP/audio-constraints.txt"
+          "$RUNNER_TEMP/audio-venv/bin/python" -m pip install --disable-pip-version-check --report "$RUNNER_TEMP/audio-output/pip-install-report.json" -c "$RUNNER_TEMP/audio-constraints.txt" -r scripts/ci/audio-requirements.lock
+          "$RUNNER_TEMP/audio-venv/bin/python" -m pip freeze --all > "$RUNNER_TEMP/audio-output/requirements-freeze.txt"
+          "$RUNNER_TEMP/audio-venv/bin/python" -m pip check
+      - name: Download only fixed public models and official CPU engine; verify hashes
+        run: >-
+          "$RUNNER_TEMP/audio-venv/bin/python" scripts/ci/audio_samples.py prepare
+          --cache "$RUNNER_TEMP/audio-cache" --out "$RUNNER_TEMP/audio-output"
+      - name: Kokoro Japanese CPU inference with Python sockets rejected
+        run: >-
+          "$RUNNER_TEMP/audio-venv/bin/python" scripts/ci/audio_samples.py kokoro
+          --cache "$RUNNER_TEMP/audio-cache" --out "$RUNNER_TEMP/audio-output"
+      - name: Pinned VOICEVOX local CPU inference on loopback only
+        run: >-
+          "$RUNNER_TEMP/audio-venv/bin/python" scripts/ci/audio_samples.py voicevox
+          --cache "$RUNNER_TEMP/audio-cache" --out "$RUNNER_TEMP/audio-output"
+      - name: Create five comparison clips and artifact checksums
+        run: >-
+          "$RUNNER_TEMP/audio-venv/bin/python" scripts/ci/audio_samples.py comparisons
+          --cache "$RUNNER_TEMP/audio-cache" --out "$RUNNER_TEMP/audio-output"
+      - name: Application remains untouched
+        run: git diff --exit-code -- prototype content
+      - name: Keep small audio, source records, licenses and logs; never models or engine
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: AUDIO-SAMPLES-001-${{ github.sha }}
+          path: ${{ runner.temp }}/audio-output
+          retention-days: 7
+          if-no-files-found: error

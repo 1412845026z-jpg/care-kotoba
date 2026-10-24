@@ -1,0 +1,402 @@
+[
+  {
+    "file": "audio/s1-comparison.mp3",
+    "bytes": 156333,
+    "sha256": "699fe9389c4140c080ae3398abb4de5590365b1fb0b28f85cd1576b04ce900ec"
+  },
+  {
+    "file": "audio/s1-kokoro-jf_alpha.mp3",
+    "bytes": 28653,
+    "sha256": "420947fdb6c15c1450048b8bbef93e3adcd9c960b935de6927edb76bb1c47406"
+  },
+  {
+    "file": "audio/s1-kokoro-jm_kumo.mp3",
+    "bytes": 29229,
+    "sha256": "e4a04e92274022c25a4731ef96e0098d1343d9c1ee88c5b3b448074dc7d4950a"
+  },
+  {
+    "file": "audio/s1-voicevox-kigashima.mp3",
+    "bytes": 24429,
+    "sha256": "22861a52e6f73a5609640aac5ad8a9abb523dcd0066f914e099e224a9ab5cb42"
+  },
+  {
+    "file": "audio/s1-voicevox-kurono.mp3",
+    "bytes": 23085,
+    "sha256": "8e925fcad74e1ca17cc6116dee2a50ec630a0620c22cb5ba9842785d35e01243"
+  },
+  {
+    "file": "audio/s1-voicevox-wakamatsu.mp3",
+    "bytes": 25581,
+    "sha256": "c54b57fb10c3a5a0386efff7c6693199c601c0da9de7d5aa6b4007fda71b5108"
+  },
+  {
+    "file": "audio/s2-comparison.mp3",
+    "bytes": 207981,
+    "sha256": "7737ad354602363a723790b67d187770adaddb0385bf20dabdd5927d0a725b79"
+  },
+  {
+    "file": "audio/s2-kokoro-jf_alpha.mp3",
+    "bytes": 35565,
+    "sha256": "25c71251282979678418a5bf4e2971e55dbe5169edb3b638697a71be54550ca7"
+  },
+  {
+    "file": "audio/s2-kokoro-jm_kumo.mp3",
+    "bytes": 39981,
+    "sha256": "335aabaf5995d95bae799e205ca4af84ac85a462aea552019201b7e421f7dd18"
+  },
+  {
+    "file": "audio/s2-voicevox-kigashima.mp3",
+    "bytes": 35181,
+    "sha256": "96ecea54abfdf6b4d45a518cd3284f35537e8cc652222fb152f47235d1e6b177"
+  },
+  {
+    "file": "audio/s2-voicevox-kurono.mp3",
+    "bytes": 35373,
+    "sha256": "596050ea81f5c4d80c3e5dae0856a168d3509bc75cb84a92706a9cff6ab79ada"
+  },
+  {
+    "file": "audio/s2-voicevox-wakamatsu.mp3",
+    "bytes": 36717,
+    "sha256": "9e7de689aaed44dcb0e72070e09c51c57ad1728caf30a7a1bfc64e12a587b32c"
+  },
+  {
+    "file": "audio/s3-comparison.mp3",
+    "bytes": 130221,
+    "sha256": "08675dd60379c73453b999da90ccf2b3e0b8d23349da8c373b18ec9de8477908"
+  },
+  {
+    "file": "audio/s3-kokoro-jf_alpha.mp3",
+    "bytes": 22893,
+    "sha256": "5fd4c5e3638bb127b85a7e6891597dbe87db15c37fc15f6c9ef42666256885e7"
+  },
+  {
+    "file": "audio/s3-kokoro-jm_kumo.mp3",
+    "bytes": 22317,
+    "sha256": "e68a5d891a4464bd94623314eb0fef8f7560887de4045c92b4e59febbc7b9bc2"
+  },
+  {
+    "file": "audio/s3-voicevox-kigashima.mp3",
+    "bytes": 20013,
+    "sha256": "cd22bb19b538ed137320d35b684030f8487b6121f90f2a754eb8a529d1268014"
+  },
+  {
+    "file": "audio/s3-voicevox-kurono.mp3",
+    "bytes": 18477,
+    "sha256": "f1328e9fa81ec363d24ed79fb4d50625c894c895d6f31082bfa3136fd2e4c278"
+  },
+  {
+    "file": "audio/s3-voicevox-wakamatsu.mp3",
+    "bytes": 21357,
+    "sha256": "61624601bc7e06da6ee41bda2c7dca0bf265dcedef39b8930f594fb00d17f98a"
+  },
+  {
+    "file": "audio/s4-comparison.mp3",
+    "bytes": 183021,
+    "sha256": "bde7eb63e1de70c485880607f2f85ecd7b659acf48b411aad1ca456eb9757c8f"
+  },
+  {
+    "file": "audio/s4-kokoro-jf_alpha.mp3",
+    "bytes": 32109,
+    "sha256": "20f7d7a930f321354cdabb5ff3c90fa02fb782b95ea701363adf1b7d9fdbb4f1"
+  },
+  {
+    "file": "audio/s4-kokoro-jm_kumo.mp3",
+    "bytes": 32301,
+    "sha256": "705bafb93531dc6a2b601d4784f3bfd249f3fff5bef80632248ed01547221d81"
+  },
+  {
+    "file": "audio/s4-voicevox-kigashima.mp3",
+    "bytes": 30381,
+    "sha256": "691c5ed64664d849461de522bcc3b354aab493a5cef5131283504b3568d0d91a"
+  },
+  {
+    "file": "audio/s4-voicevox-kurono.mp3",
+    "bytes": 31341,
+    "sha256": "46dd56c6d85ee3bfd01b01309cfae9b5033fa2c5d717009be26b900e3e96bb48"
+  },
+  {
+    "file": "audio/s4-voicevox-wakamatsu.mp3",
+    "bytes": 31917,
+    "sha256": "9201b707f70aa2e735f8f6ae07e4c57a5d8bf242b13d92b92175afa9310e12d5"
+  },
+  {
+    "file": "audio/s5-comparison.mp3",
+    "bytes": 146541,
+    "sha256": "65cb303e7d9c54cfe651bdee0a9161fa51285eb13089a7e8576f34536bb74e64"
+  },
+  {
+    "file": "audio/s5-kokoro-jf_alpha.mp3",
+    "bytes": 26733,
+    "sha256": "88960aff605d1a6be76c026d61e441370bfb005b16f5af364602fa04f1ef214f"
+  },
+  {
+    "file": "audio/s5-kokoro-jm_kumo.mp3",
+    "bytes": 25965,
+    "sha256": "5596013a297b25792c40fba3797ebb9ccbc2850c2e3ddbaafdc916631b5f2c6c"
+  },
+  {
+    "file": "audio/s5-voicevox-kigashima.mp3",
+    "bytes": 22893,
+    "sha256": "e97a086f0c0f271231ded8321a52dac6f62774252d4b98f6469209249c1765e1"
+  },
+  {
+    "file": "audio/s5-voicevox-kurono.mp3",
+    "bytes": 22125,
+    "sha256": "0b64033c9662cade79c76bd655ca8618103cfdca3dc0dab7709d182d4ae9b47b"
+  },
+  {
+    "file": "audio/s5-voicevox-wakamatsu.mp3",
+    "bytes": 23661,
+    "sha256": "f6097638c930ca1794cd2b0b0ce76af9528f9ca0877ff76aa92f12b17c1d5332"
+  },
+  {
+    "file": "comparisons.json",
+    "bytes": 1738,
+    "sha256": "e302f5a613584a5f41d92fed83d901d3520e586e0b2892669ca259ef5e5a3b96"
+  },
+  {
+    "file": "downloads.json",
+    "bytes": 4551,
+    "sha256": "bf0f219f50fbf56b12819cb6cea23e3704fe231f51a7381a7a58d1d2b9799df3"
+  },
+  {
+    "file": "environment.json",
+    "bytes": 1305,
+    "sha256": "4992cce6ce84975fdfd641298db29272185303889fe682cac49ac18167f23cba"
+  },
+  {
+    "file": "isolated-tool-package-licenses.json",
+    "bytes": 130915,
+    "sha256": "eb5fc500102f9444fb3b01bba84452a549ddb3e24009bb4228466a1663d1494f"
+  },
+  {
+    "file": "kokoro-results.json",
+    "bytes": 7992,
+    "sha256": "4b1d35caff0e89cc712d6c293255b7e261a61f8fe8d481aeec17bbdfe5035e3f"
+  },
+  {
+    "file": "licenses/kokoro/LICENSE",
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "licenses/kokoro/README.md",
+    "bytes": 8295,
+    "sha256": "c32156b644b2545306853e25a77db8b4ed5fd011b34d3d4a599428a1822e7c38"
+  },
+  {
+    "file": "licenses/kokoro/VOICES.md",
+    "bytes": 7569,
+    "sha256": "e6595b5ce8d3c787ed4c9f5acff298c506e44626f4916930288775953bacc8c2"
+  },
+  {
+    "file": "licenses/misaki/LICENSE",
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "licenses/system-tools/7zip-copyright.txt",
+    "bytes": 5835,
+    "sha256": "d03277ad08a77800109b92015262d6f5094681ac3be67aee1094e7276c73b371"
+  },
+  {
+    "file": "licenses/system-tools/ffmpeg-copyright.txt",
+    "bytes": 43831,
+    "sha256": "2be0250f940dc7137c2fb48abdfa3aa09c5900c7e3614127306f0774309d182f"
+  },
+  {
+    "file": "licenses/unidic/unidic/licenses/AUTHORS",
+    "bytes": 22,
+    "sha256": "a05bfdd3a9db36d9c64495f4a3d1824d05b95fbb4fc6dc07c660e91bc191c481"
+  },
+  {
+    "file": "licenses/unidic/unidic/licenses/BSD",
+    "bytes": 1515,
+    "sha256": "770a75de30705439084f869dbcb0bc4ebcffcb7c7124c0d74f5083170318a9bb"
+  },
+  {
+    "file": "licenses/unidic/unidic/licenses/COPYING",
+    "bytes": 210,
+    "sha256": "d44b49398a72590a675e55f8f7a7dbf57bb5b71a9e20ba250f09c0cc5986bef1"
+  },
+  {
+    "file": "licenses/unidic/unidic/licenses/GPL",
+    "bytes": 17991,
+    "sha256": "a137434196f5e39d8836de895866fcfea074ad1b28243174ca1c4a585a1229b0"
+  },
+  {
+    "file": "licenses/unidic/unidic/licenses/LGPL",
+    "bytes": 26428,
+    "sha256": "512d2d21b6b3384ba64781abb0208a1b87740bc31e2df48e2b206ddb7e4d5779"
+  },
+  {
+    "file": "licenses/voicevox-kigashima-policy.md",
+    "bytes": 301,
+    "sha256": "6669e6a13ce6521fdc85364346298982f4d726850a4a03c30d2b7b5e4151ec43"
+  },
+  {
+    "file": "licenses/voicevox-kurono-policy.md",
+    "bytes": 297,
+    "sha256": "29f33c8f7b91e4a318a41e47c15adae4fa44a8e89c3cec92b00a3dca8c1e3da1"
+  },
+  {
+    "file": "licenses/voicevox-wakamatsu-policy.md",
+    "bytes": 295,
+    "sha256": "de3df510273708187ad3c456f29fd400aaebdffabd9601ad1109692bb3f15e94"
+  },
+  {
+    "file": "licenses/voicevox_engine/LGPL_LICENSE",
+    "bytes": 7651,
+    "sha256": "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
+  },
+  {
+    "file": "licenses/voicevox_engine/LICENSE",
+    "bytes": 344,
+    "sha256": "6ec5d5928a194e6a8cf8466add9ad778faf0216a5d11d7a3449ee9dec759e007"
+  },
+  {
+    "file": "licenses/voicevox_resource/engine_README.md",
+    "bytes": 15369,
+    "sha256": "75e1803a359235cedcea2e7d795d37e79ab1ba06006dc4717b6a066aaead6bed"
+  },
+  {
+    "file": "licenses/voicevox_resource/engine_engine_manifest_assets_terms_of_service.md",
+    "bytes": 940,
+    "sha256": "462ec4d4d92476ff8b40d05d50d010944719420b84cd58e4f578a4dc4195c570"
+  },
+  {
+    "file": "pip-install-report.json",
+    "bytes": 1211974,
+    "sha256": "d64e08112b145a23f802aa1afd517a0c3bfb649952d60bab4efe8e3cd06ae75f"
+  },
+  {
+    "file": "queries/s1-voicevox-kigashima.json",
+    "bytes": 5004,
+    "sha256": "8377809bd2ff563f4623018cf5b060a8debb3bd95c4f94d23b5d624f4d668370"
+  },
+  {
+    "file": "queries/s1-voicevox-kurono.json",
+    "bytes": 5012,
+    "sha256": "0c11a7c2d1411bb583f37aa11d9707df92edb0965560c291ec814e3cc7404f90"
+  },
+  {
+    "file": "queries/s1-voicevox-wakamatsu.json",
+    "bytes": 5006,
+    "sha256": "01d7b55d2e407e0b1e2fc436bd3b88a4b11af343dd617d8de598769c52e41ffe"
+  },
+  {
+    "file": "queries/s2-voicevox-kigashima.json",
+    "bytes": 7439,
+    "sha256": "17115ebc5edd9567491c082cf3c8825e3098efb900daa65cf8cbc6138e6ac952"
+  },
+  {
+    "file": "queries/s2-voicevox-kurono.json",
+    "bytes": 7436,
+    "sha256": "6bf25120e4661ef846158c8a6f383990c197e836327d309e885d6d4753539d1f"
+  },
+  {
+    "file": "queries/s2-voicevox-wakamatsu.json",
+    "bytes": 7442,
+    "sha256": "2fcd68cacd6706d574f9a19ae92a083b964881cf2643ab7375fc1411aa1090a6"
+  },
+  {
+    "file": "queries/s3-voicevox-kigashima.json",
+    "bytes": 3930,
+    "sha256": "91b7144f6c93e9b37c44fa4189998ea8d746714daf9a0b365755d8acd26d5ddf"
+  },
+  {
+    "file": "queries/s3-voicevox-kurono.json",
+    "bytes": 3931,
+    "sha256": "ac1af0d71b4af34fcd5376b369bb9397e05121019dd84388b5ffdbf402e507f5"
+  },
+  {
+    "file": "queries/s3-voicevox-wakamatsu.json",
+    "bytes": 3926,
+    "sha256": "c2b9b4a880ef4c11b6a3d91187ed77711156ec86ba3a56be6054ce69ffb7c22a"
+  },
+  {
+    "file": "queries/s4-voicevox-kigashima.json",
+    "bytes": 6420,
+    "sha256": "3eda38a813dfb238b3d8790baedc607101491d9ddfc2f2be7ce5c44afeb4233d"
+  },
+  {
+    "file": "queries/s4-voicevox-kurono.json",
+    "bytes": 6420,
+    "sha256": "aac2f4d7e66519705322994a097eda97e685d3dcb022e5de055857ad948f53c8"
+  },
+  {
+    "file": "queries/s4-voicevox-wakamatsu.json",
+    "bytes": 6418,
+    "sha256": "42add7763912789a9d9d77ac0b39b8df6239db28e4501665a379fe63e6bc3d68"
+  },
+  {
+    "file": "queries/s5-voicevox-kigashima.json",
+    "bytes": 4985,
+    "sha256": "e470ed2e6042fe0bac8d11b77bb0808678de55c730eb1b6302d41a90146fae9d"
+  },
+  {
+    "file": "queries/s5-voicevox-kurono.json",
+    "bytes": 4985,
+    "sha256": "42baaaa2ab9ff947e2eaa92f5743a8240e4158c3d80097055a7b7758872d94e2"
+  },
+  {
+    "file": "queries/s5-voicevox-wakamatsu.json",
+    "bytes": 4985,
+    "sha256": "a475193a2d1a519f4a7ec0f708db4facd297dac859c7257d31bb31943f9aefd0"
+  },
+  {
+    "file": "requirements-freeze.txt",
+    "bytes": 1689,
+    "sha256": "f50ec7ac962a1fea0c54d862f3b178cd09af4e3715bd79758cdae258d0fa429b"
+  },
+  {
+    "file": "sentences.json",
+    "bytes": 1159,
+    "sha256": "068af0ba4d9a418196741ef5b460649b320a478442aa20b90d10897f694c1df3"
+  },
+  {
+    "file": "system-tool-versions.txt",
+    "bytes": 124,
+    "sha256": "73b454ce648fd6433c0da6da53703d9b8954461f181abefc99c32ac564b6c5a9"
+  },
+  {
+    "file": "torch-install-report.json",
+    "bytes": 95012,
+    "sha256": "053abc9828aa7d67ba8f5543bff1db314c29565246e9cebf0bc5fce7abf67898"
+  },
+  {
+    "file": "voicevox-engine-manifest.json",
+    "bytes": 744625,
+    "sha256": "232ab701fdfa1cf96af8ded26c506aecbdc1c5e29f17700213e7595a4e2f67de"
+  },
+  {
+    "file": "voicevox-engine.log",
+    "bytes": 13867,
+    "sha256": "d3751304490d1486e5683183f431086db37eed99244c9b434f88bed5ef5dcb68"
+  },
+  {
+    "file": "voicevox-kigashima-metadata.json",
+    "bytes": 425,
+    "sha256": "29e6e145ae568da319483117069f70df4a1a6e36d7312dbb42663cc42dadd57c"
+  },
+  {
+    "file": "voicevox-kurono-metadata.json",
+    "bytes": 713,
+    "sha256": "72051da5ac3dd8275cf8217d3a4b5c91d924f498480728d40dba654b9311ab97"
+  },
+  {
+    "file": "voicevox-results.json",
+    "bytes": 14952,
+    "sha256": "9297497ff5792ed34b155a99b56f457fd964f25ce51362718de883f7ca64cbd7"
+  },
+  {
+    "file": "voicevox-selected-speakers.json",
+    "bytes": 1263,
+    "sha256": "c46b5307bda3c9a7ed738e176f5b939387b80b4065e15c66400c0e9138b5e856"
+  },
+  {
+    "file": "voicevox-wakamatsu-metadata.json",
+    "bytes": 422,
+    "sha256": "846ce6c57ed81600db7ac8f0d953a28f69e3eb4a4dae13fcf3f2f2214647a86b"
+  }
+]

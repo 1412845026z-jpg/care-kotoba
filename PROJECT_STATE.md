@@ -9,7 +9,7 @@
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
 | 本轮核对的业务集成提交 | `dc9d60c980bdb1f8f5cd0a7510ee89f845a53ad8`（#43→#44顺序merge；#44固定源a567b8d，应用树37f5c2f2） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#40免费语音固定源ENV/CSP与无API key探测已通过；docs/10免费手机方案及证据已合并PR #41（cecef27）；本补记只改文档状态） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#43/#44固定源审查与字体/SEC通过；#47 ts-fsrs正式依赖通过常规CI并合并；免费音频样本处理中） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -58,9 +58,11 @@
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
-| REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | review_ready | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，常规CI待结果 |
-| REVIEW-001 | 间隔复习交互与功能实现 | Claude | queued | 待REVIEW-DEP-001合并 | Codex本轮不改app/components/lib/tests |
+| REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
+| REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude | queued | 依赖已由PR #47 merge ba8568b提供 | 功能由Claude实现；Codex本轮未改app/components/lib/tests |
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude | review_ready | `claude/START-FLOW-001`，PR #46，head6d22f31 | 未在本轮授权合并范围，保持开放；handoffs/2026-10-24-START-FLOW-001-claude.md |
+| AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | review_ready | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；PR #48；run40071495822成功，25单句＋5对比，1.52MB；无削波，未真正试听；不接入App |
+| A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | queued | `codex/A11Y-CI-001`（待步骤3完成） | 用户授权axe4.14.0开发依赖；不修改audit.mjs或prototype/tests |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | merged | [PR #5](https://github.com/1412845026z-jpg/care-kotoba/pull/5)，head `a6c6f58`；合并 `0420ff7` | ENV-003（Codex，@`3a3f1a9`）真实install/tsc/build/static、unit34/34、离线22/22、真实dev21通过1跳过；之后的 COOKIE-ENCODING-001 修复（`89d8ad2`）离线 static 0 错误、unit 37/37、e2e 22/22，PR CI run 39998125919 通过。真实AI/真机未验证 |
@@ -104,8 +106,7 @@
 | DEVICE-FREE-001 | 实际手机免费F1–F10（A/B可开始，C仅方案） | 用户 + Claude整理 + Codex支持 | queued | — | 无API key；记录Android/iPhone型号、浏览器与JSON。C需另行授权部署，Free容量/实际声音均未在真机或云端验收 |
 | DESIGN-SKILLS-001 | 接入两份设计技能与共同设计依据 | Claude | merged | PR #43，head768abbe，merge21639c7 | vendor195项校验、CI40065123200；显式读取技能通过，CLI自动发现未实测 |
 | DEAI-001 | 按概念图视觉去AI化 | Claude | merged | PR #44，head a567b8d，merge dc9d60c | 独立runner40069650388：static0/unit92/offline54/dev46通过8跳过；SEC与Google字体共15检查，控制台0错误；真机未验收 |
-| REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
-| AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
+| AUDIO-001 | 全量固定参考句音频与App接入 | 待用户选择声音后分工 | blocked | 免费五句比较样本见AUDIO-SAMPLES-001 | 当前只生成免费样本；正式接入/全量生成待声音选择，OpenAI付费生成仍blocked |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
 

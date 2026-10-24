@@ -1,0 +1,16 @@
+{
+  "head": "8a2a6967dc21cf3616cfed2632f2a46e7b377737",
+  "checkout": "e2c6e683c91c9abad8501056f16c985aba0fc85a",
+  "run": 40071495822,
+  "artifact_id": 12551019475,
+  "artifact_sha256": "0f6353da641462fd3be4a41b4f7c374bdb4d6c66b3c2df0d9e3164945c279f07",
+  "postprocessing": [
+    "compact pip reports to resolution/hash metadata; retain original digest",
+    "add independent sentenceId/voiceId to result records",
+    "README and current checksum manifest"
+  ],
+  "audio_modified": false,
+  "listening_completed": false,
+  "app_modified": false,
+  "paid_api_calls": 0
+}
