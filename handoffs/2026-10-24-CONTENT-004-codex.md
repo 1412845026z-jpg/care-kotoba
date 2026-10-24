@@ -32,3 +32,7 @@ Also accepted its two content notes: Japanese `学員` becomes `学習者`, and 
 ## Combined source synchronization
 
 The requested business chain is now merged through #30 at 4381de1. This branch includes that main as an additional parent while preserving the data revisions. Retest the current combined tree in CI; runtime/core-preview integration is still separate from data-generator compatibility.
+
+## Final integration result
+
+PR #34 merged4a851fd. Re-ran the exact provided generator and --check on committed main content in an isolated tree; both passed12 scenes, source fingerprint396444ed86eeacf7. Evidence: verification/CONTENT-004/post-merge-generator.json. No runtime preview module was published; CORE-PREVIEW still needs Claude to synchronize and regenerate furigana.

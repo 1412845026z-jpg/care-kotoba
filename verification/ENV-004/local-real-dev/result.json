@@ -1,0 +1,27 @@
+{
+  "mode": "real-dev",
+  "mock_only": true,
+  "filter": null,
+  "port": 5173,
+  "mock_port": 4010,
+  "source": "/workspace/scratch/b3fd2a7262f5/care-kotoba-verify-30",
+  "source_sha": "621dec775d2b7d5ffbb20aa87c28c6640d41002b",
+  "source_tree": "e4e6c94fba481cc00302b20cb310754236bf6814",
+  "startup_seconds": 4.079,
+  "command": [
+    "node",
+    "tests/run.mjs",
+    "e2e",
+    "--report",
+    "/workspace/scratch/b3fd2a7262f5/env004-local/real-dev/tests.json"
+  ],
+  "exit_code": 1,
+  "network_guard": {
+    "blockedExternal": 0,
+    "mockBaseConfigured": true,
+    "policy": "code"
+  },
+  "worker_restored": true,
+  "fake_env_removed": true,
+  "seconds": 290.345
+}

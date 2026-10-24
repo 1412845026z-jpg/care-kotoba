@@ -1,0 +1,90 @@
+{
+  "business_prs_in_user_order": [
+    {
+      "pr": 17,
+      "head": "5631f9d7a87c7d95297fe393c74af21c78a73e75",
+      "merge": "908812775c3c99b1bf0ccc4e4bdafacc78baf91a"
+    },
+    {
+      "pr": 18,
+      "head": "1eec2c359b0594b6a4584d924b0e0f687e0bc931",
+      "merge": "36597096154943be0a7a1fc5fd55ce99d17de0ab"
+    },
+    {
+      "pr": 19,
+      "head": "c9caccd9ae18cf98dd3172cbbfeacbf27675a3f9",
+      "merge": "8e0cb8f9b0db775e1dff0900d326274c0e6fc18c"
+    },
+    {
+      "pr": 20,
+      "head": "ace5ac86bc5defe17f4e14d68fbaea3eb950b242",
+      "merge": "65bf52c335d2c64e134d6ffaa06a0d44545ed453"
+    },
+    {
+      "pr": 21,
+      "head": "44cdc6e58277d348de515dd752b3280f77fc1f63",
+      "merge": "a28f59256ee78be95c02de288eef8be066bfb03f"
+    },
+    {
+      "pr": 22,
+      "head": "d5c9f53186b37f4be8f71d466b6809c97c0d7b15",
+      "merge": "def8d99c2ce3da8d97a6f69b5452a75ba9874fc6"
+    },
+    {
+      "pr": 24,
+      "head": "26264df3fe55cfcba706777055320f3f1c30a765",
+      "merge": "5fbbf06d7bf781dc4dcdd0808d81a146bd2b795e"
+    },
+    {
+      "pr": 25,
+      "head": "0ca87ecd05f769db286a74e0a54ec6a25de88365",
+      "merge": "b06d889bade377a81194621348a4d15f3250dd65"
+    },
+    {
+      "pr": 26,
+      "head": "df8f8c1ce5e2e2b049cd9a7c08648584163efe75",
+      "merge": "c9e6c10116d2d06a4ed5463b8b559e8639637999"
+    },
+    {
+      "pr": 27,
+      "head": "6322ec9dccd0c07eb5ab4438c39658393bf3ef6b",
+      "merge": "01dff709de06a86b1e53d436f296ba3228faaab3"
+    },
+    {
+      "pr": 28,
+      "head": "ecbfd85310fd19b61d48d0686be0f996a5a5e81e",
+      "merge": "0054d0627c1976298f4a71d929e9f6e676dd3db7"
+    },
+    {
+      "pr": 29,
+      "head": "3b137afbcd13e2604322701692f88c0270282138",
+      "merge": "a8023218760f5db18b2cb08efaa9e187bcbb3486"
+    },
+    {
+      "pr": 30,
+      "head": "c3632f5850b32dda59a6622db76ac742f62235ee",
+      "merge": "4381de1e3a97a88e4bb8610365c1b18fc2c5df98"
+    }
+  ],
+  "independent": {
+    "pr": 23,
+    "merge": "f49f95a76a77bffa8ea5a034a9af434a85efdcdb"
+  },
+  "codex_merges": [
+    {
+      "pr": 32,
+      "merge": "c917a68631990ea0084f650cc764e99c13487416"
+    },
+    {
+      "pr": 33,
+      "merge": "86ebc7073ed9aa95d1efcccc2c99ca1869a4fdf8"
+    },
+    {
+      "pr": 34,
+      "merge": "4a851fd4319e8abc97c20910c01bd080be83e408"
+    }
+  ],
+  "method": "merge",
+  "expected_head_sha_used": true,
+  "ordered_conflicts_or_failures": false
+}

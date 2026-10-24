@@ -1,0 +1,29 @@
+{
+  "mode": "real-dev",
+  "mock_only": true,
+  "filter": "a crash",
+  "port": 5173,
+  "mock_port": 4010,
+  "source": "/workspace/scratch/b3fd2a7262f5/care-kotoba-verify-30",
+  "source_sha": "c3632f5850b32dda59a6622db76ac742f62235ee",
+  "source_tree": "f10e2eb91b2c9c903585f97fb64cdf565f13590f",
+  "startup_seconds": 4.646,
+  "command": [
+    "node",
+    "tests/run.mjs",
+    "e2e",
+    "--report",
+    "/workspace/scratch/b3fd2a7262f5/env004-local/latest-crashes/tests.json",
+    "--filter",
+    "a crash"
+  ],
+  "exit_code": 0,
+  "network_guard": {
+    "blockedExternal": 0,
+    "mockBaseConfigured": true,
+    "policy": "code"
+  },
+  "worker_restored": true,
+  "fake_env_removed": true,
+  "seconds": 11.213
+}

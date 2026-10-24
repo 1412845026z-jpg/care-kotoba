@@ -1,0 +1,18 @@
+{
+  "ranAt": "2026-10-24T01:17:45.264Z",
+  "node": "v22.23.3",
+  "mode": "e2e",
+  "results": [
+    {
+      "name": "e2e",
+      "exitCode": 1,
+      "seconds": 126.3,
+      "pass": 34,
+      "fail": 2,
+      "failures": [
+        "a crash in one screen shows a recoverable message instead of blanking the app",
+        "a crash inside practice can be closed without losing the app"
+      ]
+    }
+  ]
+}

@@ -15,7 +15,7 @@ python3 scripts/ci/verify_claude.py --source . --mode real-dev --browser-probe s
 
 The browser probe checks real Worker headers, nonce rotation and SSR hydration; rejects a deliberately injected nonce-less script; accepts a nonce-bearing script; exercises mock text chat/feedback, ruby rendering and a fake microphone. The complete real-dev suite additionally tests the real browser WebRTC transport against a simulated local peer. No production credentials or real model calls are used. Security tests have their own standard-runner workflow; regular `ci.yml` remains separately owned by CI-002.
 
-The #17–#30 integration gate is still blocked by ENV-004's two synthetic-crash/dev-overlay failures. SEC-001 is prepared against current main plus these Worker changes. Its results cannot be reported as verification of that entire unmerged business chain; rerun on the final integrated tree after those failures are resolved. No deployment is performed here.
+ENV-004's c3632f5 retest passed and the ordered business chain has been merged. Security run40051512332 then verified the combined business source with these headers: unit71/71, offline browser40/40, real Vinext dev36 passed with4 explicitly explained skips, plus all7 security probe checks. The Worker guard observed zero external upstream fetches and restored temporary source/environment. These remain simulated AI/peer checks; real API and phone validation are still pending. No deployment was performed.
 
 References used alongside the installed framework code:
 
