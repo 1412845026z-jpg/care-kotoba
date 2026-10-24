@@ -1,0 +1,14 @@
+{
+  "note": "Open-source components that reach the learner's device (runtime code, fonts, generated data). Edit this list, then run node tools/notices/generate.mjs. Versions follow prototype/package.json and pnpm-lock.yaml; license texts live in docs/licenses/. Server-only and development tools are not listed here (see docs/07). A complete list generated from the production build is still to do.",
+  "components": [
+    { "name": "React / React DOM / React Server DOM", "version": "19.2.6", "license": "MIT", "url": "https://github.com/facebook/react", "role_ja": "画面の部品と表示", "file": "REACT_LICENSE.txt" },
+    { "name": "vinext", "version": "1.0.0-beta.5", "license": "MIT", "url": "https://github.com/cloudflare/vinext", "role_ja": "アプリの土台（Next.js 互換の実行環境）", "file": "VINEXT_LICENSE.txt" },
+    { "name": "Next.js", "version": "16.3.4", "license": "MIT", "url": "https://github.com/vercel/next.js", "role_ja": "アプリの土台（画面の構成）", "file": "NEXT_LICENSE.txt" },
+    { "name": "Lucide (lucide-react)", "version": "1.31.0", "license": "ISC", "url": "https://github.com/lucide-icons/lucide", "role_ja": "アイコン", "file": "LUCIDE_LICENSE.txt" },
+    { "name": "ts-fsrs", "version": "5.4.2", "license": "MIT", "url": "https://github.com/open-spaced-repetition/ts-fsrs", "role_ja": "ことばノートの復習の予定", "file": "TS_FSRS_LICENSE.txt" },
+    { "name": "BIZ UDPGothic", "version": "Google Fonts", "license": "OFL-1.1", "url": "https://github.com/googlefonts/morisawa-biz-ud-gothic", "role_ja": "本文の文字（Google Fonts から配信）", "file": "BIZ_UDPGOTHIC_OFL.txt" },
+    { "name": "BIZ UDPMincho", "version": "Google Fonts", "license": "OFL-1.1", "url": "https://github.com/googlefonts/morisawa-biz-ud-mincho", "role_ja": "見出しと引用の文字（Google Fonts から配信）", "file": "BIZ_UDPMINCHO_OFL.txt" },
+    { "name": "kuromoji.js", "version": "0.1.2", "license": "Apache-2.0", "url": "https://github.com/takuyaa/kuromoji.js", "role_ja": "ふりがなデータの作成（アプリには含めず、作成したデータだけを使用）", "file": "KUROMOJI_JS_LICENSE-2.0.txt" },
+    { "name": "mecab-ipadic", "version": "2.7.0-20070801", "license": "NAIST / ICOT (ipadic)", "url": "https://taku910.github.io/mecab/", "role_ja": "ふりがなデータの作成に使った辞書", "file": "MECAB_IPADIC_NOTICE.txt" }
+  ]
+}
