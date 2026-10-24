@@ -125,7 +125,8 @@ export function verifyFeedback(raw: Partial<FeedbackResult>, messages: FeedbackM
   });
   return {
     score: Math.max(0, Math.min(100, Math.round(Number(raw.score) || 0))),
-    heading: clean(raw.heading, 200),
+    // A heading that only judged pronunciation would be left empty: use a neutral one instead.
+    heading: clean(raw.heading, 200) || (str(raw.heading, 200).trim() ? '今回の振り返り' : ''),
     summary: clean(raw.summary, 1200),
     strengths: (Array.isArray(raw.strengths) ? raw.strengths : []).filter((s) => typeof s === 'string').slice(0, 5).map((s) => clean(s, 400)).filter(Boolean),
     improvements: kept,

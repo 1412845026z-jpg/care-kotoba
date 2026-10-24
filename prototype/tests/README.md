@@ -14,6 +14,7 @@ otherwise runs a file's `after` hook before its slow async `before` has finished
 is stopped after `CK_TEST_TIMEOUT_SECONDS` (default 1800) and reported as failed, so a leaked resource cannot hang CI.
 `setup()` closes the mock / harness / Chromium it already started when a later step fails (for example a missing
 Chromium executable) and rethrows the original error; `e2e/setup.e2e.mjs` checks this.
+In GitHub Actions (`GITHUB_ACTIONS=true`) each failing test is also printed as an `::error` annotation.
 
 Needs `esbuild` and `playwright` (with its Chromium) resolvable from `prototype/node_modules`. Both are pinned
 devDependencies since CI-002 (esbuild 0.28.2, playwright 1.63.0); install the browser with
