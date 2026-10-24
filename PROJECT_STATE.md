@@ -8,7 +8,7 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本轮核对的业务集成提交 | `eb65ef19503b3d07d761d13a506b9e63fdb12b8c`（#46→#49→#53→#54均已合并；应用代码仍为#49 merge6148494；本补记只更新实际状态与CI证据） |
+| 本轮核对的业务集成提交 | `1aff4bc6b19c5ba863415415016403ec5a01e8ce`（#56基础课资料/角色语音规格已合并；prototype仍与#49相同；后续补记只改状态与交接） |
 | 核对时间与作者 | 2026-10-24 JST，Codex（交付#54的CI40079627795两job通过；每项已推送并合入main；真实AI/真机/听感/专业法律确认仍未验收） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
@@ -57,7 +57,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| SSW-CONTENT-001 | 特定技能基础96场景与角色声线准备 | Codex | review_ready | `codex/SSW-CONTENT-001`；PR #56，内容源82a0444 | content/ssw-basic；24类/384对白/192替代、8声线16试听文本；553待合成文本资产；未生成新MP3/图片、未接入App，独立AI编辑复核非专业签核 |
+| SSW-CONTENT-001 | 特定技能基础96场景与角色声线准备 | Codex | merged | `codex/SSW-CONTENT-001`；PR #56，merge1aff4bc | handoffs/2026-10-24-SSW-CONTENT-001-codex.md；CI40082925762构建/模拟/A11Y通过；96场景与8档声线规格已入main，正式角色语音和App接入未完成 |
 | DEVICE-FREE-GUIDE-001 | 最新main免费手机测试中文指南与no-key回放 | Codex | merged | `codex/DEVICE-FREE-GUIDE-001` @e4b798b；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md；main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户 |
 | AUDIO-PICK-001 | 手机30段免费试听清单及候选组合 | Codex | merged | `codex/AUDIO-PICK-001` @f2e52e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-AUDIO-PICK-001-codex.md；30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App |
 | REAL-AI-PILOT-PLAN-001 | ≤3000日元首次真实AI测试计划（不执行） | Codex | merged | `codex/REAL-AI-PILOT-PLAN-001` @1ceb8e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-REAL-AI-PILOT-PLAN-001-codex.md；只交计划；条件预算¥113、建议另批¥1000，未花钱；旧实时价/逐次计量/鉴权待解决 |
@@ -114,7 +114,7 @@
 | DEVICE-FREE-001 | 实际手机免费F1–F10（A/B可开始，C仅方案） | 用户 + Claude整理 + Codex支持 | queued | — | 无API key；记录Android/iPhone型号、浏览器与JSON。C需另行授权部署，Free容量/实际声音均未在真机或云端验收 |
 | DESIGN-SKILLS-001 | 接入两份设计技能与共同设计依据 | Claude | merged | PR #43，head768abbe，merge21639c7 | vendor195项校验、CI40065123200；显式读取技能通过，CLI自动发现未实测 |
 | DEAI-001 | 按概念图视觉去AI化 | Claude | merged | PR #44，head a567b8d，merge dc9d60c | 独立runner40069650388：static0/unit92/offline54/dev46通过8跳过；SEC与Google字体共15检查，控制台0错误；真机未验收 |
-| AUDIO-001 | 全量固定参考句音频与App接入 | 待用户选择声音后分工 | blocked | 免费五句比较样本见AUDIO-SAMPLES-001 | 当前只生成免费样本；正式接入/全量生成待声音选择，OpenAI付费生成仍blocked |
+| AUDIO-001 | 全量固定参考句/角色音频与App接入 | 待声音试验后分工 | blocked | SSW-CONTENT-001已备96场景、8声线16试音脚本及553待合成文本资产 | 新角色录音仍为0；只对Higgsfield短句get_cost预检0.01credits，无生成/扣费；既有30样本保留，正式音色与收费预算未批准 |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
 
