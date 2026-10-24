@@ -1,0 +1,80 @@
+{
+  "reviewed_source_sha": "2cf1a0e55741f260aed619e512c594b71153a97e",
+  "integrated_main_sha": "b46bf98ad847f42f87ce1021e20869f4b863c32d",
+  "integrated_tree": "930af37293d8afc8b128d7321762cc07da95a422",
+  "subtrees": [
+    {
+      "path": "prototype/app",
+      "reviewed_object": "e75c9dea29237e1e0364d02c136967f0e8fea13f",
+      "integrated_object": "e75c9dea29237e1e0364d02c136967f0e8fea13f",
+      "identical": true
+    },
+    {
+      "path": "prototype/components",
+      "reviewed_object": "022ed9edb6e47d76955edc166cbbca51640a2069",
+      "integrated_object": "022ed9edb6e47d76955edc166cbbca51640a2069",
+      "identical": true
+    },
+    {
+      "path": "prototype/lib",
+      "reviewed_object": "24e46c92fadb0b2a10c3593f34d79b2b3e0f3cc2",
+      "integrated_object": "24e46c92fadb0b2a10c3593f34d79b2b3e0f3cc2",
+      "identical": true
+    },
+    {
+      "path": "prototype/worker",
+      "reviewed_object": "3d5622e3188524d77c38c17dc1d509a3f1fdcc27",
+      "integrated_object": "3d5622e3188524d77c38c17dc1d509a3f1fdcc27",
+      "identical": true
+    },
+    {
+      "path": "prototype/public",
+      "reviewed_object": "86085db2d4b1b5e2b247b1203c2231bb7362cf18",
+      "integrated_object": "86085db2d4b1b5e2b247b1203c2231bb7362cf18",
+      "identical": true
+    },
+    {
+      "path": "prototype/tests",
+      "reviewed_object": "a3318a90744a6466042d2dc9d86fb6fbf35c6d5b",
+      "integrated_object": "a3318a90744a6466042d2dc9d86fb6fbf35c6d5b",
+      "identical": true
+    },
+    {
+      "path": "prototype/package.json",
+      "reviewed_object": "a582662ef1d898d69184e45c14de832ca67d185c",
+      "integrated_object": "a582662ef1d898d69184e45c14de832ca67d185c",
+      "identical": true
+    },
+    {
+      "path": "prototype/pnpm-lock.yaml",
+      "reviewed_object": "c73cc1c0d65bb638cbd7523a715c9bdf57b9b919",
+      "integrated_object": "c73cc1c0d65bb638cbd7523a715c9bdf57b9b919",
+      "identical": true
+    },
+    {
+      "path": "prototype/pnpm-workspace.yaml",
+      "reviewed_object": "454dde77be0f122931de27f35b440c75b35bfbca",
+      "integrated_object": "454dde77be0f122931de27f35b440c75b35bfbca",
+      "identical": true
+    },
+    {
+      "path": "content",
+      "reviewed_object": "06e5c14b961d807e01b5e0ad393feb607cf1b432",
+      "integrated_object": "06e5c14b961d807e01b5e0ad393feb607cf1b432",
+      "identical": true
+    },
+    {
+      "path": "evals",
+      "reviewed_object": "5e6f1ab704794c76af2c57f284cce5fa9acb2b6e",
+      "integrated_object": "5e6f1ab704794c76af2c57f284cce5fa9acb2b6e",
+      "identical": true
+    },
+    {
+      "path": "tools",
+      "reviewed_object": "53fe41a095f5d70ad3c5930264b74f79a4657f25",
+      "integrated_object": "53fe41a095f5d70ad3c5930264b74f79a4657f25",
+      "identical": true
+    }
+  ],
+  "note": "Evidence/tooling integration inherits this main tree and only overlays scripts/ci/security_browser_probe.mjs, .github/workflows/verify-claude.yml, PROJECT_STATE.md, the Codex handoff and verification/CORE-ENV-001 reports."
+}

@@ -29,4 +29,16 @@ PR #35 passed independent run [40058494059](https://github.com/1412845026z-jpg/c
 - Core generator check fingerprint `396444ed86eeacf7`; existing 夜中/一回/二人 readings and contextual 後 readings reviewed (preview-readings.json). No content or generated file was modified.
 - PR #35 merged with expected-head lease as `b038f60dceccf142232a8dfce890f23f196337e5`; its tree equals the independently tested source tree. No conflict.
 
-PR #37 latest head captured after #35 merge: `2cf1a0e55741f260aed619e512c594b71153a97e`. Read-only merge rehearsal with main is conflict-free, tree `930af37293d8afc8b128d7321762cc07da95a422`. Retest in progress; do not merge until it passes. Active roleplay tool checks are offline harness+mock only; real-dev skips the harness-only tool cases. No real model calls.
+PR #37 latest head captured after #35 merge: `2cf1a0e55741f260aed619e512c594b71153a97e`. Read-only merge rehearsal with main is conflict-free, tree `930af37293d8afc8b128d7321762cc07da95a422`. Independent retest passed: [run40058975902](https://github.com/1412845026z-jpg/care-kotoba/actions/runs/40058975902), Node22.23.3 / pnpm11.25.0:
+
+- Frozen install, real TypeScript, production build, generator and security policy checks passed; static0, unit81/81, offline50/50.
+- Real Vinext dev42 passed /0 failed /8 explained skips: the five #35 harness-only cases above, plus the three new roleplay-tool tests. These all passed offline. The `--yes` tool probes ran **only** against offline harness/mock, never a real server.
+- All10 security/CSP browser checks passed again, including the core draft UI and practice. Worker external attempts0, source restored, fake env removed.
+- Raw reports: `verification/CORE-ENV-001/runner-eval/`; artifact SHA256 `d2d80bce5796da9e4d83b9e07b5a7b1b29882f657d2310c2e68590f443ccdca7` verified before extraction.
+- Additional local dry-run blocked all fetch calls: 28 planned probes,0 attempted requests. A temporary copied-content fixture with changed C01 facts correctly exited2 and listed the three stale markers, with0 attempted requests. Tracked content remained untouched. See roleplay-plan.json and roleplay-dry-run-and-stale-markers.json.
+- The tool's mock negative controls deliberately produce a nonzero tool exit when the canned partner fails to reveal, or reveals too early; the e2e asserts those expected outcomes. This verifies the detector, not real-model adherence.
+- PR #37 head remained unchanged before merge; merged with expected-head lease as `b46bf98ad847f42f87ce1021e20869f4b863c32d`, after #35. Its merge tree equals reviewed `2cf1a0e` tree. No conflict or failed gate.
+
+## Final scope and follow-up
+
+The evidence/tooling PR is #38 (`codex/CORE-ENV-001`). It retains the already merged source and changes only verification tooling, CI, state and this handoff. Application/content/evaluation/dependency trees remain byte-identical to reviewed #37; see application-tree-equivalence.json. Real AI, phones, model instruction quality, speech pacing and professional content approval remain unverified. No new dependencies, paid API or deployment. The optional leak_markers_ja schema proposal above is pending confirmation and was not implemented.

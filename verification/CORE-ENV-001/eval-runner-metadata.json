@@ -1,0 +1,145 @@
+{
+  "run_id": 40058975902,
+  "tooling_commit": "42e9c6a96551a15f424f962936adbe5ee1ead2e3",
+  "source_sha": "2cf1a0e55741f260aed619e512c594b71153a97e",
+  "artifact_id": 12546304238,
+  "artifact_sha256": "d2d80bce5796da9e4d83b9e07b5a7b1b29882f657d2310c2e68590f443ccdca7",
+  "jobs": [
+    {
+      "id": 120768127031,
+      "name": "Source review / mock only / Node 22",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40058975902,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Checkout review tooling",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Resolve explicit source request",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Checkout exact reviewed source",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Node 22",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Pin package manager and source; reject credential environment",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Frozen install",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Real TypeScript",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Real production build (no deployment)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Static and unit tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Install official Chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Core generator and security policy checks on exact source",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Offline browser suite (simulated AI and WebRTC peer)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Real Vinext dev browser suite (simulated AI and WebRTC peer)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Confirm tracked source restored and no fake environment remains",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Keep diagnostic reports",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Report browser failures without hiding either suite",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Node 22",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 32
+        },
+        {
+          "name": "Post Checkout exact reviewed source",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 33
+        },
+        {
+          "name": "Post Checkout review tooling",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 34
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 35
+        }
+      ]
+    }
+  ]
+}
