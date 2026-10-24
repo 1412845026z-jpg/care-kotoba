@@ -60,8 +60,8 @@
 | MERGE-2 | 顺序整合#46/#49并复核常规CI和A11Y硬门 | Codex | in_progress | `codex/MERGE-2`；先解决#46仅PROJECT_STATE冲突 | handoffs/2026-10-24-MERGE-2-codex.md；保留main已有依赖/许可/证据，App原样继承Claude |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
 | REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
-| REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude | review_ready | `claude/REVIEW-001`，PR #49，head69c36a4；依赖#46 | #47依赖已合并；Claude报告unit99/e2e62，Codex未复测或合并，本轮不改其功能 |
-| START-FLOW-001 | 开始流程简化与辅助语言lang | Claude | review_ready | `claude/START-FLOW-001`，PR #46，head6d22f31 | 未在本轮授权合并范围，保持开放；handoffs/2026-10-24-START-FLOW-001-claude.md |
+| REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude | review_ready | `claude/REVIEW-001`，PR #49，head69c36a4；#46已merge11949bd，base已改main | #47依赖已合并；Claude报告unit99/e2e62，Codex整合当前main仅解决共享状态冲突，待完整CI，本轮不改其功能 |
+| START-FLOW-001 | 开始流程简化与辅助语言lang | Claude + Codex整合 | merged | `claude/START-FLOW-001`，PR #46，head9f346a6；merge11949bd | CI40076990478通过（含两尺寸A11Y硬门）；handoffs/2026-10-24-MERGE-2-codex.md |
 | AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | merged | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；PR #48，merge137ff8a，最终CI40072582215通过；run40071495822成功，25单句＋5对比，1.52MB；无削波，未真正试听；不接入App |
 | A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | merged | `codex/A11Y-CI-001` | handoffs/2026-10-24-A11Y-CI-001-codex.md；PR #50 headde1089b，mergefb54989；CI40073435460双job通过；audit11/12屏三项0，axe稳定17/21实例仅报告，详见交接 |
 | ASSET-SOURCES-001 | 可选日本介护图源许可对照（无图片接入） | Codex | merged | `codex/ASSET-SOURCES-001`，PR #51，mergece81cfc | handoffs/2026-10-24-ASSET-SOURCES-001-codex.md；CI40074152466双job通过，5来源许可表及本轮证据均已入main |
