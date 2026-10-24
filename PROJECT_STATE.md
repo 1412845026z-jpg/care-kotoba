@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本轮核对的业务集成提交 | `02e83670a994a6673ebf21be543dd9c1614cbad9`（#46→#49→#53已合并；应用代码为#49 merge6148494；四文档与最终证据见本轮交付PR） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#46/#49构建、模拟测试与A11Y硬门通过；#53常规CI和手机Lighthouse报告通过；main6148494无key真实dev回放通过） |
+| 本轮核对的业务集成提交 | `eb65ef19503b3d07d761d13a506b9e63fdb12b8c`（#46→#49→#53→#54均已合并；应用代码仍为#49 merge6148494；本补记只更新实际状态与CI证据） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（交付#54的CI40079627795两job通过；每项已推送并合入main；真实AI/真机/听感/专业法律确认仍未验收） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -57,12 +57,12 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| DEVICE-FREE-GUIDE-001 | 最新main免费手机测试中文指南与no-key回放 | Codex | review_ready | `codex/DEVICE-FREE-GUIDE-001` @e4b798b；整合本轮交付PR | handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md；main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户 |
-| AUDIO-PICK-001 | 手机30段免费试听清单及候选组合 | Codex | review_ready | `codex/AUDIO-PICK-001` @f2e52e7；整合本轮交付PR | handoffs/2026-10-24-AUDIO-PICK-001-codex.md；30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App |
-| REAL-AI-PILOT-PLAN-001 | ≤3000日元首次真实AI测试计划（不执行） | Codex | review_ready | `codex/REAL-AI-PILOT-PLAN-001` @1ceb8e7；整合本轮交付PR | handoffs/2026-10-24-REAL-AI-PILOT-PLAN-001-codex.md；只交计划；条件预算¥113、建议另批¥1000，未花钱；旧实时价/逐次计量/鉴权待解决 |
-| LEGAL-001 | 经营合规与A/B卖方方案官方来源对照 | Codex | review_ready | `codex/LEGAL-001` @a73c254；整合本轮交付PR | handoffs/2026-10-24-LEGAL-001-codex.md；经营方案明确范围与30来源索引；16:43旧清单仍待补核，未获专业签核 |
-| LIGHTHOUSE-001 | 固定Lighthouse13.5.0手机CI报告（只报告） | Codex | merged | `codex/LIGHTHOUSE-001` @efdf11d；整合本轮交付PR | handoffs/2026-10-24-LIGHTHOUSE-001-codex.md；PR#53已merge02e8367；CI40078527301与报告40078527309通过，原始ZIP已留档 |
-| MERGE-2 | 顺序合并#46/#49与本轮六项任务证据整合 | Codex | review_ready | `codex/MERGE-2`，本轮交付PR；#46 merge11949bd→#49 merge6148494 | handoffs/2026-10-24-MERGE-2-codex.md；#53 Lighthouse已merge02e8367，四文档分支已推送；待本PR最终CI |
+| DEVICE-FREE-GUIDE-001 | 最新main免费手机测试中文指南与no-key回放 | Codex | merged | `codex/DEVICE-FREE-GUIDE-001` @e4b798b；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md；main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户 |
+| AUDIO-PICK-001 | 手机30段免费试听清单及候选组合 | Codex | merged | `codex/AUDIO-PICK-001` @f2e52e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-AUDIO-PICK-001-codex.md；30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App |
+| REAL-AI-PILOT-PLAN-001 | ≤3000日元首次真实AI测试计划（不执行） | Codex | merged | `codex/REAL-AI-PILOT-PLAN-001` @1ceb8e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-REAL-AI-PILOT-PLAN-001-codex.md；只交计划；条件预算¥113、建议另批¥1000，未花钱；旧实时价/逐次计量/鉴权待解决 |
+| LEGAL-001 | 经营合规与A/B卖方方案官方来源对照 | Codex | merged | `codex/LEGAL-001` @a73c254；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-LEGAL-001-codex.md；经营方案明确范围与30来源索引；16:43旧清单仍待补核，未获专业签核 |
+| LIGHTHOUSE-001 | 固定Lighthouse13.5.0手机CI报告（只报告） | Codex | merged | `codex/LIGHTHOUSE-001` @efdf11d；PR #53，merge02e8367 | handoffs/2026-10-24-LIGHTHOUSE-001-codex.md；PR#53已merge02e8367；CI40078527301与报告40078527309通过，原始ZIP已留档 |
+| MERGE-2 | 顺序合并#46/#49与本轮六项任务证据整合 | Codex | merged | `codex/MERGE-2`，PR #54，mergeeb65ef1；#46 merge11949bd→#49 merge6148494 | handoffs/2026-10-24-MERGE-2-codex.md；#53 Lighthouse已merge02e8367，四文档分支已推送；CI40079627795双job通过，全部文档已合入main |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
 | REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
 | REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude + Codex整合 | merged | `claude/REVIEW-001`，PR #49，head3e709a9；merge6148494 | CI40077969512：static0/unit99/e2e62，两尺寸12/13屏硬门通过；模拟非真实AI/真机 |

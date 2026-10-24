@@ -29,3 +29,7 @@
 ## 已推送与整合入口
 
 工作分支 `codex/DEVICE-FREE-GUIDE-001` 已实际推送，提交 `e4b798b6e13a1677598340bd9b82d01a4cfb24ef`。main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户。共同整合入口为本轮交付PR，合并前根PROJECT_STATE只将文档标review_ready；Lighthouse代码已由PR #53进入main。
+
+## 实际交付确认
+
+交付PR #54已在CI40079627795的构建/模拟测试与两尺寸A11Y硬门全部通过后，以merge commit `eb65ef19503b3d07d761d13a506b9e63fdb12b8c` 进入main。本任务分支提交均已成为main祖先；根PROJECT_STATE据实际合并改为merged。完整CI来源、job与artifact元数据见 `verification/MERGE-2/final-ci.json`。本补记没有应用、依赖、CI或音频改动，不额外声称真实AI、真机、听感或法律税务签核通过。
