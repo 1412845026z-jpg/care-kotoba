@@ -41,13 +41,16 @@ def validate(root):
         ids.add(key)
         check(term['ja'] not in words, f'{label}: duplicate headword')
         words.add(term['ja'])
-        check(term['version'] == '0.1.0', f'{key}: unexpected data version')
+        check(bool(re.fullmatch(r'0\.[0-9]+\.[0-9]+', term['version'])), f'{key}: unexpected data version')
         check(term['status'] == 'draft_pending_expert_review', f'{key}: review status')
         check(term['review_notice'] == '草稿，待介护经验者与日语教育者审稿', f'{key}: review notice')
         check(term['fictional_examples'] is True, f'{key}: examples must be fictional')
         for field in ['ja','reading_ja','example_ja','feedback_guard_zh','authorship']:
             check(isinstance(term[field], str) and bool(term[field].strip()), f'{key}: {field} must be non-empty')
-        check(isinstance(term['reading_ja'], str) and re.fullmatch(r'[ぁ-ゖー・]+', term['reading_ja']), f'{key}: hiragana reading')
+        check(isinstance(term['reading_ja'], str) and re.fullmatch(r'[ぁ-ゖァ-ヺー・]+', term['reading_ja']), f'{key}: kana reading')
+        check(term['ja'] in term['example_ja'], f'{key}: example must contain its headword')
+        if not re.search(r'[一-龯々]', term['ja']):
+            check(term['reading_ja'] == term['ja'], f'{key}: katakana must keep its spelling')
         gloss = term['learning_gloss']
         check(isinstance(gloss, dict) and set(gloss) == {'zh-Hans','en'}, f'{key}: bilingual gloss keys')
         if isinstance(gloss, dict):

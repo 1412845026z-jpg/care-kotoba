@@ -1,0 +1,29 @@
+{
+  "ranAt": "2026-10-24T01:22:15.804Z",
+  "node": "v24.19.0",
+  "mode": "e2e",
+  "results": [
+    {
+      "name": "e2e",
+      "exitCode": 1,
+      "seconds": 286.1,
+      "pass": 23,
+      "fail": 13,
+      "failures": [
+        "a crash in one screen shows a recoverable message instead of blanking the app",
+        "a crash inside practice can be closed without losing the app",
+        "voice: a late input transcription is shown before the reply it triggered, with no duplicates",
+        "voice: finishing a session asks the server to hang up the Realtime call",
+        "voice: the voice transcript reaches feedback in conversation order",
+        "voice: a line the recogniser was unsure about asks the learner to check it, and feedback does not call it an error",
+        "voice: the last minute shows a countdown instead of elapsed time",
+        "voice: an interrupted reply is marked as interrupted",
+        "voice: a failed transcription is shown as not recognised instead of disappearing",
+        "voice: losing the connection is reported and the session can be resumed with its transcript",
+        "voice: a line typed while the AI is still answering gets its reply after that answer (no rejected response.create)",
+        "voice: connects under React StrictMode (development double effects)",
+        "voice: diagnostics can be exported after a session"
+      ]
+    }
+  ]
+}

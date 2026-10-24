@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Install, TypeScript, build (no API)
+    name: Install, TypeScript, build, mock tests (no API)
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     defaults:
@@ -70,6 +70,20 @@ jobs:
         run: node scripts/ci-step.mjs node node_modules/typescript/bin/tsc --noEmit
       - name: Production build (portable, no deploy)
         run: node scripts/ci-step.mjs pnpm build
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install chromium
+      - name: Static, unit and browser tests (local mock API only)
+        env:
+          CK_TEST_TIMEOUT_SECONDS: "600"
+        run: NODE_OPTIONS="--import=$GITHUB_WORKSPACE/scripts/ci/local_fetch_only.mjs" node tests/run.mjs all --report "$GITHUB_WORKSPACE/mock-tests.json"
+      - name: Keep test reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: mock-tests-${{ github.sha }}
+          path: mock-tests*.json
+          retention-days: 7
+          if-no-files-found: ignore
       - name: Confirm dependency manifests were not rewritten
         run: git diff --exit-code -- package.json pnpm-lock.yaml pnpm-workspace.yaml
 

@@ -1,0 +1,4 @@
+{
+  "sha": "4a851fd4319e8abc97c20910c01bd080be83e408",
+  "purpose": "Verify the actual integrated main containing the ordered business chain, CI, CSP Worker headers and revised content. Manual SHA input can override this explicit request."
+}

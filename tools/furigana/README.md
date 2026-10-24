@@ -44,3 +44,14 @@ Then read the diff of `prototype/lib/furigana-data.ts` and add corrections to `o
 
 Machine readings + review by Claude (2026-10-23). **A native-speaker Japanese teacher should review before release**,
 especially readings that depend on context (方, 後, 何, 行き先) and counters/numbers.
+
+## Checking the content drafts (read-only)
+
+`check-content.mjs` gives `content/terminology/terms.json` a second, independent reading check (kuromoji) and lists
+kanji the machine cannot read in `content/scenarios/*.json`. It never writes to `content/` (Codex owns it); a
+disagreement is something for a human to decide, not an error by itself (the machine is often wrong on care words).
+First run on 2026-10-24: `verification/CONTENT-QA-001/`.
+
+```sh
+NODE_PATH=/tmp/kuro-nm:<node_modules with async> node tools/furigana/check-content.mjs --kuromoji /tmp/kuromoji.js --out report.json
+```

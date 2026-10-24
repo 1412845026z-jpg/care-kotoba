@@ -1,0 +1,49 @@
+{
+  "tool": "tools/furigana/check-content.mjs",
+  "kuromoji": "0.1.2",
+  "dictionary": "mecab-ipadic-2.7.0-20070801",
+  "checkedAt": "2026-10-23T18:53:32.720Z",
+  "terms": 34,
+  "scenarioFiles": 12,
+  "japaneseStrings": 378,
+  "termReadingDisagreements": [
+    {
+      "id": "CK-T018",
+      "ja": "摂食",
+      "reading_ja": "せっしょく",
+      "machine": "としょく",
+      "note": "disagreement: a human decides which is right"
+    },
+    {
+      "id": "CK-T022",
+      "ja": "清拭",
+      "reading_ja": "せいしき",
+      "machine": "きよし拭",
+      "note": "disagreement: a human decides which is right"
+    },
+    {
+      "id": "CK-T023",
+      "ja": "口腔ケア",
+      "reading_ja": "こうくうけあ",
+      "machine": "こうこうけあ",
+      "note": "disagreement: a human decides which is right"
+    },
+    {
+      "id": "CK-T025",
+      "ja": "部分清拭",
+      "reading_ja": "ぶぶんせいしき",
+      "machine": "ぶぶんきよし拭",
+      "note": "disagreement: a human decides which is right"
+    }
+  ],
+  "wordsWithoutMachineReading": [
+    {
+      "word": "拭",
+      "places": [
+        "CK-T022.example_ja"
+      ]
+    }
+  ],
+  "careReadingsKnown": 18,
+  "note": "Read-only. Disagreements are not errors by themselves; content/ is owned by Codex and needs teacher review."
+}
