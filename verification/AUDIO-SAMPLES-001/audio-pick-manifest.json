@@ -1,0 +1,50 @@
+{
+  "task": "AUDIO-PICK-001",
+  "sourceCommit": "a3b006095580b234e51100ac70565a7d6a296e12",
+  "dateJst": "2026-10-24",
+  "originalAudioUnchanged": true,
+  "embeddedAudioCount": 30,
+  "sourceAudioSha256": {
+    "s1-comparison.mp3": "699fe9389c4140c080ae3398abb4de5590365b1fb0b28f85cd1576b04ce900ec",
+    "s1-kokoro-jf_alpha.mp3": "420947fdb6c15c1450048b8bbef93e3adcd9c960b935de6927edb76bb1c47406",
+    "s1-kokoro-jm_kumo.mp3": "e4a04e92274022c25a4731ef96e0098d1343d9c1ee88c5b3b448074dc7d4950a",
+    "s1-voicevox-kigashima.mp3": "22861a52e6f73a5609640aac5ad8a9abb523dcd0066f914e099e224a9ab5cb42",
+    "s1-voicevox-kurono.mp3": "8e925fcad74e1ca17cc6116dee2a50ec630a0620c22cb5ba9842785d35e01243",
+    "s1-voicevox-wakamatsu.mp3": "c54b57fb10c3a5a0386efff7c6693199c601c0da9de7d5aa6b4007fda71b5108",
+    "s2-comparison.mp3": "7737ad354602363a723790b67d187770adaddb0385bf20dabdd5927d0a725b79",
+    "s2-kokoro-jf_alpha.mp3": "25c71251282979678418a5bf4e2971e55dbe5169edb3b638697a71be54550ca7",
+    "s2-kokoro-jm_kumo.mp3": "335aabaf5995d95bae799e205ca4af84ac85a462aea552019201b7e421f7dd18",
+    "s2-voicevox-kigashima.mp3": "96ecea54abfdf6b4d45a518cd3284f35537e8cc652222fb152f47235d1e6b177",
+    "s2-voicevox-kurono.mp3": "596050ea81f5c4d80c3e5dae0856a168d3509bc75cb84a92706a9cff6ab79ada",
+    "s2-voicevox-wakamatsu.mp3": "9e7de689aaed44dcb0e72070e09c51c57ad1728caf30a7a1bfc64e12a587b32c",
+    "s3-comparison.mp3": "08675dd60379c73453b999da90ccf2b3e0b8d23349da8c373b18ec9de8477908",
+    "s3-kokoro-jf_alpha.mp3": "5fd4c5e3638bb127b85a7e6891597dbe87db15c37fc15f6c9ef42666256885e7",
+    "s3-kokoro-jm_kumo.mp3": "e68a5d891a4464bd94623314eb0fef8f7560887de4045c92b4e59febbc7b9bc2",
+    "s3-voicevox-kigashima.mp3": "cd22bb19b538ed137320d35b684030f8487b6121f90f2a754eb8a529d1268014",
+    "s3-voicevox-kurono.mp3": "f1328e9fa81ec363d24ed79fb4d50625c894c895d6f31082bfa3136fd2e4c278",
+    "s3-voicevox-wakamatsu.mp3": "61624601bc7e06da6ee41bda2c7dca0bf265dcedef39b8930f594fb00d17f98a",
+    "s4-comparison.mp3": "bde7eb63e1de70c485880607f2f85ecd7b659acf48b411aad1ca456eb9757c8f",
+    "s4-kokoro-jf_alpha.mp3": "20f7d7a930f321354cdabb5ff3c90fa02fb782b95ea701363adf1b7d9fdbb4f1",
+    "s4-kokoro-jm_kumo.mp3": "705bafb93531dc6a2b601d4784f3bfd249f3fff5bef80632248ed01547221d81",
+    "s4-voicevox-kigashima.mp3": "691c5ed64664d849461de522bcc3b354aab493a5cef5131283504b3568d0d91a",
+    "s4-voicevox-kurono.mp3": "46dd56c6d85ee3bfd01b01309cfae9b5033fa2c5d717009be26b900e3e96bb48",
+    "s4-voicevox-wakamatsu.mp3": "9201b707f70aa2e735f8f6ae07e4c57a5d8bf242b13d92b92175afa9310e12d5",
+    "s5-comparison.mp3": "65cb303e7d9c54cfe651bdee0a9161fa51285eb13089a7e8576f34536bb74e64",
+    "s5-kokoro-jf_alpha.mp3": "88960aff605d1a6be76c026d61e441370bfb005b16f5af364602fa04f1ef214f",
+    "s5-kokoro-jm_kumo.mp3": "5596013a297b25792c40fba3797ebb9ccbc2850c2e3ddbaafdc916631b5f2c6c",
+    "s5-voicevox-kigashima.mp3": "e97a086f0c0f271231ded8321a52dac6f62774252d4b98f6469209249c1765e1",
+    "s5-voicevox-kurono.mp3": "0b64033c9662cade79c76bd655ca8618103cfdca3dc0dab7709d182d4ae9b47b",
+    "s5-voicevox-wakamatsu.mp3": "f6097638c930ca1794cd2b0b0ce76af9528f9ca0877ff76aa92f12b17c1d5332"
+  },
+  "newHtml": {
+    "index.html": {
+      "bytes": 32462,
+      "sha256": "5b99674f3c7e2d6f6f0b78859401f0a5095c83d7bbfe0f3f4a8f1fcc1ca4abd4"
+    },
+    "mobile-listen.html": {
+      "bytes": 2062191,
+      "sha256": "3a9f942f2a0a0dbee76a68faa9c8dd793264a07871e52efbed0352c30ae396de"
+    }
+  },
+  "note": "Separate AUDIO-PICK manifest. Existing generation SHA256SUMS.json remains unchanged. MP3 bytes are embedded without re-encoding. No true audition performed."
+}
