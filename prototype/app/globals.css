@@ -266,3 +266,4 @@ nav > .nav-item.active > span{color:#5b4399}
 .sidebar button:not(.nav-item):not(.brand-button){min-height:32px}
 nav > .nav-item > span{color:#675c79}nav > .nav-item.active > span{color:#5b4399}
 .settings-clear{margin-top:10px;border-top:1px solid #eee8f3;padding-top:8px}.clear-confirm{background:#fff6f4;border:1px solid #f0d9d3;border-radius:12px;padding:12px;margin-top:6px}.clear-confirm p{font-size:13px;color:#6b3a2e;line-height:1.7;margin:0 0 10px}.clear-confirm>div{display:flex;gap:10px}.clear-confirm .btn{flex:1}.clear-confirm .btn-primary{background:#9b3b2b;border-color:#9b3b2b;color:#fff}
+.note-heading .notes-export{margin-left:auto;min-height:32px;color:#5f3f8f;font-size:12px}

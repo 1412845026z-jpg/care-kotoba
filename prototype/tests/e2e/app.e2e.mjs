@@ -2,7 +2,8 @@
 // Run: node tests/run.mjs e2e      (see tests/README.md)
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { setup, seedStorage, openScene, gotoApp, api, PHONE } from './helpers.mjs';
+import { readFileSync } from 'node:fs';
+import { setup, seedStorage, openScene, gotoApp, api, PHONE, EXTERNAL, hideDevErrorOverlay, devErrorOverlayPresent, simulateDevErrorOverlay } from './helpers.mjs';
 
 let env;
 before(async () => { env = await setup({ env: { CK_AI_FURIGANA: '1' } }); await env.requireAiAccess(); });
@@ -203,10 +204,13 @@ test('notes whose text is an Object.prototype name render as plain text (furigan
 test('a crash in one screen shows a recoverable message instead of blanking the app', async () => {
   const page = await env.page();
   await page.addInitScript(() => { window.__CK_CRASH_TEST__ = 'notes'; });
+  await hideDevErrorOverlay(page);
   await gotoApp(page, env.baseUrl);
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   const box = page.locator('.screen-error[data-screen="notes"]');
   await box.waitFor();
+  if (!EXTERNAL) await simulateDevErrorOverlay(page); // harness: prove the dev overlay cannot block the checks below
+  else if (await devErrorOverlayPresent(page)) console.log('# dev server error overlay present after the deliberate crash (hidden for this test; production builds have none)');
   assert.match(await box.innerText(), /この画面を表示できませんでした/);
   assert.equal(await page.locator('.mobile-nav').count(), 1, 'navigation is still there');
   await page.locator('.mobile-nav button', { hasText: 'シーン' }).click();
@@ -217,22 +221,25 @@ test('a crash in one screen shows a recoverable message instead of blanking the 
   await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
   await box.getByRole('button', { name: 'ホームに戻る' }).click();
   await page.locator('h1', { hasText: '今日も、ひとつずつ。' }).waitFor();
-  assert.deepEqual(page.errors.filter((e) => !/crash test: notes|screen-error/.test(e)), []);
+  assert.deepEqual(page.errors.filter((e) => !/crash test: notes|screen-error|The above error occurred/.test(e)), []);
 });
 
 test('a crash inside practice can be closed without losing the app', async () => {
   const page = await env.page();
   await page.addInitScript(() => { window.__CK_CRASH_TEST__ = 'practice'; });
+  await hideDevErrorOverlay(page);
   await openScene(page, env.baseUrl, '入浴を断られたとき');
   await page.getByRole('button', { name: /まずはデモで操作を体験/ }).click();
   const box = page.locator('.screen-error.overlay[data-screen="practice"]');
   await box.waitFor();
+  if (!EXTERNAL) await simulateDevErrorOverlay(page);
+  else if (await devErrorOverlayPresent(page)) console.log('# dev server error overlay present after the deliberate crash (hidden for this test; production builds have none)');
   await page.evaluate(() => { window.__CK_CRASH_TEST__ = ''; });
   await box.getByRole('button', { name: '練習を閉じる' }).click();
   await page.locator('.screen-error').waitFor({ state: 'detached' });
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   await page.locator('h1', { hasText: 'ことばノート' }).waitFor();
-  assert.deepEqual(page.errors.filter((e) => !/crash test: practice|screen-error/.test(e)), []);
+  assert.deepEqual(page.errors.filter((e) => !/crash test: practice|screen-error|The above error occurred/.test(e)), []);
 });
 
 test('voice check: microphone, speaker, server and WebRTC are checked without any AI call', async () => {
@@ -327,6 +334,20 @@ test('settings: the learner can delete this device\'s learning data (two steps)'
   assert.equal(stored.assign, null);
   await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
   assert.equal(await page.locator('.note-card').count(), 0);
+  assert.deepEqual(page.errors, []);
+});
+
+test('notes can be saved as a text file', async () => {
+  const page = await env.page();
+  await seedStorage(page, { 'ck-notes': JSON.stringify([{ id: 'n1', text: '今は入りたくないのですね。', sceneId: 'bath-5', original: '入りませんか。', reason: '気持ちを受け止める' }]) });
+  await gotoApp(page, env.baseUrl);
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: '書き出す' }).click()]);
+  assert.equal(download.suggestedFilename(), 'care-kotoba-notes.txt');
+  const text = readFileSync(await download.path(), 'utf8');
+  assert.match(text, /1\. 今は入りたくないのですね。/);
+  assert.match(text, /（前の言い方）入りませんか。/);
+  assert.match(text, /（場面）入浴を断られたとき/);
   assert.deepEqual(page.errors, []);
 });
 
