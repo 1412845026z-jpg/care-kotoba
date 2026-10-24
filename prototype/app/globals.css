@@ -551,3 +551,20 @@ ruby rt{font-size:max(.55em,10px)}
 .review-card p{word-break:auto-phrase}
 .review-progress{align-items:center}.review-progress .text-button{margin-left:auto;min-height:32px;font-size:12px}
 .review-progress>span:nth-child(2){flex:1;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* A11Y-003｜見出しの階層・不透明度・練習画面の見出し（見た目は変えない） */
+.practice-top-title h1{font-family:var(--font);font-size:12px;line-height:1.65;font-weight:500;letter-spacing:0;color:var(--ink-2);display:block;margin:0}
+.practice-root.feedback-root .feedback-main .feedback-improvements>.section-heading>h2{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);margin:0}
+.note-heading h2{font-family:var(--font);font-size:14px;font-weight:700;letter-spacing:0;color:var(--ink);display:flex;align-items:center;gap:6px;margin:0}
+ruby rt{opacity:1}
+.category-pills small{opacity:1}
+.note-heading h2>span{font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--bg);color:var(--ink-2)}
+/* 会話の舞台（深いプラム）の上の文字：明るい色に（DEAI の一括換算で暗くなっていた） */
+.conversation-stage .session-time:not(.time-warning){color:#d6cce0}
+.conversation-stage .stage-state{color:#d0c5da}
+.conversation-stage .engine-badge,.conversation-stage .engine-badge.demo{color:#ddd3e6}
+.conversation-stage .stage-tools>button{color:#e6deee;border-color:#ffffff33}
+.conversation-stage .stage-tools>button.active{color:#f3ecfa;background:#ffffff1f}
+.conversation-stage .stage-bottom>span:not(.text-mode-circle),.conversation-stage .stage-bottom>small{color:#d6cce0}
+.stage-caption ruby rt{font-size:max(.42em,10px)}
+.conversation-stage .partner-tag small,.conversation-stage .partner-tag>span{color:#d6cce0}.conversation-stage .partner-tag>span{border-color:#ffffff40}
