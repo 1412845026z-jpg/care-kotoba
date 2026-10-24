@@ -57,7 +57,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| SSW-CONTENT-001 | 特定技能基础96场景与角色声线准备 | Codex | review_ready | `codex/SSW-CONTENT-001`；推送后的PR见任务交接 | content/ssw-basic；24类/384对白/192替代、8声线16试听文本；553待合成文本资产；未生成新MP3/图片、未接入App，独立AI编辑复核非专业签核 |
+| SSW-CONTENT-001 | 特定技能基础96场景与角色声线准备 | Codex | review_ready | `codex/SSW-CONTENT-001`；PR #56，内容源82a0444 | content/ssw-basic；24类/384对白/192替代、8声线16试听文本；553待合成文本资产；未生成新MP3/图片、未接入App，独立AI编辑复核非专业签核 |
 | DEVICE-FREE-GUIDE-001 | 最新main免费手机测试中文指南与no-key回放 | Codex | merged | `codex/DEVICE-FREE-GUIDE-001` @e4b798b；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md；main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户 |
 | AUDIO-PICK-001 | 手机30段免费试听清单及候选组合 | Codex | merged | `codex/AUDIO-PICK-001` @f2e52e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-AUDIO-PICK-001-codex.md；30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App |
 | REAL-AI-PILOT-PLAN-001 | ≤3000日元首次真实AI测试计划（不执行） | Codex | merged | `codex/REAL-AI-PILOT-PLAN-001` @1ceb8e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-REAL-AI-PILOT-PLAN-001-codex.md；只交计划；条件预算¥113、建议另批¥1000，未花钱；旧实时价/逐次计量/鉴权待解决 |
