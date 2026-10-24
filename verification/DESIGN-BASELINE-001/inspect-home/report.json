@@ -1,0 +1,1723 @@
+{
+ "url": "http://127.0.0.1:5180/",
+ "at": "2026-10-24T05:02:00.713Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.75,
+    0.65
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1547,
+     "screens": 1.7,
+     "words": 159,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 61,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "✦",
+      "✧"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 27,
+     "vw": 1.9,
+     "font": "DM Sans",
+     "weight": 600,
+     "tracking": 0.04,
+     "leading": 1.2,
+     "top": 136,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "lines": 1,
+     "size": 27,
+     "font": "DM Sans"
+    },
+    "headings": [
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "DM Sans",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.01,
+      "top": 207,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "✦ ✧",
+      "words": 2,
+      "chars": 3,
+      "lines": 2,
+      "size": 30,
+      "vw": 2.1,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.18,
+      "top": 257,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "話すたびに、 現場が近くなる。",
+      "words": 2,
+      "chars": 15,
+      "lines": 2,
+      "size": 34,
+      "vw": 2.4,
+      "font": "DM Sans",
+      "weight": 600,
+      "tracking": 0.035,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 305,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 3,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      16,
+      17,
+      18,
+      20,
+      22,
+      25,
+      27,
+      28,
+      30,
+      34
+     ],
+     "sizeCount": 16,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 34,
+      "vw": 2.4,
+      "font": "DM Sans",
+      "text": "話すたびに、現場が近くなる。"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 7,
+     "microLabelShare": 0.123,
+     "microSamples": [
+      "YOUR LEARNING SPACE",
+      "PREVIEW",
+      "LEARN A LITTLE. CARE A LOT.",
+      "AI CONVERSATION",
+      "PICK A MOMENT",
+      "REAL WORK. REAL WORDS."
+     ],
+     "upperShare": 0.17,
+     "centerShare": 0.1,
+     "smallText": 26
+    },
+    "eyebrows": [
+     {
+      "text": "今日の小さな目標",
+      "above": "0",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 140
+     },
+     {
+      "text": "AI CONVERSATION",
+      "above": "話すたびに、 現場が近くなる。",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": true,
+      "size": 9,
+      "top": 262
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f8f9fc",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.4,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#282737",
+       "share": 0.06
+      },
+      {
+       "color": "#6d5d79",
+       "share": 0.05
+      },
+      {
+       "color": "#7a6a88",
+       "share": 0.05
+      },
+      {
+       "color": "#7d6e89",
+       "share": 0.05
+      },
+      {
+       "color": "#806e8e",
+       "share": 0.04
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#282737"
+     },
+     "lowContrast": [
+      {
+       "text": "マイラーニング",
+       "ratio": 4.4,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#777185",
+       "bg": "#f8f9fc"
+      },
+      {
+       "text": "PREVIEW",
+       "ratio": 4.4,
+       "need": 4.5,
+       "size": 9,
+       "fg": "#777286",
+       "bg": "#f8f9fc"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 11,
+     "inHero": 3,
+     "radius": 12,
+     "height": 73,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "ホーム",
+      "あなたの学習スペース 個人プラン · プロトタイプ",
+      "AIと話してみる"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 6,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.orb-body → rgba(255, 255, 255, 0.6) 10px 8px 16px 0px inset, rgba(136, 111, 184, 0.255) -7p",
+      "div.float-bubble.float-one → rgba(140, 106, 175, 0.04) 0px 5px 25px 0px",
+      "div.float-bubble.float-two → rgba(140, 106, 175, 0.04) 0px 5px 25px 0px",
+      "button.scene-card.recommended → rgba(41, 38, 61, 0.016) 0px 8px 30px 0px"
+     ],
+     "gradients": 4,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.sidebar-coach → linear-gradient(125deg, rgb(245, 241, 253), rgb(247, 248, 249))",
+      "section.hero-card → linear-gradient(115deg, rgb(238, 232, 250) 0%, rgb(240, 236, 251) 53%, rgb(237, 234, 250) 100%)",
+      "div.orb-aura → radial-gradient(circle, rgba(174, 139, 217, 0.25), rgba(193, 168, 223, 0.125) 50%, rgba(0, 0, 0, 0) 72%)",
+      "div.orb-body → radial-gradient(circle at 31% 28%, rgb(251, 246, 255) 1%, rgb(229, 214, 244) 20%, rgb(209, 187, 237) 44%, rgb("
+     ],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "aside.sidebar 234px",
+      "header.topbar 1206px",
+      "footer.page-footer 1206px"
+     ],
+     "outlinedBoxes": 9,
+     "dashed": 0,
+     "blurred": 2,
+     "roundedBoxes": 9,
+     "boxRadius": 15,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 675
+      },
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 116
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 900,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1547,
+    "margins": {
+     "left": 274,
+     "right": 40
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "今日も、ひとつずつ。",
+      "size": 27,
+      "top": 136,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 274,
+      "n": 3
+     },
+     {
+      "x": 305,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.13,
+    "voidBox": {
+     "x": 600,
+     "y": 120,
+     "w": 300,
+     "h": 540
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#f8f9fc",
+    "sidebar": {
+     "w": 234,
+     "tag": "aside",
+     "links": 8,
+     "share": 0.16
+    },
+    "topbar": {
+     "h": 78
+    },
+    "canvas": {
+     "left": 40,
+     "right": 40
+    },
+    "hero": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 27,
+     "vw": 1.9,
+     "font": "DM Sans",
+     "weight": 600,
+     "tracking": 0.04,
+     "leading": 1.2,
+     "top": 136,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 18,
+     "firstScreen": 8,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 92,
+       "at": 584,
+       "panel": "今週のリズム"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 23,
+     "radii": [
+      [
+       12,
+       8
+      ],
+      [
+       0,
+       7
+      ],
+      [
+       15,
+       3
+      ],
+      [
+       17,
+       3
+      ],
+      [
+       22,
+       1
+      ],
+      [
+       14,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 10,
+     "hues": 6,
+     "samples": [
+      {
+       "hue": 266,
+       "size": 36,
+       "radius": "12px"
+      },
+      {
+       "hue": 263,
+       "size": 43,
+       "radius": "12px"
+      },
+      {
+       "hue": 29,
+       "size": 43,
+       "radius": "12px"
+      },
+      {
+       "hue": 210,
+       "size": 43,
+       "radius": "12px"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.85,
+     "tiny": 41,
+     "tinySamples": [
+      "あなたのペースで。 10px",
+      "3分の練習をはじめる 10px",
+      "あなたの学習スペース 10px",
+      "PREVIEW 9px"
+     ],
+     "sizes": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      18,
+      25,
+      27,
+      34
+     ]
+    },
+    "title": {
+     "text": "今日も、ひとつずつ。",
+     "size": 27,
+     "top": 136
+    },
+    "colourShare": 0.007
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.78,
+    0.65
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1615,
+     "screens": 1.6,
+     "words": 114,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 61,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "✦",
+      "✧"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 27,
+     "vw": 3.5,
+     "font": "DM Sans",
+     "weight": 600,
+     "tracking": 0.04,
+     "leading": 1.2,
+     "top": 122,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "lines": 1,
+     "size": 27,
+     "font": "DM Sans"
+    },
+    "headings": [
+     {
+      "text": "今日も、ひとつずつ。",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 27,
+      "vw": 3.5,
+      "font": "DM Sans",
+      "weight": 600,
+      "tracking": 0.037,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 122,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "✦ ✧",
+      "words": 2,
+      "chars": 3,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.35,
+      "top": 251,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "話すたびに、 現場が近くなる。",
+      "words": 2,
+      "chars": 15,
+      "lines": 2,
+      "size": 36,
+      "vw": 4.7,
+      "font": "DM Sans",
+      "weight": 600,
+      "tracking": 0.033,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.42,
+      "top": 293,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 3,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      16,
+      17,
+      22,
+      24,
+      27,
+      30,
+      36
+     ],
+     "sizeCount": 13,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 36,
+      "vw": 4.7,
+      "font": "DM Sans",
+      "text": "話すたびに、現場が近くなる。"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 5,
+     "microLabelShare": 0.128,
+     "microSamples": [
+      "PREVIEW",
+      "LEARN A LITTLE. CARE A LOT.",
+      "AI CONVERSATION",
+      "PICK A MOMENT",
+      "REAL WORK. REAL WORDS."
+     ],
+     "upperShare": 0.2,
+     "centerShare": 0.06,
+     "smallText": 17
+    },
+    "eyebrows": [
+     {
+      "text": "LEARN A LITTLE. CARE A LOT.",
+      "above": "今日も、ひとつずつ。",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 9,
+      "top": 99
+     },
+     {
+      "text": "AI CONVERSATION",
+      "above": "話すたびに、 現場が近くなる。",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": true,
+      "size": 9,
+      "top": 250
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f8f9fc",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.4,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#6d5d79",
+       "share": 0.08
+      },
+      {
+       "color": "#7a6a88",
+       "share": 0.08
+      },
+      {
+       "color": "#7d6e89",
+       "share": 0.07
+      },
+      {
+       "color": "#806e8e",
+       "share": 0.06
+      },
+      {
+       "color": "#877a93",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#282737"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 3,
+     "radius": 12,
+     "height": 71,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "AIと話してみる",
+      "日常の声かけ 6 シーン",
+      "食事・口腔ケア 6 シーン"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 6,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.orb-body → rgba(255, 255, 255, 0.6) 10px 8px 16px 0px inset, rgba(136, 111, 184, 0.255) -7p",
+      "div.float-bubble.float-one → rgba(140, 106, 175, 0.04) 0px 5px 25px 0px",
+      "div.float-bubble.float-two → rgba(140, 106, 175, 0.04) 0px 5px 25px 0px",
+      "button.scene-card.recommended → rgba(41, 38, 61, 0.016) 0px 8px 30px 0px"
+     ],
+     "gradients": 3,
+     "scrims": 1,
+     "gradientSamples": [
+      "section.hero-card → linear-gradient(115deg, rgb(238, 232, 250) 0%, rgb(240, 236, 251) 53%, rgb(237, 234, 250) 100%)",
+      "div.orb-aura → radial-gradient(circle, rgba(174, 139, 217, 0.25), rgba(193, 168, 223, 0.125) 50%, rgba(0, 0, 0, 0) 72%)",
+      "div.orb-body → radial-gradient(circle at 31% 28%, rgb(251, 246, 255) 1%, rgb(229, 214, 244) 20%, rgb(209, 187, 237) 44%, rgb("
+     ],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "header.topbar 768px",
+      "footer.page-footer 768px",
+      "nav.mobile-nav 768px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 3,
+     "roundedBoxes": 6,
+     "boxRadius": 15,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 678
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 0,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1615,
+    "margins": {
+     "left": 36,
+     "right": 28
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "今日も、ひとつずつ。",
+      "size": 27,
+      "top": 122,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 36,
+      "n": 3
+     },
+     {
+      "x": 68,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#f8f9fc",
+    "sidebar": null,
+    "topbar": {
+     "h": 72
+    },
+    "canvas": {
+     "left": 36,
+     "right": 35
+    },
+    "hero": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 27,
+     "vw": 3.5,
+     "font": "DM Sans",
+     "weight": 600,
+     "tracking": 0.04,
+     "leading": 1.2,
+     "top": 122,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 5,
+     "firstScreen": 4,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 8,
+     "radii": [
+      [
+       15,
+       3
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       22,
+       1
+      ],
+      [
+       14,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 9,
+     "hues": 5,
+     "samples": [
+      {
+       "hue": 266,
+       "size": 36,
+       "radius": "12px"
+      },
+      {
+       "hue": 263,
+       "size": 43,
+       "radius": "12px"
+      },
+      {
+       "hue": 29,
+       "size": 43,
+       "radius": "12px"
+      },
+      {
+       "hue": 210,
+       "size": 43,
+       "radius": "12px"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.87,
+     "tiny": 43,
+     "tinySamples": [
+      "あなたのペースで。 10px",
+      "3分の練習をはじめる 10px",
+      "あなたの学習スペース 10px",
+      "PREVIEW 9px"
+     ],
+     "sizes": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      16,
+      18,
+      22,
+      24,
+      27,
+      36
+     ]
+    },
+    "title": {
+     "text": "今日も、ひとつずつ。",
+     "size": 27,
+     "top": 122
+    },
+    "colourShare": 0.011
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.71,
+    0.71
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 1571,
+     "screens": 1.9,
+     "words": 99,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 61,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [
+      "✦",
+      "✧"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 23,
+     "vw": 5.9,
+     "font": "DM Sans",
+     "weight": 600,
+     "tracking": 0.02,
+     "leading": 1.2,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "lines": 1,
+     "size": 23,
+     "font": "DM Sans"
+    },
+    "headings": [
+     {
+      "text": "care kotoba",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "DM Sans",
+      "weight": 700,
+      "tracking": -0.046,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 17,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "今日も、ひとつずつ。",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "DM Sans",
+      "weight": 600,
+      "tracking": 0.022,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.64,
+      "top": 113,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "✦ ✧",
+      "words": 2,
+      "chars": 3,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.49,
+      "top": 273,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "話すたびに、 現場が近くなる。",
+      "words": 2,
+      "chars": 15,
+      "lines": 2,
+      "size": 30,
+      "vw": 7.7,
+      "font": "DM Sans",
+      "weight": 600,
+      "tracking": 0.033,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.65,
+      "top": 291,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16,
+      17,
+      22,
+      23,
+      30
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 30,
+      "vw": 7.7,
+      "font": "DM Sans",
+      "text": "話すたびに、現場が近くなる。"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 5,
+     "microLabelShare": 0.15,
+     "microSamples": [
+      "PREVIEW",
+      "LEARN A LITTLE. CARE A LOT.",
+      "AI CONVERSATION",
+      "PICK A MOMENT",
+      "REAL WORK. REAL WORDS."
+     ],
+     "upperShare": 0.23,
+     "centerShare": 0.07,
+     "smallText": 13
+    },
+    "eyebrows": [
+     {
+      "text": "LEARN A LITTLE. CARE A LOT.",
+      "above": "今日も、ひとつずつ。",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 7,
+      "top": 92
+     },
+     {
+      "text": "AI CONVERSATION",
+      "above": "話すたびに、 現場が近くなる。",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": true,
+      "size": 8,
+      "top": 246
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f8f9fc",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.4,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#6d5d79",
+       "share": 0.09
+      },
+      {
+       "color": "#7d6e89",
+       "share": 0.08
+      },
+      {
+       "color": "#806e8e",
+       "share": 0.07
+      },
+      {
+       "color": "#877a93",
+       "share": 0.07
+      },
+      {
+       "color": "#786b8d",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#282737"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 1,
+     "radius": 12,
+     "height": 63,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "AIと話してみる"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 4,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.orb-body → rgba(255, 255, 255, 0.6) 10px 8px 16px 0px inset, rgba(136, 111, 184, 0.255) -7p",
+      "button.scene-card.recommended → rgba(41, 38, 61, 0.016) 0px 8px 30px 0px",
+      "button.scene-card.recommended → rgba(41, 38, 61, 0.016) 0px 8px 30px 0px",
+      "button.scene-card.recommended → rgba(41, 38, 61, 0.016) 0px 8px 30px 0px"
+     ],
+     "gradients": 3,
+     "scrims": 1,
+     "gradientSamples": [
+      "section.hero-card → linear-gradient(115deg, rgb(238, 232, 250) 0%, rgb(240, 236, 251) 53%, rgb(237, 234, 250) 100%)",
+      "div.orb-aura → radial-gradient(circle, rgba(174, 139, 217, 0.25), rgba(193, 168, 223, 0.125) 50%, rgba(0, 0, 0, 0) 72%)",
+      "div.orb-body → radial-gradient(circle at 31% 28%, rgb(251, 246, 255) 1%, rgb(229, 214, 244) 20%, rgb(209, 187, 237) 44%, rgb("
+     ],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "header.topbar 390px",
+      "footer.page-footer 390px",
+      "nav.mobile-nav 390px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 7,
+     "boxRadius": 15,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 649
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 0,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 1571,
+    "margins": {
+     "left": 19,
+     "right": 20
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "今日も、ひとつずつ。",
+      "size": 23,
+      "top": 113,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Read back an instruction",
+      "side": "right",
+      "px": 3
+     }
+    ],
+    "edges": [
+     {
+      "x": 19,
+      "n": 4
+     },
+     {
+      "x": 44,
+      "n": 2
+     },
+     {
+      "x": 254,
+      "n": 1
+     },
+     {
+      "x": 489,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 8,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#f8f9fc",
+    "sidebar": null,
+    "topbar": {
+     "h": 67
+    },
+    "canvas": {
+     "left": 19,
+     "right": -282
+    },
+    "hero": {
+     "text": "今日も、ひとつずつ。",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 23,
+     "vw": 5.9,
+     "font": "DM Sans",
+     "weight": 600,
+     "tracking": 0.02,
+     "leading": 1.2,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 5,
+     "firstScreen": 4,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 8,
+     "radii": [
+      [
+       15,
+       3
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       20,
+       1
+      ],
+      [
+       14,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 9,
+     "hues": 5,
+     "samples": [
+      {
+       "hue": 266,
+       "size": 30,
+       "radius": "50%"
+      },
+      {
+       "hue": 263,
+       "size": 37,
+       "radius": "11px"
+      },
+      {
+       "hue": 29,
+       "size": 37,
+       "radius": "11px"
+      },
+      {
+       "hue": 210,
+       "size": 37,
+       "radius": "11px"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.85,
+     "tiny": 23,
+     "tinySamples": [
+      "あなたのペースで。 10px",
+      "3分の練習をはじめる 10px",
+      "あなたの学習スペース 10px",
+      "PREVIEW 9px"
+     ],
+     "sizes": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      18,
+      22,
+      23,
+      30
+     ]
+    },
+    "title": {
+     "text": "今日も、ひとつずつ。",
+     "size": 23,
+     "top": 113
+    },
+    "colourShare": 0.007
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "7 tiny uppercase letter-spaced labels (e.g. \"YOUR LEARNING SPACE\", \"PREVIEW\", \"LEARN A LITTLE. CARE A LOT.\", \"AI CONVERSATION\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "emoji",
+   "width": 1440,
+   "message": "Emoji in the page: ✦ ✧",
+   "fix": "Remove. Use words or real imagery.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "width": 1440,
+   "message": "4 gradient fill(s): div.sidebar-coach → linear-gradient(125deg, rgb(245, 241, 253), rgb(247, 248, 249)) | section.hero-card → linear-gradient(115deg, rgb(238, 232, 250) 0%, rgb(240, 236, 251) 53%, rgb(237, 234, 250) 100%) | div.orb-aura → radial-gradient(circle, rgba(174, 139, 217, 0.25), rgba(193, 168, 223, 0.125) 50%, rgba(0, 0, 0, 0) 72%)",
+   "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"マイラーニング\" 4.4:1 needs 4.5:1; \"PREVIEW\" 4.4:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour."
+  },
+  {
+   "level": "WARN",
+   "id": "radius-mix",
+   "width": 1440,
+   "message": "Panels use 4 corner radii (12, 0, 15, 17px).",
+   "fix": "One radius for panels, one for controls, full round only for pills and avatars."
+  },
+  {
+   "level": "FAIL",
+   "id": "icon-chips",
+   "width": 1440,
+   "message": "10 icons sit in tinted squares or circles in 6 different colours.",
+   "fix": "This is the commonest tell of a generated dashboard. Drop the tinted square: a KPI is a label and a number; an icon, if it helps, is plain and in the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "tiny-text",
+   "width": 1440,
+   "message": "41 text blocks under 11px: あなたのペースで。 10px, 3分の練習をはじめる 10px, あなたの学習スペース 10px, PREVIEW 9px.",
+   "fix": "Nothing below 11px; secondary text 12px, data 13–14px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "below-fold",
+   "width": 1440,
+   "message": "Only 8 of 18 blocks start on the first 1440px screen.",
+   "fix": "Every block the brief names shows its header and first rows on the first desktop screen: size the headline block to its question, cap long lists with \"View all\", and put time-sensitive blocks before long tables."
+  },
+  {
+   "level": "WARN",
+   "id": "panel-void",
+   "width": 1440,
+   "message": "1 card(s) hold a blank band inside: 92px in \"今週のリズム\".",
+   "fix": "A card stretches to its neighbour only when it has content to fill. Keep a legend or a note directly under its chart (only an action or a total may sit at a stretched card's foot), let a short card keep its own height (align-items: start), and let a filtered block shrink to its rows."
+  },
+  {
+   "level": "FAIL",
+   "id": "edge-text",
+   "width": 390,
+   "message": "1 text block(s) sit within 12px of the screen edge: \"Read back an instruction\" (3px from the right)",
+   "fix": "Keep text inside the page margin (16–20px). Only display type deliberately bled past the edge may touch it."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/home/claude/care-kotoba/verification/DESIGN-BASELINE-001/inspect-home/desktop-fold.jpg",
+   "pages": [
+    "/home/claude/care-kotoba/verification/DESIGN-BASELINE-001/inspect-home/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/home/claude/care-kotoba/verification/DESIGN-BASELINE-001/inspect-home/tablet-fold.jpg",
+   "pages": [
+    "/home/claude/care-kotoba/verification/DESIGN-BASELINE-001/inspect-home/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/home/claude/care-kotoba/verification/DESIGN-BASELINE-001/inspect-home/mobile-fold.jpg",
+   "pages": [
+    "/home/claude/care-kotoba/verification/DESIGN-BASELINE-001/inspect-home/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
