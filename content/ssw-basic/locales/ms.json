@@ -1,0 +1,1232 @@
+{
+  "locale": "ms",
+  "status": "draft_unreviewed",
+  "topics": {
+    "T01": {
+      "title": "Sapaan dan keluar masuk bilik"
+    },
+    "T02": {
+      "title": "Meminta penjelasan semula"
+    },
+    "T03": {
+      "title": "Mengesahkan arahan kakitangan"
+    },
+    "T04": {
+      "title": "Bangun, berehat dan tidur"
+    },
+    "T05": {
+      "title": "Pakaian dan penampilan"
+    },
+    "T06": {
+      "title": "Sebelum makan"
+    },
+    "T07": {
+      "title": "Makanan dan minuman"
+    },
+    "T08": {
+      "title": "Penjagaan mulut dan muka"
+    },
+    "T09": {
+      "title": "Berkomunikasi tentang ke tandas"
+    },
+    "T10": {
+      "title": "Mandi dan kebersihan"
+    },
+    "T11": {
+      "title": "Sebelum bergerak atau berpindah"
+    },
+    "T12": {
+      "title": "Bilik dan persekitaran harian"
+    },
+    "T13": {
+      "title": "Aktiviti dan perbualan harian"
+    },
+    "T14": {
+      "title": "Menjawab kebimbangan"
+    },
+    "T15": {
+      "title": "Pemerhatian dan laporan ringkas"
+    },
+    "T16": {
+      "title": "Menghubungi pasukan dan meminta bantuan"
+    },
+    "T17": {
+      "title": "Mencuci tangan dan pencegahan jangkitan"
+    },
+    "T18": {
+      "title": "Dobi dan linen"
+    },
+    "T19": {
+      "title": "Menjelaskan pemeriksaan dan mendengar keadaan diri"
+    },
+    "T20": {
+      "title": "Mengesahkan perkara berkaitan ubat dengan jururawat"
+    },
+    "T21": {
+      "title": "Jadual, temu janji dan keluar"
+    },
+    "T22": {
+      "title": "Pelawat dan keluarga"
+    },
+    "T23": {
+      "title": "Laporan keselamatan dan latihan kecemasan"
+    },
+    "T24": {
+      "title": "Cermin mata, alat bantu dengar dan butang panggilan"
+    }
+  },
+  "scenes": {
+    "SSW-S01": {
+      "title": "Mengesahkan nama",
+      "goal": "Perkenalkan diri, kemudian sahkan panggilan yang dikehendaki oleh penghuni.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Anda bertemu penghuni buat kali pertama selepas diperkenalkan oleh kakitangan yang bertanggungjawab.",
+      "check": "Gunakan panggilan yang diberikan oleh penghuni. Bahasa hormat yang rumit tidak diperlukan.",
+      "lines": [
+        "Saya Hayashi, yang mula bertugas menjaga anda hari ini. Boleh beritahu nama anda?",
+        "Nama saya Yamada. Panggil saya Yamada-san.",
+        "Yamada-san, ya. Salam perkenalan.",
+        "Ya. Salam perkenalan juga."
+      ]
+    },
+    "SSW-S02": {
+      "title": "Bolehkah saya masuk?",
+      "goal": "Minta izin sebelum masuk ke bilik dan tunggu jawapan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Anda masih berada di luar pintu bilik.",
+      "check": "Dapatkan persetujuan sebelum masuk. Jangan masuk secara paksa jika ditolak.",
+      "lines": [
+        "Yamada-san, saya Hayashi. Bolehkah saya masuk?",
+        "Ya, silakan.",
+        "Terima kasih. Saya masuk dahulu.",
+        "Sila ke sini."
+      ]
+    },
+    "SSW-S03": {
+      "title": "Bertanya keadaan pada waktu pagi",
+      "goal": "Tanya perasaan penghuni hari ini dengan sapaan ringkas.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Sapaan rutin pada waktu pagi; jangan membuat diagnosis.",
+      "check": "Ulang secara ringkas apa yang dirasai penghuni tanpa menambah sebab atau penilaian.",
+      "lines": [
+        "Selamat pagi. Bagaimana keadaan anda hari ini?",
+        "Saya sedikit mengantuk.",
+        "Anda sedikit mengantuk, ya.",
+        "Ya, saya masih mengantuk."
+      ]
+    },
+    "SSW-S04": {
+      "title": "Cara memanggil apabila perlu",
+      "goal": "Sebelum pergi, terangkan butang panggilan yang telah disahkan boleh digunakan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Sebelum anda pergi, pusat jagaan telah memastikan butang panggilan berfungsi dan berada di tempat yang boleh digunakan oleh penghuni.",
+      "check": "Sahkan lokasi butang. Jangan menjanjikan masa ketibaan tertentu.",
+      "lines": [
+        "Jika perlukan apa-apa, sila panggil dengan butang ini.",
+        "Saya perlu tekan di sini, ya?",
+        "Ya, yang ini. Sila panggil jika perlu.",
+        "Baik, saya faham."
+      ]
+    },
+    "SSW-S05": {
+      "title": "Boleh ulang sekali lagi?",
+      "goal": "Minta diulang apabila anda tidak dengar dengan jelas.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Rakan sekerja sedang menerangkan lokasi barang.",
+      "check": "Nyatakan bahawa anda tidak dengar atau minta diulang; jangan hanya menjawab ya.",
+      "lines": [
+        "Tuala ada di atas rak itu.",
+        "Maaf, boleh ulang sekali lagi?",
+        "Tuala ada di atas rak itu.",
+        "Di atas rak, ya. Terima kasih."
+      ]
+    },
+    "SSW-S06": {
+      "title": "Boleh cakap perlahan sedikit?",
+      "goal": "Minta orang bercakap lebih perlahan apabila sukar mengikuti kelajuannya.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Rakan sekerja memberitahu masa dan tempat aktiviti seterusnya.",
+      "check": "Minta kelajuan percakapan dikurangkan. Baris teks yang berasingan tidak membuktikan rakaman sudah diperlahankan.",
+      "lines": [
+        "Sila datang ke ruang santai pada pukul dua.",
+        "Maaf, boleh cakap perlahan sedikit?",
+        "Pukul dua. Tempatnya ialah ruang santai.",
+        "Pukul dua di ruang santai, ya."
+      ]
+    },
+    "SSW-S07": {
+      "title": "Bertanya maksud perkataan",
+      "goal": "Tanya maksud satu perkataan kerja yang anda tidak faham.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Rakan sekerja menerangkan nama tempat menyimpan barang.",
+      "check": "Sebut perkataan yang tidak difahami; jangan meneka maksudnya.",
+      "lines": [
+        "Apron ada di bilik simpanan linen.",
+        "Apakah bilik simpanan linen itu?",
+        "Bilik untuk menyimpan tuala dan barang seumpamanya.",
+        "Baik, saya faham. Tolong tunjukkan lokasinya juga."
+      ]
+    },
+    "SSW-S08": {
+      "title": "Satu demi satu, sila",
+      "goal": "Minta maklumat dijelaskan secara berasingan apabila beberapa perkara diberitahu serentak.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Rakan sekerja menerangkan dua tugas persediaan biasa sekali gus.",
+      "check": "Minta penerangan satu demi satu atau mulakan dengan tugas pertama. Tidak perlu mengingati seluruh senarai sekali gus.",
+      "lines": [
+        "Sila bawa tuala dan susun cawan juga.",
+        "Maaf, boleh terangkan satu demi satu?",
+        "Mula-mula, bawa tuala ke ruang santai.",
+        "Mula-mula saya bawa tuala ke ruang santai, ya."
+      ]
+    },
+    "SSW-S09": {
+      "title": "Bertanya untuk siapa",
+      "goal": "Jika arahan tidak menyebut orangnya, tanya untuk siapa.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Rakan sekerja meminta anda mengambil tuala tetapi belum menyebut untuk siapa.",
+      "check": "Tanya orang yang dimaksudkan. Bentuk sopan yang ringkas boleh diterima.",
+      "lines": [
+        "Tolong bawakan tuala.",
+        "Tuala siapa?",
+        "Tuala Yamada-san.",
+        "Tuala Yamada-san, ya."
+      ]
+    },
+    "SSW-S10": {
+      "title": "Mengesahkan barang dan tempat",
+      "goal": "Jika barang atau bilik tidak jelas, tanyakan kedua-duanya.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Permintaan persediaan biasa daripada rakan sekerja belum cukup khusus.",
+      "check": "Sahkan barang dan tempat. Jangan meneka barang yang dimaksudkan dengan itu.",
+      "lines": [
+        "Sila letakkan itu di dalam bilik.",
+        "Barang apa, dan perlu diletakkan di bilik mana?",
+        "Sila letakkan kotak ini di bilik kakitangan.",
+        "Saya letakkan kotak ini di bilik kakitangan, ya."
+      ]
+    },
+    "SSW-S11": {
+      "title": "Bertanya bila perlu siap",
+      "goal": "Selepas menerima tugas yang jelas, tanya masa ia perlu disiapkan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Anda diminta menyediakan barang biasa, tetapi masa akhir belum diberitahu.",
+      "check": "Tanya masa akhir. Bezakan masa mula dengan masa sesuatu tugas perlu siap.",
+      "lines": [
+        "Sila susun cawan di ruang makan.",
+        "Cawan itu perlu siap disusun selewat-lewatnya pukul berapa?",
+        "Tolong siapkan sebelum atau pada pukul sebelas setengah.",
+        "Selewat-lewatnya pukul sebelas setengah, ya. Baik, saya faham."
+      ]
+    },
+    "SSW-S12": {
+      "title": "Mengulang arahan secara ringkas",
+      "goal": "Ulang barang, bilangan dan tempat yang telah didengar dengan jelas.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Semua maklumat bagi tugas persediaan barang biasa telah diberikan.",
+      "check": "Kekalkan barang, bilangan dan tempat. Tidak perlu mengulang setiap perkataan.",
+      "lines": [
+        "Sila bawakan dua cawan ke ruang makan.",
+        "Saya bawa dua cawan ke ruang makan, ya.",
+        "Ya, tolong.",
+        "Baik, saya akan membawanya."
+      ]
+    },
+    "SSW-S13": {
+      "title": "Bertanya sama ada mahu bangun",
+      "goal": "Tanya sama ada penghuni mahu bangun sekarang dan terima pilihannya.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Pusat jagaan telah memastikan masa bangun boleh diatur mengikut kehendak penghuni. Ini bukan latihan teknik bangun.",
+      "check": "Terima dahulu kehendak penghuni. Jangan memaksa mereka bangun.",
+      "lines": [
+        "Sudah pagi. Adakah anda mahu bangun sekarang?",
+        "Saya mahu tidur sedikit lagi.",
+        "Baik, saya akan datang semula kemudian.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S14": {
+      "title": "Bertanya sama ada mahu berehat",
+      "goal": "Apabila penghuni mengatakan penat, tanya sama ada mereka mahu berehat.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Selepas aktiviti harian; aturan mengikut pelan pusat jagaan. Jangan menilai sebab keletihan.",
+      "check": "Dengar perasaan penat dan tanya kehendaknya; jangan terus membuat penilaian penyakit.",
+      "lines": [
+        "Saya sedikit penat.",
+        "Adakah anda mahu berehat sebentar?",
+        "Ya, saya mahu berehat sebentar di sini.",
+        "Baik, mari berehat sebentar."
+      ]
+    },
+    "SSW-S15": {
+      "title": "Bertanya tentang lampu sebelum tidur",
+      "goal": "Sahkan tahap pencahayaan yang dikehendaki sebelum tidur.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Pusat jagaan telah memastikan lampu boleh dilaraskan. Adegan ini hanya tentang satu pilihan persekitaran.",
+      "check": "Dengar jika penghuni mahu sedikit cahaya dikekalkan. Jangan terus memadamkan semua lampu.",
+      "lines": [
+        "Bolehkah saya padamkan lampu sebelum anda tidur?",
+        "Tolong biarkan sedikit terang.",
+        "Saya biarkan sedikit terang, ya.",
+        "Ya, begitu yang saya mahu."
+      ]
+    },
+    "SSW-S16": {
+      "title": "Apabila penghuni mengatakan sukar tidur",
+      "goal": "Dengar dan akui apa yang dikatakan penghuni tentang tidurnya.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Perbualan ringkas pada waktu pagi. Jangan meneka sebab atau memberi nasihat ubat dan rawatan.",
+      "check": "Ulang apa yang dirasai penghuni tanpa menambah sebab sukar tidur.",
+      "lines": [
+        "Adakah anda tidur lena malam tadi?",
+        "Saya tidak dapat tidur dengan baik.",
+        "Anda tidak dapat tidur dengan baik, ya.",
+        "Ya, saya terjaga beberapa kali."
+      ]
+    },
+    "SSW-S17": {
+      "title": "Memilih pakaian",
+      "goal": "Tunjukkan dua helai pakaian yang telah disahkan boleh dipakai dan minta penghuni memilih.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Kedua-dua pakaian milik penghuni dan telah disahkan boleh ditawarkan.",
+      "check": "Ulang pilihan penghuni. Jangan menggantikan pilihannya dengan keputusan anda.",
+      "lines": [
+        "Pakaian yang mana anda mahu hari ini?",
+        "Saya mahu yang berwarna biru.",
+        "Yang biru, ya. Saya sediakan di sini.",
+        "Ya, terima kasih."
+      ]
+    },
+    "SSW-S18": {
+      "title": "Bertanya bantuan ketika menukar pakaian",
+      "goal": "Tanya bahagian mana yang memerlukan bantuan terlebih dahulu.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Bantuan menukar pakaian dibenarkan dalam pelan pusat jagaan. Ini bukan latihan cara menggerakkan tubuh.",
+      "check": "Kekalkan had hanya yang diminta dan biarkan penghuni melakukan bahagian yang mampu dibuat sendiri.",
+      "lines": [
+        "Bahagian mana yang perlu saya bantu semasa anda menukar pakaian?",
+        "Butang sahaja, tolong.",
+        "Butang sahaja, ya. Saya bantu.",
+        "Ya, bahagian lain saya boleh buat sendiri."
+      ]
+    },
+    "SSW-S19": {
+      "title": "Menjaga privasi semasa menukar pakaian",
+      "goal": "Apabila penghuni menyatakan kebimbangan sebelum menukar pakaian, utamakan privasinya.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Sebelum bantuan menukar pakaian; pusat jagaan telah memastikan penghadang yang sesuai tersedia.",
+      "check": "Dengar keperluan privasi dahulu dan dapatkan persetujuan sebelum memasang penghadang.",
+      "lines": [
+        "Saya tidak mahu orang melihat saya menukar pakaian.",
+        "Bolehkah saya tutup langsir?",
+        "Ya, tolong tutup.",
+        "Baik, saya tutup sekarang."
+      ]
+    },
+    "SSW-S20": {
+      "title": "Bertanya tentang rasa panas atau sejuk",
+      "goal": "Apabila penghuni berasa panas atau sejuk, tanya pilihan pakaian yang tersedia.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Pusat jagaan telah memastikan satu lagi pakaian luar milik penghuni boleh ditawarkan. Jangan menilai suhu badan atau sebab penyakit.",
+      "check": "Tanya kehendaknya. Jangan membuat kesimpulan tentang penyakit hanya kerana mereka berasa sejuk.",
+      "lines": [
+        "Saya sedikit sejuk.",
+        "Adakah anda mahu memakai satu lagi pakaian luar?",
+        "Ya, saya mahu yang itu.",
+        "Yang itu, ya. Saya ambilkan."
+      ]
+    },
+    "SSW-S21": {
+      "title": "Memberitahu waktu makan",
+      "goal": "Beritahu waktu makan dengan ringkas dan tanya sama ada penghuni mahu ke ruang makan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Aturan makan pusat jagaan telah disahkan. Ini bukan latihan teknik membantu pergerakan.",
+      "check": "Sahkan kehendak penghuni. Ajakan ke sesuatu tempat tidak membuktikan cara pergerakan yang selamat.",
+      "lines": [
+        "Sudah waktu makan tengah hari. Adakah anda mahu ke ruang makan?",
+        "Ya, saya mahu ke ruang makan.",
+        "Baik, mari kita pergi bersama.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S22": {
+      "title": "Memilih tempat duduk",
+      "goal": "Tanya pilihan antara tempat duduk yang telah disahkan boleh digunakan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Pusat jagaan telah memastikan kedua-dua tempat duduk sesuai untuk penghuni.",
+      "check": "Dengar pilihan tempatnya. Jangan menggantikan pilihan peribadi dengan pilihan kakitangan.",
+      "lines": [
+        "Anda mahu dekat tingkap atau di sini?",
+        "Saya mahu dekat tingkap.",
+        "Dekat tingkap, ya. Mari pilih tempat itu.",
+        "Ya, saya suka kerana dapat melihat ke luar."
+      ]
+    },
+    "SSW-S23": {
+      "title": "Memberitahu menu hari ini",
+      "goal": "Apabila ditanya tentang menu, nyatakan hanya maklumat yang telah disahkan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Menu hidangan yang boleh diberikan kepada penghuni telah disahkan. Jangan menilai kesesuaian makanan bagi sesuatu penyakit.",
+      "check": "Jawab hanya menu yang telah disahkan. Jika tidak tahu, semak dahulu dan jangan meneka.",
+      "lines": [
+        "Apakah makan tengah hari hari ini?",
+        "Lauk hari ini ialah ikan.",
+        "Ikan, ya. Saya menantikannya.",
+        "Ya. Saya akan beritahu apabila sudah siap."
+      ]
+    },
+    "SSW-S24": {
+      "title": "Bertanya lokasi tuala tangan",
+      "goal": "Tanya rakan sekerja dengan jelas di mana barang persediaan disimpan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Persediaan biasa sebelum makan; barang telah disahkan boleh digunakan bagi hidangan ini.",
+      "check": "Padankan setiap barang dengan lokasi yang betul. Ayat panjang tidak diperlukan.",
+      "lines": [
+        "Di manakah tuala tangan lembap dan cawan?",
+        "Tuala tangan lembap di rak, dan cawan di atas kaunter.",
+        "Tuala tangan lembap di rak, dan cawan di atas kaunter, ya?",
+        "Ya, betul."
+      ]
+    },
+    "SSW-S25": {
+      "title": "Bertanya pilihan minuman",
+      "goal": "Tanya pilihan antara minuman yang telah disahkan boleh ditawarkan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Pusat jagaan telah menyemak pelan individu dan mengesahkan air serta teh dalam adegan ini boleh ditawarkan.",
+      "check": "Sahkan pilihan penghuni. Latihan bahasa bukan penilaian keselamatan makanan atau minuman.",
+      "lines": [
+        "Anda mahu teh atau air?",
+        "Saya mahu teh, tolong.",
+        "Teh, ya. Saya sediakan.",
+        "Terima kasih."
+      ]
+    },
+    "SSW-S26": {
+      "title": "Bertanya suhu minuman yang dikehendaki",
+      "goal": "Sebelum memberikan minuman, tanya kehendak tentang suhunya.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Julat suhu yang boleh ditawarkan telah disahkan oleh pusat jagaan. Prosedur menyemak suhu di luar skop pelajaran ini.",
+      "check": "Dengar pilihan suhu. Perkataan suam tidak menjamin suhu sebenar selamat.",
+      "lines": [
+        "Adakah anda mahu teh yang suam?",
+        "Tolong sejukkan sedikit.",
+        "Saya akan bawakan selepas menyejukkannya sedikit.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S27": {
+      "title": "Berehat sebentar ketika makan",
+      "goal": "Apabila penghuni mengatakan terlalu cepat, akui dan tanya sama ada mahu berehat.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Penghuni mempunyai pelan bantuan makan yang telah disahkan. Ini bukan latihan menyuap atau teknik menelan.",
+      "check": "Akui bahawa terlalu cepat dan tanya tentang rehat. Jangan mendesak penghuni makan lebih banyak atau meneruskan.",
+      "lines": [
+        "Sedikit terlalu cepat.",
+        "Saya perlahankan, ya. Adakah anda mahu berehat sebentar?",
+        "Ya, saya mahu berehat sebentar.",
+        "Baik, mari berehat sebentar."
+      ]
+    },
+    "SSW-S28": {
+      "title": "Tidak mahu makan sekarang",
+      "goal": "Apabila penghuni menolak makanan, terima dahulu apa yang disampaikan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Ini latihan menyampaikan kehendak penghuni. Semakan dan laporan seterusnya mengikut pelan pusat jagaan; jangan membuat keputusan pemakanan atau rawatan.",
+      "check": "Fahami penolakan dahulu. Jangan memaksa penghuni memberikan sebab atau menekannya.",
+      "lines": [
+        "Adakah anda mahu makan?",
+        "Saya tidak mahu makan sekarang.",
+        "Anda tidak mahu makan sekarang, ya. Baik, saya faham.",
+        "Ya, buat masa ini tidak perlu."
+      ]
+    },
+    "SSW-S29": {
+      "title": "Bertanya sama ada mahu memberus gigi",
+      "goal": "Minta persetujuan sebelum memulakan penjagaan mulut.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Pelan bantuan kebersihan mulut individu telah disahkan. Ini bukan latihan teknik pembersihan atau rawatan mulut.",
+      "check": "Terima kehendak penghuni untuk melakukannya sendiri. Jangan terus mengambil alih.",
+      "lines": [
+        "Anda sudah selesai makan, ya. Adakah anda mahu memberus gigi?",
+        "Ya, saya mahu memberus sendiri.",
+        "Anda mahu memberus sendiri, ya. Saya sediakan barangnya.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S30": {
+      "title": "Menyediakan berus gigi",
+      "goal": "Sebelum menyediakan barang penjagaan mulut, sahkan pemilik dan lokasinya dengan rakan sekerja.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Ini barang peribadi yang telah disahkan oleh pusat jagaan. Latihan ini hanya tentang bertanya, bukan cara menggunakan barang.",
+      "check": "Sahkan barang peribadi. Jangan meneka pemilik berdasarkan rupa barang.",
+      "lines": [
+        "Di manakah berus gigi dan cawan Yamada-san?",
+        "Di dalam bakul yang berlabel nama.",
+        "Bakul yang berlabel nama, ya. Saya akan semak.",
+        "Ya, sila semak namanya."
+      ]
+    },
+    "SSW-S31": {
+      "title": "Tempat menyimpan gigi palsu",
+      "goal": "Tanya rakan sekerja lokasi simpanan yang telah ditetapkan.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Jangan mengambil, memasang atau menanggalkan gigi palsu dalam latihan ini. Hanya sahkan tempat yang ditetapkan oleh pusat jagaan.",
+      "check": "Sahkan pemilik dan lokasi sahaja. Cara mengendalikan gigi palsu di luar skop latihan.",
+      "lines": [
+        "Di manakah gigi palsu Yamada-san perlu diletakkan?",
+        "Masukkan ke dalam bekas yang berlabel nama.",
+        "Bekas yang berlabel nama Yamada-san, ya.",
+        "Ya. Tempatnya di sini."
+      ]
+    },
+    "SSW-S32": {
+      "title": "Bertanya sebelum mengelap muka",
+      "goal": "Terangkan niat dan minta persetujuan sebelum menyentuh muka penghuni.",
+      "context": "Pusat jagaan dan individu adalah rekaan. Pusat jagaan telah memastikan bahawa barang, masa dan bantuan dalam adegan ini mengikut pelan sokongan individu. Tuala dan kaedah bantuan telah disahkan mengikut pelan individu. Ini bukan latihan teknik pembersihan.",
+      "check": "Dapatkan persetujuan dahulu, kemudian terangkan langkah seterusnya. Diam bukan bermakna bersetuju.",
+      "lines": [
+        "Bolehkah saya lap muka anda dengan tuala?",
+        "Ya, tolong.",
+        "Baik, saya lap muka anda sekarang, ya.",
+        "Terima kasih."
+      ]
+    },
+    "SSW-S33": {
+      "title": "Bertanya sama ada mahu ke tandas",
+      "goal": "Tanya secara ringkas dan dengan menjaga privasi sama ada penghuni mahu ke tandas.",
+      "context": "Anda bercakap dengan suara perlahan di dalam bilik penghuni. Pusat jagaan telah memastikan bantuan ke tandas boleh diberikan mengikut pelan individu. Ini hanya latihan mengesahkan kehendak.",
+      "check": "Akui kehendaknya, kemudian tanya sama ada bantuan diperlukan. Jangan bertanya dengan suara kuat di tempat awam.",
+      "lines": [
+        "Saya tanya dengan suara perlahan, ya. Adakah anda mahu ke tandas?",
+        "Ya. Saya rasa sudah tiba masanya untuk pergi.",
+        "Anda mahu pergi sekarang, ya. Adakah anda perlukan bantuan saya?",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S34": {
+      "title": "Bertanya sebab panggilan",
+      "goal": "Selepas menjawab panggilan, tanya dahulu apa yang diperlukan oleh penghuni.",
+      "context": "Kakitangan tiba di bilik penghuni tetapi belum mengetahui sebab butang panggilan ditekan. Sahkan keperluan tanpa meneka.",
+      "check": "Ulang keperluan yang disebut oleh penghuni. Jangan menambah andaian tentang sakit, terkencing atau sebab lain.",
+      "lines": [
+        "Maaf kerana membuat anda menunggu. Ada apa?",
+        "Saya mahu ke tandas.",
+        "Anda mahu ke tandas, ya.",
+        "Ya. Tolong bantu saya."
+      ]
+    },
+    "SSW-S35": {
+      "title": "Mengesahkan bahagian yang perlu dibantu",
+      "goal": "Fahami bahagian yang boleh dilakukan sendiri dan sahkan bantuan bagi bahagian lain.",
+      "context": "Pusat jagaan telah menetapkan kaedah dan skop bantuan. Penghuni mahu melakukan sebahagian urusan menukar pakaian sendiri; adegan ini tidak mengajar tekniknya.",
+      "check": "Sahkan tepat skop bantuan yang diminta. Jangan mengambil alih semua bahagian yang mampu dibuat sendiri.",
+      "lines": [
+        "Bahagian mana yang perlu saya bantu?",
+        "Tolong bantu saya menarik seluar ke atas.",
+        "Menarik seluar ke atas, ya. Baik, saya faham.",
+        "Bahagian lain saya boleh buat sendiri."
+      ]
+    },
+    "SSW-S36": {
+      "title": "Menutup langsir untuk privasi",
+      "goal": "Apabila penghuni mahu menukar pakaian yang kotor, tanya sama ada mahu privasi dilindungi dahulu.",
+      "context": "Penghuni mengatakan pakaiannya kotor dan mahu menukar pakaian. Pusat jagaan telah memastikan bantuan boleh diberikan; bincangkan privasi terlebih dahulu.",
+      "check": "Minta persetujuan untuk menutup pandangan. Jangan menyalahkan penghuni atau membincangkan butiran pakaian kotor di hadapan orang lain.",
+      "lines": [
+        "Pakaian saya kotor. Saya mahu menukar pakaian.",
+        "Bolehkah saya tutup langsir dahulu?",
+        "Ya. Tolong pastikan orang lain tidak dapat melihat.",
+        "Baik, saya tutup sekarang."
+      ]
+    },
+    "SSW-S37": {
+      "title": "Apabila penghuni tidak mahu mandi",
+      "goal": "Terima kehendak penghuni yang tidak mahu mandi sekarang dengan ayat ringkas.",
+      "context": "Aturan mandi yang tersedia telah disahkan oleh pusat jagaan. Sama ada dan bila mandi tetap mengikut kehendak penghuni dan prosedur pusat jagaan; bukan latihan memujuk secara paksa.",
+      "check": "Akui penolakan tanpa memaksa penghuni menjelaskan sebabnya. Jangan anggap wajib mandi sebagai satu-satunya jawapan betul.",
+      "lines": [
+        "Sudah waktu mandi. Adakah anda mahu mandi sekarang?",
+        "Saya tidak mahu mandi sekarang.",
+        "Baik, anda tidak mahu mandi sekarang, ya.",
+        "Ya. Saya mahu berehat sebentar."
+      ]
+    },
+    "SSW-S38": {
+      "title": "Bertanya rasa suhu air",
+      "goal": "Fahami rasa panas atau sejuk yang disebut dan jawab secara ringkas.",
+      "context": "Suhu air sebenar dan syarat mandi telah disemak mengikut prosedur pusat jagaan. Adegan ini hanya melatih pertanyaan tentang rasa suhu dan jawapan; tiada angka suhu atau kaedah pelarasan.",
+      "check": "Jawab berdasarkan apa yang penghuni benar-benar katakan. Jangan meneka suhu atau menggunakan ayat contoh sebagai panduan mandi.",
+      "lines": [
+        "Bagaimana rasa suhu air ini?",
+        "Sedikit panas.",
+        "Panas, ya. Saya akan semak.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S39": {
+      "title": "Bertanya sebelum mencuci rambut",
+      "goal": "Minta persetujuan dengan soalan ringkas sebelum bermula.",
+      "context": "Penghuni telah meminta rambutnya dicuci, dan pusat jagaan telah memastikan bantuan itu boleh diberikan. Adegan ini tidak menunjukkan cara mencuci rambut.",
+      "check": "Walaupun penghuni telah meminta bantuan, sahkan bila boleh bermula. Bahasa hormat yang rumit tidak diperlukan.",
+      "lines": [
+        "Bolehkah anda cuci rambut saya juga?",
+        "Ya. Bolehkah saya mulakan sekarang?",
+        "Ya, tolong.",
+        "Baik, saya mulakan sekarang."
+      ]
+    },
+    "SSW-S40": {
+      "title": "Bertanya sebelum mengelap badan",
+      "goal": "Gunakan soalan mudah untuk mengesahkan persetujuan mengelap badan.",
+      "context": "Penghuni telah meminta badannya dilap, dan pusat jagaan telah memastikan bantuan dengan tuala suam boleh diberikan. Ini bukan latihan cara mengelap.",
+      "check": "Tanya dan terima kehendaknya. Jangan meluaskan contoh kepada arahan bahagian badan atau urutan tindakan.",
+      "lines": [
+        "Hari ini saya mahu badan saya dilap.",
+        "Bolehkah saya lap badan anda dengan tuala suam?",
+        "Ya. Itu yang saya mahu.",
+        "Baik, saya sediakan barangnya."
+      ]
+    },
+    "SSW-S41": {
+      "title": "Mengesahkan destinasi",
+      "goal": "Ulang destinasi yang disebut oleh penghuni.",
+      "context": "Pusat jagaan telah memastikan kaedah bantuan pergerakan yang sesuai. Hanya sahkan destinasi dan sama ada mahu bertolak; jangan mengajar cara mengangkat atau memindahkan orang.",
+      "check": "Jangan menentukan destinasi sendiri. Sahkan berdasarkan ruang makan yang disebut oleh penghuni.",
+      "lines": [
+        "Anda mahu pergi ke mana?",
+        "Saya mahu ke ruang makan.",
+        "Ke ruang makan, ya. Adakah anda mahu pergi sekarang?",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S42": {
+      "title": "Bercakap sebelum bergerak",
+      "goal": "Beritahu secara ringkas bahawa pergerakan akan dimulakan dan sahkan kesediaan.",
+      "context": "Pelan pergerakan individu, kaedah bantuan dan semakan sebelum bertolak telah disahkan mengikut prosedur pusat jagaan. Ini hanya latihan berkomunikasi sebelum bergerak.",
+      "check": "Beritahu dan sahkan sebelum bermula. Diam bukan bermakna bersetuju. Jangan menilai atau mengajar cara mengendalikan kerusi roda.",
+      "lines": [
+        "Sudah tiba masanya untuk ke ruang makan dengan kerusi roda.",
+        "Ya, saya faham.",
+        "Kita akan mula bergerak sekarang. Adakah anda sudah bersedia?",
+        "Ya, saya sudah bersedia."
+      ]
+    },
+    "SSW-S43": {
+      "title": "Apabila penghuni mahu berehat",
+      "goal": "Ulang secara ringkas dan terima kehendak untuk berehat.",
+      "context": "Pusat jagaan telah memastikan pelan pergerakan dan tempat rehat yang boleh digunakan. Adegan ini hanya tentang komunikasi, bukan cara berjalan atau menyokong tubuh.",
+      "check": "Jangan mendesak selepas mendengar permintaan untuk berehat. Latihan bahasa tidak menggantikan aturan keselamatan pergerakan pusat jagaan.",
+      "lines": [
+        "Adakah kelajuan ini sesuai?",
+        "Saya mahu berehat sebentar.",
+        "Baik, mari berehat sebentar.",
+        "Terima kasih."
+      ]
+    },
+    "SSW-S44": {
+      "title": "Mengesahkan peranan dan arahan mula",
+      "goal": "Sebelum memberikan bantuan bersama, jelaskan siapa yang memberi arahan lisan dan sahkan peranan masing-masing.",
+      "context": "Pusat jagaan telah menetapkan bantuan oleh dua orang kakitangan. Teknik bantuan khusus diajar secara berasingan; dialog ini tidak mengandungi teknik pergerakan.",
+      "check": "Jelaskan pembahagian arahan lisan sahaja. Jangan menambah cara mengangkat, memusing atau membantu seseorang berdiri.",
+      "lines": [
+        "Siapa antara kita yang akan memberi arahan mula?",
+        "Saya akan memberi arahan lisan. Mari sahkan peranan masing-masing dahulu.",
+        "Ya, mari sahkan dahulu.",
+        "Kita mulakan selepas selesai membuat pengesahan."
+      ]
+    },
+    "SSW-S45": {
+      "title": "Apabila bilik terasa sejuk",
+      "goal": "Ulang apa yang dirasai dan tanya sama ada penghuni mahu persekitaran dilaraskan.",
+      "context": "Pusat jagaan telah menetapkan skop pelarasan persekitaran yang dibenarkan. Adegan ini tidak membincangkan suhu badan atau rawatan.",
+      "check": "Tanya kehendak berdasarkan perasaan yang disebut. Jangan membuat andaian penyakit daripada perkataan sejuk.",
+      "lines": [
+        "Bilik ini sedikit sejuk.",
+        "Sejuk, ya. Adakah anda mahu bilik ini dibuat sedikit lebih hangat?",
+        "Ya, tolong.",
+        "Baik, saya akan semak."
+      ]
+    },
+    "SSW-S46": {
+      "title": "Bertanya pilihan langsir",
+      "goal": "Fahami kehendak supaya bilik lebih gelap dan tanya sama ada boleh menutup langsir.",
+      "context": "Pada waktu siang, kebanyakan cahaya bilik datang dari luar. Pusat jagaan membenarkan langsir dilaraskan mengikut kehendak penghuni; ini hanya latihan mengesahkan pilihan.",
+      "check": "Sahkan dahulu tahap cahaya yang dikehendaki. Jangan terus mengubah persekitaran untuk memudahkan kerja kakitangan.",
+      "lines": [
+        "Adakah pencahayaan begini sesuai?",
+        "Saya mahu sedikit lebih gelap.",
+        "Bolehkah saya tutup langsir sedikit?",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S47": {
+      "title": "Mencari cermin mata bersama",
+      "goal": "Apabila lokasi barang belum diketahui, cadangkan semakan bersama dan tanya petunjuk.",
+      "context": "Penghuni tidak dapat mencari cermin matanya, dan kakitangan belum melihat lokasinya. Jangan mereka-reka tempatnya.",
+      "check": "Jika lokasi belum disahkan, jangan terus mengatakan barang itu ada di sana. Cadangkan semakan bersama dahulu.",
+      "lines": [
+        "Di manakah cermin mata saya?",
+        "Mari kita semak bersama. Bila anda menggunakannya?",
+        "Saya letakkan di atas meja tadi.",
+        "Di atas meja, ya. Mari kita lihat bersama."
+      ]
+    },
+    "SSW-S48": {
+      "title": "Meminta izin sebelum mengemas",
+      "goal": "Ulang kehendak penghuni untuk membiarkan sesuatu barang di tempat asalnya.",
+      "context": "Pusat jagaan membenarkan bantuan mengemas permukaan meja. Penghuni berhak memilih tentang barangnya; kakitangan tidak membaca surat.",
+      "check": "Ulang dengan tepat maksud jangan alihkan. Jangan membuang atau membuka surat tanpa kebenaran.",
+      "lines": [
+        "Bolehkah saya kemaskan meja ini?",
+        "Tolong biarkan surat ini di situ.",
+        "Saya biarkan surat itu di tempatnya, ya.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S49": {
+      "title": "Bertanya perkara yang disukai",
+      "goal": "Dengar dan jawab minat penghuni dengan ayat mudah.",
+      "context": "Perbualan santai pada waktu siang. Penghuni tidak diwajibkan menyertai aktiviti.",
+      "check": "Jawab berdasarkan minatnya. Elakkan pujian seperti kepada kanak-kanak dan jangan meminta alasan yang rumit.",
+      "lines": [
+        "Apakah perkara yang anda suka?",
+        "Saya suka mendengar lagu.",
+        "Anda suka mendengar lagu, ya.",
+        "Ya. Saya suka lagu lama."
+      ]
+    },
+    "SSW-S50": {
+      "title": "Mengajak menyertai aktiviti",
+      "goal": "Nyatakan tempat yang telah disahkan dan kekalkan pilihan untuk menyertai aktiviti.",
+      "context": "Pusat jagaan telah mengesahkan aktiviti nyanyian pada sebelah petang di ruang makan. Penyertaan ialah pilihan penghuni; kakitangan tidak menjanjikan aturan yang belum disahkan.",
+      "check": "Sebut hanya tempat yang telah disahkan. Gunakan soalan untuk mengajak, bukan arahan wajib menyertai.",
+      "lines": [
+        "Ada aktiviti nyanyian petang ini. Adakah anda mahu menyertainya?",
+        "Di manakah aktiviti itu diadakan?",
+        "Di ruang makan. Adakah anda mahu pergi bersama saya?",
+        "Ya, saya mahu pergi."
+      ]
+    },
+    "SSW-S51": {
+      "title": "Apabila penghuni tidak mahu menyertai",
+      "goal": "Terima penolakan dengan tenang dan tanya bagaimana penghuni mahu meluangkan masanya.",
+      "context": "Pusat jagaan membenarkan penghuni tidak menyertai aktiviti ini dan telah memastikan aturan berehat di bilik tersedia. Ini bukan latihan memaksa penyertaan.",
+      "check": "Penolakan boleh diterima. Jangan mengatakan bahawa penghuni mesti pergi kerana semua orang lain pergi.",
+      "lines": [
+        "Adakah anda mahu menyertai senaman hari ini?",
+        "Saya tidak mahu pergi hari ini.",
+        "Baik. Adakah anda mahu berada di bilik sekarang?",
+        "Ya. Saya mahu berehat di bilik."
+      ]
+    },
+    "SSW-S52": {
+      "title": "Apabila penghuni mahu menelefon keluarga",
+      "goal": "Ulang kehendak untuk menghubungi keluarga dan jelaskan bahawa aturan akan disemak.",
+      "context": "Penghuni mahu menghubungi keluarga, tetapi masa dan aturan telefon pusat jagaan masih perlu disahkan. Jangan masukkan nombor telefon atau maklumat keluarga sebenar.",
+      "check": "Terima kehendaknya dan nyatakan bahawa masa yang belum pasti perlu disemak. Jangan menjanjikan panggilan segera atau memasukkan nombor sebenar.",
+      "lines": [
+        "Saya mahu menelefon keluarga.",
+        "Anda mahu menelefon keluarga, ya. Saya akan semak.",
+        "Tolong ya.",
+        "Mari kita semak bersama masa untuk membuat panggilan."
+      ]
+    },
+    "SSW-S53": {
+      "title": "Menjawab soalan yang sama sekali lagi",
+      "goal": "Berikan jawapan mudah dan jelas sekali lagi kepada soalan berulang.",
+      "context": "Waktu makan tengah hari telah disahkan pada pukul dua belas. Ini hanya latihan mengulang maklumat, bukan menilai keadaan kognitif penghuni.",
+      "check": "Ulang masa yang telah disahkan. Jangan memarahi penghuni dengan mengatakan bahawa anda sudah memberitahunya.",
+      "lines": [
+        "Pukul berapa makan tengah hari?",
+        "Pukul dua belas.",
+        "Pukul berapa tadi?",
+        "Makan tengah hari pada pukul dua belas."
+      ]
+    },
+    "SSW-S54": {
+      "title": "Menerangkan tempat dan peranan sendiri",
+      "goal": "Jelaskan peranan kerja anda dengan ayat ringkas.",
+      "context": "Anda berdua berada di ruang makan pusat jagaan. Penghuni bertanya tentang tempat dan siapa kakitangan itu; jangan meneka sebab pertanyaannya.",
+      "check": "Nyatakan peranan sebenar dengan mudah. Jangan mereka-reka bahawa anda pernah bertemu atau mempunyai hubungan keluarga.",
+      "lines": [
+        "Di manakah tempat ini?",
+        "Ini ruang makan pusat jagaan ini.",
+        "Siapakah anda?",
+        "Saya kakitangan penjagaan. Saya akan membantu anda."
+      ]
+    },
+    "SSW-S55": {
+      "title": "Mendengar keinginan untuk pulang",
+      "goal": "Akui dahulu kehendak penghuni yang mengatakan mahu pulang.",
+      "context": "Penghuni mengatakan mahu pulang, tetapi sebab dan aturan yang mungkin belum diketahui. Jangan menjanjikan pengangkutan atau memutuskan sama ada boleh keluar.",
+      "check": "Akui hasrat yang telah disebut dahulu. Jangan meneka sebab sebelum diterangkan atau mereka-reka aturan pulang.",
+      "lines": [
+        "Saya mahu pulang ke rumah.",
+        "Anda mahu pulang ke rumah, ya.",
+        "Saya bimbang tentang rumah saya.",
+        "Anda bimbang, ya. Bolehkah saya dengar ceritanya?"
+      ]
+    },
+    "SSW-S56": {
+      "title": "Apabila barang hilang dan penghuni bimbang",
+      "goal": "Akui kebimbangan dan cadangkan semakan bersama tanpa mengatakan barang dicuri.",
+      "context": "Penghuni belum dapat mencari dompetnya, dan kakitangan belum mengetahui sebab atau lokasinya. Semua perbualan ini rekaan.",
+      "check": "Jangan mengesahkan atau menafikan kecurian yang belum terbukti. Akui kesusahan dan semak bersama.",
+      "lines": [
+        "Dompet saya tiada. Adakah seseorang mengambilnya?",
+        "Anda bimbang kerana tidak dapat mencarinya, ya.",
+        "Ya. Biasanya dompet itu ada di sini.",
+        "Mari kita semak bersama."
+      ]
+    },
+    "SSW-S57": {
+      "title": "Melaporkan jumlah makanan secara ringkas",
+      "goal": "Gunakan jumlah mudah untuk melaporkan apa yang benar-benar dilihat telah dimakan.",
+      "context": "Kakitangan telah melihat Yamada-san dalam contoh rekaan ini makan separuh nasi dan menghabiskan lauk bagi hidangan ini. Ini latihan melapor, bukan menentukan pemakanan atau membuat penilaian klinikal.",
+      "check": "Laporkan hanya jumlah yang telah disahkan. Jangan meneka sebab atau penyakit berdasarkan jumlah yang dimakan.",
+      "lines": [
+        "Berapa banyak makan tengah hari yang dimakan oleh Yamada-san?",
+        "Separuh nasi telah dimakan.",
+        "Bagaimana pula dengan lauk?",
+        "Semua lauk telah dimakan."
+      ]
+    },
+    "SSW-S58": {
+      "title": "Menyampaikan kata-kata penghuni tentang sakit",
+      "goal": "Laporkan lokasi sakit sebagai petikan kata-kata penghuni.",
+      "context": "Penghuni telah mengatakan lutut kanan sakit. Kakitangan menyampaikan apa yang didengar kepada jururawat, tanpa membuat diagnosis atau mencadangkan tindakan rawatan.",
+      "check": "Kekalkan sumber maklumat bahawa penghuni sendiri yang mengatakannya. Jangan menukar aduan menjadi diagnosis; kekalkan arah kanan atau kiri yang diketahui.",
+      "lines": [
+        "Ada apa?",
+        "Penghuni itu mengatakan, “Lutut kanan saya sakit.”",
+        "Baik, saya akan semak.",
+        "Tolong ya."
+      ]
+    },
+    "SSW-S59": {
+      "title": "Melaporkan hanya masa yang telah disahkan",
+      "goal": "Nyatakan dengan jelas bahawa masa yang belum diketahui masih belum disahkan.",
+      "context": "Telah disahkan bahawa penghuni pergi ke tandas pada pukul sepuluh, tetapi masa sebelumnya belum disahkan. Ini latihan komunikasi rekod; jangan meneka bilangan atau masa.",
+      "check": "Jika tidak tahu, katakan belum disahkan. Jangan mereka-reka masa; rekod dalam dialog ini ialah rekaan.",
+      "lines": [
+        "Adakah anda dapat mengesahkan masa penghuni pergi ke tandas?",
+        "Saya telah mengesahkan bahawa penghuni pergi pada pukul sepuluh.",
+        "Bagaimana pula sebelum itu?",
+        "Masa sebelum itu belum dapat saya sahkan."
+      ]
+    },
+    "SSW-S60": {
+      "title": "Melaporkan pemerhatian dan meminta bantuan segera",
+      "goal": "Terangkan dengan ringkas keadaan yang dilihat serta tempatnya, dan minta bantuan segera.",
+      "context": "Kakitangan secara tidak dijangka melihat penghuni duduk di lantai koridor di hadapan ruang makan. Panggilan kepada jururawat telah disambungkan mengikut prosedur kecemasan pusat jagaan; kakitangan tidak melihat kejadian jatuh. Ini hanya latihan melapor segera, bukan menunggu, mengajar pergerakan tubuh atau diagnosis.",
+      "check": "Minta bantuan segera dan nyatakan keadaan serta lokasi yang dilihat. Duduk di lantai tidak bermakna anda menyaksikan kejadian jatuh. Ayat latihan tidak menggantikan prosedur kecemasan pusat jagaan.",
+      "lines": [
+        "Ya. Ada apa?",
+        "Seorang penghuni sedang duduk di lantai koridor di hadapan ruang makan. Sila datang segera.",
+        "Di hadapan ruang makan, ya. Saya akan ke sana segera.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S61": {
+      "title": "Meminta bantuan untuk tugas yang tidak difahami",
+      "goal": "Jangan berpura-pura tahu; minta penerangan dengan ayat ringkas.",
+      "context": "Rakan sekerja memberikan tugas persediaan barang yang caranya belum difahami oleh pelajar. Minta bantuan sebelum mencuba sendiri.",
+      "check": "Nyatakan bahawa anda tidak faham dan minta penerangan. Bahasa hormat yang ringkas tidak sepatutnya dianggap salah.",
+      "lines": [
+        "Tolong buat persediaan ini.",
+        "Saya tidak tahu caranya. Tolong ajarkan.",
+        "Ya. Mari kita semak bersama.",
+        "Tolong ya."
+      ]
+    },
+    "SSW-S62": {
+      "title": "Memberitahu kerja yang telah selesai",
+      "goal": "Laporkan persediaan yang benar-benar selesai dengan ayat ringkas.",
+      "context": "Tuala baharu telah disediakan dan diletakkan di rak bilik menukar pakaian. Pusat jagaan telah menetapkan tugas persediaan itu; ini hanya latihan laporan selesai.",
+      "check": "Sebut selesai hanya bagi kerja yang benar-benar siap. Jawab lokasi berdasarkan fakta yang telah disahkan.",
+      "lines": [
+        "Adakah persediaan tuala sudah selesai?",
+        "Ya. Saya telah menyediakan tuala baharu.",
+        "Di manakah anda meletakkannya?",
+        "Saya letakkan di rak bilik menukar pakaian."
+      ]
+    },
+    "SSW-S63": {
+      "title": "Memberitahu kelewatan dan meminta bantuan",
+      "goal": "Terangkan kelewatan dan minta bantuan secara aktif dengan ayat mudah.",
+      "context": "Kakitangan sedang membuat persediaan barang yang ditetapkan oleh pusat jagaan dan menjangka tidak dapat siap pada masa asal. Ini hanya latihan menghubungi rakan; bukan arahan meninggalkan orang yang memerlukan penjagaan.",
+      "check": "Terangkan keadaan semasa dan minta bantuan. Jangan mereka-reka masa siap atau menyembunyikan kelewatan.",
+      "lines": [
+        "Adakah kerja ini nampaknya boleh siap pada masa yang dirancang?",
+        "Saya sedikit lewat. Bolehkah anda membantu saya?",
+        "Ya. Saya akan datang sekarang.",
+        "Terima kasih. Tolong ya."
+      ]
+    },
+    "SSW-S64": {
+      "title": "Bertanya satu perkara semasa serah tugas",
+      "goal": "Tanya satu soalan khusus tentang perkara yang tidak difahami.",
+      "context": "Rakan sekerja senior meminta persediaan seperti biasa, tetapi pelajar tidak tahu barang yang dimaksudkan. Masa selepas makan telah diketahui; perkara lain perlu ditanya.",
+      "check": "Tanya secara khusus apa yang perlu disediakan. Jangan meneka ubat, makanan atau tindakan penjagaan. Ulang selepas mendapat penerangan.",
+      "lines": [
+        "Selepas makan, tolong buat persediaan seperti biasa.",
+        "Tolong beritahu apa yang perlu saya sediakan.",
+        "Buku lagu yang akan digunakan dalam aktiviti petang.",
+        "Buku lagu, ya. Baik, saya faham."
+      ]
+    },
+    "SSW-S65": {
+      "title": "Mengajak mencuci tangan sebelum makan",
+      "goal": "Ajak penghuni mencuci tangan dengan ayat ringkas.",
+      "context": "Persediaan makan telah dibuat mengikut aturan pusat jagaan. Ini latihan sapaan harian sebelum makan. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Ajak mencuci tangan dengan nada tenang. Tidak perlu menerangkan urutan tindakan yang panjang dalam ayat ini.",
+      "lines": [
+        "Adakah sudah waktu makan?",
+        "Ya. Mahukah anda mencuci tangan sebelum makan?",
+        "Baiklah. Saya akan mencuci tangan.",
+        "Saya akan membantu jika perlu."
+      ]
+    },
+    "SSW-S66": {
+      "title": "Bertanya lokasi sabun dan tuala",
+      "goal": "Tanya rakan sekerja dengan jelas di mana barang berada.",
+      "context": "Rakan sekerja meminta anda menyediakan barang mencuci tangan yang biasa digunakan di pusat jagaan. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya lokasi barang yang ditetapkan. Selepas mendapat jawapan, anda boleh mengulangnya secara ringkas.",
+      "lines": [
+        "Tolong sediakan barang untuk mencuci tangan.",
+        "Di manakah sabun dan tuala?",
+        "Di sebelah singki.",
+        "Di sebelah singki, ya. Baik, saya faham."
+      ]
+    },
+    "SSW-S67": {
+      "title": "Bertanya cara menguruskan sarung tangan terpakai",
+      "goal": "Nyatakan perkara yang tidak difahami dan minta rakan sekerja menerangkannya.",
+      "context": "Sebelum menguruskan sarung tangan terpakai, anda belum memahami peraturan pusat jagaan. Contoh ini tidak mengajar cara memakai, menanggalkan atau melupuskannya. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Nyatakan dengan jelas bahawa anda tidak tahu dan minta panduan. Jangan meneka peraturan pusat jagaan.",
+      "lines": [
+        "Apa yang anda lakukan dengan sarung tangan yang telah digunakan?",
+        "Saya tidak tahu cara menguruskannya. Tolong ajarkan.",
+        "Mari kita semak bersama.",
+        "Tolong ya."
+      ]
+    },
+    "SSW-S68": {
+      "title": "Menyampaikan kata-kata penghuni tentang batuk",
+      "goal": "Jelaskan bahawa maklumat datang daripada kata-kata penghuni.",
+      "context": "Penghuni baru sahaja mengatakan bahawa mereka batuk. Anda menyampaikannya kepada jururawat tanpa menilai sebab atau nama penyakit. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Jelaskan bahawa penghuni sendiri yang mengatakannya. Jangan menukar batuk menjadi diagnosis penyakit.",
+      "lines": [
+        "Ada apa-apa yang berlaku?",
+        "Sato-san mengatakan, “Saya batuk.”",
+        "Baik. Saya akan ke sana untuk memeriksa.",
+        "Tolong ya. Sato-san berada di biliknya."
+      ]
+    },
+    "SSW-S69": {
+      "title": "Bertanya sebelum menukar tuala",
+      "goal": "Minta persetujuan sebelum menukar barang peribadi.",
+      "context": "Penghuni mengatakan tualanya basah, dan pusat jagaan mempunyai tuala bersih sebagai ganti. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya dahulu, kemudian terangkan bahawa anda akan menyediakan barangnya. Jangan mengabaikan kehendak penghuni.",
+      "lines": [
+        "Tuala saya sudah basah.",
+        "Bolehkah saya gantikan dengan tuala baharu?",
+        "Ya, tolong.",
+        "Baik, saya sediakan sekarang."
+      ]
+    },
+    "SSW-S70": {
+      "title": "Menerangkan sebelum menukar cadar",
+      "goal": "Nyatakan barang yang hendak ditukar dengan ayat ringkas dan tanya kehendaknya.",
+      "context": "Cadar perlu ditukar. Masa dan kakitangan yang terlibat telah disahkan oleh pusat jagaan; jangan mengajar cara bangun atau memindahkan tubuh. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Terangkan bahawa cadar hendak ditukar dan terima jawapan yang meminta masa kemudian.",
+      "lines": [
+        "Apa yang anda hendak lakukan?",
+        "Saya mahu menukar cadar. Bolehkah dibuat sekarang?",
+        "Tolong buat sedikit kemudian.",
+        "Baik, saya semak masanya dahulu."
+      ]
+    },
+    "SSW-S71": {
+      "title": "Bertanya pakaian yang mahu dicuci",
+      "goal": "Sahkan pakaian yang hendak dicuci.",
+      "context": "Pusat jagaan telah memastikan pakaian ini boleh dicuci. Anda hanya mengesahkan pakaian mana yang penghuni mahu hantar untuk dicuci. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Minta penghuni menunjukkan pakaian yang dimaksudkan. Jangan terus mengambil semua pakaian.",
+      "lines": [
+        "Saya mahu meminta pakaian saya dicuci.",
+        "Pakaian yang mana mahu dicuci?",
+        "Baju ini, tolong.",
+        "Baju ini, ya. Baik, saya faham."
+      ]
+    },
+    "SSW-S72": {
+      "title": "Mengesahkan lokasi label pakaian",
+      "goal": "Tanya rakan sekerja di mana label terletak.",
+      "context": "Anda sedang menguruskan pakaian Sato-san, seorang penghuni rekaan, dan belum menyemak labelnya. Jangan meneka pemilik berdasarkan rupa pakaian. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya lokasi label dan semak dahulu. Jangan meneka pakaian itu milik siapa.",
+      "lines": [
+        "Adakah anda sedang menyemak pakaian Sato-san?",
+        "Di manakah label namanya?",
+        "Di bahagian dalam kolar.",
+        "Di bahagian dalam kolar, ya. Saya akan semak."
+      ]
+    },
+    "SSW-S73": {
+      "title": "Bercakap sebelum mengambil suhu badan",
+      "goal": "Terangkan apa yang akan dibuat dan minta persetujuan.",
+      "context": "Pusat jagaan telah memastikan aturan dan tanggungjawab mengambil suhu badan. Contoh ini tidak mengajar kaedah pengukuran atau tafsiran bacaan. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Terangkan dahulu dan minta persetujuan. Ini bukan latihan menentukan suhu badan tinggi atau rendah.",
+      "lines": [
+        "Apa yang akan anda lakukan sekarang?",
+        "Saya akan mengambil suhu badan anda. Bolehkah saya lakukannya?",
+        "Ya, tolong.",
+        "Terima kasih. Saya sediakan dahulu."
+      ]
+    },
+    "SSW-S74": {
+      "title": "Bercakap sebelum mengukur tekanan darah",
+      "goal": "Sahkan persetujuan dengan satu soalan ringkas.",
+      "context": "Pusat jagaan telah memastikan aturan dan tanggungjawab mengukur tekanan darah. Contoh ini tidak mengajar penggunaan alat, kedudukan tubuh atau nilai had. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Minta persetujuan sahaja. Pelajar tidak perlu menghafal operasi alat atau penerangan perubatan dalam latihan ini.",
+      "lines": [
+        "Apa pula yang akan anda lakukan?",
+        "Saya akan mengukur tekanan darah anda. Bolehkah saya lakukannya?",
+        "Ya, saya faham.",
+        "Terima kasih. Saya sediakan dahulu."
+      ]
+    },
+    "SSW-S75": {
+      "title": "Bertanya jururawat masa pemeriksaan",
+      "goal": "Tanya dengan jelas masa yang belum diberitahu.",
+      "context": "Jururawat memberikan tugas memeriksa suhu badan yang telah diatur oleh pusat jagaan tetapi belum menyebut masanya. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya masa tugas yang telah diatur. Jangan menentukan sendiri kekerapan pemeriksaan.",
+      "lines": [
+        "Tolong periksa suhu badan.",
+        "Pada pukul berapa saya perlu memeriksanya?",
+        "Pukul sepuluh, sila.",
+        "Pukul sepuluh, ya. Baik, saya faham."
+      ]
+    },
+    "SSW-S76": {
+      "title": "Segera melaporkan aduan pening",
+      "goal": "Sampaikan kata-kata penghuni dan minta bantuan datang dengan jelas.",
+      "context": "Penghuni baru sahaja mengatakan pening. Anda segera meminta bantuan jururawat; jangan membuat diagnosis atau mengajar tindakan bangun, minum atau rawatan. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Laporkan pening seperti yang disebut oleh penghuni dan minta bantuan. Jangan menambah sebab atau cadangan tindakan rawatan.",
+      "lines": [
+        "Ada apa?",
+        "Sato-san mengatakan, “Saya rasa pening.” Tolong datang.",
+        "Saya akan datang sekarang. Di mana tempatnya?",
+        "Di ruang makan. Tolong ya."
+      ]
+    },
+    "SSW-S77": {
+      "title": "Mengesahkan masa ubat dengan jururawat",
+      "goal": "Minta jururawat mengesahkan aturan berkaitan ubat.",
+      "context": "Anda tidak pasti waktu mengambil ubat yang telah dijadualkan dan bertanya kepada jururawat. Ini tidak melibatkan nama ubat, dos atau pemberian ubat sendiri. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Sahkan aturan. Jangan menentukan masa ubat berdasarkan ingatan atau tekaan.",
+      "lines": [
+        "Apakah yang anda mahu sahkan?",
+        "Tolong beritahu waktu ubat Sato-san.",
+        "Saya akan semak jadualnya dahulu.",
+        "Tolong ya."
+      ]
+    },
+    "SSW-S78": {
+      "title": "Mendengar apabila penghuni tidak mahu mengambil ubat",
+      "goal": "Ulang kehendak penghuni dan beritahu bahawa anda akan menghubungi jururawat.",
+      "context": "Penghuni menyatakan tidak mahu mengambil ubat. Contoh ini tidak menuntut pujukan dan tidak membuat keputusan menghentikan atau menukar ubat. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Terima dan sampaikan kehendaknya. Jangan memaksa pengambilan ubat atau berjanji menghentikannya atas keputusan sendiri.",
+      "lines": [
+        "Saya tidak mahu mengambil ubat sekarang.",
+        "Anda tidak mahu mengambilnya sekarang, ya. Saya akan maklumkan kepada jururawat.",
+        "Saya mahu seseorang mendengar apa yang saya ingin katakan.",
+        "Baik, saya akan panggil jururawat."
+      ]
+    },
+    "SSW-S79": {
+      "title": "Melaporkan ubat yang dilihat di atas meja",
+      "goal": "Laporkan hanya barang dan tempat yang dilihat.",
+      "context": "Anda melihat ubat masih berada di atas meja tetapi tidak tahu sama ada ubat telah diambil sebelum itu atau apa yang berlaku. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Nyatakan hanya bahawa ubat masih ada di atas meja. Jangan terus menyimpulkan dos tertinggal, ubat diludah atau kesilapan pengambilan.",
+      "lines": [
+        "Ada apa-apa yang anda perhatikan?",
+        "Ada ubat yang masih tinggal di atas meja. Tolong semak.",
+        "Saya akan semak sekarang.",
+        "Tolong ya."
+      ]
+    },
+    "SSW-S80": {
+      "title": "Menyatakan arahan ubat tidak difahami",
+      "goal": "Nyatakan dengan jelas bahawa anda tidak faham dan minta penerangan.",
+      "context": "Anda menerima arahan berkaitan ubat tetapi tidak memahami maksudnya. Contoh ini tidak memberikan urutan pemberian atau pengambilan ubat. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya perkara yang tidak jelas. Jangan melaksanakan arahan sendiri ketika belum memahaminya.",
+      "lines": [
+        "Ada apa-apa yang anda tidak faham?",
+        "Saya tidak faham arahan tentang ubat. Tolong terangkan.",
+        "Bahagian yang mana?",
+        "Tolong jelaskan maksud perkataan ini."
+      ]
+    },
+    "SSW-S81": {
+      "title": "Memberitahu masa temu janji yang disahkan",
+      "goal": "Nyatakan masa yang telah disahkan dengan ayat ringkas.",
+      "context": "Pusat jagaan telah mengesahkan temu janji hospital pada pukul sepuluh hari ini. Anda hanya menyampaikan aturan yang diketahui, bukan menjamin jadual tidak akan berubah. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Sebut hanya masa yang telah disahkan dan kekalkan maksud dijadualkan.",
+      "lines": [
+        "Pukul berapa temu janji hospital?",
+        "Temu janji hospital hari ini dijadualkan pada pukul sepuluh.",
+        "Pukul sepuluh, ya.",
+        "Ya. Saya akan beritahu jika jadual berubah."
+      ]
+    },
+    "SSW-S82": {
+      "title": "Bertanya masa dan tempat rehabilitasi",
+      "goal": "Tanya aturan aktiviti, kemudian ulang secara ringkas untuk mengesahkan.",
+      "context": "Rakan sekerja meminta anda membuat persediaan aktiviti rehabilitasi yang diatur oleh pusat jagaan. Contoh ini tidak melibatkan latihan fizikal atau penilaian kesesuaian aktiviti. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya masa dan tempat. Jangan mereka-reka lokasi sendiri.",
+      "lines": [
+        "Tolong buat persediaan untuk rehabilitasi.",
+        "Pukul berapa ia bermula, dan di mana?",
+        "Ia bermula pada pukul dua di bilik di aras 1.",
+        "Pukul dua, aras 1, ya. Baik, saya faham."
+      ]
+    },
+    "SSW-S83": {
+      "title": "Bertanya barang yang mahu dibawa keluar",
+      "goal": "Sahkan barang yang mahu dibawa oleh penghuni.",
+      "context": "Aturan keluar telah disahkan oleh pusat jagaan. Anda sedang menyediakan barang peribadi yang boleh dibawa. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya kehendak penghuni, kemudian sahkan barangnya. Jangan memilih bagi pihak mereka.",
+      "lines": [
+        "Saya sedang bersiap untuk keluar.",
+        "Adakah ada barang yang anda mahu bawa?",
+        "Saya mahu membawa topi.",
+        "Topi, ya. Saya sediakan di sini."
+      ]
+    },
+    "SSW-S84": {
+      "title": "Bertanya sama ada mahu berehat selepas pulang",
+      "goal": "Sahkan sama ada penghuni mahu berehat.",
+      "context": "Penghuni telah keluar dan pulang mengikut aturan pusat jagaan. Latihan ini hanya bertanya kehendak untuk berehat. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya kehendaknya. Jangan menentukan aktiviti seterusnya hanya kerana mereka baru pulang.",
+      "lines": [
+        "Saya sudah pulang.",
+        "Selamat kembali. Adakah anda mahu berehat sebentar?",
+        "Ya, saya mahu berehat.",
+        "Baik. Sila panggil jika perlu."
+      ]
+    },
+    "SSW-S85": {
+      "title": "Bertanya nama dan tujuan pelawat",
+      "goal": "Sahkan maklumat pelawat dengan bahasa ringkas dan sopan.",
+      "context": "Anda baru pertama kali bertemu pelawat. Nama Yamada dan Sato adalah rekaan. Jangan dedahkan maklumat penghuni sebelum identiti disahkan. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Sahkan nama dan tujuan dahulu, kemudian hubungi kakitangan yang bertanggungjawab mengikut peraturan pusat jagaan.",
+      "lines": [
+        "Helo. Ini kali pertama saya datang.",
+        "Boleh beritahu nama dan tujuan kedatangan anda?",
+        "Saya Yamada. Saya datang untuk melawat Sato-san.",
+        "Saya akan semak dengan kakitangan yang bertanggungjawab. Sila tunggu."
+      ]
+    },
+    "SSW-S86": {
+      "title": "Merujuk soalan pelawat kepada kakitangan bertanggungjawab",
+      "goal": "Jangan meneka jawapan; jelaskan bahawa anda akan menghubungi kakitangan yang bertanggungjawab.",
+      "context": "Pelawat bertanya perkara yang anda tidak ketahui. Identiti pelawat dan kebenaran mendedahkan maklumat belum disahkan. Contoh ini tidak menyampaikan maklumat kesihatan. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Jangan mereka-reka keadaan kesihatan atau mendedahkan maklumat tanpa kebenaran. Rujuk kepada kakitangan yang bertanggungjawab.",
+      "lines": [
+        "Bagaimana keadaan kesihatan Sato-san?",
+        "Saya tidak tahu. Saya akan semak dengan kakitangan yang bertanggungjawab.",
+        "Saya mahu bertanya kepada kakitangan yang bertanggungjawab.",
+        "Baik. Saya akan panggil kakitangan tersebut."
+      ]
+    },
+    "SSW-S87": {
+      "title": "Mengesahkan pesanan telefon secara ringkas",
+      "goal": "Tanya siapa yang meninggalkan pesanan dan kandungannya.",
+      "context": "Rakan sekerja menyampaikan pesanan telefon rekaan. Tiada nombor telefon atau maklumat hubungan peribadi sebenar. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Sahkan sumber dan isi pesanan. Jangan menambah perkara yang tidak didengar semasa menyampaikannya.",
+      "lines": [
+        "Bolehkah anda sampaikan pesanan daripada panggilan tadi?",
+        "Pesanan daripada siapa, dan apakah pesanannya?",
+        "Daripada Yamada-san. Katanya akan menelefon kemudian.",
+        "Daripada Yamada-san, akan menelefon kemudian, ya."
+      ]
+    },
+    "SSW-S88": {
+      "title": "Bertanya apa yang mahu disampaikan kepada keluarga",
+      "goal": "Sahkan siapa yang mahu dihubungi dan apa yang mahu disampaikan.",
+      "context": "Penghuni mahu menghubungi keluarga. Cara dan masa menghubungi perlu disahkan mengikut peraturan pusat jagaan; jangan berjanji keluarga pasti akan datang melawat. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Sahkan kehendak penghuni. Mahu berjumpa keluarga bukan bermakna lawatan telah diatur.",
+      "lines": [
+        "Saya mahu menghubungi keluarga.",
+        "Anda mahu menghubungi siapa, dan mahu menyampaikan apa?",
+        "Saya mahu beritahu anak perempuan saya bahawa saya mahu berjumpanya.",
+        "Baik. Saya akan semak cara untuk menghubunginya."
+      ]
+    },
+    "SSW-S89": {
+      "title": "Menjelaskan bahawa ini latihan pemindahan kecemasan",
+      "goal": "Nyatakan dengan jelas bahawa ini ialah latihan.",
+      "context": "Pusat jagaan telah menjadualkan latihan pemindahan kecemasan dan kakitangan akan memberikan panduan. Ini bukan pelajaran laluan kebakaran sebenar atau teknik memindahkan tubuh. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Sebut latihan dengan jelas. Jangan menimbulkan salah faham bahawa bencana sebenar sedang berlaku.",
+      "lines": [
+        "Ada apa hari ini?",
+        "Sebentar lagi ada latihan pemindahan kecemasan.",
+        "Adakah benar-benar berlaku kebakaran?",
+        "Tidak, ini latihan. Kakitangan akan memberikan panduan."
+      ]
+    },
+    "SSW-S90": {
+      "title": "Meminta lokasi berkumpul diulang",
+      "goal": "Minta rakan sekerja mengulang satu lokasi yang tidak didengar dengan jelas.",
+      "context": "Ini latihan yang telah dijadualkan. Anda tidak dengar dengan jelas lokasi berkumpul yang ditetapkan oleh pusat jagaan. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya hanya tempat yang tidak didengar. Jangan meneka laluan atau lokasi berkumpul.",
+      "lines": [
+        "Sila berkumpul di ruang santai sebelum latihan.",
+        "Boleh ulang tempat untuk berkumpul?",
+        "Di ruang santai.",
+        "Di ruang santai, ya. Baik, saya faham."
+      ]
+    },
+    "SSW-S91": {
+      "title": "Melaporkan barang di koridor dan meminta bantuan",
+      "goal": "Nyatakan barang dan lokasinya serta minta rakan sekerja datang.",
+      "context": "Anda melihat barang di koridor yang perlu disemak oleh kakitangan bertanggungjawab. Jangan memutuskan cara menguruskannya atau mengalihkan penghuni sendiri. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Nyatakan barang dan lokasi yang dilihat, kemudian minta semakan secara terus.",
+      "lines": [
+        "Ada apa-apa yang berlaku?",
+        "Ada barang di koridor. Bolehkah anda datang?",
+        "Saya akan datang sekarang. Di bahagian mana?",
+        "Di hadapan ruang makan."
+      ]
+    },
+    "SSW-S92": {
+      "title": "Melaporkan bunyi luar biasa daripada mesin",
+      "goal": "Terangkan hanya perkara luar biasa yang diperhatikan dan minta rakan sekerja menyemak.",
+      "context": "Peralatan yang tidak sedang digunakan mengeluarkan bunyi yang berbeza daripada biasa. Kakitangan yang bertanggungjawab perlu menyemaknya. Ini bukan latihan pembaikan atau pengendalian alat. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Terangkan bunyi yang didengar. Jangan mendiagnosis kerosakan atau memberikan cadangan pembaikan sendiri.",
+      "lines": [
+        "Ada apa?",
+        "Mesin ini mengeluarkan bunyi yang berbeza daripada biasa.",
+        "Saya akan semak sekarang.",
+        "Tolong ya. Mesinnya ada di sini."
+      ]
+    },
+    "SSW-S93": {
+      "title": "Bertanya di mana mahu meletakkan cermin mata",
+      "goal": "Sahkan kehendak tentang lokasi meletakkan barang peribadi.",
+      "context": "Penghuni mahu cermin mata diletakkan berdekatan. Pusat jagaan telah memastikan ruang meletakkan barang boleh digunakan. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya lokasi yang dikehendaki dahulu. Jangan memilih bagi pihak penghuni.",
+      "lines": [
+        "Saya mahu cermin mata diletakkan dekat dengan saya.",
+        "Di manakah anda mahu saya letakkan cermin mata?",
+        "Di atas meja, tolong.",
+        "Baik, saya letakkan di sini."
+      ]
+    },
+    "SSW-S94": {
+      "title": "Memanggil bantuan apabila sukar mendengar dengan alat bantu dengar",
+      "goal": "Ulang kesukaran mendengar yang disebut dan jelaskan bahawa anda akan meminta orang menyemak.",
+      "context": "Penghuni mengatakan masih sukar mendengar walaupun memakai alat bantu dengar. Contoh ini tidak mengajar pelarasan, pemakaian atau diagnosis. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tunjukkan bahawa anda telah mendengar apa yang dirasai penghuni dan hubungi kakitangan bertanggungjawab. Jangan melaras alat bantu dengar sendiri.",
+      "lines": [
+        "Saya masih sukar mendengar walaupun memakai alat bantu dengar.",
+        "Anda sukar mendengar, ya. Saya akan panggil kakitangan yang bertanggungjawab.",
+        "Tolong ya.",
+        "Baik. Saya akan minta mereka menyemaknya."
+      ]
+    },
+    "SSW-S95": {
+      "title": "Mengesahkan pemilik barang yang ditemukan",
+      "goal": "Apabila pemilik barang belum diketahui, tanya dahulu.",
+      "context": "Anda menemukan sepasang cermin mata tetapi belum mengetahui pemiliknya. Jangan menyatakan maklumat yang belum pasti sebagai fakta. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Kekalkan status belum disahkan jika pemilik tidak diketahui. Jangan menentukan pemilik berdasarkan rupa barang.",
+      "lines": [
+        "Apakah yang anda pegang?",
+        "Cermin mata ini milik siapa?",
+        "Saya juga masih belum tahu.",
+        "Baik. Saya akan semak dengan kakitangan yang bertanggungjawab."
+      ]
+    },
+    "SSW-S96": {
+      "title": "Bertanya sama ada butang panggilan boleh dicapai",
+      "goal": "Sahkan sama ada barang berada dalam jangkauan penghuni.",
+      "context": "Butang panggilan telah diletakkan mengikut aturan pusat jagaan. Anda bertanya sama ada penghuni boleh mencapainya; jawapan ini bukan penilaian bebas terhadap keupayaan bergerak. Contoh ini hanya melatih komunikasi. Untuk penjagaan sebenar, ikut pelan pusat jagaan dan arahan kakitangan yang bertanggungjawab. Semua individu dan maklumat adalah rekaan.",
+      "check": "Tanya sama ada penghuni boleh mencapainya. Jangan hanya mengatakan sudah diletakkan lalu terus pergi.",
+      "lines": [
+        "Di manakah butang panggilan?",
+        "Di sini. Bolehkah anda mencapainya?",
+        "Ya, saya boleh mencapainya.",
+        "Sila panggil dengan butang ini apabila perlu."
+      ]
+    }
+  }
+}

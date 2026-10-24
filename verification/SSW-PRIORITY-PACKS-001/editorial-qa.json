@@ -1,0 +1,83 @@
+{
+  "status": "internal_editorial_review_only",
+  "professional_review": false,
+  "coverage": {
+    "vi": {
+      "dialogue_pairs_reviewed": 384,
+      "metadata_review": "risk contexts/checks"
+    },
+    "ms": {
+      "dialogue_pairs_reviewed": 384,
+      "metadata_review": "all contexts/checks and critical goals"
+    },
+    "id": {
+      "dialogue_pairs_reviewed": 384,
+      "metadata_review": "all96scene titles/goals/contexts/checks"
+    },
+    "my": {
+      "dialogue_pairs_reviewed": 112,
+      "scene_detail_count": 28,
+      "metadata_review": "10risk scenes allfields plus18representative scenes; additional title check S94"
+    }
+  },
+  "corrections": [
+    {
+      "locale": "vi",
+      "scene": "SSW-S18",
+      "field": "lines",
+      "index": 1,
+      "before": "Chỉ giúp tôi cài cúc thôi.",
+      "after": "Chỉ phần cúc áo thôi, nhờ bạn."
+    },
+    {
+      "locale": "vi",
+      "scene": "SSW-S82",
+      "field": "lines",
+      "index": 2,
+      "before": "Bắt đầu lúc hai giờ, tại phòng ở tầng 1.",
+      "after": "Bắt đầu lúc hai giờ, tại phòng ở tầng trệt (tầng 1 theo cách đếm ở Nhật)."
+    },
+    {
+      "locale": "vi",
+      "scene": "SSW-S82",
+      "field": "lines",
+      "index": 3,
+      "before": "Hai giờ, tầng 1, đúng không? Tôi hiểu rồi.",
+      "after": "Hai giờ, tầng trệt, đúng không? Tôi hiểu rồi."
+    },
+    {
+      "locale": "id",
+      "scene": "SSW-S31",
+      "field": "lines",
+      "index": 1,
+      "before": "Masukkan ke wadah yang ada namanya.",
+      "after": "Disimpan di dalam wadah yang ada namanya."
+    },
+    {
+      "locale": "id",
+      "scene": "SSW-S33",
+      "field": "lines",
+      "index": 1,
+      "before": "Ya, sebentar lagi saya ingin ke toilet.",
+      "after": "Ya. Sepertinya sudah waktunya saya ke toilet."
+    },
+    {
+      "locale": "my",
+      "scene": "SSW-S94",
+      "field": "title",
+      "index": null,
+      "before": "နားကြားကိရိယာနှင့်လည်း မကြားရလျှင် တာဝန်ခံခေါ်ခြင်း",
+      "after": "နားကြားကိရိယာနှင့်လည်း ကောင်းကောင်း မကြားရလျှင် တာဝန်ခံခေါ်ခြင်း"
+    }
+  ],
+  "human_review_notes": [
+    "S24 台 is context-dependent: Vietnamese mặt bàn, Malay kaunter and Indonesian meja; confirm with the depicted setting.",
+    "Burmese: formality of ကျွန်ုပ်, Japanese-name transliteration and care/rehabilitation terminology need native review.",
+    "Burmese S82 အထပ် ၁ needs learner confirmation against Japanese1F numbering.",
+    "Burmese S87 ဖုန်းပြန်ဆက် may imply calling again; review the call context before changing."
+  ],
+  "limits": [
+    "Structure/script presence and internal model review do not establish native accuracy or clinical/professional approval.",
+    "NFC normalization is not a Zawgyi detection or conversion guarantee."
+  ]
+}

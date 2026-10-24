@@ -1,0 +1,1232 @@
+{
+  "locale": "vi",
+  "status": "draft_unreviewed",
+  "topics": {
+    "T01": {
+      "title": "Chào hỏi và ra vào phòng"
+    },
+    "T02": {
+      "title": "Hỏi lại khi chưa nghe rõ"
+    },
+    "T03": {
+      "title": "Xác nhận hướng dẫn của đồng nghiệp"
+    },
+    "T04": {
+      "title": "Thức dậy, nghỉ ngơi và đi ngủ"
+    },
+    "T05": {
+      "title": "Quần áo và chỉnh trang"
+    },
+    "T06": {
+      "title": "Chuẩn bị trước bữa ăn"
+    },
+    "T07": {
+      "title": "Ăn uống"
+    },
+    "T08": {
+      "title": "Vệ sinh miệng và rửa mặt"
+    },
+    "T09": {
+      "title": "Đi vệ sinh"
+    },
+    "T10": {
+      "title": "Tắm và vệ sinh cơ thể"
+    },
+    "T11": {
+      "title": "Trao đổi trước khi di chuyển hoặc chuyển chỗ"
+    },
+    "T12": {
+      "title": "Phòng ở và môi trường sinh hoạt"
+    },
+    "T13": {
+      "title": "Hoạt động và trò chuyện ban ngày"
+    },
+    "T14": {
+      "title": "Đáp lại sự lo lắng"
+    },
+    "T15": {
+      "title": "Quan sát và báo cáo ngắn"
+    },
+    "T16": {
+      "title": "Liên lạc và nhờ hỗ trợ trong nhóm"
+    },
+    "T17": {
+      "title": "Rửa tay và phòng ngừa nhiễm trùng"
+    },
+    "T18": {
+      "title": "Giặt đồ và đồ vải"
+    },
+    "T19": {
+      "title": "Hỏi cảm nhận về sức khỏe"
+    },
+    "T20": {
+      "title": "Trao đổi với điều dưỡng về thuốc"
+    },
+    "T21": {
+      "title": "Lịch trình và đi ra ngoài"
+    },
+    "T22": {
+      "title": "Khách đến thăm và gia đình"
+    },
+    "T23": {
+      "title": "An toàn và diễn tập phòng chống thiên tai"
+    },
+    "T24": {
+      "title": "Kính, máy trợ thính và nút gọi"
+    }
+  },
+  "scenes": {
+    "SSW-S01": {
+      "title": "Xác nhận cách xưng hô",
+      "goal": "Sau khi tự giới thiệu, xác nhận ngắn gọn người kia muốn được gọi thế nào.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Lần đầu gặp người được chăm sóc, sau khi nhân viên phụ trách giới thiệu.",
+      "check": "Dùng cách gọi mà người kia vừa đề nghị. Không cần kính ngữ phức tạp.",
+      "lines": [
+        "Tôi là Hayashi, từ hôm nay tôi sẽ phụ trách hỗ trợ bác. Bác cho tôi biết tên được không?",
+        "Tôi là Yamada. Xin cứ gọi tôi là Yamada-san.",
+        "Yamada-san, đúng không ạ? Rất mong được bác giúp đỡ.",
+        "Vâng. Tôi cũng rất mong được giúp đỡ."
+      ]
+    },
+    "SSW-S02": {
+      "title": "Xin phép vào phòng",
+      "goal": "Hỏi trước khi vào phòng và chờ người kia đồng ý.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đang ở ngoài cửa, chưa vào phòng.",
+      "check": "Chỉ nói sẽ vào sau khi được đồng ý. Nếu bị từ chối, không tự ý vào.",
+      "lines": [
+        "Bác Yamada, tôi là Hayashi. Tôi vào được không ạ?",
+        "Vâng, mời vào.",
+        "Cảm ơn bác. Xin phép bác, tôi vào ạ.",
+        "Mời đến bên này."
+      ]
+    },
+    "SSW-S03": {
+      "title": "Hỏi cảm nhận vào buổi sáng",
+      "goal": "Dùng một câu chào đơn giản để hỏi cảm nhận hôm nay.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Chào hỏi thường lệ vào buổi sáng, không chẩn đoán.",
+      "check": "Nhắc lại ngắn gọn cảm nhận của người đó. Không tự thêm nguyên nhân hay nhận định bệnh.",
+      "lines": [
+        "Chào buổi sáng ạ. Hôm nay bác thấy thế nào?",
+        "Tôi hơi buồn ngủ.",
+        "Bác hơi buồn ngủ phải không ạ?",
+        "Vâng, tôi vẫn còn buồn ngủ."
+      ]
+    },
+    "SSW-S04": {
+      "title": "Cách gọi khi cần hỗ trợ",
+      "goal": "Trước khi rời đi, giải thích về nút gọi đã được xác nhận là sử dụng được.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Trước khi rời đi, cơ sở đã xác nhận nút gọi hoạt động và ở vị trí người đó có thể sử dụng.",
+      "check": "Xác nhận vị trí nút gọi. Không hứa thời gian có mặt cụ thể.",
+      "lines": [
+        "Khi cần gì, bác hãy bấm nút này để gọi nhé.",
+        "Tôi bấm chỗ này là được phải không?",
+        "Vâng, chỗ này ạ. Khi cần gì, bác cứ gọi nhé.",
+        "Tôi hiểu rồi."
+      ]
+    },
+    "SSW-S05": {
+      "title": "Xin nói lại một lần nữa",
+      "goal": "Khi chưa nghe rõ, trực tiếp đề nghị người kia nói lại.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đồng nghiệp đang giải thích vị trí vật dụng.",
+      "check": "Nói rõ rằng chưa nghe rõ hoặc xin nhắc lại. Không chỉ trả lời “vâng”.",
+      "lines": [
+        "Khăn ở trên kệ kia.",
+        "Xin lỗi, bạn nói lại một lần nữa được không?",
+        "Khăn ở trên kệ kia.",
+        "Ở trên kệ, đúng không? Cảm ơn bạn."
+      ]
+    },
+    "SSW-S06": {
+      "title": "Xin nói chậm hơn",
+      "goal": "Khi tốc độ nói khiến mình chưa hiểu, xin người kia nói chậm hơn.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đồng nghiệp đang thông báo thời gian và địa điểm hoạt động tiếp theo.",
+      "check": "Chỉ cần đề nghị nói chậm hơn. Xuống dòng trong văn bản không có nghĩa bản ghi âm đã chậm hơn.",
+      "lines": [
+        "Hãy đến phòng sinh hoạt chung lúc hai giờ.",
+        "Xin lỗi, bạn nói chậm hơn được không?",
+        "Lúc hai giờ. Địa điểm là phòng sinh hoạt chung.",
+        "Lúc hai giờ, ở phòng sinh hoạt chung, đúng không?"
+      ]
+    },
+    "SSW-S07": {
+      "title": "Hỏi nghĩa của một từ",
+      "goal": "Hỏi nghĩa của một từ dùng trong công việc mà mình chưa hiểu.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đồng nghiệp đang nói tên nơi cất đồ.",
+      "check": "Nêu đúng từ chưa hiểu, không tự đoán nghĩa.",
+      "lines": [
+        "Tạp dề ở trong kho đồ vải.",
+        "“Kho đồ vải” là gì vậy?",
+        "Đó là phòng để khăn và những đồ tương tự.",
+        "Tôi hiểu rồi. Bạn chỉ cho tôi vị trí nữa nhé."
+      ]
+    },
+    "SSW-S08": {
+      "title": "Xin giải thích từng việc một",
+      "goal": "Khi nhận nhiều thông tin cùng lúc, xin người kia giải thích riêng từng việc.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đồng nghiệp giao hai việc chuẩn bị thông thường cùng lúc.",
+      "check": "Xin chia nhỏ thông tin hoặc nói việc đầu tiên trước. Không cần nhớ cả chuỗi công việc trong một lần.",
+      "lines": [
+        "Hãy mang khăn đi và xếp cả cốc nữa.",
+        "Xin lỗi, bạn nói từng việc một được không?",
+        "Trước tiên, hãy mang khăn đến phòng sinh hoạt chung.",
+        "Trước tiên, tôi mang khăn đến phòng sinh hoạt chung, đúng không?"
+      ]
+    },
+    "SSW-S09": {
+      "title": "Hỏi rõ đồ của ai",
+      "goal": "Khi hướng dẫn chưa nêu người sử dụng, hỏi rõ là của ai.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đồng nghiệp nhờ lấy khăn nhưng chưa nói khăn của ai.",
+      "check": "Chỉ cần hỏi rõ người sử dụng. Cách hỏi “của ai” kèm đuôi lịch sự cũng phù hợp.",
+      "lines": [
+        "Hãy mang khăn đến đây.",
+        "Khăn của ai vậy?",
+        "Khăn của bác Yamada.",
+        "Khăn của bác Yamada, đúng không?"
+      ]
+    },
+    "SSW-S10": {
+      "title": "Xác nhận vật dụng và nơi đặt",
+      "goal": "Khi vật dụng hoặc địa điểm bị lược bỏ, hỏi rõ cả hai.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Yêu cầu chuẩn bị thông thường của đồng nghiệp chưa đủ cụ thể.",
+      "check": "Phải hỏi rõ vật dụng và địa điểm. Không tự đoán “cái kia” là vật gì.",
+      "lines": [
+        "Hãy đặt cái kia vào phòng.",
+        "Tôi đặt vật gì, vào phòng nào?",
+        "Hãy đặt chiếc hộp này vào phòng nhân viên.",
+        "Tôi đặt chiếc hộp này vào phòng nhân viên, đúng không?"
+      ]
+    },
+    "SSW-S11": {
+      "title": "Hỏi thời hạn hoàn thành",
+      "goal": "Sau khi biết rõ công việc, hỏi cần hoàn thành trước mấy giờ.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Công việc chuẩn bị vật dụng thông thường, chưa được thông báo hạn hoàn thành.",
+      "check": "Hỏi hạn hoàn thành. Phân biệt giờ bắt đầu với giờ cần làm xong.",
+      "lines": [
+        "Hãy xếp cốc trong phòng ăn.",
+        "Tôi cần xếp xong trước mấy giờ?",
+        "Nhờ bạn xếp xong trước mười một giờ rưỡi.",
+        "Trước mười một giờ rưỡi, đúng không? Tôi hiểu rồi."
+      ]
+    },
+    "SSW-S12": {
+      "title": "Nhắc lại ngắn gọn hướng dẫn",
+      "goal": "Nhắc lại ngắn gọn vật dụng, số lượng và địa điểm đã nghe rõ.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Công việc chuẩn bị vật dụng thông thường; đã có đủ thông tin.",
+      "check": "Giữ đúng vật dụng, số lượng và địa điểm. Không cần lặp nguyên từng từ.",
+      "lines": [
+        "Hãy mang hai chiếc cốc đến phòng ăn.",
+        "Tôi mang hai chiếc cốc đến phòng ăn, đúng không?",
+        "Vâng, nhờ bạn.",
+        "Tôi hiểu rồi. Tôi sẽ mang đi."
+      ]
+    },
+    "SSW-S13": {
+      "title": "Hỏi có muốn thức dậy không",
+      "goal": "Hỏi người đó có muốn thức dậy lúc này không và tôn trọng mong muốn của họ.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Cơ sở đã xác nhận có thể sắp xếp việc thức dậy theo mong muốn của người đó vào lúc này. Không luyện kỹ thuật đỡ người dậy.",
+      "check": "Trước hết chấp nhận mong muốn của người đó. Không ép thức dậy.",
+      "lines": [
+        "Trời sáng rồi ạ. Bây giờ bác có muốn dậy không?",
+        "Tôi muốn ngủ thêm một chút.",
+        "Vâng, tôi hiểu. Lát nữa tôi sẽ quay lại nhé.",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S14": {
+      "title": "Hỏi có muốn nghỉ ngơi không",
+      "goal": "Khi nghe người đó nói mệt, hỏi họ có muốn nghỉ không.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Sau hoạt động thường ngày. Việc sắp xếp theo kế hoạch của cơ sở, không phán đoán nguyên nhân mệt.",
+      "check": "Đáp lại việc người đó thấy mệt và hỏi mong muốn. Không tự nhận định bệnh trạng.",
+      "lines": [
+        "Tôi hơi mệt.",
+        "Bác có muốn nghỉ một chút không?",
+        "Vâng, tôi muốn nghỉ ở đây một chút.",
+        "Vâng, tôi hiểu. Mình nghỉ một chút nhé."
+      ]
+    },
+    "SSW-S15": {
+      "title": "Hỏi về ánh sáng trước khi ngủ",
+      "goal": "Trước khi ngủ, xác nhận người đó muốn để ánh sáng ở mức nào.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Cơ sở đã xác nhận đèn có thể điều chỉnh. Bài này chỉ luyện một lựa chọn về môi trường.",
+      "check": "Nghe rõ người đó muốn giữ lại ánh sáng. Không mặc định tắt hết đèn.",
+      "lines": [
+        "Trước khi ngủ, tôi tắt đèn được không ạ?",
+        "Hãy để sáng một chút nhé.",
+        "Tôi sẽ để sáng một chút nhé.",
+        "Vâng, cứ như vậy giúp tôi."
+      ]
+    },
+    "SSW-S16": {
+      "title": "Khi nghe nói đã ngủ không ngon",
+      "goal": "Khi nghe người đó nói ngủ không ngon, trước hết đáp lại điều họ vừa nói.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Trò chuyện ngắn vào buổi sáng. Không suy đoán nguyên nhân, không khuyên dùng thuốc hay điều trị.",
+      "check": "Chỉ cần nhắc lại cảm nhận của người đó. Không tự thêm nguyên nhân mất ngủ.",
+      "lines": [
+        "Đêm qua bác ngủ ngon không ạ?",
+        "Tôi không ngủ được mấy.",
+        "Bác không ngủ được mấy phải không ạ?",
+        "Vâng, tôi tỉnh giấc nhiều lần."
+      ]
+    },
+    "SSW-S17": {
+      "title": "Chọn quần áo muốn mặc",
+      "goal": "Cho người đó xem hai bộ đồ đã được xác nhận có thể mặc và để họ chọn.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Cả hai bộ đều là quần áo của người đó và đã được xác nhận có thể đưa cho họ.",
+      "check": "Nhắc lại đúng lựa chọn của người đó. Không nói sẽ tự quyết định thay họ.",
+      "lines": [
+        "Hôm nay bác muốn mặc bộ nào?",
+        "Tôi muốn bộ màu xanh dương.",
+        "Bộ màu xanh dương, đúng không ạ? Tôi sẽ chuẩn bị ở đây.",
+        "Vâng, cảm ơn bạn."
+      ]
+    },
+    "SSW-S18": {
+      "title": "Hỏi cần giúp thay đồ phần nào",
+      "goal": "Trước tiên hỏi rõ cần hỗ trợ ở phần nào.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Hỗ trợ thay đồ nằm trong kế hoạch của cơ sở. Không luyện thao tác trực tiếp lên cơ thể.",
+      "check": "Giữ đúng phạm vi “chỉ”. Để người đó tự làm phần họ có thể làm.",
+      "lines": [
+        "Khi thay đồ, bác muốn tôi giúp phần nào ạ?",
+        "Chỉ phần cúc áo thôi, nhờ bạn.",
+        "Chỉ phần cúc áo, đúng không ạ? Tôi sẽ giúp.",
+        "Vâng, những phần khác tôi tự làm được."
+      ]
+    },
+    "SSW-S19": {
+      "title": "Khi không muốn bị nhìn lúc thay đồ",
+      "goal": "Khi nghe người đó lo ngại trước khi thay đồ, trước hết bảo vệ sự riêng tư của họ.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Trước khi hỗ trợ thay đồ; cơ sở đã xác nhận có phương tiện che chắn phù hợp.",
+      "check": "Đáp lại nhu cầu riêng tư trước, sau đó dùng cách che chắn đã được đồng ý.",
+      "lines": [
+        "Tôi không muốn bị nhìn thấy lúc thay đồ.",
+        "Tôi kéo rèm lại được không ạ?",
+        "Vâng, kéo lại giúp tôi.",
+        "Vâng, tôi sẽ kéo rèm lại nhé."
+      ]
+    },
+    "SSW-S20": {
+      "title": "Hỏi về cảm giác nóng hoặc lạnh",
+      "goal": "Khi nghe cảm nhận nóng hoặc lạnh, hỏi người đó muốn chọn quần áo nào.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Cơ sở đã xác nhận có thể thêm một chiếc áo của người đó. Không đánh giá thân nhiệt hay nguyên nhân bệnh.",
+      "check": "Hỏi mong muốn của người đó. Không nhận định bệnh trạng chỉ từ việc họ nói lạnh.",
+      "lines": [
+        "Tôi hơi lạnh.",
+        "Bác có muốn mặc thêm một chiếc áo khoác không?",
+        "Vâng, tôi muốn chiếc áo kia.",
+        "Chiếc áo kia, đúng không ạ? Tôi sẽ mang đến."
+      ]
+    },
+    "SSW-S21": {
+      "title": "Thông báo giờ ăn",
+      "goal": "Nói đơn giản về giờ ăn và hỏi có muốn đến phòng ăn không.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đã đối chiếu lịch ăn của cơ sở. Không luyện kỹ thuật di chuyển.",
+      "check": "Xác nhận mong muốn của người đó. Bài này chỉ luyện lời mời đến địa điểm, không chứng minh cách di chuyển an toàn.",
+      "lines": [
+        "Đến giờ ăn trưa rồi ạ. Bác có muốn đến phòng ăn không?",
+        "Vâng, tôi muốn đến phòng ăn.",
+        "Vâng, tôi hiểu. Mình cùng đi nhé.",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S22": {
+      "title": "Hỏi muốn ngồi ở đâu",
+      "goal": "Hỏi người đó chọn chỗ nào trong các chỗ ngồi đã được xác nhận sử dụng được.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Cơ sở đã xác nhận cả hai chỗ ngồi đều phù hợp với người đó.",
+      "check": "Nghe đúng lựa chọn vị trí. Không thay sở thích của người đó bằng lựa chọn của nhân viên.",
+      "lines": [
+        "Bác thích chỗ gần cửa sổ hay chỗ này ạ?",
+        "Tôi thích gần cửa sổ.",
+        "Gần cửa sổ, đúng không ạ? Mình chọn chỗ đó nhé.",
+        "Vâng, tôi thích vì nhìn được ra ngoài."
+      ]
+    },
+    "SSW-S23": {
+      "title": "Thông báo thực đơn hôm nay",
+      "goal": "Khi được hỏi về thực đơn, chỉ nói những nội dung đã xác nhận.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đã kiểm tra thực đơn của bữa ăn có thể cung cấp cho người đó. Không đánh giá thức ăn có phù hợp với bệnh hay không.",
+      "check": "Chỉ trả lời phần thực đơn đã xác nhận. Nếu chưa biết, cần kiểm tra trước, không đoán.",
+      "lines": [
+        "Trưa nay ăn gì vậy?",
+        "Món ăn kèm hôm nay là cá ạ.",
+        "Là cá à. Tôi mong được ăn.",
+        "Vâng. Khi chuẩn bị xong, tôi sẽ báo bác."
+      ]
+    },
+    "SSW-S24": {
+      "title": "Hỏi vị trí khăn lau tay",
+      "goal": "Hỏi đồng nghiệp vị trí các vật dụng cần chuẩn bị.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Chuẩn bị thông thường trước bữa ăn. Vật dụng đã được xác nhận có thể dùng cho bữa này.",
+      "check": "Ghép đúng từng vật dụng với vị trí của nó. Không cần câu dài.",
+      "lines": [
+        "Khăn lau tay và cốc ở đâu vậy?",
+        "Khăn lau tay ở trên kệ, còn cốc ở trên mặt bàn.",
+        "Khăn lau tay ở trên kệ, còn cốc ở trên mặt bàn, đúng không?",
+        "Vâng, đúng rồi."
+      ]
+    },
+    "SSW-S25": {
+      "title": "Hỏi muốn uống gì",
+      "goal": "Hỏi lựa chọn trong những đồ uống đã được xác nhận có thể cung cấp.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Cơ sở đã đối chiếu kế hoạch cá nhân và xác nhận cả nước lẫn trà trong tình huống này đều có thể cung cấp.",
+      "check": "Xác nhận theo lựa chọn của người đó. Không coi bài luyện ngôn ngữ là đánh giá an toàn ăn uống.",
+      "lines": [
+        "Bác muốn trà hay nước ạ?",
+        "Cho tôi trà nhé.",
+        "Trà, đúng không ạ? Tôi sẽ chuẩn bị.",
+        "Cảm ơn bạn."
+      ]
+    },
+    "SSW-S26": {
+      "title": "Hỏi mong muốn về nhiệt độ đồ uống",
+      "goal": "Trước khi đưa đồ uống, hỏi rõ mong muốn về nhiệt độ.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Khoảng nhiệt độ có thể cung cấp đã được cơ sở xác nhận. Quy trình kiểm tra nhiệt độ không nằm trong bài này.",
+      "check": "Hiểu mong muốn về nhiệt độ. Từ “ấm” không bảo đảm nhiệt độ thực tế an toàn.",
+      "lines": [
+        "Bác muốn uống trà ấm không ạ?",
+        "Làm nguội bớt một chút giúp tôi.",
+        "Tôi sẽ để nguội bớt rồi mang đến nhé.",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S27": {
+      "title": "Nghỉ một chút trong bữa ăn",
+      "goal": "Khi nghe nói tốc độ ăn quá nhanh, đáp lại và hỏi có muốn nghỉ không.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Người đó đã có kế hoạch hỗ trợ ăn uống được xác nhận. Không dạy kỹ thuật đút ăn hay nuốt.",
+      "check": "Đáp lại việc quá nhanh và hỏi có muốn nghỉ. Không giục ăn thêm hoặc tiếp tục.",
+      "lines": [
+        "Hơi nhanh quá.",
+        "Tôi sẽ chậm lại nhé. Bác có muốn nghỉ một chút không?",
+        "Vâng, tôi muốn nghỉ một chút.",
+        "Vâng, tôi hiểu. Mình nghỉ một chút nhé."
+      ]
+    },
+    "SSW-S28": {
+      "title": "Bây giờ chưa muốn ăn",
+      "goal": "Khi nghe người đó từ chối ăn, trước hết chấp nhận điều họ nói.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Luyện trao đổi về mong muốn của người đó. Việc xác nhận và báo cáo tiếp theo theo kế hoạch của cơ sở; không quyết định dinh dưỡng hay điều trị.",
+      "check": "Trước hết hiểu lời từ chối. Không buộc giải thích lý do hay gây áp lực.",
+      "lines": [
+        "Bác có muốn ăn cơm không ạ?",
+        "Bây giờ tôi không muốn ăn.",
+        "Bây giờ bác không muốn ăn, đúng không ạ? Tôi hiểu rồi.",
+        "Vâng, bây giờ tôi chưa cần."
+      ]
+    },
+    "SSW-S29": {
+      "title": "Hỏi có muốn đánh răng không",
+      "goal": "Trước khi bắt đầu vệ sinh miệng, hỏi ý muốn của người đó.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Kế hoạch hỗ trợ vệ sinh miệng cá nhân đã được xác nhận. Không dạy kỹ thuật vệ sinh hay xử trí trong miệng.",
+      "check": "Đáp lại ý muốn tự làm của người đó. Không làm thay ngay.",
+      "lines": [
+        "Bác ăn xong rồi nhỉ. Bác có muốn đánh răng không?",
+        "Vâng, tôi muốn tự đánh răng.",
+        "Bác muốn tự đánh răng, đúng không ạ? Tôi sẽ chuẩn bị.",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S30": {
+      "title": "Chuẩn bị bàn chải đánh răng",
+      "goal": "Trước khi chuẩn bị đồ vệ sinh miệng, hỏi đồng nghiệp đồ thuộc về ai và ở đâu.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Đồ dùng cá nhân đã được cơ sở xác nhận. Bài này chỉ luyện cách hỏi, không dạy thao tác.",
+      "check": "Xác nhận đồ dùng cá nhân, không đoán chủ nhân dựa vào hình dáng.",
+      "lines": [
+        "Bàn chải và cốc của bác Yamada ở đâu vậy?",
+        "Ở trong chiếc giỏ có ghi tên.",
+        "Chiếc giỏ có ghi tên, đúng không? Tôi sẽ kiểm tra.",
+        "Vâng, hãy kiểm tra tên nhé."
+      ]
+    },
+    "SSW-S31": {
+      "title": "Hỏi chỗ để răng giả",
+      "goal": "Hỏi đồng nghiệp vị trí cất đã được chỉ định.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Không cầm, tháo hay lắp răng giả. Chỉ xác nhận vị trí do cơ sở chỉ định.",
+      "check": "Chỉ xác nhận đồ của ai và để ở đâu. Cách xử lý răng giả không thuộc bài này.",
+      "lines": [
+        "Răng giả của bác Yamada để ở đâu vậy?",
+        "Để trong hộp có ghi tên.",
+        "Trong hộp có ghi tên bác Yamada, đúng không?",
+        "Vâng. Vị trí là ở đây."
+      ]
+    },
+    "SSW-S32": {
+      "title": "Hỏi trước khi lau mặt",
+      "goal": "Trước khi chạm vào mặt, nói rõ ý định và xin phép người đó.",
+      "context": "Cơ sở và nhân vật đều hư cấu. Cơ sở đã xác nhận các vật dụng, thời điểm và hỗ trợ trong tình huống phù hợp với kế hoạch hỗ trợ cá nhân. Khăn và cách hỗ trợ đã được xác nhận theo kế hoạch cá nhân. Không dạy kỹ thuật vệ sinh.",
+      "check": "Chỉ nói bước tiếp theo sau khi được đồng ý. Không coi im lặng là đồng ý.",
+      "lines": [
+        "Tôi dùng khăn lau mặt cho bác được không ạ?",
+        "Vâng, nhờ bạn.",
+        "Vâng, tôi sẽ lau mặt cho bác nhé.",
+        "Cảm ơn bạn."
+      ]
+    },
+    "SSW-S33": {
+      "title": "Hỏi có muốn đi vệ sinh không",
+      "goal": "Dùng câu hỏi ngắn, giữ sự riêng tư để xác nhận người đó có muốn đi vệ sinh không.",
+      "context": "Nói nhỏ trong phòng ở. Cơ sở đã xác nhận có thể hỗ trợ đi vệ sinh theo kế hoạch cá nhân. Chỉ luyện xác nhận mong muốn.",
+      "check": "Trước hết đáp lại mong muốn rồi hỏi có cần giúp không. Không hỏi lớn tiếng ở nơi công cộng.",
+      "lines": [
+        "Tôi sẽ hỏi nhỏ nhé. Bác có muốn đi vệ sinh không ạ?",
+        "Vâng, tôi cũng sắp muốn đi rồi.",
+        "Bây giờ bác muốn đi, đúng không ạ? Bác có cần tôi giúp không?",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S34": {
+      "title": "Hỏi lý do gọi hỗ trợ",
+      "goal": "Sau khi đến theo chuông gọi, trước hết hỏi người đó cần gì.",
+      "context": "Nhân viên đã đến phòng nhưng chưa biết lý do người đó bấm chuông. Chỉ hỏi rõ nhu cầu, không tự đoán.",
+      "check": "Nhắc lại nhu cầu mà người đó đã nói. Không tự thêm đau, mất kiểm soát bài tiết hay nguyên nhân khác.",
+      "lines": [
+        "Xin lỗi đã để bác chờ. Bác cần gì ạ?",
+        "Tôi muốn đi vệ sinh.",
+        "Bác muốn đi vệ sinh, đúng không ạ?",
+        "Vâng, giúp tôi nhé."
+      ]
+    },
+    "SSW-S35": {
+      "title": "Xác nhận phần cần hỗ trợ",
+      "goal": "Hiểu phần người đó tự làm được và xác nhận phần còn cần giúp.",
+      "context": "Cơ sở đã xác định phương pháp và phạm vi hỗ trợ. Người được chăm sóc muốn tự làm một phần khi thay đồ; tình huống này không dạy thao tác.",
+      "check": "Xác nhận đúng phạm vi hỗ trợ được yêu cầu. Không nói sẽ làm hết thay cho phần người đó tự làm được.",
+      "lines": [
+        "Bác muốn tôi giúp phần nào ạ?",
+        "Giúp tôi kéo quần lên nhé.",
+        "Phần kéo quần lên, đúng không ạ? Tôi hiểu rồi.",
+        "Những phần khác tôi tự làm được."
+      ]
+    },
+    "SSW-S36": {
+      "title": "Kéo rèm để che chắn",
+      "goal": "Khi người đó nói quần áo bị bẩn và muốn thay, hỏi có muốn che chắn trước không.",
+      "context": "Người được chăm sóc nói quần áo bị bẩn và muốn thay. Cơ sở đã xác nhận có thể hỗ trợ thay đồ. Trước hết trao đổi về sự riêng tư.",
+      "check": "Xin phép che chắn trước. Không trách người đó hay kể chi tiết quần áo bị bẩn trước mặt người khác.",
+      "lines": [
+        "Quần áo tôi bị bẩn rồi. Tôi muốn thay đồ.",
+        "Trước tiên, tôi kéo rèm lại được không ạ?",
+        "Vâng, che lại để người khác không nhìn thấy giúp tôi.",
+        "Tôi hiểu rồi. Tôi sẽ kéo rèm lại nhé."
+      ]
+    },
+    "SSW-S37": {
+      "title": "Khi bị từ chối tắm",
+      "goal": "Dùng câu ngắn để chấp nhận ý muốn chưa tắm của người đó lúc này.",
+      "context": "Cơ sở đã xác nhận lịch tắm có thể cung cấp. Có tắm hay không và lúc nào vẫn theo mong muốn của người đó và quy trình cơ sở. Không luyện ép buộc hay thuyết phục bằng áp lực.",
+      "check": "Chỉ cần công nhận lời từ chối. Không buộc nói lý do, không coi “phải tắm” là câu đáp duy nhất đúng.",
+      "lines": [
+        "Đến giờ tắm rồi ạ. Bây giờ bác có muốn tắm không?",
+        "Bây giờ tôi không muốn tắm.",
+        "Vâng, tôi hiểu. Bây giờ bác chưa muốn tắm, đúng không ạ?",
+        "Vâng, tôi muốn nghỉ một chút."
+      ]
+    },
+    "SSW-S38": {
+      "title": "Hỏi cảm nhận về nhiệt độ nước",
+      "goal": "Hiểu cảm nhận nóng hoặc lạnh và đáp lại ngắn gọn.",
+      "context": "Nhiệt độ nước thực tế và điều kiện tắm đã được xác nhận theo quy trình cơ sở. Chỉ luyện hỏi và đáp lại cảm nhận, không đưa ra số nhiệt độ hay các bước điều chỉnh.",
+      "check": "Đáp lại đúng cảm nhận người đó nói. Không tự suy đoán nhiệt độ hay coi câu mẫu là hướng dẫn tắm.",
+      "lines": [
+        "Bác thấy nhiệt độ nước thế nào ạ?",
+        "Hơi nóng.",
+        "Bác thấy nóng, đúng không ạ? Tôi sẽ kiểm tra.",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S39": {
+      "title": "Hỏi trước khi gội đầu",
+      "goal": "Dùng câu hỏi ngắn để xin phép trước khi bắt đầu.",
+      "context": "Người được chăm sóc đã đề nghị gội đầu, cơ sở đã xác nhận có thể hỗ trợ. Không minh họa phương pháp gội đầu.",
+      "check": "Dù đã được đề nghị, vẫn dùng lời đơn giản xác nhận thời điểm bắt đầu. Không cần kính ngữ cầu kỳ.",
+      "lines": [
+        "Bạn gội đầu cho tôi nữa được không?",
+        "Vâng. Bây giờ tôi bắt đầu gội được không ạ?",
+        "Vâng, nhờ bạn.",
+        "Vậy tôi bắt đầu nhé."
+      ]
+    },
+    "SSW-S40": {
+      "title": "Hỏi trước khi lau người",
+      "goal": "Dùng câu hỏi đơn giản để xác nhận người đó có đồng ý lau người không.",
+      "context": "Người được chăm sóc muốn được lau người. Cơ sở đã xác nhận có thể hỗ trợ bằng khăn ấm. Không dạy phương pháp lau người.",
+      "check": "Hỏi và tôn trọng ý muốn của người đó. Không mở rộng câu mẫu thành hướng dẫn bộ phận cơ thể hay thứ tự thao tác.",
+      "lines": [
+        "Hôm nay tôi muốn được lau người.",
+        "Tôi dùng khăn ấm lau người cho bác được không ạ?",
+        "Vâng, như vậy là được.",
+        "Tôi hiểu rồi. Tôi sẽ chuẩn bị."
+      ]
+    },
+    "SSW-S41": {
+      "title": "Xác nhận nơi muốn đến",
+      "goal": "Nhắc lại nơi mà chính người đó muốn đến.",
+      "context": "Cơ sở đã xác nhận cách hỗ trợ di chuyển phù hợp. Chỉ hỏi nơi đến và có muốn đi ngay không, không dạy nâng chuyển.",
+      "check": "Không tự quyết định nơi đến. Xác nhận dựa vào “phòng ăn” mà người đó đã nói.",
+      "lines": [
+        "Bác muốn đi đâu ạ?",
+        "Tôi muốn đến phòng ăn.",
+        "Phòng ăn, đúng không ạ? Bác muốn đi bây giờ không?",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S42": {
+      "title": "Báo trước khi di chuyển",
+      "goal": "Báo ngắn gọn rằng sắp di chuyển và xác nhận đã sẵn sàng chưa.",
+      "context": "Kế hoạch di chuyển cá nhân, cách hỗ trợ và kiểm tra trước khi đi đã được xác nhận theo quy trình cơ sở. Chỉ luyện lời nói trước khi di chuyển.",
+      "check": "Báo trước và hỏi đã sẵn sàng chưa. Không coi im lặng là đồng ý. Không đánh giá hay dạy thao tác xe lăn.",
+      "lines": [
+        "Đến giờ đi xe lăn tới phòng ăn rồi ạ.",
+        "Vâng, tôi hiểu rồi.",
+        "Bây giờ mình bắt đầu di chuyển nhé. Bác sẵn sàng chưa ạ?",
+        "Vâng, tôi sẵn sàng rồi."
+      ]
+    },
+    "SSW-S43": {
+      "title": "Khi nghe muốn nghỉ một chút",
+      "goal": "Nhắc lại ngắn gọn và chấp nhận mong muốn nghỉ.",
+      "context": "Cơ sở đã xác nhận kế hoạch di chuyển và nơi nghỉ có thể dùng. Chỉ luyện trao đổi, không hướng dẫn các bước đi bộ hay đỡ cơ thể.",
+      "check": "Không thúc giục sau khi nghe yêu cầu nghỉ. Luyện ngôn ngữ không thay thế sắp xếp an toàn di chuyển của cơ sở.",
+      "lines": [
+        "Tốc độ này có ổn không ạ?",
+        "Tôi muốn nghỉ một chút.",
+        "Vâng, tôi hiểu. Mình nghỉ một chút nhé.",
+        "Cảm ơn bạn."
+      ]
+    },
+    "SSW-S44": {
+      "title": "Xác nhận vai trò và hiệu lệnh",
+      "goal": "Trước khi cùng hỗ trợ, nói rõ ai đưa hiệu lệnh và đề nghị xác nhận vai trò.",
+      "context": "Cơ sở đã chỉ định hai nhân viên cùng hỗ trợ. Các bước hỗ trợ cụ thể đã được đào tạo riêng. Hội thoại không chứa kỹ thuật thao tác.",
+      "check": "Chỉ cần nói rõ ai đưa hiệu lệnh. Không tự thêm cách bế, xoay người hay đứng dậy.",
+      "lines": [
+        "Ai trong hai chúng ta sẽ đưa hiệu lệnh?",
+        "Tôi sẽ lên tiếng. Trước hết mình xác nhận vai trò nhé.",
+        "Vâng, hãy xác nhận trước.",
+        "Mình bắt đầu sau khi xác nhận xong nhé."
+      ]
+    },
+    "SSW-S45": {
+      "title": "Khi nghe nói phòng lạnh",
+      "goal": "Nhắc lại cảm nhận và hỏi có muốn điều chỉnh môi trường không.",
+      "context": "Cơ sở đã xác định phạm vi có thể điều chỉnh môi trường. Không bàn về đánh giá thân nhiệt hay điều trị.",
+      "check": "Dựa vào cảm nhận chính người đó nói để hỏi mong muốn. Không suy ra bệnh từ việc nói lạnh.",
+      "lines": [
+        "Phòng này hơi lạnh.",
+        "Bác thấy lạnh, đúng không ạ? Tôi làm ấm hơn một chút nhé?",
+        "Vâng, nhờ bạn.",
+        "Tôi hiểu rồi. Tôi sẽ kiểm tra."
+      ]
+    },
+    "SSW-S46": {
+      "title": "Hỏi mong muốn về rèm cửa",
+      "goal": "Hiểu người đó muốn tối hơn một chút và hỏi có muốn kéo rèm không.",
+      "context": "Ban ngày, ánh sáng trong phòng chủ yếu từ cửa sổ. Cơ sở cho phép điều chỉnh rèm theo mong muốn của người đó. Chỉ luyện xác nhận ý muốn.",
+      "check": "Hỏi rõ độ sáng mong muốn trước. Không tự thay đổi môi trường chỉ để tiện cho nhân viên.",
+      "lines": [
+        "Để ánh sáng như thế này được không ạ?",
+        "Tôi muốn tối hơn một chút.",
+        "Tôi kéo rèm lại một chút được không ạ?",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S47": {
+      "title": "Cùng kiểm tra vị trí kính",
+      "goal": "Khi chưa biết vật dụng ở đâu, đề nghị cùng kiểm tra và hỏi manh mối.",
+      "context": "Người được chăm sóc không tìm thấy kính. Nhân viên chưa nhìn thấy kính ở đâu, không được bịa vị trí.",
+      "check": "Khi chưa xác nhận vị trí, không nói ngay “ở đằng kia”. Trước hết đề nghị cùng kiểm tra.",
+      "lines": [
+        "Kính của tôi ở đâu vậy?",
+        "Mình cùng kiểm tra nhé. Bác dùng kính lúc nào ạ?",
+        "Lúc nãy tôi đặt trên bàn.",
+        "Trên bàn, đúng không ạ? Mình cùng xem nhé."
+      ]
+    },
+    "SSW-S48": {
+      "title": "Xin phép trước khi dọn đồ",
+      "goal": "Nhắc lại vật dụng mà người đó muốn giữ nguyên chỗ.",
+      "context": "Cơ sở cho phép hỗ trợ dọn mặt bàn. Người được chăm sóc có quyền lựa chọn đối với đồ của mình. Nhân viên không đọc thư.",
+      "check": "Nhắc lại đúng ý “đừng đụng vào”. Không tự vứt hay mở thư.",
+      "lines": [
+        "Tôi dọn đồ trên bàn được không ạ?",
+        "Hãy để nguyên lá thư này.",
+        "Tôi sẽ để nguyên lá thư nhé.",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S49": {
+      "title": "Hỏi về sở thích",
+      "goal": "Dùng câu đơn giản để lắng nghe và đáp lại sở thích của người đó.",
+      "context": "Trò chuyện tự do ban ngày, không yêu cầu người đó phải tham gia hoạt động.",
+      "check": "Chỉ cần đáp lại sở thích. Không khen kiểu trẻ con hay yêu cầu giải thích lý do phức tạp.",
+      "lines": [
+        "Bác thích làm gì ạ?",
+        "Tôi thích nghe các bài hát.",
+        "Bác thích nghe các bài hát, đúng không ạ?",
+        "Vâng, tôi thích những bài hát ngày xưa."
+      ]
+    },
+    "SSW-S50": {
+      "title": "Mời tham gia hoạt động",
+      "goal": "Nói địa điểm đã xác nhận và để người đó tự chọn tham gia.",
+      "context": "Cơ sở đã xác nhận buổi chiều có buổi hát ở phòng ăn. Người đó tự chọn tham gia. Nhân viên không hứa những sắp xếp chưa được xác nhận.",
+      "check": "Chỉ nói địa điểm đã xác nhận. Dùng câu hỏi để mời, không ra lệnh phải tham gia.",
+      "lines": [
+        "Chiều nay có buổi hát. Bác có muốn tham gia không ạ?",
+        "Tổ chức ở đâu vậy?",
+        "Ở phòng ăn ạ. Bác có muốn cùng đi không?",
+        "Vâng, tôi muốn đi."
+      ]
+    },
+    "SSW-S51": {
+      "title": "Khi không muốn tham gia",
+      "goal": "Bình tĩnh chấp nhận lời từ chối và hỏi người đó muốn dành thời gian thế nào.",
+      "context": "Cơ sở cho phép không tham gia hoạt động lần này và đã xác nhận có thể nghỉ trong phòng. Không luyện ép buộc tham gia.",
+      "check": "Có thể chấp nhận việc từ chối. Không nói “mọi người đều đi nên bác cũng phải đi”.",
+      "lines": [
+        "Hôm nay bác có muốn tham gia tập thể dục không ạ?",
+        "Hôm nay tôi không muốn đi.",
+        "Vâng, tôi hiểu. Bây giờ bác muốn ở trong phòng phải không ạ?",
+        "Vâng, tôi muốn nghỉ trong phòng."
+      ]
+    },
+    "SSW-S52": {
+      "title": "Khi muốn gọi điện cho gia đình",
+      "goal": "Nhắc lại mong muốn liên lạc gia đình và nói sẽ kiểm tra việc sắp xếp.",
+      "context": "Người được chăm sóc muốn liên lạc gia đình. Thời gian cụ thể và cách sử dụng điện thoại của cơ sở còn cần kiểm tra. Không nhập số điện thoại hay thông tin gia đình thật.",
+      "check": "Chấp nhận mong muốn. Thời gian chưa rõ thì nói sẽ kiểm tra, không hứa nối máy ngay hay nhập số thật.",
+      "lines": [
+        "Tôi muốn gọi điện cho gia đình.",
+        "Bác muốn gọi điện cho gia đình, đúng không ạ? Tôi sẽ kiểm tra.",
+        "Nhờ bạn nhé.",
+        "Mình cùng xác nhận thời gian gọi nhé."
+      ]
+    },
+    "SSW-S53": {
+      "title": "Trả lời lại cùng một câu hỏi",
+      "goal": "Với câu hỏi lặp lại, đưa ra câu trả lời đơn giản, rõ ràng thêm một lần.",
+      "context": "Giờ ăn trưa hôm đó đã được xác nhận là mười hai giờ. Chỉ luyện giải thích lại, không đánh giá nhận thức của người được chăm sóc.",
+      "check": "Nhắc lại thời gian đã xác nhận. Không trách rằng vừa nói rồi.",
+      "lines": [
+        "Mấy giờ ăn trưa vậy?",
+        "Mười hai giờ ạ.",
+        "Mấy giờ nhỉ?",
+        "Giờ ăn trưa là mười hai giờ ạ."
+      ]
+    },
+    "SSW-S54": {
+      "title": "Nói nơi đang ở và vai trò của mình",
+      "goal": "Dùng câu ngắn để nói vai trò công việc của mình.",
+      "context": "Hai người đang ở phòng ăn của cơ sở. Người được chăm sóc hỏi đây là đâu và nhân viên là ai. Không suy đoán lý do họ hỏi.",
+      "check": "Chỉ cần nói đơn giản vai trò thật. Không bịa rằng đã từng gặp hay có quan hệ họ hàng.",
+      "lines": [
+        "Đây là đâu vậy?",
+        "Đây là phòng ăn của cơ sở này ạ.",
+        "Xin hỏi, bạn là ai?",
+        "Tôi là nhân viên chăm sóc. Tôi sẽ hỗ trợ bác."
+      ]
+    },
+    "SSW-S55": {
+      "title": "Đáp lại mong muốn về nhà",
+      "goal": "Trước hết dùng câu ngắn đáp lại việc người đó nói muốn về nhà.",
+      "context": "Người được chăm sóc muốn về nhà nhưng chưa biết lý do và cách sắp xếp khả thi. Không hứa đưa đón hay quyết định việc ra ngoài.",
+      "check": "Trước hết đáp lại mong muốn đã được nói ra. Không đoán lý do trước khi người đó giải thích hay bịa lịch về nhà.",
+      "lines": [
+        "Tôi muốn về nhà.",
+        "Bác muốn về nhà, đúng không ạ?",
+        "Tôi lo chuyện ở nhà.",
+        "Bác đang lo lắng, đúng không ạ? Bác kể cho tôi nghe được không?"
+      ]
+    },
+    "SSW-S56": {
+      "title": "Khi lo vì không tìm thấy đồ",
+      "goal": "Đáp lại sự lo lắng và đề nghị cùng kiểm tra, không khẳng định đồ đã bị lấy cắp.",
+      "context": "Người được chăm sóc tạm thời không tìm thấy ví. Nhân viên chưa xác nhận nguyên nhân hay vị trí. Toàn bộ tình huống là hư cấu.",
+      "check": "Không khẳng định hoặc phủ nhận việc trộm cắp khi chưa được xác minh. Trước hết đáp lại sự lo lắng và cùng kiểm tra.",
+      "lines": [
+        "Tôi không thấy ví. Có ai mang đi rồi không?",
+        "Bác lo vì không tìm thấy ví, đúng không ạ?",
+        "Vâng, lúc nào ví cũng ở đây.",
+        "Mình cùng kiểm tra nhé."
+      ]
+    },
+    "SSW-S57": {
+      "title": "Báo cáo ngắn lượng đã ăn",
+      "goal": "Dùng cách nói số lượng đơn giản để báo cáo lượng thức ăn đã tận mắt xác nhận.",
+      "context": "Nhân viên đã quan sát nhân vật hư cấu Yamada ăn nửa phần cơm và hết món ăn kèm trong bữa này. Luyện báo cáo, không sắp xếp ăn uống hay nhận định lâm sàng.",
+      "check": "Chỉ báo cáo lượng đã xác nhận. Không suy đoán nguyên nhân hay bệnh từ lượng ăn.",
+      "lines": [
+        "Bữa trưa bác Yamada đã ăn được bao nhiêu?",
+        "Bác ấy ăn được nửa phần cơm.",
+        "Còn món ăn kèm thì sao?",
+        "Bác ấy ăn hết món ăn kèm."
+      ]
+    },
+    "SSW-S58": {
+      "title": "Truyền đạt lời người đó nói về đau",
+      "goal": "Báo cáo vị trí đau dưới dạng lời người đó đã nói.",
+      "context": "Người được chăm sóc đã nói rõ “đầu gối phải đau”. Nhân viên báo với điều dưỡng điều đã nghe, không chẩn đoán hay đề xuất cách xử lý.",
+      "check": "Giữ rõ nguồn “chính người đó nói”. Không biến lời than đau thành tên bệnh đã được chẩn đoán. Giữ đúng bên trái/phải theo thông tin có sẵn.",
+      "lines": [
+        "Có chuyện gì vậy?",
+        "Người đó nói: “Đầu gối phải của tôi đau.”",
+        "Tôi hiểu rồi. Tôi sẽ kiểm tra.",
+        "Nhờ bạn nhé."
+      ]
+    },
+    "SSW-S59": {
+      "title": "Chỉ báo thời gian đã xác nhận",
+      "goal": "Với thời gian chưa rõ, nói rõ là chưa xác nhận được.",
+      "context": "Đã xác nhận người được chăm sóc đi tới nhà vệ sinh lúc mười giờ. Thời gian trước đó chưa được xác nhận. Luyện trao đổi về ghi chép, không đoán số lần hay thời điểm.",
+      "check": "Chưa biết thì nói chưa xác nhận, không bịa thời gian. Bài này chỉ nói về ghi chép hư cấu trong hội thoại.",
+      "lines": [
+        "Bạn đã xác nhận được giờ đi vệ sinh chưa?",
+        "Tôi đã xác nhận việc bác ấy đi lúc mười giờ.",
+        "Còn trước đó thì sao?",
+        "Thời gian trước đó tôi chưa xác nhận được."
+      ]
+    },
+    "SSW-S60": {
+      "title": "Báo điều nhìn thấy và gọi hỗ trợ",
+      "goal": "Nói ngắn gọn trạng thái, vị trí đã thấy và lập tức gọi hỗ trợ.",
+      "context": "Nhân viên bất ngờ thấy người được chăm sóc ngồi trên sàn hành lang trước phòng ăn. Đã gọi điều dưỡng theo cách liên lạc khẩn cấp của cơ sở và kết nối được; không tận mắt thấy ngã. Chỉ luyện báo ngay, không sắp xếp chờ, không dạy di chuyển người hay chẩn đoán.",
+      "check": "Gọi hỗ trợ ngay và nói rõ trạng thái, vị trí đã nhìn thấy. Không tự biến “ngồi trên sàn” thành đã chứng kiến ngã. Câu luyện tập không thay thế quy trình khẩn cấp của cơ sở.",
+      "lines": [
+        "Vâng, có chuyện gì vậy?",
+        "Có một người được chăm sóc đang ngồi trên sàn hành lang trước phòng ăn. Hãy đến ngay giúp tôi.",
+        "Trước phòng ăn, đúng không? Tôi sẽ tới ngay.",
+        "Vâng, nhờ bạn."
+      ]
+    },
+    "SSW-S61": {
+      "title": "Nhờ giúp khi chưa biết cách làm",
+      "goal": "Không giả vờ biết làm; dùng câu ngắn để xin được giải thích.",
+      "context": "Đồng nghiệp giao việc chuẩn bị vật dụng nhưng người học chưa hiểu cách làm. Không đợi thử một mình rồi mới nhờ giúp.",
+      "check": "Nói rằng chưa hiểu và xin giải thích là được. Không coi câu sai chỉ vì kính ngữ chưa cầu kỳ.",
+      "lines": [
+        "Nhờ bạn chuẩn bị việc này.",
+        "Tôi chưa biết cách làm. Bạn hướng dẫn giúp tôi nhé.",
+        "Vâng, mình cùng kiểm tra nhé.",
+        "Nhờ bạn nhé."
+      ]
+    },
+    "SSW-S62": {
+      "title": "Báo việc đã làm xong",
+      "goal": "Dùng dạng đã hoàn thành để báo ngắn gọn việc chuẩn bị thực sự đã xong.",
+      "context": "Khăn mới đã chuẩn bị xong và đặt trên kệ trong phòng thay đồ. Cơ sở đã giao việc này. Chỉ luyện báo cáo hoàn thành.",
+      "check": "Chỉ nói đã xong với việc thực sự hoàn thành. Trả lời vị trí theo thông tin đã xác nhận.",
+      "lines": [
+        "Việc chuẩn bị khăn đã xong chưa?",
+        "Vâng, tôi đã chuẩn bị khăn mới.",
+        "Bạn đặt ở đâu?",
+        "Tôi đã đặt trên kệ trong phòng thay đồ."
+      ]
+    },
+    "SSW-S63": {
+      "title": "Báo chậm và nhờ giúp",
+      "goal": "Dùng câu đơn giản để nói đang chậm và chủ động nhờ hỗ trợ.",
+      "context": "Nhân viên đang chuẩn bị vật dụng theo phân công nhưng dự kiến không kịp thời gian ban đầu. Chỉ luyện liên lạc, không yêu cầu rời người đang cần chăm sóc.",
+      "check": "Nói tình hình hiện tại và nhờ giúp. Không bịa giờ hoàn thành hay giấu việc chậm.",
+      "lines": [
+        "Có vẻ bạn sẽ xong đúng giờ dự kiến không?",
+        "Tôi đang chậm một chút. Bạn giúp tôi được không?",
+        "Vâng, tôi sẽ đến ngay bây giờ.",
+        "Cảm ơn bạn. Nhờ bạn nhé."
+      ]
+    },
+    "SSW-S64": {
+      "title": "Hỏi lại một điều khi bàn giao",
+      "goal": "Chỉ hỏi một câu cụ thể về nội dung chưa hiểu.",
+      "context": "Đồng nghiệp có kinh nghiệm hơn nói “chuẩn bị như thường lệ”, nhưng người học chưa biết vật dụng cụ thể. Đã biết thời điểm là sau bữa ăn, những nội dung khác cần hỏi rõ.",
+      "check": "Chỉ cần hỏi cụ thể chuẩn bị gì. Không tự đoán là thuốc, thức ăn hay thao tác chăm sóc. Sau khi nghe giải thích mới nhắc lại.",
+      "lines": [
+        "Sau bữa ăn, nhờ bạn chuẩn bị như thường lệ.",
+        "Bạn cho tôi biết cần chuẩn bị gì nhé.",
+        "Là sách bài hát dùng cho hoạt động buổi chiều.",
+        "Sách bài hát, đúng không? Tôi hiểu rồi."
+      ]
+    },
+    "SSW-S65": {
+      "title": "Mời rửa tay trước bữa ăn",
+      "goal": "Dùng câu ngắn để mời rửa tay.",
+      "context": "Đã chuẩn bị ăn theo sắp xếp của cơ sở. Luyện lời mời thông thường trước bữa ăn. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Mời rửa tay với giọng bình tĩnh. Không gộp một chuỗi dài thao tác vào câu này.",
+      "lines": [
+        "Đã đến giờ ăn rồi à?",
+        "Vâng. Trước khi ăn, bác rửa tay nhé?",
+        "Ừ, tôi sẽ rửa tay.",
+        "Nếu cần, tôi sẽ giúp bác."
+      ]
+    },
+    "SSW-S66": {
+      "title": "Hỏi chỗ để xà phòng và khăn",
+      "goal": "Hỏi đồng nghiệp rõ vị trí vật dụng.",
+      "context": "Đồng nghiệp nhờ chuẩn bị đồ rửa tay dùng thường ngày tại cơ sở. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi rõ vị trí vật dụng được chỉ định. Có thể nhắc lại ngắn gọn sau khi nhận câu trả lời.",
+      "lines": [
+        "Nhờ bạn chuẩn bị đồ rửa tay.",
+        "Xà phòng và khăn ở đâu vậy?",
+        "Ở cạnh bồn rửa mặt.",
+        "Cạnh bồn rửa mặt, đúng không? Tôi hiểu rồi."
+      ]
+    },
+    "SSW-S67": {
+      "title": "Hỏi cách xử lý găng tay đã dùng",
+      "goal": "Nói rõ điều mình chưa hiểu và nhờ đồng nghiệp giải thích.",
+      "context": "Trước khi xử lý găng tay đã dùng, bạn chưa biết quy định của cơ sở. Bài này không dạy thứ tự tháo, đeo hay xử lý găng tay. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Nói rõ mình chưa biết và xin hướng dẫn. Không đoán quy tắc xử lý của cơ sở.",
+      "lines": [
+        "Bạn xử lý găng tay đã dùng như thế nào?",
+        "Tôi chưa biết cách xử lý. Bạn hướng dẫn giúp tôi nhé.",
+        "Mình cùng kiểm tra nhé.",
+        "Nhờ bạn nhé."
+      ]
+    },
+    "SSW-S68": {
+      "title": "Truyền đạt lời người đó nói về ho",
+      "goal": "Nói rõ thông tin là từ lời chính người đó.",
+      "context": "Người được chăm sóc vừa nói mình ho, bạn báo lại với điều dưỡng. Không phán đoán nguyên nhân hay tên bệnh. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Nói rõ đây là lời người đó tự kể. Không biến “ho” thành chẩn đoán bệnh.",
+      "lines": [
+        "Có chuyện gì không?",
+        "Bác Sato nói: “Tôi bị ho.”",
+        "Tôi hiểu rồi. Tôi sẽ đến kiểm tra.",
+        "Nhờ bạn nhé. Bác Sato đang ở trong phòng."
+      ]
+    },
+    "SSW-S69": {
+      "title": "Hỏi trước khi thay khăn",
+      "goal": "Xin phép trước khi thay đồ dùng cá nhân.",
+      "context": "Người được chăm sóc nói khăn đã ướt. Cơ sở có khăn sạch để thay. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi trước rồi mới nói sẽ chuẩn bị. Không bỏ qua ý muốn của người đó.",
+      "lines": [
+        "Khăn bị ướt mất rồi.",
+        "Tôi đổi sang khăn mới được không ạ?",
+        "Vâng, nhờ bạn.",
+        "Tôi hiểu rồi. Tôi sẽ chuẩn bị nhé."
+      ]
+    },
+    "SSW-S70": {
+      "title": "Giải thích trước khi thay ga giường",
+      "goal": "Dùng câu ngắn nói rõ vật dụng cần thay và hỏi ý muốn.",
+      "context": "Ga giường cần thay. Thời gian cụ thể và nhân viên thực hiện đã được cơ sở xác nhận. Không dạy động tác ngồi dậy hay nâng chuyển. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Nói rõ sẽ thay ga giường và chấp nhận mong muốn làm sau một chút.",
+      "lines": [
+        "Bạn định làm gì vậy?",
+        "Tôi muốn thay ga giường. Bây giờ có được không ạ?",
+        "Để một lát nữa giúp tôi.",
+        "Tôi hiểu rồi. Tôi sẽ xác nhận thời gian nhé."
+      ]
+    },
+    "SSW-S71": {
+      "title": "Hỏi muốn giặt quần áo nào",
+      "goal": "Xác nhận quần áo muốn đem giặt.",
+      "context": "Cơ sở đã xác nhận những quần áo này có thể giặt. Bạn chỉ hỏi người đó muốn đem giặt chiếc nào. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Để người đó chỉ rõ quần áo, không gom hết mọi thứ đi ngay.",
+      "lines": [
+        "Tôi muốn nhờ giặt quần áo.",
+        "Bác muốn giặt chiếc nào ạ?",
+        "Giặt chiếc áo sơ mi này giúp tôi.",
+        "Chiếc áo sơ mi này, đúng không ạ? Tôi hiểu rồi."
+      ]
+    },
+    "SSW-S72": {
+      "title": "Xác nhận nhãn tên ở đâu",
+      "goal": "Hỏi đồng nghiệp vị trí nhãn tên.",
+      "context": "Đang sắp xếp quần áo của nhân vật hư cấu Sato nhưng chưa kiểm tra nhãn. Không đoán quần áo thuộc về ai dựa vào vẻ ngoài. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi vị trí nhãn rồi mới kiểm tra. Không đoán chủ nhân quần áo.",
+      "lines": [
+        "Bạn đang kiểm tra quần áo của bác Sato à?",
+        "Nhãn ghi tên ở đâu vậy?",
+        "Ở mặt trong cổ áo.",
+        "Mặt trong cổ áo, đúng không? Tôi sẽ kiểm tra."
+      ]
+    },
+    "SSW-S73": {
+      "title": "Báo trước khi đo nhiệt độ",
+      "goal": "Nói rõ việc sắp làm và xin phép.",
+      "context": "Cơ sở đã xác nhận lịch đo nhiệt độ và nhiệm vụ của nhân viên. Bài này không dạy cách đo hay đánh giá số đo. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Giải thích rồi xin phép trước. Không học cách phán đoán thân nhiệt cao hay thấp ở đây.",
+      "lines": [
+        "Bây giờ bạn định làm gì?",
+        "Tôi sẽ đo nhiệt độ. Tôi đo cho bác được không ạ?",
+        "Vâng, nhờ bạn.",
+        "Cảm ơn bác. Tôi sẽ chuẩn bị nhé."
+      ]
+    },
+    "SSW-S74": {
+      "title": "Báo trước khi đo huyết áp",
+      "goal": "Dùng một câu hỏi ngắn để xác nhận ý muốn.",
+      "context": "Cơ sở đã xác nhận lịch đo huyết áp và nhiệm vụ của nhân viên. Bài này không dạy vận hành thiết bị, tư thế hay ngưỡng số đo. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Chỉ cần xin phép. Không yêu cầu người học thuộc thao tác thiết bị hay giải thích y khoa.",
+      "lines": [
+        "Lần này bạn định làm gì?",
+        "Tôi sẽ đo huyết áp. Tôi đo cho bác được không ạ?",
+        "Vâng, tôi hiểu rồi.",
+        "Cảm ơn bác. Tôi sẽ chuẩn bị nhé."
+      ]
+    },
+    "SSW-S75": {
+      "title": "Hỏi điều dưỡng giờ kiểm tra",
+      "goal": "Hỏi rõ thời gian chưa được nói đến.",
+      "context": "Điều dưỡng giao việc kiểm tra nhiệt độ đã được cơ sở sắp xếp nhưng chưa nêu thời gian. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi giờ thực hiện công việc, không tự quyết định tần suất đo.",
+      "lines": [
+        "Nhờ bạn kiểm tra nhiệt độ.",
+        "Tôi cần kiểm tra lúc mấy giờ?",
+        "Nhờ bạn kiểm tra lúc mười giờ.",
+        "Lúc mười giờ, đúng không? Tôi hiểu rồi."
+      ]
+    },
+    "SSW-S76": {
+      "title": "Báo ngay lời than chóng mặt",
+      "goal": "Truyền đạt từ ngữ của người đó và yêu cầu đến hỗ trợ rõ ràng.",
+      "context": "Người được chăm sóc vừa nói chóng mặt. Bạn lập tức nhờ điều dưỡng hỗ trợ, không chẩn đoán hay dạy ngồi dậy, uống nước hoặc cách xử trí. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Báo lời người đó nói về chóng mặt và xin hỗ trợ. Không thêm nguyên nhân hay đề nghị cách xử trí.",
+      "lines": [
+        "Có chuyện gì vậy?",
+        "Bác Sato nói: “Tôi thấy chóng mặt.” Nhờ bạn đến giúp.",
+        "Tôi sẽ tới ngay. Ở đâu vậy?",
+        "Ở phòng ăn. Nhờ bạn nhé."
+      ]
+    },
+    "SSW-S77": {
+      "title": "Hỏi điều dưỡng giờ dùng thuốc",
+      "goal": "Nhờ điều dưỡng xác nhận lịch liên quan đến thuốc.",
+      "context": "Bạn chưa chắc giờ dùng thuốc đã được sắp xếp nên hỏi điều dưỡng. Không đề cập tên thuốc, liều lượng hay tự cho dùng thuốc. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Xác nhận lịch đã sắp xếp. Không quyết định giờ dùng thuốc bằng trí nhớ hay suy đoán.",
+      "lines": [
+        "Bạn muốn xác nhận điều gì?",
+        "Cho tôi biết giờ dùng thuốc của bác Sato nhé.",
+        "Tôi sẽ kiểm tra lịch nhé.",
+        "Nhờ bạn nhé."
+      ]
+    },
+    "SSW-S78": {
+      "title": "Đáp lại việc không muốn uống thuốc",
+      "goal": "Nhắc lại mong muốn và báo rằng sẽ liên hệ điều dưỡng.",
+      "context": "Người được chăm sóc nói không muốn uống thuốc. Bài này không yêu cầu thuyết phục, cũng không quyết định ngừng hay đổi thuốc. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Tiếp nhận và truyền đạt mong muốn. Không ép uống thuốc hay hứa tự ý ngừng thuốc.",
+      "lines": [
+        "Bây giờ tôi không muốn uống thuốc.",
+        "Bây giờ bác không muốn uống, đúng không ạ? Tôi sẽ báo điều dưỡng.",
+        "Tôi muốn có người nghe tôi nói.",
+        "Tôi hiểu rồi. Tôi sẽ gọi điều dưỡng."
+      ]
+    },
+    "SSW-S79": {
+      "title": "Báo đúng điều nhìn thấy về thuốc còn lại",
+      "goal": "Chỉ báo vật dụng và vị trí đã nhìn thấy.",
+      "context": "Bạn thấy còn thuốc trên bàn nhưng không biết trước đó người đó đã dùng thuốc hay đã xảy ra việc gì. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Chỉ nói thấy thuốc còn trên bàn. Không kết luận bỏ liều, nhổ thuốc hay dùng sai thuốc.",
+      "lines": [
+        "Bạn có nhận thấy điều gì không?",
+        "Còn thuốc trên bàn. Nhờ bạn kiểm tra.",
+        "Tôi sẽ kiểm tra ngay.",
+        "Nhờ bạn nhé."
+      ]
+    },
+    "SSW-S80": {
+      "title": "Nói rõ chưa hiểu hướng dẫn về thuốc",
+      "goal": "Nói rõ điều chưa hiểu và xin giải thích.",
+      "context": "Bạn nhận hướng dẫn liên quan đến thuốc nhưng chưa hiểu nghĩa. Bài này không đưa ra quy trình dùng thuốc. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi rõ phần chưa hiểu. Không tự làm khi chưa hiểu hướng dẫn.",
+      "lines": [
+        "Có điều gì bạn chưa hiểu không?",
+        "Tôi chưa hiểu hướng dẫn về thuốc. Bạn giải thích giúp tôi nhé.",
+        "Bạn chưa hiểu phần nào?",
+        "Bạn cho tôi biết nghĩa của từ này nhé."
+      ]
+    },
+    "SSW-S81": {
+      "title": "Thông báo giờ đi khám đã xác nhận",
+      "goal": "Dùng câu ngắn nói thời gian đã được xác nhận.",
+      "context": "Cơ sở đã xác nhận lịch đi khám hôm nay lúc mười giờ. Bạn chỉ truyền đạt lịch đã biết, không bảo đảm lịch trình sẽ không thay đổi. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Chỉ nói thời gian đã xác nhận và giữ rõ ý “dự kiến”.",
+      "lines": [
+        "Mấy giờ đi bệnh viện vậy?",
+        "Hôm nay dự kiến đi khám lúc mười giờ ạ.",
+        "Mười giờ, đúng không?",
+        "Vâng. Nếu lịch thay đổi, tôi sẽ báo bác."
+      ]
+    },
+    "SSW-S82": {
+      "title": "Hỏi giờ và nơi phục hồi chức năng",
+      "goal": "Hỏi rõ lịch hoạt động rồi nhắc lại ngắn gọn.",
+      "context": "Đồng nghiệp nhờ chuẩn bị hoạt động phục hồi chức năng đã được cơ sở sắp xếp. Không đề cập nội dung tập hay đánh giá hoạt động có phù hợp hay không. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi cả thời gian và địa điểm. Không tự thêm địa điểm hoạt động.",
+      "lines": [
+        "Nhờ bạn chuẩn bị cho hoạt động phục hồi chức năng.",
+        "Hoạt động bắt đầu lúc mấy giờ và ở đâu?",
+        "Bắt đầu lúc hai giờ, tại phòng ở tầng trệt (tầng 1 theo cách đếm ở Nhật).",
+        "Hai giờ, tầng trệt, đúng không? Tôi hiểu rồi."
+      ]
+    },
+    "SSW-S83": {
+      "title": "Hỏi muốn mang gì khi ra ngoài",
+      "goal": "Xác nhận người đó muốn mang theo vật gì.",
+      "context": "Việc ra ngoài đã được cơ sở xác nhận. Đang chuẩn bị đồ dùng cá nhân có thể mang theo. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi mong muốn rồi xác nhận vật dụng. Không chọn thay người đó.",
+      "lines": [
+        "Tôi đang chuẩn bị ra ngoài.",
+        "Bác có muốn mang theo thứ gì không ạ?",
+        "Tôi muốn mang theo mũ.",
+        "Mũ, đúng không ạ? Tôi sẽ chuẩn bị ở đây."
+      ]
+    },
+    "SSW-S84": {
+      "title": "Hỏi có muốn nghỉ sau khi trở về",
+      "goal": "Xác nhận người đó có muốn nghỉ không.",
+      "context": "Người được chăm sóc đã ra ngoài theo sắp xếp của cơ sở và trở về. Bài này chỉ hỏi ý muốn nghỉ. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi mong muốn. Không tự quyết định hoạt động tiếp theo chỉ vì người đó vừa đi ra ngoài về.",
+      "lines": [
+        "Tôi về rồi.",
+        "Mừng bác về. Bác có muốn nghỉ một chút không ạ?",
+        "Vâng, tôi muốn nghỉ.",
+        "Tôi hiểu rồi. Khi cần gì, bác cứ gọi nhé."
+      ]
+    },
+    "SSW-S85": {
+      "title": "Hỏi tên khách và lý do đến",
+      "goal": "Dùng cách nói lịch sự, ngắn gọn để hỏi thông tin khách.",
+      "context": "Lần đầu gặp khách. Các tên Yamada và Sato đều hư cấu. Không tiết lộ thông tin người được chăm sóc trước khi xác minh danh tính khách. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi tên và mục đích đến trước, rồi liên hệ người phụ trách theo quy định cơ sở.",
+      "lines": [
+        "Xin chào. Đây là lần đầu tôi đến.",
+        "Xin cho biết tên và lý do đến ạ.",
+        "Tôi là Yamada. Tôi đến thăm bác Sato.",
+        "Tôi sẽ xác nhận với nhân viên phụ trách. Xin vui lòng chờ."
+      ]
+    },
+    "SSW-S86": {
+      "title": "Chuyển câu hỏi chưa biết của khách cho người phụ trách",
+      "goal": "Không đoán câu trả lời; giải thích sẽ liên hệ nhân viên phụ trách.",
+      "context": "Khách hỏi về tình hình mà bạn không nắm rõ. Danh tính khách và quyền được nhận thông tin chưa được xác minh. Bài này không chuyển thông tin bệnh trạng. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Không bịa tình trạng sức khỏe hay tự ý tiết lộ thông tin. Chuyển cho nhân viên phụ trách.",
+      "lines": [
+        "Sức khỏe bác Sato thế nào rồi?",
+        "Tôi không nắm rõ. Tôi sẽ xác nhận với nhân viên phụ trách.",
+        "Tôi muốn hỏi người phụ trách.",
+        "Vâng, tôi hiểu. Tôi sẽ gọi nhân viên phụ trách."
+      ]
+    },
+    "SSW-S87": {
+      "title": "Xác nhận ngắn lời nhắn qua điện thoại",
+      "goal": "Hỏi rõ ai để lại lời nhắn và nội dung là gì.",
+      "context": "Đồng nghiệp chuyển một lời nhắn điện thoại hư cấu. Không có số điện thoại hay thông tin liên hệ riêng tư thật. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi rõ nguồn và nội dung. Khi truyền đạt, không thêm điều chưa nghe thấy.",
+      "lines": [
+        "Bạn truyền lại lời nhắn của cuộc gọi lúc nãy được không?",
+        "Lời nhắn từ ai và nội dung là gì?",
+        "Từ Yamada-san. Người đó nói sẽ gọi sau.",
+        "Lời nhắn từ Yamada-san là sẽ gọi sau, đúng không?"
+      ]
+    },
+    "SSW-S88": {
+      "title": "Hỏi muốn nhắn gì cho gia đình",
+      "goal": "Xác nhận người đó muốn liên hệ ai và nói điều gì.",
+      "context": "Người được chăm sóc muốn liên hệ gia đình. Phương thức và thời gian cần xác nhận theo quy định cơ sở. Không hứa gia đình chắc chắn sẽ đến thăm. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Xác nhận mong muốn, không biến “muốn gặp gia đình” thành đã hẹn thăm.",
+      "lines": [
+        "Tôi muốn liên lạc với gia đình.",
+        "Bác muốn nhắn với ai, và nhắn điều gì ạ?",
+        "Tôi muốn nhắn với con gái rằng tôi muốn gặp con.",
+        "Tôi hiểu rồi. Tôi sẽ xác nhận cách liên lạc."
+      ]
+    },
+    "SSW-S89": {
+      "title": "Nói rõ đây là diễn tập sơ tán",
+      "goal": "Nói rõ đây là buổi diễn tập.",
+      "context": "Cơ sở đã sắp xếp diễn tập sơ tán từ trước, nhân viên phụ trách hướng dẫn. Không dùng bài này để dạy tuyến đường khi cháy thật hay thao tác di chuyển người. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Nêu rõ là diễn tập, không gây hiểu nhầm đang có thiên tai hoặc sự cố thật.",
+      "lines": [
+        "Hôm nay có việc gì vậy?",
+        "Sắp có buổi diễn tập sơ tán ạ.",
+        "Có cháy thật à?",
+        "Không ạ, đây là diễn tập. Nhân viên sẽ hướng dẫn."
+      ]
+    },
+    "SSW-S90": {
+      "title": "Hỏi lại nơi tập trung diễn tập",
+      "goal": "Nhờ đồng nghiệp nhắc lại một địa điểm chưa nghe rõ.",
+      "context": "Đây là buổi diễn tập đã được sắp xếp trước. Bạn chưa nghe rõ nơi tập trung do cơ sở chỉ định. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Chỉ hỏi địa điểm chưa nghe rõ. Không đoán đường đi hay nơi tập trung.",
+      "lines": [
+        "Trước buổi diễn tập, hãy tập trung ở phòng sinh hoạt chung.",
+        "Bạn nhắc lại nơi tập trung giúp tôi nhé.",
+        "Ở phòng sinh hoạt chung.",
+        "Phòng sinh hoạt chung, đúng không? Tôi hiểu rồi."
+      ]
+    },
+    "SSW-S91": {
+      "title": "Nhờ hỗ trợ khi thấy đồ ở hành lang",
+      "goal": "Nói vật dụng và vị trí, đồng thời nhờ đồng nghiệp đến.",
+      "context": "Thấy có đồ ở hành lang, cần nhân viên phụ trách kiểm tra. Không tự quyết định cách xử lý hay di chuyển người được chăm sóc. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Nói rõ vật dụng, vị trí đã thấy và trực tiếp nhờ kiểm tra.",
+      "lines": [
+        "Có chuyện gì không?",
+        "Có đồ ở hành lang. Bạn đến giúp tôi được không?",
+        "Tôi sẽ đến ngay. Ở đoạn nào vậy?",
+        "Trước phòng ăn."
+      ]
+    },
+    "SSW-S92": {
+      "title": "Báo tiếng máy khác thường",
+      "goal": "Chỉ mô tả điều bất thường đã quan sát và nhờ đồng nghiệp kiểm tra.",
+      "context": "Thiết bị chưa có người sử dụng phát ra tiếng khác thường, cần người phụ trách kiểm tra. Không dạy sửa chữa hay vận hành. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Mô tả tiếng đã nghe. Không tự chẩn đoán hỏng hóc hay đề nghị cách sửa.",
+      "lines": [
+        "Có chuyện gì vậy?",
+        "Máy này phát ra tiếng khác với bình thường.",
+        "Tôi sẽ kiểm tra ngay.",
+        "Nhờ bạn nhé. Máy ở đây."
+      ]
+    },
+    "SSW-S93": {
+      "title": "Hỏi muốn đặt kính ở đâu",
+      "goal": "Xác nhận mong muốn về nơi đặt đồ cá nhân.",
+      "context": "Người được chăm sóc muốn để kính bên cạnh. Cơ sở đã xác nhận chỗ có thể đặt đồ. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi muốn đặt ở đâu trước. Không tự quyết định thay người đó.",
+      "lines": [
+        "Tôi muốn để kính bên cạnh.",
+        "Bác muốn đặt kính ở đâu ạ?",
+        "Đặt trên bàn giúp tôi.",
+        "Tôi hiểu rồi. Tôi sẽ đặt ở đây nhé."
+      ]
+    },
+    "SSW-S94": {
+      "title": "Gọi người phụ trách khi đeo máy trợ thính vẫn khó nghe",
+      "goal": "Nhắc lại cảm nhận khó nghe và nói sẽ nhờ người phụ trách kiểm tra.",
+      "context": "Người được chăm sóc nói vẫn khó nghe khi đeo máy trợ thính. Không dạy điều chỉnh, đeo máy hay chẩn đoán. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Cho thấy đã nghe cảm nhận của người đó và liên hệ người phụ trách. Không tự điều chỉnh máy trợ thính.",
+      "lines": [
+        "Dù đeo máy trợ thính, tôi vẫn khó nghe.",
+        "Bác vẫn khó nghe, đúng không ạ? Tôi sẽ gọi nhân viên phụ trách.",
+        "Nhờ bạn nhé.",
+        "Tôi hiểu rồi. Tôi sẽ nhờ kiểm tra."
+      ]
+    },
+    "SSW-S95": {
+      "title": "Xác nhận chủ nhân của đồ nhặt được",
+      "goal": "Khi chưa biết đồ của ai, hỏi trước.",
+      "context": "Nhặt được một chiếc kính nhưng chưa biết chủ nhân. Không nói thông tin chưa rõ thành sự thật chắc chắn. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Khi chưa biết đồ của ai, giữ rõ là chưa xác nhận. Không kết luận chủ nhân chỉ qua vẻ ngoài.",
+      "lines": [
+        "Bạn đang cầm gì vậy?",
+        "Chiếc kính này là của ai ạ?",
+        "Tôi cũng chưa biết.",
+        "Tôi hiểu rồi. Tôi sẽ xác nhận với nhân viên phụ trách."
+      ]
+    },
+    "SSW-S96": {
+      "title": "Hỏi có với tới nút gọi không",
+      "goal": "Xác nhận đồ dùng có ở vị trí người đó với tới được không.",
+      "context": "Nút gọi đã được đặt theo sắp xếp của cơ sở. Hỏi người đó có với tới không; không dựa vào câu trả lời để tự đánh giá khả năng vận động. Tình huống chỉ dùng để luyện giao tiếp. Khi làm việc thực tế, tuân theo kế hoạch của cơ sở và hướng dẫn của người phụ trách. Nhân vật và thông tin đều hư cấu.",
+      "check": "Hỏi có với tới không. Không chỉ nói đã đặt xong rồi rời đi.",
+      "lines": [
+        "Nút gọi ở đâu vậy?",
+        "Ở đây ạ. Bác có với tới không?",
+        "Vâng, tôi với tới.",
+        "Khi cần gì, bác hãy dùng nút này để gọi nhé."
+      ]
+    }
+  }
+}

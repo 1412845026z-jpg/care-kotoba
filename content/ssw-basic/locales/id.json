@@ -1,0 +1,1232 @@
+{
+  "locale": "id",
+  "status": "draft_unreviewed",
+  "topics": {
+    "T01": {
+      "title": "Salam dan keluar masuk kamar"
+    },
+    "T02": {
+      "title": "Meminta penjelasan ulang"
+    },
+    "T03": {
+      "title": "Memastikan instruksi rekan kerja"
+    },
+    "T04": {
+      "title": "Bangun, istirahat, dan tidur"
+    },
+    "T05": {
+      "title": "Pakaian dan kerapian diri"
+    },
+    "T06": {
+      "title": "Persiapan sebelum makan"
+    },
+    "T07": {
+      "title": "Makan dan minum"
+    },
+    "T08": {
+      "title": "Perawatan mulut dan wajah"
+    },
+    "T09": {
+      "title": "Komunikasi tentang toilet"
+    },
+    "T10": {
+      "title": "Mandi dan kebersihan"
+    },
+    "T11": {
+      "title": "Berpindah tempat dan transfer"
+    },
+    "T12": {
+      "title": "Kamar dan lingkungan sehari-hari"
+    },
+    "T13": {
+      "title": "Kegiatan dan percakapan sehari-hari"
+    },
+    "T14": {
+      "title": "Menanggapi kekhawatiran"
+    },
+    "T15": {
+      "title": "Pengamatan dan laporan singkat"
+    },
+    "T16": {
+      "title": "Komunikasi tim dan meminta bantuan"
+    },
+    "T17": {
+      "title": "Mencuci tangan dan pencegahan infeksi"
+    },
+    "T18": {
+      "title": "Cucian dan perlengkapan tempat tidur"
+    },
+    "T19": {
+      "title": "Menanyakan kondisi tubuh"
+    },
+    "T20": {
+      "title": "Komunikasi tentang obat"
+    },
+    "T21": {
+      "title": "Jadwal dan keluar fasilitas"
+    },
+    "T22": {
+      "title": "Tamu dan keluarga"
+    },
+    "T23": {
+      "title": "Keselamatan dan latihan bencana"
+    },
+    "T24": {
+      "title": "Alat bantu sehari-hari"
+    }
+  },
+  "scenes": {
+    "SSW-S01": {
+      "title": "Memastikan nama panggilan",
+      "goal": "Perkenalkan diri, lalu pastikan secara singkat panggilan yang diinginkan lawan bicara.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Pertemuan pertama dengan penghuni setelah dikenalkan oleh petugas penanggung jawab.",
+      "check": "Gunakan panggilan yang disampaikan penghuni. Tidak perlu ungkapan hormat yang rumit.",
+      "lines": [
+        "Saya Hayashi, yang mulai bertugas mendampingi Anda hari ini. Boleh tahu nama Anda?",
+        "Nama saya Yamada. Silakan panggil saya Yamada-san.",
+        "Yamada-san, ya. Senang berkenalan dengan Anda.",
+        "Ya, saya juga senang berkenalan dengan Anda."
+      ]
+    },
+    "SSW-S02": {
+      "title": "Meminta izin masuk",
+      "goal": "Tanyakan sebelum masuk kamar, lalu tunggu persetujuan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Anda masih berada di luar pintu kamar dan belum masuk.",
+      "check": "Dapatkan persetujuan sebelum mengatakan akan masuk. Jika ditolak, jangan memaksa masuk.",
+      "lines": [
+        "Yamada-san, ini Hayashi. Bolehkah saya masuk?",
+        "Ya, silakan.",
+        "Terima kasih. Permisi.",
+        "Silakan ke sini."
+      ]
+    },
+    "SSW-S03": {
+      "title": "Menanyakan kabar pada pagi hari",
+      "goal": "Tanyakan perasaan hari ini dengan satu sapaan sederhana.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Sapaan rutin pada pagi hari. Tidak membuat diagnosis.",
+      "check": "Ulangi secara singkat perasaan yang disampaikan penghuni. Jangan menambahkan penyebab atau penilaian.",
+      "lines": [
+        "Selamat pagi. Bagaimana keadaan Anda hari ini?",
+        "Saya sedikit mengantuk.",
+        "Anda sedikit mengantuk, ya.",
+        "Ya, saya masih mengantuk."
+      ]
+    },
+    "SSW-S04": {
+      "title": "Menjelaskan cara memanggil saat perlu bantuan",
+      "goal": "Sebelum pergi, jelaskan tombol panggil yang sudah dipastikan dapat digunakan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Sebelum Anda pergi, fasilitas sudah memastikan tombol panggil berfungsi dan berada di tempat yang dapat digunakan penghuni.",
+      "check": "Pastikan letak tombol. Jangan menjanjikan waktu kedatangan tertentu.",
+      "lines": [
+        "Jika perlu sesuatu, silakan panggil dengan tombol ini.",
+        "Saya cukup menekan di sini?",
+        "Ya, yang ini. Silakan panggil jika perlu sesuatu.",
+        "Baik, saya mengerti."
+      ]
+    },
+    "SSW-S05": {
+      "title": "Meminta diulangi sekali lagi",
+      "goal": "Jika kurang jelas mendengar, langsung minta agar diulangi.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Rekan kerja sedang menjelaskan letak barang.",
+      "check": "Jelaskan bahwa Anda belum mendengar dengan jelas atau minta diulangi. Jangan hanya menjawab ya.",
+      "lines": [
+        "Handuk ada di atas rak itu.",
+        "Maaf, bisa diulangi sekali lagi?",
+        "Handuk ada di atas rak itu.",
+        "Di atas rak, ya. Terima kasih."
+      ]
+    },
+    "SSW-S06": {
+      "title": "Meminta bicara lebih pelan",
+      "goal": "Minta lawan bicara memperlambat ucapannya jika sulit mengikuti.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Rekan kerja menyampaikan waktu dan tempat kegiatan berikutnya.",
+      "check": "Cukup minta bicara lebih pelan. Memisahkan baris teks tidak berarti rekaman sudah diperlambat.",
+      "lines": [
+        "Silakan datang ke ruang bersama pada pukul dua.",
+        "Maaf, bisa bicara lebih pelan?",
+        "Pukul dua. Tempatnya di ruang bersama.",
+        "Pukul dua di ruang bersama, ya."
+      ]
+    },
+    "SSW-S07": {
+      "title": "Menanyakan arti sebuah istilah",
+      "goal": "Tanyakan arti istilah kerja tertentu yang belum dipahami.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Rekan kerja menyebut nama ruang penyimpanan barang.",
+      "check": "Sebutkan istilah yang belum dipahami. Jangan menebak artinya.",
+      "lines": [
+        "Celemek ada di ruang linen.",
+        "Apa itu ruang linen?",
+        "Ruang untuk menyimpan handuk dan barang sejenisnya.",
+        "Baik, saya mengerti. Tolong beri tahu juga letaknya."
+      ]
+    },
+    "SSW-S08": {
+      "title": "Meminta penjelasan satu per satu",
+      "goal": "Jika menerima beberapa informasi sekaligus, minta agar dijelaskan terpisah.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Rekan kerja menjelaskan dua tugas persiapan biasa sekaligus.",
+      "check": "Minta penjelasan bertahap atau tugas pertama dahulu. Tidak perlu menghafal seluruh rangkaian sekaligus.",
+      "lines": [
+        "Tolong bawa handuk dan susun juga gelasnya.",
+        "Maaf, bisa dijelaskan satu per satu?",
+        "Pertama, tolong bawa handuk ke ruang bersama.",
+        "Pertama, saya membawa handuk ke ruang bersama, ya."
+      ]
+    },
+    "SSW-S09": {
+      "title": "Menanyakan untuk siapa",
+      "goal": "Jika instruksi belum menyebut orang yang dimaksud, tanyakan dahulu.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Rekan kerja meminta Anda mengambil handuk, tetapi belum menyebut penggunanya.",
+      "check": "Pastikan orang yang dimaksud. Kata tanya biasa dengan bentuk kalimat sopan juga dapat diterima.",
+      "lines": [
+        "Tolong ambilkan handuk.",
+        "Handuk siapa?",
+        "Handuk Yamada-san.",
+        "Handuk Yamada-san, ya."
+      ]
+    },
+    "SSW-S10": {
+      "title": "Memastikan barang dan tempat",
+      "goal": "Tanyakan barang dan tempat jika keduanya belum jelas.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Permintaan persiapan biasa dari rekan kerja belum cukup spesifik.",
+      "check": "Pastikan barang dan tempat. Jangan menebak barang yang dimaksud dengan kata itu.",
+      "lines": [
+        "Tolong letakkan itu di kamar.",
+        "Barang apa yang harus saya letakkan, dan di kamar mana?",
+        "Tolong letakkan kotak ini di ruang staf.",
+        "Saya meletakkan kotak ini di ruang staf, ya."
+      ]
+    },
+    "SSW-S11": {
+      "title": "Menanyakan batas waktu",
+      "goal": "Setelah memahami tugasnya, tanyakan kapan harus selesai.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Tugas persiapan barang biasa, tetapi batas waktunya belum disampaikan.",
+      "check": "Tanyakan batas waktu selesai. Bedakan pertanyaan waktu mulai dan batas waktu penyelesaian.",
+      "lines": [
+        "Tolong susun gelas di ruang makan.",
+        "Paling lambat pukul berapa gelasnya harus selesai disusun?",
+        "Tolong selesai paling lambat pukul sebelas tiga puluh.",
+        "Paling lambat pukul sebelas tiga puluh, ya. Baik, saya mengerti."
+      ]
+    },
+    "SSW-S12": {
+      "title": "Mengulangi instruksi secara singkat",
+      "goal": "Ulangi barang, jumlah, dan tempat yang sudah didengar dengan jelas.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Tugas persiapan barang biasa dengan informasi yang sudah lengkap.",
+      "check": "Pertahankan informasi barang, jumlah, dan tempat. Tidak harus mengulang persis setiap kata.",
+      "lines": [
+        "Tolong bawakan dua gelas ke ruang makan.",
+        "Saya membawa dua gelas ke ruang makan, ya.",
+        "Ya, tolong.",
+        "Baik, saya mengerti. Saya akan membawanya."
+      ]
+    },
+    "SSW-S13": {
+      "title": "Menanyakan keinginan untuk bangun",
+      "goal": "Tanyakan apakah penghuni ingin bangun sekarang dan terima keinginannya.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Fasilitas sudah memastikan waktu bangun dapat disesuaikan dengan keinginan penghuni saat ini. Tidak melatih teknik bangun dari tempat tidur.",
+      "check": "Terima keinginan penghuni terlebih dahulu. Jangan menjawab dengan memaksa bangun.",
+      "lines": [
+        "Sudah pagi. Apakah Anda ingin bangun sekarang?",
+        "Saya ingin tidur sebentar lagi.",
+        "Baik, saya mengerti. Nanti saya datang lagi.",
+        "Ya, terima kasih."
+      ]
+    },
+    "SSW-S14": {
+      "title": "Menanyakan keinginan untuk beristirahat",
+      "goal": "Ketika mendengar keluhan lelah, tanyakan apakah penghuni ingin beristirahat.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Setelah kegiatan sehari-hari. Pengaturan mengikuti rencana fasilitas, tanpa menilai penyebab kelelahan.",
+      "check": "Tanggapi rasa lelah dan tanyakan keinginan penghuni. Jangan langsung menilai kondisi medisnya.",
+      "lines": [
+        "Saya sedikit lelah.",
+        "Apakah Anda ingin beristirahat sebentar?",
+        "Ya, saya ingin beristirahat sebentar di sini.",
+        "Baik, mari beristirahat sebentar."
+      ]
+    },
+    "SSW-S15": {
+      "title": "Menanyakan penerangan sebelum tidur",
+      "goal": "Sebelum tidur, pastikan tingkat penerangan yang diinginkan penghuni.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Fasilitas sudah memastikan penerangan dapat diatur. Latihan ini hanya membahas satu pilihan lingkungan.",
+      "check": "Dengarkan keinginan untuk tetap menyisakan cahaya. Jangan selalu mematikan semua lampu.",
+      "lines": [
+        "Sebelum tidur, bolehkah saya mematikan lampu?",
+        "Tolong sisakan sedikit cahaya.",
+        "Saya biarkan sedikit terang, ya.",
+        "Ya, seperti itu saja."
+      ]
+    },
+    "SSW-S16": {
+      "title": "Menanggapi cerita kurang tidur",
+      "goal": "Ketika penghuni berkata kurang tidur, tanggapi dahulu perkataannya.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Percakapan sederhana pada pagi hari. Tidak menebak penyebab atau memberi saran obat maupun pengobatan.",
+      "check": "Cukup ulangi pengalaman yang disampaikan penghuni. Jangan menambahkan penyebab sulit tidur.",
+      "lines": [
+        "Apakah Anda tidur nyenyak tadi malam?",
+        "Saya kurang bisa tidur.",
+        "Anda kurang bisa tidur, ya.",
+        "Ya, saya terbangun berkali-kali."
+      ]
+    },
+    "SSW-S17": {
+      "title": "Memilih pakaian",
+      "goal": "Tunjukkan dua pakaian yang sudah dipastikan dapat dipakai dan biarkan penghuni memilih.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Kedua pakaian milik penghuni dan sudah dipastikan dapat disediakan.",
+      "check": "Ulangi pilihan penghuni. Jangan mengatakan bahwa Anda yang akan memutuskan.",
+      "lines": [
+        "Hari ini Anda ingin memakai yang mana?",
+        "Saya ingin memakai yang biru.",
+        "Yang biru, ya. Saya siapkan di sini.",
+        "Ya, terima kasih."
+      ]
+    },
+    "SSW-S18": {
+      "title": "Menanyakan bantuan saat berganti pakaian",
+      "goal": "Tanyakan terlebih dahulu bagian mana yang memerlukan bantuan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Bantuan berganti pakaian yang diizinkan dalam rencana fasilitas. Tidak melatih tindakan fisik tertentu.",
+      "check": "Pertahankan batas hanya pada bagian yang diminta. Biarkan penghuni melakukan bagian yang dapat dikerjakan sendiri.",
+      "lines": [
+        "Saat berganti pakaian, bagian mana yang perlu saya bantu?",
+        "Tolong kancingnya saja.",
+        "Kancingnya saja, ya. Saya bantu.",
+        "Ya, bagian lainnya bisa saya lakukan sendiri."
+      ]
+    },
+    "SSW-S19": {
+      "title": "Menanggapi keinginan menjaga privasi",
+      "goal": "Saat mendengar kekhawatiran sebelum berganti pakaian, utamakan privasi penghuni.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Sebelum membantu berganti pakaian. Penutup untuk menjaga privasi sudah dipastikan tersedia oleh fasilitas.",
+      "check": "Tanggapi kebutuhan privasi dahulu, lalu gunakan penutup setelah mendapat persetujuan.",
+      "lines": [
+        "Saya tidak ingin dilihat saat berganti pakaian.",
+        "Bolehkah saya menutup tirainya?",
+        "Ya, tolong tutup.",
+        "Baik, saya tutup tirainya."
+      ]
+    },
+    "SSW-S20": {
+      "title": "Menanyakan rasa dingin atau panas terkait pakaian",
+      "goal": "Tanggapi rasa dingin atau panas dengan menanyakan pilihan pakaian yang tersedia.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Fasilitas sudah memastikan satu pakaian milik penghuni dapat ditambahkan. Tidak menilai suhu tubuh atau penyebab keluhan.",
+      "check": "Tanyakan keinginan penghuni. Jangan membuat penilaian medis hanya dari kata dingin.",
+      "lines": [
+        "Saya sedikit kedinginan.",
+        "Apakah Anda ingin memakai satu lapis baju lagi?",
+        "Ya, saya ingin jaket yang itu.",
+        "Jaket yang itu, ya. Saya ambilkan."
+      ]
+    },
+    "SSW-S21": {
+      "title": "Memberi tahu waktu makan",
+      "goal": "Beri tahu waktu makan dengan kata sederhana dan tanyakan apakah ingin ke ruang makan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Jadwal makan fasilitas sudah diperiksa. Tidak melatih teknik membantu berpindah.",
+      "check": "Pastikan keinginan penghuni. Latihan ajakan ke suatu tempat ini tidak membuktikan cara berpindah yang aman.",
+      "lines": [
+        "Sudah waktunya makan siang. Apakah Anda ingin ke ruang makan?",
+        "Ya, saya ingin ke ruang makan.",
+        "Baik, mari kita pergi bersama.",
+        "Ya, terima kasih."
+      ]
+    },
+    "SSW-S22": {
+      "title": "Menanyakan pilihan tempat duduk",
+      "goal": "Tanyakan pilihan di antara tempat duduk yang sudah dipastikan dapat digunakan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Fasilitas sudah memastikan kedua tempat duduk sesuai untuk penghuni.",
+      "check": "Pahami lokasi yang dipilih. Jangan mengganti pilihan penghuni dengan pilihan staf.",
+      "lines": [
+        "Anda ingin dekat jendela atau di sini?",
+        "Saya ingin dekat jendela.",
+        "Dekat jendela, ya. Mari pilih yang di sana.",
+        "Ya, saya suka karena bisa melihat ke luar."
+      ]
+    },
+    "SSW-S23": {
+      "title": "Memberi tahu menu hari ini",
+      "goal": "Saat ditanya menu, sampaikan hanya informasi yang sudah diperiksa.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Menu untuk penghuni pada waktu makan ini sudah diperiksa. Tidak menilai kecocokan makanan dengan penyakit.",
+      "check": "Jawab hanya menu yang sudah dipastikan. Jika belum tahu, periksa dahulu dan jangan menebak.",
+      "lines": [
+        "Apa menu makan siang hari ini?",
+        "Lauknya hari ini ikan.",
+        "Ikan, ya. Saya menantikannya.",
+        "Ya. Setelah siap, saya akan memberi tahu Anda."
+      ]
+    },
+    "SSW-S24": {
+      "title": "Menanyakan letak handuk basah",
+      "goal": "Tanyakan kepada rekan kerja letak barang yang akan disiapkan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Persiapan biasa sebelum makan. Barang sudah dipastikan dapat digunakan untuk waktu makan ini.",
+      "check": "Pasangkan barang dan letaknya dengan benar. Tidak perlu kalimat panjang.",
+      "lines": [
+        "Handuk basah dan gelas ada di mana?",
+        "Handuk basah ada di rak, dan gelas ada di atas meja.",
+        "Handuk basah di rak dan gelas di atas meja, ya.",
+        "Ya, benar begitu."
+      ]
+    },
+    "SSW-S25": {
+      "title": "Menanyakan pilihan minuman",
+      "goal": "Tanyakan pilihan di antara minuman yang sudah dipastikan boleh disediakan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Fasilitas sudah memeriksa rencana individu dan memastikan air putih serta teh dalam adegan ini boleh disediakan.",
+      "check": "Pastikan pilihan penghuni. Latihan bahasa ini bukan penilaian keamanan makanan atau minuman.",
+      "lines": [
+        "Anda ingin teh atau air putih?",
+        "Tolong teh.",
+        "Teh, ya. Saya siapkan.",
+        "Terima kasih."
+      ]
+    },
+    "SSW-S26": {
+      "title": "Menanyakan pilihan suhu minuman",
+      "goal": "Tanyakan pilihan suhu sebelum menyediakan minuman.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Rentang suhu yang dapat diberikan sudah dipastikan fasilitas. Prosedur memastikan suhu tidak termasuk dalam pelajaran ini.",
+      "check": "Pahami pilihan suhu. Kata hangat saja tidak menjamin suhu minuman yang sebenarnya aman.",
+      "lines": [
+        "Apakah Anda lebih suka teh yang hangat?",
+        "Tolong biarkan agak dingin dulu.",
+        "Saya biarkan agak dingin dahulu, lalu saya bawakan.",
+        "Ya, terima kasih."
+      ]
+    },
+    "SSW-S27": {
+      "title": "Beristirahat saat makan",
+      "goal": "Ketika penghuni merasa terlalu cepat, tanggapi dan tanyakan apakah ingin beristirahat.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Penghuni memiliki rencana bantuan makan yang sudah dipastikan. Tidak mengajarkan teknik menyuapi atau menelan.",
+      "check": "Tanggapi perkataan terlalu cepat dan tanyakan apakah ingin berhenti sebentar. Jangan mendesak agar makan lebih banyak atau terus makan.",
+      "lines": [
+        "Sedikit terlalu cepat.",
+        "Saya perlambat, ya. Apakah Anda ingin beristirahat sebentar?",
+        "Ya, saya ingin beristirahat sebentar.",
+        "Baik, mari beristirahat sebentar."
+      ]
+    },
+    "SSW-S28": {
+      "title": "Belum ingin makan sekarang",
+      "goal": "Ketika penghuni menolak makan, terima dahulu perkataannya.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Melatih komunikasi tentang keinginan penghuni. Konfirmasi dan pelaporan selanjutnya mengikuti rencana fasilitas, tanpa membuat keputusan gizi atau pengobatan.",
+      "check": "Pahami penolakan dahulu. Jangan menuntut alasan atau menekan penghuni.",
+      "lines": [
+        "Apakah Anda ingin makan?",
+        "Sekarang saya tidak ingin makan.",
+        "Sekarang Anda tidak ingin makan, ya. Baik, saya mengerti.",
+        "Ya, untuk sekarang tidak perlu."
+      ]
+    },
+    "SSW-S29": {
+      "title": "Menanyakan keinginan menyikat gigi",
+      "goal": "Tanyakan keinginan penghuni sebelum memulai kebersihan mulut.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Rencana bantuan kebersihan mulut individu sudah dipastikan. Tidak mengajarkan teknik pembersihan atau tindakan pada mulut.",
+      "check": "Terima keinginan penghuni untuk melakukannya sendiri. Jangan langsung mengambil alih.",
+      "lines": [
+        "Makannya sudah selesai, ya. Apakah Anda ingin menyikat gigi?",
+        "Ya, saya ingin menyikat gigi sendiri.",
+        "Anda ingin melakukannya sendiri, ya. Saya siapkan perlengkapannya.",
+        "Ya, terima kasih."
+      ]
+    },
+    "SSW-S30": {
+      "title": "Menyiapkan sikat gigi",
+      "goal": "Sebelum menyiapkan perlengkapan mulut, pastikan pemilik dan letaknya kepada rekan kerja.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Perlengkapan pribadi yang sudah dipastikan fasilitas. Pelajaran ini hanya melatih bertanya, bukan cara penggunaan.",
+      "check": "Pastikan perlengkapan pribadi yang benar. Jangan menebak pemilik berdasarkan penampilannya.",
+      "lines": [
+        "Di mana sikat gigi dan gelas Yamada-san?",
+        "Di dalam keranjang yang ada namanya.",
+        "Keranjang yang ada namanya, ya. Saya periksa.",
+        "Ya, tolong periksa namanya."
+      ]
+    },
+    "SSW-S31": {
+      "title": "Menanyakan tempat gigi palsu",
+      "goal": "Tanyakan kepada rekan kerja tempat penyimpanan yang sudah ditetapkan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Tidak mengambil, memasang, atau melepas gigi palsu. Hanya memastikan lokasi yang ditetapkan fasilitas.",
+      "check": "Pastikan hanya pemilik dan tempatnya. Cara menangani gigi palsu tidak termasuk latihan ini.",
+      "lines": [
+        "Gigi palsu Yamada-san diletakkan di mana?",
+        "Disimpan di dalam wadah yang ada namanya.",
+        "Wadah yang bertuliskan nama Yamada-san, ya.",
+        "Ya. Tempatnya di sini."
+      ]
+    },
+    "SSW-S32": {
+      "title": "Meminta izin sebelum mengusap wajah",
+      "goal": "Sebelum menyentuh wajah, jelaskan maksud dan minta persetujuan.",
+      "context": "Fasilitas dan orang dalam adegan ini fiktif. Fasilitas telah memastikan bahwa barang, waktu, dan bantuan yang disebutkan sesuai dengan rencana dukungan individu. Handuk dan bentuk bantuan sudah dipastikan sesuai rencana individu. Tidak mengajarkan teknik pembersihan.",
+      "check": "Dapatkan persetujuan sebelum menjelaskan langkah berikutnya. Diam bukan berarti setuju.",
+      "lines": [
+        "Bolehkah saya mengusap wajah Anda dengan handuk?",
+        "Ya, tolong.",
+        "Baik, saya usap wajah Anda sekarang.",
+        "Terima kasih."
+      ]
+    },
+    "SSW-S33": {
+      "title": "Menanyakan keinginan ke toilet",
+      "goal": "Pastikan keinginan ke toilet dengan pertanyaan singkat yang menjaga privasi.",
+      "context": "Berbicara pelan di dalam kamar. Fasilitas sudah memastikan bantuan ke toilet dapat diberikan sesuai rencana individu. Hanya melatih konfirmasi keinginan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Tanggapi keinginan penghuni dahulu, lalu tanyakan apakah perlu bantuan. Jangan menanyakan dengan keras di tempat umum.",
+      "lines": [
+        "Saya bertanya dengan suara pelan, ya. Apakah Anda ingin ke toilet?",
+        "Ya. Sepertinya sudah waktunya saya ke toilet.",
+        "Sekarang Anda ingin ke toilet, ya. Apakah perlu saya bantu?",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S34": {
+      "title": "Menanyakan alasan panggilan",
+      "goal": "Setelah menerima panggilan, tanyakan dahulu apa yang diperlukan penghuni.",
+      "context": "Staf sudah tiba di kamar, tetapi belum mengetahui alasan penghuni menekan bel panggil. Pastikan keperluannya tanpa menebak. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Ulangi kebutuhan yang disampaikan penghuni. Jangan menambahkan nyeri, kebocoran urine, atau alasan lain sendiri.",
+      "lines": [
+        "Maaf sudah menunggu. Ada apa?",
+        "Saya ingin ke toilet.",
+        "Anda ingin ke toilet, ya.",
+        "Ya, tolong bantu saya."
+      ]
+    },
+    "SSW-S35": {
+      "title": "Memastikan bagian yang perlu dibantu",
+      "goal": "Pahami bagian yang dapat dilakukan sendiri dan pastikan bantuan untuk bagian lainnya.",
+      "context": "Fasilitas sudah menentukan cara dan batas bantuan. Penghuni ingin melakukan sebagian kegiatan berganti pakaian sendiri. Adegan ini tidak mengajarkan caranya. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Pastikan tepat bagian bantuan yang diminta. Jangan mengambil alih seluruh kegiatan yang sebagian masih dapat dilakukan sendiri.",
+      "lines": [
+        "Bagian mana yang perlu saya bantu?",
+        "Tolong bantu saya menaikkan celana.",
+        "Menaikkan celana, ya. Baik, saya mengerti.",
+        "Bagian lainnya bisa saya lakukan sendiri."
+      ]
+    },
+    "SSW-S36": {
+      "title": "Menutup tirai untuk menjaga privasi",
+      "goal": "Ketika penghuni ingin mengganti pakaian yang kotor, tanyakan apakah tirai perlu ditutup dahulu.",
+      "context": "Penghuni menyebut pakaian yang kotor dan ingin berganti. Fasilitas sudah memastikan bantuan berganti pakaian dapat diberikan. Dahulukan komunikasi tentang privasi. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Minta persetujuan untuk menutup pandangan terlebih dahulu. Jangan menyalahkan atau menceritakan rincian pakaian kotor di depan orang lain.",
+      "lines": [
+        "Baju saya kotor. Saya ingin berganti pakaian.",
+        "Bolehkah saya menutup tirai dahulu?",
+        "Ya. Tolong supaya tidak terlihat orang lain.",
+        "Baik, saya mengerti. Saya tutup tirainya."
+      ]
+    },
+    "SSW-S37": {
+      "title": "Menanggapi penolakan untuk mandi",
+      "goal": "Terima dengan kalimat singkat bahwa penghuni belum ingin mandi sekarang.",
+      "context": "Pengaturan mandi yang dapat ditawarkan sudah diperiksa fasilitas. Pelaksanaannya dan waktunya tetap mengikuti keinginan penghuni dan prosedur fasilitas. Tidak melatih paksaan atau bujukan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Cukup terima penolakan. Jangan memaksa penghuni memberikan alasan atau menganggap harus mandi sebagai satu-satunya jawaban yang benar.",
+      "lines": [
+        "Sudah waktunya mandi. Apakah Anda ingin mandi sekarang?",
+        "Sekarang saya tidak ingin mandi.",
+        "Baik, saya mengerti. Sekarang Anda tidak ingin mandi, ya.",
+        "Ya, saya ingin beristirahat sebentar."
+      ]
+    },
+    "SSW-S38": {
+      "title": "Menanyakan rasa terhadap suhu air",
+      "goal": "Pahami rasa panas atau dingin yang disampaikan dan tanggapi dengan singkat.",
+      "context": "Suhu air sebenarnya dan kondisi mandi sudah diperiksa sesuai prosedur fasilitas. Hanya melatih pertanyaan tentang rasa dan tanggapan, tanpa angka suhu atau urutan penyesuaian. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Tanggapi rasa yang benar-benar disampaikan. Jangan menebak suhu atau menggunakan kalimat latihan sebagai petunjuk memandikan.",
+      "lines": [
+        "Bagaimana suhu airnya menurut Anda?",
+        "Sedikit panas.",
+        "Terasa panas, ya. Saya periksa.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S39": {
+      "title": "Meminta izin sebelum mencuci rambut",
+      "goal": "Sebelum mulai, minta persetujuan dengan pertanyaan singkat.",
+      "context": "Penghuni sudah meminta rambutnya dicuci dan fasilitas telah memastikan bantuan dapat diberikan. Adegan ini tidak memperlihatkan cara mencuci rambut. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Walaupun permintaan sudah disampaikan, pastikan waktu mulainya dengan kata sederhana. Tidak perlu ungkapan hormat yang rumit.",
+      "lines": [
+        "Bisa tolong cuci rambut saya juga?",
+        "Bisa. Bolehkah saya mulai mencucinya sekarang?",
+        "Ya, tolong.",
+        "Kalau begitu, saya mulai, ya."
+      ]
+    },
+    "SSW-S40": {
+      "title": "Meminta izin sebelum menyeka tubuh",
+      "goal": "Pastikan persetujuan untuk menyeka tubuh dengan pertanyaan sederhana.",
+      "context": "Penghuni sudah ingin tubuhnya diseka dan fasilitas telah memastikan bantuan dengan handuk hangat dapat diberikan. Tidak mengajarkan cara menyeka. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Tanyakan dan terima keinginan penghuni. Jangan memperluas kalimat latihan menjadi petunjuk bagian tubuh atau urutan tindakan.",
+      "lines": [
+        "Hari ini saya ingin dibantu menyeka tubuh.",
+        "Bolehkah saya menyeka tubuh Anda dengan handuk hangat?",
+        "Ya, itu yang saya inginkan.",
+        "Baik, saya mengerti. Saya siapkan."
+      ]
+    },
+    "SSW-S41": {
+      "title": "Memastikan tujuan",
+      "goal": "Ulangi tujuan yang diminta penghuni.",
+      "context": "Fasilitas sudah memastikan cara bantuan berpindah yang sesuai. Hanya memastikan tujuan dan keinginan untuk berangkat, bukan mengajarkan cara memindahkan orang. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Jangan menentukan tujuan sendiri. Pastikan berdasarkan ruang makan yang disebut penghuni.",
+      "lines": [
+        "Anda ingin pergi ke mana?",
+        "Saya ingin ke ruang makan.",
+        "Ke ruang makan, ya. Apakah Anda ingin pergi sekarang?",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S42": {
+      "title": "Memberi tahu sebelum mulai bergerak",
+      "goal": "Beri tahu bahwa akan mulai bergerak dan pastikan kesiapan dengan kalimat singkat.",
+      "context": "Rencana perpindahan individu, cara bantuan, dan pemeriksaan sebelum berangkat sudah dipastikan sesuai prosedur fasilitas. Hanya melatih pemberitahuan sebelum bergerak. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Beri tahu dan pastikan sebelum mulai. Diam bukan berarti setuju. Tidak menilai atau mengajarkan cara mengoperasikan kursi roda.",
+      "lines": [
+        "Sudah waktunya pergi ke ruang makan dengan kursi roda.",
+        "Ya, saya mengerti.",
+        "Kita mulai bergerak sekarang, ya. Apakah Anda sudah siap?",
+        "Ya, saya siap."
+      ]
+    },
+    "SSW-S43": {
+      "title": "Menanggapi permintaan beristirahat",
+      "goal": "Ulangi secara singkat dan terima keinginan untuk beristirahat.",
+      "context": "Fasilitas sudah memastikan rencana perpindahan dan tempat istirahat yang tersedia. Hanya melatih komunikasi, bukan urutan berjalan atau menopang tubuh. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Jangan mendesak setelah mendengar permintaan istirahat. Latihan bahasa tidak menggantikan pengaturan keselamatan perpindahan dari fasilitas.",
+      "lines": [
+        "Apakah kecepatan ini nyaman?",
+        "Saya ingin beristirahat sebentar.",
+        "Baik, mari beristirahat sebentar.",
+        "Terima kasih."
+      ]
+    },
+    "SSW-S44": {
+      "title": "Memastikan peran dan aba-aba",
+      "goal": "Sebelum membantu bersama, pastikan siapa yang memberi aba-aba dan peran masing-masing.",
+      "context": "Fasilitas telah menetapkan bantuan oleh dua staf. Teknik bantuan sudah diajarkan secara terpisah. Dialog tidak mencakup teknik gerakan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Cukup jelaskan pembagian aba-aba. Jangan menambahkan cara mengangkat, berputar, atau berdiri sendiri.",
+      "lines": [
+        "Siapa di antara kita yang akan memberi aba-aba?",
+        "Saya yang akan memberi aba-aba. Mari pastikan peran masing-masing dahulu.",
+        "Ya, mari kita pastikan dahulu.",
+        "Mari mulai setelah semuanya dipastikan."
+      ]
+    },
+    "SSW-S45": {
+      "title": "Menanggapi keluhan kamar dingin",
+      "goal": "Ulangi rasa yang disampaikan dan tanyakan apakah penghuni menginginkan penyesuaian lingkungan.",
+      "context": "Fasilitas sudah menetapkan batas penyesuaian lingkungan yang dapat diberikan. Tidak membahas penilaian suhu tubuh atau pengobatan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Gunakan rasa yang disampaikan penghuni sebagai dasar untuk memastikan keinginan. Jangan menyimpulkan penyakit dari kata dingin.",
+      "lines": [
+        "Kamar ini sedikit dingin.",
+        "Terasa dingin, ya. Apakah Anda ingin kamarnya dibuat sedikit lebih hangat?",
+        "Ya, tolong.",
+        "Baik, saya mengerti. Saya periksa."
+      ]
+    },
+    "SSW-S46": {
+      "title": "Menanyakan pilihan mengenai tirai",
+      "goal": "Pahami keinginan agar lebih redup, lalu tanyakan apakah tirai boleh ditutup.",
+      "context": "Pada siang hari, cahaya kamar terutama berasal dari luar jendela. Fasilitas mengizinkan tirai diatur sesuai keinginan penghuni. Hanya melatih konfirmasi keinginan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Pastikan tingkat cahaya yang diinginkan. Jangan langsung mengubah lingkungan demi kemudahan staf.",
+      "lines": [
+        "Apakah cahaya seperti ini sudah nyaman?",
+        "Saya ingin sedikit lebih redup.",
+        "Bolehkah saya menutup tirainya sedikit?",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S47": {
+      "title": "Memeriksa letak kacamata bersama",
+      "goal": "Jika letak barang belum diketahui, ajak memeriksa bersama dan tanyakan petunjuk.",
+      "context": "Penghuni tidak menemukan kacamata. Staf belum melihat di mana kacamata berada. Jangan mengarang lokasinya. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Jangan langsung mengatakan barang ada di sana jika belum dipastikan. Ajak memeriksa bersama terlebih dahulu.",
+      "lines": [
+        "Kacamata saya ada di mana?",
+        "Mari kita periksa bersama. Kapan Anda memakainya?",
+        "Tadi saya meletakkannya di atas meja.",
+        "Di atas meja, ya. Mari kita lihat bersama."
+      ]
+    },
+    "SSW-S48": {
+      "title": "Meminta izin sebelum merapikan",
+      "goal": "Ulangi barang yang diminta penghuni agar tetap di tempatnya.",
+      "context": "Fasilitas mengizinkan bantuan merapikan meja. Penghuni berhak memilih tentang barang pribadinya. Staf tidak membaca surat. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Ulangi dengan tepat bahwa barang tidak boleh dipindahkan. Jangan membuang atau membuka surat tanpa izin.",
+      "lines": [
+        "Bolehkah saya merapikan meja?",
+        "Tolong biarkan surat ini tetap di tempatnya.",
+        "Suratnya saya biarkan tetap seperti ini, ya.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S49": {
+      "title": "Menanyakan kesukaan",
+      "goal": "Dengarkan dan tanggapi minat penghuni dengan kalimat sederhana.",
+      "context": "Percakapan santai pada siang hari. Penghuni tidak diwajibkan mengikuti kegiatan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Cukup tanggapi minat penghuni. Jangan memuji dengan gaya berbicara kepada anak kecil atau meminta alasan rumit.",
+      "lines": [
+        "Apa yang Anda sukai?",
+        "Saya suka mendengarkan lagu.",
+        "Anda suka mendengarkan lagu, ya.",
+        "Ya, saya suka lagu-lagu lama."
+      ]
+    },
+    "SSW-S50": {
+      "title": "Mengajak mengikuti kegiatan",
+      "goal": "Jelaskan tempat yang sudah dipastikan dan biarkan penghuni memilih ikut atau tidak.",
+      "context": "Fasilitas telah memastikan kegiatan menyanyi setelah tengah hari di ruang makan. Keikutsertaan adalah pilihan penghuni. Staf tidak menjanjikan pengaturan yang belum dipastikan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Sebutkan hanya tempat yang sudah dipastikan. Ajakan berupa pertanyaan, bukan perintah untuk ikut.",
+      "lines": [
+        "Nanti setelah tengah hari ada kegiatan menyanyi. Apakah Anda ingin ikut?",
+        "Di mana kegiatannya?",
+        "Di ruang makan. Apakah Anda ingin pergi bersama?",
+        "Ya, saya ingin pergi."
+      ]
+    },
+    "SSW-S51": {
+      "title": "Menanggapi keengganan mengikuti kegiatan",
+      "goal": "Terima penolakan dengan tenang dan pastikan bagaimana penghuni ingin menghabiskan waktu.",
+      "context": "Fasilitas mengizinkan penghuni tidak ikut kegiatan ini dan telah memastikan pengaturan istirahat di kamar yang tersedia. Tidak melatih paksaan untuk ikut. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Penolakan dapat diterima. Jangan berkata bahwa karena semua orang ikut, penghuni juga harus ikut.",
+      "lines": [
+        "Apakah Anda ingin ikut senam hari ini?",
+        "Hari ini saya tidak ingin pergi.",
+        "Baik, saya mengerti. Apakah sekarang Anda ingin tetap di kamar?",
+        "Ya, saya ingin beristirahat di kamar."
+      ]
+    },
+    "SSW-S52": {
+      "title": "Menanggapi keinginan menelepon keluarga",
+      "goal": "Ulangi keinginan menghubungi keluarga dan jelaskan bahwa pengaturannya akan diperiksa.",
+      "context": "Penghuni meminta menghubungi keluarga. Waktu dan pengaturan telepon fasilitas masih perlu dipastikan. Jangan memasukkan nomor telepon atau data keluarga yang sebenarnya. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Terima keinginan penghuni dan katakan akan memeriksa waktu yang belum pasti. Jangan menjanjikan panggilan segera tersambung atau memasukkan nomor asli.",
+      "lines": [
+        "Saya ingin menelepon keluarga.",
+        "Anda ingin menelepon keluarga, ya. Saya periksa pengaturannya.",
+        "Tolong, ya.",
+        "Mari kita pastikan waktu menelepon bersama."
+      ]
+    },
+    "SSW-S53": {
+      "title": "Menjawab pertanyaan yang sama sekali lagi",
+      "goal": "Berikan kembali jawaban sederhana dan jelas ketika pertanyaan diulangi.",
+      "context": "Waktu makan siang hari ini sudah dipastikan pukul dua belas. Hanya melatih penjelasan ulang, bukan menilai kemampuan kognitif penghuni. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Ulangi waktu yang sudah dipastikan. Jangan menegur dengan mengatakan bahwa Anda sudah menjelaskannya tadi.",
+      "lines": [
+        "Makan siangnya pukul berapa?",
+        "Pukul dua belas.",
+        "Tadi pukul berapa?",
+        "Makan siangnya pukul dua belas."
+      ]
+    },
+    "SSW-S54": {
+      "title": "Menjelaskan tempat dan peran sendiri",
+      "goal": "Jelaskan peran kerja Anda dengan kalimat singkat.",
+      "context": "Kedua orang berada di ruang makan fasilitas. Penghuni bertanya tentang tempat dan siapa staf tersebut. Jangan menebak alasan pertanyaannya. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Cukup jelaskan peran yang sebenarnya dengan sederhana. Jangan mengarang bahwa Anda pernah bertemu atau memiliki hubungan keluarga.",
+      "lines": [
+        "Ini di mana?",
+        "Ini ruang makan di fasilitas ini.",
+        "Maaf, Anda siapa?",
+        "Saya staf perawatan. Saya akan membantu Anda."
+      ]
+    },
+    "SSW-S55": {
+      "title": "Menerima keinginan pulang",
+      "goal": "Tanggapi dahulu keinginan pulang dengan kalimat singkat.",
+      "context": "Penghuni berkata ingin pulang. Alasan dan pengaturan yang mungkin dilakukan belum diketahui. Tidak menjanjikan antar-jemput atau memutuskan izin keluar. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Tanggapi keinginan yang benar-benar disampaikan dahulu. Jangan menebak alasannya sebelum dijelaskan atau mengarang rencana pulang.",
+      "lines": [
+        "Saya ingin pulang ke rumah.",
+        "Anda ingin pulang ke rumah, ya.",
+        "Saya khawatir tentang keadaan di rumah.",
+        "Anda khawatir, ya. Bolehkah saya mendengarkan cerita Anda?"
+      ]
+    },
+    "SSW-S56": {
+      "title": "Menanggapi kekhawatiran karena barang hilang",
+      "goal": "Tanggapi kekhawatiran dan ajak memeriksa bersama, tanpa memastikan bahwa barang dicuri.",
+      "context": "Penghuni belum menemukan dompet. Staf belum memastikan penyebab atau letaknya. Seluruh percakapan bersifat fiktif. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Jangan membenarkan atau menyangkal pencurian yang belum terbukti. Tanggapi kesulitan dan periksa bersama terlebih dahulu.",
+      "lines": [
+        "Dompet saya tidak ada. Apakah ada yang mengambilnya?",
+        "Anda khawatir karena dompetnya belum ditemukan, ya.",
+        "Ya. Biasanya selalu ada di sini.",
+        "Mari kita periksa bersama."
+      ]
+    },
+    "SSW-S57": {
+      "title": "Melaporkan jumlah makanan secara singkat",
+      "goal": "Laporkan jumlah yang benar-benar diamati dengan kata jumlah yang sederhana.",
+      "context": "Staf telah melihat bahwa penghuni fiktif Yamada makan setengah nasinya dan menghabiskan lauk pada waktu makan ini. Hanya latihan pelaporan, tanpa menentukan makanan atau membuat penilaian klinis. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Laporkan hanya jumlah yang telah dipastikan. Jangan menebak penyebab atau penyakit dari jumlah makanan.",
+      "lines": [
+        "Berapa banyak makan siang yang dimakan Yamada-san?",
+        "Nasinya dimakan setengah.",
+        "Bagaimana dengan lauknya?",
+        "Lauknya dimakan habis."
+      ]
+    },
+    "SSW-S58": {
+      "title": "Menyampaikan ucapan penghuni tentang nyeri",
+      "goal": "Laporkan letak nyeri sebagai kutipan dari ucapan penghuni.",
+      "context": "Penghuni dengan jelas mengatakan lutut kanan terasa sakit. Staf melaporkan ucapan yang didengar kepada perawat, tanpa membuat diagnosis atau mengusulkan penanganan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Pertahankan sumber bahwa penghuni yang mengatakannya. Jangan mengubah keluhan menjadi nama penyakit yang sudah terdiagnosis. Gunakan arah kanan atau kiri sesuai informasi yang diketahui.",
+      "lines": [
+        "Ada apa?",
+        "Penghuni mengatakan, \"Lutut kanan saya sakit.\"",
+        "Baik, saya mengerti. Saya periksa.",
+        "Tolong, ya."
+      ]
+    },
+    "SSW-S59": {
+      "title": "Menyampaikan hanya waktu yang terkonfirmasi",
+      "goal": "Nyatakan dengan jelas bahwa waktu yang belum diketahui belum terkonfirmasi.",
+      "context": "Sudah dipastikan penghuni pergi ke toilet pukul sepuluh. Waktu sebelumnya belum dipastikan. Latihan komunikasi pencatatan ini tidak menebak frekuensi atau waktu. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Jika belum tahu, katakan belum terkonfirmasi. Jangan mengarang waktu. Catatan dalam percakapan ini seluruhnya fiktif.",
+      "lines": [
+        "Apakah waktu pergi ke toiletnya sudah bisa dipastikan?",
+        "Saya sudah memastikan bahwa penghuni pergi pukul sepuluh.",
+        "Bagaimana dengan sebelumnya?",
+        "Waktu sebelumnya belum bisa saya pastikan."
+      ]
+    },
+    "SSW-S60": {
+      "title": "Melaporkan yang terlihat dan segera meminta bantuan",
+      "goal": "Sampaikan dengan singkat keadaan yang terlihat serta lokasi, lalu segera minta bantuan.",
+      "context": "Staf tanpa sengaja melihat penghuni duduk di lantai koridor depan ruang makan. Staf telah menelepon perawat sesuai prosedur kontak darurat fasilitas dan sudah tersambung. Staf tidak melihat terjadinya jatuh. Hanya melatih laporan segera, tanpa menyuruh menunggu atau mengajarkan pemindahan maupun diagnosis. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Segera minta bantuan dan jelaskan keadaan serta lokasi yang terlihat. Duduk di lantai bukan berarti Anda menyaksikan jatuh. Kalimat latihan tidak menggantikan prosedur darurat fasilitas.",
+      "lines": [
+        "Ya, ada apa?",
+        "Ada penghuni duduk di lantai koridor depan ruang makan. Tolong segera datang.",
+        "Di depan ruang makan, ya. Saya segera menuju ke sana.",
+        "Ya, tolong."
+      ]
+    },
+    "SSW-S61": {
+      "title": "Meminta bantuan untuk tugas yang belum dipahami",
+      "goal": "Jangan berpura-pura bisa. Minta penjelasan dengan kalimat singkat.",
+      "context": "Rekan kerja memberikan tugas persiapan barang yang caranya belum dipahami peserta latihan. Mintalah bantuan sebelum mencoba sendiri. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Cukup sampaikan bahwa Anda belum memahami dan minta penjelasan. Ungkapan sopan yang sederhana bukan alasan untuk dianggap salah.",
+      "lines": [
+        "Tolong lakukan persiapan ini.",
+        "Saya belum tahu caranya. Tolong ajari saya.",
+        "Ya, mari kita periksa bersama.",
+        "Tolong, ya."
+      ]
+    },
+    "SSW-S62": {
+      "title": "Melaporkan pekerjaan yang selesai",
+      "goal": "Laporkan secara singkat persiapan yang benar-benar sudah selesai.",
+      "context": "Handuk baru sudah disiapkan dan diletakkan di rak ruang ganti. Tugas ini telah ditentukan fasilitas. Hanya melatih laporan penyelesaian. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Katakan selesai hanya untuk pekerjaan yang benar-benar selesai. Sebutkan tempat berdasarkan fakta yang sudah dipastikan.",
+      "lines": [
+        "Apakah persiapan handuk sudah selesai?",
+        "Ya, saya sudah menyiapkan handuk baru.",
+        "Diletakkan di mana?",
+        "Saya meletakkannya di rak ruang ganti."
+      ]
+    },
+    "SSW-S63": {
+      "title": "Melaporkan keterlambatan dan meminta bantuan",
+      "goal": "Jelaskan keterlambatan dengan kalimat sederhana dan minta bantuan secara aktif.",
+      "context": "Staf sedang menyiapkan barang sesuai penugasan fasilitas dan memperkirakan tidak dapat selesai pada waktu semula. Hanya latihan komunikasi, bukan permintaan untuk meninggalkan orang yang membutuhkan perawatan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Jelaskan keadaan saat ini dan minta bantuan. Jangan mengarang waktu selesai atau menyembunyikan keterlambatan.",
+      "lines": [
+        "Apakah sepertinya akan selesai pada waktu yang dijadwalkan?",
+        "Ada sedikit keterlambatan. Bolehkah saya meminta bantuan?",
+        "Ya, saya ke sana sekarang.",
+        "Terima kasih. Mohon bantuannya."
+      ]
+    },
+    "SSW-S64": {
+      "title": "Meminta satu penjelasan saat serah terima",
+      "goal": "Ajukan satu pertanyaan khusus tentang hal yang belum dipahami.",
+      "context": "Rekan yang lebih senior meminta persiapan seperti biasa, tetapi peserta belum tahu barang yang dimaksud. Waktu yang sudah diketahui adalah setelah makan. Hal lain perlu ditanyakan. Adegan dan orangnya fiktif. Latihan hanya mengenai komunikasi; tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab.",
+      "check": "Tanyakan secara spesifik apa yang harus disiapkan. Jangan menebak obat, makanan, atau tindakan perawatan. Ulangi setelah mendapat penjelasan.",
+      "lines": [
+        "Setelah makan, tolong lakukan persiapan seperti biasa.",
+        "Tolong beri tahu apa yang harus disiapkan.",
+        "Buku lagu untuk kegiatan setelah tengah hari.",
+        "Buku lagu, ya. Baik, saya mengerti."
+      ]
+    },
+    "SSW-S65": {
+      "title": "Mengajak mencuci tangan sebelum makan",
+      "goal": "Ajak mencuci tangan dengan kalimat singkat.",
+      "context": "Persiapan makan telah dilakukan sesuai pengaturan fasilitas. Melatih sapaan sehari-hari sebelum makan. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Ajak mencuci tangan dengan tenang. Jangan memasukkan penjelasan panjang tentang langkah tindakan dalam kalimat ini.",
+      "lines": [
+        "Apakah sudah waktunya makan?",
+        "Ya. Sebelum makan, bagaimana kalau kita mencuci tangan?",
+        "Baik, saya akan mencuci tangan.",
+        "Jika perlu, saya bantu."
+      ]
+    },
+    "SSW-S66": {
+      "title": "Menanyakan letak sabun dan handuk",
+      "goal": "Tanyakan kepada rekan kerja di mana barang berada.",
+      "context": "Rekan kerja meminta Anda menyiapkan perlengkapan cuci tangan yang biasa digunakan di fasilitas. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Pastikan letak perlengkapan yang dimaksud. Setelah dijawab, Anda boleh mengulanginya secara singkat.",
+      "lines": [
+        "Tolong siapkan perlengkapan cuci tangan.",
+        "Di mana sabun dan handuknya?",
+        "Di samping wastafel.",
+        "Di samping wastafel, ya. Baik, saya mengerti."
+      ]
+    },
+    "SSW-S67": {
+      "title": "Meminta penjelasan tentang penanganan sarung tangan",
+      "goal": "Sampaikan hal yang belum dipahami dan minta rekan kerja menjelaskan.",
+      "context": "Sebelum menangani sarung tangan bekas pakai, Anda belum memahami aturan fasilitas. Tidak mengajarkan urutan melepas, memakai, atau menangani sarung tangan. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Katakan dengan jelas bahwa Anda belum tahu dan minta penjelasan. Jangan menebak aturan penanganan di fasilitas.",
+      "lines": [
+        "Bagaimana sarung tangan bekas pakai ditangani?",
+        "Saya belum tahu cara menanganinya. Tolong jelaskan.",
+        "Mari kita periksa bersama.",
+        "Tolong, ya."
+      ]
+    },
+    "SSW-S68": {
+      "title": "Menyampaikan ucapan penghuni tentang batuk",
+      "goal": "Jelaskan bahwa informasi berasal dari perkataan penghuni.",
+      "context": "Penghuni baru saja mengatakan bahwa dirinya batuk, lalu Anda menyampaikannya kepada perawat. Tidak menilai penyebab atau nama penyakit. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Nyatakan bahwa ini laporan penghuni sendiri. Jangan mengubah batuk menjadi diagnosis penyakit.",
+      "lines": [
+        "Apakah ada sesuatu yang terjadi?",
+        "Sato-san mengatakan, \"Saya batuk.\"",
+        "Baik, saya mengerti. Saya akan ke sana untuk memeriksa.",
+        "Tolong, ya. Sato-san ada di kamar."
+      ]
+    },
+    "SSW-S69": {
+      "title": "Meminta izin sebelum mengganti handuk",
+      "goal": "Minta persetujuan sebelum mengganti barang pribadi.",
+      "context": "Penghuni mengatakan handuknya basah. Fasilitas menyediakan handuk pengganti yang bersih. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan dahulu, baru jelaskan persiapannya. Jangan mengabaikan keinginan penghuni.",
+      "lines": [
+        "Handuknya sudah basah.",
+        "Bolehkah saya menggantinya dengan handuk baru?",
+        "Ya, tolong.",
+        "Baik, saya siapkan."
+      ]
+    },
+    "SSW-S70": {
+      "title": "Menjelaskan sebelum mengganti seprai",
+      "goal": "Jelaskan barang yang akan diganti dan tanyakan keinginan dengan kalimat singkat.",
+      "context": "Seprai perlu diganti. Waktu penggantian dan petugas yang bertugas sudah dipastikan fasilitas. Tidak mengajarkan gerakan bangun atau pemindahan. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Jelaskan penggantian seprai dan terima permintaan untuk menundanya sebentar.",
+      "lines": [
+        "Apa yang akan dilakukan?",
+        "Saya ingin mengganti seprai. Apakah sekarang boleh?",
+        "Tolong agak nanti saja.",
+        "Baik, saya pastikan waktunya."
+      ]
+    },
+    "SSW-S71": {
+      "title": "Menanyakan pakaian yang ingin dicuci",
+      "goal": "Pastikan pakaian mana yang ingin dicuci.",
+      "context": "Fasilitas sudah memastikan pakaian ini dapat dicuci. Anda hanya memastikan pakaian mana yang ingin diserahkan penghuni untuk dicuci. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Minta penghuni menunjukkan pakaian yang dimaksud. Jangan langsung mengambil semua pakaiannya.",
+      "lines": [
+        "Saya ingin meminta bantuan mencuci pakaian.",
+        "Pakaian mana yang ingin dicuci?",
+        "Tolong kemeja ini.",
+        "Kemeja ini, ya. Baik, saya mengerti."
+      ]
+    },
+    "SSW-S72": {
+      "title": "Memastikan letak label pakaian",
+      "goal": "Tanyakan kepada rekan kerja di mana label berada.",
+      "context": "Anda sedang merapikan pakaian penghuni fiktif Sato-san, tetapi belum memeriksa label. Jangan menebak pemilik dari tampilan pakaian. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan letak label, lalu periksa. Jangan menebak pakaian itu milik siapa.",
+      "lines": [
+        "Apakah Anda sedang memeriksa pakaian Sato-san?",
+        "Label namanya ada di mana?",
+        "Di bagian dalam kerah.",
+        "Di bagian dalam kerah, ya. Saya periksa."
+      ]
+    },
+    "SSW-S73": {
+      "title": "Memberi tahu sebelum mengukur suhu tubuh",
+      "goal": "Jelaskan apa yang akan dilakukan dan minta persetujuan.",
+      "context": "Fasilitas sudah memastikan pengaturan pengukuran suhu tubuh dan tanggung jawab petugas. Tidak mengajarkan cara pengukuran atau penilaian angka. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Jelaskan dahulu dan minta izin. Bukan latihan menilai tinggi atau rendahnya suhu tubuh.",
+      "lines": [
+        "Apa yang akan dilakukan selanjutnya?",
+        "Saya akan mengukur suhu tubuh. Bolehkah saya mengukurnya?",
+        "Ya, tolong.",
+        "Terima kasih. Saya siapkan."
+      ]
+    },
+    "SSW-S74": {
+      "title": "Memberi tahu sebelum mengukur tekanan darah",
+      "goal": "Pastikan persetujuan dengan satu pertanyaan singkat.",
+      "context": "Fasilitas sudah memastikan pengaturan pengukuran tekanan darah dan tanggung jawab petugas. Tidak mengajarkan penggunaan alat, posisi tubuh, atau nilai batas. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Cukup minta persetujuan. Peserta tidak perlu menghafal penggunaan alat atau penjelasan medis dalam latihan ini.",
+      "lines": [
+        "Sekarang apa yang akan dilakukan?",
+        "Saya akan mengukur tekanan darah. Bolehkah saya mengukurnya?",
+        "Ya, saya mengerti.",
+        "Terima kasih. Saya siapkan."
+      ]
+    },
+    "SSW-S75": {
+      "title": "Menanyakan waktu pengukuran kepada perawat",
+      "goal": "Tanyakan dengan jelas waktu yang belum disampaikan.",
+      "context": "Perawat menugaskan pemeriksaan suhu tubuh yang telah diatur fasilitas, tetapi belum menyebut waktunya. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan waktu tugas yang dijadwalkan. Jangan menentukan sendiri frekuensi pengukuran.",
+      "lines": [
+        "Tolong periksa suhu tubuh.",
+        "Pukul berapa saya harus memeriksanya?",
+        "Tolong pada pukul sepuluh.",
+        "Pukul sepuluh, ya. Baik, saya mengerti."
+      ]
+    },
+    "SSW-S76": {
+      "title": "Segera melaporkan keluhan pusing",
+      "goal": "Sampaikan ucapan penghuni dan minta dengan jelas agar perawat datang.",
+      "context": "Penghuni baru mengatakan merasa pusing. Anda segera meminta bantuan perawat, tanpa membuat diagnosis atau mengajarkan cara bangun, minum, maupun penanganan. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Laporkan rasa pusing sebagai ucapan penghuni dan minta bantuan. Jangan menambahkan penyebab atau saran penanganan.",
+      "lines": [
+        "Ada apa?",
+        "Sato-san mengatakan, \"Saya merasa pusing.\" Tolong datang.",
+        "Saya ke sana sekarang. Di mana lokasinya?",
+        "Di ruang makan. Tolong, ya."
+      ]
+    },
+    "SSW-S77": {
+      "title": "Memastikan waktu obat kepada perawat",
+      "goal": "Mintalah perawat memastikan pengaturan yang berkaitan dengan obat.",
+      "context": "Waktu minum obat yang dijadwalkan belum jelas, sehingga Anda menanyakannya kepada perawat. Tidak membahas nama obat, dosis, atau pemberian obat sendiri. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Pastikan jadwal. Jangan memutuskan waktu obat berdasarkan ingatan atau tebakan.",
+      "lines": [
+        "Apa yang ingin Anda pastikan?",
+        "Tolong beri tahu jadwal minum obat Sato-san.",
+        "Saya periksa jadwalnya dahulu.",
+        "Tolong, ya."
+      ]
+    },
+    "SSW-S78": {
+      "title": "Menerima keinginan untuk tidak minum obat",
+      "goal": "Ulangi keinginan penghuni dan beri tahu bahwa perawat akan dihubungi.",
+      "context": "Penghuni mengatakan tidak ingin minum obat. Tidak mengharuskan bujukan dan tidak memutuskan menghentikan atau mengubah obat. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Terima dan sampaikan keinginannya. Jangan memaksa minum obat atau berjanji menghentikannya sendiri.",
+      "lines": [
+        "Sekarang saya tidak ingin minum obat.",
+        "Sekarang Anda tidak ingin meminumnya, ya. Saya sampaikan kepada perawat.",
+        "Saya ingin ada yang mendengarkan saya.",
+        "Baik, saya mengerti. Saya panggil perawat."
+      ]
+    },
+    "SSW-S79": {
+      "title": "Melaporkan obat yang terlihat tersisa",
+      "goal": "Laporkan hanya barang dan letak yang terlihat.",
+      "context": "Anda melihat obat masih ada di meja. Anda tidak mengetahui apakah sebelumnya obat sudah diminum atau apa yang telah terjadi. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Katakan hanya bahwa obat terlihat masih di meja. Jangan menyimpulkan ada dosis terlewat, obat dimuntahkan, atau kesalahan minum obat.",
+      "lines": [
+        "Apakah ada yang Anda perhatikan?",
+        "Masih ada obat di meja. Tolong periksa.",
+        "Saya periksa sekarang.",
+        "Tolong, ya."
+      ]
+    },
+    "SSW-S80": {
+      "title": "Menyampaikan bahwa instruksi obat belum dipahami",
+      "goal": "Katakan dengan jelas bahwa Anda belum paham dan minta penjelasan.",
+      "context": "Anda menerima instruksi berkaitan dengan obat, tetapi belum memahami artinya. Tidak memberikan prosedur penggunaan obat apa pun. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan bagian yang belum jelas. Jangan menjalankan instruksi sendiri ketika belum memahaminya.",
+      "lines": [
+        "Apakah ada yang belum dipahami?",
+        "Saya belum memahami instruksi tentang obat. Tolong jelaskan.",
+        "Bagian yang mana?",
+        "Tolong jelaskan arti kata ini."
+      ]
+    },
+    "SSW-S81": {
+      "title": "Menyampaikan jadwal kunjungan rumah sakit",
+      "goal": "Sampaikan waktu yang telah dipastikan dengan kalimat singkat.",
+      "context": "Fasilitas sudah memastikan jadwal kunjungan rumah sakit hari ini pukul sepuluh. Anda hanya menyampaikan jadwal yang diketahui, bukan menjamin jadwal tidak akan berubah. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Sampaikan hanya waktu yang sudah dipastikan. Pertahankan makna bahwa itu jadwal yang direncanakan.",
+      "lines": [
+        "Ke rumah sakitnya pukul berapa?",
+        "Kunjungan ke rumah sakit hari ini dijadwalkan pukul sepuluh.",
+        "Pukul sepuluh, ya.",
+        "Ya. Jika jadwal berubah, saya akan memberi tahu Anda."
+      ]
+    },
+    "SSW-S82": {
+      "title": "Menanyakan waktu dan tempat rehabilitasi",
+      "goal": "Tanyakan jadwal kegiatan, lalu ulangi singkat untuk memastikan.",
+      "context": "Rekan kerja meminta Anda menyiapkan kegiatan rehabilitasi yang sudah diatur fasilitas. Tidak membahas isi latihan atau menilai kesesuaian kegiatan bagi seseorang. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Pastikan waktu dan tempat. Jangan menambahkan lokasi kegiatan sendiri.",
+      "lines": [
+        "Tolong siapkan kegiatan rehabilitasi.",
+        "Mulai pukul berapa dan di mana?",
+        "Mulai pukul dua di ruangan lantai 1.",
+        "Pukul dua di lantai 1, ya. Baik, saya mengerti."
+      ]
+    },
+    "SSW-S83": {
+      "title": "Menanyakan barang yang ingin dibawa keluar",
+      "goal": "Pastikan apa yang ingin dibawa penghuni.",
+      "context": "Kegiatan keluar sudah dipastikan fasilitas dan Anda sedang menyiapkan barang pribadi yang boleh dibawa. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan keinginan penghuni, lalu pastikan barangnya. Jangan menggantikan pilihan penghuni.",
+      "lines": [
+        "Saya sedang bersiap untuk pergi keluar.",
+        "Apakah ada barang yang ingin Anda bawa?",
+        "Saya ingin membawa topi.",
+        "Topi, ya. Saya siapkan di sini."
+      ]
+    },
+    "SSW-S84": {
+      "title": "Menanyakan keinginan beristirahat setelah kembali",
+      "goal": "Pastikan apakah penghuni ingin beristirahat.",
+      "context": "Penghuni telah pergi keluar dan kembali sesuai pengaturan fasilitas. Latihan ini hanya menanyakan keinginan untuk beristirahat. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan keinginannya. Jangan menentukan kegiatan selanjutnya hanya karena penghuni baru kembali.",
+      "lines": [
+        "Saya sudah kembali.",
+        "Selamat datang kembali. Apakah Anda ingin beristirahat sebentar?",
+        "Ya, saya ingin beristirahat.",
+        "Baik. Silakan panggil jika perlu sesuatu."
+      ]
+    },
+    "SSW-S85": {
+      "title": "Menanyakan nama dan tujuan tamu",
+      "goal": "Pastikan informasi tamu dengan ungkapan singkat dan sopan.",
+      "context": "Ini pertemuan pertama dengan tamu. Nama Yamada dan Sato bersifat fiktif. Jangan mengungkap data penghuni sebelum identitas tamu diverifikasi. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Pastikan nama dan tujuan kunjungan dahulu, lalu hubungi petugas penanggung jawab sesuai aturan fasilitas.",
+      "lines": [
+        "Selamat siang. Ini pertama kali saya datang.",
+        "Mohon beri tahu nama dan tujuan kunjungan Anda.",
+        "Saya Yamada. Saya datang untuk menjenguk Sato-san.",
+        "Saya pastikan dengan petugas penanggung jawab. Mohon tunggu."
+      ]
+    },
+    "SSW-S86": {
+      "title": "Meneruskan pertanyaan tamu kepada penanggung jawab",
+      "goal": "Jangan menebak jawaban. Jelaskan bahwa Anda akan menghubungi petugas penanggung jawab.",
+      "context": "Tamu menanyakan hal yang tidak Anda ketahui. Identitas tamu dan izin pengungkapan data belum dipastikan. Tidak menyampaikan informasi kondisi medis dalam contoh ini. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Jangan mengarang kondisi medis atau mengungkap data tanpa izin. Teruskan pertanyaan kepada petugas penanggung jawab.",
+      "lines": [
+        "Bagaimana kondisi kesehatan Sato-san?",
+        "Saya belum mengetahuinya. Saya pastikan dengan petugas penanggung jawab.",
+        "Saya ingin bertanya kepada penanggung jawabnya.",
+        "Baik, saya panggil petugas penanggung jawab."
+      ]
+    },
+    "SSW-S87": {
+      "title": "Memastikan pesan telepon secara singkat",
+      "goal": "Pastikan siapa pemberi pesan dan apa isi pesannya.",
+      "context": "Rekan kerja menyampaikan pesan telepon fiktif. Tidak memuat nomor telepon atau kontak pribadi yang sebenarnya. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Pastikan sumber dan isi pesan. Jangan menambahkan hal yang tidak Anda dengar saat menyampaikannya.",
+      "lines": [
+        "Bisakah Anda menyampaikan pesan telepon tadi?",
+        "Dari siapa, dan apa pesannya?",
+        "Dari Yamada-san. Katanya akan menelepon lagi nanti.",
+        "Dari Yamada-san, akan menelepon lagi nanti, ya."
+      ]
+    },
+    "SSW-S88": {
+      "title": "Menanyakan pesan untuk keluarga",
+      "goal": "Pastikan siapa yang ingin dihubungi dan apa yang ingin disampaikan.",
+      "context": "Penghuni ingin menghubungi keluarga. Cara dan waktu perlu dipastikan sesuai aturan fasilitas. Jangan menjanjikan keluarga pasti akan datang. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Pastikan keinginan penghuni. Keinginan bertemu keluarga bukan berarti jadwal kunjungan sudah disepakati.",
+      "lines": [
+        "Saya ingin menghubungi keluarga.",
+        "Siapa yang ingin Anda hubungi, dan apa yang ingin disampaikan?",
+        "Saya ingin menyampaikan kepada anak perempuan saya bahwa saya ingin bertemu dengannya.",
+        "Baik, saya pastikan cara menghubunginya."
+      ]
+    },
+    "SSW-S89": {
+      "title": "Menjelaskan bahwa ini latihan evakuasi",
+      "goal": "Nyatakan dengan jelas bahwa kegiatan ini adalah latihan.",
+      "context": "Latihan evakuasi sudah diatur sebelumnya oleh fasilitas dan staf bertugas memandu. Tidak mengajarkan rute kebakaran sebenarnya atau teknik pemindahan. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Sebutkan dengan jelas bahwa ini latihan. Jangan menimbulkan kesan bencana benar-benar terjadi.",
+      "lines": [
+        "Apa kegiatan hari ini?",
+        "Sebentar lagi ada latihan evakuasi.",
+        "Apakah benar-benar terjadi kebakaran?",
+        "Tidak, ini latihan. Staf akan memandu."
+      ]
+    },
+    "SSW-S90": {
+      "title": "Meminta ulang tempat berkumpul saat latihan",
+      "goal": "Minta rekan kerja mengulang tempat yang belum terdengar jelas.",
+      "context": "Ini latihan yang sudah direncanakan sebelumnya. Anda belum mendengar dengan jelas tempat berkumpul yang ditetapkan fasilitas. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan hanya tempat yang belum jelas. Jangan menebak rute atau tempat berkumpul.",
+      "lines": [
+        "Sebelum latihan, silakan berkumpul di ruang bersama.",
+        "Tolong ulangi tempat berkumpulnya.",
+        "Di ruang bersama.",
+        "Di ruang bersama, ya. Baik, saya mengerti."
+      ]
+    },
+    "SSW-S91": {
+      "title": "Meminta bantuan setelah melihat barang di koridor",
+      "goal": "Sebutkan barang dan tempatnya, lalu minta rekan kerja datang.",
+      "context": "Ada barang terlihat di koridor dan petugas penanggung jawab perlu memeriksanya. Jangan memutuskan sendiri cara penanganan atau memindahkan penghuni. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Jelaskan barang yang terlihat dan lokasinya, lalu langsung minta pemeriksaan.",
+      "lines": [
+        "Apakah ada sesuatu yang terjadi?",
+        "Ada barang di koridor. Bisakah Anda datang?",
+        "Saya ke sana sekarang. Di bagian mana?",
+        "Di depan ruang makan."
+      ]
+    },
+    "SSW-S92": {
+      "title": "Melaporkan suara mesin yang berbeda",
+      "goal": "Jelaskan hanya hal tidak biasa yang teramati dan minta rekan kerja memeriksa.",
+      "context": "Alat yang sedang tidak digunakan mengeluarkan suara berbeda dari biasanya. Petugas penanggung jawab perlu memeriksanya. Tidak mengajarkan perbaikan atau penggunaan alat. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Jelaskan suara yang terdengar. Jangan mendiagnosis kerusakan atau memberi saran perbaikan sendiri.",
+      "lines": [
+        "Ada apa?",
+        "Mesin ini mengeluarkan suara yang berbeda dari biasanya.",
+        "Saya periksa sekarang.",
+        "Tolong, ya. Alatnya ada di sini."
+      ]
+    },
+    "SSW-S93": {
+      "title": "Menanyakan tempat meletakkan kacamata",
+      "goal": "Pastikan keinginan tentang tempat meletakkan barang pribadi.",
+      "context": "Penghuni ingin kacamatanya diletakkan di dekatnya. Fasilitas telah memastikan ruang yang dapat digunakan untuk meletakkan barang. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan tempat yang diinginkan terlebih dahulu. Jangan memutuskan untuk penghuni.",
+      "lines": [
+        "Saya ingin kacamata saya diletakkan di dekat saya.",
+        "Kacamatanya sebaiknya diletakkan di mana?",
+        "Tolong di atas meja.",
+        "Baik, saya letakkan di sini."
+      ]
+    },
+    "SSW-S94": {
+      "title": "Memanggil petugas saat kurang mendengar dengan alat bantu dengar",
+      "goal": "Ulangi keluhan kurang mendengar dan jelaskan bahwa Anda akan meminta petugas memeriksa.",
+      "context": "Penghuni mengatakan masih sulit mendengar walau memakai alat bantu dengar. Tidak mengajarkan penyetelan, pemasangan, atau diagnosis. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tunjukkan bahwa Anda mendengar keluhannya dan hubungi penanggung jawab. Jangan menyetel alat bantu dengar sendiri.",
+      "lines": [
+        "Meskipun memakai alat bantu dengar, saya masih sulit mendengar.",
+        "Anda masih sulit mendengar, ya. Saya panggil petugas penanggung jawab.",
+        "Tolong, ya.",
+        "Baik, saya minta petugas memeriksanya."
+      ]
+    },
+    "SSW-S95": {
+      "title": "Memastikan pemilik barang yang ditemukan",
+      "goal": "Tanyakan dahulu jika belum yakin siapa pemilik barang.",
+      "context": "Anda menemukan sepasang kacamata dan belum mengetahui pemiliknya. Jangan menyatakan informasi yang belum diketahui sebagai fakta pasti. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Pertahankan status belum terkonfirmasi jika pemilik belum diketahui. Jangan menentukan pemilik hanya dari penampilan barang.",
+      "lines": [
+        "Apa yang sedang Anda pegang?",
+        "Kacamata ini milik siapa?",
+        "Saya juga belum tahu.",
+        "Baik, saya pastikan dengan petugas penanggung jawab."
+      ]
+    },
+    "SSW-S96": {
+      "title": "Menanyakan apakah tombol panggil terjangkau",
+      "goal": "Pastikan apakah barang berada dalam jangkauan penghuni.",
+      "context": "Tombol panggil sudah diletakkan sesuai pengaturan fasilitas. Tanyakan apakah dapat dijangkau. Jawaban itu tidak digunakan untuk menilai kemampuan bergerak secara mandiri. Contoh ini hanya melatih komunikasi. Tindakan nyata mengikuti rencana fasilitas dan arahan petugas penanggung jawab. Semua orang dan informasi bersifat fiktif.",
+      "check": "Tanyakan apakah penghuni dapat menjangkaunya. Jangan langsung pergi hanya setelah mengatakan sudah diletakkan.",
+      "lines": [
+        "Tombol panggilnya di mana?",
+        "Di sini. Apakah tangan Anda bisa menjangkaunya?",
+        "Ya, bisa.",
+        "Jika perlu sesuatu, silakan panggil dengan tombol ini."
+      ]
+    }
+  }
+}
