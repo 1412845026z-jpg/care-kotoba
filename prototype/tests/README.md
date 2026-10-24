@@ -44,10 +44,10 @@ Real-device and real-AI checks follow `docs/09_REAL_DEVICE_VOICE_TEST.md`.
 | `e2e/voice.e2e.mjs` | simulated Realtime peer: ordering, interruption, failure, hangup, resume, typed-line queueing, diagnostics, countdown, recognition confidence, core-draft session instructions | `CK_ASR_LOGPROBS=1` (the include check runs only when `/api/health` reports it) |
 | `e2e/core-preview.e2e.mjs` | optional 「コア練習（草稿）」: hidden by default, settings and `?core=1`, draft modal, server-side hidden facts (also absent from the harness bundle), not counted in the 48 | harness bundle check skips itself in BASE_URL mode |
 | `e2e/setup.e2e.mjs` | setup cleanup when Chromium fails to start | — |
-| `e2e/smoke-tool.e2e.mjs` | `tools/smoke/api-smoke.mjs` free and `--yes` modes | harness only |
+| `e2e/smoke-tool.e2e.mjs` | `tools/smoke/api-smoke.mjs` and `tools/smoke/core-roleplay-check.mjs`: free and `--yes` modes, early-disclosure detection (mock `scenario.reply`) | harness only |
 
 Test-only hooks in app code: `window.__CK_CRASH_TEST__` (error-boundary test). The mock's `state.scenario` switches:
-`quoteMode`, `error`, `pronunciation`, `badRuby`.
+`quoteMode`, `error`, `pronunciation`, `badRuby`, `reply` (fixed conversation reply).
 
 ### Against a real dev server (BASE_URL mode)
 

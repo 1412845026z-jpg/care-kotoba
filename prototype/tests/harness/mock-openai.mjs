@@ -18,7 +18,8 @@ const conversationRuby = ['そうなのね。もう{少|すこ}し、ゆっく�
 export function createMockOpenAI() {
   const state = {
     requests: [],
-    scenario: { quoteMode: 'exact', error: null, pronunciation: false, badRuby: false },
+    // reply: fixed text for every conversation reply (e.g. a reply that discloses a hidden fact); null = the canned replies.
+    scenario: { quoteMode: 'exact', error: null, pronunciation: false, badRuby: false, reply: null },
     onRealtimeCall: null, // async ({ sdp, session }) => ({ sdp, callId })
     hangups: [],
   };
@@ -40,7 +41,7 @@ export function createMockOpenAI() {
         const userTurns = (body.input || []).filter((m) => m.role === 'user').length;
         const last = [...(body.input || [])].reverse().find((m) => m.role === 'user')?.content || '';
         return Response.json(output({
-          reply: conversationReplies[Math.min(Math.max(userTurns - 1, 0), 2)],
+          reply: state.scenario.reply || conversationReplies[Math.min(Math.max(userTurns - 1, 0), 2)],
           ...(body?.text?.format?.schema?.properties?.reply_ruby ? { reply_ruby: state.scenario.badRuby ? '{違|ちが}う文です。' : conversationRuby[Math.min(Math.max(userTurns - 1, 0), 2)] } : {}),
           translation: '（模拟翻译）' + conversationReplies[Math.min(Math.max(userTurns - 1, 0), 2)].slice(0, 8),
           correction: userTurns === 1 && last ? { original: last, better: last.replace(/。?$/, '') + 'ませんか。', reason: '（模拟）丁寧な依頼の形にすると伝わりやすくなります。' } : null,
