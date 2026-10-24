@@ -1,0 +1,60 @@
+{
+  "main_before_state_followup": "2e9b5c5a5dc9656f7e621a4d57095f5c195d266d",
+  "checks": [
+    {
+      "path": "prototype",
+      "reference_commit": "0d74238b96a51ee0bddee3c033f8c3005e2cc6be",
+      "git_object": "8d87841a16ffba9e3b6a26ac82ec9bb5f158c1cb",
+      "matches": true
+    },
+    {
+      "path": "content/scenarios",
+      "reference_commit": "23041ce8b87aa9caab6216e0680abafaa44e75bb",
+      "git_object": "fb23cc4e8a24c8b3105e0d7e2d9caa68936ad997",
+      "matches": true
+    },
+    {
+      "path": "content/terminology",
+      "reference_commit": "23041ce8b87aa9caab6216e0680abafaa44e75bb",
+      "git_object": "251b1da6375766f306d585cdd148cb4231899b1d",
+      "matches": true
+    },
+    {
+      "path": "evals",
+      "reference_commit": "23041ce8b87aa9caab6216e0680abafaa44e75bb",
+      "git_object": "5e6f1ab704794c76af2c57f284cce5fa9acb2b6e",
+      "matches": true
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "reference_commit": "e6bb2bbfd52d4b4ee1e5c092692e9800da5cd367",
+      "git_object": "c542f2aa218a9e0b3328ed54f02819b9670c9f74",
+      "matches": true
+    },
+    {
+      "path": ".github/workflows/security-headers.yml",
+      "reference_commit": "0d74238b96a51ee0bddee3c033f8c3005e2cc6be",
+      "git_object": "8fcb8b6b28d1e165ac2deec30add4ec4d445d935",
+      "matches": true
+    },
+    {
+      "path": "scripts/ci/verify_claude.py",
+      "reference_commit": "0d74238b96a51ee0bddee3c033f8c3005e2cc6be",
+      "git_object": "3e1a20ed1d84bbfbd63f9116db9172901ce2cdf3",
+      "matches": true
+    },
+    {
+      "path": "prototype/package.json",
+      "reference_commit": "8b55117",
+      "git_object": "a582662ef1d898d69184e45c14de832ca67d185c",
+      "matches": true
+    },
+    {
+      "path": "prototype/pnpm-lock.yaml",
+      "reference_commit": "8b55117",
+      "git_object": "c73cc1c0d65bb638cbd7523a715c9bdf57b9b919",
+      "matches": true
+    }
+  ],
+  "application_changed_in_state_followup": false
+}

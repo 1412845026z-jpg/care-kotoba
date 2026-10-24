@@ -1,0 +1,15 @@
+{
+  "ranAt": "2026-10-24T01:58:33.295Z",
+  "node": "v22.23.3",
+  "mode": "unit",
+  "results": [
+    {
+      "name": "unit",
+      "exitCode": 0,
+      "seconds": 0.5,
+      "pass": 71,
+      "fail": 0,
+      "failures": []
+    }
+  ]
+}
