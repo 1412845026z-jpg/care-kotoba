@@ -42,3 +42,10 @@ PR #37 latest head captured after #35 merge: `2cf1a0e55741f260aed619e512c594b711
 ## Final scope and follow-up
 
 The evidence/tooling PR is #38 (`codex/CORE-ENV-001`). It retains the already merged source and changes only verification tooling, CI, state and this handoff. Application/content/evaluation/dependency trees remain byte-identical to reviewed #37; see application-tree-equivalence.json. Real AI, phones, model instruction quality, speech pacing and professional content approval remain unverified. No new dependencies, paid API or deployment. The optional leak_markers_ja schema proposal above is pending confirmation and was not implemented.
+
+
+## Evidence integration completed
+
+- Evidence/tooling PR #38 merged with a merge commit as `0901ddc50da8b9a226aa8bb4f2de175190aa7a40` after all three final checks passed: routine CI40059493040, security40059493047, pinned-source40059492963. The final source for the repeated pinned review remained `2cf1a0e`.
+- This metadata follow-up updates only PROJECT_STATE.md and this handoff, after confirming #38 actually entered main. CORE-ENV-001 is now marked merged and its row is inside the task table. The application/content/dependency trees still match reviewed #37 exactly; no extra application change is being claimed as independently retested.
+- OSS-001's stale form status was reconciled with this session's confirmed submission: application received, external review pending, license undecided. No email/contact data was copied to the repository.

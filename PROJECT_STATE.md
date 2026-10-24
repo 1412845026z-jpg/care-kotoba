@@ -9,7 +9,7 @@
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
 | 本轮核对的业务集成提交 | `b46bf98ad847f42f87ce1021e20869f4b863c32d`（#35→#37按merge commit合并；对应被测业务树930af372） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#35固定SHA及#37最新head独立ENV/CSP/mock复测通过并顺序合并；CORE-ENV-001证据PR #38） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#35固定SHA及#37最新head独立ENV/CSP/mock复测通过并顺序合并；CORE-ENV-001证据PR #38已合并0901ddc；此补记只改状态/交接） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -92,12 +92,11 @@
 | SEC-001 | docs/08 #16的Worker CSP等响应头 | Codex | merged | PR #33，merge86ebc70 | 完整业务树unit71/离线40/真实dev36通过4有原因跳过，7项CSP/API/注音/麦克风断言及模拟WebRTC通过；见SEC-001交接 |
 | CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude + Codex复测 | merged | PR #35，head a4d7831；merge b038f60 | 独立run40058494059：static0/unit81/offline47/真实dev42通过5注明原因跳过，10项CSP检查通过；CORE-ENV-001交接 |
 | CORE-EVAL-001 | 核心草稿的角色检查工具 | Claude + Codex复测 | merged | PR #37，head 2cf1a0e；merge b46bf98 | #35合并后独立run40058975902：static0/unit81/offline50/真实dev42通过8注明原因跳过；10项CSP检查通过，全部mock；dry-run及过期标志词检查0请求 |
+| CORE-ENV-001 | 核心预览/角色检查工具的独立ENV验收与合并证据 | Codex | merged | codex/CORE-ENV-001，PR #38；merge0901ddc | #35→#37顺序合并，证据/验证工具已进main；固定源两轮、最终证据CI/安全/固定源复测全通过；无新依赖/付费API/部署 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
-
-| CORE-ENV-001 | 核心预览/角色检查工具的独立ENV验收与合并证据 | Codex | review_ready | codex/CORE-ENV-001，PR #38 | #35→#37已按merge commit合并；固定源的两次标准runner均通过，证据与验证工具待PR #38整合；无依赖/付费API/部署 |
 
 ## 已确认的产品决定
 
