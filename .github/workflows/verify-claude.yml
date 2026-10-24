@@ -7,6 +7,10 @@ on:
       - .github/workflows/verify-claude.yml
       - scripts/ci/verify_claude.py
       - scripts/ci/local_fetch_only.mjs
+  pull_request:
+    paths:
+      - .github/workflows/verify-claude.yml
+      - scripts/ci/verify_claude.py
   workflow_dispatch:
     inputs:
       sha:
@@ -25,6 +29,7 @@ concurrency:
 # commit SHA; ENV-004 branch pushes review the latest PR #30 head and record its SHA.
 jobs:
   mock-review:
+    if: github.event_name != 'pull_request' || github.head_ref == 'codex/ENV-004'
     name: Source review / mock only / Node 22
     runs-on: ubuntu-24.04
     timeout-minutes: 18
