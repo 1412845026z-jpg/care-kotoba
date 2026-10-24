@@ -9,6 +9,7 @@ import { coreScenes, coreCasts, coreSkills, findScene, findCategory, isBaseScene
 import { coreScenarioData } from '@/lib/core-scenarios-data';
 import { coreScenarioPrivate } from '@/lib/core-scenarios-server';
 import { context } from '@/lib/ai-server';
+import { quote } from '@/lib/core-prompt';
 
 const repo = join(process.cwd(), '..');
 const readRepo = (p) => readFileSync(join(repo, p), 'utf8');
@@ -119,4 +120,9 @@ test('regular scenes are unchanged: variant instruction, no core notes', () => {
   assert.ok(!ctx.instructions.includes('Hidden facts'));
   assert.equal(ctx.feedbackNotes, '');
   assert.throws(() => context({ scenarioId: 'constructor' }), /SCENE_NOT_FOUND/);
+});
+
+test('multi-line draft replies are quoted on one line in the instructions', () => {
+  assert.equal(quote('一つずつ言いますね。\n面会用の写真アルバムです。\n談話室に置いてください。'), '「一つずつ言いますね。 / 面会用の写真アルバムです。 / 談話室に置いてください。」');
+  assert.equal(quote('今日はお風呂に入りたくないです。'), '「今日はお風呂に入りたくないです。」');
 });

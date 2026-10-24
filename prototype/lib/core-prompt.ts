@@ -25,7 +25,8 @@ const SKILL_RULES: Record<string, { name: string; partner: string; feedback: str
   },
 };
 
-const quote = (s: string) => `「${s}」`;
+/** Quotes a draft line on one line: multi-line replies (CONTENT-004 B3 "一つずつ言いますね。\n…") keep the branch list readable. */
+export const quote = (s: string) => `「${s.trim().replace(/\s*\n\s*/g, ' / ')}」`;
 
 export function coreRoleplayInstructions(scene: Scene, partner: PartnerInfo, o: { level: string; language: string; history: string }): string {
   const p = corePrivate(scene.id), d = coreScenarioData.find((x) => x.id === scene.id);
