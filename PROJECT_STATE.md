@@ -9,7 +9,7 @@
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
 | 本轮核对的业务集成提交 | `68f444ec92736e673047222dce48b950a2dd6c48`（#40固定SHA c663f56复测后按merge commit合并；对应被测树f8a768ee） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#40免费语音固定源ENV/CSP与无API key探测已通过；docs/10免费手机方案及证据在PR #41） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#40免费语音固定源ENV/CSP与无API key探测已通过；docs/10免费手机方案及证据已合并PR #41（cecef27）；本补记只改文档状态） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -94,7 +94,7 @@
 | CORE-EVAL-001 | 核心草稿的角色检查工具 | Claude + Codex复测 | merged | PR #37，head 2cf1a0e；merge b46bf98 | #35合并后独立run40058975902：static0/unit81/offline50/真实dev42通过8注明原因跳过；10项CSP检查通过，全部mock；dry-run及过期标志词检查0请求；真实服务器上的--yes评测保持blocked |
 | CORE-ENV-001 | 核心预览/角色检查工具的独立ENV验收与合并证据 | Codex | merged | codex/CORE-ENV-001，PR #38；merge0901ddc | #35→#37顺序合并，证据/验证工具已进main；固定源两轮、最终证据CI/安全/固定源复测全通过；无新依赖/付费API/部署 |
 | FREE-VOICE-001 | 免费真机测试方案与浏览器语音输入 | Claude + Codex复测 | merged | PR #40，head c663f56；merge68f444e | 独立run40063459564：static0/unit89/offline54/真实dev46通过8跳过，14项CSP检查及无API key探测通过；真实识别/可听朗读待F5/F6 |
-| FREE-VOICE-ENV-001 | #40复测、免费手机A/C方案与证据整合 | Codex | review_ready | codex/FREE-VOICE-ENV-001，PR #41 | #40已实际合并；docs/10方案和runner证据待整合；无依赖/付费API/部署 |
+| FREE-VOICE-ENV-001 | #40复测、免费手机A/C方案与证据整合 | Codex | merged | codex/FREE-VOICE-ENV-001，PR #41；mergececef27 | #40已合并，docs/10和证据/验证工具已进main；最终常规CI/安全/固定源均通过；无依赖/付费API/部署 |
 | DEVICE-FREE-001 | 实际手机免费F1–F10（A/B可开始，C仅方案） | 用户 + Claude整理 + Codex支持 | queued | — | 无API key；记录Android/iPhone型号、浏览器与JSON。C需另行授权部署，Free容量/实际声音均未在真机或云端验收 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
