@@ -57,6 +57,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
+| MERGE-2 | 顺序整合#46/#49并复核常规CI和A11Y硬门 | Codex | in_progress | `codex/MERGE-2`；先解决#46仅PROJECT_STATE冲突 | handoffs/2026-10-24-MERGE-2-codex.md；保留main已有依赖/许可/证据，App原样继承Claude |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
 | REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
 | REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude | review_ready | `claude/REVIEW-001`，PR #49，head69c36a4；依赖#46 | #47依赖已合并；Claude报告unit99/e2e62，Codex未复测或合并，本轮不改其功能 |
@@ -131,6 +132,12 @@
 
 - 改 `content/scenarios` 后先跑核心生成器，再重生注音并运行两个 `--check`；逐句检查机器读音，重点为夜中、一回、二人、後。改隐藏信息后还要不加 `--yes` 跑角色检查工具，检查过期标志词。
 - `hidden_information[].leak_markers_ja` 结构提案已按最新用户指令暂缓，不实施，当前字段结构未改。
+
+## 本轮用户决定（2026-10-24，MERGE-2等）
+
+- Claude 18:20 JST之前不工作；Codex按用户授权整合#46→#49，只解决共享状态冲突，不编辑prototype/app、components、lib、tests；缺陷写交接/PR评论。
+- 本轮全部免费：不调用付费API、不充值、不部署、不安装impeccable钩子；REAL-AI-PILOT-PLAN-001只写预算待批准，未授权真实--yes。
+- LEGAL-001经营文档不写任何个人信息；原16:43任务记录尚未检索到，按当前明确条目和已有经营范围研究，不伪称旧范围已恢复。
 
 ## 当前阻塞与风险
 
