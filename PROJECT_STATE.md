@@ -58,7 +58,8 @@
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
 | I18N-001 | 日语注音优先、可选en/zh/vi/my/id辅助语言与界面 | Claude | review_ready | `claude/I18N-001`，PR #62，代码 `d2744f4` | handoffs/2026-10-24-I18N-001-claude.md；默认「日本語だけ」、旧设置保留；关键界面对照＋vi/my/id缺译退英语（lang=en）、不退中文；基础课生成器支持`<字段>_<语言>`与`content/ssw-basic/locales/`语言包（目前内容只有中文）；static0/unit114/e2e79，A11Y两尺寸19/20屏硬门0；vi/my/id为未审稿草稿，缅甸文真机未测 |
-| SCENE-AV-APP-001 | 场景图在上、对应对话在下与预生成音频接入 | Claude | queued | #57→#59→#60后从main独立分支 | 先读SCENE-AV-001真实3图/15音频manifest；媒体由Codex增补，App不负责合成；逐句/整段/停止、缺素材回退有据，不调用付费API |
+| SCENE-AV-APP-001 | 场景图在上、对应对话在下与录音播放（App 侧） | Claude | review_ready | `claude/SCENE-AV-APP-001`（含 #62 提交，先合 #62），代码 `61d22c6` | handoffs/2026-10-24-SCENE-AV-APP-001-claude.md；读 `/media/ssw/index.json`（格式提议见交接）；逐句/整段（答案前不播放答案）/停止，关闭/换场/离开停止；缺素材退回设备语音并标明；未用真实素材（`content/scene-av` 未推送）；static0/unit118/e2e84，A11Y 20/21屏0 |
+| SCENE-AV-APP-002 | 接入 Codex 实际场景图与录音、3场真机试听 | Claude | blocked | — | 等 Codex 推送素材并确认接口（交接第3条 a/b） |
 | FULL-MEDIA-001 | 96场景配图、384轮台词与192替代句实际音频增补 | Codex | in_progress | `codex/FULL-MEDIA-001`准备中 | 保留96场既有384轮/192替代文本；逐场独立图与角色/情绪音频；已完成3图/12轮+3对照，完整数量按实际文件登记 |
 
 | VOICE-EXPRESSION-001 | 逐句表达方向 | Codex | merged | PR #58，merge91a0ccf，head9472f35 | CI40084825348两job成功；方向是合成准备，实际图声样本另见SCENE-AV-001 |
@@ -177,6 +178,7 @@
 
 ## 最近交接
 
+- handoffs/2026-10-24-SCENE-AV-APP-001-claude.md：App 侧场景图与录音播放；提出 `public/media/ssw/index.json` 最小接口，等 Codex 确认与推送素材。
 - handoffs/2026-10-24-I18N-001-claude.md：六种辅助语言（默认日语），关键界面对照、vi/my/id缺译退英语；基础课语言包格式；vi/my/id未审稿、缅甸文真机未测。
 - handoffs/2026-10-24-LEGAL-001-codex.md：经营方案明确范围与30来源索引；16:43旧清单仍待补核，未获专业签核。
 - handoffs/2026-10-24-REAL-AI-PILOT-PLAN-001-codex.md：只交计划；条件预算¥113、建议另批¥1000，未花钱；旧实时价/逐次计量/鉴权待解决。
