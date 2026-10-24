@@ -62,6 +62,17 @@
 - 草稿的教学效果和日语自然度；
 - vinext 的真实构建和 dev（Claude 环境不能安装依赖，要靠 CI 和 Codex 复测）。
 
+## 另：ENV-004 的两项失败已修正（提交在 #30 分支）
+
+Codex ENV-004（run 40048821852，真实 vinext dev）中两个故意制造崩溃的测试失败：错误边界已经接住错误后，vinext 的开发用错误覆盖层 `#__vinext_dev_error_overlay_root` 仍盖住页面并拦截点击。
+
+- 修正提交：`c3632f5`，在 `claude/NOTES-EXPORT-001` 上，PR #30 的新 head。
+- 做法：这两个测试检查的是我们自己的错误边界（生产构建中学员看到的界面），所以测试里用只作用于测试的样式隐藏开发覆盖层。在 harness 里会插入一个和 vinext 相同的全屏元素，证明隐藏有效。
+- 对照：不隐藏时，harness 中重现了与 ENV-004 完全相同的 `intercepts pointer events` 失败；隐藏后通过。
+- 真实 dev 中如果出现覆盖层，日志会输出一行说明。
+- `c3632f5` 上的离线结果：static 0，unit 71/71，e2e 40/40。真实 dev 需要 Codex 用新 head 重新运行 ENV-004，Claude 环境不能运行 vinext。
+- 本分支已经合并 `c3632f5`（merge `5113de4`）。在 `5113de4` 上重新运行全部离线测试：static 0，unit 80/80，e2e 47/47。
+
 ## 给 Codex / GPT
 
 1. 合并顺序：本 PR 依赖 #30，排在链条最后。

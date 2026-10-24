@@ -86,7 +86,7 @@
 | VOICE-CHECK-LINK-001 | 语音无法开始时，可以从错误提示直接打开免费的音声测试 | Claude | review_ready | `claude/VOICE-CHECK-LINK-001`（依赖 PR #27） | e2e（模拟会话失败）通过 |
 | LOCAL-DATA-001 | 设置里「この端末の学習データを削除」（两步确认）：删除笔记、记录、设置和访问码 cookie，适合机构里共用的设备 | Claude | review_ready | `claude/LOCAL-DATA-001`（依赖 PR #28） | e2e 两项通过（本机数据清空；访问码失效） |
 | NOTES-EXPORT-001 | 「ことばノート」可书出为文本文件；删除本机数据前的确认里提示先书出 | Claude | review_ready | `claude/NOTES-EXPORT-001`（依赖 PR #29） | e2e 通过（下载内容含表达、原来的说法、场景） |
-| CORE-PREVIEW-001 | 12 个核心场景草稿接进应用：可选的「コア練習（草稿）」入口（默认隐藏，原 48 场景与计数不变）；服务端按隐藏信息、分支和反馈规则生成角色指示，隐藏信息不进浏览器 | Claude | review_ready | `claude/CORE-PREVIEW-001`（依赖 PR #30） | handoffs/2026-10-24-CORE-PREVIEW-001-claude.md；模拟 AI 下 unit/e2e 通过；真实模型是否遵守未验证 |
+| CORE-PREVIEW-001 | 12 个核心场景草稿接进应用：可选的「コア練習（草稿）」入口（默认隐藏，原 48 场景与计数不变）；服务端按隐藏信息、分支和反馈规则生成角色指示，隐藏信息不进浏览器 | Claude | review_ready | `claude/CORE-PREVIEW-001`（依赖 PR #30） | handoffs/2026-10-24-CORE-PREVIEW-001-claude.md；@`5113de4` 离线 static 0 / unit 80 / e2e 47（模拟 AI）；真实模型是否遵守未验证。另：ENV-004 两项 dev 覆盖层失败已在 #30 修正（`c3632f5`），待 Codex 用新 head 复测 |
 | CONTENT-004 | 按 CONTENT-REVIEW-001 修改场景/术语/评测（中村さん左右、NPC 口吻、放慢、R01 例句、常见错误、多轮样本、术语例句、学員、原話） | Codex | queued（用户 2026-10-24 指示） | — | verification/CONTENT-REVIEW-001/README.md；改完运行 tools/core-scenarios/generate.mjs |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
