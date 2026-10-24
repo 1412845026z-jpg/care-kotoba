@@ -5,6 +5,7 @@ on:
       - prototype/worker/**
       - scripts/ci/verify_claude.py
       - scripts/ci/security_browser_probe.mjs
+      - scripts/ci/free_voice_browser_probe.mjs
       - scripts/ci/check_security_policy.mjs
       - .github/workflows/security-headers.yml
   push:
@@ -12,6 +13,7 @@ on:
     paths:
       - prototype/worker/**
       - scripts/ci/security_browser_probe.mjs
+      - scripts/ci/free_voice_browser_probe.mjs
       - scripts/ci/check_security_policy.mjs
       - .github/workflows/security-headers.yml
 permissions:

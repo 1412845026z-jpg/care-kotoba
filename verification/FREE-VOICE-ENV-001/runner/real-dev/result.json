@@ -1,0 +1,30 @@
+{
+  "mode": "real-dev",
+  "mock_only": true,
+  "without_ai_key": false,
+  "probe_only": false,
+  "filter": null,
+  "port": 5173,
+  "mock_port": 4010,
+  "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+  "source_sha": "c663f5603685a858cd5c1cc007ed500078c1531f",
+  "source_tree": "f8a768ee23ae7b9e297232a3623b831b5850cfd4",
+  "startup_seconds": 3.129,
+  "browser_probe_exit_code": 0,
+  "command": [
+    "node",
+    "tests/run.mjs",
+    "e2e",
+    "--report",
+    "/home/runner/work/care-kotoba/care-kotoba/review-results/real-dev/tests.json"
+  ],
+  "exit_code": 0,
+  "network_guard": {
+    "blockedExternal": 0,
+    "mockBaseConfigured": true,
+    "policy": "code"
+  },
+  "worker_restored": true,
+  "fake_env_removed": true,
+  "seconds": 83.962
+}

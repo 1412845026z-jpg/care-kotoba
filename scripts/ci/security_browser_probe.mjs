@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { existsSync, writeFileSync } from 'node:fs';
+import {checkFreeVoice} from './free_voice_browser_probe.mjs';
 const args=process.argv.slice(2);
 const opt=k=>args[args.indexOf(k)+1];
 const source=resolve(opt('--source'));
@@ -103,6 +104,11 @@ try {
   const media=await page.evaluate(async()=>{const stream=await navigator.mediaDevices.getUserMedia({audio:true});const ok=stream.getAudioTracks().length>0;stream.getTracks().forEach(t=>t.stop());return ok;});
   assert(media,'same-origin fake microphone is allowed');
   results.push('microphone Permissions Policy permits same-origin audio');
+  if(existsSync(join(source,'prototype/lib/browser-speech.ts'))){
+    env.__source=source;
+    const free=await checkFreeVoice(env);
+    results.push(...free.checks);
+  }
   writeFileSync(opt('--report'),JSON.stringify({passed:true,source,checks:results,paidApiCalls:0,notes:['WebRTC transport is additionally exercised by the complete real-dev e2e suite.','The only CSP violation above is the deliberate nonce-less inline script probe.']},null,2)+'\n');
   console.log(JSON.stringify({securityProbe:'passed',checks:results}));
 } finally {await env?.close();}

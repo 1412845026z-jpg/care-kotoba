@@ -8,6 +8,8 @@ on:
       - verification/ENV-004/request.json
       - verification/CORE-ENV-001/request.json
       - scripts/ci/security_browser_probe.mjs
+      - scripts/ci/free_voice_browser_probe.mjs
+      - verification/FREE-VOICE-ENV-001/request.json
   workflow_dispatch:
     inputs:
       sha:
@@ -26,7 +28,7 @@ concurrency:
 # request file on the ENV-004 tooling PR. No source SHA is hardcoded in this workflow.
 jobs:
   mock-review:
-    if: github.event_name != 'pull_request' || github.head_ref == 'codex/ENV-004' || github.head_ref == 'codex/CORE-ENV-001'
+    if: github.event_name != 'pull_request' || github.head_ref == 'codex/ENV-004' || github.head_ref == 'codex/CORE-ENV-001' || github.head_ref == 'codex/FREE-VOICE-ENV-001'
     name: Source review / mock only / Node 22
     runs-on: ubuntu-24.04
     timeout-minutes: 18
@@ -44,7 +46,7 @@ jobs:
         id: request
         env:
           REQUESTED_SHA: ${{ inputs.sha }}
-          REVIEW_REQUEST_PATH: ${{ github.head_ref == 'codex/CORE-ENV-001' && 'verification/CORE-ENV-001/request.json' || 'verification/ENV-004/request.json' }}
+          REVIEW_REQUEST_PATH: ${{ github.head_ref == 'codex/FREE-VOICE-ENV-001' && 'verification/FREE-VOICE-ENV-001/request.json' || github.head_ref == 'codex/CORE-ENV-001' && 'verification/CORE-ENV-001/request.json' || 'verification/ENV-004/request.json' }}
         run: |
           node --input-type=module <<'JS'
           import { readFileSync, appendFileSync } from 'node:fs';
@@ -128,6 +130,18 @@ jobs:
           git diff --exit-code
           test ! -e prototype/.dev.vars
           test ! -e prototype/.env.local
+      - name: Free demo without an API key (fake recognition, native device speech API)
+        id: freevoice
+        if: ${{ !cancelled() && github.head_ref == 'codex/FREE-VOICE-ENV-001' }}
+        continue-on-error: true
+        run: python3 scripts/ci/verify_claude.py --source verified-source --mode real-dev --without-ai-key --probe-only --browser-probe scripts/ci/free_voice_browser_probe.mjs --report-dir review-results/free-no-key
+      - name: Confirm no-key probe restored source and removed temporary environment
+        if: ${{ !cancelled() }}
+        working-directory: verified-source
+        run: |
+          git diff --exit-code
+          test ! -e prototype/.dev.vars
+          test ! -e prototype/.env.local
       - name: Keep diagnostic reports
         if: ${{ always() }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 tag resolved 2026-10-24 JST
@@ -141,6 +155,8 @@ jobs:
         env:
           OFFLINE_RESULT: ${{ steps.offline.outcome }}
           REALDEV_RESULT: ${{ steps.realdev.outcome }}
+          FREE_RESULT: ${{ steps.freevoice.outcome }}
         run: |
           test "$OFFLINE_RESULT" = success
           test "$REALDEV_RESULT" = success
+          case "$FREE_RESULT" in skipped|success) ;; *) exit 1 ;; esac

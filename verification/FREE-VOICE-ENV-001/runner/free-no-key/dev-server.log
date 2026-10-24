@@ -1,0 +1,18 @@
+$ node scripts/run-framework.mjs dev --host 127.0.0.1 --port 5173
+
+  vinext dev  (Vite 8.0.13)
+
+Sites local sign-in: seedy@sites.test
+Using secrets defined in .dev.vars
+Using secrets defined in .dev.vars
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+ GET /__ck_ci_network 200 in 9ms
+ GET /api/access 200 in 281ms
+ GET /api/health 200 in 23ms
+ POST /api/access 200 in 22ms
+ GET / 200 in 1.1s (compile: 1792817195.1s, render: 1.0s)
+ GET /api/access 200 in 18ms
+ POST /api/speech 503 in 18ms
+ GET /__ck_ci_network 200 in 6ms
+  ➜  Tunnel closed
+[ELIFECYCLE] Command failed.

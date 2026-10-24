@@ -1,6 +1,6 @@
 # 本地环境验证与私有 staging 方案
 
-核对日期：2026-10-23。此文档记录本机验证和待授权的部署步骤；本轮没有部署、开通服务、配置真实密钥或调用付费 API。
+核对日期：2026-10-24。当前执行依据为用户12:54决定：先做免费真机测试，付费往后。本轮只补充方案与模拟验收，没有部署、开通服务、配置真实密钥或调用付费 API。下方ENV历史记录保留原被测版本；新的免费方案优先于旧的付费测试建议。
 
 ## 当前证据与适用范围
 
@@ -15,7 +15,7 @@
 
 ## 本地启动
 
-从仓库根读取 AGENTS.md、PROJECT_STATE.md 和最新 handoffs/，确认工作分支。进入 `prototype/`：
+从仓库根读取 AGENTS.md、PROJECT_STATE.md 和最新 handoffs/，确认工作分支。下面为通用构建入口；当前免费手机测试请使用下节A的干净副本和清空进程变量步骤。进入 `prototype/`：
 
 ```sh
 corepack enable
@@ -27,6 +27,102 @@ pnpm dev --host 127.0.0.1
 ```
 
 清洁副本默认 portable，开发端口5173。已有脚本能在普通 Linux 构建，不需要进入 Sites 的 managed-linux / flock 安装路径。CI 用 Node22（>=22.13），本地结果应同时注明实际 Node 版本。
+
+## 2026-10-24：先做免费的手机测试（docs/09 的 A 和 C）
+
+本节对应 `docs/09_REAL_DEVICE_VOICE_TEST.md` 的 F1–F10。AI费用为0：电脑和未来的新staging都不设置 `OPENAI_API_KEY`，不连接真实AI。浏览器语音输入可能使用浏览器提供商的服务，是否需要联网、是否有日语端末声音依设备而异；第一次使用先阅读应用的告知并自行选择同意。模拟识别器的CI结果不能替代手机F5/F6。
+
+### A：Android USB端口转发，本机运行，不部署
+
+准备现有Android手机、一条能传数据的USB线、电脑与手机上的Chrome，以及仓库已有工具链Git、Node22（>=22.13）和固定pnpm11.25.0。安装锁文件中的现有包不改变依赖；此路径不需要Android Studio、adb、付费隧道或域名。先用干净的新副本，保留原项目中的任何密钥文件；不要复制 `.dev.vars`、`.env*`、旧 `dist/` 或 `.wrangler/` 到测试副本。
+
+#### Windows（PowerShell）
+
+1. 在电脑选一个可写目录打开新的PowerShell窗口。先确认 `node --version` 是Node22且>=22.13、`git --version`可用。获取已验收main并启动本机服务器：
+
+```powershell
+git clone https://github.com/1412845026z-jpg/care-kotoba.git care-kotoba-free-phone
+Set-Location .\care-kotoba-free-phone\prototype
+Remove-Item Env:OPENAI_API_KEY -ErrorAction SilentlyContinue
+Remove-Item Env:OPENAI_BASE_URL -ErrorAction SilentlyContinue
+$env:WRANGLER_SEND_METRICS = "false"
+$env:CLOUDFLARE_CF_FETCH_ENABLED = "false"
+$env:NEXT_TELEMETRY_DISABLED = "1"
+corepack enable
+corepack prepare pnpm@11.25.0 --activate
+pnpm install --frozen-lockfile
+pnpm dev --host 127.0.0.1 --port 5173
+```
+
+2. 保持窗口运行，在电脑Chrome打开 `http://127.0.0.1:5173/api/health`，确认**顶层** `configured` 为 `false`。这是AI密钥状态，与嵌套的 `access.configured` 不同。若顶层为true，停止本次免费测试并查明变量来源；不要输出或提交任何密钥。使用演示模式，不进入付费语音练习。
+3. Android设置中启用开发者选项（一般在「关于手机」连续点「版本号」7次，厂商菜单可能不同），然后启用「USB调试」。用数据线直接连接电脑，解锁手机，在手机上同意这台电脑的USB调试提示；必要时切到「文件传输」。
+4. 电脑Chrome打开 `chrome://inspect/#devices`，勾选 **Discover USB devices**，等到列表出现手机型号。点击 **Port forwarding**：左侧 **Port** 填 `5173`，右侧 **IP address and port** 填 `localhost:5173`，勾选 **Enable port forwarding**，点 **Done**。
+5. 在**手机Chrome**打开 `http://localhost:5173`，不要填电脑的局域网IP。转发指示应显示已连接；电脑服务器仍只监听127.0.0.1，不需要开放防火墙公网端口。
+6. 按docs/09做F1–F10；首次用麦克风时由测试者允许此站点权限，F5先在演示中点击「声で入力」，核对、修改文字后发送。F6点「ゆっくり聞く」；没有AI key时应用会尝试端末朗读。记录没有日语声音或浏览器不支持的情况。
+
+若电脑看不到手机，先换数据线、直连USB口、解锁并重新连接，再检查手机授权。Windows仍无法识别时按Google/手机厂商官方说明安装对应OEM USB驱动；不要从不明驱动站下载。无需为此安装项目新依赖。测试结束关闭Chrome的端口转发、按Ctrl+C停止服务器，并在手机关闭USB调试或撤销这台电脑的调试授权。
+
+#### macOS（终端）
+
+1. 用新的终端窗口，在自己选择的可写目录运行；工具链同Windows，macOS通常不需OEM USB驱动：
+
+```sh
+git clone https://github.com/1412845026z-jpg/care-kotoba.git care-kotoba-free-phone
+cd care-kotoba-free-phone/prototype
+unset OPENAI_API_KEY OPENAI_BASE_URL
+export WRANGLER_SEND_METRICS=false
+export CLOUDFLARE_CF_FETCH_ENABLED=false
+export NEXT_TELEMETRY_DISABLED=1
+corepack enable
+corepack prepare pnpm@11.25.0 --activate
+pnpm install --frozen-lockfile
+pnpm dev --host 127.0.0.1 --port 5173
+```
+
+2. 电脑Chrome打开 `http://127.0.0.1:5173/api/health`，确认顶层 `configured:false`，保持服务器运行。
+3. Android开启开发者选项和USB调试，用数据线连接Mac；在手机允许调试。Mac若询问是否允许连接USB配件，由测试者确认自己的手机。
+4. Mac Chrome打开 `chrome://inspect/#devices` → **Discover USB devices** → 看到手机型号 → **Port forwarding**。左侧 `5173`、右侧 `localhost:5173`，勾选 **Enable port forwarding** → **Done**。
+5. 手机Chrome打开 `http://localhost:5173`。允许本次麦克风访问后，按docs/09记录F1–F10，特别是F4保存的JSON、F5识别/修改、F6端末朗读。
+6. 结束后关闭端口转发、终端Ctrl+C，并关闭手机USB调试或撤销授权。
+
+A的网页流量走USB，不要求手机和电脑处于同一Wi-Fi；浏览器供应商的语音服务仍可能要求手机联网。手机的localhost属于安全上下文，但实际识别支持、权限、准确率与音色仍须按机型记录。A仅适用Android；iPhone使用C的私有HTTPS地址，或B仅做界面检查。Windows/macOS上的实际连线操作尚未由本轮代替用户执行。
+
+### C：不设API key的私有staging，仅方案、等待部署授权
+
+目标为新的 `care-kotoba-private-staging` Worker，使用明确处于Workers Free的账户与少量测试者的Access Free，不新增数据库、R2、付费隧道、域名、付费Workers套餐或API服务。**本节没有执行部署或开户。**
+
+若现有账户的Workers计划已经是Paid，不把新建一个Worker描述成Free；不为本测试改动原账户收费计划，另核对不影响旧服务的免费目标，或使用A。
+
+现有 `CK_ACCESS_CODE` 只保护AI接口，演示页面和HTML仍可直接访问，单独设置它不能把全站变成私有。当前可准备的私有方案采用 **Access Free全站保护 + 应用访问码**。若只希望靠访问码保护全站，必须另做Worker入口门禁设计与验收；此门禁当前未实现，不把它当作已可部署的私有方案。
+
+| 设置 | 免费staging要求 | 用户要做的操作 |
+| --- | --- | --- |
+| Cloudflare目标 | 明确账户ID和全新Worker名，不复用旧Sites | 登录自己的Cloudflare账户，核对目标与权限 |
+| Workers计划 | 确认账户的Workers计划为Free，不绑定自动升级/付费附加服务 | 控制台确认实际计划与免费额度；遇到付费承诺停止 |
+| Access计划 | Access Free，仅少量指定测试者（官方上限50用户） | 选择Free；在控制台维护允许的测试者，不把名单放进仓库 |
+| 构建/路由 | portable生产构建；参考 `prototype/config/staging/wrangler.example.jsonc` 独立配置 | 授权部署前再核对构建输出、assets/main路径和账号，禁止直接沿用旧默认部署目标 |
+| URL | 初始 `workers_dev:false`、`preview_urls:false`，不设其他公开路由 | 全站Access策略生效后才开放新的workers.dev URL；preview继续关闭 |
+| 全站访问保护 | 新Worker的Access → Protect this Worker behind Access → **All traffic**；按明确测试者放行，无Everyone/bypass | 用户配置并确认未登录、未授权用户均无法看到页面与API |
+| `OPENAI_API_KEY` | **不存在**，不是把真实key换个名字或放入其他配置 | 检查新Worker变量、secrets和构建输入，保持未设置 |
+| `OPENAI_BASE_URL` | 新staging不设置；不带入CI/mock地址或代理 | 不复制本地mock变量或旧环境 |
+| `CK_ACCESS_POLICY` | `code` | 在新Worker设置非机密变量 |
+| `CK_ACCESS_CODE` / `CK_SESSION_SECRET` | 独立高熵访问码与随机签名secret；不依赖AI key | 仅在平台安全输入设置；不写入vars、命令参数、聊天、截图或仓库 |
+| 可选AI开关 | `CK_ASR_LOGPROBS`、`CK_AI_FURIGANA`不启用；不配模型实验 | 保持默认关闭，MODEL-001仍blocked |
+
+授权部署以后的人工顺序：先确认目标与Free计划，清洁构建并审阅上传清单；创建新Worker时保持URL关闭；为该Worker配置Access全站策略与应用访问码；确认策略覆盖后才开放单一HTTPS入口。随后分别用未登录、未授权和已授权浏览器检查保护，已授权者访问 `/api/health` 必须看到顶层 `configured:false`，再执行F1–F10。保留被测SHA、Worker版本ID、机型/系统/浏览器和免费测试结果。Access策略失败、CPU/请求超限或需付费能力时关闭新入口并记录阻塞，回到A，不自动升级。
+
+Worker级Access目前不支持WebSocket升级。免费C只运行生产构建的演示/端末语音功能，不部署dev/HMR服务，也不启用付费Realtime或旁路WebSocket；将来需要WebSocket时，另行审查官方hostname-based Access方案，不能沿用本节的覆盖假设。
+
+截至2026-10-24官方Workers Free限制为100,000请求/日、10ms CPU/请求；SSR在Free上的实际CPU和资源行为尚未在云端验收。额度不足时保持blocked。本轮没有提供自动部署、自动配置key或自动运行收费测试的CI步骤。
+
+### 当前保持blocked的项目与免费测试证据
+
+- 真实付费T1–T14、真实 `core-roleplay-check` 的付费开关、MODEL-001、Workers Paid及其他付费服务保持blocked。免费阶段不创建/配置产品AI key，不预充，不升级，不运行这些收费任务。
+- CI中的AI、语音对端和识别器是模拟的；已有收费开关的工具测试只在隔离的offline harness/mock执行，不对真实服务器运行。
+- F1–F10由用户记录实际手机结果；本轮仅准备方法与模拟验收。F4可能因没有AI设置而提示只能演示，符合本阶段预期；浏览器识别/端末声音缺失只记录设备能力，不据此打开收费接口。
+- `leak_markers_ja`结构提案暂缓，不修改content结构。
+
+官方操作依据（2026-10-24读取）：[Chrome USB远程调试](https://developer.chrome.com/docs/devtools/remote-debugging)、[Chrome端口转发](https://developer.chrome.com/docs/devtools/remote-debugging/local-server)、[Android OEM USB驱动](https://developer.android.com/studio/run/oem-usb)、[Workers Free限制](https://developers.cloudflare.com/workers/platform/limits/)、[Worker Access范围](https://developers.cloudflare.com/workers/configuration/cloudflare-access/)、[Cloudflare Free计划](https://www.cloudflare.com/plans/)。
 
 ## 环境变量的假值实测
 
@@ -88,52 +184,22 @@ Cloudflare Access 保护设在平台入口，选择这一个新 Worker 的 **All
 
 不要为首次测试授予全账户 API token。未来如使用 CLI，可由账户管理员限定 Workers 编辑与相关账户读取权限；Access 配置使用单独权限或控制台，不把部署 token 放进 GitHub CI。
 
-## 待授权后才执行的部署顺序
+## 待授权后才执行的部署顺序（免费阶段）
 
-1. 合并并核实 G0-01 / CI-002 / ENV-001；先解决真实框架测试中影响目标流程的问题。新 Worker 尚不含真实 key。
-2. 用户在 Cloudflare 选择新账户目标；将 example 复制为本地未跟踪配置，填入新账户 ID，保留 workers_dev=false、preview_urls=false。核对目标名没有旧项目标识。
-3. 清理测试变量和本地构建产物后，从已验收提交执行 frozen install、tsc、build。在本机对独立配置做 dry-run 并检查将上传的文件清单。原 Sites 仍独立运行。
-4. 只有在用户授权后，上传到新 Worker，仍关闭外部 URL。此时只允许部署账户管理员在控制台操作。
-5. 在新 Worker Settings → Access 设置 Protect this Worker behind Access → All traffic；只允许明确测试者。保存策略后才开放这个新 Worker 的 workers.dev URL。预览 URL 继续关闭；未来启用前先确认同样受保护。
-6. 无 key 时先用未登录浏览器核对首页、`/api/health`、`/api/chat`、`/api/session`、`/api/session/end` 都由 Access 拦截；用已授权账号检查演示流程。核对未授权邮箱仍被拒绝。任何直接访问路径漏保护，立即关闭 URL，不配置真实 key。
-7. 用户确认真实 AI 的预算、测试时长和参与者后，自行配置平台 secrets：OPENAI_API_KEY、CK_ACCESS_CODE、独立 CK_SESSION_SECRET。明文不进配置的 vars、日志、聊天、截图或仓库。部署环境的 OPENAI_BASE_URL 使用正式供应商地址，删除本地 mock 地址；模型覆盖值需经模型迁移评测后另定。
-8. 按 docs/09 在 iOS Safari / Android Chrome 做小范围人工测试，记录被测版本、网络、耳机、打断、最后一句转写、结束/关页、断线重连和诊断信息。记录真实消耗；当前只有客户端时长控制，服务端强制时长与对账尚待实现，不能据此承诺费用硬上限。
+以本文件上方C节为当前唯一staging操作顺序。旧方案中的配置产品AI key、真实AI语音测试步骤已停止准备：T1–T14、真实角色检查收费开关和MODEL-001保持blocked。免费部署也须另行授权，本轮未执行。当前CI仅本地构建和mock测试，不添加部署或平台secret配置动作。
 
-下列只是**授权后**的命令模板，本轮未执行。路径需与实际审核后的 staging 配置一致：
+## 免费阶段的费用与停止条件（2026-10-24核对）
 
-```sh
-cd prototype
-pnpm install --frozen-lockfile
-node node_modules/typescript/bin/tsc --noEmit
-pnpm build
-
-# cfg 是经过审核的本地独立配置，不是旧 dist/server/wrangler.json。
-pnpm exec wrangler deploy --dry-run --config config/staging/wrangler.local.jsonc
-pnpm exec wrangler deploy --config config/staging/wrangler.local.jsonc
-
-# 后续由用户在平台安全输入中设置 secret；命令不携带明文值。
-pnpm exec wrangler secret put OPENAI_API_KEY --config config/staging/wrangler.local.jsonc
-pnpm exec wrangler secret put CK_ACCESS_CODE --config config/staging/wrangler.local.jsonc
-pnpm exec wrangler secret put CK_SESSION_SECRET --config config/staging/wrangler.local.jsonc
-```
-
-不要把以上部署或 secret 命令加入当前 GitHub Actions；当前 CI 只构建和模拟测试。
-
-## 费用估计（官方页面，2026-10-23 查询）
-
-这是私有开发测试环境预算，美元、未含税。不是未来学员运营成本，也不构成购买授权。
-
-| 项目 | 小范围开发测试估计 | 实际限制与选择条件 |
+| 项目 | 当前选择 | 限制与处理 |
 | --- | --- | --- |
-| Workers Free | $0/月 | 100,000 请求/日、10ms CPU/次；当前应用是否符合 CPU 约束还未在云上测，不能保证 Free 足够 |
-| Workers Paid（如 Free 不适用） | 最低 $5/月/账户 | 含1000万请求、3000万 CPU ms；超出后请求 $0.30/百万、CPU $0.02/百万 ms；只有用户批准后才升级 |
-| Cloudflare Access Free | $0/月，50用户以内 | 本轮只安排少数测试者；Zero Trust 开户可能需要用户自行填写付款资料 |
-| 新 workers.dev 地址 | 无需另购域名 | 要先设置 Access；可保持 preview URL 关闭 |
-| 数据库、R2、邮件、商店账户 | 本轮方案不新增 | 当前目标无需这些资源；未来功能分别规划 |
-| 产品 AI | 本轮 $0 | 没有真实调用；后续真实语音另设授权预算，不能包含在 $5 Workers 费中 |
-| GitHub Actions | 本轮只用免费额度 | 已只读核实账户 Actions 付费预算 $0 并阻止付费用量；不能把标准私库 runner 描述成永久无限免费 |
+| Workers Free | $0/月 | 官方100,000请求/日、10ms CPU/请求；本应用尚未在云端证明满足限制，超限就停止，不升级Paid |
+| Access Free | $0，最多50用户 | 仅少量指定测试者；由用户核对账户实际Free计划与开户要求，不自动开通付费方案 |
+| workers.dev | 不另购域名 | 只开放有全站Access保护的单一入口，preview关闭 |
+| 产品AI / 模型测试 | 本阶段不配置key、不调用 | T1–T14、真实角色检查收费开关、MODEL-001为blocked |
+| 数据库/R2/邮件/付费隧道 | 本阶段不新增 | 需要时另做方案，本轮不产生这些费用 |
+| GitHub Actions | 既有CI额度内的本地mock验证 | 免费额度不是无限资源，不自动提高付费预算 |
 
-据此，新 staging 的基础托管可先按 **$0/月方案尝试**；若实际 CPU 或功能限制要求 Paid，再向用户提交 **最低$5/月 + 超额用量** 的具体选择。真实 AI 测试费用独立，不预充、不自动升级。
+本节是免费方案的边界，不是服务已开通、Free性能已验收或未来商业运营零成本的承诺。
 
 官方来源：
 

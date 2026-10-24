@@ -31,11 +31,15 @@ def main():
     parser.add_argument('--report-dir', type=Path, required=True)
     parser.add_argument('--mode', choices=['offline', 'real-dev'], required=True)
     parser.add_argument('--browser-probe', type=Path, help='Optional real-dev browser assertion script (local mock only)')
+    parser.add_argument('--without-ai-key', action='store_true', help='Omit even the dummy API key; requires probe-only real-dev')
+    parser.add_argument('--probe-only', action='store_true', help='Run only the specified browser probe, without the AI-dependent suite')
     parser.add_argument('--filter', help='Optional test-name filter; reported verbatim')
     parser.add_argument('--port', type=int, default=5173)
     parser.add_argument('--mock-port', type=int, default=4010)
     parser.add_argument('--timeout', type=int, default=600)
     args = parser.parse_args()
+    if (args.without_ai_key or args.probe_only) and not (args.mode == 'real-dev' and args.browser_probe and args.without_ai_key and args.probe_only):
+        parser.error('free no-key mode requires real-dev, --browser-probe, --without-ai-key and --probe-only together')
     root = args.source.resolve() / 'prototype'
     out = args.report_dir.resolve()
     out.mkdir(parents=True, exist_ok=True)
@@ -52,7 +56,7 @@ def main():
     wrote_variables = False
     dev = test = None
     started = time.perf_counter()
-    result = {'mode': args.mode, 'mock_only': True, 'filter': args.filter,
+    result = {'mode': args.mode, 'mock_only': True, 'without_ai_key': args.without_ai_key, 'probe_only': args.probe_only, 'filter': args.filter,
               'port': args.port, 'mock_port': args.mock_port,
               'source': str(args.source.resolve()),
               'source_sha': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(),
@@ -90,7 +94,7 @@ globalThis.fetch = ((input: RequestInfo | URL, init?: RequestInit) => {
             source = source.replace('    let binding = ctx.props?.CONNECTORS;', probe + '    let binding = ctx.props?.CONNECTORS;')
             worker.write_text(source)
             variables.write_text(
-                'OPENAI_API_KEY=ci-dummy-not-real\n'
+                ('' if args.without_ai_key else 'OPENAI_API_KEY=ci-dummy-not-real\n') +
                 f'OPENAI_BASE_URL=http://127.0.0.1:{args.mock_port}/v1\n'
                 'CK_ACCESS_POLICY=code\nCK_ACCESS_CODE=ci-local-code-not-secret\n'
                 'CK_SESSION_SECRET=ci-local-signing-value-not-secret\n'
@@ -128,18 +132,22 @@ globalThis.fetch = ((input: RequestInfo | URL, init?: RequestInit) => {
             result['browser_probe_exit_code'] = probe.returncode
             if probe.returncode != 0:
                 raise RuntimeError('Real-dev browser probe failed; see browser-probe.log')
-        command = ['node', 'tests/run.mjs', 'e2e', '--report', str(out / 'tests.json')]
-        if args.filter:
-            command.extend(['--filter', args.filter])
-        result['command'] = command
-        with (out / 'tests.tap.txt').open('w') as log:
-            test = subprocess.Popen(command, cwd=root, env=test_env, stdout=log,
-                                    stderr=subprocess.STDOUT, start_new_session=True)
-            try:
-                result['exit_code'] = test.wait(timeout=args.timeout)
-            except subprocess.TimeoutExpired:
-                result['exit_code'] = 124
-                result['error'] = 'Browser tests exceeded explicit timeout; child processes stopped'
+        if args.probe_only:
+            result['command'] = ['browser-probe-only', str(args.browser_probe.resolve())]
+            result['exit_code'] = 0
+        else:
+            command = ['node', 'tests/run.mjs', 'e2e', '--report', str(out / 'tests.json')]
+            if args.filter:
+                command.extend(['--filter', args.filter])
+            result['command'] = command
+            with (out / 'tests.tap.txt').open('w') as log:
+                test = subprocess.Popen(command, cwd=root, env=test_env, stdout=log,
+                                        stderr=subprocess.STDOUT, start_new_session=True)
+                try:
+                    result['exit_code'] = test.wait(timeout=args.timeout)
+                except subprocess.TimeoutExpired:
+                    result['exit_code'] = 124
+                    result['error'] = 'Browser tests exceeded explicit timeout; child processes stopped'
         if args.mode == 'real-dev':
             with urllib.request.urlopen(probe_url, timeout=3) as response:
                 result['network_guard'] = json.load(response)

@@ -8,8 +8,8 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本轮核对的业务集成提交 | `b46bf98ad847f42f87ce1021e20869f4b863c32d`（#35→#37按merge commit合并；对应被测业务树930af372） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#35固定SHA及#37最新head独立ENV/CSP/mock复测通过并顺序合并；CORE-ENV-001证据PR #38已合并0901ddc；此补记只改状态/交接） |
+| 本轮核对的业务集成提交 | `68f444ec92736e673047222dce48b950a2dd6c48`（#40固定SHA c663f56复测后按merge commit合并；对应被测树f8a768ee） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#40免费语音固定源ENV/CSP与无API key探测已通过；docs/10免费手机方案及证据在PR #41） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -66,7 +66,7 @@
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
 | OSS-001 | 公开前检查与Codex for OSS申请 | Codex | blocked | 准备材料PR #10已合并；2026-10-24申请已提交 | 仓库公开，许可证仍未确定；用户确认邮箱与条款后已提交，官方页面确认接收，等待外部审核；尚未获批。未在仓库记录个人邮箱 |
 | CI-002 | G0模拟测试接入常规main CI | Codex | merged | PR #32，merge c917a68 | 已在完整业务树通过static0/unit71/e2e40；安装Chromium、600秒超时、循环回环fetch保护已接入常规CI；见handoffs/2026-10-24-CI-002-main-codex.md |
-| DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | 免费部分可开始（F1–F10，方式 A/B 无需部署）；付费部分 blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；2026-10-24 用户决定先做免费部分，付费的 T1–T14 等授权 |
+| DEVICE-001 | 付费真机语音闭环（docs/09 T1–T14） | Claude + 用户 | blocked | — | 用户12:54决定先免费；真实API预算/key未授权，T1–T14暂缓，免费F1–F10另列DEVICE-FREE-001 |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
 | CONTENT-003 | 12场景/34术语/60评测的离线审稿台 | Codex | merged | PR #15；合并 `c65c3e2` | handoffs/2026-10-24-CONTENT-003-codex.md；CI39987425175通过；12项真实浏览器检查通过，390px无溢出；未接入学员端或专业审批 |
 | EVAL-002 | 信息来源/核实状态的12条配对反馈评测草稿 | Codex | merged | PR #14；合并 `e65dab6` | handoffs/2026-10-24-EVAL-002-codex.md；CI39985347001通过；无模型调用，专业审稿未完成 |
@@ -91,9 +91,11 @@
 | CONTENT-004 | 按CONTENT-REVIEW-001修订场景/术语/评测 | Codex | merged | PR #34，merge4a851fd | 12场景/34术语/84转写+12配对=96评测；字段结构保留；提交后数据已跑生成器与--check（隔离环境），预览/注音接入仍归Claude；见CONTENT-004交接 |
 | SEC-001 | docs/08 #16的Worker CSP等响应头 | Codex | merged | PR #33，merge86ebc70 | 完整业务树unit71/离线40/真实dev36通过4有原因跳过，7项CSP/API/注音/麦克风断言及模拟WebRTC通过；见SEC-001交接 |
 | CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude + Codex复测 | merged | PR #35，head a4d7831；merge b038f60 | 独立run40058494059：static0/unit81/offline47/真实dev42通过5注明原因跳过，10项CSP检查通过；CORE-ENV-001交接 |
-| CORE-EVAL-001 | 核心草稿的角色检查工具 | Claude + Codex复测 | merged | PR #37，head 2cf1a0e；merge b46bf98 | #35合并后独立run40058975902：static0/unit81/offline50/真实dev42通过8注明原因跳过；10项CSP检查通过，全部mock；dry-run及过期标志词检查0请求 |
+| CORE-EVAL-001 | 核心草稿的角色检查工具 | Claude + Codex复测 | merged | PR #37，head 2cf1a0e；merge b46bf98 | #35合并后独立run40058975902：static0/unit81/offline50/真实dev42通过8注明原因跳过；10项CSP检查通过，全部mock；dry-run及过期标志词检查0请求；真实服务器上的--yes评测保持blocked |
 | CORE-ENV-001 | 核心预览/角色检查工具的独立ENV验收与合并证据 | Codex | merged | codex/CORE-ENV-001，PR #38；merge0901ddc | #35→#37顺序合并，证据/验证工具已进main；固定源两轮、最终证据CI/安全/固定源复测全通过；无新依赖/付费API/部署 |
-| FREE-VOICE-001 | 免费真机测试方案（docs/09 F1–F10，三种免费的手机访问方式）＋文字/演示练习的「声で入力」（浏览器语音识别，首次使用前说明并取得同意；低置信度标为不确定）＋音声テスト新增两项免费检查 | Claude | review_ready | `claude/FREE-VOICE-001` | handoffs/2026-10-24-FREE-VOICE-001-claude.md；模拟识别器下 unit/e2e 通过；真机识别准确率待 F5 |
+| FREE-VOICE-001 | 免费真机测试方案与浏览器语音输入 | Claude + Codex复测 | merged | PR #40，head c663f56；merge68f444e | 独立run40063459564：static0/unit89/offline54/真实dev46通过8跳过，14项CSP检查及无API key探测通过；真实识别/可听朗读待F5/F6 |
+| FREE-VOICE-ENV-001 | #40复测、免费手机A/C方案与证据整合 | Codex | review_ready | codex/FREE-VOICE-ENV-001，PR #41 | #40已实际合并；docs/10方案和runner证据待整合；无依赖/付费API/部署 |
+| DEVICE-FREE-001 | 实际手机免费F1–F10（A/B可开始，C仅方案） | 用户 + Claude整理 + Codex支持 | queued | — | 无API key；记录Android/iPhone型号、浏览器与JSON。C需另行授权部署，Free容量/实际声音均未在真机或云端验收 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -115,9 +117,11 @@
 ### 2026-10-24 后续内容修改要求（用户本轮指令）
 
 - 改 `content/scenarios` 后先跑核心生成器，再重生注音并运行两个 `--check`；逐句检查机器读音，重点为夜中、一回、二人、後。改隐藏信息后还要不加 `--yes` 跑角色检查工具，检查过期标志词。
-- `hidden_information[].leak_markers_ja` 仅为交接中的可选结构提案，待用户确认，当前字段结构未改。
+- `hidden_information[].leak_markers_ja` 结构提案已按最新用户指令暂缓，不实施，当前字段结构未改。
 
 ## 当前阻塞与风险
+
+- 免费阶段之外的真实T1–T14、真实core-roleplay-check --yes、MODEL-001及付费托管均为blocked，不自动配置key、充值或升级。免费C也只做方案，部署仍待单独授权。
 
 - ENV-004复测新head c3632f5通过（标准runner40050738078：static0、unit71、离线40、真实dev36通过4明确跳过）。指定业务链已全部合并；此前开发浮层失败是历史证据。真实AI/真机仍未验证。
 
@@ -125,11 +129,13 @@
 
 - **旧模型停用日期**（OpenAI 官方弃用页，2026-10-23 核对：https://developers.openai.com/api/docs/deprecations）：`gpt-4o-mini-tts` 各快照与 `tts-1` 于 2027-01-06 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4.1-mini-2025-04-14` 于 2027-01-14 停用（建议替代 `gpt-6-luna`）；`gpt-realtime-mini` 于 2027-01-20 停用（建议替代 `gpt-realtime-2.1-mini`）；`gpt-4o-mini-transcribe` 于 2027-02-26 停用（建议替代 `gpt-live-transcribe` 或 `gpt-transcribe`）。原型代码仍写死这些型号。迁移前需用固定样本做真实调用比较，这会产生 API 费用，需用户授权。
 - Claude 的云端环境无法访问 npm 仓库，不能运行 `pnpm install`、完整 `tsc` 或 vinext 构建；真实构建结果依赖 CI-001 与 Codex 的环境。
-- 真实 AI 与真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪（DEVICE-001）。
+- 下述条件仅针对付费AI闭环；免费F1–F10不需要API余额，见DEVICE-FREE-001。真实 AI 与付费真机语音测试需要：可用的 API 余额、用户自行在部署平台配置的密钥、一个带访问保护的私有 HTTPS 测试环境。三者目前都未就绪（DEVICE-001）。
 - G0-01 改了安全默认：没有配置访问码时，AI 接口只在 localhost 可用。部署时必须设置 `CK_ACCESS_CODE`，或者在确有平台访问控制时设置 `CK_ACCESS_POLICY=open`（docs/03 补充段落）。
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-FREE-VOICE-ENV-001-codex.md：#40固定SHA验收、14项CSP/免费功能检查、无API key探测、Windows/Mac USB与Free私有staging方案及当前限制。
 
 - handoffs/2026-10-24-FREE-VOICE-001-claude.md：免费真机测试路径（F1–F10）与「声で入力」；付费测试往后放。
 
