@@ -304,6 +304,32 @@ test('when voice cannot start, the free voice check can be opened from the error
   }
 });
 
+test('settings: the learner can delete this device\'s learning data (two steps)', async () => {
+  const page = await env.page();
+  await seedStorage(page, {
+    'ck-notes': JSON.stringify([{ id: 'n1', text: '今は入りたくないのですね。', sceneId: 'bath-5' }]),
+    'ck-history': JSON.stringify([{ id: 'h1', sceneId: 'bath-5', date: new Date().toISOString(), minutes: 3, score: 70, demo: false }]),
+    'ck-prefs': JSON.stringify({ locale: 'en', level: 'challenge', goal: 10, plan: 'personal', furigana: false }),
+    'ck-demo-assignments': JSON.stringify([{ id: 'a1', sceneId: 'bath-5', group: 'x', date: '2026-10-30' }]),
+  });
+  await gotoApp(page, env.baseUrl);
+  await page.getByRole('button', { name: '学習設定' }).click();
+  await page.getByRole('button', { name: 'この端末の学習データを削除' }).click();
+  await page.getByRole('button', { name: 'やめる' }).click();
+  assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('ck-notes')).length), 1, 'cancel keeps the data');
+  await page.getByRole('button', { name: 'この端末の学習データを削除' }).click();
+  await page.getByRole('button', { name: '削除する' }).click();
+  await page.locator('.toast', { hasText: '削除しました' }).waitFor();
+  const stored = await page.evaluate(() => ({ notes: localStorage.getItem('ck-notes'), history: localStorage.getItem('ck-history'), prefs: JSON.parse(localStorage.getItem('ck-prefs')), assign: localStorage.getItem('ck-demo-assignments') }));
+  assert.equal(stored.notes, '[]');
+  assert.equal(stored.history, '[]');
+  assert.equal(stored.prefs.locale, 'zh', 'settings back to defaults');
+  assert.equal(stored.assign, null);
+  await page.locator('.mobile-nav button', { hasText: 'ノート' }).click();
+  assert.equal(await page.locator('.note-card').count(), 0);
+  assert.deepEqual(page.errors, []);
+});
+
 test('responsive layout: desktop width also renders without errors', async () => {
   const page = await env.page({ viewport: { width: 1280, height: 860 }, locale: 'ja-JP' });
   await gotoApp(page, env.baseUrl);
