@@ -1,0 +1,9 @@
+{
+  "name": "care-kotoba-lighthouse-ci-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated, pinned Lighthouse report tooling; never bundled into the app",
+  "type": "module",
+  "engines": { "node": ">=22.19" },
+  "dependencies": { "lighthouse": "13.5.0" }
+}

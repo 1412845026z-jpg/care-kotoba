@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-24",
+  "name": "lighthouse",
+  "version": "13.5.0",
+  "license": "Apache-2.0",
+  "source": "https://github.com/GoogleChrome/lighthouse",
+  "release": "https://github.com/GoogleChrome/lighthouse/releases/tag/v13.5.0",
+  "gitHead": "cb853a38a6410617518b363590c967b3fe211949",
+  "tarball": "https://registry.npmjs.org/lighthouse/-/lighthouse-13.5.0.tgz",
+  "integrity": "sha512-w/yYIwg7mP9pCwkcbAXRztnvKHua2dJnZaNptPLa1cEw+akr6lbsIDiUOLsQwvaiAUr0xvxdmwvAzl3pj3Np0A==",
+  "licenseGitBlob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+  "packageLockSha256": "e262f388bfa5ede00f4539caad66853d5fe385341bd4211f6b6af9b733b29f77",
+  "lockedNpmPackages": 114,
+  "scope": "CI-only tools, isolated npm lock; not App dependencies",
+  "engines": { "node": ">=22.19" },
+  "readOnlySources": [
+    "https://registry.npmjs.org/lighthouse/13.5.0",
+    "https://github.com/GoogleChrome/lighthouse/blob/v13.5.0/package.json",
+    "https://github.com/GoogleChrome/lighthouse/blob/v13.5.0/LICENSE",
+    "https://github.com/GoogleChrome/lighthouse/blob/v13.5.0/docs/readme.md"
+  ]
+}
