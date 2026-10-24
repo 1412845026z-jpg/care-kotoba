@@ -20,3 +20,11 @@
 - `tools/core-scenarios/generate.mjs` is absent from current main and PR #30; checked again after syncing. **Generation and --check have not run.** Once Claude provides/merges the generator, rerun both on this content commit; do not mark application preview integration complete now.
 - Schema IDs/shapes remain compatible; only version/ID/kana value constraints broaden. The existing array models two learner turns, not a fabricated intervening NPC utterance.
 - No paid API calls; all sample feedback is authored data, not model output.
+
+## Generator arrived during this turn
+
+A later fetch found Claude's `claude/CORE-PREVIEW-001` at `78e25dd9f32511bfa14949316e42d3ae9ecc331b`, which depends on #30. Read its handoff and the generator before using it. It splits public learner fields from server-only hidden material.
+
+Ran that exact provider generator and its `--check` in a temporary isolated tree containing the revised content: both passed, 12 scenarios. Fingerprints and commands are in `verification/CONTENT-004/core-generator-compatibility.json`. No provider code or generated runtime module was copied into this PR, so the paused dependency chain was not bypassed. **Post-merge application generation and furigana regeneration still await CORE-PREVIEW integration.**
+
+Also accepted its two content notes: Japanese `学員` becomes `学習者`, and P01's title now uses `本人の言葉のまま`. Affected scenarios and their pinned transcript samples increment again to 0.2.1 (other revised scenarios remain 0.2.0). No field shape changed. The earlier statement that the generator was absent describes the initial sync, not the final sync.

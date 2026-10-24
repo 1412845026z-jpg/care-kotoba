@@ -1,11 +1,11 @@
 {
   "id": "CK-P01",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "status": "draft_pending_expert_review",
   "review_notice": "草稿，待介护经验者与日语教育者审稿",
   "fictional": true,
   "primary_skill": "report_certainty",
-  "title_ja": "本人の痛みの訴えを原話で報告する",
+  "title_ja": "痛みの訴えを本人の言葉のまま報告する",
   "setting_ja": "利用者の発言を聞いた後、看護師への報告",
   "npc_role_ja": "看護師",
   "opening_ja": "中村さんのことで、確認した内容を教えてください。",
@@ -16,7 +16,7 @@
   ],
   "learner_known_ja": [
     "14時に中村さんが「左のひざが痛い」と話したのを直接聞いた。",
-    "学員は原因や診断を確認していない。",
+    "学習者は原因や診断を確認していない。",
     "この練習は報告の言葉を扱い、治療・移乗などの実施判断を扱わない。"
   ],
   "hidden_information": [

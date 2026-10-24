@@ -1,6 +1,6 @@
 {
   "id": "CK-C02",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "status": "draft_pending_expert_review",
   "review_notice": "草稿，待介护经验者与日语教育者审稿",
   "fictional": true,
@@ -16,7 +16,7 @@
   ],
   "learner_known_ja": [
     "先輩が二人の利用者の名前を挙げた。",
-    "学員は後半の依頼を聞き取れなかった。",
+    "学習者は後半の依頼を聞き取れなかった。",
     "まだ依頼に着手していない。"
   ],
   "hidden_information": [

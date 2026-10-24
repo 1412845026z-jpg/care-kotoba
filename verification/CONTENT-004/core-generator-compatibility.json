@@ -1,0 +1,33 @@
+{
+  "provider_branch": "claude/CORE-PREVIEW-001",
+  "provider_commit": "78e25dd9f32511bfa14949316e42d3ae9ecc331b",
+  "generator_sha256": "52e5f108d5c246a6e8b748a7b8af86515e1049f2d48902e0ff02e03170801be1",
+  "scenario_files": 12,
+  "checks": [
+    {
+      "command": [
+        "node",
+        "tools/core-scenarios/generate.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "wrote prototype/lib/core-scenarios-data.ts, prototype/lib/core-scenarios-server.ts: 12 scenarios"
+    },
+    {
+      "command": [
+        "node",
+        "tools/core-scenarios/generate.mjs",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "core scenarios up to date: 12 scenarios, sha256 396444ed86eeacf7"
+    }
+  ],
+  "generated_files_sha256": {
+    "prototype/lib/core-scenarios-data.ts": "e562722d3cf9bda1e8ffbc54f20bfe767e45cf2d43d5e9ec24b06683002048f5",
+    "prototype/lib/core-scenarios-server.ts": "4342d80dc5c8cef196e506473265ee3f0bb13fcc9ff326bf75d46bf72cc960cd"
+  },
+  "isolated_compatibility_check": true,
+  "application_integration": false,
+  "furigana_regeneration_done": false,
+  "reason_not_integrated": "The user-specified ordered business merge chain is paused at ENV-004; CORE-PREVIEW depends on #30."
+}

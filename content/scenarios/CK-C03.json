@@ -1,6 +1,6 @@
 {
   "id": "CK-C03",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "status": "draft_pending_expert_review",
   "review_notice": "草稿，待介护经验者与日语教育者审稿",
   "fictional": true,
@@ -16,7 +16,7 @@
   ],
   "learner_known_ja": [
     "高橋さんへの声かけを頼まれた。",
-    "学員は「更衣」の意味を知らない。",
+    "学習者は「更衣」の意味を知らない。",
     "身体介助の方法や本人の希望は説明されていない。"
   ],
   "hidden_information": [

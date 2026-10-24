@@ -8,5 +8,7 @@
   "new_simple_correct_samples": 12,
   "new_subtle_errors": 12,
   "professional_approval": false,
-  "generator_available": false
+  "generator_available": true,
+  "generator_integrated": false,
+  "generator_provider": "claude/CORE-PREVIEW-001@78e25dd"
 }
