@@ -83,3 +83,7 @@ Kokoro-82M v1.0固定HF revision `8542409da2986c0ab5d41b3cf0411f7a58caab38`（Ap
 | [axe-core 4.14.0](https://github.com/dequelabs/axe-core/tree/v4.14.0)（上述包的唯一新增传递依赖） | MPL-2.0；同一完整MPL文本及npm包自身许可；精确解析/完整性固定于锁文件 | 复用既有playwright-core1.63.0，无第二份Playwright或付费服务 |
 
 MPL允许商业使用，但相关覆盖文件仍遵守MPL的源码提供与修改分发条件；保留许可和上游源码链接，不将MPL误写成MIT。脚本只在离线harness/回环mock扫描首页、场景说明、练习、反馈、笔记、设置。axe发现先报告不阻断；执行/导航失败仍作为CI故障。原audit的contrast / targetsUnder24 / textUnder12px原始数组任一非空就失败。没有改audit.mjs或prototype/tests。
+
+## 可选图源调查（尚无素材采用）
+
+5个来源的商业/改编/署名/免费范围见`research/ASSET_SOURCE_LICENSES_2026-10-24.md`。Open Peeps、Humaaans、Open Doodles为CC0候选；Loose Drawing与PAKUTASO为自订许可候选，不能混同CC0。这里只调查许可，没有选图、下载、改编或放入产品；采用前才固定具体素材ID/哈希、保留许可快照并核对人物等条件。

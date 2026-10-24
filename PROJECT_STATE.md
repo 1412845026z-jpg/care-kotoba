@@ -9,7 +9,7 @@
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
 | 本轮核对的业务集成提交 | `dc9d60c980bdb1f8f5cd0a7510ee89f845a53ad8`（#43→#44顺序merge；#44固定源a567b8d，应用树37f5c2f2） |
-| 核对时间与作者 | 2026-10-24 JST，Codex（#43/#44固定源审查与字体/SEC通过；#47 ts-fsrs正式依赖通过常规CI并合并；免费音频样本处理中） |
+| 核对时间与作者 | 2026-10-24 JST，Codex（#43/#44固定源审查与字体/SEC通过；#47 ts-fsrs正式依赖通过常规CI并合并；免费音频样本已生成并合并；A11Y常规CI已合并且稳定复测通过） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
 | 当前任务状态的唯一依据 | 本文件「当前任务」表 |
@@ -62,7 +62,8 @@
 | REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude | review_ready | `claude/REVIEW-001`，PR #49，head69c36a4；依赖#46 | #47依赖已合并；Claude报告unit99/e2e62，Codex未复测或合并，本轮不改其功能 |
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude | review_ready | `claude/START-FLOW-001`，PR #46，head6d22f31 | 未在本轮授权合并范围，保持开放；handoffs/2026-10-24-START-FLOW-001-claude.md |
 | AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | merged | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；PR #48，merge137ff8a，最终CI40072582215通过；run40071495822成功，25单句＋5对比，1.52MB；无削波，未真正试听；不接入App |
-| A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | in_progress | `codex/A11Y-CI-001` | handoffs/2026-10-24-A11Y-CI-001-codex.md；axe4.14.0/MPL开发依赖；三项门禁及六页报告待正式CI |
+| A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | merged | `codex/A11Y-CI-001` | handoffs/2026-10-24-A11Y-CI-001-codex.md；PR #50 headde1089b，mergefb54989；CI40073435460双job通过；audit11/12屏三项0，axe稳定17/21实例仅报告，详见交接 |
+| ASSET-SOURCES-001 | 可选日本介护图源许可对照（无图片接入） | Codex | review_ready | `codex/ASSET-SOURCES-001` | handoffs/2026-10-24-ASSET-SOURCES-001-codex.md；5来源商用/改编/署名/免费边界，仅文档 |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
 | G0-01 | 代码审计与基础修复、模拟语音闭环 | Claude | merged | [PR #5](https://github.com/1412845026z-jpg/care-kotoba/pull/5)，head `a6c6f58`；合并 `0420ff7` | ENV-003（Codex，@`3a3f1a9`）真实install/tsc/build/static、unit34/34、离线22/22、真实dev21通过1跳过；之后的 COOKIE-ENCODING-001 修复（`89d8ad2`）离线 static 0 错误、unit 37/37、e2e 22/22，PR CI run 39998125919 通过。真实AI/真机未验证 |
@@ -132,6 +133,8 @@
 - `hidden_information[].leak_markers_ja` 结构提案已按最新用户指令暂缓，不实施，当前字段结构未改。
 
 ## 当前阻塞与风险
+
+- A11Y-CI-001的原audit三项为0；axe稳定报告仍有9类规则（手机17/桌面21个画面×规则实例），目前只报告不阻断。共同根因和opacity对比度盲点已交Claude，未改App/audit/tests，不能写成全面无障碍验收通过。
 
 - 免费阶段之外的真实T1–T14、真实core-roleplay-check --yes、MODEL-001及付费托管均为blocked，不自动配置key、充值或升级。免费C也只做方案，部署仍待单独授权。
 
