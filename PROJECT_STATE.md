@@ -93,6 +93,7 @@
 | CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude + Codex复测 | merged | PR #35，head a4d7831；merge b038f60 | 独立run40058494059：static0/unit81/offline47/真实dev42通过5注明原因跳过，10项CSP检查通过；CORE-ENV-001交接 |
 | CORE-EVAL-001 | 核心草稿的角色检查工具 | Claude + Codex复测 | merged | PR #37，head 2cf1a0e；merge b46bf98 | #35合并后独立run40058975902：static0/unit81/offline50/真实dev42通过8注明原因跳过；10项CSP检查通过，全部mock；dry-run及过期标志词检查0请求 |
 | CORE-ENV-001 | 核心预览/角色检查工具的独立ENV验收与合并证据 | Codex | merged | codex/CORE-ENV-001，PR #38；merge0901ddc | #35→#37顺序合并，证据/验证工具已进main；固定源两轮、最终证据CI/安全/固定源复测全通过；无新依赖/付费API/部署 |
+| FREE-VOICE-ENV-001 | #40固定SHA免费语音/ENV/CSP复测及docs/10免费手机方案 | Codex | in_progress | codex/FREE-VOICE-ENV-001 | c663f56；完整mock与无API key探测待标准runner；A/C只写方案，不部署；付费项目blocked，结构提案暂缓 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -110,10 +111,12 @@
 | 2026-10-24 用户（Claude 会话）：「我先做可选的预览入口（推荐）」 | 12 个核心场景先作为「コア練習（草稿）」单独入口接进应用，默认隐藏，原有 48 个场景不动；GPT 同时按审阅意见修改内容 | 草稿不计入 48 场景进度；正式替换或合并原场景需另行决定，并需要专业审稿 |
 | 2026-10-23 用户（Claude 会话）：「可以复用的就以合适方式拿过来并共享」 | 开源 / 免费资料按 research/REUSE_REVIEW_2026-10-23.md 处理；注音默认开启（Claude 的默认设定，可在设置中关闭，待教师和用户反馈） | 新增依赖仍由 Codex 加入；内容类资料由 Codex 负责 |
 
+| 2026-10-24 12:54 用户（Claude 会话）：「真机测试……能用免费的就用免费，需要付费的先往后靠」 | 真机测试先做不花钱的部分（docs/09「先做免费的真机测试」F1–F10）；真实 AI / Realtime / TTS 等付费测试（T1–T14、角色检查 `--yes`、MODEL-001）往后放，等用户另行授权 | 免费部署方式 C 仍需用户授权部署；浏览器语音识别由浏览器提供商处理声音，需告知并取得同意 |
+
 ### 2026-10-24 后续内容修改要求（用户本轮指令）
 
 - 改 `content/scenarios` 后先跑核心生成器，再重生注音并运行两个 `--check`；逐句检查机器读音，重点为夜中、一回、二人、後。改隐藏信息后还要不加 `--yes` 跑角色检查工具，检查过期标志词。
-- `hidden_information[].leak_markers_ja` 仅为交接中的可选结构提案，待用户确认，当前字段结构未改。
+- `hidden_information[].leak_markers_ja` 结构提案已按用户本轮要求暂缓，不实施，当前字段结构未改。
 
 ## 当前阻塞与风险
 
@@ -128,6 +131,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-FREE-VOICE-ENV-001-codex.md：#40固定源复测、无API key免费探测与Windows/Mac USB和私有staging方案。
 
 - handoffs/2026-10-24-CORE-ENV-001-codex.md：#35/#37独立复测与顺序合并、10项CSP检查、角色工具0请求dry-run/过期标志词检查、后续内容生成/注音要求。
 

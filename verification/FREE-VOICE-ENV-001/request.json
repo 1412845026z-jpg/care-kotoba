@@ -1,0 +1,4 @@
+{
+  "sha": "c663f5603685a858cd5c1cc007ed500078c1531f",
+  "purpose": "PR #40 FREE-VOICE-001: complete offline/real-dev mock regression, SEC-001 headers with fake recognition/native speechSynthesis invocation, and a separate no-API-key free demo. No paid API or deployment."
+}
