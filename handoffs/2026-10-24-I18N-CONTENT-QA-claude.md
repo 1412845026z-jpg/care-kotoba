@@ -4,7 +4,7 @@
 - 仓库与工作分支：https://github.com/1412845026z-jpg/care-kotoba ，`claude/I18N-CONTENT-QA`
 - 开始时的集成分支 / 基准提交：`claude/SCENE-AV-APP-001` @ `5fb5dd8`（含 #62），并合并了 `codex/COORD-CLAUDE-002` @ `260bebb`（PROJECT_STATE 冲突已保留双方的行）
 - 已推送代码提交：`68fb479`
-- PR / 审查入口：见 PROJECT_STATE 本任务行
+- PR / 审查入口：https://github.com/1412845026z-jpg/care-kotoba/pull/64
 - 任务状态：review_ready
 - 合并证据：未合并
 
