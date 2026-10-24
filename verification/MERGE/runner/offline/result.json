@@ -1,0 +1,21 @@
+{
+  "mode": "offline",
+  "mock_only": true,
+  "without_ai_key": false,
+  "probe_only": false,
+  "filter": null,
+  "port": 5173,
+  "mock_port": 4010,
+  "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+  "source_sha": "a567b8d729d30c2255aa771f35dde005b392cf33",
+  "source_tree": "37f5c2f2eb6b1569dd3673fea244acf0ceb104f9",
+  "command": [
+    "node",
+    "tests/run.mjs",
+    "e2e",
+    "--report",
+    "/home/runner/work/care-kotoba/care-kotoba/review-results/offline/tests.json"
+  ],
+  "exit_code": 0,
+  "seconds": 84.103
+}
