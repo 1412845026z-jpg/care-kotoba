@@ -16,3 +16,7 @@ python3 scripts/ci/verify_claude.py --source /path/to/exact-checkout --mode real
 ```
 
 The temporary Worker guard and fake environment file are restored/removed in `finally`. Test reports include the source SHA/tree and network guard result. No new dependencies or paid API calls.
+
+## Saved result
+
+The initial standard-runner run completed with failure: offline 40/40 and unit 71/71 passed; real-dev was 34 pass, 2 fail, 4 skip. See `runner-initial/real-dev/tests.tap.txt` for exact pointer-interception traces and `runner-initial/source.txt` for source identity. Both failures are synthetic-crash tests blocked by the development error overlay. No business PR in the ordered chain was merged. Full interpretation and next action are in the ENV-004 handoff. Local ICE-related voice failures are saved separately under `local-offline`, `local-real-dev` and `local-ice-probe.json`.
