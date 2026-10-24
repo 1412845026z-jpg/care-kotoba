@@ -38,3 +38,8 @@ __pycache__/
 
 # Local deployment target requires separate review
 prototype/config/staging/wrangler.local.jsonc
+
+# Working files of the vendored design skills (tools/design-skills/README.md)
+.taste-skill/
+.impeccable/
+**/skills/impeccable/scripts/bin/
