@@ -8,7 +8,7 @@
 | --- | --- |
 | 共享仓库 URL | https://github.com/1412845026z-jpg/care-kotoba （Public，本轮收尾GitHub REST API private=false；本轮Codex未更改可见性） |
 | 集成分支 | `main`（远端默认分支） |
-| 本轮核对的业务集成提交 | `1aff4bc6b19c5ba863415415016403ec5a01e8ce`（#56基础课资料/角色语音规格已合并；prototype仍与#49相同；后续补记只改状态与交接） |
+| 本轮核对的业务集成提交 | `f21a6e9fd4dc687be03e6b6a60b2f7826e28059d`（#57→#59→#60已按顺序合并；各自改base后CI两job成功） |
 | 核对时间与作者 | 2026-10-24 JST，Codex（交付#54的CI40079627795两job通过；每项已推送并合入main；真实AI/真机/听感/专业法律确认仍未验收） |
 | 主要开发者 | 按下方「当前分工与文件归属」并行；同一文件同一时间只有一个负责人 |
 | 同步接入状态 | 已双向读取：Codex 已独立核对 SYNC-001 @ `7fff8d12e51c8c8f9bdd7193997f94fde6b6d193`；合并状态见任务表 |
@@ -57,7 +57,11 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| VOICE-EXPRESSION-001 | 基础课程逐句情感方向与语气提示 | Codex | review_ready | `codex/VOICE-EXPRESSION-001`；PR #58；内容提交d0ccdd2，基准main2f2808f | handoffs/2026-10-24-VOICE-EXPRESSION-001-codex.md；576条方向、19种风格、情绪感知去重、同声线情境对照试音稿；构建/独立编辑/360・390・1280px检查通过；已推送，CI40084677514排队未出结果，尚未合并；新增录音0 |
+| I18N-001 | 日语注音优先、可选en/zh/vi/my/id辅助语言与界面 | Claude | queued | 从最新main创建`claude/I18N-001` | 用户2026-10-24最新要求；详见handoffs/2026-10-24-COORD-MEDIA-I18N-001-codex.md；先做可用语言架构与完整界面词条，内容缺译退回简明日语/英语，不冒称全量翻译 |
+| SCENE-AV-APP-001 | 场景图在上、对应对话在下与预生成音频接入 | Claude | queued | #57→#59→#60后从main独立分支 | 先读SCENE-AV-001真实3图/15音频manifest；媒体由Codex增补，App不负责合成；逐句/整段/停止、缺素材回退有据，不调用付费API |
+| FULL-MEDIA-001 | 96场景配图、384轮台词与192替代句实际音频增补 | Codex | in_progress | `codex/FULL-MEDIA-001`准备中 | 保留96场既有384轮/192替代文本；逐场独立图与角色/情绪音频；已完成3图/12轮+3对照，完整数量按实际文件登记 |
+
+| VOICE-EXPRESSION-001 | 逐句表达方向 | Codex | merged | PR #58，merge91a0ccf，head9472f35 | CI40084825348两job成功；方向是合成准备，实际图声样本另见SCENE-AV-001 |
 | SSW-CONTENT-001 | 特定技能基础96场景与角色声线准备 | Codex | merged | `codex/SSW-CONTENT-001`；PR #56，merge1aff4bc | handoffs/2026-10-24-SSW-CONTENT-001-codex.md；CI40082925762构建/模拟/A11Y通过；96场景与8档声线规格已入main，正式角色语音和App接入未完成 |
 | DEVICE-FREE-GUIDE-001 | 最新main免费手机测试中文指南与no-key回放 | Codex | merged | `codex/DEVICE-FREE-GUIDE-001` @e4b798b；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md；main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户 |
 | AUDIO-PICK-001 | 手机30段免费试听清单及候选组合 | Codex | merged | `codex/AUDIO-PICK-001` @f2e52e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-AUDIO-PICK-001-codex.md；30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App |
@@ -68,9 +72,9 @@
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
 | REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
 | REVIEW-001 | 「ことばノート」间隔复习交互与功能 | Claude + Codex整合 | merged | `claude/REVIEW-001`，PR #49，head3e709a9；merge6148494 | CI40077969512：static0/unit99/e2e62，两尺寸12/13屏硬门通过；模拟非真实AI/真机 |
-| A11Y-003 | A11Y-CI-001 交给 Claude 的 axe 项（弹窗名称、按钮名称、练习覆盖的 landmark/焦点、标题层级、opacity 对比度）＋选完会話のタイプ后焦点丢失；修正会话舞台文字的对比度回退；audit.mjs 计入 opacity 与渐变 | Claude | review_ready | `claude/A11Y-003`，PR #57 | handoffs/2026-10-24-A11Y-003-claude.md |
-| SSW-BASIC-APP-001 | 基础课（特定技能介护 24 主题 96 场景）接入 App：「基礎」页、逐字注音（由审过的假名对齐生成）、先说再看答案、设备语音、ことばノート与复习联动、本机进度；不调用 AI | Claude | review_ready | `claude/SSW-BASIC-APP-001`，PR #59（base 为 `claude/A11Y-003`，先合并 #57） | handoffs/2026-10-24-SSW-BASIC-APP-001-claude.md；verification/SSW-BASIC-APP-001 |
-| LEGAL-UI-001 | App 内「ライセンスとデータの扱い」：数据去向（试作版，按代码实际）＋送到设备上的开源组件及完整许可文本（manifest 生成） | Claude | review_ready | `claude/LEGAL-UI-001`，PR #60（base 为 `claude/SSW-BASIC-APP-001`，顺序 #57→#59→本 PR） | handoffs/2026-10-24-LEGAL-UI-001-claude.md |
+| A11Y-003 | A11Y-CI-001 交给 Claude 的 axe 项（弹窗名称、按钮名称、练习覆盖的 landmark/焦点、标题层级、opacity 对比度）＋选完会話のタイプ后焦点丢失；修正会话舞台文字的对比度回退；audit.mjs 计入 opacity 与渐变 | Claude | merged | `claude/A11Y-003`，PR #57 | handoffs/2026-10-24-A11Y-003-claude.md |；merge c306ba0，CI40084174567双job通过
+| SSW-BASIC-APP-001 | 基础课（特定技能介护 24 主题 96 场景）接入 App：「基礎」页、逐字注音（由审过的假名对齐生成）、先说再看答案、设备语音、ことばノート与复习联动、本机进度；不调用 AI | Claude | merged | `claude/SSW-BASIC-APP-001`，PR #59（base 为 `claude/A11Y-003`，先合并 #57） | handoffs/2026-10-24-SSW-BASIC-APP-001-claude.md；verification/SSW-BASIC-APP-001 |；merge c405cf1，CI40085266903双job通过
+| LEGAL-UI-001 | App 内「ライセンスとデータの扱い」：数据去向（试作版，按代码实际）＋送到设备上的开源组件及完整许可文本（manifest 生成） | Claude | merged | `claude/LEGAL-UI-001`，PR #60（base 为 `claude/SSW-BASIC-APP-001`，顺序 #57→#59→本 PR） | handoffs/2026-10-24-LEGAL-UI-001-claude.md |；merge f21a6e9，CI40085969326双job通过
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude + Codex整合 | merged | `claude/START-FLOW-001`，PR #46，head9f346a6；merge11949bd | CI40076990478通过（含两尺寸A11Y硬门）；handoffs/2026-10-24-MERGE-2-codex.md |
 | AUDIO-SAMPLES-001 | 免费本机Kokoro/VOICEVOX五句音色样本及许可 | Codex | merged | `codex/AUDIO-SAMPLES-001` | handoffs/2026-10-24-AUDIO-SAMPLES-001-codex.md；PR #48，merge137ff8a，最终CI40072582215通过；run40071495822成功，25单句＋5对比，1.52MB；无削波，未真正试听；不接入App |
 | A11Y-CI-001 | 离线两尺寸三项硬门与axe六页报告 | Codex | merged | `codex/A11Y-CI-001` | handoffs/2026-10-24-A11Y-CI-001-codex.md；PR #50 headde1089b，mergefb54989；CI40073435460双job通过；audit11/12屏三项0，axe稳定17/21实例仅报告，详见交接 |
@@ -258,3 +262,10 @@
 - handoffs/2026-10-24-SSW-BASIC-APP-001-claude.md：基础课 96 场景接入 App（注音 384/384 对齐，AI 请求 0），笔记与复习联动。
 
 
+
+## 2026-10-24 接续会话的用户更新
+
+- 用户说明Claude侧每90秒自动更新仓库并领取交接任务；Codex配合该机制，按文件归属分工，不能把写交接等同Claude已完成。
+- 用户认可目前写实场景图，要求尽量扩展到全部场景并补齐对应对话/声音。首批范围为SSW基础96场，既有384轮和192替代句保留，不把脚本当录音。
+- 产品面向多国特定技能外国人员：简单日语、汉字注音和简短说明是核心；中文不是必需。英语可作为辅助，中文、越南语、缅甸语、印尼语为可选支持；不因缺翻译阻断日语练习。
+- App/多语言/媒体接入交Claude；素材、内容、依赖/构建/验证/整合由Codex负责。仍全部免费、不调用付费API、不部署。
