@@ -3,6 +3,10 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { setup, gotoApp } from './helpers.mjs';
+import { fileURLToPath } from 'node:url';
+import { basicSources } from '../harness/basic-sources.mjs';
+
+const src = basicSources(fileURLToPath(new URL('../../../', import.meta.url)));
 
 let env;
 before(async () => { env = await setup(); });
@@ -96,7 +100,8 @@ test('basic course: practised scenes and saved lines are kept; notes link back t
   assert.deepEqual(page.errors, []);
 });
 
-test('basic course with a support language: Chinese explanations where they exist; English learners are told there are none yet', async () => {
+test('basic course with a support language: explanations in the languages the content has (checked against the sources), never Chinese for others', async () => {
+  assert.ok(src.support.zh, 'the sources have Chinese explanations (if this changes, update this test)');
   const zh = await env.page();
   await zh.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'zh', level: 'gentle', goal: 5, plan: 'personal', furigana: true })));
   await gotoApp(zh, env.baseUrl);
@@ -114,16 +119,21 @@ test('basic course with a support language: Chinese explanations where they exis
   assert.equal(await modal.locator('.basic-check').getAttribute('lang'), 'zh-Hans');
   assert.equal(await modal.locator('.btn-gloss[lang="zh-Hans"]').count() >= 2, true, 'save / done buttons glossed');
 
+  // Vietnamese learner: Vietnamese explanations if the content has them, else English (marked en), else a note.
+  const shown = src.shownFor('vi'), tag = shown === 'en' ? 'en' : 'vi';
   const en = await env.page();
   await en.addInitScript(() => localStorage.setItem('ck-prefs', JSON.stringify({ locale: 'vi', level: 'gentle', goal: 5, plan: 'personal', furigana: true })));
   await gotoApp(en, env.baseUrl);
   await openBasic(en);
-  assert.equal(await en.locator('.basic-nosupport [lang="vi"]').count(), 1, 'Vietnamese: no explanations yet, said in Vietnamese');
+  assert.equal(await en.locator('.basic-nosupport').count(), shown ? 0 : 1, 'the "not in your language yet" note only when nothing usable exists');
+  if (!shown) assert.equal(await en.locator('.basic-nosupport [lang="vi"]').count(), 1, 'the note is in Vietnamese');
   assert.equal(await en.locator('[lang="zh-Hans"]').count(), 0, 'Chinese explanations are not shown to a Vietnamese learner');
   await en.locator('.basic-topic', { hasText: '挨拶・入退室' }).click();
   await en.locator('.basic-scene-row', { hasText: '入ってもいいですか' }).click();
   const m2 = en.locator('.basic-modal');
-  assert.equal(await m2.locator('.basic-goal, .basic-tr-toggle').count(), 0);
+  const scene = src.catalog.scenes.find((x) => x.title_ja === '入ってもいいですか');
+  if (shown && src.sceneField(scene, 'goal').includes(shown)) assert.equal(await m2.locator('.basic-goal').getAttribute('lang'), tag);
+  else assert.equal(await m2.locator('.basic-goal').count(), 0);
   assert.equal(await m2.locator('.basic-turn p [lang="vi"]').count(), 1, 'the prompt is glossed in Vietnamese');
   assert.equal(await m2.locator('.basic-turn .btn-gloss').getAttribute('lang'), 'vi');
   assert.deepEqual([...zh.errors, ...en.errors], []);

@@ -96,6 +96,12 @@ if (existsSync(packDir)) for (const f of readdirSync(packDir).filter((f) => f.en
   let pack; try { pack = JSON.parse(readFileSync(join(packDir, f), 'utf8')); } catch (e) { problems.push(`locales/${f}: ${e.message}`); continue; }
   need(SUPPORT.includes(loc) && pack.locale === loc, `locales/${f}: file name and "locale" must be one of ${SUPPORT.join('/')}`);
   need(str(pack.status), `locales/${f}: status missing`);
+  const isMap = (v) => v === undefined || (!!v && typeof v === 'object' && !Array.isArray(v));
+  need(isMap(pack.topics) && isMap(pack.scenes), `locales/${f}: "topics" and "scenes" must be objects keyed by id`);
+  for (const [id, sc] of Object.entries(isMap(pack.scenes) && pack.scenes ? pack.scenes : {})) {
+    const l = sc?.lines;
+    need(l === undefined || (Array.isArray(l) && l.every((x) => x === null || typeof x === 'string')), `locales/${f} ${id}: "lines" must be a list of texts or null`);
+  }
   packs[loc] = pack;
 }
 /** { zh: …, en: … } from inline <field>_<locale> keys (or bare locale keys when field is '') and the packs. */
@@ -140,7 +146,11 @@ const scenes = (catalog.scenes || []).map((s) => {
   };
 });
 need(new Set(scenes.map((s) => s.id)).size === scenes.length, 'duplicate scene ids');
-for (const [loc, pk] of Object.entries(packs)) for (const id of Object.keys(pk.scenes || {})) need(scenes.some((s) => s.id === id), `locales/${loc}.json: unknown scene ${id}`);
+// A misspelt key would silently drop a translation: unknown scene and topic ids are errors.
+for (const [loc, pk] of Object.entries(packs)) {
+  for (const id of Object.keys(pk.scenes || {})) need(scenes.some((s) => s.id === id), `locales/${loc}.json: unknown scene ${id}`);
+  for (const id of Object.keys(pk.topics || {})) need(topicIds.has(id), `locales/${loc}.json: unknown topic ${id}`);
+}
 // Per language: review status and how many scenes have a translated goal (the app labels drafts and gaps).
 const support = {};
 for (const loc of SUPPORT) {
