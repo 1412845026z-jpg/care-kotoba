@@ -74,6 +74,35 @@ test('feedback made from text never shows a pronunciation judgement', async () =
   }
 });
 
+test('local re-practice: one moment is replayed with the conversation up to it as context', async () => {
+  const page = await env.page();
+  await openScene(page, env.baseUrl, '入浴を断られたとき');
+  await page.getByRole('button', { name: '文字で練習' }).click();
+  await page.waitForFunction(() => document.querySelectorAll('.chat-message.assistant').length >= 1);
+  await page.getByLabel('日本語で返答を入力').fill('今日は入りたくないのですね。');
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => document.querySelectorAll('.chat-message.assistant').length >= 2);
+  await page.getByText('終了して振り返る').click();
+  await page.locator('.correction-card').first().waitFor();
+  await page.getByRole('button', { name: /この場面だけもう一度/ }).first().click();
+  const drill = page.locator('.line-drill');
+  await drill.waitFor();
+  assert.match(await drill.locator('.line-drill-before').innerText(), /今日は入りたくないのですね。/);
+  env.mock.state.requests.length = 0;
+  await drill.getByLabel('もう一度、日本語で答える').fill('今日は入りたくないお気持ちなのですね。');
+  await drill.getByRole('button', { name: '答える' }).click();
+  await drill.locator('.line-drill-result').waitFor();
+  const req = env.mock.state.requests.find((r) => r.path === '/v1/responses' && r.body?.text?.format?.name === 'care_conversation');
+  assert.ok(req, 'the drill did not ask the AI partner');
+  const input = req.body.input.map((m) => m.role + ':' + m.content);
+  assert.equal(input.length, 2, JSON.stringify(input));
+  assert.equal(input[1], 'user:今日は入りたくないお気持ちなのですね。');
+  assert.ok(input[0].startsWith('assistant:'), 'context is the partner line before the corrected one');
+  assert.ok(!input.some((x) => x === 'user:今日は入りたくないのですね。'), 'the old line is not sent again');
+  assert.match(await drill.locator('.line-drill-result').innerText(), /の返事/);
+  assert.deepEqual(page.errors, []);
+});
+
 test('feedback never shows a quote the learner did not say', async () => {
   env.mock.state.scenario.quoteMode = 'mixed'; // mock returns one real and one fabricated quote
   try {
