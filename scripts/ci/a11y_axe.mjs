@@ -17,7 +17,7 @@ assert.equal(version, '4.14.0', 'Use the user-approved stable version');
 const viewport = process.env.CK_AUDIT_VIEWPORT;
 assert(['390x844', '1280x860'].includes(viewport), 'Expected one of the two CI viewports');
 const [width, height] = viewport.split('x').map(Number);
-const report = { ranAt: new Date().toISOString(), viewport, mode: 'offline harness + loopback mock AI', axePackageVersion: version, findingsBlockCI: false, screens: {} };
+const report = { ranAt: new Date().toISOString(), viewport, mode: 'offline harness + loopback mock AI', axePackageVersion: version, findingsBlockCI: false, reducedMotion: true, screens: {} };
 let env;
 
 async function scan(page, name) {
@@ -43,7 +43,7 @@ async function nav(page, label) {
 try {
   env = await setup();
   await env.requireAiAccess();
-  const ctx = { ...PHONE, viewport: { width, height }, isMobile: width < 700, hasTouch: width < 700, deviceScaleFactor: 1 };
+  const ctx = { ...PHONE, reducedMotion: 'reduce', viewport: { width, height }, isMobile: width < 700, hasTouch: width < 700, deviceScaleFactor: 1 };
   const page = await env.page(ctx);
   await gotoApp(page, env.baseUrl);
   await scan(page, 'home');
