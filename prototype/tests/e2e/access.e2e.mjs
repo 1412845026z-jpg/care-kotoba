@@ -109,7 +109,7 @@ test('the learner is asked for the access code before an AI practice, and the de
 
   await openScene(page, env.baseUrl, '入浴を断られたとき');
   await page.getByRole('button', { name: '文字で練習' }).click();
-  const field = page.getByLabel('アクセスコード');
+  const field = page.getByLabel('アクセスコード', { exact: true });
   await field.waitFor();
   await field.fill('wrong-code');
   await page.getByRole('button', { name: /確認して続ける/ }).click();

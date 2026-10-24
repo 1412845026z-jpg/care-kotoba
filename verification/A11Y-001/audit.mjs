@@ -10,10 +10,12 @@ const VIEW = process.env.CK_AUDIT_VIEWPORT ? process.env.CK_AUDIT_VIEWPORT.split
 const report = { ranAt: new Date().toISOString(), viewport: VIEW ? VIEW.join('x') : '390x844', screens: {} };
 
 async function audit(page, name) {
+  // Let entrance transitions finish (a fading sheet would otherwise be measured half transparent); infinite loops are skipped.
+  await page.evaluate(() => Promise.all(document.getAnimations().filter((a) => a.effect?.getTiming?.().iterations !== Infinity).map((a) => a.finished.catch(() => {}))));
   report.screens[name] = await page.evaluate(() => {
     const parse = (c) => { const m = c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const [r, g, b, a = 1] = m[1].split(',').map(Number); return { r, g, b, a }; };
     const lum = ({ r, g, b }) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
-    const bgOf = (el) => { for (let e = el; e; e = e.parentElement) { const c = parse(getComputedStyle(e).backgroundColor); if (c && c.a > 0.5) return c; if (getComputedStyle(e).backgroundImage !== 'none') return null; } return { r: 255, g: 255, b: 255, a: 1 }; };
+    const bgOf = (el) => { for (let e = el; e; e = e.parentElement) { const c = parse(getComputedStyle(e).backgroundColor); if (c && c.a > 0.5) return c; const img = getComputedStyle(e).backgroundImage; if (img !== 'none') { if (/url\(/.test(img)) return null; const stops = [...img.matchAll(/rgba?\([^)]+\)/g)].map((m) => parse(m[0])).filter((c) => c && c.a > 0.5); if (!stops.length) return null; return { stops }; } } return { r: 255, g: 255, b: 255, a: 1 }; };
     const visible = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none' && Number(s.opacity) > 0.1; };
     const contrast = [];
     const tiny = []; // DEAI-001: text under 12px (furigana <rt> excluded; it is sized relative to its base)
@@ -26,8 +28,11 @@ async function audit(page, name) {
       if (parseFloat(s.fontSize) < 12 && !['RT', 'RP'].includes(el.tagName) && tiny.length < 20) tiny.push({ text: own.slice(0, 30), cls: String(el.className).slice(0, 50), size: s.fontSize });
       const fg = parse(s.color), bg = bgOf(el);
       if (!fg || !bg) continue;
-      const a = fg.a; const mix = { r: fg.r * a + bg.r * (1 - a), g: fg.g * a + bg.g * (1 - a), b: fg.b * a + bg.b * (1 - a) };
-      const L1 = lum(mix), L2 = lum(bg); const ratio = (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
+      // A11Y-003: include the opacity of the element and its ancestors (e.g. furigana at .85), as axe does.
+      let op = 1; for (let e = el; e; e = e.parentElement) op *= Number(getComputedStyle(e).opacity);
+      const a = fg.a * op;
+      const ratioOn = (b) => { const mix = { r: fg.r * a + b.r * (1 - a), g: fg.g * a + b.g * (1 - a), b: fg.b * a + b.b * (1 - a) }; const L1 = lum(mix), L2 = lum(b); return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05); };
+      const ratio = bg.stops ? Math.min(...bg.stops.map(ratioOn)) : ratioOn(bg);
       const size = parseFloat(s.fontSize), bold = Number(s.fontWeight) >= 700;
       const large = size >= 24 || (bold && size >= 18.66);
       const need = large ? 3 : 4.5;
@@ -35,7 +40,7 @@ async function audit(page, name) {
         const key = el.className + '|' + s.color + '|' + s.fontSize;
         if (seen.has(key)) continue; seen.add(key);
         const path = []; for (let e = el; e && path.length < 3; e = e.parentElement) { const c = typeof e.className === 'string' && e.className.trim() ? '.' + e.className.trim().split(/\s+/).join('.') : e.tagName.toLowerCase(); path.unshift(c); }
-        contrast.push({ text: own.slice(0, 40), cls: String(el.className).slice(0, 60), path: path.join(' > '), color: s.color, bg: `rgb(${bg.r}, ${bg.g}, ${bg.b})`, size: s.fontSize, ratio: Math.round(ratio * 100) / 100, need });
+        contrast.push({ text: own.slice(0, 40), cls: String(el.className).slice(0, 60), path: path.join(' > '), color: s.color, bg: bg.stops ? 'gradient ' + bg.stops.map((c) => `rgb(${c.r}, ${c.g}, ${c.b})`).join(' / ') : `rgb(${bg.r}, ${bg.g}, ${bg.b})`, size: s.fontSize, ratio: Math.round(ratio * 100) / 100, need });
       }
     }
     const names = [], small = [], advisory = [];

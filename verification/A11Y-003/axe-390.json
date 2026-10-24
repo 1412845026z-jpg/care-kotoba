@@ -1,0 +1,4307 @@
+{
+  "ranAt": "2026-10-24T09:54:17.142Z",
+  "viewport": "390x844",
+  "mode": "offline harness + loopback mock AI",
+  "axePackageVersion": "4.14.0",
+  "findingsBlockCI": false,
+  "reducedMotion": true,
+  "screens": {
+    "home": {
+      "testEngine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "testRunner": {
+        "name": "axe"
+      },
+      "testEnvironment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "windowWidth": 390,
+        "windowHeight": 844,
+        "orientationAngle": 0,
+        "orientationType": "portrait-primary"
+      },
+      "violations": [],
+      "incomplete": [],
+      "passes": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": null,
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "aria-allowed-role",
+          "impact": null,
+          "description": "Ensure role attribute has an appropriate value for the element",
+          "help": "ARIA role should be appropriate for the element",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-conditional-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+          "help": "ARIA attributes must be used as specified for the element's role",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-conditional-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "aria-hidden-body",
+          "impact": null,
+          "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+          "help": "aria-hidden=\"true\" must not be present on the document body",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-body?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "impact": null,
+          "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+          "help": "ARIA hidden element must not be focusable or contain focusable elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 50
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "impact": null,
+          "description": "Ensure all ARIA attributes have valid values",
+          "help": "ARIA attributes must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr-value?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "aria-valid-attr",
+          "impact": null,
+          "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+          "help": "ARIA attributes must conform to valid names",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "avoid-inline-spacing",
+          "impact": null,
+          "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+          "help": "Inline text spacing must be adjustable with custom stylesheets",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/avoid-inline-spacing?application=playwright",
+          "tags": [
+            "cat.structure",
+            "wcag21aa",
+            "wcag1412",
+            "EN-301-549",
+            "EN-9.1.4.12",
+            "ACT"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "button-name",
+          "impact": null,
+          "description": "Ensure buttons have discernible text",
+          "help": "Buttons must have discernible text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.9.1"
+          ],
+          "nodes": 21
+        },
+        {
+          "id": "color-contrast",
+          "impact": null,
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "nodes": 137
+        },
+        {
+          "id": "definition-list",
+          "impact": null,
+          "description": "Ensure <dl> elements are structured correctly",
+          "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/definition-list?application=playwright",
+          "tags": [
+            "cat.structure",
+            "wcag2a",
+            "wcag131",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "RGAAv4",
+            "RGAA-9.3.3"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "dlitem",
+          "impact": null,
+          "description": "Ensure <dt> and <dd> elements are contained by a <dl>",
+          "help": "<dt> and <dd> elements must be contained by a <dl>",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/dlitem?application=playwright",
+          "tags": [
+            "cat.structure",
+            "wcag2a",
+            "wcag131",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "RGAAv4",
+            "RGAA-9.3.3"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "document-title",
+          "impact": null,
+          "description": "Ensure each HTML document contains a non-empty <title> element",
+          "help": "Documents must have <title> element to aid in navigation",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/document-title?application=playwright",
+          "tags": [
+            "cat.text-alternatives",
+            "wcag2a",
+            "wcag242",
+            "TTv5",
+            "TT12.a",
+            "EN-301-549",
+            "EN-9.2.4.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.5.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "duplicate-id-aria",
+          "impact": null,
+          "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+          "help": "IDs used in ARIA and labels must be unique",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/duplicate-id-aria?application=playwright",
+          "tags": [
+            "cat.parsing",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-8.2.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "empty-heading",
+          "impact": null,
+          "description": "Ensure headings have discernible text",
+          "help": "Headings should not be empty",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-heading?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "best-practice"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "heading-order",
+          "impact": null,
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "html-has-lang",
+          "impact": null,
+          "description": "Ensure every HTML document has a lang attribute",
+          "help": "<html> element must have a lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.3.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "html-lang-valid",
+          "impact": null,
+          "description": "Ensure the lang attribute of the <html> element has a valid value",
+          "help": "<html> element must have a valid value for the lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-lang-valid?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.4.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": null,
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-banner-is-top-level",
+          "impact": null,
+          "description": "Ensure the banner landmark is at top level",
+          "help": "Banner landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-banner-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-contentinfo-is-top-level",
+          "impact": null,
+          "description": "Ensure the contentinfo landmark is at top level",
+          "help": "Contentinfo landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-contentinfo-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-main-is-top-level",
+          "impact": null,
+          "description": "Ensure the main landmark is at top level",
+          "help": "Main landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-main-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": null,
+          "description": "Ensure the document has at most one banner landmark",
+          "help": "Document should not have more than one banner landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-banner?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-contentinfo",
+          "impact": null,
+          "description": "Ensure the document has at most one contentinfo landmark",
+          "help": "Document should not have more than one contentinfo landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-contentinfo?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-main",
+          "impact": null,
+          "description": "Ensure the document has at most one main landmark",
+          "help": "Document should not have more than one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-one-main",
+          "impact": null,
+          "description": "Ensure the document has a main landmark",
+          "help": "Document should have one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-unique",
+          "impact": null,
+          "description": "Ensure landmarks are unique",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "meta-viewport-large",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+          "help": "Users should be able to zoom and scale the text up to 500%",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport-large?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "meta-viewport",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "help": "Zooming and scaling must not be disabled",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "wcag2aa",
+            "wcag144",
+            "EN-301-549",
+            "EN-9.1.4.4",
+            "ACT",
+            "RGAAv4",
+            "RGAA-10.4.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "nested-interactive",
+          "impact": null,
+          "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+          "help": "Interactive controls must not be nested",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 21
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": null,
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "help": "Page should contain a level-one heading",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": null,
+          "description": "Ensure all page content is contained by landmarks",
+          "help": "All page content should be contained by landmarks",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice",
+            "RGAAv4",
+            "RGAA-9.2.1"
+          ],
+          "nodes": 202
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": null,
+          "description": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+          "help": "Scrollable region must have keyboard access",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag211",
+            "wcag213",
+            "TTv5",
+            "TT4.a",
+            "EN-301-549",
+            "EN-9.2.1.1",
+            "EN-9.2.1.3",
+            "RGAAv4",
+            "RGAA-7.3.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "tabindex",
+          "impact": null,
+          "description": "Ensure tabindex attribute values are not greater than 0",
+          "help": "Elements should not have tabindex greater than zero",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/tabindex?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "valid-lang",
+          "impact": null,
+          "description": "Ensure lang attributes have valid values",
+          "help": "lang attribute must have a valid value",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/valid-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2aa",
+            "wcag312",
+            "TTv5",
+            "TT11.b",
+            "EN-301-549",
+            "EN-9.3.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.8.1"
+          ],
+          "nodes": 1
+        }
+      ],
+      "inapplicable": [
+        "accesskeys",
+        "area-alt",
+        "aria-braille-equivalent",
+        "aria-command-name",
+        "aria-deprecated-role",
+        "aria-dialog-name",
+        "aria-input-field-name",
+        "aria-meter-name",
+        "aria-progressbar-name",
+        "aria-required-attr",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-roles",
+        "aria-tab-name",
+        "aria-text",
+        "aria-toggle-field-name",
+        "aria-tooltip-name",
+        "aria-treeitem-name",
+        "autocomplete-valid",
+        "blink",
+        "bypass",
+        "empty-table-header",
+        "form-field-multiple-labels",
+        "frame-focusable-content",
+        "frame-tested",
+        "frame-title-unique",
+        "frame-title",
+        "html-xml-lang-mismatch",
+        "image-alt",
+        "image-redundant-alt",
+        "input-button-name",
+        "input-image-alt",
+        "label-title-only",
+        "label",
+        "link-in-text-block",
+        "link-name",
+        "list",
+        "listitem",
+        "marquee",
+        "meta-refresh",
+        "object-alt",
+        "presentation-role-conflict",
+        "role-img-alt",
+        "scope-attr-valid",
+        "select-name",
+        "server-side-image-map",
+        "skip-link",
+        "summary-name",
+        "svg-img-alt",
+        "table-duplicate-name",
+        "td-headers-attr",
+        "th-has-data-cells",
+        "video-caption",
+        "no-autoplay-audio"
+      ]
+    },
+    "scene-modal": {
+      "testEngine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "testRunner": {
+        "name": "axe"
+      },
+      "testEnvironment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "windowWidth": 390,
+        "windowHeight": 844,
+        "orientationAngle": 0,
+        "orientationType": "portrait-primary"
+      },
+      "violations": [],
+      "incomplete": [],
+      "passes": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": null,
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 9
+        },
+        {
+          "id": "aria-allowed-role",
+          "impact": null,
+          "description": "Ensure role attribute has an appropriate value for the element",
+          "help": "ARIA role should be appropriate for the element",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-conditional-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+          "help": "ARIA attributes must be used as specified for the element's role",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-conditional-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 9
+        },
+        {
+          "id": "aria-deprecated-role",
+          "impact": null,
+          "description": "Ensure elements do not use deprecated roles",
+          "help": "Deprecated ARIA roles must not be used",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-deprecated-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-dialog-name",
+          "impact": null,
+          "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+          "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-dialog-name?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-body",
+          "impact": null,
+          "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+          "help": "aria-hidden=\"true\" must not be present on the document body",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-body?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "impact": null,
+          "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+          "help": "ARIA hidden element must not be focusable or contain focusable elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 44
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 9
+        },
+        {
+          "id": "aria-required-attr",
+          "impact": null,
+          "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+          "help": "Required ARIA attributes must be provided",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-roles",
+          "impact": null,
+          "description": "Ensure all elements with a role attribute use a valid value",
+          "help": "ARIA roles used must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-roles?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "impact": null,
+          "description": "Ensure all ARIA attributes have valid values",
+          "help": "ARIA attributes must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr-value?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 9
+        },
+        {
+          "id": "aria-valid-attr",
+          "impact": null,
+          "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+          "help": "ARIA attributes must conform to valid names",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 9
+        },
+        {
+          "id": "avoid-inline-spacing",
+          "impact": null,
+          "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+          "help": "Inline text spacing must be adjustable with custom stylesheets",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/avoid-inline-spacing?application=playwright",
+          "tags": [
+            "cat.structure",
+            "wcag21aa",
+            "wcag1412",
+            "EN-301-549",
+            "EN-9.1.4.12",
+            "ACT"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "button-name",
+          "impact": null,
+          "description": "Ensure buttons have discernible text",
+          "help": "Buttons must have discernible text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.9.1"
+          ],
+          "nodes": 24
+        },
+        {
+          "id": "color-contrast",
+          "impact": null,
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "nodes": 78
+        },
+        {
+          "id": "document-title",
+          "impact": null,
+          "description": "Ensure each HTML document contains a non-empty <title> element",
+          "help": "Documents must have <title> element to aid in navigation",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/document-title?application=playwright",
+          "tags": [
+            "cat.text-alternatives",
+            "wcag2a",
+            "wcag242",
+            "TTv5",
+            "TT12.a",
+            "EN-301-549",
+            "EN-9.2.4.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.5.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "duplicate-id-aria",
+          "impact": null,
+          "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+          "help": "IDs used in ARIA and labels must be unique",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/duplicate-id-aria?application=playwright",
+          "tags": [
+            "cat.parsing",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-8.2.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "empty-heading",
+          "impact": null,
+          "description": "Ensure headings have discernible text",
+          "help": "Headings should not be empty",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-heading?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "best-practice"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "form-field-multiple-labels",
+          "impact": null,
+          "description": "Ensure form field does not have multiple label elements",
+          "help": "Form field must not have multiple label elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/form-field-multiple-labels?application=playwright",
+          "tags": [
+            "cat.forms",
+            "wcag2a",
+            "wcag332",
+            "TTv5",
+            "TT5.c",
+            "EN-301-549",
+            "EN-9.3.3.2",
+            "RGAAv4",
+            "RGAA-11.2.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "heading-order",
+          "impact": null,
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "html-has-lang",
+          "impact": null,
+          "description": "Ensure every HTML document has a lang attribute",
+          "help": "<html> element must have a lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.3.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "html-lang-valid",
+          "impact": null,
+          "description": "Ensure the lang attribute of the <html> element has a valid value",
+          "help": "<html> element must have a valid value for the lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-lang-valid?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.4.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": null,
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label-title-only",
+          "impact": null,
+          "description": "Ensure that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+          "help": "Form elements should have a visible label",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-title-only?application=playwright",
+          "tags": [
+            "cat.forms",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label",
+          "impact": null,
+          "description": "Ensure every form element has a label",
+          "help": "Form elements must have labels",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+          "tags": [
+            "cat.forms",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.n",
+            "TTv5",
+            "TT5.c",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-banner-is-top-level",
+          "impact": null,
+          "description": "Ensure the banner landmark is at top level",
+          "help": "Banner landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-banner-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-contentinfo-is-top-level",
+          "impact": null,
+          "description": "Ensure the contentinfo landmark is at top level",
+          "help": "Contentinfo landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-contentinfo-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-main-is-top-level",
+          "impact": null,
+          "description": "Ensure the main landmark is at top level",
+          "help": "Main landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-main-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": null,
+          "description": "Ensure the document has at most one banner landmark",
+          "help": "Document should not have more than one banner landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-banner?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-contentinfo",
+          "impact": null,
+          "description": "Ensure the document has at most one contentinfo landmark",
+          "help": "Document should not have more than one contentinfo landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-contentinfo?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-main",
+          "impact": null,
+          "description": "Ensure the document has at most one main landmark",
+          "help": "Document should not have more than one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-one-main",
+          "impact": null,
+          "description": "Ensure the document has a main landmark",
+          "help": "Document should have one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-unique",
+          "impact": null,
+          "description": "Ensure landmarks are unique",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "meta-viewport-large",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+          "help": "Users should be able to zoom and scale the text up to 500%",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport-large?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "meta-viewport",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "help": "Zooming and scaling must not be disabled",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "wcag2aa",
+            "wcag144",
+            "EN-301-549",
+            "EN-9.1.4.4",
+            "ACT",
+            "RGAAv4",
+            "RGAA-10.4.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "nested-interactive",
+          "impact": null,
+          "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+          "help": "Interactive controls must not be nested",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 25
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": null,
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "help": "Page should contain a level-one heading",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": null,
+          "description": "Ensure all page content is contained by landmarks",
+          "help": "All page content should be contained by landmarks",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice",
+            "RGAAv4",
+            "RGAA-9.2.1"
+          ],
+          "nodes": 131
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": null,
+          "description": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+          "help": "Scrollable region must have keyboard access",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag211",
+            "wcag213",
+            "TTv5",
+            "TT4.a",
+            "EN-301-549",
+            "EN-9.2.1.1",
+            "EN-9.2.1.3",
+            "RGAAv4",
+            "RGAA-7.3.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "summary-name",
+          "impact": null,
+          "description": "Ensure summary elements have discernible text",
+          "help": "Summary elements must have discernible text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/summary-name?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "tabindex",
+          "impact": null,
+          "description": "Ensure tabindex attribute values are not greater than 0",
+          "help": "Elements should not have tabindex greater than zero",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/tabindex?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "valid-lang",
+          "impact": null,
+          "description": "Ensure lang attributes have valid values",
+          "help": "lang attribute must have a valid value",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/valid-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2aa",
+            "wcag312",
+            "TTv5",
+            "TT11.b",
+            "EN-301-549",
+            "EN-9.3.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.8.1"
+          ],
+          "nodes": 1
+        }
+      ],
+      "inapplicable": [
+        "accesskeys",
+        "area-alt",
+        "aria-braille-equivalent",
+        "aria-command-name",
+        "aria-input-field-name",
+        "aria-meter-name",
+        "aria-progressbar-name",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-tab-name",
+        "aria-text",
+        "aria-toggle-field-name",
+        "aria-tooltip-name",
+        "aria-treeitem-name",
+        "autocomplete-valid",
+        "blink",
+        "bypass",
+        "definition-list",
+        "dlitem",
+        "empty-table-header",
+        "frame-focusable-content",
+        "frame-tested",
+        "frame-title-unique",
+        "frame-title",
+        "html-xml-lang-mismatch",
+        "image-alt",
+        "image-redundant-alt",
+        "input-button-name",
+        "input-image-alt",
+        "link-in-text-block",
+        "link-name",
+        "list",
+        "listitem",
+        "marquee",
+        "meta-refresh",
+        "object-alt",
+        "presentation-role-conflict",
+        "role-img-alt",
+        "scope-attr-valid",
+        "select-name",
+        "server-side-image-map",
+        "skip-link",
+        "svg-img-alt",
+        "table-duplicate-name",
+        "td-headers-attr",
+        "th-has-data-cells",
+        "video-caption",
+        "no-autoplay-audio"
+      ]
+    },
+    "practice-text": {
+      "testEngine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "testRunner": {
+        "name": "axe"
+      },
+      "testEnvironment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "windowWidth": 390,
+        "windowHeight": 844,
+        "orientationAngle": 0,
+        "orientationType": "portrait-primary"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<section class=\"conversation-stage\">",
+                      "target": [
+                        ".conversation-stage"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"engine-badge \"><i></i>文字でAIと練習</span>",
+              "target": [
+                ".engine-badge"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<section class=\"conversation-stage\">",
+                      "target": [
+                        ".conversation-stage"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"session-time\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" data-icon=\"Clock\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"4\"></rect></svg>0:00</span>",
+              "target": [
+                ".session-time"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p class=\"stage-state\"><i class=\"\"></i>あなたの番です</p>",
+              "target": [
+                ".stage-state"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.8pt (17px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<h2 class=\"stage-caption\">そうなのね。もう少し、ゆっくり説明してもらえる？</h2>",
+              "target": [
+                "h2"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<section class=\"conversation-stage\">",
+                      "target": [
+                        ".conversation-stage"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" data-icon=\"Volume2\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"4\"></rect></svg>ゆっくり聞く</button>",
+              "target": [
+                ".stage-tools > button:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<section class=\"conversation-stage\">",
+                      "target": [
+                        ".conversation-stage"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button class=\"\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" data-icon=\"Lightbulb\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"4\"></rect></svg>ヒント</button>",
+              "target": [
+                ".stage-tools > button:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<section class=\"conversation-stage\">",
+                      "target": [
+                        ".conversation-stage"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button class=\"\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" data-icon=\"Globe\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"4\"></rect></svg>訳</button>",
+              "target": [
+                ".stage-tools > button:nth-child(3)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<section class=\"conversation-stage\">",
+                      "target": [
+                        ".conversation-stage"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span>文字でも、会話を続けられます</span>",
+              "target": [
+                ".stage-bottom > span:nth-child(3)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ],
+      "passes": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": null,
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 6
+        },
+        {
+          "id": "aria-allowed-role",
+          "impact": null,
+          "description": "Ensure role attribute has an appropriate value for the element",
+          "help": "ARIA role should be appropriate for the element",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-conditional-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+          "help": "ARIA attributes must be used as specified for the element's role",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-conditional-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 6
+        },
+        {
+          "id": "aria-deprecated-role",
+          "impact": null,
+          "description": "Ensure elements do not use deprecated roles",
+          "help": "Deprecated ARIA roles must not be used",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-deprecated-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-dialog-name",
+          "impact": null,
+          "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+          "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-dialog-name?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-body",
+          "impact": null,
+          "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+          "help": "aria-hidden=\"true\" must not be present on the document body",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-body?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "impact": null,
+          "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+          "help": "ARIA hidden element must not be focusable or contain focusable elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 19
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 6
+        },
+        {
+          "id": "aria-required-attr",
+          "impact": null,
+          "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+          "help": "Required ARIA attributes must be provided",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-roles",
+          "impact": null,
+          "description": "Ensure all elements with a role attribute use a valid value",
+          "help": "ARIA roles used must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-roles?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "impact": null,
+          "description": "Ensure all ARIA attributes have valid values",
+          "help": "ARIA attributes must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr-value?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 6
+        },
+        {
+          "id": "aria-valid-attr",
+          "impact": null,
+          "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+          "help": "ARIA attributes must conform to valid names",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 6
+        },
+        {
+          "id": "avoid-inline-spacing",
+          "impact": null,
+          "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+          "help": "Inline text spacing must be adjustable with custom stylesheets",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/avoid-inline-spacing?application=playwright",
+          "tags": [
+            "cat.structure",
+            "wcag21aa",
+            "wcag1412",
+            "EN-301-549",
+            "EN-9.1.4.12",
+            "ACT"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "button-name",
+          "impact": null,
+          "description": "Ensure buttons have discernible text",
+          "help": "Buttons must have discernible text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.9.1"
+          ],
+          "nodes": 12
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "nodes": 29
+        },
+        {
+          "id": "document-title",
+          "impact": null,
+          "description": "Ensure each HTML document contains a non-empty <title> element",
+          "help": "Documents must have <title> element to aid in navigation",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/document-title?application=playwright",
+          "tags": [
+            "cat.text-alternatives",
+            "wcag2a",
+            "wcag242",
+            "TTv5",
+            "TT12.a",
+            "EN-301-549",
+            "EN-9.2.4.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.5.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "duplicate-id-aria",
+          "impact": null,
+          "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+          "help": "IDs used in ARIA and labels must be unique",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/duplicate-id-aria?application=playwright",
+          "tags": [
+            "cat.parsing",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-8.2.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "empty-heading",
+          "impact": null,
+          "description": "Ensure headings have discernible text",
+          "help": "Headings should not be empty",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-heading?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "best-practice"
+          ],
+          "nodes": 3
+        },
+        {
+          "id": "form-field-multiple-labels",
+          "impact": null,
+          "description": "Ensure form field does not have multiple label elements",
+          "help": "Form field must not have multiple label elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/form-field-multiple-labels?application=playwright",
+          "tags": [
+            "cat.forms",
+            "wcag2a",
+            "wcag332",
+            "TTv5",
+            "TT5.c",
+            "EN-301-549",
+            "EN-9.3.3.2",
+            "RGAAv4",
+            "RGAA-11.2.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "heading-order",
+          "impact": null,
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 3
+        },
+        {
+          "id": "html-has-lang",
+          "impact": null,
+          "description": "Ensure every HTML document has a lang attribute",
+          "help": "<html> element must have a lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.3.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "html-lang-valid",
+          "impact": null,
+          "description": "Ensure the lang attribute of the <html> element has a valid value",
+          "help": "<html> element must have a valid value for the lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-lang-valid?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.4.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label-title-only",
+          "impact": null,
+          "description": "Ensure that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+          "help": "Form elements should have a visible label",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-title-only?application=playwright",
+          "tags": [
+            "cat.forms",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label",
+          "impact": null,
+          "description": "Ensure every form element has a label",
+          "help": "Form elements must have labels",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=playwright",
+          "tags": [
+            "cat.forms",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.n",
+            "TTv5",
+            "TT5.c",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-banner-is-top-level",
+          "impact": null,
+          "description": "Ensure the banner landmark is at top level",
+          "help": "Banner landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-banner-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-main-is-top-level",
+          "impact": null,
+          "description": "Ensure the main landmark is at top level",
+          "help": "Main landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-main-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": null,
+          "description": "Ensure the document has at most one banner landmark",
+          "help": "Document should not have more than one banner landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-banner?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-main",
+          "impact": null,
+          "description": "Ensure the document has at most one main landmark",
+          "help": "Document should not have more than one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-one-main",
+          "impact": null,
+          "description": "Ensure the document has a main landmark",
+          "help": "Document should have one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-unique",
+          "impact": null,
+          "description": "Ensure landmarks are unique",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "meta-viewport-large",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+          "help": "Users should be able to zoom and scale the text up to 500%",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport-large?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "meta-viewport",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "help": "Zooming and scaling must not be disabled",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "wcag2aa",
+            "wcag144",
+            "EN-301-549",
+            "EN-9.1.4.4",
+            "ACT",
+            "RGAAv4",
+            "RGAA-10.4.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "nested-interactive",
+          "impact": null,
+          "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+          "help": "Interactive controls must not be nested",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 12
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": null,
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "help": "Page should contain a level-one heading",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": null,
+          "description": "Ensure all page content is contained by landmarks",
+          "help": "All page content should be contained by landmarks",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice",
+            "RGAAv4",
+            "RGAA-9.2.1"
+          ],
+          "nodes": 69
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": null,
+          "description": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+          "help": "Scrollable region must have keyboard access",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag211",
+            "wcag213",
+            "TTv5",
+            "TT4.a",
+            "EN-301-549",
+            "EN-9.2.1.1",
+            "EN-9.2.1.3",
+            "RGAAv4",
+            "RGAA-7.3.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "valid-lang",
+          "impact": null,
+          "description": "Ensure lang attributes have valid values",
+          "help": "lang attribute must have a valid value",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/valid-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2aa",
+            "wcag312",
+            "TTv5",
+            "TT11.b",
+            "EN-301-549",
+            "EN-9.3.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.8.1"
+          ],
+          "nodes": 1
+        }
+      ],
+      "inapplicable": [
+        "accesskeys",
+        "area-alt",
+        "aria-braille-equivalent",
+        "aria-command-name",
+        "aria-input-field-name",
+        "aria-meter-name",
+        "aria-progressbar-name",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-tab-name",
+        "aria-text",
+        "aria-toggle-field-name",
+        "aria-tooltip-name",
+        "aria-treeitem-name",
+        "autocomplete-valid",
+        "blink",
+        "bypass",
+        "definition-list",
+        "dlitem",
+        "empty-table-header",
+        "frame-focusable-content",
+        "frame-tested",
+        "frame-title-unique",
+        "frame-title",
+        "html-xml-lang-mismatch",
+        "image-alt",
+        "image-redundant-alt",
+        "input-button-name",
+        "input-image-alt",
+        "label-content-name-mismatch",
+        "landmark-contentinfo-is-top-level",
+        "landmark-no-duplicate-contentinfo",
+        "link-in-text-block",
+        "link-name",
+        "list",
+        "listitem",
+        "marquee",
+        "meta-refresh",
+        "object-alt",
+        "presentation-role-conflict",
+        "role-img-alt",
+        "scope-attr-valid",
+        "select-name",
+        "server-side-image-map",
+        "skip-link",
+        "summary-name",
+        "svg-img-alt",
+        "tabindex",
+        "table-duplicate-name",
+        "td-headers-attr",
+        "th-has-data-cells",
+        "video-caption",
+        "no-autoplay-audio"
+      ]
+    },
+    "feedback": {
+      "testEngine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "testRunner": {
+        "name": "axe"
+      },
+      "testEnvironment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "windowWidth": 390,
+        "windowHeight": 844,
+        "orientationAngle": 0,
+        "orientationType": "portrait-primary"
+      },
+      "violations": [],
+      "incomplete": [],
+      "passes": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": null,
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 3
+        },
+        {
+          "id": "aria-allowed-role",
+          "impact": null,
+          "description": "Ensure role attribute has an appropriate value for the element",
+          "help": "ARIA role should be appropriate for the element",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-conditional-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+          "help": "ARIA attributes must be used as specified for the element's role",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-conditional-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 3
+        },
+        {
+          "id": "aria-deprecated-role",
+          "impact": null,
+          "description": "Ensure elements do not use deprecated roles",
+          "help": "Deprecated ARIA roles must not be used",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-deprecated-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-dialog-name",
+          "impact": null,
+          "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+          "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-dialog-name?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-body",
+          "impact": null,
+          "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+          "help": "aria-hidden=\"true\" must not be present on the document body",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-body?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "impact": null,
+          "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+          "help": "ARIA hidden element must not be focusable or contain focusable elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 13
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 3
+        },
+        {
+          "id": "aria-required-attr",
+          "impact": null,
+          "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+          "help": "Required ARIA attributes must be provided",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-roles",
+          "impact": null,
+          "description": "Ensure all elements with a role attribute use a valid value",
+          "help": "ARIA roles used must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-roles?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "impact": null,
+          "description": "Ensure all ARIA attributes have valid values",
+          "help": "ARIA attributes must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr-value?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 3
+        },
+        {
+          "id": "aria-valid-attr",
+          "impact": null,
+          "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+          "help": "ARIA attributes must conform to valid names",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 3
+        },
+        {
+          "id": "avoid-inline-spacing",
+          "impact": null,
+          "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+          "help": "Inline text spacing must be adjustable with custom stylesheets",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/avoid-inline-spacing?application=playwright",
+          "tags": [
+            "cat.structure",
+            "wcag21aa",
+            "wcag1412",
+            "EN-301-549",
+            "EN-9.1.4.12",
+            "ACT"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "button-name",
+          "impact": null,
+          "description": "Ensure buttons have discernible text",
+          "help": "Buttons must have discernible text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.9.1"
+          ],
+          "nodes": 7
+        },
+        {
+          "id": "color-contrast",
+          "impact": null,
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "nodes": 16
+        },
+        {
+          "id": "document-title",
+          "impact": null,
+          "description": "Ensure each HTML document contains a non-empty <title> element",
+          "help": "Documents must have <title> element to aid in navigation",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/document-title?application=playwright",
+          "tags": [
+            "cat.text-alternatives",
+            "wcag2a",
+            "wcag242",
+            "TTv5",
+            "TT12.a",
+            "EN-301-549",
+            "EN-9.2.4.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.5.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "duplicate-id-aria",
+          "impact": null,
+          "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+          "help": "IDs used in ARIA and labels must be unique",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/duplicate-id-aria?application=playwright",
+          "tags": [
+            "cat.parsing",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-8.2.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "empty-heading",
+          "impact": null,
+          "description": "Ensure headings have discernible text",
+          "help": "Headings should not be empty",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-heading?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "best-practice"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "heading-order",
+          "impact": null,
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "html-has-lang",
+          "impact": null,
+          "description": "Ensure every HTML document has a lang attribute",
+          "help": "<html> element must have a lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.3.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "html-lang-valid",
+          "impact": null,
+          "description": "Ensure the lang attribute of the <html> element has a valid value",
+          "help": "<html> element must have a valid value for the lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-lang-valid?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.4.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-banner-is-top-level",
+          "impact": null,
+          "description": "Ensure the banner landmark is at top level",
+          "help": "Banner landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-banner-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-main-is-top-level",
+          "impact": null,
+          "description": "Ensure the main landmark is at top level",
+          "help": "Main landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-main-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": null,
+          "description": "Ensure the document has at most one banner landmark",
+          "help": "Document should not have more than one banner landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-banner?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-main",
+          "impact": null,
+          "description": "Ensure the document has at most one main landmark",
+          "help": "Document should not have more than one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-one-main",
+          "impact": null,
+          "description": "Ensure the document has a main landmark",
+          "help": "Document should have one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-unique",
+          "impact": null,
+          "description": "Ensure landmarks are unique",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "meta-viewport-large",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+          "help": "Users should be able to zoom and scale the text up to 500%",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport-large?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "meta-viewport",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "help": "Zooming and scaling must not be disabled",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "wcag2aa",
+            "wcag144",
+            "EN-301-549",
+            "EN-9.1.4.4",
+            "ACT",
+            "RGAAv4",
+            "RGAA-10.4.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "nested-interactive",
+          "impact": null,
+          "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+          "help": "Interactive controls must not be nested",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 7
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": null,
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "help": "Page should contain a level-one heading",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": null,
+          "description": "Ensure all page content is contained by landmarks",
+          "help": "All page content should be contained by landmarks",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice",
+            "RGAAv4",
+            "RGAA-9.2.1"
+          ],
+          "nodes": 44
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": null,
+          "description": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+          "help": "Scrollable region must have keyboard access",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag211",
+            "wcag213",
+            "TTv5",
+            "TT4.a",
+            "EN-301-549",
+            "EN-9.2.1.1",
+            "EN-9.2.1.3",
+            "RGAAv4",
+            "RGAA-7.3.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "valid-lang",
+          "impact": null,
+          "description": "Ensure lang attributes have valid values",
+          "help": "lang attribute must have a valid value",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/valid-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2aa",
+            "wcag312",
+            "TTv5",
+            "TT11.b",
+            "EN-301-549",
+            "EN-9.3.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.8.1"
+          ],
+          "nodes": 1
+        }
+      ],
+      "inapplicable": [
+        "accesskeys",
+        "area-alt",
+        "aria-braille-equivalent",
+        "aria-command-name",
+        "aria-input-field-name",
+        "aria-meter-name",
+        "aria-progressbar-name",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-tab-name",
+        "aria-text",
+        "aria-toggle-field-name",
+        "aria-tooltip-name",
+        "aria-treeitem-name",
+        "autocomplete-valid",
+        "blink",
+        "bypass",
+        "definition-list",
+        "dlitem",
+        "empty-table-header",
+        "form-field-multiple-labels",
+        "frame-focusable-content",
+        "frame-tested",
+        "frame-title-unique",
+        "frame-title",
+        "html-xml-lang-mismatch",
+        "image-alt",
+        "image-redundant-alt",
+        "input-button-name",
+        "input-image-alt",
+        "label-content-name-mismatch",
+        "label-title-only",
+        "label",
+        "landmark-contentinfo-is-top-level",
+        "landmark-no-duplicate-contentinfo",
+        "link-in-text-block",
+        "link-name",
+        "list",
+        "listitem",
+        "marquee",
+        "meta-refresh",
+        "object-alt",
+        "presentation-role-conflict",
+        "role-img-alt",
+        "scope-attr-valid",
+        "select-name",
+        "server-side-image-map",
+        "skip-link",
+        "summary-name",
+        "svg-img-alt",
+        "tabindex",
+        "table-duplicate-name",
+        "td-headers-attr",
+        "th-has-data-cells",
+        "video-caption",
+        "no-autoplay-audio"
+      ]
+    },
+    "notes": {
+      "testEngine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "testRunner": {
+        "name": "axe"
+      },
+      "testEnvironment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "windowWidth": 390,
+        "windowHeight": 844,
+        "orientationAngle": 0,
+        "orientationType": "portrait-primary"
+      },
+      "violations": [],
+      "incomplete": [],
+      "passes": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": null,
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "aria-conditional-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+          "help": "ARIA attributes must be used as specified for the element's role",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-conditional-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "aria-hidden-body",
+          "impact": null,
+          "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+          "help": "aria-hidden=\"true\" must not be present on the document body",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-body?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "impact": null,
+          "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+          "help": "ARIA hidden element must not be focusable or contain focusable elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 22
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "impact": null,
+          "description": "Ensure all ARIA attributes have valid values",
+          "help": "ARIA attributes must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr-value?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "aria-valid-attr",
+          "impact": null,
+          "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+          "help": "ARIA attributes must conform to valid names",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "avoid-inline-spacing",
+          "impact": null,
+          "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+          "help": "Inline text spacing must be adjustable with custom stylesheets",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/avoid-inline-spacing?application=playwright",
+          "tags": [
+            "cat.structure",
+            "wcag21aa",
+            "wcag1412",
+            "EN-301-549",
+            "EN-9.1.4.12",
+            "ACT"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "button-name",
+          "impact": null,
+          "description": "Ensure buttons have discernible text",
+          "help": "Buttons must have discernible text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.9.1"
+          ],
+          "nodes": 12
+        },
+        {
+          "id": "color-contrast",
+          "impact": null,
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "nodes": 27
+        },
+        {
+          "id": "document-title",
+          "impact": null,
+          "description": "Ensure each HTML document contains a non-empty <title> element",
+          "help": "Documents must have <title> element to aid in navigation",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/document-title?application=playwright",
+          "tags": [
+            "cat.text-alternatives",
+            "wcag2a",
+            "wcag242",
+            "TTv5",
+            "TT12.a",
+            "EN-301-549",
+            "EN-9.2.4.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.5.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "duplicate-id-aria",
+          "impact": null,
+          "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+          "help": "IDs used in ARIA and labels must be unique",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/duplicate-id-aria?application=playwright",
+          "tags": [
+            "cat.parsing",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-8.2.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "empty-heading",
+          "impact": null,
+          "description": "Ensure headings have discernible text",
+          "help": "Headings should not be empty",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-heading?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "best-practice"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "heading-order",
+          "impact": null,
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 4
+        },
+        {
+          "id": "html-has-lang",
+          "impact": null,
+          "description": "Ensure every HTML document has a lang attribute",
+          "help": "<html> element must have a lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.3.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "html-lang-valid",
+          "impact": null,
+          "description": "Ensure the lang attribute of the <html> element has a valid value",
+          "help": "<html> element must have a valid value for the lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-lang-valid?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.4.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": null,
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-banner-is-top-level",
+          "impact": null,
+          "description": "Ensure the banner landmark is at top level",
+          "help": "Banner landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-banner-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-contentinfo-is-top-level",
+          "impact": null,
+          "description": "Ensure the contentinfo landmark is at top level",
+          "help": "Contentinfo landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-contentinfo-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-main-is-top-level",
+          "impact": null,
+          "description": "Ensure the main landmark is at top level",
+          "help": "Main landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-main-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": null,
+          "description": "Ensure the document has at most one banner landmark",
+          "help": "Document should not have more than one banner landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-banner?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-contentinfo",
+          "impact": null,
+          "description": "Ensure the document has at most one contentinfo landmark",
+          "help": "Document should not have more than one contentinfo landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-contentinfo?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-main",
+          "impact": null,
+          "description": "Ensure the document has at most one main landmark",
+          "help": "Document should not have more than one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-one-main",
+          "impact": null,
+          "description": "Ensure the document has a main landmark",
+          "help": "Document should have one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-unique",
+          "impact": null,
+          "description": "Ensure landmarks are unique",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "meta-viewport-large",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+          "help": "Users should be able to zoom and scale the text up to 500%",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport-large?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "meta-viewport",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "help": "Zooming and scaling must not be disabled",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "wcag2aa",
+            "wcag144",
+            "EN-301-549",
+            "EN-9.1.4.4",
+            "ACT",
+            "RGAAv4",
+            "RGAA-10.4.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "nested-interactive",
+          "impact": null,
+          "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+          "help": "Interactive controls must not be nested",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 12
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": null,
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "help": "Page should contain a level-one heading",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": null,
+          "description": "Ensure all page content is contained by landmarks",
+          "help": "All page content should be contained by landmarks",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice",
+            "RGAAv4",
+            "RGAA-9.2.1"
+          ],
+          "nodes": 52
+        },
+        {
+          "id": "tabindex",
+          "impact": null,
+          "description": "Ensure tabindex attribute values are not greater than 0",
+          "help": "Elements should not have tabindex greater than zero",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/tabindex?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "valid-lang",
+          "impact": null,
+          "description": "Ensure lang attributes have valid values",
+          "help": "lang attribute must have a valid value",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/valid-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2aa",
+            "wcag312",
+            "TTv5",
+            "TT11.b",
+            "EN-301-549",
+            "EN-9.3.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.8.1"
+          ],
+          "nodes": 2
+        }
+      ],
+      "inapplicable": [
+        "accesskeys",
+        "area-alt",
+        "aria-allowed-role",
+        "aria-braille-equivalent",
+        "aria-command-name",
+        "aria-deprecated-role",
+        "aria-dialog-name",
+        "aria-input-field-name",
+        "aria-meter-name",
+        "aria-progressbar-name",
+        "aria-required-attr",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-roles",
+        "aria-tab-name",
+        "aria-text",
+        "aria-toggle-field-name",
+        "aria-tooltip-name",
+        "aria-treeitem-name",
+        "autocomplete-valid",
+        "blink",
+        "bypass",
+        "definition-list",
+        "dlitem",
+        "empty-table-header",
+        "form-field-multiple-labels",
+        "frame-focusable-content",
+        "frame-tested",
+        "frame-title-unique",
+        "frame-title",
+        "html-xml-lang-mismatch",
+        "image-alt",
+        "image-redundant-alt",
+        "input-button-name",
+        "input-image-alt",
+        "label-title-only",
+        "label",
+        "link-in-text-block",
+        "link-name",
+        "list",
+        "listitem",
+        "marquee",
+        "meta-refresh",
+        "object-alt",
+        "presentation-role-conflict",
+        "role-img-alt",
+        "scope-attr-valid",
+        "scrollable-region-focusable",
+        "select-name",
+        "server-side-image-map",
+        "skip-link",
+        "summary-name",
+        "svg-img-alt",
+        "table-duplicate-name",
+        "td-headers-attr",
+        "th-has-data-cells",
+        "video-caption",
+        "no-autoplay-audio"
+      ]
+    },
+    "settings": {
+      "testEngine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "testRunner": {
+        "name": "axe"
+      },
+      "testEnvironment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "windowWidth": 390,
+        "windowHeight": 844,
+        "orientationAngle": 0,
+        "orientationType": "portrait-primary"
+      },
+      "violations": [],
+      "incomplete": [],
+      "passes": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": null,
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 10
+        },
+        {
+          "id": "aria-allowed-role",
+          "impact": null,
+          "description": "Ensure role attribute has an appropriate value for the element",
+          "help": "ARIA role should be appropriate for the element",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-conditional-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+          "help": "ARIA attributes must be used as specified for the element's role",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-conditional-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 10
+        },
+        {
+          "id": "aria-deprecated-role",
+          "impact": null,
+          "description": "Ensure elements do not use deprecated roles",
+          "help": "Deprecated ARIA roles must not be used",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-deprecated-role?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-dialog-name",
+          "impact": null,
+          "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+          "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-dialog-name?application=playwright",
+          "tags": [
+            "cat.aria",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-body",
+          "impact": null,
+          "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+          "help": "aria-hidden=\"true\" must not be present on the document body",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-body?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "impact": null,
+          "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+          "help": "ARIA hidden element must not be focusable or contain focusable elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-10.8.1"
+          ],
+          "nodes": 29
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": null,
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 10
+        },
+        {
+          "id": "aria-required-attr",
+          "impact": null,
+          "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+          "help": "Required ARIA attributes must be provided",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-roles",
+          "impact": null,
+          "description": "Ensure all elements with a role attribute use a valid value",
+          "help": "ARIA roles used must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-roles?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "impact": null,
+          "description": "Ensure all ARIA attributes have valid values",
+          "help": "ARIA attributes must conform to valid values",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr-value?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 10
+        },
+        {
+          "id": "aria-valid-attr",
+          "impact": null,
+          "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+          "help": "ARIA attributes must conform to valid names",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr?application=playwright",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 10
+        },
+        {
+          "id": "avoid-inline-spacing",
+          "impact": null,
+          "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+          "help": "Inline text spacing must be adjustable with custom stylesheets",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/avoid-inline-spacing?application=playwright",
+          "tags": [
+            "cat.structure",
+            "wcag21aa",
+            "wcag1412",
+            "EN-301-549",
+            "EN-9.1.4.12",
+            "ACT"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "button-name",
+          "impact": null,
+          "description": "Ensure buttons have discernible text",
+          "help": "Buttons must have discernible text",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.a",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.9.1"
+          ],
+          "nodes": 19
+        },
+        {
+          "id": "color-contrast",
+          "impact": null,
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "nodes": 51
+        },
+        {
+          "id": "document-title",
+          "impact": null,
+          "description": "Ensure each HTML document contains a non-empty <title> element",
+          "help": "Documents must have <title> element to aid in navigation",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/document-title?application=playwright",
+          "tags": [
+            "cat.text-alternatives",
+            "wcag2a",
+            "wcag242",
+            "TTv5",
+            "TT12.a",
+            "EN-301-549",
+            "EN-9.2.4.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.5.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "duplicate-id-aria",
+          "impact": null,
+          "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+          "help": "IDs used in ARIA and labels must be unique",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/duplicate-id-aria?application=playwright",
+          "tags": [
+            "cat.parsing",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-8.2.1"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "empty-heading",
+          "impact": null,
+          "description": "Ensure headings have discernible text",
+          "help": "Headings should not be empty",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/empty-heading?application=playwright",
+          "tags": [
+            "cat.name-role-value",
+            "best-practice"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "form-field-multiple-labels",
+          "impact": null,
+          "description": "Ensure form field does not have multiple label elements",
+          "help": "Form field must not have multiple label elements",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/form-field-multiple-labels?application=playwright",
+          "tags": [
+            "cat.forms",
+            "wcag2a",
+            "wcag332",
+            "TTv5",
+            "TT5.c",
+            "EN-301-549",
+            "EN-9.3.3.2",
+            "RGAAv4",
+            "RGAA-11.2.1"
+          ],
+          "nodes": 6
+        },
+        {
+          "id": "heading-order",
+          "impact": null,
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "html-has-lang",
+          "impact": null,
+          "description": "Ensure every HTML document has a lang attribute",
+          "help": "<html> element must have a lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.3.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "html-lang-valid",
+          "impact": null,
+          "description": "Ensure the lang attribute of the <html> element has a valid value",
+          "help": "<html> element must have a valid value for the lang attribute",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-lang-valid?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2a",
+            "wcag311",
+            "TTv5",
+            "TT11.a",
+            "EN-301-549",
+            "EN-9.3.1.1",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.4.1"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": null,
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "label-title-only",
+          "impact": null,
+          "description": "Ensure that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+          "help": "Form elements should have a visible label",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-title-only?application=playwright",
+          "tags": [
+            "cat.forms",
+            "best-practice"
+          ],
+          "nodes": 6
+        },
+        {
+          "id": "landmark-banner-is-top-level",
+          "impact": null,
+          "description": "Ensure the banner landmark is at top level",
+          "help": "Banner landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-banner-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-contentinfo-is-top-level",
+          "impact": null,
+          "description": "Ensure the contentinfo landmark is at top level",
+          "help": "Contentinfo landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-contentinfo-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-main-is-top-level",
+          "impact": null,
+          "description": "Ensure the main landmark is at top level",
+          "help": "Main landmark should not be contained in another landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-main-is-top-level?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-banner",
+          "impact": null,
+          "description": "Ensure the document has at most one banner landmark",
+          "help": "Document should not have more than one banner landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-banner?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-contentinfo",
+          "impact": null,
+          "description": "Ensure the document has at most one contentinfo landmark",
+          "help": "Document should not have more than one contentinfo landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-contentinfo?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-no-duplicate-main",
+          "impact": null,
+          "description": "Ensure the document has at most one main landmark",
+          "help": "Document should not have more than one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-no-duplicate-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-one-main",
+          "impact": null,
+          "description": "Ensure the document has a main landmark",
+          "help": "Document should have one main landmark",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-one-main?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "landmark-unique",
+          "impact": null,
+          "description": "Ensure landmarks are unique",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/landmark-unique?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 5
+        },
+        {
+          "id": "meta-viewport-large",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+          "help": "Users should be able to zoom and scale the text up to 500%",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport-large?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "meta-viewport",
+          "impact": null,
+          "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+          "help": "Zooming and scaling must not be disabled",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/meta-viewport?application=playwright",
+          "tags": [
+            "cat.sensory-and-visual-cues",
+            "wcag2aa",
+            "wcag144",
+            "EN-301-549",
+            "EN-9.1.4.4",
+            "ACT",
+            "RGAAv4",
+            "RGAA-10.4.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "nested-interactive",
+          "impact": null,
+          "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+          "help": "Interactive controls must not be nested",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag412",
+            "TTv5",
+            "TT6.a",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "nodes": 33
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": null,
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+          "help": "Page should contain a level-one heading",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=playwright",
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": null,
+          "description": "Ensure all page content is contained by landmarks",
+          "help": "All page content should be contained by landmarks",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice",
+            "RGAAv4",
+            "RGAA-9.2.1"
+          ],
+          "nodes": 104
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": null,
+          "description": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+          "help": "Scrollable region must have keyboard access",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "wcag2a",
+            "wcag211",
+            "wcag213",
+            "TTv5",
+            "TT4.a",
+            "EN-301-549",
+            "EN-9.2.1.1",
+            "EN-9.2.1.3",
+            "RGAAv4",
+            "RGAA-7.3.2"
+          ],
+          "nodes": 1
+        },
+        {
+          "id": "select-name",
+          "impact": null,
+          "description": "Ensure select element has an accessible name",
+          "help": "Select element must have an accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/select-name?application=playwright",
+          "tags": [
+            "cat.forms",
+            "wcag2a",
+            "wcag412",
+            "section508",
+            "section508.22.n",
+            "TTv5",
+            "TT5.c",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-11.1.1"
+          ],
+          "nodes": 6
+        },
+        {
+          "id": "tabindex",
+          "impact": null,
+          "description": "Ensure tabindex attribute values are not greater than 0",
+          "help": "Elements should not have tabindex greater than zero",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/tabindex?application=playwright",
+          "tags": [
+            "cat.keyboard",
+            "best-practice"
+          ],
+          "nodes": 2
+        },
+        {
+          "id": "valid-lang",
+          "impact": null,
+          "description": "Ensure lang attributes have valid values",
+          "help": "lang attribute must have a valid value",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/valid-lang?application=playwright",
+          "tags": [
+            "cat.language",
+            "wcag2aa",
+            "wcag312",
+            "TTv5",
+            "TT11.b",
+            "EN-301-549",
+            "EN-9.3.1.2",
+            "ACT",
+            "RGAAv4",
+            "RGAA-8.8.1"
+          ],
+          "nodes": 8
+        }
+      ],
+      "inapplicable": [
+        "accesskeys",
+        "area-alt",
+        "aria-braille-equivalent",
+        "aria-command-name",
+        "aria-input-field-name",
+        "aria-meter-name",
+        "aria-progressbar-name",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-tab-name",
+        "aria-text",
+        "aria-toggle-field-name",
+        "aria-tooltip-name",
+        "aria-treeitem-name",
+        "autocomplete-valid",
+        "blink",
+        "bypass",
+        "definition-list",
+        "dlitem",
+        "empty-table-header",
+        "frame-focusable-content",
+        "frame-tested",
+        "frame-title-unique",
+        "frame-title",
+        "html-xml-lang-mismatch",
+        "image-alt",
+        "image-redundant-alt",
+        "input-button-name",
+        "input-image-alt",
+        "label",
+        "link-in-text-block",
+        "link-name",
+        "list",
+        "listitem",
+        "marquee",
+        "meta-refresh",
+        "object-alt",
+        "presentation-role-conflict",
+        "role-img-alt",
+        "scope-attr-valid",
+        "server-side-image-map",
+        "skip-link",
+        "summary-name",
+        "svg-img-alt",
+        "table-duplicate-name",
+        "td-headers-attr",
+        "th-has-data-cells",
+        "video-caption",
+        "no-autoplay-audio"
+      ]
+    }
+  },
+  "mockRequests": [
+    {
+      "method": "POST",
+      "path": "/v1/responses"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/responses"
+    }
+  ],
+  "summary": {
+    "home": {
+      "violations": 0,
+      "violationNodes": 0,
+      "incomplete": 0,
+      "ruleIds": []
+    },
+    "scene-modal": {
+      "violations": 0,
+      "violationNodes": 0,
+      "incomplete": 0,
+      "ruleIds": []
+    },
+    "practice-text": {
+      "violations": 0,
+      "violationNodes": 0,
+      "incomplete": 1,
+      "ruleIds": []
+    },
+    "feedback": {
+      "violations": 0,
+      "violationNodes": 0,
+      "incomplete": 0,
+      "ruleIds": []
+    },
+    "notes": {
+      "violations": 0,
+      "violationNodes": 0,
+      "incomplete": 0,
+      "ruleIds": []
+    },
+    "settings": {
+      "violations": 0,
+      "violationNodes": 0,
+      "incomplete": 0,
+      "ruleIds": []
+    }
+  }
+}
