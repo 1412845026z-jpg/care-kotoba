@@ -66,7 +66,7 @@
 | CONTENT-001 | 12场景规格草稿与48条固定评测 | Codex | merged | `codex/CONTENT-001`，PR #6；合并 `e2a4f15` | handoffs/2026-10-23-CONTENT-001-codex.md；结构/引用/CI通过，专业审稿未完成 |
 | OSS-001 | 公开前检查与Codex for OSS申请 | Codex | blocked | 准备材料PR #10已合并；2026-10-24申请已提交 | 仓库公开，许可证仍未确定；用户确认邮箱与条款后已提交，官方页面确认接收，等待外部审核；尚未获批。未在仓库记录个人邮箱 |
 | CI-002 | G0模拟测试接入常规main CI | Codex | merged | PR #32，merge c917a68 | 已在完整业务树通过static0/unit71/e2e40；安装Chromium、600秒超时、循环回环fetch保护已接入常规CI；见handoffs/2026-10-24-CI-002-main-codex.md |
-| DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；等用户决定预算、密钥配置与staging |
+| DEVICE-001 | 真机语音闭环测试（docs/09） | Claude + 用户 | 免费部分可开始（F1–F10，方式 A/B 无需部署）；付费部分 blocked | — | docs/09_REAL_DEVICE_VOICE_TEST.md；2026-10-24 用户决定先做免费部分，付费的 T1–T14 等授权 |
 | MODEL-001 | 替代型号的固定样本比较（文字 / 语音 / 转写 / TTS），停用日期前完成 | 待定 | blocked | — | docs/08 #7；`lib/models.ts`；需要用户授权API费用 |
 | CONTENT-003 | 12场景/34术语/60评测的离线审稿台 | Codex | merged | PR #15；合并 `c65c3e2` | handoffs/2026-10-24-CONTENT-003-codex.md；CI39987425175通过；12项真实浏览器检查通过，390px无溢出；未接入学员端或专业审批 |
 | EVAL-002 | 信息来源/核实状态的12条配对反馈评测草稿 | Codex | merged | PR #14；合并 `e65dab6` | handoffs/2026-10-24-EVAL-002-codex.md；CI39985347001通过；无模型调用，专业审稿未完成 |
@@ -93,6 +93,7 @@
 | CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude + Codex复测 | merged | PR #35，head a4d7831；merge b038f60 | 独立run40058494059：static0/unit81/offline47/真实dev42通过5注明原因跳过，10项CSP检查通过；CORE-ENV-001交接 |
 | CORE-EVAL-001 | 核心草稿的角色检查工具 | Claude + Codex复测 | merged | PR #37，head 2cf1a0e；merge b46bf98 | #35合并后独立run40058975902：static0/unit81/offline50/真实dev42通过8注明原因跳过；10项CSP检查通过，全部mock；dry-run及过期标志词检查0请求 |
 | CORE-ENV-001 | 核心预览/角色检查工具的独立ENV验收与合并证据 | Codex | merged | codex/CORE-ENV-001，PR #38；merge0901ddc | #35→#37顺序合并，证据/验证工具已进main；固定源两轮、最终证据CI/安全/固定源复测全通过；无新依赖/付费API/部署 |
+| FREE-VOICE-001 | 免费真机测试方案（docs/09 F1–F10，三种免费的手机访问方式）＋文字/演示练习的「声で入力」（浏览器语音识别，首次使用前说明并取得同意；低置信度标为不确定）＋音声テスト新增两项免费检查 | Claude | review_ready | `claude/FREE-VOICE-001` | handoffs/2026-10-24-FREE-VOICE-001-claude.md；模拟识别器下 unit/e2e 通过；真机识别准确率待 F5 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -107,6 +108,7 @@
 | 2026-10-23 最新用户要求 | 先继续Care Kotoba开发，重新审核Claude整理后的仓库并提供转交反馈 | 本轮暂停公开/申请；不修改可见性，聚焦固定版本复测和缺陷交接 |
 | 2026-10-23 用户本轮要求 | 尝试将仓库公开，以个人维护者申请Codex for Open Source；取代先前保持private的偏好 | 目前完成公开前准备；可见性变更、许可证与申请提交分别记录，不意味着获批或部署授权 |
 | 2026-10-23 用户（Claude 会话） | Codex 与 Claude 只通过本仓库同步，按环境能力与文件归属分工（见上表） | 冻结文件在负责方分支合并前不由对方修改 |
+| 2026-10-24 12:54 用户（Claude 会话）：「真机测试……能用免费的就用免费，需要付费的先往后靠」 | 真机测试先做不花钱的部分（docs/09「先做免费的真机测试」F1–F10）；真实 AI / Realtime / TTS 等付费测试（T1–T14、角色检查 `--yes`、MODEL-001）往后放，等用户另行授权 | 免费部署方式 C 仍需用户授权部署；浏览器语音识别由浏览器提供商处理声音，需告知并取得同意 |
 | 2026-10-24 用户（Claude 会话）：「我先做可选的预览入口（推荐）」 | 12 个核心场景先作为「コア練習（草稿）」单独入口接进应用，默认隐藏，原有 48 个场景不动；GPT 同时按审阅意见修改内容 | 草稿不计入 48 场景进度；正式替换或合并原场景需另行决定，并需要专业审稿 |
 | 2026-10-23 用户（Claude 会话）：「可以复用的就以合适方式拿过来并共享」 | 开源 / 免费资料按 research/REUSE_REVIEW_2026-10-23.md 处理；注音默认开启（Claude 的默认设定，可在设置中关闭，待教师和用户反馈） | 新增依赖仍由 Codex 加入；内容类资料由 Codex 负责 |
 
@@ -128,6 +130,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-FREE-VOICE-001-claude.md：免费真机测试路径（F1–F10）与「声で入力」；付费测试往后放。
 
 - handoffs/2026-10-24-CORE-ENV-001-codex.md：#35/#37独立复测与顺序合并、10项CSP检查、角色工具0请求dry-run/过期标志词检查、后续内容生成/注音要求。
 
