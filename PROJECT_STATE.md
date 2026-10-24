@@ -59,7 +59,6 @@
 | --- | --- | --- | --- | --- | --- |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
 | REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | review_ready | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，常规CI待结果 |
-| REVIEW-001 | 间隔复习交互与功能实现 | Claude | queued | 待REVIEW-DEP-001合并 | Codex本轮不改app/components/lib/tests |
 | START-FLOW-001 | 开始流程简化与辅助语言lang | Claude | review_ready | `claude/START-FLOW-001`，PR #46，head6d22f31 | 未在本轮授权合并范围，保持开放；handoffs/2026-10-24-START-FLOW-001-claude.md |
 | SYNC-001 | 导入原归档、合并共享规则、初始化本文件 | Claude | merged | `claude/SYNC-001-import`，[PR #1](https://github.com/1412845026z-jpg/care-kotoba/pull/1) | handoffs/2026-10-23-SYNC-001-claude.md |
 | SYNC-002 | Codex 读取 SYNC-001 的同一提交，核对130项源码与导入记录 | Codex | merged | `codex/SYNC-002`，[PR #2](https://github.com/1412845026z-jpg/care-kotoba/pull/2)；合并 `7854c7b` | handoffs/2026-10-23-SYNC-002-codex.md；130/130 一致 |
@@ -105,7 +104,7 @@
 | DESIGN-SKILLS-001 | 接入两份设计技能与共同设计依据 | Claude | merged | PR #43，head768abbe，merge21639c7 | vendor195项校验、CI40065123200；显式读取技能通过，CLI自动发现未实测 |
 | DEAI-001 | 按概念图视觉去AI化 | Claude | merged | PR #44，head a567b8d，merge dc9d60c | 独立runner40069650388：static0/unit92/offline54/dev46通过8跳过；SEC与Google字体共15检查，控制台0错误；真机未验收 |
 | START-FLOW-001 | 开始练习一步到位：会話のタイプ默认收起、开始按钮在第一屏；辅助语言文字加 `lang` | Claude | review_ready | `claude/START-FLOW-001`，PR #46（#44 合并后 base 改为 main） | handoffs/2026-10-24-START-FLOW-001-claude.md |
-| REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs 5.4.2，MIT） | Claude（功能）+ Codex（依赖 REVIEW-DEP-001） | queued：2026-10-24 15:11 用户「开始」；交互：今日の復習 → 听 → 自己说 → 思い出せた／もう少し／まだ，只存本机、不打分；等 ts-fsrs 依赖合并 | — | research/REUSE_REVIEW_2026-10-23.md |
+| REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs 5.4.2，MIT）：今日の復習 → 提示 → 自己说 → 答案/听 → まだ／もう少し／思い出せた；只存本机、不打分 | Claude（功能）+ Codex（依赖 REVIEW-DEP-001，#47 已合并） | in_progress | `claude/REVIEW-001`（base 为 `claude/START-FLOW-001`，先合并 #46） | handoffs/2026-10-24-REVIEW-001-claude.md；verification/REVIEW-001 |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
 历史开发待办见 `docs/04_BUILD_BACKLOG.md`；以上只列已领取或已安排的任务。
@@ -147,6 +146,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-REVIEW-001-claude.md：ことばノート的「今日の復習」（ts-fsrs，本机保存、不打分），复习中隐藏答案列表。
 
 - handoffs/2026-10-24-START-FLOW-001-claude.md：场景说明弹窗一步开始（会話のタイプ默认收起），辅助语言文字加 `lang`。
 - handoffs/2026-10-24-MERGE-codex.md：#43/#44顺序合并、固定源真实dev字体与15项SEC检查、来源许可。
