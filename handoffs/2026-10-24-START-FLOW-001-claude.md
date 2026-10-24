@@ -1,13 +1,13 @@
 # START-FLOW-001｜开始练习一步到位、辅助语言标记（Claude，2026-10-24）
 
 - 用户指令（15:07 / 15:11「开始」）：按 Claude 提出的分工开始；GitHub 上可用的开源代码可以直接复用。本任务对应 DESIGN-BASELINE-001 P1-1 剩下的一半：开始练习前的选择过多。
-- 分支：`claude/START-FLOW-001`，基于 `claude/DEAI-001`（a567b8d，PR #44 未合并）。**PR 的 base 是 `claude/DEAI-001`**：合并顺序 #43 → #44 → 本 PR（前一个合并后把 base 改为 main）。
+- 分支：`claude/START-FLOW-001`，PR #46，基于 `claude/DEAI-001`（a567b8d，PR #44 未合并）。**PR 的 base 是 `claude/DEAI-001`**：合并顺序 #43 → #44 → 本 PR（前一个合并后把 base 改为 main）。
 - 没有改依赖、CI、部署配置；没有调用付费 API。
 
 ## 做了什么
 
 - **场景说明弹窗**：原来要先在 4 张「会話のタイプ」卡片里选一个，再选练习方式。现在默认「穏やかな会話」，显示为一行「会話のタイプ　穏やかな会話　まずは、ゆっくり　［変える］」；点「変える」才展开 4 个选项（`role="radiogroup"`，选项是 `role="radio"` + `aria-checked`），选完自动收起。每次打开场景都回到默认。「音声でAIと話す」「文字で練習」在 390×844 的第一屏内，一次点击开始。核心草稿场景不显示这一行（和以前一样没有类型选择）。
-- **辅助语言标记**：新增 `Support` 组件（`components/ui.tsx`），把 14 处 JSX 里的 `{support(...)}` 换成 `<Support …/>`，输出 `<span lang="zh-Hans">` 或 `lang="en"`，让中文用简体字形显示、读屏软件切换语言。设置里的英文副标签、语言选项、顶栏的语言按钮也加了 `lang`。拼接成字符串的两处（`setError(... + support(...))`）保持原样。
+- **辅助语言标记**：新增 `Support` 组件（`components/ui.tsx`），把 14 处 JSX 里的 `{support(...)}` 换成 `<Support …/>`，输出 `<span lang="zh-Hans">` 或 `lang="en"`，让中文用简体字形显示、读屏软件切换语言。设置里的英文副标签、语言选项、顶栏的语言按钮也加了 `lang`。拼接成字符串的一处（`setError(m.ja + support(...))`，错误提示）保持原样。
 - 场景说明标题改为正文墨色（DEAI 的遗漏）。
 
 文件：`prototype/app/page.tsx`、`prototype/components/{ui,practice,line-drill}.tsx`、`prototype/app/globals.css`（末尾「START-FLOW-001」一段）、`prototype/tests/e2e/start-flow.e2e.mjs`（新增 4 项）、`verification/START-FLOW-001/`。
