@@ -3,7 +3,9 @@
 `prototype/lib/furigana-data.ts` holds furigana for the app's **fixed** Japanese text: categories, variant labels,
 scene titles, contexts, opening lines, reference phrases, goals and demo replies (318 texts as of 2026-10-23).
 The app shows them as `<ruby>` when the learner's 「ふりがな」 preference is on (default on). AI-generated replies are not
-annotated unless they exactly match a fixed text.
+annotated unless they exactly match a fixed text, or the server runs with `CK_AI_FURIGANA=1` (off by default): then
+text-practice replies carry a model-written notation that the server accepts only if it reproduces the reply exactly and
+puts hiragana readings on kanji (`validRuby` in `prototype/lib/furigana.ts`). Those readings are not reviewed.
 
 ## How it is made
 

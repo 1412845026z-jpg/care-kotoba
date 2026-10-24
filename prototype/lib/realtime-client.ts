@@ -19,6 +19,12 @@ export type VoiceOptions = {
   onChange: (snapshot: VoiceSnapshot, turns: Turn[]) => void;
 };
 
+/** Seconds left before the session's time limit (null when not live). Pure; used for the on-screen countdown. */
+export function remainingSeconds(maxSeconds: number, liveSince: number | undefined, now = Date.now()): number | null {
+  if (!liveSince || !(maxSeconds > 0)) return null;
+  return Math.max(0, Math.ceil(maxSeconds - (now - liveSince) / 1000));
+}
+
 export class VoiceError extends Error {
   code: string;
   constructor(code: string, message: string) { super(message); this.code = code; }
