@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Care Kotoba — 基本の短い会話・审稿版</title>
+<style>
+:root{color-scheme:light;--paper:#f8f6ef;--card:#fffefa;--ink:#27252b;--muted:#57535e;--purple:#4a365f;--border:#cbc7c1;--mint:#e3f0e9}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Yu Gothic",Meiryo,sans-serif;line-height:1.65}button,input,select{font:inherit;color:inherit}button,select,input[type=search]{min-height:44px}button{cursor:pointer;border:1px solid var(--purple);border-radius:8px;background:var(--card);padding:8px 13px;color:var(--purple)}button:hover{background:var(--mint)}button:disabled{cursor:default;opacity:.7}a{color:var(--purple)}:focus-visible{outline:3px solid #6a460c;outline-offset:3px}main{width:min(100% - 32px,1040px);margin:auto}header{padding:34px 0 20px}h1{font:600 clamp(26px,5vw,38px)/1.35 Georgia,"Yu Mincho",serif;margin:8px 0 14px}h2{font-size:21px;line-height:1.45;margin:0 0 10px}h3{font-size:17px;margin:15px 0 7px}p{margin:7px 0}.notice{border-left:4px solid var(--purple);padding:10px 15px;background:var(--card);font-size:14px}.stats{color:var(--muted);font-size:15px}.controls{padding:17px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:5px;font-size:14px}.field input,.field select{width:100%;border:1px solid var(--border);border-radius:7px;background:var(--card);padding:8px 10px}.checks{display:flex;gap:8px 18px;flex-wrap:wrap;align-items:center}.checks label{display:flex;align-items:center;gap:7px;min-height:44px}input[type=checkbox],input[type=radio]{width:18px;height:18px}.mode{grid-column:1/-1;margin:0;padding:0;border:0}.mode legend{font-size:14px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0}.status{font-size:14px;min-height:24px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-bottom:30px}.scene{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:21px;min-width:0}.id{font-size:13px;color:var(--muted);margin-bottom:7px}.zh-title{font-size:15px;color:var(--muted)}.context,.goal{font-size:14px}.goal{padding:9px 11px;background:var(--mint);border-radius:5px}.turn{padding:13px 0;border-bottom:1px solid #e1ddd7}.turn:last-child{border-bottom:0}.turn-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.role{font-size:13px;font-weight:650}.ja{font-size:19px;line-height:1.7;overflow-wrap:anywhere}.kana{font-size:14px;color:var(--muted)}.translation{font-size:14px;color:#4c4852}.read{font-size:13px;padding:5px 11px;flex-shrink:0;min-height:44px}.scene-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.primary{background:var(--purple);color:#fff}.primary:hover{background:#352345}.practice-cue{border-left:3px solid #75706f;padding:10px 13px;margin:15px 0}.answer{padding:12px;background:var(--mint);border-radius:6px;margin-top:13px}.answer li{margin:6px 0}.check{font-size:14px}footer{border-top:1px solid var(--border);padding:22px 0 36px;font-size:14px;color:var(--muted)}[hidden]{display:none!important}.empty{padding:30px 0;font-size:17px}.speech-note{font-size:13px;color:var(--muted)}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.controls{grid-template-columns:1fr}.scene{padding:17px}.toolbar{align-items:flex-start}.ja{font-size:19px}header{padding-top:24px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p class="stats">Care Kotoba · 基础短对话 · 审稿版</p>
+<h1>仕事で使う、短いことば。</h1>
+<p lang="zh-Hans">面向特定技能等外国介护人员：每次只练一个工作中的沟通目标。</p>
+<p id="stats" class="stats" aria-live="polite"></p>
+<div class="notice" lang="zh-Hans">原创虚构对话，待介护经验者与日语教育者审稿。这是基础课程首版，不代表已覆盖所有介护情境，也不是医疗处置或介助手技教程。原 App 的场景保持原样。</div>
+</header>
+<section class="controls" aria-label="会話の絞り込みと表示設定">
+<label class="field">ことばで探す / 搜索<input id="search" type="search" placeholder="例：トイレ、食事、听不懂" autocomplete="off"></label>
+<label class="field">場面 / 分类<select id="topic"><option value="all">すべて / 全部分类</option></select></label>
+<div class="checks"><label><input id="kana" type="checkbox" checked>かな / 假名</label><label><input id="translation" type="checkbox" checked>中文</label></div>
+<fieldset class="mode"><legend>練習のしかた / 查看方式</legend><div class="checks"><label><input name="mode" value="dialogue" type="radio" checked>会話を読む / 看对话</label><label><input name="mode" value="practice" type="radio">自分で答える / 先自己回答</label></div></fieldset>
+</section>
+<div class="toolbar"><p id="count" aria-live="polite"></p><button id="stop" type="button">朗読を止める / 停止朗读</button></div>
+<p class="speech-note" lang="zh-Hans">朗读按钮只在点击后使用浏览器或系统的日语声音，可能需要联网；这是临时朗读，不是新增 MP3，也不是已选定的角色音色。没有日语声音时会提示，不改用英语声音。请只用于这些虚构句子。</p>
+<p id="speech-status" class="status" role="status" aria-live="polite"></p>
+<section id="scenes" class="grid" aria-label="基本の短い会話"></section>
+<footer lang="zh-Hans"><p>主题参考官方免费教材，句子、对话与中文辅助由本项目原创；未复制教材原文、录音、试题或插图。当前只含日语、假名和中文辅助，不表示已完成其他语言本地化。</p><p>可下载本页后在浏览器打开；不需要账户。本页没有录音、上传或自动外站请求。端末朗读是否联网取决于浏览器或系统声音。</p><p id="audio-plan-note"></p></footer>
+</main>
+<script type="application/json" id="ssw-data">__SSW_BASIC_DATA__</script>
+<script>
+'use strict';
+const pack=JSON.parse(document.getElementById('ssw-data').textContent);
+const byId=id=>document.getElementById(id);
+const roleNames={worker:'介護職員 / 学员',resident:'利用者',colleague:'同僚・先輩',nurse:'看護師',visitor:'来客'};
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const counts=pack.counts;
+byId('stats').textContent=`${counts.topics} 分类 · ${counts.scenes} 个微场景 · ${counts.dialogue_lines} 轮台词 · ${counts.alternative_answers} 条替代表达`;
+byId('audio-plan-note').textContent=`配套待合成清单有 ${counts.unique_planned_audio_assets} 条按角色和文字去重的资产。本批新增 MP3：${counts.generated_mp3_files}。音色选择、文本专业审稿、全量合成和真正试听仍未完成。`;
+for(const t of pack.topics){const o=document.createElement('option');o.value=t.id;o.textContent=`${t.id} ${t.title_ja} / ${t.title_zh}`;byId('topic').append(o);}
+let speechSequence=0;
+function speechStatus(message){byId('speech-status').textContent=message;}
+function stopSpeech(message='朗读已停止。'){speechSequence++;if('speechSynthesis'in window)window.speechSynthesis.cancel();if(message)speechStatus(message);}
+function voice(){if(!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window))return null;const choices=window.speechSynthesis.getVoices().filter(v=>/^ja(?:-|_|$)/i.test(v.lang));return choices.find(v=>v.localService)||choices[0]||null;}
+function speak(lines){
+ stopSpeech('');const selected=voice();
+ if(!selected){speechStatus('此浏览器或系统尚未提供可用的日语声音。声音列表可能正在加载，请稍后重试；这不是已生成的 MP3。');return;}
+ const sequence=speechSequence;let position=0;
+ const next=()=>{if(sequence!==speechSequence)return;if(position>=lines.length){speechStatus('朗读结束。此结果不代替真人听感验收。');return;}
+  const utterance=new SpeechSynthesisUtterance(lines[position]);utterance.lang='ja-JP';utterance.voice=selected;utterance.rate=.8;
+  speechStatus(`端末临时朗读 ${position+1}/${lines.length}：${selected.name}${selected.localService?'':'（浏览器服务声音，可能联网）'}`);
+  utterance.onend=()=>{if(sequence===speechSequence){position++;next();}};
+  utterance.onerror=e=>{if(sequence===speechSequence&&!['canceled','interrupted'].includes(e.error))speechStatus(`此设备未能朗读（${e.error||'unknown'}）。文字和读音辅助仍可查看；没有生成 MP3。`);};
+  window.speechSynthesis.speak(utterance);
+ };next();
+}
+function turnHTML(turn,index,sid){return `<div class="turn"><div class="turn-top"><span class="role">${escapeHTML(roleNames[turn.speaker]||turn.speaker)}</span><button class="read" type="button" data-read="${index}" data-scene="${sid}" aria-label="${escapeHTML(turn.ja)} を端末で朗読">朗読 / 朗读</button></div><p class="ja" lang="ja">${escapeHTML(turn.ja)}</p><p class="kana" lang="ja"${byId('kana').checked?'':' hidden'}>${escapeHTML(turn.kana)}</p><p class="translation" lang="zh-Hans"${byId('translation').checked?'':' hidden'}>${escapeHTML(turn.zh)}</p></div>`;}
+function cardHTML(scene,practice){
+ const topic=pack.topics.find(t=>t.id===scene.topic_id);
+ const heading=`<div class="id">${escapeHTML(scene.id)} · ${escapeHTML(topic.title_ja)}</div><h2>${escapeHTML(scene.title_ja)}</h2><p class="zh-title" lang="zh-Hans">${escapeHTML(scene.title_zh)}</p><p class="goal" lang="zh-Hans">这次练习：${escapeHTML(scene.goal_zh)}</p><p class="context" lang="zh-Hans">${escapeHTML(scene.context_zh)}</p>`;
+ if(!practice)return `<article class="scene" data-card="${scene.id}">${heading}<div>${scene.dialogue.map((t,i)=>turnHTML(t,i,scene.id)).join('')}</div><div class="scene-actions"><button type="button" data-conversation="${scene.id}">会話を朗読 / 朗读整段</button></div></article>`;
+ const cue=scene.dialogue[scene.practice.cue_turn],response=scene.dialogue[scene.practice.response_turn];
+ return `<article class="scene" data-card="${scene.id}">${heading}<div class="practice-cue">${turnHTML(cue,scene.practice.cue_turn,scene.id)}</div><p lang="zh-Hans">回应练习：你会怎样接下一句？先自己说，再看参考。完整提问与说明请切到整段对话练习。</p><button class="primary" type="button" data-reveal="${scene.id}" aria-expanded="false" aria-controls="answer-${scene.id}">参考を見る / 看参考回答</button><div id="answer-${scene.id}" class="answer" hidden><p class="role">参考回答（不是唯一答案）</p>${turnHTML(response,scene.practice.response_turn,scene.id)}<h3 lang="zh-Hans">也可以这样说</h3><ul>${scene.practice.alternatives_ja.map((text,i)=>`<li><p class="ja" lang="ja">${escapeHTML(text)}</p><button class="read" type="button" data-alternative="${i}" data-scene="${scene.id}" aria-label="${escapeHTML(text)} を端末で朗読">朗読 / 朗读</button></li>`).join('')}</ul><p class="check" lang="zh-Hans">核对：${escapeHTML(scene.practice.check_zh)}</p></div></article>`;
+}
+function render(){
+ stopSpeech('');const query=byId('search').value.trim().toLocaleLowerCase();const topic=byId('topic').value;
+ const selected=pack.scenes.filter(s=>(topic==='all'||s.topic_id===topic)&&(!query||[s.id,s.title_ja,s.title_zh,s.goal_zh,s.context_zh,...s.dialogue.flatMap(t=>[t.ja,t.kana,t.zh]),...s.practice.alternatives_ja].join('\n').toLocaleLowerCase().includes(query)));
+ const practice=document.querySelector('input[name=mode]:checked').value==='practice';
+ byId('scenes').innerHTML=selected.length?selected.map(s=>cardHTML(s,practice)).join(''):'<p class="empty" lang="zh-Hans">没有找到相应场景。试试其他关键词或分类。</p>';
+ byId('count').textContent=`${selected.length} / ${pack.scenes.length} 个场景`;
+}
+for(const id of ['search','topic'])byId(id).addEventListener(id==='search'?'input':'change',render);
+for(const input of document.querySelectorAll('input[name=mode]'))input.addEventListener('change',render);
+byId('kana').addEventListener('change',()=>document.querySelectorAll('.kana').forEach(p=>p.hidden=!byId('kana').checked));
+byId('translation').addEventListener('change',()=>document.querySelectorAll('.translation').forEach(p=>p.hidden=!byId('translation').checked));
+byId('stop').addEventListener('click',()=>stopSpeech());
+byId('scenes').addEventListener('click',event=>{
+ const b=event.target.closest('button');if(!b)return;
+ if(b.dataset.reveal){const answer=byId('answer-'+b.dataset.reveal);answer.hidden=!answer.hidden;b.setAttribute('aria-expanded',String(!answer.hidden));b.textContent=answer.hidden?'参考を見る / 看参考回答':'参考を隠す / 收起参考回答';return;}
+ const sid=b.dataset.scene||b.dataset.conversation;const scene=pack.scenes.find(s=>s.id===sid);if(!scene)return;
+ if(b.dataset.read!==undefined)speak([scene.dialogue[Number(b.dataset.read)].ja]);
+ else if(b.dataset.alternative!==undefined)speak([scene.practice.alternatives_ja[Number(b.dataset.alternative)]]);
+ else if(b.dataset.conversation)speak(scene.dialogue.map(t=>t.ja));
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopSpeech('');});
+window.addEventListener('pagehide',()=>stopSpeech(''));
+render();
+</script>
+</body>
+</html>

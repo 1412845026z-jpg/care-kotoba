@@ -47,6 +47,7 @@ jobs:
           python3 content/terminology/validate.py
           python3 evals/source-confidence/validate.py
           python3 content/review/build.py --check
+          python3 tools/ssw-basic/build.py --check
           python3 -m unittest discover -s evals -p 'test_*.py' -v
       - name: Corepack from packageManager; verify portable mode
         run: |

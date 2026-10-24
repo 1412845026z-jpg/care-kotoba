@@ -1,0 +1,1570 @@
+[
+  {
+    "id": "SSW-S65",
+    "topic_id": "T17",
+    "title_ja": "食事の前に手洗いへ誘う",
+    "title_zh": "用餐前邀请洗手",
+    "goal_zh": "用短句邀请洗手。",
+    "context_zh": "已按设施安排准备就餐，练习用餐前的日常招呼。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "もう食事の時間ですか。",
+        "kana": "もうしょくじのじかんですか。",
+        "zh": "已经到吃饭时间了吗？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "はい。食事の前に、手を洗いませんか。",
+        "kana": "はい。しょくじのまえに、てをあらいませんか。",
+        "zh": "是的。吃饭前，要不要先洗手？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "そうですね。洗います。",
+        "kana": "そうですね。あらいます。",
+        "zh": "好，我洗一下。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "必要なら、お手伝いします。",
+        "kana": "ひつようなら、おてつだいします。",
+        "zh": "有需要的话，我会帮忙。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "食事の前に、手を洗いましょうか。",
+        "ご飯の前に、手を洗いませんか。"
+      ],
+      "check_zh": "邀请洗手，语气平和；不在这句话里解释一长串操作。"
+    },
+    "image_brief_zh": "餐厅入口旁的洗手区域，职员与年长利用者平视交谈，不展示洗手技术。"
+  },
+  {
+    "id": "SSW-S66",
+    "topic_id": "T17",
+    "title_ja": "せっけんとタオルの場所を聞く",
+    "title_zh": "询问肥皂和毛巾的位置",
+    "goal_zh": "向同事问清物品在哪里。",
+    "context_zh": "同事请你准备设施日常使用的洗手用品。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "手洗いの準備をお願いします。",
+        "kana": "てあらいのじゅんびをおねがいします。",
+        "zh": "请准备洗手用品。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "せっけんとタオルは、どこにありますか。",
+        "kana": "せっけんとタオルは、どこにありますか。",
+        "zh": "肥皂和毛巾在哪里？"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "洗面台の横です。",
+        "kana": "せんめんだいのよこです。",
+        "zh": "在洗手台旁边。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "洗面台の横ですね。わかりました。",
+        "kana": "せんめんだいのよこですね。わかりました。",
+        "zh": "洗手台旁边，对吧。明白了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "せっけんとタオルの場所を教えてください。",
+        "手洗いのせっけんとタオルは、どこですか。"
+      ],
+      "check_zh": "问清指定用品的位置；得到回答后可以短短复述。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S67",
+    "topic_id": "T17",
+    "title_ja": "手袋の片付け方を教わる",
+    "title_zh": "不懂用过的手套如何处理时求教",
+    "goal_zh": "把不明白的事情说出来并请同事说明。",
+    "context_zh": "处理使用过的手套前，你还不清楚设施规定；本例不教授脱戴或处置顺序。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "使った手袋は、どうしていますか。",
+        "kana": "つかったてぶくろは、どうしていますか。",
+        "zh": "用过的手套是怎么处理的？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "片付け方がわかりません。教えてください。",
+        "kana": "かたづけかたがわかりません。おしえてください。",
+        "zh": "我不清楚处理方法，请教教我。"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "一緒に確認しましょう。",
+        "kana": "いっしょにかくにんしましょう。",
+        "zh": "我们一起确认一下吧。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "お願いします。",
+        "kana": "おねがいします。",
+        "zh": "麻烦您了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "片付け方を、教えてもらえますか。",
+        "どう片付けるか、教えてください。"
+      ],
+      "check_zh": "明确自己不懂并求教；不猜测设施处理规则。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S68",
+    "topic_id": "T17",
+    "title_ja": "本人のせきの言葉を伝える",
+    "title_zh": "把本人说咳嗽的话转告护士",
+    "goal_zh": "说明信息来自本人说的话。",
+    "context_zh": "利用者刚说自己咳嗽，你向护士转达；不判断原因或病名。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "nurse",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "nurse",
+        "ja": "何かありましたか。",
+        "kana": "なにかありましたか。",
+        "zh": "有什么情况吗？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "佐藤さんが「せきが出る」と言っています。",
+        "kana": "さとうさんが「せきがでる」といっています。",
+        "zh": "佐藤先生说自己咳嗽。"
+      },
+      {
+        "speaker": "nurse",
+        "ja": "わかりました。確認に行きます。",
+        "kana": "わかりました。かくにんにいきます。",
+        "zh": "知道了，我去确认。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "お願いします。佐藤さんは居室にいます。",
+        "kana": "おねがいします。さとうさんはきょしつにいます。",
+        "zh": "麻烦您了。佐藤先生在房间里。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "佐藤さんが、せきが出ると言っています。",
+        "佐藤さんから、せきが出ると聞きました。"
+      ],
+      "check_zh": "说清是本人自述，不把「咳嗽」改成疾病诊断。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S69",
+    "topic_id": "T18",
+    "title_ja": "タオルを替える前に聞く",
+    "title_zh": "更换弄湿的毛巾前先询问",
+    "goal_zh": "更换个人用品前征求同意。",
+    "context_zh": "利用者说毛巾湿了，设施有可用的干净替换毛巾。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "タオルがぬれてしまいました。",
+        "kana": "タオルがぬれてしまいました。",
+        "zh": "毛巾弄湿了。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "新しいタオルに、替えてもいいですか。",
+        "kana": "あたらしいタオルに、かえてもいいですか。",
+        "zh": "可以换一条新毛巾吗？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "はい、お願いします。",
+        "kana": "はい、おねがいします。",
+        "zh": "好的，麻烦你。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。用意しますね。",
+        "kana": "わかりました。よういしますね。",
+        "zh": "好的，我去准备。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "タオルを替えてもいいですか。",
+        "きれいなタオルに替えましょうか。"
+      ],
+      "check_zh": "先询问再说明准备，不忽略本人意愿。"
+    },
+    "image_brief_zh": "房间里一条湿毛巾与一条干净毛巾，职员先询问利用者，不画具体清洁步骤。"
+  },
+  {
+    "id": "SSW-S70",
+    "topic_id": "T18",
+    "title_ja": "シーツ交換の前に説明する",
+    "title_zh": "更换床单前先说明并征求同意",
+    "goal_zh": "用短句说明要更换的物品并问意愿。",
+    "context_zh": "床单需要更换，具体更换时间与人员安排已由设施确认；不教授起身或搬移动作。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "何をするんですか。",
+        "kana": "なにをするんですか。",
+        "zh": "要做什么呢？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "シーツを替えたいです。今、よろしいですか。",
+        "kana": "シーツをかえたいです。いま、よろしいですか。",
+        "zh": "我想更换床单。现在方便吗？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "少しあとにしてください。",
+        "kana": "すこしあとにしてください。",
+        "zh": "请稍微晚一点。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。時間を確認しますね。",
+        "kana": "わかりました。じかんをかくにんしますね。",
+        "zh": "好的，我确认一下时间。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "シーツを替えてもいいですか。",
+        "今、シーツを替えてもよろしいですか。"
+      ],
+      "check_zh": "说明更换床单，并接受希望稍后的答复。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S71",
+    "topic_id": "T18",
+    "title_ja": "洗う服を本人に聞く",
+    "title_zh": "询问本人想清洗哪些衣服",
+    "goal_zh": "确认要清洗的衣物。",
+    "context_zh": "设施已确认这些衣物可清洗；你只确认本人希望交洗哪一件。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "洗濯をお願いしたいです。",
+        "kana": "せんたくをおねがいしたいです。",
+        "zh": "想请你帮忙洗衣服。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "どの服を洗いますか。",
+        "kana": "どのふくをあらいますか。",
+        "zh": "要洗哪一件衣服？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "このシャツをお願いします。",
+        "kana": "このシャツをおねがいします。",
+        "zh": "请洗这件衬衫。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "このシャツですね。わかりました。",
+        "kana": "このシャツですね。わかりました。",
+        "zh": "这件衬衫，对吧。明白了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "洗いたい服は、どれですか。",
+        "どの服を洗いましょうか。"
+      ],
+      "check_zh": "请本人指明衣物，不把所有衣物直接收走。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S72",
+    "topic_id": "T18",
+    "title_ja": "服のラベルの場所を確かめる",
+    "title_zh": "向同事确认衣服姓名标签的位置",
+    "goal_zh": "向同事确认标签在哪里。",
+    "context_zh": "整理架空利用者佐藤先生的衣物，尚未核对标签；不根据外观猜所属人。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "佐藤さんの服を確認していますか。",
+        "kana": "さとうさんのふくをかくにんしていますか。",
+        "zh": "在确认佐藤先生的衣服吗？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "名前のラベルは、どこにありますか。",
+        "kana": "なまえのラベルは、どこにありますか。",
+        "zh": "姓名标签在哪里？"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "えりの内側にあります。",
+        "kana": "えりのうちがわにあります。",
+        "zh": "在衣领内侧。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "えりの内側ですね。確認します。",
+        "kana": "えりのうちがわですね。かくにんします。",
+        "zh": "衣领内侧，对吧。我确认一下。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "名前のラベルは、どこですか。",
+        "服の名前は、どこで確認できますか。"
+      ],
+      "check_zh": "问清标签的位置后再核对；不猜测衣服属于谁。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S73",
+    "topic_id": "T19",
+    "title_ja": "体温を測る前に声をかける",
+    "title_zh": "测量体温前说明并询问",
+    "goal_zh": "说明即将做的事并征求同意。",
+    "context_zh": "设施已确认测温安排与职责；本例不教授测量方法或数值判断。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "これから何をするんですか。",
+        "kana": "これからなにをするんですか。",
+        "zh": "接下来要做什么？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "体温を測ります。測ってもいいですか。",
+        "kana": "たいおんをはかります。はかってもいいですか。",
+        "zh": "要测量体温。可以测一下吗？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "はい、お願いします。",
+        "kana": "はい、おねがいします。",
+        "zh": "好的，麻烦你。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "ありがとうございます。準備しますね。",
+        "kana": "ありがとうございます。じゅんびしますね。",
+        "zh": "谢谢，我准备一下。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "体温を測ってもいいですか。",
+        "これから体温を測ります。よろしいですか。"
+      ],
+      "check_zh": "先说明并问同意；不在这里学习判断体温高低。"
+    },
+    "image_brief_zh": "职员拿着尚未使用的体温计与坐着的利用者交谈，无读数或测量示范。"
+  },
+  {
+    "id": "SSW-S74",
+    "topic_id": "T19",
+    "title_ja": "血圧を測る前に声をかける",
+    "title_zh": "测量血压前说明并询问",
+    "goal_zh": "用一个短问题确认意愿。",
+    "context_zh": "设施已确认测压安排与职责；本例不教授仪器操作、姿势或阈值。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "今度は何をするんですか。",
+        "kana": "こんどはなにをするんですか。",
+        "zh": "这次要做什么？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "血圧を測ります。測ってもいいですか。",
+        "kana": "けつあつをはかります。はかってもいいですか。",
+        "zh": "要测量血压。可以测一下吗？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "はい、わかりました。",
+        "kana": "はい、わかりました。",
+        "zh": "好，我知道了。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "ありがとうございます。準備しますね。",
+        "kana": "ありがとうございます。じゅんびしますね。",
+        "zh": "谢谢，我准备一下。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "血圧を測ってもいいですか。",
+        "これから血圧を測ります。よろしいですか。"
+      ],
+      "check_zh": "征求同意即可，不要求学员背诵仪器操作或医学说明。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S75",
+    "topic_id": "T19",
+    "title_ja": "測定する時刻を看護師に聞く",
+    "title_zh": "向护士确认测量安排的时间",
+    "goal_zh": "把没有听到的时刻问清楚。",
+    "context_zh": "护士交代了已由设施安排的体温确认工作，但尚未说时刻。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "nurse",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "nurse",
+        "ja": "体温の確認をお願いします。",
+        "kana": "たいおんのかくにんをおねがいします。",
+        "zh": "请确认体温。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "何時に確認すればいいですか。",
+        "kana": "なんじにかくにんすればいいですか。",
+        "zh": "我应该几点确认呢？"
+      },
+      {
+        "speaker": "nurse",
+        "ja": "十時にお願いします。",
+        "kana": "じゅうじにおねがいします。",
+        "zh": "请在十点确认。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "十時ですね。わかりました。",
+        "kana": "じゅうじですね。わかりました。",
+        "zh": "十点，对吧。明白了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "何時に確認しますか。",
+        "確認する時間を教えてください。"
+      ],
+      "check_zh": "问的是工作安排的时刻，不自己决定测量频率。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S76",
+    "topic_id": "T19",
+    "title_ja": "めまいの訴えをすぐに伝える",
+    "title_zh": "把本人说头晕的情况立即报告护士",
+    "goal_zh": "转述本人用语并明确请求到场。",
+    "context_zh": "利用者刚说头晕；你立即向护士求助，不诊断、不教授起身、饮水或处置。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "nurse",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "nurse",
+        "ja": "どうしましたか。",
+        "kana": "どうしましたか。",
+        "zh": "怎么了？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "佐藤さんが「めまいがする」と言っています。来てください。",
+        "kana": "さとうさんが「めまいがする」といっています。きてください。",
+        "zh": "佐藤先生说自己头晕。请您来一下。"
+      },
+      {
+        "speaker": "nurse",
+        "ja": "今、行きます。場所はどこですか。",
+        "kana": "いま、いきます。ばしょはどこですか。",
+        "zh": "我现在过去。在什么地方？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "食堂です。お願いします。",
+        "kana": "しょくどうです。おねがいします。",
+        "zh": "在餐厅。麻烦您了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "佐藤さんが、めまいがすると言っています。すぐ来てください。",
+        "佐藤さんから、めまいがすると聞きました。来てください。"
+      ],
+      "check_zh": "报告本人所说的头晕并请求援助，不添加原因或处置建议。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S77",
+    "topic_id": "T20",
+    "title_ja": "薬の時間を看護師に確認する",
+    "title_zh": "请护士确认服药时间",
+    "goal_zh": "将药相关的安排交给护士确认。",
+    "context_zh": "不确定已安排的服药时刻，向护士询问；不涉及药名、剂量或自行给药。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "nurse",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "nurse",
+        "ja": "何を確認したいですか。",
+        "kana": "なにをかくにんしたいですか。",
+        "zh": "你想确认什么？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "佐藤さんの薬の時間を教えてください。",
+        "kana": "さとうさんのくすりのじかんをおしえてください。",
+        "zh": "请告诉我佐藤先生的服药时间。"
+      },
+      {
+        "speaker": "nurse",
+        "ja": "予定を確認しますね。",
+        "kana": "よていをかくにんしますね。",
+        "zh": "我确认一下安排。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "お願いします。",
+        "kana": "おねがいします。",
+        "zh": "麻烦您了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "佐藤さんのお薬は、何時の予定ですか。",
+        "薬の予定の時間を、確認してもらえますか。"
+      ],
+      "check_zh": "确认安排，不凭记忆或猜测决定药的时间。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S78",
+    "topic_id": "T20",
+    "title_ja": "薬を飲みたくない気持ちを受け止める",
+    "title_zh": "听见不想服药的意愿并转交护士",
+    "goal_zh": "复述本人意愿并告知会联系护士。",
+    "context_zh": "利用者表达不想服药；本例不要求劝服，也不决定停药或变更用药。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "今は薬を飲みたくありません。",
+        "kana": "いまはくすりをのみたくありません。",
+        "zh": "我现在不想吃药。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "今は飲みたくないんですね。看護師に伝えます。",
+        "kana": "いまはのみたくないんですね。かんごしにつたえます。",
+        "zh": "您现在不想吃，对吧。我会告诉护士。"
+      },
+      {
+        "speaker": "resident",
+        "ja": "話を聞いてほしいです。",
+        "kana": "はなしをきいてほしいです。",
+        "zh": "我想让人听听我的想法。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。看護師を呼びます。",
+        "kana": "わかりました。かんごしをよびます。",
+        "zh": "知道了。我去叫护士。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "飲みたくないんですね。看護師を呼びます。",
+        "わかりました。その気持ちを看護師に伝えます。"
+      ],
+      "check_zh": "接受并传达意愿，不强迫服药，也不承诺自行停止用药。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S79",
+    "topic_id": "T20",
+    "title_ja": "残っている薬を見たまま報告する",
+    "title_zh": "把看到药留下的事实报告护士",
+    "goal_zh": "只报告看到的物品与位置。",
+    "context_zh": "你看到桌面上留着药，不知道此前是否服过或发生了什么。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "nurse",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "nurse",
+        "ja": "気づいたことはありますか。",
+        "kana": "きづいたことはありますか。",
+        "zh": "有什么发现吗？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "テーブルに薬が残っています。確認をお願いします。",
+        "kana": "テーブルにくすりがのこっています。かくにんをおねがいします。",
+        "zh": "桌上还留着药，请您确认一下。"
+      },
+      {
+        "speaker": "nurse",
+        "ja": "今、確認します。",
+        "kana": "いま、かくにんします。",
+        "zh": "我现在确认。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "お願いします。",
+        "kana": "おねがいします。",
+        "zh": "麻烦您了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "テーブルの上に薬があります。確認してください。",
+        "薬がテーブルに残っています。見てもらえますか。"
+      ],
+      "check_zh": "只说看到药留在桌上，不据此断定漏服、吐药或服药错误。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S80",
+    "topic_id": "T20",
+    "title_ja": "薬の指示がわからないと伝える",
+    "title_zh": "不懂药相关指示时请求护士说明",
+    "goal_zh": "明确说出不明白，并请求解释。",
+    "context_zh": "收到与药有关的指示，但你不理解其含义；本例不提供任何用药手顺。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "nurse",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "nurse",
+        "ja": "何か、わからないことはありますか。",
+        "kana": "なにか、わからないことはありますか。",
+        "zh": "有什么不明白的吗？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "薬の指示がわかりません。説明してください。",
+        "kana": "くすりのしじがわかりません。せつめいしてください。",
+        "zh": "我不明白药相关的指示，请说明一下。"
+      },
+      {
+        "speaker": "nurse",
+        "ja": "どのところですか。",
+        "kana": "どのところですか。",
+        "zh": "是哪一部分？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "この言葉の意味を教えてください。",
+        "kana": "このことばのいみをおしえてください。",
+        "zh": "请告诉我这个词的意思。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "この薬の指示を、もう一度説明してください。",
+        "薬のことで、わからない所があります。教えてください。"
+      ],
+      "check_zh": "把不明处问清，不在不理解的情况下自行执行。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S81",
+    "topic_id": "T21",
+    "title_ja": "確認済みの通院時間を伝える",
+    "title_zh": "告知已经确认的通院时间",
+    "goal_zh": "用短句说明已确认的时间。",
+    "context_zh": "设施已确认今天十点通院；你只传达这一已知安排，不保证行程不变。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "病院は何時ですか。",
+        "kana": "びょういんはなんじですか。",
+        "zh": "几点去医院？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "今日の通院は、十時の予定です。",
+        "kana": "きょうのつういんは、じゅうじのよていです。",
+        "zh": "今天去医院的安排是十点。"
+      },
+      {
+        "speaker": "resident",
+        "ja": "十時ですね。",
+        "kana": "じゅうじですね。",
+        "zh": "十点，对吧。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "はい。予定が変わったら、お伝えします。",
+        "kana": "はい。よていがかわったら、おつたえします。",
+        "zh": "是的。如果安排有变化，我会告诉您。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "今日は、十時に病院へ行く予定です。",
+        "病院へ行く時間は、十時の予定です。"
+      ],
+      "check_zh": "只传达已确认的时间，保留「予定」的意思。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S82",
+    "topic_id": "T21",
+    "title_ja": "リハビリの時間と場所を聞く",
+    "title_zh": "向同事确认康复活动的时间和地点",
+    "goal_zh": "问清活动安排后短短复述。",
+    "context_zh": "同事请你准备已由设施安排的康复活动；本例不涉及训练内容或适应性判断。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "リハビリの準備をお願いします。",
+        "kana": "リハビリのじゅんびをおねがいします。",
+        "zh": "请准备康复活动。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "何時に、どこで始まりますか。",
+        "kana": "なんじに、どこではじまりますか。",
+        "zh": "几点开始，在哪里开始？"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "二時に、一階の部屋で始まります。",
+        "kana": "にじに、いっかいのへやではじまります。",
+        "zh": "两点，在一楼的房间开始。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "二時、一階ですね。わかりました。",
+        "kana": "にじ、いっかいですね。わかりました。",
+        "zh": "两点，一楼，对吧。明白了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "始まる時間と場所を教えてください。",
+        "時間は何時で、場所はどこですか。"
+      ],
+      "check_zh": "问清时间和地点，不自行补出活动地点。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S83",
+    "topic_id": "T21",
+    "title_ja": "外出に持っていきたい物を聞く",
+    "title_zh": "询问外出想携带的物品",
+    "goal_zh": "确认本人希望带什么。",
+    "context_zh": "外出安排已由设施确认，正在准备可携带的个人用品。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "外に行く準備をしています。",
+        "kana": "そとにいくじゅんびをしています。",
+        "zh": "我正在准备出门。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "何か持っていきたい物はありますか。",
+        "kana": "なにかもっていきたいものはありますか。",
+        "zh": "有什么想带的东西吗？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "帽子を持っていきたいです。",
+        "kana": "ぼうしをもっていきたいです。",
+        "zh": "我想带帽子。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "帽子ですね。ここに用意します。",
+        "kana": "ぼうしですね。ここによういします。",
+        "zh": "帽子，对吧。我放在这里备好。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "持っていく物は、何がいいですか。",
+        "外出に持っていきたい物を教えてください。"
+      ],
+      "check_zh": "问本人的希望，再确认物品，不代替本人选择。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S84",
+    "topic_id": "T21",
+    "title_ja": "帰ったあとに休む希望を聞く",
+    "title_zh": "回来后询问是否想休息",
+    "goal_zh": "确认本人是否希望休息。",
+    "context_zh": "利用者已按设施安排外出并返回，当前练习只询问休息意愿。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "戻りました。",
+        "kana": "もどりました。",
+        "zh": "我回来了。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "お帰りなさい。少し休みますか。",
+        "kana": "おかえりなさい。すこしやすみますか。",
+        "zh": "欢迎回来。想稍微休息一下吗？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "はい、休みたいです。",
+        "kana": "はい、やすみたいです。",
+        "zh": "是的，我想休息一下。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。必要なときは呼んでください。",
+        "kana": "わかりました。ひつようなときはよんでください。",
+        "zh": "好的。有需要时请叫我。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "お帰りなさい。休みたいですか。",
+        "戻ったばかりですね。少し休みましょうか。"
+      ],
+      "check_zh": "询问意愿，不因为外出回来就替本人决定后续活动。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S85",
+    "topic_id": "T22",
+    "title_ja": "来客の名前と用件を聞く",
+    "title_zh": "询问访客的姓名和来意",
+    "goal_zh": "用简短礼貌表达确认访客信息。",
+    "context_zh": "第一次见到访客，姓名山田和佐藤均为虚构；未核实身份前不透露利用者资料。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "visitor",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "visitor",
+        "ja": "こんにちは。初めて来ました。",
+        "kana": "こんにちは。はじめてきました。",
+        "zh": "你好，我是第一次来。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "お名前と、ご用件を教えてください。",
+        "kana": "おなまえと、ごようけんをおしえてください。",
+        "zh": "请告诉我您的姓名和来意。"
+      },
+      {
+        "speaker": "visitor",
+        "ja": "山田です。佐藤さんに面会に来ました。",
+        "kana": "やまだです。さとうさんにめんかいにきました。",
+        "zh": "我叫山田，来探望佐藤先生。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "担当の職員に確認します。お待ちください。",
+        "kana": "たんとうのしょくいんにかくにんします。おまちください。",
+        "zh": "我向负责职员确认一下，请稍等。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "お名前と、今日は何のご用か教えてください。",
+        "お名前と、何のご用か教えてもらえますか。"
+      ],
+      "check_zh": "先确认姓名与来意，再按设施规定联系负责人。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S86",
+    "topic_id": "T22",
+    "title_ja": "わからない来客の質問を担当へつなぐ",
+    "title_zh": "不清楚访客的问题时联系负责人",
+    "goal_zh": "不猜测回答，说明要联系负责职员。",
+    "context_zh": "访客询问你不掌握的情况；访客身份与披露权限尚未确认，本例不传递病情资料。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "visitor",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "visitor",
+        "ja": "佐藤さんの体の調子は、どうですか。",
+        "kana": "さとうさんのからだのちょうしは、どうですか。",
+        "zh": "佐藤先生身体状况怎么样？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "私ではわかりません。担当の職員に確認します。",
+        "kana": "わたしではわかりません。たんとうのしょくいんにかくにんします。",
+        "zh": "我不清楚，我向负责职员确认。"
+      },
+      {
+        "speaker": "visitor",
+        "ja": "担当の方に聞きたいです。",
+        "kana": "たんとうのかたにききたいです。",
+        "zh": "我想问问负责人。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。担当の職員を呼びます。",
+        "kana": "わかりました。たんとうのしょくいんをよびます。",
+        "zh": "好的。我去叫负责职员。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "担当の職員に聞いてきます。お待ちください。",
+        "私にはわからないので、担当に確認します。"
+      ],
+      "check_zh": "不编造病情或擅自披露资料，转给负责职员。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S87",
+    "topic_id": "T22",
+    "title_ja": "電話の伝言を短く確かめる",
+    "title_zh": "简短确认电话留言",
+    "goal_zh": "问清是谁留言以及留言内容。",
+    "context_zh": "同事转交一条架空电话留言，不包含实际电话号码或私人联系方式。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "さっきの電話、伝えてもらえますか。",
+        "kana": "さっきのでんわ、つたえてもらえますか。",
+        "zh": "能帮忙转达一下刚才的电话吗？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "どなたから、どんな伝言ですか。",
+        "kana": "どなたから、どんなでんごんですか。",
+        "zh": "是谁打来的，留了什么话？"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "山田さんからです。あとで電話するそうです。",
+        "kana": "やまださんからです。あとででんわするそうです。",
+        "zh": "是山田先生。他说稍后再打电话。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "山田さんから、あとで電話ですね。",
+        "kana": "やまださんから、あとででんわですね。",
+        "zh": "山田先生说稍后打电话，对吧。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "お名前と、伝える内容を教えてください。",
+        "誰からの電話で、何を伝えますか。"
+      ],
+      "check_zh": "问清来源和内容，转述时不添加没有听到的事项。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S88",
+    "topic_id": "T22",
+    "title_ja": "家族へ伝えたいことを聞く",
+    "title_zh": "询问想向家人传达什么",
+    "goal_zh": "确认本人想联系谁以及想说什么。",
+    "context_zh": "利用者希望联系家人；联系方法与时间需按设施规定确认，不承诺家人一定来访。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "家族に連絡したいです。",
+        "kana": "かぞくにれんらくしたいです。",
+        "zh": "我想联系家人。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "どなたに、何を伝えたいですか。",
+        "kana": "どなたに、なにをつたえたいですか。",
+        "zh": "想联系哪位，传达什么呢？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "娘に、会いたいと伝えたいです。",
+        "kana": "むすめに、あいたいとつたえたいです。",
+        "zh": "我想告诉女儿，我想见她。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。連絡の方法を確認します。",
+        "kana": "わかりました。れんらくのほうほうをかくにんします。",
+        "zh": "好的，我确认一下联系方法。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "誰に、どんなことを伝えたいですか。",
+        "連絡したい相手と、伝えたいことを教えてください。"
+      ],
+      "check_zh": "确认本人的希望，不把「想见家人」说成面会已约好。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S89",
+    "topic_id": "T23",
+    "title_ja": "避難訓練だと短く伝える",
+    "title_zh": "简短告知即将进行避难训练",
+    "goal_zh": "明确说出这是训练。",
+    "context_zh": "设施事先安排了避难训练，职员负责引导；不用于教学真实火灾路线或搬运操作。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "今日は何がありますか。",
+        "kana": "きょうはなにがありますか。",
+        "zh": "今天有什么安排？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "これから、避難訓練があります。",
+        "kana": "これから、ひなんくんれんがあります。",
+        "zh": "接下来要进行避难训练。"
+      },
+      {
+        "speaker": "resident",
+        "ja": "本当の火事ですか。",
+        "kana": "ほんとうのかじですか。",
+        "zh": "是真的着火了吗？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "いいえ、訓練です。職員が案内します。",
+        "kana": "いいえ、くんれんです。しょくいんがあんないします。",
+        "zh": "不是，是训练。职员会引导。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "今から、避難の練習をします。",
+        "これから、避難訓練を行います。"
+      ],
+      "check_zh": "明确「训练」，不制造发生真实灾害的误解。"
+    },
+    "image_brief_zh": "设施内平静的训练通知场面，职员与利用者交谈；不画火灾或具体搬运方法。"
+  },
+  {
+    "id": "SSW-S90",
+    "topic_id": "T23",
+    "title_ja": "訓練の集合場所を聞き返す",
+    "title_zh": "没听清训练集合地点时再问",
+    "goal_zh": "请同事重复一个没听清的地点。",
+    "context_zh": "这是事先安排的训练，你没有听清设施指定的集合地点。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "訓練の前に、談話室に集まってください。",
+        "kana": "くんれんのまえに、だんわしつにあつまってください。",
+        "zh": "训练开始前，请到谈话室集合。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "集まる場所を、もう一度お願いします。",
+        "kana": "あつまるばしょを、もういちどおねがいします。",
+        "zh": "请再说一次集合地点。"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "談話室です。",
+        "kana": "だんわしつです。",
+        "zh": "是谈话室。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "談話室ですね。わかりました。",
+        "kana": "だんわしつですね。わかりました。",
+        "zh": "谈话室，对吧。知道了。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "すみません。どこに集まりますか。",
+        "集合場所を、もう一度教えてください。"
+      ],
+      "check_zh": "只问没听清的地点，不猜测路线或集合地点。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S91",
+    "topic_id": "T23",
+    "title_ja": "廊下の荷物を見つけて応援を頼む",
+    "title_zh": "看到走廊物品时请同事来确认",
+    "goal_zh": "说明物品与位置并请求同事到场。",
+    "context_zh": "看到走廊有物品，需要负责职员确认；不自行判断处置方式或移动利用者。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "何かありましたか。",
+        "kana": "なにかありましたか。",
+        "zh": "有什么情况吗？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "廊下に荷物があります。来てもらえますか。",
+        "kana": "ろうかににもつがあります。きてもらえますか。",
+        "zh": "走廊有物品，能请你来一下吗？"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "今、行きます。どのあたりですか。",
+        "kana": "いま、いきます。どのあたりですか。",
+        "zh": "我现在过去。大约在哪？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "食堂の前です。",
+        "kana": "しょくどうのまえです。",
+        "zh": "在餐厅前面。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "廊下に物があります。確認をお願いします。",
+        "食堂の前に荷物があります。来てください。"
+      ],
+      "check_zh": "说明看见的物品与位置，并直接请求确认。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S92",
+    "topic_id": "T23",
+    "title_ja": "機械のいつもと違う音を伝える",
+    "title_zh": "报告设备发出与平时不同的声音",
+    "goal_zh": "只描述观察到的异常并请同事确认。",
+    "context_zh": "未有人使用的设备发出与平时不同的声音，需要负责人员确认；不教授维修或操作。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "どうしましたか。",
+        "kana": "どうしましたか。",
+        "zh": "怎么了？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "この機械から、いつもと違う音がします。",
+        "kana": "このきかいから、いつもとちがうおとがします。",
+        "zh": "这台机器发出与平时不同的声音。"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "今、確認します。",
+        "kana": "いま、かくにんします。",
+        "zh": "我现在确认。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "お願いします。ここにあります。",
+        "kana": "おねがいします。ここにあります。",
+        "zh": "麻烦你了。就在这里。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "この機械の音が、いつもと違います。確認してください。",
+        "機械から変な音がします。見てもらえますか。"
+      ],
+      "check_zh": "描述听到的声音，不自行诊断故障或给出维修建议。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S93",
+    "topic_id": "T24",
+    "title_ja": "眼鏡を置く場所を本人に聞く",
+    "title_zh": "询问本人希望把眼镜放在哪里",
+    "goal_zh": "确认个人物品的放置意愿。",
+    "context_zh": "利用者希望把眼镜放在身边，设施已确认可使用的放置空间。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "眼鏡を、そばに置きたいです。",
+        "kana": "めがねを、そばにおきたいです。",
+        "zh": "我想把眼镜放在身边。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "眼鏡は、どこに置きましょうか。",
+        "kana": "めがねは、どこにおきましょうか。",
+        "zh": "眼镜放在哪里好呢？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "テーブルの上にお願いします。",
+        "kana": "テーブルのうえにおねがいします。",
+        "zh": "请放在桌上。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。ここに置きますね。",
+        "kana": "わかりました。ここにおきますね。",
+        "zh": "好的，我放在这里。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "眼鏡は、どこがいいですか。",
+        "眼鏡を置く場所を教えてください。"
+      ],
+      "check_zh": "先问希望放置的位置，不替本人决定。"
+    },
+    "image_brief_zh": "桌面上的眼镜盒与职员、利用者对话，不展示识别视力或诊疗。"
+  },
+  {
+    "id": "SSW-S94",
+    "topic_id": "T24",
+    "title_ja": "補聴器で聞こえにくいときに人を呼ぶ",
+    "title_zh": "听到助听器仍听不清时联系负责人",
+    "goal_zh": "复述听不清的感受并说明会找人确认。",
+    "context_zh": "利用者说戴助听器仍听不清；本例不教授调试、配戴或诊断。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "補聴器をつけても、聞こえにくいです。",
+        "kana": "ほちょうきをつけても、きこえにくいです。",
+        "zh": "即使戴着助听器，也不太听得清。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "聞こえにくいんですね。担当の職員を呼びます。",
+        "kana": "きこえにくいんですね。たんとうのしょくいんをよびます。",
+        "zh": "您听不太清，对吧。我去叫负责职员。"
+      },
+      {
+        "speaker": "resident",
+        "ja": "お願いします。",
+        "kana": "おねがいします。",
+        "zh": "麻烦你了。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。確認してもらいます。",
+        "kana": "わかりました。かくにんしてもらいます。",
+        "zh": "好的，我请负责人员确认。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "聞こえにくいんですね。担当に伝えます。",
+        "担当の職員に、確認をお願いしてきます。"
+      ],
+      "check_zh": "表示已听见本人感受，联系负责人员，不擅自调试助听器。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S95",
+    "topic_id": "T24",
+    "title_ja": "拾った物の持ち主を確認する",
+    "title_zh": "向同事确认拾到物品属于谁",
+    "goal_zh": "不确定物品主人时先询问。",
+    "context_zh": "拾到一副眼镜，尚不知道主人；不把未知信息说成确定事实。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "colleague",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "colleague",
+        "ja": "何を持っていますか。",
+        "kana": "なにをもっていますか。",
+        "zh": "你拿着什么？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "この眼鏡は、どなたの物ですか。",
+        "kana": "このめがねは、どなたのものですか。",
+        "zh": "这副眼镜是谁的？"
+      },
+      {
+        "speaker": "colleague",
+        "ja": "私も、まだわかりません。",
+        "kana": "わたしも、まだわかりません。",
+        "zh": "我也还不知道。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "わかりました。担当の職員に確認します。",
+        "kana": "わかりました。たんとうのしょくいんにかくにんします。",
+        "zh": "好的，我向负责职员确认。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "誰の眼鏡か、わかりますか。",
+        "この眼鏡の持ち主を知っていますか。"
+      ],
+      "check_zh": "不知道所属人时保持未确认，不因外观就认定主人。"
+    },
+    "image_brief_zh": ""
+  },
+  {
+    "id": "SSW-S96",
+    "topic_id": "T24",
+    "title_ja": "呼び出しボタンに手が届くか聞く",
+    "title_zh": "询问本人是否够得着呼叫按钮",
+    "goal_zh": "确认物品是否在本人能触及的位置。",
+    "context_zh": "已按设施安排放好呼叫按钮，询问本人是否够得着；本例不据答复独立评估行动能力。 本例只练习沟通；实际操作按设施计划和负责人员的指示执行。人物与信息均为虚构。",
+    "npc_role": "resident",
+    "difficulty": "basic",
+    "source_topic_ids": [
+      "project-workplace-extension"
+    ],
+    "dialogue": [
+      {
+        "speaker": "resident",
+        "ja": "呼び出しのボタンは、どこですか。",
+        "kana": "よびだしのボタンは、どこですか。",
+        "zh": "呼叫按钮在哪里？"
+      },
+      {
+        "speaker": "worker",
+        "ja": "ここです。手は届きますか。",
+        "kana": "ここです。てはとどきますか。",
+        "zh": "在这里，手够得着吗？"
+      },
+      {
+        "speaker": "resident",
+        "ja": "はい、届きます。",
+        "kana": "はい、とどきます。",
+        "zh": "可以，够得着。"
+      },
+      {
+        "speaker": "worker",
+        "ja": "必要なときは、このボタンで呼んでください。",
+        "kana": "ひつようなときは、このボタンでよんでください。",
+        "zh": "有需要时，请按这个按钮叫人。"
+      }
+    ],
+    "practice": {
+      "cue_turn": 0,
+      "response_turn": 1,
+      "alternatives_ja": [
+        "このボタンに、手が届きますか。",
+        "ここに置きました。手は届きますか。"
+      ],
+      "check_zh": "询问本人是否够得着，不仅说「放好了」就离开。"
+    },
+    "image_brief_zh": "床边可见呼叫按钮，利用者与职员交谈；不描绘独立移乘或行动能力测试。"
+  }
+]
