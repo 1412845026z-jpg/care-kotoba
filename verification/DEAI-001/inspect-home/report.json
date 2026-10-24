@@ -1,0 +1,1556 @@
+{
+ "url": "http://127.0.0.1:5180/",
+ "at": "2026-10-24T05:54:42.542Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.63,
+    0.56
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1450,
+     "screens": 1.6,
+     "words": 106,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 50,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 36,
+     "vw": 2.5,
+     "font": "BIZ UDPMincho",
+     "weight": 600,
+     "tracking": 0.03,
+     "leading": 1.34,
+     "top": 148,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "lines": 1,
+     "size": 36,
+     "font": "BIZ UDPMincho"
+    },
+    "headings": [
+     {
+      "text": "次の声かけを、ここで。",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "BIZ UDPMincho",
+      "weight": 600,
+      "tracking": 0.028,
+      "leading": 1.34,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.25,
+      "top": 148,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "BIZ UDPMincho",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.02,
+      "top": 163,
+      "tag": "strong",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "BIZ UDPGothic",
+       "share": 0.81,
+       "mono": false
+      },
+      {
+       "family": "BIZ UDPMincho",
+       "share": 0.19,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      23,
+      24,
+      34,
+      36
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 36,
+      "vw": 2.5,
+      "font": "BIZ UDPMincho",
+      "text": "次の声かけを、ここで。"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.09,
+     "smallText": 2
+    },
+    "eyebrows": [
+     {
+      "text": "10月24日(土)",
+      "above": "次の声かけを、ここで。",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 113
+     },
+     {
+      "text": "今日の練習",
+      "above": "0",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 14,
+      "top": 137
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f6f1e8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.44,
+      "l": 0.94
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#4e4456",
+       "share": 0.4
+      },
+      {
+       "color": "#2a2230",
+       "share": 0.29
+      },
+      {
+       "color": "#6a5f6f",
+       "share": 0.21
+      },
+      {
+       "color": "#55398a",
+       "share": 0.04
+      },
+      {
+       "color": "#766879",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#fffdf9",
+      "hsl": {
+       "h": 40,
+       "s": 1,
+       "l": 0.99
+      },
+      "fg": "#2a2230"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 12,
+     "inHero": 4,
+     "radius": 12,
+     "height": 62,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "ホーム",
+      "あなたの学習スペース 個人プラン · 試作版",
+      "4分、練習する",
+      "聞く"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "aside.sidebar 234px",
+      "header.topbar 1206px",
+      "section.little-banner 832px",
+      "footer.page-footer 1206px"
+     ],
+     "outlinedBoxes": 8,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 8,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 717
+      },
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 116
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 900,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "biz udpgothic",
+     "biz udpmincho"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1450,
+    "margins": {
+     "left": 274,
+     "right": 59
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "次の声かけを、ここで。",
+      "size": 36,
+      "top": 148,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 274,
+      "n": 3
+     },
+     {
+      "x": 1157,
+      "n": 3
+     },
+     {
+      "x": 297,
+      "n": 1
+     },
+     {
+      "x": 397,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 8,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.11,
+    "voidBox": {
+     "x": 660,
+     "y": 120,
+     "w": 480,
+     "h": 300
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#f6f1e8",
+    "sidebar": {
+     "w": 234,
+     "tag": "aside",
+     "links": 8,
+     "share": 0.16
+    },
+    "topbar": {
+     "h": 78
+    },
+    "canvas": {
+     "left": 40,
+     "right": 40
+    },
+    "hero": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 36,
+     "vw": 2.5,
+     "font": "BIZ UDPMincho",
+     "weight": 600,
+     "tracking": 0.03,
+     "leading": 1.34,
+     "top": 148,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 9,
+     "firstScreen": 8,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 44,
+       "at": 828,
+       "panel": "日常の声かけ"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 11,
+     "radii": [
+      [
+       12,
+       8
+      ],
+      [
+       0,
+       3
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 1,
+     "hues": 1,
+     "samples": [
+      {
+       "hue": 37,
+       "size": 36,
+       "radius": "12px"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.38,
+     "tiny": 14,
+     "tinySamples": [
+      "ほんにん 10px",
+      "にゅうよく 10px",
+      "ことわ 10px",
+      "せっとく 10px"
+     ],
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      23,
+      24,
+      36
+     ]
+    },
+    "title": {
+     "text": "次の声かけを、ここで。",
+     "size": 36,
+     "top": 148
+    },
+    "colourShare": 0.026
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.56,
+    0.67
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1517,
+     "screens": 1.5,
+     "words": 76,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 50,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 36,
+     "vw": 4.7,
+     "font": "BIZ UDPMincho",
+     "weight": 600,
+     "tracking": 0.03,
+     "leading": 1.34,
+     "top": 134,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "lines": 1,
+     "size": 36,
+     "font": "BIZ UDPMincho"
+    },
+    "headings": [
+     {
+      "text": "次の声かけを、ここで。",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "BIZ UDPMincho",
+      "weight": 600,
+      "tracking": 0.028,
+      "leading": 1.34,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 134,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "BIZ UDPGothic",
+       "share": 0.79,
+       "mono": false
+      },
+      {
+       "family": "BIZ UDPMincho",
+       "share": 0.21,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22,
+      24,
+      36
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 36,
+      "vw": 4.7,
+      "font": "BIZ UDPMincho",
+      "text": "次の声かけを、ここで。"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.08,
+     "smallText": 2
+    },
+    "eyebrows": [
+     {
+      "text": "10月24日(土)",
+      "above": "次の声かけを、ここで。",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 99
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f6f1e8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.44,
+      "l": 0.94
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fffdf9",
+       "top": 248,
+       "hsl": {
+        "h": 40,
+        "s": 1,
+        "l": 0.99
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#4e4456",
+       "share": 0.39
+      },
+      {
+       "color": "#2a2230",
+       "share": 0.29
+      },
+      {
+       "color": "#6a5f6f",
+       "share": 0.23
+      },
+      {
+       "color": "#766879",
+       "share": 0.03
+      },
+      {
+       "color": "#55398a",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#fffdf9",
+      "hsl": {
+       "h": 40,
+       "s": 1,
+       "l": 0.99
+      },
+      "fg": "#2a2230"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 3,
+     "radius": 12,
+     "height": 60,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "4分、練習する",
+      "日常の声かけ 6 場面",
+      "食事・口腔ケア 6 場面"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.topbar 768px",
+      "section.little-banner 696px",
+      "footer.page-footer 768px",
+      "nav.mobile-nav 768px"
+     ],
+     "outlinedBoxes": 4,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 4,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 703
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 0,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "biz udpgothic",
+     "biz udpmincho"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1517,
+    "margins": {
+     "left": 28,
+     "right": 36
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "次の声かけを、ここで。",
+      "size": 36,
+      "top": 134,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 36,
+      "n": 3
+     },
+     {
+      "x": 59,
+      "n": 1
+     },
+     {
+      "x": 159,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#f6f1e8",
+    "sidebar": null,
+    "topbar": {
+     "h": 72
+    },
+    "canvas": {
+     "left": 36,
+     "right": 36
+    },
+    "hero": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 36,
+     "vw": 4.7,
+     "font": "BIZ UDPMincho",
+     "weight": 600,
+     "tracking": 0.03,
+     "leading": 1.34,
+     "top": 134,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 5,
+     "firstScreen": 4,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 69,
+       "at": 814,
+       "panel": "日常の声かけ"
+      },
+      {
+       "gap": 44,
+       "at": 838,
+       "panel": "気持ちに寄り添う"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 5,
+     "radii": [
+      [
+       12,
+       4
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 1,
+     "hues": 1,
+     "samples": [
+      {
+       "hue": 37,
+       "size": 36,
+       "radius": "12px"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.39,
+     "tiny": 14,
+     "tinySamples": [
+      "ほんにん 10px",
+      "にゅうよく 10px",
+      "ことわ 10px",
+      "せっとく 10px"
+     ],
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      36
+     ]
+    },
+    "title": {
+     "text": "次の声かけを、ここで。",
+     "size": 36,
+     "top": 134
+    },
+    "colourShare": 0.038
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.78,
+    0.65
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 1636,
+     "screens": 1.9,
+     "words": 72,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 50,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 28,
+     "vw": 7.2,
+     "font": "BIZ UDPMincho",
+     "weight": 600,
+     "tracking": 0.02,
+     "leading": 1.34,
+     "top": 127,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "lines": 1,
+     "size": 28.1,
+     "font": "BIZ UDPMincho"
+    },
+    "headings": [
+     {
+      "text": "Care Kotoba",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "BIZ UDPMincho",
+      "weight": 400,
+      "tracking": 0.01,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 11,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "次の声かけを、ここで。",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 28.1,
+      "vw": 7.2,
+      "font": "BIZ UDPMincho",
+      "weight": 600,
+      "tracking": 0.018,
+      "leading": 1.34,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.8,
+      "top": 127,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "入浴にゅうよく",
+      "words": 1,
+      "chars": 7,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "BIZ UDPMincho",
+      "weight": 700,
+      "tracking": 0.02,
+      "leading": 1.45,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.14,
+      "top": 286,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "を",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "BIZ UDPMincho",
+      "weight": 700,
+      "tracking": 0.02,
+      "leading": 1.45,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.06,
+      "top": 286,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "断ことわ",
+      "words": 1,
+      "chars": 4,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "BIZ UDPMincho",
+      "weight": 700,
+      "tracking": 0.02,
+      "leading": 1.45,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.06,
+      "top": 286,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "られたとき",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "BIZ UDPMincho",
+      "weight": 700,
+      "tracking": 0.02,
+      "leading": 1.45,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.28,
+      "top": 286,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 6,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "BIZ UDPGothic",
+       "share": 0.79,
+       "mono": false
+      },
+      {
+       "family": "BIZ UDPMincho",
+       "share": 0.21,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      22,
+      24,
+      28
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 28.1,
+      "vw": 7.2,
+      "font": "BIZ UDPMincho",
+      "text": "次の声かけを、ここで。"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.08,
+     "smallText": 1
+    },
+    "eyebrows": [
+     {
+      "text": "10月24日(土)",
+      "above": "次の声かけを、ここで。",
+      "upper": false,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 13,
+      "top": 92
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f6f1e8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.44,
+      "l": 0.94
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fffdf9",
+       "top": 225,
+       "hsl": {
+        "h": 40,
+        "s": 1,
+        "l": 0.99
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#4e4456",
+       "share": 0.4
+      },
+      {
+       "color": "#2a2230",
+       "share": 0.3
+      },
+      {
+       "color": "#6a5f6f",
+       "share": 0.24
+      },
+      {
+       "color": "#55398a",
+       "share": 0.03
+      },
+      {
+       "color": "#2e6650",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#fffdf9",
+      "hsl": {
+       "h": 40,
+       "s": 1,
+       "l": 0.99
+      },
+      "fg": "#2a2230"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 1,
+     "radius": 12,
+     "height": 63,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "4分、練習する"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.topbar 390px",
+      "section.little-banner 350px",
+      "footer.page-footer 390px",
+      "nav.mobile-nav 390px"
+     ],
+     "outlinedBoxes": 4,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 4,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 742
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 0,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "biz udpgothic",
+     "biz udpmincho"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 1636,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "次の声かけを、ここで。",
+      "size": 28,
+      "top": 127,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 3
+     },
+     {
+      "x": 43,
+      "n": 1
+     },
+     {
+      "x": 143,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#f6f1e8",
+    "sidebar": null,
+    "topbar": {
+     "h": 67
+    },
+    "canvas": {
+     "left": 20,
+     "right": -375
+    },
+    "hero": {
+     "text": "次の声かけを、ここで。",
+     "words": 1,
+     "chars": 11,
+     "lines": 1,
+     "size": 28,
+     "vw": 7.2,
+     "font": "BIZ UDPMincho",
+     "weight": 600,
+     "tracking": 0.02,
+     "leading": 1.34,
+     "top": 127,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 5,
+     "firstScreen": 4,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 69,
+       "at": 852,
+       "panel": "日常の声かけ"
+      },
+      {
+       "gap": 44,
+       "at": 877,
+       "panel": "気持ちに寄り添う"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 5,
+     "radii": [
+      [
+       12,
+       4
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 1,
+     "hues": 1,
+     "samples": [
+      {
+       "hue": 37,
+       "size": 30,
+       "radius": "50%"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.37,
+     "tiny": 14,
+     "tinySamples": [
+      "ほんにん 10px",
+      "にゅうよく 10px",
+      "ことわ 10px",
+      "せっとく 10px"
+     ],
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      28
+     ]
+    },
+    "title": {
+     "text": "次の声かけを、ここで。",
+     "size": 28,
+     "top": 127
+    },
+    "colourShare": 0.038
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (page background #f6f1e8, button #fffdf9).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "tiny-text",
+   "width": 1440,
+   "message": "14 text blocks under 11px: ほんにん 10px, にゅうよく 10px, ことわ 10px, せっとく 10px.",
+   "fix": "Nothing below 11px; secondary text 12px, data 13–14px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "panel-void",
+   "width": 1440,
+   "message": "1 card(s) hold a blank band inside: 44px in \"日常の声かけ\".",
+   "fix": "A card stretches to its neighbour only when it has content to fill. Keep a legend or a note directly under its chart (only an action or a total may sit at a stretched card's foot), let a short card keep its own height (align-items: start), and let a filtered block shrink to its rows."
+  },
+  {
+   "level": "WARN",
+   "id": "app-title-size",
+   "width": 1440,
+   "message": "The h1 is 36px (\"次の声かけを、ここで。\").",
+   "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone).",
+   "alsoAt": [
+    768
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "desktop-fold.jpg",
+   "pages": [
+    "desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "tablet-fold.jpg",
+   "pages": [
+    "tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "mobile-fold.jpg",
+   "pages": [
+    "mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

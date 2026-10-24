@@ -2,179 +2,186 @@
 name: Care Kotoba
 description: 外国介護職員のための、現場の日本語の練習（手机优先的网页 / PWA 原型）
 colors:
-  primary: "#7861c5"
-  primary-deep: "#6450ac"
-  primary-action: "#7c65bd"
-  primary-strong: "#5b4399"
-  ink: "#282737"
-  ink-dark-button: "#333044"
-  muted: "#8a8999"
-  page: "#f8f9fc"
-  paper: "#ffffff"
-  line: "#eaeaf1"
-  soft-lavender: "#f0ecfa"
-  soft-mint: "#edf7f2"
-  stage-plum: "#232035"
-  stage-plum-glow: "#39304e"
-  stage-caption: "#efdef8"
-  tint-lavender: "#f0eafa"
-  tint-mint: "#eaf5f0"
-  tint-peach: "#fcf1e7"
-  tint-blue: "#edf3f9"
-  tint-pink: "#f9edf1"
+  page: "#f6f1e8"
+  paper: "#fffdf9"
+  ink: "#2a2230"
+  ink-2: "#4e4456"
+  muted: "#6a5f6f"
+  line: "#e6ddd0"
+  line-2: "#d9cfbf"
+  violet: "#55398a"
+  violet-deep: "#452d74"
+  violet-soft: "#efe9f4"
+  mint-ink: "#2e6650"
+  mint-soft: "#e2f0e8"
+  coral-ink: "#7a3420"
+  coral-soft: "#fbebe2"
+  stage-plum: "#2c1f33"
+  stage-plum-glow: "#3b2b42"
   draft-blue: "#4c6f8c"
 typography:
   display:
-    fontFamily: "DM Sans, Noto Sans JP, -apple-system, Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif"
-    fontSize: "34px"
-    fontWeight: 600
-    lineHeight: 1.55
-    letterSpacing: "1.2px"
+    fontFamily: "BIZ UDPMincho, Hiragino Mincho ProN, Yu Mincho, Noto Serif JP, serif"
+    fontSize: "clamp(28px, 7.2vw, 36px)"
+    fontWeight: 700
+    lineHeight: 1.34
+    letterSpacing: "0.02em"
   headline:
-    fontFamily: "DM Sans, Noto Sans JP, sans-serif"
-    fontSize: "28px"
-    fontWeight: 550
-    letterSpacing: "0.8px"
+    fontFamily: "BIZ UDPMincho, Hiragino Mincho ProN, Yu Mincho, serif"
+    fontSize: "24px"
+    fontWeight: 700
+    lineHeight: 1.45
   title:
-    fontFamily: "DM Sans, Noto Sans JP, sans-serif"
-    fontSize: "16px"
-    fontWeight: 600
+    fontFamily: "BIZ UDPMincho, Hiragino Mincho ProN, Yu Mincho, serif"
+    fontSize: "17px"
+    fontWeight: 700
+  quote:
+    fontFamily: "BIZ UDPMincho, Hiragino Mincho ProN, Yu Mincho, serif"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 1.65
   body:
-    fontFamily: "DM Sans, Noto Sans JP, sans-serif"
+    fontFamily: "BIZ UDPGothic, Hiragino Sans, Hiragino Kaku Gothic ProN, Yu Gothic, Noto Sans JP, sans-serif"
     fontSize: "14px"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.75
   label:
-    fontFamily: "DM Sans, Noto Sans JP, sans-serif"
-    fontSize: "11px"
-    fontWeight: 500
-  caption-stage:
-    fontFamily: "DM Sans, Noto Sans JP, sans-serif"
-    fontSize: "22px"
-    fontWeight: 450
-    lineHeight: 1.85
-    letterSpacing: "1px"
+    fontFamily: "BIZ UDPGothic, Hiragino Sans, sans-serif"
+    fontSize: "12px"
+    fontWeight: 700
 rounded:
-  control: "10px"
-  card: "15px"
+  card: "12px"
+  inner: "10px"
+  pill: "999px"
   panel: "24px"
-  pill: "25px"
 spacing:
   gutter-mobile: "20px"
   gutter-desktop: "40px"
-  section: "31px"
+  card-padding: "20px"
 components:
   button-primary:
-    backgroundColor: "{colors.primary-action}"
+    backgroundColor: "{colors.violet}"
     textColor: "{colors.paper}"
-    rounded: "{rounded.control}"
+    rounded: "{rounded.pill}"
     height: "44px"
-  button-dark:
-    backgroundColor: "{colors.ink-dark-button}"
+  button-start:
+    backgroundColor: "{colors.violet}"
     textColor: "{colors.paper}"
-    rounded: "{rounded.control}"
-    height: "44px"
-  button-soft:
-    backgroundColor: "#f1ecf9"
-    textColor: "{colors.primary-strong}"
-    rounded: "{rounded.control}"
-    height: "44px"
-  scene-card:
+    rounded: "{rounded.pill}"
+    height: "56px"
+  button-white:
     backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink-2}"
+    borderColor: "{colors.line-2}"
+    rounded: "{rounded.pill}"
+  button-soft:
+    backgroundColor: "{colors.violet-soft}"
+    textColor: "{colors.violet}"
+    rounded: "{rounded.pill}"
+  card:
+    backgroundColor: "{colors.paper}"
+    borderColor: "{colors.line}"
+    rounded: "{rounded.card}"
+    padding: "20px"
+  partner-line:
+    backgroundColor: "{colors.page}"
     textColor: "{colors.ink}"
     rounded: "{rounded.card}"
-  modal:
-    backgroundColor: "{colors.paper}"
-    rounded: "{rounded.panel}"
-    padding: "28px"
+  correction-original:
+    backgroundColor: "{colors.page}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.inner}"
+  correction-better:
+    backgroundColor: "{colors.mint-soft}"
+    textColor: "#1f4a39"
+    rounded: "{rounded.inner}"
+  correction-reason:
+    backgroundColor: "{colors.coral-soft}"
+    textColor: "{colors.coral-ink}"
+    rounded: "{rounded.inner}"
   conversation-stage:
     backgroundColor: "{colors.stage-plum}"
-    textColor: "{colors.stage-caption}"
+    textColor: "{colors.paper}"
     rounded: "{rounded.panel}"
-    padding: "25px"
 ---
 
 # Design System: Care Kotoba
 
-<!-- 2026-10-24 Claude（DESIGN-SKILLS-001）按 impeccable `document` 的扫描模式，从 prototype/app/globals.css 和渲染结果整理。
-记录的是**现有**界面，不是新的设计方向。标「待确认」的描述性语言需要用户确认；改了 globals.css 的颜色、字号、圆角或组件之后，同步更新本文件。 -->
+<!-- 2026-10-24 Claude（DEAI-001）重写。用户在 14:14 要求「视觉上去 AI 化，不像 AI 的通用模板」，并选择按 design/ui_concept.png 的方向。
+本文件记录的是 DEAI-001 之后的界面；旧的薰衣草紫方案见 git 历史（DESIGN-SKILLS-001 版本）和 verification/DESIGN-BASELINE-001/ 的截图。
+改了 globals.css 的颜色、字体、圆角或组件后，同步更新本文件。 -->
 
 ## Overview
 
-- 现有界面：白底和浅薰衣草紫的卡片，紫色为主色，配薄荷、蜜桃、浅蓝、粉色的淡色块；会话页是深紫色的「舞台」，中间是一个发光的球形波形。整体安静、柔和。
-- 设计概念图（`design/ui_concept.png`，不是已完成软件的截图）的方向是：暖米色背景、明朝体标题、深紫主按钮、薄荷色强调、真实的场景照片。现有原型还没有采用这个方向。是否转向，由用户决定。
-- 暂定的北极星（待确认）：「安心して言い直せる場所」，即一个可以放心重来的练习场所。
+- 世界观：**申し送りノート / 連絡帳**。介护现场交接用的笔记本：暖白的纸、深色墨水、明朝体写下的一句话。
+- 每个画面先把「下一句话」交给学员：首页是今天的场景和对方说的第一句话，反馈页是学员说过的原话和更好的说法，会话页是对方此刻的话。
+- 拒绝的东西（AI 通用模板的特征）：口号式主视觉、首页的发光球体、淡色方块里的图标、进度圆环和大分数、英文全大写小标签、✦✧ 装饰、渐变卡片、小于 12px 的文字。
+- 暂定的北极星（待确认）：「安心して言い直せる場所」，一个可以放心重来的练习场所。
 
 ## Colors
 
-- **主色**：紫色 `primary`（#7861c5），按钮用 `primary-action`。文字和需要对比度的地方用更深的 `primary-strong`（#5b4399）。
-- **中性色**：页面 `page`（#f8f9fc），卡片 `paper`（白），分隔线 `line`，正文 `ink`（#282737）。
-- **分类淡色**：`tint-lavender` / `mint` / `peach` / `blue` / `pink`，用来区分 8 个场景分野。每种淡色配一个文字色：`globals.css` 的 `.lavender` 等类定义 `--tint` / `--tone`。可读性层（A11Y-001/002）把这些文字色调深到 AA。
-- **会话舞台**：深紫径向渐变，`stage-plum` 到 `stage-plum-glow`，字幕色为 `stage-caption`。
-- **草稿**：核心场景草稿用 `draft-blue`（#4c6f8c）和虚线边框，表示「审稿前」。
-- 现状说明：很多颜色是写死在规则里的一次性数值，没有全部变成变量。另外，可读性层是追加在文件末尾的覆盖规则（`/* 2.11 -> 4.68 */` 这类注释记录了调整前后的对比度）。整理变量时要保留这些对比度。
+- **地与纸**：页面 `page`（#f6f1e8，暖白），卡片 `paper`（#fffdf9），分隔线 `line` / `line-2`。只用细线分隔，不用阴影。
+- **墨水**：正文 `ink`（#2a2230），次要 `ink-2`（#4e4456），说明文字 `muted`（#6a5f6f，在 `page` 上 5.4:1）。文字不用紫色或灰紫色。
+- **紫**：只用于行动：主按钮、文字按钮、当前导航、本周的当天。`violet` #55398a，悬停 `violet-deep`，淡底 `violet-soft`。
+- **薄荷**：「已经做到」：今天的场景标签、练习过的场景、更好的说法、达成的目标、每日进度条。
+- **珊瑚**：只用于「为什么」：反馈卡里改写的理由。
+- **会话舞台**：深梅色 `stage-plum`，到 `stage-plum-glow` 的径向渐变。这是全应用唯一的渐变，球体（对方）只出现在这里，球体颜色从薄荷过渡到紫。
+- **草稿**：核心场景草稿用虚线边框和「草稿」标签；草稿区的说明色 `draft-blue` 保留。
+- 实现：`globals.css` 末尾的「DEAI-001」层定义变量并覆盖旧规则。旧规则里写死的颜色已按 OKLCH 换算到新调色板（保留明度，冷灰紫的正文颜色换成梅灰墨色，中间调再压暗到 4.6:1 以上）。换算脚本和说明在 `verification/DEAI-001/`。
 
 ## Typography
 
-- 字体：DM Sans 用于拉丁字母，Noto Sans JP 用于日文（从 Google Fonts 加载），后备为系统字体。拉丁字母大多是全大写、加大字距的小标签（例如 `LEARN A LITTLE. CARE A LOT.`）。
-- 层级（手机）：
-  - 首页问候：27px / 600；
-  - 页面标题：28px / 550；
-  - 主视觉标题：34px / 600，行高 1.55；
-  - 区块标题：16px / 600；
-  - 正文：14px，行高 1.7；
-  - 标签：11px。
-- 会话字幕：22px，行高 1.85。
-- 注音（`<ruby>`）：`rt` 至少 10px（A11Y-001）。
-- 现状说明：用到的字号多达十几种（8–34px）。1440px 桌面上还有 41 处小于 11px 的文字（taste-skill 检查，见 `verification/DESIGN-BASELINE-001/`）。
+- 字体（Google Fonts，开源 OFL）：
+  - **BIZ UDPMincho**（明朝体）：标题、场景标题、引用的一句话（对方的话、学员的原话、更好的说法、ことばノート的表现）、Care Kotoba 字标。
+  - **BIZ UDPGothic**（UD 黑体）：正文、按钮、标签。UD（Universal Design）字体为易读性设计，适合日语初中级学员。
+  - 后备：Hiragino、Yu、Noto（系统已有时使用）。
+- 层级：
+  - 首页标题 28–36px / 700；
+  - 场景标题 24px（今天的场景）、17px（场景卡片）；
+  - 区块标题 19px；
+  - 引用的一句话 18–20px；
+  - 正文 14px，行高 1.75；
+  - 标签和说明至少 12px。
+- 注音 `rt`：`max(.55em, 10px)`，随正文缩放。
+- 日文换行：标题使用 `word-break: auto-phrase`（按词组换行），避免「みてみ / る。」这样的断行。
 
 ## Layout
 
-- 手机（≤700px）：
-  - 顶栏加底部 4 个标签的导航（ホーム / シーン / ノート / 学習記録）；
-  - 左右留白 20px；
-  - 卡片单列，推荐场景横向滚动。
-- 桌面：左侧边栏（导航、鼓励卡、法人管理入口、个人资料），中间主栏，右栏放每日目标、本周节奏和今日表达。主栏最大宽度 1350px，留白 40px。
-- 练习画面：全屏覆盖层。上方是会话舞台，下方是会话记录、提示和输入区。输入区包含麦克风（「声で入力」）和发送按钮。
-- 弹窗：手机上从底部滑出（有拖动条），桌面上居中，宽 560px。
+- 手机（≤700px）：顶栏（字标、試作版、辅助语言、设置），底部 4 个标签（ホーム / シーン / ノート / 学習記録），左右留白 20px。
+- 首页从上到下：日期 → 「次の声かけを、ここで。」 → **今天的场景卡**（场景标签、标题、对方的一句话、こんな場面 / 今回の目標、全宽的「N分、練習する」）→ 上次保存的一句话（有时才显示）→ ほかの場面（手机上横向滚动）→ 8 个分野 → 一句鼓励和「デモで操作を体験」。
+- 桌面：左侧边栏，中间主栏，右栏放今日练习、本周、今日のひとこと。没有记录时，本周卡片显示一句说明，不画空图表。
+- 反馈页从上到下：标题 → 一句引导 → **引用的原话卡**（原话、更好的说法、理由、「この場面だけもう一度」）→ AI 的振り返り → 伝わったこと → よかったところ → 按钮 → 脚注（AI 的目安分数只在这里以小字出现，并说明不评判日语能力、介助技术和能否独立工作）。
+- 场景一览：≤560px 单列，平板两列，桌面三列。
 
 ## Elevation & Depth
 
-- 基本是平面加极淡的阴影（`--shadow: 0 8px 30px #29263d04`）。弹窗阴影较深（`0 25px 100px #2d143b26`），背景用模糊遮罩（`backdrop-filter: blur(7px)`）。
-- 会话舞台的球体用多层内阴影和光晕做出立体感，是界面里唯一明显「发光」的元素。
+- 平面：卡片用 1px 细线，不用阴影。弹窗保留遮罩和阴影（它确实在上一层）。
+- 会话舞台的球体保留内阴影和光晕，表示「对方在这里」。
 
 ## Shapes
 
-- 圆角：
-  - 控件（按钮、输入框）10px；
-  - 场景卡片 15px；
-  - 面板和弹窗 24px；
-  - 标签 25px（胶囊形）。
-- 现状说明：实际用了十多种圆角（4–25px），taste-skill 判为「圆角混用」。
+- 卡片 12px，卡片内的引用框 10px，会话舞台和弹窗 24px。
+- 按钮全部是胶囊形（999px），与概念图一致。
 
 ## Components
 
-- **按钮**：
-  - `btn-primary`：紫底白字，主要操作；
-  - `btn-dark`：深色，首页主视觉里用；
-  - `btn-soft`：淡紫底；
-  - `btn-white`：白底加边框。
-  - 最小高度 44px。
-- **场景卡片**：上半是淡色插画区（图标、装饰圆环、贴纸标签），下半是英文小标题、日文标题、时长和等级。
-- **分类图块 / 图标**：图标放在淡色方块里。taste-skill 指出这是 AI 生成界面最常见的特征之一，见评审报告。
-- **会话舞台**：深紫面板，状态文字、字幕、球形波形、「ゆっくり聞く」和「ヒント」按钮。
-- **反馈卡**：标题、摘要、做得好的地方、改进（引用学员原话）、「この場面だけもう一度」。
-- **草稿标记**：虚线边框、`draft-blue` 色、「草稿」贴纸。
+- **今天的场景卡**：薄荷场景标签 → 明朝体标题 → 「利用者の○○さん」和对方的一句话（暖白对话框，带一个小三角）→ 两项简报 → 56px 的主按钮。
+- **场景卡片**：分野（线性图标 + 名称）、练习済み / 草稿标签、明朝体标题、对方的第一句话、时长 · 等级 · 箭头。没有插画区和英文小标题。
+- **分野图块**：线性图标与文字同色，不放在淡色方块里。
+- **反馈卡**：标签「あなたのことば」→ 原话（暖白）→ 「こんな伝え方も」→ 更好的说法（薄荷）→ 理由（珊瑚）→ 按钮：聞いてみる、保存、この表現で練習、**この場面だけもう一度**（紫，主要的下一步）。
+- **会话舞台**：状态标签使用日语（「音声でAIと練習」「文字でAIと練習」「デモ（操作の体験）」等）。
+- **焦点与浏览器部件**：焦点环 3px 紫色；选中文字、光标、滚动条按调色板设定。
 
 ## Do's and Don'ts
 
 - **Do**：
-  - 保持 WCAG AA 对比度和至少 24px 的点击区域。改颜色后运行 `verification/A11Y-001/audit.mjs`（390px 和 1280px）。
-  - 文字以日语为主，汉字加注音，辅助说明用学员选择的语言。
-  - 主行动一屏一个。
-  - 用真实的场景文字（引用学员原话），不用装饰性的大数字。
+  - 改颜色或字号后运行 `verification/A11Y-001/audit.mjs`（390px 和 1280px）：对比度、24px 点击区域、12px 以下文字都应为 0。
+  - 每屏一个主行动；先给「下一句话」，再给说明。
+  - 引用真实的场景文字（虚构的利用者和同事），用明朝体显示。
+  - 新增界面先查 `.impeccable/surfaces/prototype-app-page-tsx.md` 的方向说明。
 - **Don't**：
-  - 不显示能力认证类的分数，不用排名、连续天数断掉之类会制造惩罚感的设计。
-  - 不用会让人以为是真实机构或真实人物的照片和名称。所有场景都是虚构的。
-  - 不在没有用户确认的情况下更换整体视觉方向（例如改用概念图的米色和明朝体）。
-  - 不降低对比度、字号或点击区域来追求「更简洁」的观感。
+  - 不加标题上方的小标签（eyebrow / kicker），不用英文全大写标签。
+  - 不用渐变（会话舞台除外）、发光球体（会话舞台除外）、淡色方块图标、✦✧ 之类的装饰字符。
+  - 不把分数做成第一视觉，不用进度圆环、排名或会制造惩罚感的连续天数。
+  - 不用会让人以为是真实机构、真实人物的照片和名称。需要照片时，先取得许可清楚的素材（尚未决定）。
+  - 不降低对比度、字号或点击区域来追求「更简洁」。
