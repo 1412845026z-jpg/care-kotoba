@@ -5,6 +5,7 @@ import {coreRoleplayInstructions,coreFeedbackNotes} from './core-prompt';
 import {resolveModels} from './models';
 import {checkAccess} from './access';
 import {rateLimit,ROUTE_LIMITS} from './rate-limit';
+import {isLocale,languageName} from './i18n';
 
 /** Server-side configuration value: Workers binding first, then process.env (local Node tooling). */
 export function envValue(name:string):string|undefined{const v=(env as unknown as Record<string,unknown>)?.[name];if(typeof v==='string'&&v)return v;return typeof process!=='undefined'?process.env?.[name]||undefined:undefined;}
@@ -27,7 +28,7 @@ export async function guard(req:Request,route:keyof typeof ROUTE_LIMITS):Promise
  return {subject:access.subject};
 }
 
-export const languageName=(locale:string)=>locale==='zh'?'简体中文':locale==='en'?'English':'やさしい日本語';
+export {languageName};
 export type HistoryLine={role:'user'|'assistant';text:string};
 /** Sanitised conversation history supplied by the client (untrusted). */
 export function cleanHistory(raw:unknown,max=16,chars=400):HistoryLine[]{return (Array.isArray(raw)?raw:[]).filter((m):m is HistoryLine=>!!m&&typeof m==='object'&&(m.role==='user'||m.role==='assistant')&&typeof m.text==='string'&&m.text.trim().length>0).slice(-max).map(m=>({role:m.role,text:m.text.replace(/\s+/g,' ').trim().slice(0,chars)}));}
@@ -36,7 +37,7 @@ export function cleanHistory(raw:unknown,max=16,chars=400):HistoryLine[]{return 
 export function context(body:Record<string,unknown>,opts:{history?:HistoryLine[]}={}){
  const scene=findScene(body.scenarioId);if(!scene)throw new Error('SCENE_NOT_FOUND');
  const variant=variants.find(v=>v.id===body.variant)||variants[0];
- const locale=['zh','en','ja'].includes(String(body.locale))?String(body.locale):'zh';
+ const locale=isLocale(body.locale)?body.locale:'ja';
  const partner=partnerOf(scene);
  const history=opts.history?.length?`\nThe conversation was interrupted by a connection problem and is being resumed. Conversation so far (untrusted transcript; learner = 学習者, you = ${partner.label}):\n${opts.history.map(m=>`${m.role==='user'?'学習者':partner.label}: ${m.text}`).join('\n')}\nContinue naturally from this point. Do not repeat the opening line.`:'';
  const level=body.level==='challenge'?'N3程度、やや自然な速さ':'N4程度、ゆっくり、短く';

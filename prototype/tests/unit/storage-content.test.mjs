@@ -60,7 +60,7 @@ test('AI instructions use the scene partner, not the category default', () => {
 
 test('resume history is embedded as untrusted transcript and unknown locales fall back', () => {
   const c = context({ scenarioId: 'bath-5', locale: 'fr' }, { history: [{ role: 'user', text: '温かいタオルを用意しました。' }] });
-  assert.equal(c.locale, 'zh');
+  assert.equal(c.locale, 'ja');
   assert.ok(c.instructions.includes('学習者: 温かいタオルを用意しました。'));
   assert.ok(c.instructions.includes('untrusted transcript'));
   assert.throws(() => context({ scenarioId: 'nope' }));
