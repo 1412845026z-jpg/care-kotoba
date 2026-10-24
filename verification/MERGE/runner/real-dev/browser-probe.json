@@ -1,0 +1,361 @@
+{
+  "passed": true,
+  "source": "/home/runner/work/care-kotoba/care-kotoba/verified-source",
+  "checks": [
+    "document headers, nonce-bearing SSR bootstrap, hydration",
+    "nonce changes between responses",
+    "API responses retain JSON and security headers",
+    "mock text chat, feedback and furigana under enforced CSP",
+    "core mobile list, draft dialog and ruby render under enforced CSP",
+    "core text practice and feedback use core instructions without CSP violations",
+    "core desktop list and dialog render under enforced CSP",
+    "nonce-less injected inline script blocked",
+    "script with the response nonce accepted",
+    "microphone Permissions Policy permits same-origin audio",
+    "microphone Permissions-Policy permits same-origin free demo",
+    "consent then fake Japanese recognition, edit and send under CSP",
+    "unavailable API TTS falls back to native Japanese speechSynthesis under CSP",
+    "demo feedback without upstream AI calls",
+    "Google Fonts BIZ UDPGothic and BIZ UDPMincho 400/700 load under CSP without console errors"
+  ],
+  "fonts": {
+    "faces": [
+      {
+        "family": "BIZ UDPGothic",
+        "weight": 400,
+        "count": 6,
+        "statuses": [
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded"
+        ]
+      },
+      {
+        "family": "BIZ UDPGothic",
+        "weight": 700,
+        "count": 6,
+        "statuses": [
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded"
+        ]
+      },
+      {
+        "family": "BIZ UDPMincho",
+        "weight": 400,
+        "count": 6,
+        "statuses": [
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded"
+        ]
+      },
+      {
+        "family": "BIZ UDPMincho",
+        "weight": 700,
+        "count": 6,
+        "statuses": [
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded",
+          "loaded"
+        ]
+      }
+    ],
+    "styles": {
+      "body": "\"BIZ UDPGothic\", \"Hiragino Sans\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", \"Noto Sans JP\", \"Noto Sans CJK JP\", sans-serif",
+      "heading": "\"BIZ UDPMincho\", \"Hiragino Mincho ProN\", \"Yu Mincho\", \"Noto Serif JP\", \"Noto Serif CJK JP\", serif"
+    },
+    "responses": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.119.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58rh9StA.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.118.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.109.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.106.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.113.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.117.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.110.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.117.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.117.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.119.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.114.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.107.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.108.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.112.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.110.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.119.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.115.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.108.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.116.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.115.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.114.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.78.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.116.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.118.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjVWYtTQ.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.108.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.112.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.112.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.90.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.119.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.113.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.64.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.107.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.110.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.93.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.116.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.117.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.71.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.118.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.100.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.104.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.100.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.106.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue87nIGQA.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.82.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.114.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.96.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.116.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.100.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.115.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.111.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hESq6X5pHAIBjmS84VL0Bue85skjZWRPXAJTO2rBfVqGbYOlV8mIeCP7jepv.111.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.113.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.115.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.98.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.103.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.84.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.108.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.105.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpgothic/v16/hES36X5pHAIBjmS84VL0Bue83nBkUWsdImkzMGXUb1G8eoOcUtmCbUaX.93.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.106.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.110.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.113.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvfbXOBrmYppy7oWWTg1_58nh0wpUTl8_lDntYg4DS2JP1IFfU1iSmT.114.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/bizudpmincho/v11/ypvCbXOBrmYppy7oWWTg1_58pqR3kUu3jZIjldk18j-MM_1xEOU_nEz_gthG.118.woff2",
+        "status": 200
+      }
+    ],
+    "errors": [],
+    "failures": [],
+    "checks": [
+      "Google Fonts BIZ UDPGothic and BIZ UDPMincho 400/700 load under CSP without console errors"
+    ]
+  },
+  "paidApiCalls": 0,
+  "notes": [
+    "WebRTC transport is additionally exercised by the complete real-dev e2e suite.",
+    "The only CSP violation above is the deliberate nonce-less inline script probe."
+  ]
+}

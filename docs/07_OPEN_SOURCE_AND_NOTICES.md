@@ -18,7 +18,7 @@
 
 ## 本项目与视觉资源
 
-归档最初按私有项目交接。2026-10-24 JST核对时仓库已为Public，但尚未为整个应用选定项目许可证。可见性、依赖的开源许可与本项目代码的分发许可是不同记录；不能因为包含MIT依赖就把全项目标成MIT。公开/申请工作已按用户要求暂停。
+归档最初按私有项目交接。2026-10-24 JST核对时仓库已为Public，但尚未为整个应用选定项目许可证。可见性、依赖的开源许可与本项目代码的分发许可是不同记录；不能因为包含MIT依赖就把全项目标成MIT。Codex for OSS 申请已于2026-10-24由用户确认邮箱和条款后提交，等待外部审核；仓库公开仍不代表全项目已选择许可证。
 
 原型已有的Sites Vite插件许可保留在`prototype/scripts/vite/sites-vite-plugin.LICENSE`。
 
@@ -48,3 +48,17 @@ Codex实际下载并检查了网站当前链接的中国语用语集（SHA-256 `
 
 CONTENT-002只记录常用词形、读音与出处页码，学习释义、虚构例句和场景关联由Care Kotoba本轮编写。具体来源、加工范围与限制见`content/terminology/README.md`及`sources.json`。不以官方教材为本应用背书，后续若要复制段落或图像需再核对具体权利。
 
+
+## 2026-10-24 15:07：直接复用规则与设计来源
+
+用户允许直接复用成熟开源代码：先核对允许商用的许可、固定版本或提交、在此记录来源和用途并保留许可文本。MIT / Apache / BSD / MPL 等逐项遵守条件；GPL / AGPL 代码不并入应用。MPL 文件级开源义务不会因为用于测试就被省略。所有引入通过任务分支和锁文件；不调用付费API、不部署、不安装 impeccable 钩子。
+
+| 来源 / 固定范围 | 许可及保留文本 | 实际用途 / 限制 |
+| --- | --- | --- |
+| [impeccable](https://github.com/pbakaus/impeccable/tree/936867543ac2576920d663cc9803597f6044f3ac) 4.7.1 | Apache-2.0；`docs/licenses/IMPECCABLE_LICENSE-2.0.txt`、`IMPECCABLE_NOTICE.md` | 原样置于 `.agents/skills/impeccable` / `.claude/skills/impeccable`；设计评审，manifest 固定195项技能文件。没有安装钩子、引擎二进制或执行launcher。NOTICE的派生平台参考另保留 `PLATFORM_DESIGN_SKILLS_LICENSE.txt`（MIT，许可blob `14fac913ccf80234b1848540089a3bbcb6e5283d`） |
+| [taste-skill](https://github.com/Leonxlnx/taste-skill/tree/6010f91a9935f1c167dfc500fb1a475681892e6b) 2.1.4 | MIT；`docs/licenses/TASTE_SKILL_LICENSE.txt` | 两套 `design-taste-frontend` 技能入口；不下载外部素材进入产品 |
+| [modern-screenshot](https://github.com/qq15725/modern-screenshot) | MIT；`docs/licenses/MODERN_SCREENSHOT_LICENSE.txt`（含版权行） | impeccable上述固定提交附带的未修改UMD；单独版本未声明，以vendor manifest文件SHA-256固定精确产物，不另装npm包 |
+| [BIZ UDPGothic](https://github.com/google/fonts/tree/main/ofl/bizudpgothic)（Google Fonts版，OFL许可blob `4df8604ddf1c71f3976116927dab08aada51cfd1`） | OFL-1.1；`docs/licenses/BIZ_UDPGOTHIC_OFL.txt`（原文版权URL照录） | 正文400/700，Google Fonts远程CSS和gstatic字体；未打包字体，商业嵌入可，保留OFL，不单卖字体。实时CSS API不保证版本冻结，实际gstatic版本URL见MERGE真实dev证据；今后固定自托管前需单独评估隐私/离线/版本需求 |
+| [BIZ UDPMincho](https://github.com/google/fonts/tree/main/ofl/bizudpmincho)（OFL许可blob `1664f9f625f27e5ba8c6d616bdd02be6836dc67f`） | OFL-1.1；`docs/licenses/BIZ_UDPMINCHO_OFL.txt` | 标题与引用400/700；同上，Google Fonts请求会向Google披露请求信息；不宣称离线字体已验收 |
+
+两份技能的SKILL.md入口、frontmatter与引用可在本会话显式读取；`vendor.mjs --check`及taste的无网络目录查询通过。本环境没有Codex CLI，未验证CLI启动时自动发现列表。没有改动第三方技能本体。
