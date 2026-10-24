@@ -3,7 +3,9 @@
 `prototype/lib/furigana-data.ts` holds furigana for the app's **fixed** Japanese text: categories, variant labels,
 scene titles, contexts, opening lines, reference phrases, goals and demo replies (318 texts as of 2026-10-23).
 The app shows them as `<ruby>` when the learner's 「ふりがな」 preference is on (default on). AI-generated replies are not
-annotated unless they exactly match a fixed text.
+annotated unless they exactly match a fixed text, or the server runs with `CK_AI_FURIGANA=1` (off by default): then
+text-practice replies carry a model-written notation that the server accepts only if it reproduces the reply exactly and
+puts hiragana readings on kanji (`validRuby` in `prototype/lib/furigana.ts`). Those readings are not reviewed.
 
 ## How it is made
 
@@ -39,3 +41,14 @@ Then read the diff of `prototype/lib/furigana-data.ts` and add corrections to `o
 
 Machine readings + review by Claude (2026-10-23). **A native-speaker Japanese teacher should review before release**,
 especially readings that depend on context (方, 後, 何, 行き先) and counters/numbers.
+
+## Checking the content drafts (read-only)
+
+`check-content.mjs` gives `content/terminology/terms.json` a second, independent reading check (kuromoji) and lists
+kanji the machine cannot read in `content/scenarios/*.json`. It never writes to `content/` (Codex owns it); a
+disagreement is something for a human to decide, not an error by itself (the machine is often wrong on care words).
+First run on 2026-10-24: `verification/CONTENT-QA-001/`.
+
+```sh
+NODE_PATH=/tmp/kuro-nm:<node_modules with async> node tools/furigana/check-content.mjs --kuromoji /tmp/kuromoji.js --out report.json
+```

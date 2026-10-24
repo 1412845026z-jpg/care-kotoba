@@ -4,8 +4,9 @@
 // usage numbers are what the server reported to this client — not billing data.
 import { addRealtimeUsage, emptyUsage, estimateRealtimeUsd, estimateTranscribeUsd, type UsageTotals } from './cost';
 import type { RealtimeEvent } from './realtime-transcript';
+import { confidenceOf } from './asr-confidence';
 
-export type LogEntry = { t: number; type: string; item?: string; prev?: string | null; resp?: string; status?: string; code?: string; ms?: number };
+export type LogEntry = { t: number; type: string; item?: string; prev?: string | null; resp?: string; status?: string; code?: string; ms?: number; asrMean?: number; asrMin?: number };
 
 export class VoiceMetrics {
   readonly startedAt: number;
@@ -13,6 +14,7 @@ export class VoiceMetrics {
   firstAudioAt: number | null = null;
   usage: UsageTotals = emptyUsage();
   transcription = { audioTokens: 0, textTokens: 0, seconds: 0, completed: 0, failed: 0, empty: 0 };
+  asr = { lines: 0, uncertain: 0 };
   responses: Record<string, number> = {};
   bargeIns = 0;
   latencies: number[] = [];
@@ -83,6 +85,9 @@ export class VoiceMetrics {
         const u = e.usage || {};
         if (u.type === 'duration') this.transcription.seconds += Number(u.seconds) || 0;
         else { this.transcription.audioTokens += Number(u.input_token_details?.audio_tokens) || 0; this.transcription.textTokens += Number(u.output_tokens) || 0; }
+        // Recognition confidence (only with CK_ASR_LOGPROBS=1): numbers only, never the text, for calibrating thresholds.
+        const c = confidenceOf(e.logprobs);
+        if (c) { entry.asrMean = c.mean; entry.asrMin = c.min; this.asr.lines++; if (c.uncertain) this.asr.uncertain++; }
         break;
       }
       case 'conversation.item.input_audio_transcription.failed':
@@ -117,6 +122,7 @@ export class VoiceMetrics {
       firstAudioMs: this.firstAudioAt === null || this.readyAt === null ? null : this.firstAudioAt - this.readyAt,
       latency: { definition: 'end of learner speech (speech_stopped/committed) -> output_audio_buffer.started, measured in the browser', samples: this.latencies, p50: pct(50), p95: pct(95), max: sorted.at(-1) ?? null },
       usage: { responses: totalResponses, byStatus: this.responses, tokens: this.usage, transcription: this.transcription },
+      asr: this.asr,
       estimatedCostUsd: realtime.usd === null && transcribe.usd === null ? null : Math.round(((realtime.usd || 0) + (transcribe.usd || 0)) * 1e6) / 1e6,
       costBasis: [realtime.basis, transcribe.basis],
       bargeIns: this.bargeIns,
@@ -129,6 +135,6 @@ export class VoiceMetrics {
   /** Numbers only — safe to send to the server log at session end. */
   serverSummary(models: { realtime: string; transcribe: string }) {
     const s = this.summary(models);
-    return { durationSeconds: s.durationSeconds, responses: s.usage.responses, cancelled: this.responses.cancelled || 0, failed: this.responses.failed || 0, tokens: s.usage.tokens, transcriptionFailed: this.transcription.failed, bargeIns: s.bargeIns, latencyP50: s.latency.p50, latencyP95: s.latency.p95, estimatedCostUsd: s.estimatedCostUsd, errors: this.errors.length };
+    return { durationSeconds: s.durationSeconds, responses: s.usage.responses, cancelled: this.responses.cancelled || 0, failed: this.responses.failed || 0, tokens: s.usage.tokens, transcriptionFailed: this.transcription.failed, asrLines: this.asr.lines, asrUncertain: this.asr.uncertain, bargeIns: s.bargeIns, latencyP50: s.latency.p50, latencyP95: s.latency.p95, estimatedCostUsd: s.estimatedCostUsd, errors: this.errors.length };
   }
 }

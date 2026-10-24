@@ -20,7 +20,7 @@ def validate(folder):
         check(set(row)==fields,f'{key}: unexpected fields')
         check(bool(re.fullmatch(r'CK-I[0-9]{3}',key)) and key not in ids,f'{key}: invalid/duplicate ID')
         ids.add(key);pairs[row['pair_id']].append(row)
-        check(row['version']=='0.1.0',f'{key}: version')
+        check(bool(re.fullmatch(r'0\.[0-9]+\.[0-9]+',row['version'])),f'{key}: version')
         check(row['status']=='draft_pending_expert_review' and row['review_notice']=='草稿，待介护经验者与日语教育者审稿',f'{key}: review flags')
         check(row['fictional'] is True,f'{key}: must be fictional')
         check(row['scope']=='independent_evaluation_fragment_not_runtime_scenario',f'{key}: scope')

@@ -49,3 +49,16 @@ test('Object.prototype names are not annotations (ENV-002: a note reading "const
   for (const odd of [undefined, null, 42, {}, ['口腔ケア前の説明']]) assert.equal(furiganaFor(odd), null, String(odd));
   assert.ok(furiganaFor('口腔ケア前の説明'), 'known texts still work');
 });
+
+import { validRuby } from '@/lib/furigana';
+test('model-written ruby is accepted only if it annotates exactly the reply with hiragana on kanji', () => {
+  const plain = 'もう少し、ゆっくり説明してもらえる？';
+  assert.equal(validRuby('もう{少|すこ}し、ゆっくり{説明|せつめい}してもらえる？', plain), 'もう{少|すこ}し、ゆっくり{説明|せつめい}してもらえる？');
+  for (const bad of [
+    'もう{少|すこ}し、{説明|せつめい}してもらえる？',     // text changed
+    'もう{少|スコ}し、ゆっくり{説明|せつめい}してもらえる？', // katakana reading
+    '{もう|もう}少し、ゆっくり説明してもらえる？',          // ruby on kana
+    'もう少し、ゆっくり説明して{もらえる？',                  // stray brace
+    42, null, '',
+  ]) assert.equal(validRuby(bad, plain), null, String(bad));
+});

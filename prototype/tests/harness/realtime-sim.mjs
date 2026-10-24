@@ -166,9 +166,10 @@ export function userSpeech({ itemId, previousItemId, audioStartMs = 1000, audioE
       { type: 'input_audio_buffer.committed', previous_item_id: previousItemId, item_id: itemId },
       { type: 'conversation.item.added', previous_item_id: previousItemId, item: { id: itemId, type: 'message', role: 'user', status: 'completed', content: [{ type: 'input_audio', transcript: null }] } },
     ],
-    transcribed: (transcript) => [
+    // logprobs: optional [{ token, logprob, bytes }] as sent when the session has include: ["item.input_audio_transcription.logprobs"]
+    transcribed: (transcript, logprobs) => [
       { type: 'conversation.item.input_audio_transcription.delta', item_id: itemId, content_index: 0, delta: transcript.slice(0, Math.ceil(transcript.length / 2)) },
-      { type: 'conversation.item.input_audio_transcription.completed', item_id: itemId, content_index: 0, transcript, usage: { type: 'tokens', total_tokens: 60, input_tokens: 50, input_token_details: { text_tokens: 0, audio_tokens: 50 }, output_tokens: 10 } },
+      { type: 'conversation.item.input_audio_transcription.completed', item_id: itemId, content_index: 0, transcript, usage: { type: 'tokens', total_tokens: 60, input_tokens: 50, input_token_details: { text_tokens: 0, audio_tokens: 50 }, output_tokens: 10 }, ...(logprobs ? { logprobs } : {}) },
     ],
     failed: [{ type: 'conversation.item.input_audio_transcription.failed', item_id: itemId, content_index: 0, error: { type: 'transcription_error', code: 'audio_unintelligible', message: 'sim' } }],
   };

@@ -9,7 +9,7 @@ import { attachRealtimeSimulator, SIM_LAUNCH_ARGS, assistantTurn, userSpeech } f
 
 let env, sim;
 before(async () => {
-  env = await setup({ launchArgs: SIM_LAUNCH_ARGS });
+  env = await setup({ launchArgs: SIM_LAUNCH_ARGS, env: { CK_ASR_LOGPROBS: '1' } });
   await env.requireAiAccess();
   sim = await attachRealtimeSimulator({ browser: env.browser, mock: env.mock });
 });
@@ -94,6 +94,48 @@ test('voice: the voice transcript reaches feedback in conversation order', async
   if (!Array.isArray(sent)) sent = sent.messages;
   const order = sent.map((m) => m.role + ':' + m.text);
   assert.deepEqual(order.slice(0, 3), ['assistant:そのタオルで何をするの？', 'user:お顔を拭いてもよろしいですか。', 'assistant:いいわよ。熱くしないでね。']);
+  // A correction of an unedited voice line is shown as an automatic transcript, not as a sure error.
+  await page.locator('.correction-card').first().waitFor();
+  assert.match(await page.locator('.correction-card').first().innerText(), /音声の聞き取り結果/);
+});
+
+test('voice: a line the recogniser was unsure about asks the learner to check it, and feedback does not call it an error', async () => {
+  const health = await fetch(env.baseUrl + '/api/health').then((r) => r.json());
+  const page = await env.page();
+  await startLive(page);
+  if (health.voice?.asrLogprobs) assert.deepEqual(sim.sessions.at(-1).session?.include, ['item.input_audio_transcription.logprobs'], 'session did not ask for transcription logprobs');
+  await openingTurn();
+  const u1 = userSpeech({ itemId: 'item_u1', previousItemId: 'item_a1' });
+  const lp = (pairs) => pairs.map(([token, p]) => ({ token, logprob: Math.log(p), bytes: [] }));
+  await sim.send([...u1.started, ...u1.committed, ...u1.transcribed('右膝が痛いと話しています。', lp([['右', 0.18], ['膝', 0.97], ['が痛いと話しています。', 0.99]]))]);
+  const note = page.locator('.chat-message.user .asr-uncertain');
+  await note.waitFor();
+  assert.match(await note.innerText(), /聞き取りに自信がありません/);
+  env.mock.state.requests.length = 0;
+  await page.getByText('終了して振り返る').click();
+  await page.locator('.feedback-summary h2').waitFor({ timeout: 15000 });
+  const fb = env.mock.state.requests.find((r) => r.path === '/v1/responses' && r.body?.text?.format?.name === 'care_feedback');
+  let sent = JSON.parse(fb.body.input);
+  if (!Array.isArray(sent)) sent = sent.messages;
+  assert.equal(sent.find((m) => m.role === 'user').asrUncertain, true, 'feedback request does not say the line was uncertain');
+  const card = page.locator('.correction-card').first();
+  await card.waitFor();
+  assert.match(await card.innerText(), /この文は聞き取りが不確かでした/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('voice: the last minute shows a countdown instead of elapsed time', async () => {
+  const page = await env.page();
+  await startLive(page);
+  await openingTurn();
+  const time = page.locator('.stage-top .session-time');
+  assert.doesNotMatch(await time.innerText(), /残り/);
+  // Move the page clock 125 s ahead (the session limit is 180 s by default); the countdown appears on the next tick.
+  await page.evaluate(() => { const real = Date.now.bind(Date); Date.now = () => real() + 125_000; });
+  await page.waitForFunction(() => document.querySelector('.stage-top .session-time')?.textContent.includes('残り'), null, { timeout: 5000 });
+  assert.match(await time.innerText(), /残り 0:5\d/);
+  assert.ok(await time.evaluate((e) => e.classList.contains('time-warning')));
+  assert.deepEqual(page.errors, []);
 });
 
 test('voice: an interrupted reply is marked as interrupted', async () => {

@@ -4,7 +4,8 @@
 
 ## 当前状态
 
-- 代码是 2026-10-23 归档时的**网页/PWA 原型**（Vinext / React / Cloudflare Workers），位于 [`prototype/`](prototype/)。没有商店 App、生产账户、数据库、支付或企业数据隔离。
+- 代码是**网页/PWA 原型**（Vinext / React / Cloudflare Workers），位于 [`prototype/`](prototype/)。2026-10-24 起 main 包含 G0-01（访问保护、语音转写顺序、服务端挂断、反馈引用校验等基础修复）和 REUSE-001（固定文字注音、语音输入排队）。没有商店 App、生产账户、数据库、支付或企业数据隔离。
+- 离线测试：`cd prototype && node tests/run.mjs all`（static + unit + 浏览器 / 语音模拟，AI 与 Realtime 对端都是模拟的），说明见 [`prototype/tests/README.md`](prototype/tests/README.md)。
 - 原型的真实 AI 与真机语音链路没有成功的端到端验收记录；模型型号仍是旧的硬编码，且有明确的停用日期（见 [PROJECT_STATE.md](PROJECT_STATE.md)）。
 - 当前进度、负责人、分支和阻塞只在 [PROJECT_STATE.md](PROJECT_STATE.md) 维护。
 
@@ -22,7 +23,7 @@
 | 产品/UI/商业方案 | [design/](design/)（PDF 与可点击的交互稿）、[docs/PRODUCT_PLAN_TEXT.txt](docs/PRODUCT_PLAN_TEXT.txt) |
 | 开源复用初筛 | [docs/07_OPEN_SOURCE_AND_NOTICES.md](docs/07_OPEN_SOURCE_AND_NOTICES.md)、[research/](research/) |
 
-## 运行原型（未在本仓库新环境验证）
+## 运行原型
 
 在 `prototype/` 目录，按 `package.json` 与锁文件（Node `>=22.13.0`，`pnpm@11.25.0`）：
 

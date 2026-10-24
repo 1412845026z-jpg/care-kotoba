@@ -30,6 +30,7 @@ def main():
     parser.add_argument('--source', type=Path, required=True, help='Pinned repository checkout')
     parser.add_argument('--report-dir', type=Path, required=True)
     parser.add_argument('--mode', choices=['offline', 'real-dev'], required=True)
+    parser.add_argument('--browser-probe', type=Path, help='Optional real-dev browser assertion script (local mock only)')
     parser.add_argument('--filter', help='Optional test-name filter; reported verbatim')
     parser.add_argument('--port', type=int, default=5173)
     parser.add_argument('--mock-port', type=int, default=4010)
@@ -117,6 +118,16 @@ globalThis.fetch = ((input: RequestInfo | URL, init?: RequestInit) => {
             result['startup_seconds'] = round(time.perf_counter() - started, 3)
             test_env.update(BASE_URL=f'http://127.0.0.1:{args.port}',
                             CK_MOCK_PORT=str(args.mock_port), CK_E2E_ACCESS_CODE='ci-local-code-not-secret')
+        if args.browser_probe:
+            if args.mode != 'real-dev':
+                raise RuntimeError('--browser-probe requires real-dev mode')
+            with (out / 'browser-probe.log').open('w') as log:
+                probe = subprocess.run(['node', str(args.browser_probe.resolve()), '--source', str(args.source.resolve()),
+                                        '--report', str(out / 'browser-probe.json')],
+                                       cwd=root, env=test_env, stdout=log, stderr=subprocess.STDOUT, timeout=120)
+            result['browser_probe_exit_code'] = probe.returncode
+            if probe.returncode != 0:
+                raise RuntimeError('Real-dev browser probe failed; see browser-probe.log')
         command = ['node', 'tests/run.mjs', 'e2e', '--report', str(out / 'tests.json')]
         if args.filter:
             command.extend(['--filter', args.filter])
@@ -150,7 +161,7 @@ globalThis.fetch = ((input: RequestInfo | URL, init?: RequestInit) => {
             result['fake_env_removed'] = not variables.exists()
         result['seconds'] = round(time.perf_counter() - started, 3)
         (out / 'result.json').write_text(json.dumps(result, indent=2) + '\n')
-        for name in ['tests.tap.txt', 'dev-server.log']:
+        for name in ['browser-probe.log', 'tests.tap.txt', 'dev-server.log']:
             path = out / name
             if path.exists():
                 print(f'\n--- {name} ---\n' + path.read_text(errors='replace'), flush=True)

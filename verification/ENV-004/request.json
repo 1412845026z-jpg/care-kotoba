@@ -1,4 +1,4 @@
 {
-  "sha": "c3632f5850b32dda59a6622db76ac742f62235ee",
-  "purpose": "Retest the newly supplied PR #30 synthetic-crash/dev-overlay compatibility fix; preserve earlier failed evidence."
+  "sha": "4a851fd4319e8abc97c20910c01bd080be83e408",
+  "purpose": "Verify the actual integrated main containing the ordered business chain, CI, CSP Worker headers and revised content. Manual SHA input can override this explicit request."
 }
