@@ -1,7 +1,7 @@
 # SSW-BASIC-APP-001｜基础课（特定技能介护，96 场景）接入 App（Claude，2026-10-24）
 
 - 来源：SSW-CONTENT-001（Codex，PR #56）交给 Claude 的接续：「读取 catalog 接基础课程入口、逐字注音和现有练习/笔记」。用户方向：面向特定技能外国介护人员，简单实用。
-- 分支：`claude/SSW-BASIC-APP-001`，基于 `claude/A11Y-003`（PR #57 未合并）。**PR 的 base 是 `claude/A11Y-003`**：先合并 #57，再合并本 PR（#57 合并后把 base 改为 main）。
+- 分支：`claude/SSW-BASIC-APP-001`，PR #59，基于 `claude/A11Y-003`（PR #57 未合并）。**PR 的 base 是 `claude/A11Y-003`**：先合并 #57，再合并本 PR（#57 合并后把 base 改为 main）。
 - 没有改依赖、CI、部署配置、`content/`、`tools/ssw-basic/`；没有调用付费 API。基础课练习本身不访问任何 AI 或语音接口。
 
 ## 做了什么
