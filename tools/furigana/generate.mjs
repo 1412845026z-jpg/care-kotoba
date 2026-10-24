@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Generates prototype/lib/furigana-data.ts: furigana for the app's FIXED Japanese text
-// (scene titles, contexts, opening lines, reference phrases, goals, variant labels, demo replies).
+// (scene titles, contexts, opening lines, reference phrases, goals, variant labels, demo replies),
+// including the optional core-practice drafts (lib/core-scenarios.ts, generated from content/scenarios).
 //
 // Readings come from kuromoji.js (Apache-2.0) with its bundled mecab-ipadic-2.7.0 dictionary
 // (NAIST/ICOT notice: docs/licenses/MECAB_IPADIC_NOTICE.txt). kuromoji is only a build-time tool;
@@ -29,10 +30,13 @@ const esbuild = toolRequire('esbuild');
 const tmp = mkdtempSync(join(tmpdir(), 'ck-furigana-'));
 const entry = join(tmp, 'entry.mjs');
 writeFileSync(entry, `import { scenes, variants, categories, demoReplies } from ${JSON.stringify(join(proto, 'lib', 'content.ts'))};
+import { coreScenes, coreCategory, coreSkills } from ${JSON.stringify(join(proto, 'lib', 'core-scenarios.ts'))};
 export const texts = [
   ...categories.map((c) => c.name),
   ...variants.flatMap((v) => [v.label, v.sub]),
   ...scenes.flatMap((s) => [s.title, s.context, s.starter, ...s.phrases, ...s.goals]),
+  coreCategory.name, ...Object.values(coreSkills).map((k) => k.ja),
+  ...coreScenes.flatMap((s) => [s.title, s.context, s.starter, ...s.phrases, ...s.goals]),
   ...Object.values(demoReplies).flat(),
   'この理解で、合っていますか。',
 ];`);

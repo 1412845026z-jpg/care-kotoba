@@ -48,7 +48,7 @@
 | `prototype/app/api/**`、`prototype/lib/**`、`prototype/components/**`、`prototype/app/page.tsx`、`prototype/app/layout.tsx`、`prototype/app/globals.css`、`prototype/public/sw.js`、`prototype/tests/**` | Claude | **G0-01 合并前冻结**，Codex 不修改；问题写进交接记录或 PR 评论 |
 | `docs/02`、`docs/03`、`docs/06`，新增 `docs/08`、`docs/09` | Claude（本轮） | |
 | `docs/01`、`docs/05`、`docs/07`，新增 `docs/10` 起 | Codex | |
-| 新目录 `content/`（场景规格草稿）、`evals/`（固定评测样本） | Codex | 不改 `prototype/lib/content.ts`；接入方式之后约定 |
+| 新目录 `content/`（场景规格草稿）、`evals/`（固定评测样本） | Codex | 不改 `prototype/lib/content.ts`。接入方式（2026-10-24 用户选择预览入口）：`tools/core-scenarios/generate.mjs`（Claude）把 `content/scenarios` 生成为 `prototype/lib/core-scenarios-data.ts` / `-server.ts`。改内容的一方重新运行生成器（必要时也重新生成注音），不手改生成文件 |
 | `CLAUDE.md`、`AGENTS.md`、本文件的规则部分 | 共享 | 规则修改需用户确认；任务表由执行合并的一方整合 |
 
 ## 当前任务
@@ -90,7 +90,7 @@
 | ENV-004 | 最新PR #30标准runner与真实dev复测、顺序合并记录 | Codex | merged | PR #31，merge2e9b5c5；最终证据/状态补记在codex/ENV-004-state | 固定主干4a851fd标准run40052153140：static0/unit71/离线40/真实dev36通过4明确跳过；全部指定PR顺序合并，见ENV-004-final交接 |
 | CONTENT-004 | 按CONTENT-REVIEW-001修订场景/术语/评测 | Codex | merged | PR #34，merge4a851fd | 12场景/34术语/84转写+12配对=96评测；字段结构保留；提交后数据已跑生成器与--check（隔离环境），预览/注音接入仍归Claude；见CONTENT-004交接 |
 | SEC-001 | docs/08 #16的Worker CSP等响应头 | Codex | merged | PR #33，merge86ebc70 | 完整业务树unit71/离线40/真实dev36通过4有原因跳过，7项CSP/API/注音/麦克风断言及模拟WebRTC通过；见SEC-001交接 |
-| CORE-PREVIEW-001 | 默认隐藏的核心场景预览与生成器 | Claude | review_ready | PR #35，claude/CORE-PREVIEW-001 @ff8acc2，未合并 | 新head的生成器与已测78e25dd逐字节相同；Codex未验收整个预览分支。需吸收最新main、重生模块/注音并交付新SHA复核 |
+| CORE-PREVIEW-001 | 默认隐藏的「コア練習（草稿）」入口与生成器；服务端按隐藏信息、分支、反馈规则生成角色指示，隐藏信息不进浏览器 | Claude | review_ready | PR #35，`claude/CORE-PREVIEW-001`，已吸收 main `c7a810a` 并用 CONTENT-004 内容重新生成（`83b701c`） | handoffs/2026-10-24-CORE-PREVIEW-001-claude.md；@`83b701c` 离线 static 0 / unit 81 / e2e 47（模拟 AI）；待 Codex 固定 SHA 复测（含 real-dev 与 SEC-001 安全头）；真实模型是否遵守未验证 |
 | REVIEW-001 | 「ことばノート」间隔复习（ts-fsrs，MIT） | Claude（功能）+ Codex（依赖） | queued：先确认交互，再加入稳定版依赖 | — | research/REUSE_REVIEW_2026-10-23.md |
 | AUDIO-001 | 固定参考句预生成音频（不再依赖在线 TTS，避开 2027-01-06 停用） | 待定 | blocked：等用户选择声音和方式（OpenAI 一次性生成 / VOICEVOX / Kokoro） | — | research/REUSE_REVIEW_2026-10-23.md |
 
@@ -105,6 +105,7 @@
 | 2026-10-23 最新用户要求 | 先继续Care Kotoba开发，重新审核Claude整理后的仓库并提供转交反馈 | 本轮暂停公开/申请；不修改可见性，聚焦固定版本复测和缺陷交接 |
 | 2026-10-23 用户本轮要求 | 尝试将仓库公开，以个人维护者申请Codex for Open Source；取代先前保持private的偏好 | 目前完成公开前准备；可见性变更、许可证与申请提交分别记录，不意味着获批或部署授权 |
 | 2026-10-23 用户（Claude 会话） | Codex 与 Claude 只通过本仓库同步，按环境能力与文件归属分工（见上表） | 冻结文件在负责方分支合并前不由对方修改 |
+| 2026-10-24 用户（Claude 会话）：「我先做可选的预览入口（推荐）」 | 12 个核心场景先作为「コア練習（草稿）」单独入口接进应用，默认隐藏，原有 48 个场景不动；GPT 同时按审阅意见修改内容 | 草稿不计入 48 场景进度；正式替换或合并原场景需另行决定，并需要专业审稿 |
 | 2026-10-23 用户（Claude 会话）：「可以复用的就以合适方式拿过来并共享」 | 开源 / 免费资料按 research/REUSE_REVIEW_2026-10-23.md 处理；注音默认开启（Claude 的默认设定，可在设置中关闭，待教师和用户反馈） | 新增依赖仍由 Codex 加入；内容类资料由 Codex 负责 |
 
 ## 当前阻塞与风险
@@ -120,6 +121,8 @@
 - 服务端还不能强制结束被遗弃的语音会话，也没有与 OpenAI 用量对账（docs/08 #3，属于 G2）。
 
 ## 最近交接
+
+- handoffs/2026-10-24-CORE-PREVIEW-001-claude.md：核心场景草稿的可选预览入口（默认隐藏）、生成器、草稿用的 AI 指示；已吸收含 CONTENT-004 的 main 并重新生成。
 
 - handoffs/2026-10-24-ENV-004-final-codex.md：本轮最终汇总、合并顺序、主干与待Claude的预览/注音接续。旧失败证据保留，已被c3632f5通过结果替代。
 

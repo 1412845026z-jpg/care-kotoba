@@ -134,6 +134,17 @@ export async function openScene(page, url, title) {
   await page.locator('.scene-modal').waitFor();
 }
 
+/** Opens one of the optional core drafts (CORE-PREVIEW-001): ?core=1 turns the preview on, then the core pill lists them. */
+export async function openCoreScene(page, baseUrl, title) {
+  await gotoApp(page, `${baseUrl}/?core=1`);
+  const mobile = page.locator('.mobile-nav button', { hasText: 'シーン' });
+  if (await mobile.isVisible()) await mobile.click();
+  else await page.locator('.sidebar nav button', { hasText: 'シーンを探す' }).click();
+  await page.locator('.core-pill').click();
+  await page.locator('.scene-grid .scene-card', { hasText: title }).first().click();
+  await page.locator('.scene-modal').waitFor();
+}
+
 // Development servers show their own error overlay for errors that React already caught in an error boundary
 // (vinext: #__vinext_dev_error_overlay_root). It covers the page and intercepts clicks (ENV-004, real dev).
 // The crash tests check OUR boundary, which is what learners see in production builds, so they hide it.

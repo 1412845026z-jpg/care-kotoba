@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { FURIGANA } from '@/lib/furigana-data';
 import { parseRuby, plainOf, furiganaFor } from '@/lib/furigana';
 import { scenes, variants, categories, demoReplies } from '@/lib/content';
+import { coreScenes, coreCategory, coreSkills } from '@/lib/core-scenarios';
 
 const KANJI = /[㐀-䶿一-鿿豈-﫿々〆]/;
 const fixed = [...new Set([
@@ -10,6 +11,8 @@ const fixed = [...new Set([
   ...variants.flatMap((v) => [v.label, v.sub]),
   ...scenes.flatMap((s) => [s.title, s.context, s.starter, ...s.phrases, ...s.goals]),
   ...Object.values(demoReplies).flat(),
+  coreCategory.name, ...Object.values(coreSkills).map((k) => k.ja),
+  ...coreScenes.flatMap((s) => [s.title, s.context, s.starter, ...s.phrases, ...s.goals]),
 ])];
 
 test('every fixed text with kanji has a furigana entry (regenerate with tools/furigana when content changes)', () => {
