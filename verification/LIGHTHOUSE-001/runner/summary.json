@@ -1,0 +1,707 @@
+{
+  "ranAt": "2026-10-24T08:34:26.499Z",
+  "sourceCommit": "c6b2d605bc77745fa227a4f9ad881a3eec2176fe",
+  "mode": "offline development harness; no AI key; homepage navigation only",
+  "lighthouse": "13.5.0",
+  "node": "v22.23.3",
+  "reportOnly": true,
+  "paidApiCalls": 0,
+  "packageLockSha256": "e262f388bfa5ede00f4539caad66853d5fe385341bd4211f6b6af9b733b29f77",
+  "limitations": [
+    "Development React/esbuild bundle, no production SSR/Worker/CSP; scores are not production performance.",
+    "Mobile emulation is not a physical handset. One run per checkout is noisy.",
+    "External browser traffic is forced through a closed loopback proxy; Google Fonts use fallback fonts.",
+    "Only the homepage is scanned. Practice, feedback and notes are covered separately by A11Y CI.",
+    "No AI, microphone, subscription, real-device or commercial-readiness acceptance."
+  ],
+  "categories": {
+    "performance": {
+      "score": 0.44,
+      "title": "Performance"
+    },
+    "accessibility": {
+      "score": 1,
+      "title": "Accessibility"
+    },
+    "best-practices": {
+      "score": 0.96,
+      "title": "Best Practices"
+    },
+    "seo": {
+      "score": 0.9,
+      "title": "SEO"
+    }
+  },
+  "findings": [
+    {
+      "id": "first-contentful-paint",
+      "categories": [
+        "performance"
+      ],
+      "title": "First Contentful Paint",
+      "score": 0,
+      "displayValue": "25.8 s"
+    },
+    {
+      "id": "largest-contentful-paint",
+      "categories": [
+        "performance"
+      ],
+      "title": "Largest Contentful Paint",
+      "score": 0,
+      "displayValue": "25.8 s"
+    },
+    {
+      "id": "speed-index",
+      "categories": [
+        "performance"
+      ],
+      "title": "Speed Index",
+      "score": 0,
+      "displayValue": "25.8 s"
+    },
+    {
+      "id": "total-blocking-time",
+      "categories": [
+        "performance"
+      ],
+      "title": "Total Blocking Time",
+      "score": 0.64,
+      "displayValue": "440 ms"
+    },
+    {
+      "id": "max-potential-fid",
+      "categories": [
+        "performance"
+      ],
+      "title": "Max Potential First Input Delay",
+      "score": 0.45,
+      "displayValue": "260 ms"
+    },
+    {
+      "id": "errors-in-console",
+      "categories": [
+        "best-practices"
+      ],
+      "title": "Browser errors were logged to the console",
+      "score": 0,
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "sourceLocation",
+            "valueType": "source-location",
+            "label": "Source"
+          },
+          {
+            "key": "description",
+            "valueType": "code",
+            "label": "Description"
+          }
+        ],
+        "items": [
+          {
+            "source": "network",
+            "description": "Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED",
+            "sourceLocation": {
+              "type": "source-location",
+              "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+              "urlProvider": "network",
+              "line": 0,
+              "column": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "interactive",
+      "categories": [
+        "performance"
+      ],
+      "title": "Time to Interactive",
+      "score": 0,
+      "displayValue": "26.7 s"
+    },
+    {
+      "id": "total-byte-weight",
+      "categories": [
+        "performance"
+      ],
+      "title": "Avoid enormous network payloads",
+      "score": 0.5,
+      "displayValue": "Total size was 4,905 KiB",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:39985/__harness/app.js",
+            "totalBytes": 4903212
+          },
+          {
+            "url": "http://127.0.0.1:39985/__harness/globals.css",
+            "totalBytes": 107238
+          },
+          {
+            "url": "http://127.0.0.1:39985/icon-192.png",
+            "totalBytes": 9810
+          },
+          {
+            "url": "http://127.0.0.1:39985/",
+            "totalBytes": 807
+          },
+          {
+            "url": "http://127.0.0.1:39985/manifest.webmanifest",
+            "totalBytes": 709
+          },
+          {
+            "url": "http://127.0.0.1:39985/favicon.svg",
+            "totalBytes": 691
+          },
+          {
+            "url": "http://127.0.0.1:39985/api/access",
+            "totalBytes": 267
+          }
+        ],
+        "sortedBy": [
+          "totalBytes"
+        ]
+      }
+    },
+    {
+      "id": "unminified-css",
+      "categories": [
+        "performance"
+      ],
+      "title": "Minify CSS",
+      "score": 0,
+      "displayValue": "Est savings of 7 KiB",
+      "details": {
+        "type": "opportunity",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Est Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:39985/__harness/globals.css",
+            "totalBytes": 107238,
+            "wastedBytes": 6723,
+            "wastedPercent": 6.26909733647979
+          }
+        ],
+        "overallSavingsMs": 0,
+        "overallSavingsBytes": 6723,
+        "sortedBy": [
+          "wastedBytes"
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "metricSavings": {
+            "FCP": 150,
+            "LCP": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "unminified-javascript",
+      "categories": [
+        "performance"
+      ],
+      "title": "Minify JavaScript",
+      "score": 0,
+      "displayValue": "Est savings of 3,603 KiB",
+      "details": {
+        "type": "opportunity",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Est Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:39985/__harness/app.js",
+            "totalBytes": 4902995,
+            "wastedBytes": 3689031,
+            "wastedPercent": 75.24034906983988
+          }
+        ],
+        "overallSavingsMs": 18000,
+        "overallSavingsBytes": 3689031,
+        "sortedBy": [
+          "wastedBytes"
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "metricSavings": {
+            "FCP": 18150,
+            "LCP": 18000
+          }
+        }
+      }
+    },
+    {
+      "id": "unused-css-rules",
+      "categories": [
+        "performance"
+      ],
+      "title": "Reduce unused CSS",
+      "score": 0,
+      "displayValue": "Est savings of 88 KiB",
+      "details": {
+        "type": "opportunity",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Est Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:39985/__harness/globals.css",
+            "wastedBytes": 90353,
+            "wastedPercent": 84.41939396218609,
+            "totalBytes": 107029
+          }
+        ],
+        "overallSavingsMs": 450,
+        "overallSavingsBytes": 90353,
+        "sortedBy": [
+          "wastedBytes"
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "metricSavings": {
+            "FCP": 450,
+            "LCP": 450
+          }
+        }
+      }
+    },
+    {
+      "id": "unused-javascript",
+      "categories": [
+        "performance"
+      ],
+      "title": "Reduce unused JavaScript",
+      "score": 0,
+      "displayValue": "Est savings of 719 KiB",
+      "details": {
+        "type": "opportunity",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "subItemsHeading": {
+              "key": "source",
+              "valueType": "code"
+            },
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "subItemsHeading": {
+              "key": "sourceBytes"
+            },
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "subItemsHeading": {
+              "key": "sourceWastedBytes"
+            },
+            "label": "Est Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:39985/__harness/app.js",
+            "totalBytes": 4902973,
+            "wastedBytes": 736300,
+            "wastedPercent": 15.017419023111081,
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "source": "../../../node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js",
+                  "sourceBytes": 993166,
+                  "sourceWastedBytes": 480863
+                },
+                {
+                  "source": "../../../components/practice.tsx",
+                  "sourceBytes": 56007,
+                  "sourceWastedBytes": 55765
+                },
+                {
+                  "source": "../../../node_modules/.pnpm/react@19.2.6/node_modules/react/cjs/react.development.js",
+                  "sourceBytes": 45162,
+                  "sourceWastedBytes": 27398
+                },
+                {
+                  "source": "../../../components/admin.tsx",
+                  "sourceBytes": 24944,
+                  "sourceWastedBytes": 24833
+                },
+                {
+                  "source": "../../../app/page.tsx",
+                  "sourceBytes": 69900,
+                  "sourceWastedBytes": 15074
+                }
+              ]
+            }
+          }
+        ],
+        "overallSavingsMs": 3600,
+        "overallSavingsBytes": 736300,
+        "sortedBy": [
+          "wastedBytes"
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "metricSavings": {
+            "FCP": 3600,
+            "LCP": 3600
+          }
+        }
+      }
+    },
+    {
+      "id": "meta-description",
+      "categories": [
+        "seo"
+      ],
+      "title": "Document does not have a meta description",
+      "score": 0
+    },
+    {
+      "id": "bf-cache",
+      "categories": [
+        "performance"
+      ],
+      "title": "Page prevented back/forward cache restoration",
+      "score": 0,
+      "displayValue": "2 failure reasons",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "reason",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "frameUrl",
+              "valueType": "url"
+            },
+            "label": "Failure reason"
+          },
+          {
+            "key": "failureType",
+            "valueType": "text",
+            "label": "Failure type"
+          }
+        ],
+        "items": [
+          {
+            "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://127.0.0.1:39985/"
+                }
+              ]
+            },
+            "protocolReason": "MainResourceHasCacheControlNoStore"
+          },
+          {
+            "reason": "Back/forward cache is disabled because some JavaScript network request received resource with Cache-Control: no-store header.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://127.0.0.1:39985/"
+                }
+              ]
+            },
+            "protocolReason": "JsNetworkRequestReceivedCacheControlNoStoreResource"
+          }
+        ]
+      }
+    },
+    {
+      "id": "network-dependency-tree-insight",
+      "categories": [
+        "performance"
+      ],
+      "title": "Network dependency tree",
+      "score": 0,
+      "details": {
+        "type": "list",
+        "items": [
+          {
+            "type": "list-section",
+            "value": {
+              "type": "network-tree",
+              "chains": {
+                "0706F57A82249F7402E2EBA86BA2B95D": {
+                  "url": "http://127.0.0.1:39985/",
+                  "navStartToEndTime": 20,
+                  "transferSize": 807,
+                  "isLongest": true,
+                  "children": {
+                    "2756.3": {
+                      "url": "http://127.0.0.1:39985/__harness/app.js",
+                      "navStartToEndTime": 90,
+                      "transferSize": 4903212,
+                      "isLongest": true,
+                      "children": {
+                        "2756.8": {
+                          "url": "http://127.0.0.1:39985/api/access",
+                          "navStartToEndTime": 458,
+                          "transferSize": 267,
+                          "isLongest": true,
+                          "children": {}
+                        }
+                      }
+                    },
+                    "2756.6": {
+                      "url": "http://127.0.0.1:39985/manifest.webmanifest",
+                      "navStartToEndTime": 36,
+                      "transferSize": 709,
+                      "children": {}
+                    },
+                    "2756.2": {
+                      "url": "http://127.0.0.1:39985/__harness/globals.css",
+                      "navStartToEndTime": 31,
+                      "transferSize": 107238,
+                      "children": {
+                        "2756.7": {
+                          "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+                          "navStartToEndTime": 31,
+                          "transferSize": 0,
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "longestChain": {
+                "duration": 458
+              }
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnected origins",
+            "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+            "value": {
+              "type": "text",
+              "value": "no origins were preconnected"
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnect candidates",
+            "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+            "value": {
+              "type": "text",
+              "value": "No additional origins are good candidates for preconnecting"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "render-blocking-insight",
+      "categories": [
+        "performance"
+      ],
+      "title": "Render-blocking requests",
+      "score": 0,
+      "displayValue": "Est savings of 1,050 ms",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedMs",
+            "valueType": "timespanMs",
+            "label": "Duration"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:39985/__harness/globals.css",
+            "totalBytes": 107238,
+            "wastedMs": 1203
+          },
+          {
+            "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+            "totalBytes": 0,
+            "wastedMs": 780
+          }
+        ]
+      }
+    }
+  ],
+  "runtimeError": null,
+  "healthConfigured": false,
+  "chrome": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+  "settings": {
+    "output": [
+      "json",
+      "html"
+    ],
+    "maxWaitForFcp": 30000,
+    "maxWaitForLoad": 45000,
+    "pauseAfterFcpMs": 1000,
+    "pauseAfterLoadMs": 1000,
+    "networkQuietThresholdMs": 1000,
+    "cpuQuietThresholdMs": 1000,
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "throttlingMethod": "simulate",
+    "screenEmulation": {
+      "mobile": true,
+      "width": 412,
+      "height": 823,
+      "deviceScaleFactor": 1.75,
+      "disabled": false
+    },
+    "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+    "auditMode": false,
+    "gatherMode": false,
+    "clearStorageTypes": [
+      "file_systems",
+      "shader_cache",
+      "service_workers",
+      "cache_storage"
+    ],
+    "disableStorageReset": false,
+    "debugNavigation": false,
+    "channel": "node",
+    "usePassiveGathering": false,
+    "disableFullPageScreenshot": false,
+    "skipAboutBlank": false,
+    "blankPage": "about:blank",
+    "ignoreStatusCode": false,
+    "locale": "en-US",
+    "blockedUrlPatterns": null,
+    "additionalTraceCategories": null,
+    "extraHeaders": null,
+    "precomputedLanternData": null,
+    "onlyAudits": null,
+    "onlyCategories": [
+      "performance",
+      "accessibility",
+      "best-practices",
+      "seo"
+    ],
+    "skipAudits": null
+  },
+  "runWarnings": [],
+  "browserExternalRequests": [
+    {
+      "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+      "statusCode": -1,
+      "transferSize": 0,
+      "resourceType": "Stylesheet"
+    }
+  ],
+  "metrics": {
+    "first-contentful-paint": {
+      "value": 25846.802499999998,
+      "unit": "millisecond",
+      "display": "25.8 s"
+    },
+    "largest-contentful-paint": {
+      "value": 25846.802499999998,
+      "unit": "millisecond",
+      "display": "25.8 s"
+    },
+    "speed-index": {
+      "value": 25846.802499999998,
+      "unit": "millisecond",
+      "display": "25.8 s"
+    },
+    "total-blocking-time": {
+      "value": 440,
+      "unit": "millisecond",
+      "display": "440 ms"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "unit": "unitless",
+      "display": "0"
+    }
+  }
+}

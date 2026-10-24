@@ -1,0 +1,23 @@
+{
+  "mode": "offline-loopback-only",
+  "nodeBlocked": [],
+  "browserBlocked": [
+    {
+      "resourceType": "stylesheet",
+      "url": "https://fonts.googleapis.com/css2"
+    },
+    {
+      "resourceType": "stylesheet",
+      "url": "https://fonts.googleapis.com/css2"
+    },
+    {
+      "resourceType": "stylesheet",
+      "url": "https://fonts.googleapis.com/css2"
+    },
+    {
+      "resourceType": "stylesheet",
+      "url": "https://fonts.googleapis.com/css2"
+    }
+  ],
+  "websocketBlocked": []
+}

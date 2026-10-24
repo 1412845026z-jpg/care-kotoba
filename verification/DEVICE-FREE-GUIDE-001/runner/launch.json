@@ -1,0 +1,15 @@
+{
+  "sourceSha": "6148494798ad58fbc0b8a29ea431587580d3ec98",
+  "apiKeyPresent": false,
+  "newEnvironmentFileWritten": false,
+  "temporaryWorkerGuard": true,
+  "originalWorkerSha256": "03e256f813becc0ee0f948cb0cbec2ea953596c75eb0e47359d0dbb438b087d9",
+  "port": 5187,
+  "replayExitCode": 0,
+  "networkGuard": {
+    "blockedExternal": 0
+  },
+  "passed": true,
+  "workerRestored": true,
+  "seconds": 23.559
+}

@@ -1,0 +1,25 @@
+$ node scripts/run-framework.mjs dev --host 127.0.0.1 --port 5187
+
+  vinext dev  (Vite 8.0.13)
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+5:29:39 PM [vite] (ssr) Re-optimizing dependencies because vite config has changed
+5:29:39 PM [vite] (rsc) Re-optimizing dependencies because vite config has changed
+Sites local sign-in: seedy@sites.test
+5:29:40 PM [vite] (sites_connector_preview) Re-optimizing dependencies because vite config has changed
+5:29:41 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+  ➜  Local:   http://127.0.0.1:5187/
+ GET /__ck_free_network 200 in 22ms
+ GET /api/health 200 in 358ms
+ GET / 200 in 1.9s (compile: 1792830578.1s, render: 1.7s)
+5:29:46 PM [vite] (client) [console.warn] Service Worker registration blocked by Playwright
+ GET /api/access 200 in 27ms
+ GET /api/access 200 in 11ms
+ GET /api/health 200 in 13ms
+ POST /api/speech 503 in 28ms
+ DELETE /api/access 200 in 13ms
+ GET /__ck_free_network 200 in 9ms
+  ➜  Tunnel closed
+[ELIFECYCLE] Command failed.

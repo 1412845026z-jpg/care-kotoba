@@ -1,0 +1,167 @@
+{
+  "passed": true,
+  "sourceSha": "6148494798ad58fbc0b8a29ea431587580d3ec98",
+  "sourceTree": "30783f8aff8f1b4f904f8b2371e3f3d811a3cf83",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "realDev": true,
+  "apiKeyPresent": false,
+  "paidApiCalls": 0,
+  "physicalPhone": false,
+  "results": [
+    {
+      "id": "no-key",
+      "healthConfigured": false
+    },
+    {
+      "id": "F1",
+      "page": "ホーム",
+      "width": {
+        "client": 390,
+        "scroll": 390
+      }
+    },
+    {
+      "id": "F1",
+      "page": "シーン",
+      "width": {
+        "client": 390,
+        "scroll": 390
+      }
+    },
+    {
+      "id": "F1",
+      "page": "ノート",
+      "width": {
+        "client": 390,
+        "scroll": 390
+      }
+    },
+    {
+      "id": "F1",
+      "page": "学習記録",
+      "width": {
+        "client": 390,
+        "scroll": 390
+      }
+    },
+    {
+      "id": "START-FLOW-keyboard-observation",
+      "afterChoice": {
+        "tag": "BODY",
+        "inSceneModal": false
+      },
+      "afterTab": {
+        "tag": "SUMMARY",
+        "inSceneModal": true,
+        "text": "困ったときの、参考表現"
+      },
+      "reportOnly": true
+    },
+    {
+      "id": "F4",
+      "saved": true,
+      "serverWarningExpected": true,
+      "microphone": "Chromium fake device",
+      "speaker": "not heard; no human listening performed",
+      "physicalDevicePass": false
+    },
+    {
+      "id": "F5",
+      "fakeRecognizer": true,
+      "consentBeforeStart": true,
+      "editAndSend": true,
+      "physicalDevicePass": false
+    },
+    {
+      "id": "F6",
+      "nativeApiCalls": [
+        {
+          "lang": "ja-JP",
+          "text": "今はちょっと、気が進まないの。",
+          "rate": 0.75,
+          "error": "synthesis-failed"
+        }
+      ],
+      "audibleJapaneseVerified": false
+    },
+    {
+      "id": "F3",
+      "demoFeedbackDisclaimer": true
+    },
+    {
+      "id": "F7",
+      "exportSaved": true,
+      "noteCount": 1
+    },
+    {
+      "id": "review-bonus",
+      "answerAndRate": true,
+      "reviewStoreKeys": 1
+    },
+    {
+      "id": "F9",
+      "coreScenes": 12,
+      "draftNotice": true,
+      "demoStarted": true
+    },
+    {
+      "id": "F10",
+      "browserTabAndNetworkSimulation": true,
+      "inputPreserved": true,
+      "physicalAppSwitchVerified": false
+    },
+    {
+      "id": "F8",
+      "localData": {
+        "notes": 0,
+        "history": 0,
+        "review": 0,
+        "prefs": {
+          "locale": "zh",
+          "level": "gentle",
+          "goal": 5,
+          "plan": "personal",
+          "furigana": true,
+          "corePreview": false,
+          "dictationConsent": false
+        }
+      }
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/access"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health"
+    },
+    {
+      "method": "GET",
+      "path": "/api/access"
+    },
+    {
+      "method": "POST",
+      "path": "/api/speech"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/access"
+    }
+  ],
+  "blockedExternalOrigins": [
+    "https://fonts.googleapis.com"
+  ],
+  "errors": [],
+  "notTested": [
+    "physical USB forwarding on Windows/macOS",
+    "phone browser install/main-screen launch F2",
+    "real vendor recognition F5",
+    "audible Japanese synthesis F6",
+    "OS App switching and phone network F10"
+  ]
+}

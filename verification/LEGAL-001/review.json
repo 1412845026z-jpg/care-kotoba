@@ -1,0 +1,128 @@
+{
+  "task": "LEGAL-001",
+  "reviewedOn": "2026-10-24",
+  "timezone": "Asia/Tokyo",
+  "baselineCommit": "a3b006095580b234e51100ac70565a7d6a296e12",
+  "document": "docs/14_COMMERCIAL_LEGAL_PLAN_2026-10-24.md",
+  "documentSha256": "4ac81bd368d049d4a6192c1928f57b43818561591234c299dc5825b64e723d80",
+  "scope": "Operating plans only; no personal details, contract execution, filings, paid services or deployment.",
+  "earlier1643ChecklistRecovered": false,
+  "checks": {
+    "allSourceReferencesDefined": true,
+    "sourceEntryCount": 30,
+    "requiredTopicsPresent": true,
+    "markdownTableRowsClosed": true,
+    "emailOrAPIKeyPatternsFound": 0
+  },
+  "secondReadOnlyTaxReview": [
+    "platform B2C scope vs Japanese seller",
+    "cross-border B2B conditions",
+    "royalty classification and 20.42% vs treaty 10%",
+    "treaty filings and MLI",
+    "agency PE and order-taking",
+    "partnership PE, withholding and deemed payment"
+  ],
+  "notValidated": [
+    "lawyer/tax-adviser approval",
+    "actual counterparties and tax statuses",
+    "current Chinese-law application to actual recipient",
+    "store contracts accepted in a real seller account",
+    "any product or real AI/device test"
+  ],
+  "officialSourceIndex": {
+    "P1": [
+      "https://www.ppc.go.jp/personalinfo/legal/guidelines_offshore/"
+    ],
+    "P2": [
+      "https://www.ppc.go.jp/personalinfo/faq/APPI_QA/"
+    ],
+    "P3": [
+      "https://laws.e-gov.go.jp/law/415AC0000000057"
+    ],
+    "P4": [
+      "https://www.ppc.go.jp/files/pdf/260401_guidelines01.pdf"
+    ],
+    "P5": [
+      "https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_china/"
+    ],
+    "C1": [
+      "https://www.no-trouble.caa.go.jp/what/mailorder/"
+    ],
+    "C2": [
+      "https://www.no-trouble.caa.go.jp/pdf/20240319la03_04.pdf"
+    ],
+    "C3": [
+      "https://www.no-trouble.caa.go.jp/qa/foreign.html"
+    ],
+    "S1": [
+      "https://developer.apple.com/app-store/review/guidelines/"
+    ],
+    "S2": [
+      "https://support.google.com/googleplay/android-developer/answer/9858738?hl=en"
+    ],
+    "S3": [
+      "https://developer.apple.com/jp/support/payment-options-on-the-app-store-in-japan"
+    ],
+    "S4": [
+      "https://support.google.com/googleplay/android-developer/answer/16787536?hl=en",
+      "https://support.google.com/googleplay/android-developer/answer/17161464?hl=en"
+    ],
+    "S5": [
+      "https://support.google.com/googleplay/android-developer/answer/10144311?hl=en"
+    ],
+    "S6": [
+      "https://support.google.com/googleplay/android-developer/answer/13327111?hl=en"
+    ],
+    "T1": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6568.htm"
+    ],
+    "T2": [
+      "https://www.nta.go.jp/publication/pamph/shohi/kazei/pdf/0024010-019.pdf"
+    ],
+    "T3": [
+      "https://support.google.com/googleplay/android-developer/answer/138000?hl=en"
+    ],
+    "T4": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6118.htm"
+    ],
+    "T5": [
+      "https://www.nta.go.jp/publication/pamph/shohi/cross/01.htm"
+    ],
+    "T6": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2878.htm"
+    ],
+    "T7": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2884.htm"
+    ],
+    "T8": [
+      "https://www.mof.go.jp/tax_policy/summary/international/tax_convention/China1983_jp_en.pdf"
+    ],
+    "T9": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2888.htm"
+    ],
+    "T10": [
+      "https://www.mof.go.jp/tax_policy/summary/international/tax_convention/mli_Chi.html"
+    ],
+    "T11": [
+      "https://developer.apple.com/support/terms/apple-developer-program-license-agreement/",
+      "https://developer.apple.com/jp/news/?id=bdl07n0d"
+    ],
+    "T12": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6567.htm"
+    ],
+    "T13": [
+      "https://www.nta.go.jp/publication/pamph/gensen/aramashi2026/pdf/12.pdf"
+    ],
+    "T14": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2885.htm"
+    ],
+    "L1": [
+      "https://laws.e-gov.go.jp/law/129AC0000000089"
+    ],
+    "L2": [
+      "https://laws.e-gov.go.jp/law/132AC0000000048"
+    ]
+  },
+  "integrationBaseline": "6148494798ad58fbc0b8a29ea431587580d3ec98",
+  "rootContinuationRecheck": "source references, required topics, tables, privacy patterns; NTA2884/6568, CAA foreign Q&A, PPC China and Google program transition reopened"
+}
