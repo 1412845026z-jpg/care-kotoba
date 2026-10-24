@@ -58,7 +58,11 @@ test('learner-facing data has no hidden facts, branches or Chinese 学員', () =
     for (const b of src.conversation_branches) assert.ok(!client.includes(b.trigger_zh), `${b.id} trigger leaked`);
   }
   assert.ok(!/学員/.test(JSON.stringify(coreScenarioData)), '学員 is shown to learners as あなた');
-  assert.ok(findScene('CK-P03').context.includes('あなたは居室の床に座っている利用者を見つけた'));
+  assert.ok(findScene('CK-P03').context.includes('あなたは居室の床に座っている利用者を見つけた'), 'learners read the scene in the second person');
+  assert.ok(!/学習者は/.test(coreScenes.map((s) => s.context).join('')));
+  // ...while the AI instructions keep the content wording, where 「あなた」 would mean the AI partner itself.
+  const c02 = context({ scenarioId: 'CK-C02', locale: 'zh' }).instructions;
+  assert.ok(c02.includes('学習者は後半の依頼を聞き取れなかった') && !c02.includes('あなたは後半'), 'instructions use 学習者 for the learner');
   // Client modules must not import the server-only files.
   for (const f of ['app/page.tsx', 'components/practice.tsx', 'components/ui.tsx', 'components/line-drill.tsx', 'lib/core-scenarios.ts', 'lib/content.ts']) {
     const text = readFileSync(join(process.cwd(), f), 'utf8');

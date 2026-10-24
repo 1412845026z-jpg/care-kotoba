@@ -11,9 +11,10 @@
 //   node tools/core-scenarios/generate.mjs           write both files
 //   node tools/core-scenarios/generate.mjs --check   exit 1 if the committed files are out of date
 //
-// Learner-facing display normalisation (applied to the browser file only, reported on every run):
-//   「学員」 is a Chinese word (学员) that slipped into the Japanese drafts; learners see 「あなた」 instead.
-//   Once content/ is corrected this becomes a no-op.
+// Learner-facing display wording (browser file only; the server file keeps the content wording; counted on every run):
+//   learner_known_ja describes the learner in the third person (「学習者は…」, earlier drafts 「学員は…」, a Chinese
+//   word). The app shows these lines to the learner as the scene description, so they read 「あなたは…」.
+//   Any remaining 「学員」 elsewhere also becomes 「あなた」.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -35,7 +36,9 @@ const files = readdirSync(srcDir).filter((f) => /^CK-[A-Z]\d{2}\.json$/.test(f))
 need(files.length > 0, `no CK-*.json files in ${srcDir}`);
 const hash = createHash('sha256');
 let displayEdits = 0;
-const toDisplay = (s) => { const n = (s.match(/学員/g) || []).length; displayEdits += n; return n ? s.replace(/学員/g, 'あなた') : s; };
+const swap = (s, re, to) => { const n = (s.match(re) || []).length; displayEdits += n; return n ? s.replace(re, to) : s; };
+const toDisplay = (s) => swap(s, /学員/g, 'あなた');
+const knownToDisplay = (s) => toDisplay(swap(s, /学習者は/g, 'あなたは'));
 
 const pub = [], priv = {};
 for (const f of files) {
@@ -69,10 +72,12 @@ for (const f of files) {
   pub.push({
     id: d.id, version: d.version, status: String(d.status || 'draft'), skill: d.primary_skill,
     title: toDisplay(d.title_ja), setting: toDisplay(d.setting_ja), role: d.npc_role_ja, opening: toDisplay(d.opening_ja),
-    objectives: d.learning_objectives_ja.map(toDisplay), known: d.learner_known_ja.map(toDisplay),
+    objectives: d.learning_objectives_ja.map(toDisplay), known: d.learner_known_ja.map(knownToDisplay),
     examples: examples.map((e) => toDisplay(e.learner_ja)),
   });
   priv[d.id] = {
+    // Content wording (third person) for the AI instructions: in them 「あなた」 would read as the AI partner itself.
+    learnerKnown: d.learner_known_ja,
     hidden: hidden.map((h) => ({ id: h.id, fact: h.fact_ja })),
     branches: branches.map((b) => ({ id: b.id, trigger: b.trigger_zh, reply: b.npc_reply_ja, reveals: b.reveals, coach: b.coach_rule_zh })),
     counterexamples: counter.map((c) => ({ text: c.learner_ja, why: c.why_problematic_ja })),
@@ -100,6 +105,7 @@ export const coreScenarioData: CoreScenarioPublic[] = ${JSON.stringify(pub, null
 `;
 const serverTs = `${header('SERVER ONLY: hidden facts must not be imported by client components.')}
 export type CoreScenarioPrivate = {
+  learnerKnown: string[];
   hidden: { id: string; fact: string }[];
   branches: { id: string; trigger: string; reply: string; reveals: string[]; coach: string }[];
   counterexamples: { text: string; why: string }[];
@@ -111,7 +117,7 @@ export const coreScenarioPrivate: Record<string, CoreScenarioPrivate> = ${JSON.s
 `;
 
 const outputs = [[outPublic, publicTs], [outServer, serverTs]];
-const note = displayEdits ? ` (display: 学員→あなた ×${displayEdits}; fix in content/ to remove)` : '';
+const note = displayEdits ? ` (learner-facing wording: 学習者は/学員→あなた ×${displayEdits})` : '';
 if (check) {
   const stale = outputs.filter(([p, t]) => !existsSync(p) || readFileSync(p, 'utf8') !== t).map(([p]) => p.slice(repo.length + 1));
   if (stale.length) { console.error(`core scenarios out of date: ${stale.join(', ')}\nRun: node tools/core-scenarios/generate.mjs`); process.exit(1); }
