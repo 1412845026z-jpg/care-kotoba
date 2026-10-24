@@ -57,7 +57,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| I18N-001 | 日语注音优先、可选en/zh/vi/my/id辅助语言与界面 | Claude | review_ready | `claude/I18N-001`，代码 `d2744f4`（PR 见交接） | handoffs/2026-10-24-I18N-001-claude.md；默认「日本語だけ」、旧设置保留；关键界面对照＋vi/my/id缺译退英语（lang=en）、不退中文；基础课生成器支持`<字段>_<语言>`与`content/ssw-basic/locales/`语言包（目前内容只有中文）；static0/unit114/e2e79，A11Y两尺寸19/20屏硬门0；vi/my/id为未审稿草稿，缅甸文真机未测 |
+| I18N-001 | 日语注音优先、可选en/zh/vi/my/id辅助语言与界面 | Claude | review_ready | `claude/I18N-001`，PR #62，代码 `d2744f4` | handoffs/2026-10-24-I18N-001-claude.md；默认「日本語だけ」、旧设置保留；关键界面对照＋vi/my/id缺译退英语（lang=en）、不退中文；基础课生成器支持`<字段>_<语言>`与`content/ssw-basic/locales/`语言包（目前内容只有中文）；static0/unit114/e2e79，A11Y两尺寸19/20屏硬门0；vi/my/id为未审稿草稿，缅甸文真机未测 |
 | SCENE-AV-APP-001 | 场景图在上、对应对话在下与预生成音频接入 | Claude | queued | #57→#59→#60后从main独立分支 | 先读SCENE-AV-001真实3图/15音频manifest；媒体由Codex增补，App不负责合成；逐句/整段/停止、缺素材回退有据，不调用付费API |
 | FULL-MEDIA-001 | 96场景配图、384轮台词与192替代句实际音频增补 | Codex | in_progress | `codex/FULL-MEDIA-001`准备中 | 保留96场既有384轮/192替代文本；逐场独立图与角色/情绪音频；已完成3图/12轮+3对照，完整数量按实际文件登记 |
 
