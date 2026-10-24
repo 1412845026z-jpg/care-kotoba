@@ -43,7 +43,8 @@ def main():
            if not k.startswith(('OPENAI_', 'CK_')) and k != 'NODE_OPTIONS'}
     env.update(CI='true', WRANGLER_SEND_METRICS='false',
                CLOUDFLARE_CF_FETCH_ENABLED='false', NEXT_TELEMETRY_DISABLED='1')
-    test_env = {**env, 'NODE_OPTIONS': f'--import={guard_path}'}
+    test_env = {**env, 'NODE_OPTIONS': f'--import={guard_path}',
+                'CK_TEST_TIMEOUT_SECONDS': str(args.timeout)}
     worker = root / 'worker/index.ts'
     variables = root / '.dev.vars'
     original = None
@@ -52,7 +53,9 @@ def main():
     started = time.perf_counter()
     result = {'mode': args.mode, 'mock_only': True, 'filter': args.filter,
               'port': args.port, 'mock_port': args.mock_port,
-              'source': str(args.source.resolve())}
+              'source': str(args.source.resolve()),
+              'source_sha': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(),
+              'source_tree': subprocess.check_output(['git', 'rev-parse', 'HEAD^{tree}'], cwd=root, text=True).strip()}
     server_log = None
     try:
         if args.mode == 'real-dev':
@@ -90,7 +93,8 @@ globalThis.fetch = ((input: RequestInfo | URL, init?: RequestInit) => {
                 f'OPENAI_BASE_URL=http://127.0.0.1:{args.mock_port}/v1\n'
                 'CK_ACCESS_POLICY=code\nCK_ACCESS_CODE=ci-local-code-not-secret\n'
                 'CK_SESSION_SECRET=ci-local-signing-value-not-secret\n'
-                'CK_RATE_LIMIT_MULTIPLIER=100\n')
+                'CK_RATE_LIMIT_MULTIPLIER=100\n'
+                'CK_ASR_LOGPROBS=1\nCK_AI_FURIGANA=1\n')
             wrote_variables = True
             server_log = (out / 'dev-server.log').open('w')
             dev = subprocess.Popen(['pnpm', 'dev', '--host', '127.0.0.1', '--port', str(args.port)],

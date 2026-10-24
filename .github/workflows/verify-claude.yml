@@ -2,12 +2,17 @@ name: Pinned Claude mock verification
 
 on:
   push:
-    branches: [codex/CI-003-runner]
+    branches: [codex/ENV-004]
     paths:
       - .github/workflows/verify-claude.yml
       - scripts/ci/verify_claude.py
       - scripts/ci/local_fetch_only.mjs
   workflow_dispatch:
+    inputs:
+      sha:
+        description: Full 40-character source commit SHA to verify (mock API only)
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -16,21 +21,13 @@ concurrency:
   group: pinned-claude-review-${{ github.ref }}
   cancel-in-progress: true
 
-# One-off evidence for unmerged fixed heads. This does not add their tests to
-# normal main CI; that integration still waits for G0-01 to merge (CI-002).
+# Fixed-source review, independent of regular main CI. Manual runs accept a full
+# commit SHA; ENV-004 branch pushes review the latest PR #30 head and record its SHA.
 jobs:
   mock-review:
-    name: ${{ matrix.label }} / mock only / Node 22
+    name: Source review / mock only / Node 22
     runs-on: ubuntu-24.04
     timeout-minutes: 18
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - label: G0-01
-            sha: 3a3f1a917dd9dd12988ecbcf9dcaef87db2428c8
-          - label: REUSE-001
-            sha: 5b6146fbc49e754e6d4235d9e356ddd15a822ad4
     env:
       CI: "true"
       WRANGLER_SEND_METRICS: "false"
@@ -44,7 +41,7 @@ jobs:
       - name: Checkout exact reviewed source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ matrix.sha }}
+          ref: ${{ inputs.sha || 'refs/pull/30/head' }}
           path: verified-source
           persist-credentials: false
       - name: Node 22
@@ -53,11 +50,19 @@ jobs:
           node-version: "22"
           package-manager-cache: false
       - name: Pin package manager and source; reject credential environment
+        id: source
         working-directory: verified-source/prototype
         env:
-          REVIEW_SHA: ${{ matrix.sha }}
+          REVIEW_SHA: ${{ inputs.sha }}
         run: |
-          test "$(git rev-parse HEAD)" = "$REVIEW_SHA"
+          ACTUAL_SHA=$(git rev-parse HEAD)
+          if [ -n "$REVIEW_SHA" ]; then
+            [[ "$REVIEW_SHA" =~ ^[0-9a-f]{40}$ ]]
+            test "$ACTUAL_SHA" = "$REVIEW_SHA"
+          fi
+          echo "sha=$ACTUAL_SHA" >> "$GITHUB_OUTPUT"
+          mkdir -p ../../review-results
+          git show -s --format='%H %T' > ../../review-results/source.txt
           node --input-type=module <<'JS'
           import { readFileSync } from 'node:fs';
           import { execFileSync } from 'node:child_process';
@@ -68,7 +73,7 @@ jobs:
           if (Object.keys(process.env).some(k => /^(OPENAI_|CK_)/.test(k))) throw new Error('Unexpected AI/access environment');
           execFileSync('corepack', ['enable'], { stdio: 'inherit' });
           execFileSync('corepack', ['prepare', packageManager, '--activate'], { stdio: 'inherit' });
-          console.log(`reviewed source: ${process.env.REVIEW_SHA}; Node ${process.version}; ${packageManager}`);
+          console.log(`reviewed source: ${execFileSync('git', ['rev-parse', 'HEAD'], {encoding:'utf8'}).trim()}; Node ${process.version}; ${packageManager}`);
           JS
       - name: Frozen install
         working-directory: verified-source/prototype
@@ -108,7 +113,7 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 tag resolved 2026-10-24 JST
         with:
-          name: mock-review-${{ matrix.label }}-${{ matrix.sha }}
+          name: mock-review-${{ steps.source.outputs.sha }}
           path: review-results/
           retention-days: 7
           if-no-files-found: warn
