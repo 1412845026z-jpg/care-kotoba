@@ -206,6 +206,29 @@ test('a crash inside practice can be closed without losing the app', async () =>
   assert.deepEqual(page.errors.filter((e) => !/crash test: practice|screen-error/.test(e)), []);
 });
 
+test('voice check: microphone, speaker, server and WebRTC are checked without any AI call', async () => {
+  const page = await env.page();
+  await gotoApp(page, env.baseUrl);
+  env.mock.state.requests.length = 0;
+  await page.getByRole('button', { name: '学習設定' }).click();
+  await page.getByRole('button', { name: /音声テスト（マイク・スピーカー）/ }).click();
+  await page.getByRole('button', { name: 'テストを始める' }).click();
+  await page.getByRole('button', { name: 'マイクを確認する' }).click();
+  await page.getByRole('button', { name: 'テスト音を鳴らす' }).click({ timeout: 15000 });
+  await page.getByRole('button', { name: '聞こえた' }).click();
+  const list = page.locator('.voice-check-list li');
+  assert.deepEqual(await list.evaluateAll((els) => els.map((e) => e.querySelector('b').textContent)), ['ブラウザの対応', 'サーバー', '音声の通信準備', 'マイク', 'スピーカー']);
+  const status = Object.fromEntries(await list.evaluateAll((els) => els.map((e) => [e.querySelector('b').textContent, e.dataset.status])));
+  assert.equal(status['サーバー'], 'ok');
+  assert.equal(status['スピーカー'], 'ok');
+  assert.ok(['ok', 'warn'].includes(status['マイク']), `mic ${status['マイク']}`); // Chromium's fake device plays a beep
+  assert.ok(['ok', 'fail'].includes(status['音声の通信準備'])); // 'fail' only where the machine has no usable interface
+  const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: '結果を保存（JSON）' }).click()]);
+  assert.match(download.suggestedFilename(), /^care-kotoba-voice-check-\d+\.json$/);
+  assert.equal(env.mock.state.requests.filter((r) => /realtime|responses|audio/.test(r.path)).length, 0, 'the voice check must not call the (paid) AI');
+  assert.deepEqual(page.errors, []);
+});
+
 test('responsive layout: desktop width also renders without errors', async () => {
   const page = await env.page({ viewport: { width: 1280, height: 860 }, locale: 'ja-JP' });
   await gotoApp(page, env.baseUrl);

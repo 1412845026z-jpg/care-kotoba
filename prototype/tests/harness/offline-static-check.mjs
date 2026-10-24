@@ -100,7 +100,7 @@ report.types = {
 // undefined names, wrong prop shapes between our own components and wrong types in our
 // logic; it cannot check DOM/JSX attribute types (the real @types/react is not available
 // offline). The project `tsc --noEmit` in CI remains the authoritative check.
-const componentTargets = ['app/page.tsx', 'app/layout.tsx', 'components/practice.tsx', 'components/access.tsx', 'components/ui.tsx', 'components/admin.tsx', 'components/ruby.tsx', 'components/screen-boundary.tsx'].map((r) => join(root, r)).filter(existsSync);
+const componentTargets = ['app/page.tsx', 'app/layout.tsx', 'components/practice.tsx', 'components/access.tsx', 'components/ui.tsx', 'components/admin.tsx', 'components/ruby.tsx', 'components/screen-boundary.tsx', 'components/voice-check.tsx'].map((r) => join(root, r)).filter(existsSync);
 if (projectHasReactTypes) {
   report.components = { checked: [], skipped: 'real @types/react is installed in prototype/node_modules; the shim would conflict with it. Run the project `tsc --noEmit` (CI does) for components.', errors: [] };
 } else {
