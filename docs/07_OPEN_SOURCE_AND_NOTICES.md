@@ -33,7 +33,7 @@
 | Playwright 1.63.0 / esbuild 0.28.2 | main已固定为开发测试依赖；不调用AI即可运行模拟测试 | 工具安装和真实构建已验证；测试通过仍不等于真机通过 |
 | kuromoji.js / mecab-ipadic | PR #9离线生成318条固定文字注音；不把约17MB词典装入浏览器运行时 | Claude记录生成与人工修正；Codex真实dev非语音注音测试通过。词典查找的继承属性问题仍待修复；专业读音审稿未完成 |
 | openai-agents-js | PR #9只参考Realtime序列控制的思路，没有把SDK加入依赖 | Claude称为独立实现；Codex已复现response.created确认前的竞争，尚不能把排队缺口写成全部解决。参考记录不替代以后复制代码时的许可核对 |
-| ts-fsrs | REVIEW-001候选，尚未加入项目依赖 | 先确定复练交互与状态格式，再由Codex核对稳定版本、许可和锁文件；不把GitHub beta分支当作已采用版本 |
+| ts-fsrs 5.4.2 | REVIEW-DEP-001固定运行依赖（无传递依赖），功能由Claude REVIEW-001实现 | MIT；锁文件和npm integrity固定正式版，不使用6.0.0-beta；未接入调度或学习状态功能 |
 | promptfoo | 模型迁移候选；固定评测数据已存在于evals/ | 尚未接入CLI或运行真实模型；未来真实评测调用须另获费用授权 |
 | 厚生劳动省所载教材 | CONTENT-002仅核对30个常用词的词形、读音与页码，另写4个项目词条和原创教学说明 | 新数据见content/terminology/；尚未接入应用、未专业审稿，不复制教材定义、译文段落或图像 |
 | 日本介護福祉士会学习网站 / 预生成语音 / 自托管模型 | 链接或候选 | 免费学习、开源引擎和模型权重许可各不相同；本轮未下载语音权重、生成音频或接入托管 |
@@ -62,3 +62,9 @@ CONTENT-002只记录常用词形、读音与出处页码，学习释义、虚构
 | [BIZ UDPMincho](https://github.com/google/fonts/tree/main/ofl/bizudpmincho)（OFL许可blob `1664f9f625f27e5ba8c6d616bdd02be6836dc67f`） | OFL-1.1；`docs/licenses/BIZ_UDPMINCHO_OFL.txt` | 标题与引用400/700；同上，Google Fonts请求会向Google披露请求信息；不宣称离线字体已验收 |
 
 两份技能的SKILL.md入口、frontmatter与引用可在本会话显式读取；`vendor.mjs --check`及taste的无网络目录查询通过。本环境没有Codex CLI，未验证CLI启动时自动发现列表。没有改动第三方技能本体。
+
+## REVIEW-DEP-001：ts-fsrs 5.4.2
+
+来源：[npm精确版本](https://www.npmjs.com/package/ts-fsrs/v/5.4.2)、[上游](https://github.com/open-spaced-repetition/ts-fsrs)。2026-10-24 npm latest正式版为5.4.2，6.0.0-beta仅预发布，本次不采用。MIT原文取自经过npm sha512 integrity校验的正式tarball，保留在 `docs/licenses/TS_FSRS_LICENSE.txt`；出处、gitHead、完整性和artifact记录见 `verification/REVIEW-DEP-001/package-evidence.json`。
+
+`prototype/package.json`固定 `ts-fsrs: 5.4.2`；锁文件只新增该依赖的importer、package与snapshot，原有解析逐项保持。没有新增传递依赖。包代码不修改，商业分发需随产品保留MIT版权与许可声明。REVIEW-001的交互、存储和复习调度仍由Claude实现；安装依赖不代表功能已经完成。

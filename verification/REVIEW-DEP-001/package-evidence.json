@@ -1,0 +1,36 @@
+{
+  "name": "ts-fsrs",
+  "version": "5.4.2",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dist": {
+    "shasum": "7bd23da3d8a35368b813f4064eabe829a46f9901",
+    "tarball": "https://registry.npmjs.org/ts-fsrs/-/ts-fsrs-5.4.2.tgz",
+    "fileCount": 13,
+    "integrity": "sha512-z4qop4pzTcyTzuJ566d9EaX/4bZZzhYfeaPImfVr+xcYT65c5oBgFDijUhCE/D+C78eaolHIhKRZ04/RwF+v2g==",
+    "signatures": [
+      {
+        "sig": "MEUCIFNy2LyW6GGJDAaKdgZ5UzGouwf16ligb+VklxX1o4WmAiEAvXAEMHDGST+I7W0hP8v8JWMyyqv82uscKXWObYa65gk=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/ts-fsrs@5.4.2",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 706415
+  },
+  "preparation_run": 40070194376,
+  "preparation_commit": "1b4a9ab02aff3b2a7ae457526ca0979725c855f6",
+  "artifact_id": 12551345679,
+  "artifact_sha256": "d97553c666ee8ed2b7e5a1db91f9baff7854917a84f9cfa50859c6c69ef3aa06",
+  "registry_dist_tags": {
+    "latest": "5.4.2",
+    "beta": "6.0.0-beta.15"
+  },
+  "license_sha256": "8b83a73dd2894ff553d6de6113064b3ad9dfad3f839837b61f3b183881131d01"
+}
