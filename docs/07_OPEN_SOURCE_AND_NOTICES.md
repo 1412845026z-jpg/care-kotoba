@@ -87,3 +87,11 @@ MPL允许商业使用，但相关覆盖文件仍遵守MPL的源码提供与修�
 ## 可选图源调查（尚无素材采用）
 
 5个来源的商业/改编/署名/免费范围见`research/ASSET_SOURCE_LICENSES_2026-10-24.md`。Open Peeps、Humaaans、Open Doodles为CC0候选；Loose Drawing与PAKUTASO为自订许可候选，不能混同CC0。这里只调查许可，没有选图、下载、改编或放入产品；采用前才固定具体素材ID/哈希、保留许可快照并核对人物等条件。
+
+## LIGHTHOUSE-001：手机模式 CI 报告工具
+
+| 固定来源 | 许可与保留文本 | 使用范围 |
+| --- | --- | --- |
+| [Lighthouse 13.5.0 正式版](https://github.com/GoogleChrome/lighthouse/releases/tag/v13.5.0)，[commit cb853a38a6410617518b363590c967b3fe211949](https://github.com/GoogleChrome/lighthouse/tree/cb853a38a6410617518b363590c967b3fe211949)（2026-10-24 查阅） | Apache-2.0；上游原文 `docs/licenses/LIGHTHOUSE_LICENSE.txt`，npm SHA512/固定提交见 `verification/LIGHTHOUSE-001/package-evidence.json` | 仅免费标准 runner 的独立临时工具目录；不加入 App 依赖、不接入产品、不调用远程评分或付费 API |
+
+`scripts/ci/lighthouse-tools/package-lock.json` 冻结全部 114 个 npm 包的实际版本与完整性；`npm ci --ignore-scripts` 安装。锁树许可为 MIT/Apache/ISC/BSD/0BSD/MPL/`MIT OR CC0`，没有 GPL/AGPL。工具不改源码；实际安装的逐包许可、NOTICE、版本和哈希随报告产物保留。报告只作参考，不能将开发 harness 的体积、no-store、SEO shell 或没有 Worker 头的结果直接当成正式产品缺陷；真实 CSP/字体由独立 SEC/ENV 检查覆盖。

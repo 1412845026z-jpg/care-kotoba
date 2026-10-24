@@ -1,0 +1,647 @@
+{
+  "ranAt": "2026-10-24T08:13:29.973Z",
+  "sourceCommit": "a3b006095580b234e51100ac70565a7d6a296e12",
+  "mode": "offline development harness; no AI key; homepage navigation only",
+  "lighthouse": "13.5.0",
+  "node": "v24.19.0",
+  "reportOnly": true,
+  "paidApiCalls": 0,
+  "packageLockSha256": "e262f388bfa5ede00f4539caad66853d5fe385341bd4211f6b6af9b733b29f77",
+  "limitations": [
+    "Development React/esbuild bundle, no production SSR/Worker/CSP; scores are not production performance.",
+    "Mobile emulation is not a physical handset. One run per checkout is noisy.",
+    "External browser traffic is forced through a closed loopback proxy; Google Fonts use fallback fonts.",
+    "Only the homepage is scanned. Practice, feedback and notes are covered separately by A11Y CI.",
+    "No AI, microphone, subscription, real-device or commercial-readiness acceptance."
+  ],
+  "categories": {
+    "performance": {
+      "score": 0.51,
+      "title": "Performance"
+    },
+    "accessibility": {
+      "score": 1,
+      "title": "Accessibility"
+    },
+    "best-practices": {
+      "score": 0.96,
+      "title": "Best Practices"
+    },
+    "seo": {
+      "score": 0.9,
+      "title": "SEO"
+    }
+  },
+  "findings": [
+    {
+      "id": "first-contentful-paint",
+      "categories": [
+        "performance"
+      ],
+      "title": "First Contentful Paint",
+      "score": 0,
+      "displayValue": "24.6 s"
+    },
+    {
+      "id": "largest-contentful-paint",
+      "categories": [
+        "performance"
+      ],
+      "title": "Largest Contentful Paint",
+      "score": 0,
+      "displayValue": "24.6 s"
+    },
+    {
+      "id": "speed-index",
+      "categories": [
+        "performance"
+      ],
+      "title": "Speed Index",
+      "score": 0,
+      "displayValue": "24.6 s"
+    },
+    {
+      "id": "total-blocking-time",
+      "categories": [
+        "performance"
+      ],
+      "title": "Total Blocking Time",
+      "score": 0.87,
+      "displayValue": "230 ms"
+    },
+    {
+      "id": "max-potential-fid",
+      "categories": [
+        "performance"
+      ],
+      "title": "Max Potential First Input Delay",
+      "score": 0.73,
+      "displayValue": "180 ms"
+    },
+    {
+      "id": "errors-in-console",
+      "categories": [
+        "best-practices"
+      ],
+      "title": "Browser errors were logged to the console",
+      "score": 0,
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "sourceLocation",
+            "valueType": "source-location",
+            "label": "Source"
+          },
+          {
+            "key": "description",
+            "valueType": "code",
+            "label": "Description"
+          }
+        ],
+        "items": [
+          {
+            "source": "network",
+            "description": "Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED",
+            "sourceLocation": {
+              "type": "source-location",
+              "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+              "urlProvider": "network",
+              "line": 0,
+              "column": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "interactive",
+      "categories": [
+        "performance"
+      ],
+      "title": "Time to Interactive",
+      "score": 0,
+      "displayValue": "25.0 s"
+    },
+    {
+      "id": "total-byte-weight",
+      "categories": [
+        "performance"
+      ],
+      "title": "Avoid enormous network payloads",
+      "score": 0.5,
+      "displayValue": "Total size was 4,635 KiB",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:38295/__harness/app.js",
+            "totalBytes": 4641990
+          },
+          {
+            "url": "http://127.0.0.1:38295/__harness/globals.css",
+            "totalBytes": 103365
+          },
+          {
+            "url": "http://127.0.0.1:38295/",
+            "totalBytes": 807
+          },
+          {
+            "url": "http://127.0.0.1:38295/api/access",
+            "totalBytes": 267
+          }
+        ],
+        "sortedBy": [
+          "totalBytes"
+        ]
+      }
+    },
+    {
+      "id": "unminified-css",
+      "categories": [
+        "performance"
+      ],
+      "title": "Minify CSS",
+      "score": 0,
+      "displayValue": "Est savings of 6 KiB",
+      "details": {
+        "type": "opportunity",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Est Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:38295/__harness/globals.css",
+            "totalBytes": 103365,
+            "wastedBytes": 6541,
+            "wastedPercent": 6.327744199649055
+          }
+        ],
+        "overallSavingsMs": 150,
+        "overallSavingsBytes": 6541,
+        "sortedBy": [
+          "wastedBytes"
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "metricSavings": {
+            "FCP": 150,
+            "LCP": 150
+          }
+        }
+      }
+    },
+    {
+      "id": "unminified-javascript",
+      "categories": [
+        "performance"
+      ],
+      "title": "Minify JavaScript",
+      "score": 0,
+      "displayValue": "Est savings of 3,392 KiB",
+      "details": {
+        "type": "opportunity",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Est Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:38295/__harness/app.js",
+            "totalBytes": 4641773,
+            "wastedBytes": 3473034,
+            "wastedPercent": 74.82129050007207
+          }
+        ],
+        "overallSavingsMs": 17100,
+        "overallSavingsBytes": 3473034,
+        "sortedBy": [
+          "wastedBytes"
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "metricSavings": {
+            "FCP": 17100,
+            "LCP": 17100
+          }
+        }
+      }
+    },
+    {
+      "id": "unused-css-rules",
+      "categories": [
+        "performance"
+      ],
+      "title": "Reduce unused CSS",
+      "score": 0,
+      "displayValue": "Est savings of 84 KiB",
+      "details": {
+        "type": "opportunity",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Est Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:38295/__harness/globals.css",
+            "wastedBytes": 86491,
+            "wastedPercent": 83.84480405537141,
+            "totalBytes": 103156
+          }
+        ],
+        "overallSavingsMs": 450,
+        "overallSavingsBytes": 86491,
+        "sortedBy": [
+          "wastedBytes"
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "metricSavings": {
+            "FCP": 450,
+            "LCP": 450
+          }
+        }
+      }
+    },
+    {
+      "id": "unused-javascript",
+      "categories": [
+        "performance"
+      ],
+      "title": "Reduce unused JavaScript",
+      "score": 0,
+      "displayValue": "Est savings of 672 KiB",
+      "details": {
+        "type": "opportunity",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "subItemsHeading": {
+              "key": "source",
+              "valueType": "code"
+            },
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "subItemsHeading": {
+              "key": "sourceBytes"
+            },
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "subItemsHeading": {
+              "key": "sourceWastedBytes"
+            },
+            "label": "Est Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:38295/__harness/app.js",
+            "totalBytes": 4641751,
+            "wastedBytes": 687701,
+            "wastedPercent": 14.815551286572676,
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "source": "../../../../../care-kotoba-verify-30/prototype/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.development.js",
+                  "sourceBytes": 993204,
+                  "sourceWastedBytes": 480863
+                },
+                {
+                  "source": "../../../components/practice.tsx",
+                  "sourceBytes": 55397,
+                  "sourceWastedBytes": 55155
+                },
+                {
+                  "source": "../../../../../care-kotoba-verify-30/prototype/node_modules/.pnpm/react@19.2.6/node_modules/react/cjs/react.development.js",
+                  "sourceBytes": 45200,
+                  "sourceWastedBytes": 27398
+                },
+                {
+                  "source": "../../../components/admin.tsx",
+                  "sourceBytes": 24944,
+                  "sourceWastedBytes": 24833
+                },
+                {
+                  "source": "../../../app/page.tsx",
+                  "sourceBytes": 66923,
+                  "sourceWastedBytes": 13726
+                }
+              ]
+            }
+          }
+        ],
+        "overallSavingsMs": 3450,
+        "overallSavingsBytes": 687701,
+        "sortedBy": [
+          "wastedBytes"
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "metricSavings": {
+            "FCP": 3450,
+            "LCP": 3450
+          }
+        }
+      }
+    },
+    {
+      "id": "meta-description",
+      "categories": [
+        "seo"
+      ],
+      "title": "Document does not have a meta description",
+      "score": 0
+    },
+    {
+      "id": "network-dependency-tree-insight",
+      "categories": [
+        "performance"
+      ],
+      "title": "Network dependency tree",
+      "score": 0,
+      "details": {
+        "type": "list",
+        "items": [
+          {
+            "type": "list-section",
+            "value": {
+              "type": "network-tree",
+              "chains": {
+                "9E704715B55C2FF2BD8C99C7BB84574F": {
+                  "url": "http://127.0.0.1:38295/",
+                  "navStartToEndTime": 16,
+                  "transferSize": 807,
+                  "isLongest": true,
+                  "children": {
+                    "90.3": {
+                      "url": "http://127.0.0.1:38295/__harness/app.js",
+                      "navStartToEndTime": 56,
+                      "transferSize": 4641990,
+                      "isLongest": true,
+                      "children": {
+                        "90.7": {
+                          "url": "http://127.0.0.1:38295/api/access",
+                          "navStartToEndTime": 319,
+                          "transferSize": 267,
+                          "isLongest": true,
+                          "children": {}
+                        }
+                      }
+                    },
+                    "90.2": {
+                      "url": "http://127.0.0.1:38295/__harness/globals.css",
+                      "navStartToEndTime": 22,
+                      "transferSize": 103365,
+                      "children": {
+                        "90.6": {
+                          "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+                          "navStartToEndTime": 23,
+                          "transferSize": 0,
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "longestChain": {
+                "duration": 319
+              }
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnected origins",
+            "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+            "value": {
+              "type": "text",
+              "value": "no origins were preconnected"
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnect candidates",
+            "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+            "value": {
+              "type": "text",
+              "value": "No additional origins are good candidates for preconnecting"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "render-blocking-insight",
+      "categories": [
+        "performance"
+      ],
+      "title": "Render-blocking requests",
+      "score": 0,
+      "displayValue": "Est savings of 1,200 ms",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedMs",
+            "valueType": "timespanMs",
+            "label": "Duration"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:38295/__harness/globals.css",
+            "totalBytes": 103365,
+            "wastedMs": 1201
+          },
+          {
+            "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+            "totalBytes": 0,
+            "wastedMs": 780
+          }
+        ]
+      }
+    }
+  ],
+  "runtimeError": null,
+  "healthConfigured": false,
+  "chrome": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+  "settings": {
+    "output": [
+      "json",
+      "html"
+    ],
+    "maxWaitForFcp": 30000,
+    "maxWaitForLoad": 45000,
+    "pauseAfterFcpMs": 1000,
+    "pauseAfterLoadMs": 1000,
+    "networkQuietThresholdMs": 1000,
+    "cpuQuietThresholdMs": 1000,
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "throttlingMethod": "simulate",
+    "screenEmulation": {
+      "mobile": true,
+      "width": 412,
+      "height": 823,
+      "deviceScaleFactor": 1.75,
+      "disabled": false
+    },
+    "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+    "auditMode": false,
+    "gatherMode": false,
+    "clearStorageTypes": [
+      "file_systems",
+      "shader_cache",
+      "service_workers",
+      "cache_storage"
+    ],
+    "disableStorageReset": false,
+    "debugNavigation": false,
+    "channel": "node",
+    "usePassiveGathering": false,
+    "disableFullPageScreenshot": false,
+    "skipAboutBlank": false,
+    "blankPage": "about:blank",
+    "ignoreStatusCode": false,
+    "locale": "en-US",
+    "blockedUrlPatterns": null,
+    "additionalTraceCategories": null,
+    "extraHeaders": null,
+    "precomputedLanternData": null,
+    "onlyAudits": null,
+    "onlyCategories": [
+      "performance",
+      "accessibility",
+      "best-practices",
+      "seo"
+    ],
+    "skipAudits": null
+  },
+  "runWarnings": [],
+  "browserExternalRequests": [
+    {
+      "url": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&display=swap",
+      "statusCode": -1,
+      "transferSize": 0,
+      "resourceType": "Stylesheet"
+    }
+  ],
+  "metrics": {
+    "first-contentful-paint": {
+      "value": 24602.097,
+      "unit": "millisecond",
+      "display": "24.6 s"
+    },
+    "largest-contentful-paint": {
+      "value": 24602.097,
+      "unit": "millisecond",
+      "display": "24.6 s"
+    },
+    "speed-index": {
+      "value": 24602.097,
+      "unit": "millisecond",
+      "display": "24.6 s"
+    },
+    "total-blocking-time": {
+      "value": 226,
+      "unit": "millisecond",
+      "display": "230 ms"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "unit": "unitless",
+      "display": "0"
+    }
+  },
+  "environmentNote": "Local Node24 + Playwright headless-shell script smoke; not standard CI or a physical phone. App source a3b0060; working-tree tool scripts were not committed.",
+  "toolSourceSha256": {
+    "scripts/ci/run_lighthouse.mjs": "f1300e942280e5ab9be22914448d12c68e359e488d4e38db931cbe532e5edb58",
+    "scripts/ci/record_lighthouse_toolchain.mjs": "e69b322498edadd1a48211e65b5758c10f91505970a383708f8279a0d65cbc45",
+    ".github/workflows/lighthouse.yml": "5daaf5f6787e9616c2bcd46f8b571f324a543b59747f46a409a9a9eae8265109",
+    "scripts/ci/lighthouse-tools/package-lock.json": "e262f388bfa5ede00f4539caad66853d5fe385341bd4211f6b6af9b733b29f77"
+  },
+  "localReportSha256": {
+    "node-network.json": "e4fa339f1c99837f148f0b40c29c9b9132ca6d84593142e1bc9511b067068c43",
+    "summary.md": "39d6b67e589e0431ce6e784abdebcc5bec1313299b67bb48d92ff583a924eaed",
+    "summary.json": "daad826a66added05c82c95fdc19a7392479e1b17ef72dc63f699e5de3a6725e",
+    "mobile.report.html": "4c9abdf99efbafde92979ced8b81bfa9df2c8d2e4358da09ecc70f2b20f544a9",
+    "mobile.report.json": "308a5defb122147d0eb1c42a9a7934878e37e82f4351ce799b9667dfbb6322a4"
+  }
+}

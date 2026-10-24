@@ -1,0 +1,80 @@
+name: Lighthouse mobile (report only)
+
+on:
+  push:
+    branches: [main, codex/LIGHTHOUSE-001]
+    paths: ['prototype/**', 'scripts/ci/**', '.github/workflows/lighthouse.yml']
+  pull_request:
+    paths: ['prototype/**', 'scripts/ci/**', '.github/workflows/lighthouse.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    name: Mobile Lighthouse, diagnostic only (offline harness)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    continue-on-error: true
+    env:
+      CI: 'true'
+      WRANGLER_SEND_METRICS: 'false'
+      NEXT_TELEMETRY_DISABLED: '1'
+      CLOUDFLARE_CF_FETCH_ENABLED: 'false'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Use pinned pnpm
+        working-directory: prototype
+        run: |
+          node --input-type=module <<'JS'
+          import { execFileSync } from 'node:child_process';
+          import { readFileSync } from 'node:fs';
+          const [major, minor] = process.versions.node.split('.').map(Number);
+          if (major !== 22 || minor < 19) throw new Error('Lighthouse requires Node 22 >=22.19');
+          const { packageManager } = JSON.parse(readFileSync('package.json', 'utf8'));
+          if (!/^pnpm@\d+\.\d+\.\d+$/.test(packageManager)) throw new Error('Expected pinned pnpm');
+          execFileSync('corepack', ['enable'], { stdio: 'inherit' });
+          execFileSync('corepack', ['prepare', packageManager, '--activate'], { stdio: 'inherit' });
+          JS
+      - name: Install frozen App dependencies and Chromium
+        working-directory: prototype
+        run: |
+          node scripts/ci-step.mjs pnpm install --frozen-lockfile
+          pnpm exec playwright install chromium
+      - name: Install isolated, frozen Lighthouse tooling (no App dependency)
+        run: |
+          mkdir -p "$RUNNER_TEMP/lighthouse-tools"
+          cp scripts/ci/lighthouse-tools/package.json scripts/ci/lighthouse-tools/package-lock.json "$RUNNER_TEMP/lighthouse-tools/"
+          npm ci --prefix "$RUNNER_TEMP/lighthouse-tools" --ignore-scripts --no-audit --no-fund
+          node scripts/ci/record_lighthouse_toolchain.mjs "$RUNNER_TEMP/lighthouse-tools" lighthouse-results
+      - name: Report mobile homepage (no AI key, no paid API)
+        env:
+          CK_LIGHTHOUSE_TOOLS: ${{ runner.temp }}/lighthouse-tools
+        run: node scripts/ci/run_lighthouse.mjs --out lighthouse-results
+      - name: Add diagnostic summary
+        if: ${{ always() }}
+        run: |
+          if [ -f lighthouse-results/summary.md ]; then cat lighthouse-results/summary.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Keep JSON, HTML and provenance
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lighthouse-mobile-${{ github.sha }}
+          path: lighthouse-results/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Confirm manifests were not rewritten
+        run: git diff --exit-code -- prototype/package.json prototype/pnpm-lock.yaml scripts/ci/lighthouse-tools/package.json scripts/ci/lighthouse-tools/package-lock.json

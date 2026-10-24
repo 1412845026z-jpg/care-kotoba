@@ -57,6 +57,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
+| LIGHTHOUSE-001 | 固定Lighthouse13.5.0手机CI报告（只报告） | Codex | in_progress | `codex/LIGHTHOUSE-001`；本轮核查后推送，未部署/付费 | handoffs/2026-10-24-LIGHTHOUSE-001-codex.md |
 | MERGE-2 | 顺序整合#46/#49并复核常规CI和A11Y硬门 | Codex | in_progress | `codex/MERGE-2`；先解决#46仅PROJECT_STATE冲突 | handoffs/2026-10-24-MERGE-2-codex.md；保留main已有依赖/许可/证据，App原样继承Claude |
 | MERGE | 审阅#43/#44、真实dev字体与SEC、设计许可整合 | Codex | merged | `codex/MERGE`；#43已合并21639c7；#44已合并dc9d60c；固定a567b8d复测通过 | handoffs/2026-10-24-MERGE-codex.md；#45 merge45c938c，最终三CI全绿，无付费/部署/hooks |
 | REVIEW-DEP-001 | 固定ts-fsrs5.4.2依赖与许可，功能留给Claude | Codex | merged | `codex/REVIEW-DEP-001`，PR #47 | handoffs/2026-10-24-REVIEW-DEP-001-codex.md；仅新增一个无传递依赖的MIT包，CI40070483006通过，mergeba8568b |
