@@ -57,7 +57,7 @@
 
 | ID | 任务 | 负责人 | 状态 | 工作分支 / PR | 最近交接与证据 |
 | --- | --- | --- | --- | --- | --- |
-| VOICE-EXPRESSION-001 | 基础课程逐句情感方向与语气提示 | Codex | in_progress | `codex/VOICE-EXPRESSION-001`；基准main2f2808f | 96场景384轮+192替代表达逐句标注、19种方向、情绪感知去重、同声线情境对照试音稿；本次新增录音0，待本地检查与推送 |
+| VOICE-EXPRESSION-001 | 基础课程逐句情感方向与语气提示 | Codex | review_ready | `codex/VOICE-EXPRESSION-001`；PR #58；内容提交d0ccdd2，基准main2f2808f | handoffs/2026-10-24-VOICE-EXPRESSION-001-codex.md；576条方向、19种风格、情绪感知去重、同声线情境对照试音稿；构建/独立编辑/360・390・1280px检查通过；已推送，CI40084677514排队未出结果，尚未合并；新增录音0 |
 | SSW-CONTENT-001 | 特定技能基础96场景与角色声线准备 | Codex | merged | `codex/SSW-CONTENT-001`；PR #56，merge1aff4bc | handoffs/2026-10-24-SSW-CONTENT-001-codex.md；CI40082925762构建/模拟/A11Y通过；96场景与8档声线规格已入main，正式角色语音和App接入未完成 |
 | DEVICE-FREE-GUIDE-001 | 最新main免费手机测试中文指南与no-key回放 | Codex | merged | `codex/DEVICE-FREE-GUIDE-001` @e4b798b；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-DEVICE-FREE-GUIDE-001-codex.md；main6148494无key真实dev回放通过、外部Worker请求0；真实USB/识别/可听声音仍待用户 |
 | AUDIO-PICK-001 | 手机30段免费试听清单及候选组合 | Codex | merged | `codex/AUDIO-PICK-001` @f2e52e7；整合PR #54，mergeeb65ef1 | handoffs/2026-10-24-AUDIO-PICK-001-codex.md；30原MP3双HTML清单及SHA256/390px媒体检查；未真机/真正试听，不接入App |
