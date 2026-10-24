@@ -1,0 +1,250 @@
+{
+  "dateJst": "2026-10-24",
+  "pullRequest": 54,
+  "sourceHead": "c245b48e04fc3ae37761ed3c0a94fdcd43211ec7",
+  "ciTestMergeSource": "5b8795d6331c88815a3999c8d5098624cf004f0a",
+  "mergeCommit": "eb65ef19503b3d07d761d13a506b9e63fdb12b8c",
+  "run": {
+    "id": 40079627795,
+    "name": "CI",
+    "status": "completed",
+    "conclusion": "success",
+    "run_number": 297,
+    "jobs_url": "https://api.github.com/repos/1412845026z-jpg/care-kotoba/actions/runs/40079627795/jobs",
+    "logs_url": "https://api.github.com/repos/1412845026z-jpg/care-kotoba/actions/runs/40079627795/logs",
+    "workflow_id": 394018306
+  },
+  "jobs": [
+    {
+      "id": 120830537784,
+      "name": "Install, TypeScript, build, mock tests (no API)",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40079627795,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Node 22",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Scan tracked files and archived ZIP entries (no key needed)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Validate fictional scenario and evaluation data (no API)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Corepack from packageManager; verify portable mode",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Install with frozen lockfile",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "TypeScript",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Production build (portable, no deploy)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Install Playwright Chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Static, unit and browser tests (local mock API only)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Keep test reports",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Confirm dependency manifests were not rewritten",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Post Node 22",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 26
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 27
+        }
+      ]
+    },
+    {
+      "id": 120830537944,
+      "name": "Accessibility (offline gates + informational axe)",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40079627795,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Node 22",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Use pinned pnpm",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Install frozen dependencies and Chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Audit two viewports and report axe findings (loopback mocks only)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Add accessibility summary",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Keep accessibility reports",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Confirm dependency manifests were not rewritten",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Node 22",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12554687761,
+      "name": "mock-tests-5b8795d6331c88815a3999c8d5098624cf004f0a",
+      "size_in_bytes": 2382,
+      "url": "https://api.github.com/repos/1412845026z-jpg/care-kotoba/actions/artifacts/12554687761",
+      "archive_download_url": "https://api.github.com/repos/1412845026z-jpg/care-kotoba/actions/artifacts/12554687761/zip",
+      "expired": false,
+      "created_at": "2026-10-24T08:54:41Z",
+      "expires_at": "2026-10-31T08:54:40Z",
+      "updated_at": "2026-10-24T08:54:41Z",
+      "digest": "sha256:38eaf0eb716d6e8e3f168d2ed13d9e069d7fd36fcf04a31ed2517bd79c6233e5",
+      "workflow_run": {
+        "id": 40079627795,
+        "repository_id": 1430974400,
+        "head_repository_id": 1430974400,
+        "head_branch": "codex/MERGE-2",
+        "head_sha": "c245b48e04fc3ae37761ed3c0a94fdcd43211ec7"
+      }
+    },
+    {
+      "id": 12554023550,
+      "name": "a11y-5b8795d6331c88815a3999c8d5098624cf004f0a",
+      "size_in_bytes": 39582,
+      "url": "https://api.github.com/repos/1412845026z-jpg/care-kotoba/actions/artifacts/12554023550",
+      "archive_download_url": "https://api.github.com/repos/1412845026z-jpg/care-kotoba/actions/artifacts/12554023550/zip",
+      "expired": false,
+      "created_at": "2026-10-24T08:53:15Z",
+      "expires_at": "2026-10-31T08:53:15Z",
+      "updated_at": "2026-10-24T08:53:15Z",
+      "digest": "sha256:f6bdfaabbee039405fe602605a463070f8ba76985f98177cc50d901bfc218e5c",
+      "workflow_run": {
+        "id": 40079627795,
+        "repository_id": 1430974400,
+        "head_repository_id": 1430974400,
+        "head_branch": "codex/MERGE-2",
+        "head_sha": "c245b48e04fc3ae37761ed3c0a94fdcd43211ec7"
+      }
+    }
+  ],
+  "appTreeUnchangedFrom": "02e83670a994a6673ebf21be543dd9c1614cbad9",
+  "paidApiCalls": 0,
+  "deployments": 0
+}
